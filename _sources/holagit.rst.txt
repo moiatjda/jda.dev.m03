@@ -164,11 +164,13 @@ Nota: no et preocupis pel missatge d'avís *warning: You appear to have
 cloned an empty repository*. Només t'està informant que el teu repositori
 està buit i això és quelcom que solucionarem de seguida.
 
-Descarrega els següents dos fitxers dins d'aquesta carpeta:
+Descarrega els següents fitxers dins d'aquesta carpeta:
 
 * :download:`readme.rst <_recursos/gitrepo/readme.rst>`
 
 * :download:`.gitignore <_recursos/gitrepo/.gitignore>`
+
+* :download:`.introprg <_recursos/gitrepo/.introprg>`
 
 La manera més fàcil, probablement, és fer click al botó dret del teu
 ratolí sobre cada enllaç i seleccionar l'opció *anomena i deixa el
@@ -181,6 +183,7 @@ carpeta que ens interessa, pots fer quelcom similar a:
 .. code-block:: console
 
     $ mv -v ~/Baixades/.gitignore ~/introprg/
+    $ mv -v ~/Baixades/.introprg ~/introprg/
     $ mv -v ~/Baixades/readme.rst ~/introprg/
 
 Comprovem que ha anat tot bé:
@@ -196,6 +199,7 @@ Comprovem que ha anat tot bé:
       (use "git add <file>..." to include in what will be committed)
 
         .gitignore
+        .introprg
         readme.rst
 
     nothing added to commit but untracked files present (use "git add" to track)
@@ -208,13 +212,14 @@ Si és així, registrem els nous fitxers en el ``git``:
     $ git add --all
     $ git commit -am "Primer commit"
     [master (root-commit) f1f6b7f] Primer commit
-     2 files changed, 15 insertions(+)
+     3 files changed, 15 insertions(+)
+     create mode 100644 .introprg
      create mode 100644 .gitignore
      create mode 100644 readme.rst
 
 
-Personalització
----------------
+Personalització de git
+----------------------
 
 Passem a personalitzar el teu repositori local:
 
@@ -222,6 +227,37 @@ Passem a personalitzar el teu repositori local:
 
     $ git config user.name "el teu nom"
     $ git config user.email "latevaadreça@iesjoandaustria.org"
+
+Configuració de l'entorn
+------------------------
+
+Perquè el sistema trobi tota la informació necessària per poder provar els
+programes que faràs durant el curs, cal definir una sèrie d'elements
+anomenats *variables d'entorn*.
+
+Per què et resulti molt fàcil, t'he preparat el fitxer ``.introprg`` que
+ja has descarregat al teu repositori. Ara només has de *presentar* aquest
+fitxer en "societat". Per fer-ho, executa **exactament** la següent
+comanda des de consola:
+
+.. code-block:: console
+
+    $ grep 'source $HOME/introprg/.introprg' ~/.bashrc || echo 'source $HOME/introprg/.introprg' >> ~/.bashrc
+
+Si la comanda no genera cap sortida, és que tot ha anat bé i tindràs una
+nova instrucció al teu fitxer de configuració ``~/.bashrc``.
+
+Si et genera algun missatge, probablement sigui per què l'has executada
+més d'un cop. No et preocupis.
+
+Per veure que tot ha anat bé, escriu a la mateixa consola:
+
+.. code-block:: console
+
+    $ source ~/.bashrc
+
+En cas que es queixi, revisa que hagis fet totes les passes de `Espai de
+treball`_
 
 Pugem els primers continguts al GitHub
 --------------------------------------

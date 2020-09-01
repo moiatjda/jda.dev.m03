@@ -1,0 +1,16 @@
+# Aquest és el fitxer de configuració per realitzar el curs d'introducció
+# a la programació
+
+# IMPORTANT: El contingut d'aquest fitxer podrà ser canviat pel docent
+# durant el desenvolupament del curs, de manera automàtica.
+# En cas que algun dels valors no s'adequi als teus interessos, et
+# recomano que els defineixis com a tu t'interessi directament a ~/.bashrc
+# tot just després de la línia
+#   source $HOME/introprg/.introprg
+
+# directori on es troba el teu repositori del curs
+export INTROPRGDIR=$HOME/introprg
+
+# paths per Java
+export CLASSPATH=${CLASSPATH:-.}
+CLASSPATH=$CLASSPATH:$INTROPRGDIR/lib

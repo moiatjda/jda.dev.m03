@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Git i GitHub &mdash; Introducció a la programació des de Java 2020-21 documentació</title>
+  <title>Git i GitHub &mdash; Documentació genèrica 1819 documentació</title>
   
 
   
@@ -54,12 +54,9 @@
           
 
           
-            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació des de Java
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Documentació genèrica
           
 
-          
-            
-            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -67,7 +64,7 @@
             
             
               <div class="version">
-                1920
+                1819
               </div>
             
           
@@ -119,7 +116,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">Introducció a la programació des de Java</a>
+          <a href="index.html">Documentació genèrica</a>
         
       </nav>
 
@@ -298,10 +295,11 @@ GitHub.</p>
 <p>Nota: no et preocupis pel missatge d’avís <em>warning: You appear to have
 cloned an empty repository</em>. Només t’està informant que el teu repositori
 està buit i això és quelcom que solucionarem de seguida.</p>
-<p>Descarrega els següents dos fitxers dins d’aquesta carpeta:</p>
+<p>Descarrega els següents fitxers dins d’aquesta carpeta:</p>
 <ul class="simple">
 <li><p><a class="reference download internal" download="" href="_downloads/bb8621eb8e831deb29b66b4bd3565994/readme.rst"><code class="xref download docutils literal notranslate"><span class="pre">readme.rst</span></code></a></p></li>
 <li><p><a class="reference download internal" download="" href="_downloads/7b2d9d2aa770ff0547ea7c2d6932427e/.gitignore"><code class="xref download docutils literal notranslate"><span class="pre">.gitignore</span></code></a></p></li>
+<li><p><a class="reference download internal" download="" href="_downloads/e15662a5da58508457001a911257f049/.introprg"><code class="xref download docutils literal notranslate"><span class="pre">.introprg</span></code></a></p></li>
 </ul>
 <p>La manera més fàcil, probablement, és fer click al botó dret del teu
 ratolí sobre cada enllaç i seleccionar l’opció <em>anomena i deixa el
@@ -310,6 +308,7 @@ contingut de l’enllaç</em></p>
 la carpeta <code class="docutils literal notranslate"><span class="pre">~/Baixades/</span></code>. En aquest cas, per moure els fitxers a la
 carpeta que ens interessa, pots fer quelcom similar a:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> mv -v ~/Baixades/.gitignore ~/introprg/
+<span class="gp">$</span> mv -v ~/Baixades/.introprg ~/introprg/
 <span class="gp">$</span> mv -v ~/Baixades/readme.rst ~/introprg/
 </pre></div>
 </div>
@@ -323,6 +322,7 @@ carpeta que ens interessa, pots fer quelcom similar a:</p>
 <span class="go">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
 
 <span class="go">    .gitignore</span>
+<span class="go">    .introprg</span>
 <span class="go">    readme.rst</span>
 
 <span class="go">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span>
@@ -332,18 +332,42 @@ carpeta que ens interessa, pots fer quelcom similar a:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git add --all
 <span class="gp">$</span> git commit -am <span class="s2">&quot;Primer commit&quot;</span>
 <span class="go">[master (root-commit) f1f6b7f] Primer commit</span>
-<span class="go"> 2 files changed, 15 insertions(+)</span>
+<span class="go"> 3 files changed, 15 insertions(+)</span>
+<span class="go"> create mode 100644 .introprg</span>
 <span class="go"> create mode 100644 .gitignore</span>
 <span class="go"> create mode 100644 readme.rst</span>
 </pre></div>
 </div>
-<div class="section" id="personalitzacio">
-<h3>Personalització<a class="headerlink" href="#personalitzacio" title="Link permanent a aquest títol">¶</a></h3>
+<div class="section" id="personalitzacio-de-git">
+<h3>Personalització de git<a class="headerlink" href="#personalitzacio-de-git" title="Link permanent a aquest títol">¶</a></h3>
 <p>Passem a personalitzar el teu repositori local:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git config user.name <span class="s2">&quot;el teu nom&quot;</span>
 <span class="gp">$</span> git config user.email <span class="s2">&quot;latevaadreça@iesjoandaustria.org&quot;</span>
 </pre></div>
 </div>
+</div>
+<div class="section" id="configuracio-de-l-entorn">
+<h3>Configuració de l’entorn<a class="headerlink" href="#configuracio-de-l-entorn" title="Link permanent a aquest títol">¶</a></h3>
+<p>Perquè el sistema trobi tota la informació necessària per poder provar els
+programes que faràs durant el curs, cal definir una sèrie d’elements
+anomenats <em>variables d’entorn</em>.</p>
+<p>Per què et resulti molt fàcil, t’he preparat el fitxer <code class="docutils literal notranslate"><span class="pre">.introprg</span></code> que
+ja has descarregat al teu repositori. Ara només has de <em>presentar</em> aquest
+fitxer en «societat». Per fer-ho, executa <strong>exactament</strong> la següent
+comanda des de consola:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> grep <span class="s1">&#39;source $HOME/introprg/.introprg&#39;</span> ~/.bashrc <span class="o">||</span> <span class="nb">echo</span> <span class="s1">&#39;source $HOME/introprg/.introprg&#39;</span> &gt;&gt; ~/.bashrc
+</pre></div>
+</div>
+<p>Si la comanda no genera cap sortida, és que tot ha anat bé i tindràs una
+nova instrucció al teu fitxer de configuració <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code>.</p>
+<p>Si et genera algun missatge, probablement sigui per què l’has executada
+més d’un cop. No et preocupis.</p>
+<p>Per veure que tot ha anat bé, escriu a la mateixa consola:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">source</span> ~/.bashrc
+</pre></div>
+</div>
+<p>En cas que es queixi, revisa que hagis fet totes les passes de <a class="reference internal" href="#espai-de-treball">Espai de
+treball</a></p>
 </div>
 <div class="section" id="pugem-els-primers-continguts-al-github">
 <h3>Pugem els primers continguts al GitHub<a class="headerlink" href="#pugem-els-primers-continguts-al-github" title="Link permanent a aquest títol">¶</a></h3>
@@ -555,7 +579,7 @@ uniformitzar la gestió de les teves activitats.</p>
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020-2021 Moisès Gómez Girón
+        &copy; Copyright nom autor
 
     </p>
   </div> 
