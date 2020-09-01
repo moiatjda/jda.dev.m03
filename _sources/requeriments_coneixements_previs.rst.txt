@@ -1,0 +1,17 @@
+###################
+Coneixements previs
+###################
+
+Els continguts d'aquest curs estan dissenyats per a poder ser seguits per una
+persona sense coneixements previs de programació. S'espera, però, que tinguis
+una certa experiència fent servir un equip tipus PC. Espero, per exemple,
+que siguis capaç de moure i fer click amb el ratolí, escriure amb el teclat,
+carregar una pàgina web, llegir la pantalla…
+
+Si ja tens alguns coneixements addicionals, és possible que en començar
+t'avorreixis una mica. No et confiïs, però, doncs tot i començant per
+molt bàsic, de seguida et trobaràs programant.
+
+Hi ha certs requisits addicionals que estaria molt bé que portessis
+a sobre, doncs t'ajudaran a treure'n el màxim d'aquest curs: moltes ganes
+d'aprendre, curiositat, paciència i una mica de sentit de l'humor.

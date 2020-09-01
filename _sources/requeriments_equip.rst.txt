@@ -1,0 +1,147 @@
+Ordinador i sistema operatiu
+============================
+
+Per a poder seguir aquest curs, suposaré que disposes d'un PC amb una
+distribució Debian o Ubuntu estàndard, més o menys recent.
+
+No t'espantis si mai no has treballat amb *Linux* doncs no pressuposaré
+que el coneixes.
+
+Demana ajut si et cal per instal·lar-te'l, tot i que les distribucions que
+t'he esmentat porten uns instal·ladors molt senzills.
+
+El PC no cal que sigui gaire potent, ni tenir un munt d'espai de disc
+lliure, ni de memòria, doncs la major part del temps estarem editant text
+i executant codi des de línia de comandes.  Això permet que puguis seguir
+fàcilment la major part del curs amb una petita partició al teu equip,
+compartint-lo amb altres sistemes operatius, o des d'una màquina virtual
+sobre un altre sistema operatiu, o fins i tot al núvol amb algun servei
+com ara AWS.
+
+L'opció ideal és que disposis d'un equip només amb GNU/Linux o, com a
+mínim una partició exclusiva per aquest sistema.
+
+La partició pot ser en un disc extern o bé en el mateix disc on tens
+altres sistemes operatius.
+
+En cas que sigui al mateix disc, els instal·ladors de les distribucions
+Debian i Ubuntu t'ajudaran a fer-ho i, en la majoria dels casos, no
+tindràs gaire problema.
+
+Si ho intentes a un pendrive o disc extern, et caldrà investigar una mica.
+Per exemple, mira `aquest tutorial
+<https://www.fosslinux.com/10212/how-to-install-a-complete-ubuntu-on-a-usb-flash-drive.htm>`_
+
+Si no t'és possible, però, encara hi ha altres opcions.
+
+Si el teu sistema operatiu favorit és el MS Windows, intenta instal·lar-te
+una màquina virtual. Des de la versió Windows 10, el teu sistema incorpora
+la possibilitat de crear una màquina virtual. Cerca per internet algun bon
+tutorial. Per exemple, jo he trobat `aquest
+<https://www.lifewire.com/how-to-create-virtual-machine-windows-10-4770680>`_
+que té bona pinta. Altrament, pots fer servir altres aplicacions de
+virtualització com ara VirtualBox (mira per exemple `aquest altre tutorial
+<https://chachocool.com/como-instalar-una-maquina-virtual-linux-con-virtualbox-en-windows-10/>`_.
+
+Si el sistema que fas servir és un MacOS, és possible que tinguis algun
+problema amb alguns guions (scripts) que et proporcionaré. Prova'ls i si
+no et funcionen, considera crear-te una màquina virtual.
+
+Per instal·lar una màquina virtual, hi ha una aplicació anomenada `vagrant
+<https://www.vagrantup.com/>`_ que et pot facilitar molt la vida. Et
+recomano que li facis una ullada si finalment et decideixes per l'opció
+màquina virtual.
+
+A més, pots fer servir el núvol. Per exemple https://repl.it t'ofereix
+un editor força completet i integració amb Git, que podria solucionar-te
+totalment o parcial les necessitats pel curs. Segurament la versió
+gratuïta no et serà suficient però és possible que et compensi pagar
+alguns dòlars al mes a canvi de la comoditat de no dependre d'un equip.
+
+Una altra opció a considerar és contractar un *hosting* econòmic (uns
+5$/mes) que et permetran disposar d'una caixa linux al núvol. Aquesta
+opció l'he provada i és perfectament vàlida per fer la majoria si no tots
+els exercicis d'aquest curs. Alguns possibles proveïdors en aquest rang de
+preus són https://www.digitalocean.com/ o https://www.linode.com/ entre
+molts d'altres.
+
+Probablement et resultarà molt més difícil realitzar aquest curs amb una
+*tablet* o un mòbil. Si ho aconsegueixes, per favor, fes-m'ho saber!
+
+
+**Atenció**: tingues en compte que jo no disposo de cap equip amb
+MSWindows ni MacOS, i tampoc no he pagat la subscripció al repl.it (tot i
+que sí he comprovat que es poden fer molts dels exercicis). En quant al
+hosting econòmic tampoc no hi he realitzat tots els exercicis.  Per tant
+no he provat exhaustivament cap d'aquestes solucions alternatives. A més,
+depenent de la meva càrrega de feina, és molt probable que no pugui (sovint per
+desconeixement) oferir-te suport individualitzat per solucionar qualsevol
+dels problemes que t'hi podràs trobar.
+
+T'agrairé molt si te'n surts amb alguna solució alternativa, que m'ho
+comentis, i podré afegir la teva experiència aquí.
+
+
+En resum
+========
+
+Les opcions que et proposo, per ordre de preferència, són:
+
+#. L'opció ideal és una distribució Debian/Ubuntu actual en un equip
+   dedicat per a aquesta assignatura.
+
+   Si la distribució que fas servir no és una d'aquestes probablement en
+   sabràs més que jo per resoldre els petits problemes que
+   *sorprenentment* et trobis.
+
+  * Avantatges: molt fàcil d'instal·lar (fins i tot hi ha opció automàtica
+    amb pràcticament cap interacció!), l'ordinador pot ser poc potent.
+
+#. Una partició al teu equip de manera que convisquin dos o més sistemes
+   operatius.
+
+   * Avantatges: és raonablement fàcil d'instal·lar excepte amb algunes
+     màquines que tinguin blocada/dificultada aquesta opció a la BIOS
+
+   * Inconvenients: l'ordinador necessita espai de disc per als dos SO.
+
+#. Instal·lació a un disc extern o *pendrive* connectat per USB
+
+  * Avantatges: la instal·lació és relativament fàcil. Pots portar-te tot
+    el teu entorn de treball allà on vagis.
+
+  * Inconvenients: pot resultar una mica més lent, tot i que a partir de
+    USB3 la resposta pot ser més que raonable. 
+    Per arrencar-ho, et caldrà trobar quina tecla permet escollir des d'on
+    arrencar el teu equip.
+    Cal que investiguis una
+    mica com fer-ho. 
+
+#. Una màquina virtual sobre el teu sistema operatiu preferit
+
+   * Avantatges: és relativament fàcil d'instal·lar i no requereix
+     modificar la configuració del teu equip.
+
+   * Inconvenients: a menys de que el teu equip disposi de prou memòria
+     RAM, és probable que aquesta solució et resulti lenta. Et caldrà
+     trobar mecanismes per comunicar-te amb la màquina virtual si vols
+     realitzar els exercicis en el teu sistema operatiu i usar la màquina
+     virtual només per validar-los
+
+#. Una màquina al núvol
+
+   * Avantatges: la tens disponible a tot arreu
+
+   * Inconvenients: és possible que hagis de gastar alguns dinerons al mes.
+
+#. Si disposes d'un MacOS, és possible que et funcioni directament
+
+   * Inconvenients: en cas que falli algun dels scripts de suport,
+     probablement no podré adaptar-lo al teu sistema.
+
+#. Intentar-ho des del teu sistema operatiu no GNU/Linux i no fer ús de
+   les proves automàtiques.
+
+    * Inconvenients: no sabràs si el teu exercici presenta errors
+      trivials (ex. noms incorrectes) fins que te'l corregeixi i t'enviï
+      els resultats.

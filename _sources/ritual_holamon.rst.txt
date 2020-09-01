@@ -1,0 +1,109 @@
+################
+Ritual Hola Món!
+################
+
+Molt bé, ja ho tenim tot preparat. Quan comencem a programar? Doncs ara
+mateix!
+
+Segueix les passes:
+
+1. Obre un terminal (ex. ctrl-alt-t)
+
+2. Escriu a la línia de comandes (no incloguis ``$``)
+
+   .. code-block:: console
+
+        $ jshell
+        |  Welcome to JShell -- Version 11.0.7
+        |  For an introduction type: /help intro
+
+        jshell> 
+
+3. Escriu després de ``jshell>`` (no incloguis tampoc ``jshell>``)
+
+   .. code-block:: java
+
+        jshell> System.out.println("Hola món!");
+        Hola món!
+
+4. Si has vist la salutació al món, felicitats pel teu primer programa!
+
+5. Si apareix algun error, revisa que el text que has introduït
+   contingui **exactament** l'indicat. Corregeix el que calgui
+   i torna a executar fins que no s'indiqui cap error.
+
+6. Surt de l'intèrpret de Java prement ``ctrl-d``
+
+Ara ja som programadors iniciats!
+
+Tenim, però, un petit problema: el nostre programa l'hem de tornar
+a escriure cada cop que el vulguem executar. Una solució és guardar el codi del nostre programa (sí,
+allò que comença amb ``System``) en un fitxer de text.
+
+Segueix novament les instruccions (compte amb les majúscules i
+minúscules!):
+
+#. Escriu a la consola:
+
+   .. code-block:: console
+
+    $ mkdir -p ~/introprg/exemples
+    $ cd ~/introprg/exemples
+    $ gedit HolaMon.java
+
+#. A la finestra que t'apareixerà, escriu el següent codi:
+
+   .. code-block:: java
+      :linenos:
+
+      /* Programa que saluda al món */
+      public class HolaMon {
+          public static void main(String[] args) {
+              System.out.println("Hola Món!");
+          }
+      }
+
+   Guarda el contingut del fitxer, per exemple amb ``ctrl-s`` i surt de gedit ``ctrl-q``
+
+   D'acord, sí, hi ha moltes coses aquí que no hi eren al programa que
+   havíem escrit al ``jshell``. De fet, únicament coincideix la línia 4.
+
+   No t'amoïnis, ja veuràs com aviat ho entendràs tot.
+
+   De moment, et vull fer notar que el nom del fitxer, sense l'extensió,
+   apareix a la línia 2 entre la paraula ``class`` i la clau oberta ``{``.
+
+#. Novament a la consola, executa la següent comanda:
+
+   .. code-block:: console
+
+        $ javac HolaMon.java
+
+   Si tot ha anat bé, no tindràs cap missatge. Altrament, t'indicarà algun error
+   que molt probablement has comés en teclejar. Revisa el teu codi i torna a
+   provar fins que la comanda anterior no generi cap missatge.
+
+#. Comprova que s'ha creat un nou fitxer
+
+   .. code-block:: console
+
+        $ ls HolaMon.*
+        HolaMon.class  HolaMon.java
+
+   El nou fitxer ``HolaMon.class`` és la versió compilada del teu codi. El
+   seu contingut **no** és de text pla i, per tant, no el podràs veure amb
+   un editor normal. Caldrà un programa especial per poder fer que
+   funcioni.
+
+#. Finalment, executa el teu programa
+
+   .. code-block:: console
+
+        $ java HolaMon
+        Hola Món!
+
+   Fixa't que ara no ha calgut dir l'extensió ``.class``. El programa ``java``
+   és l'encarregat d'executar el codi compilat que apareix al fitxer ``HolaMon.class``.
+
+
+|exerciseicon___| :doc:`exercici_00_04_presentemnos`

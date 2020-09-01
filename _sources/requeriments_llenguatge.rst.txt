@@ -1,0 +1,50 @@
+
+Llenguatge de programació
+=========================
+
+En aquest curs farem servir el llenguatge de programació Java. En concret,
+farem servir una implementació anomenada *OpenJDK* en la seva versió 11.
+
+Si tens qualsevol altra implementació o/i versió de java ja instal·lada,
+sempre que la versió sigui >=1.11) no hauries de tenir cap problema per
+seguir aquesta part del curs.
+
+Comprova la teva versió amb les comandes:
+
+.. code-block:: sh
+
+    $ javac --version
+    javac 11.0.8
+    $ java --version
+    openjdk 11.0.8 2020-07-14
+    OpenJDK Runtime Environment (build 11.0.8+10-post-Debian-1deb10u1)
+    OpenJDK 64-Bit Server VM (build 11.0.8+10-post-Debian-1deb10u1, mixed mode, sharing)
+
+El teu resultat no té perquè ser idèntic als meus. Únicament t'has
+d'assegurar que ha trobat la comanda. Altrament rebràs un missatge similar
+a:
+
+.. code-block:: none
+
+    $ javac -version
+    bash: javac: no s'ha trobat l'ordre
+
+En cas que no tinguis el Java instal·lat, ho pots fer fàcilment amb la
+següent comanda que necessitarà privilegis d'administració. Si no els
+tens, demana ajuda.
+
+.. code-block:: sh
+
+    $ sudo apt install default-jdk
+
+
+.. note:: Et recomano que no t'obsessionis gaire amb la versió de Java. La
+    darrera política dels seus propietaris (Oracle) és la d'oferir
+    actualitzacions freqüents que normalment incorporen millores en
+    elements avançats del llenguatge.
+
+    Que tampoc no et confongui el nom de la versió. Malgrat la versió que fem
+    servir aquest curs és la 1.11, a molts llocs sentiràs parlar de *Java 11*.
+    La raó és històrica i té a veure amb polítiques de màrqueting que no
+    t'haurien de costar gaire trobar si tens gust per converses de safareig.
+

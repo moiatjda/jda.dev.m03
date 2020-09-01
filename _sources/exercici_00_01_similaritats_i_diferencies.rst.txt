@@ -1,0 +1,79 @@
+:orphan:
+
+############################################################
+|exerciseicon___| Exercici 00_01. Similaritats i diferències
+############################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``00_01_similaritats_i_diferencies/``
+
+* Continguts relacionats: :doc:`primer_contacte`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+.. rubric:: Enunciat
+
+
+Acabem de veure un mateix programa escrit amb diferents llenguatges de
+programació.
+
+Si bé és possible que encara no sàpigues ben bé què és un programa ni què
+són els llenguatges de programació, potser sí seràs capaç d'extreure'n
+unes primeres conclusions d'aquests codis.
+
+Obre un document de text, sigui un LibreOffice Doc, un fitxer de text pla
+(.txt) o un nou email.
+
+Intenta contestar les següents preguntes el millor que et sigui possible.
+
+Pregunta 1. Què fa el programa?
+-------------------------------
+
+Quin és el problema que pretén resoldre el programa, independentment de
+amb quin llenguatge estigui escrit?
+
+
+Pregunta 2. Elements comuns
+---------------------------
+
+Fixa't que els diferents llenguatges tenen maneres
+diferents d'expressar les passes a realitzar per portar a terme la
+resolució del problema.
+
+Amb tot, si mirem amb atenció, trobem que hi ha elements que es
+repeteixen a totes (o quasi totes) les versions.
+
+Identifica'ls i descriu-los.
+
+Pregunta 3. Entrada/sortida
+---------------------------
+
+El programa, en les seves diferents versions, ha de demanar un valor als
+seus usuaris i escriure un resultat.
+
+Indica, per cada llenguatge, de quina manera obté la dada i de quina
+manera mostra el resultat
+
+Per exemple:
+
+En pseudocodi, l'entrada l'obté amb ``llegeix radi`` i el resultat el
+mostra amb ``escriu "L'àrea és ", àrea"``
+
+
+Pregunta 4. Variables
+---------------------
+
+Hi ha un tipus d'element que apareix a totes les versions, que es coneix
+com a *variable*. Les variables serveixen als programes per poder
+referir-se als diferents valors que han de manegar. Un exemple d'aquestes
+variables és ``area``.
+
+Hi trobes més exemples? Quins?
+
+Pregunta 5. Preferència
+-----------------------
+
+Potser és molt d'hora, però, així a primera vista, quin dels llenguatges
+que et presento, veus més interessant? Perquè?
+

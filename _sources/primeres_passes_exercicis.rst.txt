@@ -1,0 +1,13 @@
+##################
+Llista d'exercicis
+##################
+
+Aquesta és la llista d'exercicis d'aquest tema:
+
+.. toctree::
+    :titlesonly:
+
+    exercici_00_01_similaritats_i_diferencies.rst
+    exercici_00_02_holagit.rst
+    exercici_00_03_resum_comandes.rst
+    exercici_00_04_presentemnos.rst

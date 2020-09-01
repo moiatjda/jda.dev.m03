@@ -1,0 +1,48 @@
+:orphan:
+
+#######################
+Sobre aquests materials
+#######################
+
+Benvingut/benvinguda als meus apunts de classe.
+
+Els continguts d'aquest curs estan dissenyats per a ser utilitzats com a suport per les classes del
+mòdul 3 *Programació* del cicle de formació professional de grau superior *Desenvolupament
+d'Aplicacions Web* (DAW) al centre `IES Joan d'Àustria <http://agora.xtec.cat/insjoandaustria/>`_.
+
+Per construir aquestes pàgines, faig servir l'excel·lent generador de documentació `Sphinx
+<http://sphinx-doc.org/>`_.
+
+Pots fer el que consideris oportú amb aquests continguts sota la teva responsabilitat, mentre
+respectis els terminis de la `GNU Free Documentation License
+<http://www.gnu.org/copyleft/fdl.html>`_ tal i com està publicada per la *Free Software Foundation*,
+tan a la versió 1.3 com de posteriors.
+
+De manera similar, també pots fer servir els codis fonts que apareixen a aquests continguts sota la
+teva responsabilitat, mentre respectis la `GNU General Public License
+<http://www.gnu.org/licenses/gpl.html>`_ tal i com està publicada per la *Free Software Foundation*,
+tan a la versió 3 com de posteriors.
+
+Aquests continguts són majoritàriament *agnòstics* en el que es refereix a sistemes operatius, i
+altre programari com ara navegadors i editors de text. Malgrat tot, per agilitzar la lectura,
+pressuposaré que estàs fent servir alguna distribució actual d'un GNU/Linux com ara `Debian
+<https://www.debian.org/>`_.  En general et deixaré com a exercici les adaptacions al teu sistema.
+
+Si ets docent i tens interés en aprofitar aquests continguts per les teves
+classes, has de saber que ho pots fer mentre respectis els termes de la
+`llicència a la que estàn adscrits <http://www.gnu.org/licenses/gpl.html>`_.
+Amb tot, cal que tinguis present que faig servir aquests continguts com a suport
+d'un curs presencial i que els adapto en funció de les necessitats d'aquest. Pot
+passar que parts (o fins i tot la totalitat) dels continguts es vegin modificats
+o desapareguin sense previ avís.
+
+Si fas servir quelcom d'aquests continguts, estaré encantat de conèixer la teva
+opinió al respecte.  Ah! i si desenvolupes alguna millora, t'agrairé que me la
+facis arribar.  Potser la podré incorporar i més gent se'n podrà beneficiar.
+
+
+Gràcies pel teu interès
+
+Moisès Gómez Girón
+
+moiatgit (arroba) gmail (punt) com

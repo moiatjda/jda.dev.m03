@@ -1,0 +1,19 @@
+###############
+Primeres passes
+###############
+
+Comencem les primeres passes en aquest meravellós món de la programació. Agafa't
+bé, ment oberta, molta curiositat i… endavant!
+
+.. toctree::
+    :titlesonly:
+    :maxdepth: 1
+
+    requeriments_coneixements_previs.rst
+    requeriments_tecnics.rst
+    sobre_aquests_continguts.rst
+    sobre_exercicis.rst
+    primer_contacte.rst
+    holagit.rst
+    ritual_holamon.rst
+    primeres_passes_exercicis.rst

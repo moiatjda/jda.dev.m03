@@ -1,0 +1,89 @@
+:orphan:
+
+###############################################
+|exerciseicon___| Exercici 00_04. Presentem-nos
+###############################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``00_04_presentemnos/``
+
+* Continguts relacionats: :doc:`ritual_holamon`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+.. rubric:: Enunciat
+
+
+En aquesta secció et proposo una senzilla modificació respecte el que hem vist
+al programa ``HolaMon.java``.
+
+Segueix les instruccions:
+
+#. Ves a la carpeta de treball del teu PC i actualitza canvis que puguin estar
+   al repositori remot
+
+   .. code-block:: console
+
+        $ cd ~/introprg
+        $ git pull origin master
+
+   En cas que et doni algun error, és possible que el teu espai de treball
+   tingués canvis que no has registrat. Fes ``git status`` perquè ``git`` et
+   recordi quins canvis vas fer, i fes el ``commit`` oportú. En cas de dubtes,
+   avisa el teu docent que el tens desitjant ajudar-te.
+
+#. Crea la carpeta ``00_04_presentemnos`` si encara no hi és, i entra-hi:
+
+   .. code-block:: console
+
+        $ mkdir -p 00_04_presentemnos
+        $ cd 00_04_presentemnos
+
+#. Crea un nou fitxer ``EmPresento.java`` i escriu-hi codi tal que, en ser
+   executat escrigui per pantalla el mateix que ``HolaMon.java``, excepte que, en
+   comptes de *Hola Món!*, sortirà un missatge similar al següent:
+
+   .. code-block:: console
+
+       Hola, sóc la Adelita, la futura millor desenvolupadora del Món!
+
+   Per favor, si no et dius *Adelita*, canvia el nom. Pots modificar també la resta
+   de la frase amb quelcom que sentis còmode.
+
+#. Compila i executa el programa
+
+   Recorda, ``javac`` i ``java``
+
+
+#. Afegeix els canvis al control de versions.
+
+   Pots comprovar que ``git`` t'informa que hi ha un nou fitxer sense registrar,
+   tot fent ``git status``.
+
+   Com ara hem creat un nou fitxer, ens caldrà informar a ``git`` que el volem
+   gestionar:
+
+   .. code-block:: console
+
+        $ git add EmPresento.java
+
+   Ara que el fitxer ja és conegut per ``git``, demanem que afegeixi els canvis:
+
+   .. code-block:: console
+
+        $ git commit -am "Completat l'exercici en que em presento"
+
+#. Finalment pugem els canvis a GitHub:
+
+   .. code-block:: console
+
+        $ git push origin master
+
+   Com sempre, indica el teu password
+
+
+A banda de l'exercici, et recomano que tu mateix et defineixis canvis que
+t'agradaria provar. Crea d'altres fitxers pels teus experiments, que pots
+mantenir sense problemes a aquesta carpeta.  La màxima és: **sense por**. No
+pots trencar res!

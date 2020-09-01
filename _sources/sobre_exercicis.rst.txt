@@ -1,0 +1,113 @@
+###################
+Sobre els exercicis
+###################
+
+A banda d'explicacions, en aquests materials hi trobaràs enunciats dels
+exercicis que treballarem durant el curs. N'hi ha un bon grapat, no t'espantis.
+La idea és que com més opció tinguis per practicar, millor se't quedaran els
+conceptes.
+
+És molt important que facis el possible per realitzar i entendre els
+exercicis. Pensa que, per fer més fluïda la presentació de conceptes,
+sovint les explicacions són molt reduïdes i deixo molts detalls i variants
+per ser tractades dins d'algun dels exercicis.
+
+Els exercicis apareixen amb la icona |exerciseicon___| entre mig de les
+explicacions. És molt
+recomanable que els intentis fer a mida que vagin apareixent de manera que
+puguis aplicar el que tot just acabes de veure.
+
+Al final de cada bloc d'exercicis, i per facilitar la localització,
+apareixerà la llista amb tots els exercicis del bloc. 
+
+El lliurament dels exercicis es realitzarà mitjançant un repositori
+``git`` compartit. La secció :doc:`holagit` t'explicarà tots els detalls.
+
+Els exercicis disposen de tres possibles atributs que indiquen la
+obligatorietat, la dificultat i si disposen de mecanisme d'autoavaluació.
+
+.. _descripcio_exercicis_optatius:
+
+Exercicis optatius
+==================
+
+Els exercicis són obligatoris a menys que s'indiqui el contrari.
+
+La icona que acompanya els exercicis optatius és |exerciseiconO__|
+
+Si l'exercici està marcat amb un **☼** vol dir que es tracta d'un exercici
+*opcional*.  Els exercicis opcionals solen servir per repassar o aprofundir en
+els conceptes que hem treballat fins ara. Malgrat siguin opcionals, és molt
+recomanable que els facis sempre que puguis. Aquí, com arreu *com més hi poses,
+més en treus*.
+
+.. _descripcio_exercicis_autoavaluacio:
+
+Exercicis amb autoavaluació
+===========================
+
+Molts dels exercicis venen acompanyats de mecanismes d'autoavaluació de
+manera que, si segueixes les instruccions, podràs comprovar si has
+comés errors *simples* (no necessàriament *ximples*). 
+
+La icona que acompanya aquests exercicis és |exerciseicon__T|. Fixa't en
+la marca ✓.
+
+Per poder accedir a l'autoavaluació, únicament hauràs de col·locar-te a la
+carpeta corresponent a l'exercici a una consola, i escriure:
+
+.. code-block:: console
+
+    $ prgtest.sh
+
+Es tracta d'un guió (*script* o petit programa) que farà les comprovacions
+corresponents i et donarà pistes de quin error fa el teu programa respecte
+l'esperat.
+
+Si ha trobat algun error, simplement mira de corregir l'error i torna a
+executar ``prgtest.sh``. Ho pots fer tants cops com vulguis.
+
+Quan el teu programa passi totes les proves, ``prgtest.sh`` t'ho indicarà.
+
+Assegura't que els teus programes passen totes les proves si aquestes
+estan disponibles, doncs es consideraran erronis si no les passen. Cal que
+tinguis en comptes que el teu docent podria passar proves addicionals (per
+exemple comprovar que el teu programa inclogui capçaleres).
+
+**Atenció**: Per realitzar les proves, ``prgtest.sh`` fa servir la
+informació que troba a dins d'una carpeta anomenada ``test/`` dins de la
+carpeta de l'exercici. Aquesta informació serà incorporada automàticament
+al teu repositori. Si no la trobes, demana-la.
+
+És important que no modifiquis el contingut d'aquesta carpeta, doncs no et
+permetria saber si realment el teu codi passa les proves o no. Si
+accidentalment el modifiques, avisa el teu docent i t'ajudarà a recuperar
+els valors originals.
+
+En resum, si l'exercici està marcat com autoavaluable:
+
+* executa ``prgtest.sh`` per comprovar-ho
+
+* lliura l'exercici quan passi totes les proves
+
+* no modifiquis el contingut de ``test/``.
+
+
+.. _descripcio_exercicis_dificils:
+
+Exercicis amb dificultat addicional
+===================================
+
+Si l'exercici està marcat amb **☆**, vol dir que és un exercici *xungo*.  Es
+tracta d'exercicis que tenen una complexitat o longitud alta en comparació amb
+la resta dels exercicis del seu voltant. Ep! Que no són impossibles i
+n'aprendràs molt en fer-los.
+
+La icona que acompanya aquests exercicis és |exerciseicon_S_| amb la marca
+☆.
+
+Els exercicis marcats a l'hora com a opcionals i *xungos* són exercicis
+d'ampliació.  Es tracta d'exercicis que contenen elements, sovint no explicats
+a classe, que et tocarà explorar per poder-los resoldre.  Si els fas, podràs
+presumir davant dels teus companys i companyes i, qui sap?, potser davant d'una
+futura entrevista de feina!

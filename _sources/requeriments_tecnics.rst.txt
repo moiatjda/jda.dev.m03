@@ -1,0 +1,18 @@
+####################
+Requeriments tècnics
+####################
+
+A continuació tens una descripció del tipus d'ordinador i quins
+programes necessitaràs per a poder realitzar aquest curs.
+
+Alguns d'aquests punts pot arribar a ser una mica tècnics si no tens
+massa experiència. No et preocupis doncs l'opció per defecte sol ser molt
+fàcil. Si et quedes sense saber què fer, simplement pregunta.
+
+.. toctree:: 
+    :titlesonly:
+
+    requeriments_equip.rst
+    requeriments_editor.rst
+    requeriments_llenguatge.rst
+    requeriments_cvs.rst

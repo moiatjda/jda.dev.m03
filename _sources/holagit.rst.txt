@@ -1,0 +1,463 @@
+############
+Git i GitHub
+############
+
+.. graphviz::
+    :align: center
+
+    digraph G {
+        node [ shape="none" ];
+        rankdir=LR
+
+        laptop [label="", image="_images/laptop.png"];
+
+        cloud [label="Web", fontsize=30, image="_images/cloud_icon.png"];
+
+        github [label="", image="_images/github_logo.png"];
+
+        // Relationships
+        laptop -> cloud [dir="both", color="blue"];
+        cloud -> github [dir="both", color="blue"];
+    }
+
+Ara que ja hem vist quin aspecte fan els programes, ens toca fer els nostres!
+
+En primer lloc passarem a preparar l'equip entorn per poder realitzar les
+activitats d'aquest curs.
+
+El que ve a continuació és una seqüència de passes que hauràs de
+realitzar. Moltes de les passes les realitzaràs escrivint instruccions a
+un terminal. Si no ho has fet mai, avui és un bon moment per començar.
+
+Assegura't que segueixes totes les passes amb precisió. No et preocupis, però,
+si t'equivoques, doncs no pots trencar res. En el pitjor dels casos et pot
+passar que et toqui tornar a començar. Demana ajut sense rubor.
+
+
+GitHub
+======
+
+`GitHub <https://github.com/>`_ [#altresxarxes]_ és una coneguda xarxa social
+per desenvolupadors.
+
+Caldrà que disposis d'un *repositori* a GitHub per a poder realitzar bona part de
+les activitats d'aquest curs.
+
+Pots entendre un repositori com una carpeta del teu ordinador però que
+serà guardada al GitHub.
+
+Disposar d'un repositori a GitHub presenta, a més de poder veure avaluades
+les teves activitats, una sèrie d'avantatges interessants:
+
+* no perdràs cap fitxer ni contingut que pugis al teu GitHub
+
+* la feina que facis a classe la podràs continuar a casa (o allà on puguis) i,
+  en tornar a classe, et trobaràs les actualitzacions disponibles
+
+* et familiaritzaràs amb una de les eines més utilitzades i millor valorades
+  pels desenvolupadors en l'actualitat
+
+Crear repositori
+----------------
+
+Crear el teu repositori és molt fàcil. En primer lloc, ves a
+`https://github.com/` i, si encara no en tens un, crea't un compte.
+
+Et recomano que el compte de correu que facis servir sigui el del centre
+doncs així tindràs totes les notificacions del curs a una mateixa adreça.
+
+Un cop disposes del teu compte, crea un repositori. 
+
+Anomena'l ``introprg``, marca'l com a **privat** i prem el botó de crear,
+deixant la resta d'opcions sense tocar, tal i com es veu a la següent captura
+de pantalla.
+
+.. figure:: _images/gitcrearepo.png
+    :figclass: align-center
+    :alt: creació d'un repositori a GitHub
+
+Obtenir la URL del repositori
+-----------------------------
+
+GitHub et mostrarà la localització (URL) del teu repositori.
+
+.. figure:: _images/githubrepourl.png
+    :figclass: align-center
+
+Fes click sobre HTTPS (requadre vermell de la imatge anterior) i
+selecciona el text que apareix a la caixa blava. Aquest text especifica on
+es troba el teu repositori i el necessitaràs més endavant.
+
+Podràs copiar aquesta adreça amb la combinació de tecles ``<CTRL> c``.
+
+Afegir-me com a col·laborador
+-----------------------------
+
+Un cop has creat el nou repositori, cal que m'afegeixis com a col·laborador.
+
+Ves a ``settings``, selecciona ``Manage access`` i afegeix el meu usuari de
+github: ``moiatjda``.
+
+.. figure:: _images/githubcollaborator.png
+    :figclass: align-center
+
+Abans d'acceptar enviar la invitació, assegura't que és per mi. El quadre
+de diàleg hauria de tenir el següent aspecte:
+
+.. figure:: _images/githubcheckcollaborator.png
+    :figclass: align-center
+
+Un cop ho tinguis clar, prem el botó *Add moiatjda to introprg*.
+
+Notifica que ja estàs
+---------------------
+
+Encara un petit pas més. Malgrat m'arribarà una notificació de que m'has
+convidat al teu repositori, no em resultarà fàcil saber que ets un dels
+meus alumnes doncs GitHub és molt escrupolós amb la teva privacitat i no
+em dirà la teva adreça a priori.
+
+Em caldrà que m'enviïs un correu amb l'adreça del centre en el que
+m'indiquis el teu nom complet i la URL del teu repositori que tindrà
+l'aspecte ``https://github.com/elteuusuariagithub/introprg`` i que vas
+veure com copiar a `Obtenir la URL del repositori`_. 
+
+
+
+.. important:: Recordem els punts importants per que els teus exercicis puguin
+   ser avaluats sense problemes:
+
+   * ha de ser privat
+
+   * ha de tenir ``moiatjda`` com a col·laborador
+
+   * no ha de tenir més col·laboradors
+
+Espai de treball
+================
+
+Ara que ja tenim la part *remota* enllestida, passem a preparar el nostre
+espai de treball al PC.
+
+Obre una consola o terminal, per exemple amb ``ctrl-alt-t`` o ``alt-f2
+gnome-terminal``, tot i que segurament trobaràs també opcions als menús.
+
+Escriu a la consola les següents línies que comencen amb dòlar ``$``. No
+escriguis, però, el (``$``):
+
+.. code-block:: console
+
+    $ cd
+    $ git clone https://github.com/elteuusuariagithub/introprg.git
+    Cloning into 'introprg'...
+    Username for 'https://github.com': elteuusuariagithub
+    Password for 'https://elteuusuariagithub@github.com': 
+    warning: You appear to have cloned an empty repository.
+    $ cd introprg/
+
+Les comandes anteriors han creat una carpeta anomenada ``introprg/`` a la
+carpeta principal del teu usuari al sistema, i han inicialitzat aquesta
+carpeta com a repositori ``git`` vinculat amb el que vas crear abans a
+GitHub.
+
+Nota: no et preocupis pel missatge d'avís *warning: You appear to have
+cloned an empty repository*. Només t'està informant que el teu repositori
+està buit i això és quelcom que solucionarem de seguida.
+
+Descarrega els següents dos fitxers dins d'aquesta carpeta:
+
+* :download:`readme.rst <_recursos/gitrepo/readme.rst>`
+
+* :download:`.gitignore <_recursos/gitrepo/.gitignore>`
+
+La manera més fàcil, probablement, és fer click al botó dret del teu
+ratolí sobre cada enllaç i seleccionar l'opció *anomena i deixa el
+contingut de l'enllaç*
+
+Si no li has dit res, és probable que t'hagi descarregat els fitxers dins
+la carpeta ``~/Baixades/``. En aquest cas, per moure els fitxers a la
+carpeta que ens interessa, pots fer quelcom similar a:
+
+.. code-block:: console
+
+    $ mv -v ~/Baixades/.gitignore ~/introprg/
+    $ mv -v ~/Baixades/readme.rst ~/introprg/
+
+Comprovem que ha anat tot bé:
+
+.. code-block:: console
+
+    $ git status
+    On branch master
+
+    Initial commit
+
+    Untracked files:
+      (use "git add <file>..." to include in what will be committed)
+
+        .gitignore
+        readme.rst
+
+    nothing added to commit but untracked files present (use "git add" to track)
+
+
+Si és així, registrem els nous fitxers en el ``git``:
+
+.. code-block:: console
+
+    $ git add --all
+    $ git commit -am "Primer commit"
+    [master (root-commit) f1f6b7f] Primer commit
+     2 files changed, 15 insertions(+)
+     create mode 100644 .gitignore
+     create mode 100644 readme.rst
+
+
+Personalització
+---------------
+
+Passem a personalitzar el teu repositori local:
+
+.. code-block:: console
+
+    $ git config user.name "el teu nom"
+    $ git config user.email "latevaadreça@iesjoandaustria.org"
+
+Pugem els primers continguts al GitHub
+--------------------------------------
+
+Ara ja podem pujar aquests continguts a GitHub. Escriu:
+
+.. code-block:: console
+
+    $ git push origin master
+
+Et demanarà el teu usuari i password del GitHub. En introduir-los, els
+continguts ja estaran salvats a GitHub. Si vols, ho pots comprovar mirant amb el
+navegador d'Internet.
+
+|exerciseicon___| :doc:`exercici_00_02_holagit`
+
+Un altre espai de treball
+=========================
+
+Un cop que hem guardat el nostre repositori a GitHub, ja el tenim disponible per
+a ser utilitzat des d'altres equips que disposin de ``git``.
+
+En aquesta activitat simularem que ens hem canviat de PC només canviant de
+directori, però les mateixes passes serveixen per recuperar la nostra feina en
+qualsevol altre equip.
+
+En primer lloc clonarem el nostre treball a la carpeta temporal ``/tmp/``.
+Sovint el contingut d'aquesta carpeta és eliminat cada cop que iniciem l'equip.
+Per tant, el que fem aquí no tindria gaire futur si no el pugem a GitHub.
+
+.. code-block:: console
+
+    $ cd /tmp
+    $ git clone https://github.com/elteuusuari/introprg.git temporal
+    $ cd temporal
+
+Fixa't que disposes dels mateixos continguts que tenies al teu espai de treball
+guardat a la carpeta ``introprg/``
+
+Ara crearem un nou fitxer, l'afegirem a ``git`` i el pujarem a GitHub
+
+El podem crear, per exemple, editant-lo:
+
+.. code-block:: console
+
+    $ gedit eliminam.txt
+
+Però com que estem en el món GNU/Linux, ho farem automàticament amb una sola
+línia:
+
+.. code-block:: console
+
+    $ echo 'un fitxer a eliminar' > eliminam.txt
+
+Podem comprovar que el fitxer hi és, fent servir la utilitat ``ls``
+
+.. code-block:: console
+
+    $ ls
+    …
+    eliminam.txt
+    …
+
+També podem consultar el contingut del fitxer, per exemple, fent servir la
+utilitat ``cat``:
+
+.. code-block:: console
+
+    $ cat eliminam.txt
+    un fitxer a eliminar
+
+Ara toca dir-li a ``git`` que ha de gestionar aquest nou fitxer:
+
+.. code-block:: console
+
+    $ git add eliminam.txt
+    $ git commit -am "Afegit un fitxer des de l'espai de treball temporal"
+    $ git push origin master
+
+Un cop introduït el password, el nou fitxer hauria d'estar a GitHub.
+
+Ara simularem que tornem al nostre equip de classe, i recuperarem els continguts
+que hem realitzat al directori temporal:
+
+.. code-block:: console
+
+    $ cd ~/introprg
+    $ git pull origin master
+
+Un cop introduït el password, ja tindrem disponible el fitxer ``eliminam.txt``.
+
+.. code-block:: console
+
+    $ cat eliminam.txt
+    un fitxer a eliminar
+
+Ara que ja hem vist com actualitzar la feina realitzada en un altre lloc, ja
+podem eliminar aquest fitxer que no necessitem per res. Primer l'eliminarem del
+directori de treball i després del GitHub
+
+.. code-block:: console
+
+    $ rm eliminam.txt
+    $ git status
+    …
+    deleted:     eliminam.txt
+    …
+
+Fixa't que la resposta de ``git status`` és que el fitxer ``eliminam.txt`` ha
+estat eliminat. Indicarem a ``git`` que el volem eliminat i pujarem els canvis a
+GitHub, on també quedarà eliminat.
+
+.. code-block:: console
+
+    $ git commit -am "eliminat fitxer que feia nosa"
+    $ git push origin master
+
+Ja està.
+
+Si vols practicar una mica més, pots tornar a ``/tmp/temporal/`` i fer un ``git
+pull`` per que el fitxer quedi eliminat també allà.
+
+|exerciseicon___| :doc:`exercici_00_03_resum_comandes`
+
+
+.. _instruccions_git:
+
+Com lliurar un exercici
+=======================
+
+.. graphviz::
+    :align: center
+
+    digraph {
+        inici [label="inici de sessió", shape="box"];
+        pull [label="git pull origin master", shape="box", style=rounded];
+        push [label="git push origin master", shape="box", style=rounded];
+        exercici [label="editar un exercici", shape="box"];
+        add  [label="git add --all", shape="box", style=rounded];
+        commit  [label="git commit -am \"bon comentari\"", shape="box", style=rounded];
+        final [label="final sessió", shape="box"];
+
+        inici -> pull;
+        pull -> exercici;
+        exercici -> add;
+        add -> commit;
+        commit -> exercici [label="un altre exercici"];
+        commit -> push [label="finalitzada sessió"];
+        push -> final;
+    }
+
+
+
+
+Com a resum, aquestes són les passes bàsiques que has de fer cada sessió
+de treball:
+
+#. En començar, recupera els canvis del repositori remot
+
+   .. code-block:: console
+
+        $ git pull origin master
+
+#. Un cop consideris que has finalitzat l'exercici, o bé vulguis guardar
+   el que has fet per finalitzar la sessió, cal que registris els canvis.
+   Comprova quins fitxers has modificat amb:
+
+   .. code-block:: console
+
+        $ git status
+
+   Si no recordes què has modificat a un fitxer, pots consultar-ho amb
+   ``git diff nomfitxermodificat``
+
+#. Quan ja tinguis clar els canvis que vols enregistrar al ``git``, toca
+   afegir-los.
+
+   Aquest pas no sempre serà necessari. Només si ``git status`` et diu que
+   hi ha nous fitxers sense registrar. Si el fas i no hi ha fitxers nous,
+   no farà cap mal.
+
+   Et proposo dues maneres. Escull la que millor et sembli:
+
+   * ``$ git add --all``: aquesta és la versió si no et vols complicar la
+     vida. Afegirà tots els canvis, fins i tot fitxers temporals que hagis
+     creat i que potser no formen part del lliurament.
+
+   * ``$ git add nomfitxermodificat``: indiques el nom dels fitxers que
+     has modificat (segons ``git status``) que vulguis guardar al
+     repositori.
+
+#. Enregistra els canvis
+
+   Ara toca enregistrar quins canvis estàs afegint al repositori. El punt
+   més important aquí és que posis un comentari descriptiu del què has
+   canviat. Aquest comentari t'ajudarà en un futur en cas que et calgui
+   recuperar quelcom que has perdut.
+
+   .. code-block:: console
+
+        $ git commit -am "Un comentari descriptiu"
+
+   Pots veure els comentaris dels registres anteriors fent ``git log`` o
+   ``git log nomfitxer`` si vols per un fitxer concret.
+
+   Bons comentaris són, per exemple:
+
+   * finalitzat l'exercici 01_20
+
+   * corregit error accent a l'exercici 01_20
+
+   * millorat l'exercici 01_20. Ara la capçalera és més descriptiva.
+
+#. Quan ja vols finalitzar la sessió de treball, cal que pugis els canvis
+   al repositori remot.
+
+   .. code-block:: console
+
+        $ git push origin master
+
+   Algunes vegades aquesta comanda et pot generar un missatge d'error. Un
+   cas típic és que hagis estat treballant just mentre el teu docent ha
+   actualitzat algun element del teu repositori. Si és així, normalment
+   tindràs prou amb primer portar els canvis i després enviar els teus
+
+   .. code-block:: console
+
+        $ git pull origin master
+        $ git push origin master
+
+-----
+
+.. [#altresxarxes] A banda del GitHub hi ha d'altres xarxes similars
+   disponibles. Per exemple, `gitlab <https://about.gitlab.com/>`_ o `BitBucket
+   <https://bitbucket.org/>`_.
+
+   No vol dir que aquestes altres xarxes siguin pitjors. He escollit GitHub
+   només perquè ja la faig servir per hostatjar aquests apunts i per
+   uniformitzar la gestió de les teves activitats.

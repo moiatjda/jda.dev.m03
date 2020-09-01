@@ -1,0 +1,26 @@
+Control de versions
+===================
+
+Una altra aplicació que farem servir és el control de versions ``git``. És
+tracta d'una eina que et permetrà conservar canvis que vagis realitzant en els
+teus programes. Pots comprovar si ja la tens instal·lada:
+
+.. code-block:: sh
+
+    $ git --version
+
+En cas que et respongui amb un missatge d'error de l'estil ``-bash: git:
+command not found``, pots instal·lar ``git`` amb:
+
+.. code-block:: sh
+
+    $ sudo apt install git
+
+És perfectament possible realitzar la majoria, si no tots, els exercicis
+amb un sistema operatiu diferent.  Però no t'ho recomano si no tens gaire
+experiència en sistemes, especialment pels exercicis que hagis de lliurar.
+Si tot i així vols intentar-ho, per descomptat ho pots fer **al teu
+risc**. Et quedarà com a exercici trobar com realitzar les diferents
+tasques que se't requeriran amb el sistema operatiu escollit, així com
+resoldre les possibles incompatibilitats (especialment amb la codificació
+de caràcters), etc.

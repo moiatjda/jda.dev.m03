@@ -1,0 +1,63 @@
+:orphan:
+
+###################################################
+|exerciseicon___| Exercici 00_03. Resum de comandes
+###################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``00_03_resum_comandes/``
+
+* Continguts relacionats: :doc:`holagit`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+.. rubric:: Enunciat
+
+
+A la secció :doc:`holagit` hem vist un munt de noves comandes des de la
+consola de GNU/Linux. És molt fàcil que les oblidem, així que et proposo
+que et facis uns apunts.
+
+Crea un document, per exemple ``apunts.rst`` o ``apunts.odt`` i completa la
+següent taula amb una descripció de què fa cada comanda:
+
++-------------------------------+------------------------------------------------+
+| Comanda                       | Descripció                                     |
++===============================+================================================+
+| $ mkdir carpeta/              | crea una carpeta anomenada ``carpeta/``        |
++-------------------------------+------------------------------------------------+
+| $ cd carpeta/                 | canvia el directori actual a ``carpeta/``      |
++-------------------------------+------------------------------------------------+
+| $ cat fitxer                  |                                                |
++-------------------------------+------------------------------------------------+
+| $ gedit fitxer &              |                                                |
++-------------------------------+------------------------------------------------+
+| $ ls                          |                                                |
++-------------------------------+------------------------------------------------+
+| $ cat fitxer                  |                                                |
++-------------------------------+------------------------------------------------+
+| $ rm fitxer                   |                                                |
++-------------------------------+------------------------------------------------+
+| $ git init                    | Permet inicialitzar un repositori git          |
++-------------------------------+------------------------------------------------+
+| $ git clone                   |                                                |
++-------------------------------+------------------------------------------------+
+| $ git status                  |                                                |
++-------------------------------+------------------------------------------------+
+| $ git add                     |                                                |
++-------------------------------+------------------------------------------------+
+| $ git commit                  |                                                |
++-------------------------------+------------------------------------------------+
+| $ git push                    |                                                |
++-------------------------------+------------------------------------------------+
+| $ git pull                    |                                                |
++-------------------------------+------------------------------------------------+
+
+Et recomano que vagis modificant aquesta llista de comandes, a mida que et
+trobis amb noves comandes. De fet, aquesta llista que et proposo ni tant
+sols conté ja totes les comandes que has vist. Se t'acut alguna que hi falti?
+
+En acabar, no oblidis pujar els canvis a GitHub! Si has oblidat com
+fer-ho, torna a revisar la guia :ref:`instruccions_git`
+

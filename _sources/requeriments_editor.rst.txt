@@ -1,0 +1,31 @@
+Editor
+======
+
+Una peça fonamental a l'hora de programar és l'editor de text. És tracta
+d'un programa que ens permet llegir i escriure els nostres programes.
+
+Aquestes distribucions normalment ja porten instal·lat un editor de text pla.
+
+Com que hi ha molts editors de text pla que siguin adequats, potser és
+preferible deixar clar què **no** és un editor de text *pla*. Per exemple
+no seria adequat que programessis amb ``LibreOffice Writer`` o ``MS
+Word``. Si tens dubtes de si el teu editor és o no de text pla, agafa un
+fitxer editat per aquest i en una consola fes (sense teclejar ``$``):
+
+.. code-block:: sh
+
+    $ cat nomfitxereditat
+
+Si et mostra el contingut tal i com l'havies escrit al teu editor,
+pots fer servir aquest últim per editar els teus programes amb
+tranquil·litat.
+
+Si no tens cap altra preferència et recomano que, per començar, facis
+servir ``gedit``, especialment per començar. Més endavant et proposaré
+algun altre de més sofisticat.
+
+.. note:: L'ús d'un editor més *guay* no t'ajudarà a aprendre a programar
+    ni més ràpid ni millor.
+
+    El meu consell: **no et compliquis**
+

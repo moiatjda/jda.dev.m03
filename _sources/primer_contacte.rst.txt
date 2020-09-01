@@ -1,0 +1,105 @@
+##################
+Un primer contacte
+##################
+
+Abans de començar a programar, deixa'm que et presenti un programa.
+
+A continuació et presento un mateix programa expressat en diferents
+"idiomes" (els desenvolupadors en diem *llenguatges* de programació
+[#pseudocodi]_)
+
+Versió pseudocodi
+=================
+
+.. code-block:: none
+    :linenos:
+
+    programa
+      const PI = 3,14159
+      var radi és real, àrea és real
+      escriu "Càlcul de l'àrea d'un cercle"
+      escriu "Introduïu el radi: "
+      llegeix radi
+      àrea = PI * radi^2
+      escriu "L'àrea és ", àrea
+    fi programa
+
+Versió C
+========
+
+.. code-block:: c
+    :linenos:
+
+    #include <stdio.h>
+    #define PI 3.14159
+
+    int main() {
+      float radi, area;
+      printf("Càlcul de l'àrea d'un cercle\n");
+      printf("Introduïu el radi: ");
+      scanf("%f", &radi);               /* conversió de String a float */
+      area = PI * radi * radi;
+      printf("L'àrea és %f\n", area);
+    }
+
+Versió Python
+=============
+
+.. code-block:: python
+    :linenos:
+
+    import math
+    print("Càlcul de l'àrea d'un cercle")
+    linia = input("Introduïu el radi: ")
+    radi = float(linia)   # conversió de String a float
+    area = math.pi * radi**2
+    print(f"L'àrea és {area}")
+
+
+Versió Java
+===========
+
+.. code-block:: java
+    :linenos:
+
+    import java.io.*;
+
+    public class CalculaRadi {
+      public static void main(String[] args) throws IOException {
+        System.out.println("Càlcul de l'àrea d'un cercle");
+        System.out.print("Introduïu el radi: ");
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String linia = reader.readLine();
+        float radi = Float.parseFloat(linia);  // conversió de String a float
+        float area =  (float)Math.PI * radi * radi;
+        System.out.println("L'àrea és " + area);
+      }
+    }
+
+Versió Kotlin
+=============
+
+.. code-block:: kotlin
+    :linenos:
+
+    import java.io.*
+    fun main() {
+        val reader = BufferedReader(InputStreamReader(System.`in`))
+        println("Càlcul de l'àrea d'un cercle")
+        print("Introduïu el radi: ")
+        val linia = reader.readLine()
+        val radi = linia.toFloat()      // conversió de String a float
+        val area = Math.PI.toFloat() * radi * radi
+        println("L'àrea és $area")
+    }
+
+Ara és un bon moment per fer un exercici.
+
+|exerciseicon___| :doc:`exercici_00_01_similaritats_i_diferencies`
+
+
+-----
+
+.. [#pseudocodi] El pseudocodi no és ben bé un llenguatge de programació,
+   però, no ens posarem massa primmirats tot just que comencem, oi?
+
