@@ -1,0 +1,27 @@
+#cookiesbox {
+    width:100%;
+    z-index:99999;
+    display:none;
+    position:fixed;
+    bottom:0px;
+    left:0px;
+    text-align:center;
+    background-color: #eae672;
+    padding: 10px 0px;
+    color: red;
+    border: 1px solid black;
+}
+
+div.admonition.exercise p.admonition-title {
+    background-color: lightblue;
+    color: darkblue;
+}
+div.admonition.exercise.optional p.admonition-title:before{
+    content: "☼";
+}
+div.admonition.exercise.stared p.admonition-title:before{
+    content: "☆";
+}
+div.admonition.exercise.blackstared p.admonition-title:before{
+    content: "★";
+}
