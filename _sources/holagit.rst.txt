@@ -164,27 +164,36 @@ Nota: no et preocupis pel missatge d'avís *warning: You appear to have
 cloned an empty repository*. Només t'està informant que el teu repositori
 està buit i això és quelcom que solucionarem de seguida.
 
-Descarrega els següents fitxers dins d'aquesta carpeta:
+El primer fitxer que cal afegir és una descripció de què contindrà el
+repositori. En els repositoris ``git`` és convenció que aquest fitxer es
+digui ``readme`` (*llegeix-me* en anglès). Fins i tot el ``GitHub`` farà
+un tractament especial d'aquest fitxer.
 
-* :download:`readme.rst <_recursos/gitrepo/readme.rst>`
-
-* :download:`.gitignore <_recursos/gitrepo/.gitignore>`
-
-* :download:`.introprg <_recursos/gitrepo/.introprg>`
-
-La manera més fàcil, probablement, és fer click al botó dret del teu
-ratolí sobre cada enllaç i seleccionar l'opció *anomena i deixa el
-contingut de l'enllaç*
-
-Si no li has dit res, és probable que t'hagi descarregat els fitxers dins
-la carpeta ``~/Baixades/``. En aquest cas, per moure els fitxers a la
-carpeta que ens interessa, pots fer quelcom similar a:
+Crea un fitxer anomenat ``readme.rst`` dins del teu repositori. Una manera
+fàcil de fer-ho seria:
 
 .. code-block:: console
 
-    $ mv -v ~/Baixades/.gitignore ~/introprg/
-    $ mv -v ~/Baixades/.introprg ~/introprg/
-    $ mv -v ~/Baixades/readme.rst ~/introprg/
+    $ gedit readme.rst
+
+La comanda anterior t'obrirà l'editor de text ``gedit`` on hi podràs
+escriure una descripció de què contindrà el teu repositori.
+
+Et proposo que escriguis quelcom similar a:
+
+.. code-block:: rst
+
+    ############################
+    Introducció a la Programació
+    ############################
+
+    Activitats del curs d'introducció a la programació per cicles de
+    desenvolupament al centre IES Joan d'Àustria
+
+Potser hi voldràs posar el teu nom i alguna cosa més relacionada amb tu.
+
+Un cop hagis acabat, guarda el fitxer (ex. prement el botó ``desa`` o bé
+la combinació de tecles ``ctrl-s``)
 
 Comprovem que ha anat tot bé:
 
@@ -198,24 +207,22 @@ Comprovem que ha anat tot bé:
     Untracked files:
       (use "git add <file>..." to include in what will be committed)
 
-        .gitignore
-        .introprg
         readme.rst
 
     nothing added to commit but untracked files present (use "git add" to track)
 
 
-Si és així, registrem els nous fitxers en el ``git``:
+Si és així, registrem el nou fitxer en el ``git``:
 
 .. code-block:: console
 
-    $ git add --all
+    $ git add readme.rst
     $ git commit -am "Primer commit"
     [master (root-commit) f1f6b7f] Primer commit
-     3 files changed, 15 insertions(+)
-     create mode 100644 .introprg
-     create mode 100644 .gitignore
+     1 file changed, 7 insertions(+)
      create mode 100644 readme.rst
+
+Ara ja has estrenat el teu repositori!
 
 
 Personalització de git
@@ -388,6 +395,10 @@ pull`` per que el fitxer quedi eliminat també allà.
 Com lliurar un exercici
 =======================
 
+Com a resum, aquestes són les passes bàsiques que has de fer cada sessió
+de treball:
+
+
 .. graphviz::
     :align: center
 
@@ -412,16 +423,18 @@ Com lliurar un exercici
 
 
 
-Com a resum, aquestes són les passes bàsiques que has de fer cada sessió
-de treball:
-
 #. En començar, recupera els canvis del repositori remot
 
    .. code-block:: console
 
         $ git pull origin master
 
-#. Un cop consideris que has finalitzat l'exercici, o bé vulguis guardar
+#. A continuació, edita un exercici.
+
+   Pot ser un d'incomplet amb el que estaves
+   treballant o bé un de nou.
+
+   Un cop consideris que has finalitzat l'exercici, o bé vulguis guardar
    el que has fet per finalitzar la sessió, cal que registris els canvis.
    Comprova quins fitxers has modificat amb:
 
@@ -470,6 +483,9 @@ de treball:
    * corregit error accent a l'exercici 01_20
 
    * millorat l'exercici 01_20. Ara la capçalera és més descriptiva.
+
+   Un cop enregistrat els canvis, pots tornar a editar un altre exercici,
+   o bé finalitzar sessió.
 
 #. Quan ja vols finalitzar la sessió de treball, cal que pugis els canvis
    al repositori remot.

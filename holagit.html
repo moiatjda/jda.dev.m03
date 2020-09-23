@@ -295,23 +295,29 @@ GitHub.</p>
 <p>Nota: no et preocupis pel missatge d’avís <em>warning: You appear to have
 cloned an empty repository</em>. Només t’està informant que el teu repositori
 està buit i això és quelcom que solucionarem de seguida.</p>
-<p>Descarrega els següents fitxers dins d’aquesta carpeta:</p>
-<ul class="simple">
-<li><p><a class="reference download internal" download="" href="_downloads/bb8621eb8e831deb29b66b4bd3565994/readme.rst"><code class="xref download docutils literal notranslate"><span class="pre">readme.rst</span></code></a></p></li>
-<li><p><a class="reference download internal" download="" href="_downloads/7b2d9d2aa770ff0547ea7c2d6932427e/.gitignore"><code class="xref download docutils literal notranslate"><span class="pre">.gitignore</span></code></a></p></li>
-<li><p><a class="reference download internal" download="" href="_downloads/e15662a5da58508457001a911257f049/.introprg"><code class="xref download docutils literal notranslate"><span class="pre">.introprg</span></code></a></p></li>
-</ul>
-<p>La manera més fàcil, probablement, és fer click al botó dret del teu
-ratolí sobre cada enllaç i seleccionar l’opció <em>anomena i deixa el
-contingut de l’enllaç</em></p>
-<p>Si no li has dit res, és probable que t’hagi descarregat els fitxers dins
-la carpeta <code class="docutils literal notranslate"><span class="pre">~/Baixades/</span></code>. En aquest cas, per moure els fitxers a la
-carpeta que ens interessa, pots fer quelcom similar a:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> mv -v ~/Baixades/.gitignore ~/introprg/
-<span class="gp">$</span> mv -v ~/Baixades/.introprg ~/introprg/
-<span class="gp">$</span> mv -v ~/Baixades/readme.rst ~/introprg/
+<p>El primer fitxer que cal afegir és una descripció de què contindrà el
+repositori. En els repositoris <code class="docutils literal notranslate"><span class="pre">git</span></code> és convenció que aquest fitxer es
+digui <code class="docutils literal notranslate"><span class="pre">readme</span></code> (<em>llegeix-me</em> en anglès). Fins i tot el <code class="docutils literal notranslate"><span class="pre">GitHub</span></code> farà
+un tractament especial d’aquest fitxer.</p>
+<p>Crea un fitxer anomenat <code class="docutils literal notranslate"><span class="pre">readme.rst</span></code> dins del teu repositori. Una manera
+fàcil de fer-ho seria:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> gedit readme.rst
 </pre></div>
 </div>
+<p>La comanda anterior t’obrirà l’editor de text <code class="docutils literal notranslate"><span class="pre">gedit</span></code> on hi podràs
+escriure una descripció de què contindrà el teu repositori.</p>
+<p>Et proposo que escriguis quelcom similar a:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">############################</span>
+<span class="gh">Introducció a la Programació</span>
+<span class="gh">############################</span>
+
+Activitats del curs d&#39;introducció a la programació per cicles de
+desenvolupament al centre IES Joan d&#39;Àustria
+</pre></div>
+</div>
+<p>Potser hi voldràs posar el teu nom i alguna cosa més relacionada amb tu.</p>
+<p>Un cop hagis acabat, guarda el fitxer (ex. prement el botó <code class="docutils literal notranslate"><span class="pre">desa</span></code> o bé
+la combinació de tecles <code class="docutils literal notranslate"><span class="pre">ctrl-s</span></code>)</p>
 <p>Comprovem que ha anat tot bé:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git status
 <span class="go">On branch master</span>
@@ -321,23 +327,20 @@ carpeta que ens interessa, pots fer quelcom similar a:</p>
 <span class="go">Untracked files:</span>
 <span class="go">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
 
-<span class="go">    .gitignore</span>
-<span class="go">    .introprg</span>
 <span class="go">    readme.rst</span>
 
 <span class="go">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span>
 </pre></div>
 </div>
-<p>Si és així, registrem els nous fitxers en el <code class="docutils literal notranslate"><span class="pre">git</span></code>:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git add --all
+<p>Si és així, registrem el nou fitxer en el <code class="docutils literal notranslate"><span class="pre">git</span></code>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git add readme.rst
 <span class="gp">$</span> git commit -am <span class="s2">&quot;Primer commit&quot;</span>
 <span class="go">[master (root-commit) f1f6b7f] Primer commit</span>
-<span class="go"> 3 files changed, 15 insertions(+)</span>
-<span class="go"> create mode 100644 .introprg</span>
-<span class="go"> create mode 100644 .gitignore</span>
+<span class="go"> 1 file changed, 7 insertions(+)</span>
 <span class="go"> create mode 100644 readme.rst</span>
 </pre></div>
 </div>
+<p>Ara ja has estrenat el teu repositori!</p>
 <div class="section" id="personalitzacio-de-git">
 <h3>Personalització de git<a class="headerlink" href="#personalitzacio-de-git" title="Link permanent a aquest títol">¶</a></h3>
 <p>Passem a personalitzar el teu repositori local:</p>
@@ -463,6 +466,8 @@ GitHub, on també quedarà eliminat.</p>
 </div>
 <div class="section" id="com-lliurar-un-exercici">
 <span id="instruccions-git"></span><h2>Com lliurar un exercici<a class="headerlink" href="#com-lliurar-un-exercici" title="Link permanent a aquest títol">¶</a></h2>
+<p>Com a resum, aquestes són les passes bàsiques que has de fer cada sessió
+de treball:</p>
 <div align="center" class="align-center"><div class="graphviz"><img src="_images/graphviz-cadc515563e121f655d6d13e08e711177b579d19.png" alt="digraph {
     inici [label=&quot;inici de sessió&quot;, shape=&quot;box&quot;];
     pull [label=&quot;git pull origin master&quot;, shape=&quot;box&quot;, style=rounded];
@@ -481,15 +486,16 @@ GitHub, on també quedarà eliminat.</p>
     push -&gt; final;
 }" class="graphviz" /></div>
 </div>
-<p>Com a resum, aquestes són les passes bàsiques que has de fer cada sessió
-de treball:</p>
 <ol class="arabic">
 <li><p>En començar, recupera els canvis del repositori remot</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git pull origin master
 </pre></div>
 </div>
 </li>
-<li><p>Un cop consideris que has finalitzat l’exercici, o bé vulguis guardar
+<li><p>A continuació, edita un exercici.</p>
+<p>Pot ser un d’incomplet amb el que estaves
+treballant o bé un de nou.</p>
+<p>Un cop consideris que has finalitzat l’exercici, o bé vulguis guardar
 el que has fet per finalitzar la sessió, cal que registris els canvis.
 Comprova quins fitxers has modificat amb:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git status
@@ -529,6 +535,8 @@ recuperar quelcom que has perdut.</p>
 <li><p>corregit error accent a l’exercici 01_20</p></li>
 <li><p>millorat l’exercici 01_20. Ara la capçalera és més descriptiva.</p></li>
 </ul>
+<p>Un cop enregistrat els canvis, pots tornar a editar un altre exercici,
+o bé finalitzar sessió.</p>
 </li>
 <li><p>Quan ja vols finalitzar la sessió de treball, cal que pugis els canvis
 al repositori remot.</p>
