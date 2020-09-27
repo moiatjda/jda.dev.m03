@@ -349,29 +349,6 @@ la combinació de tecles <code class="docutils literal notranslate"><span class=
 </pre></div>
 </div>
 </div>
-<div class="section" id="configuracio-de-l-entorn">
-<h3>Configuració de l’entorn<a class="headerlink" href="#configuracio-de-l-entorn" title="Link permanent a aquest títol">¶</a></h3>
-<p>Perquè el sistema trobi tota la informació necessària per poder provar els
-programes que faràs durant el curs, cal definir una sèrie d’elements
-anomenats <em>variables d’entorn</em>.</p>
-<p>Per què et resulti molt fàcil, t’he preparat el fitxer <code class="docutils literal notranslate"><span class="pre">.introprg</span></code> que
-ja has descarregat al teu repositori. Ara només has de <em>presentar</em> aquest
-fitxer en «societat». Per fer-ho, executa <strong>exactament</strong> la següent
-comanda des de consola:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> grep <span class="s1">&#39;source $HOME/introprg/.introprg&#39;</span> ~/.bashrc <span class="o">||</span> <span class="nb">echo</span> <span class="s1">&#39;source $HOME/introprg/.introprg&#39;</span> &gt;&gt; ~/.bashrc
-</pre></div>
-</div>
-<p>Si la comanda no genera cap sortida, és que tot ha anat bé i tindràs una
-nova instrucció al teu fitxer de configuració <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code>.</p>
-<p>Si et genera algun missatge, probablement sigui per què l’has executada
-més d’un cop. No et preocupis.</p>
-<p>Per veure que tot ha anat bé, escriu a la mateixa consola:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">source</span> ~/.bashrc
-</pre></div>
-</div>
-<p>En cas que es queixi, revisa que hagis fet totes les passes de <a class="reference internal" href="#espai-de-treball">Espai de
-treball</a></p>
-</div>
 <div class="section" id="pugem-els-primers-continguts-al-github">
 <h3>Pugem els primers continguts al GitHub<a class="headerlink" href="#pugem-els-primers-continguts-al-github" title="Link permanent a aquest títol">¶</a></h3>
 <p>Ara ja podem pujar aquests continguts a GitHub. Escriu:</p>
@@ -463,6 +440,41 @@ GitHub, on també quedarà eliminat.</p>
 <p>Si vols practicar una mica més, pots tornar a <code class="docutils literal notranslate"><span class="pre">/tmp/temporal/</span></code> i fer un <code class="docutils literal notranslate"><span class="pre">git</span>
 <span class="pre">pull</span></code> per que el fitxer quedi eliminat també allà.</p>
 <p><img alt="exerciseicon___" src="_images/exerciseicon___.png" /> <a class="reference internal" href="exercici_00_03_resum_comandes.html"><span class="doc"> Exercici 00_03. Resum de comandes</span></a></p>
+</div>
+<div class="section" id="configuracio-de-l-entorn">
+<h2>Configuració de l’entorn<a class="headerlink" href="#configuracio-de-l-entorn" title="Link permanent a aquest títol">¶</a></h2>
+<p>Perquè el sistema trobi tota la informació necessària per poder provar els
+programes que faràs durant el curs, cal definir una sèrie d’elements
+anomenats <em>variables d’entorn</em>.</p>
+<p>Per què et resulti molt fàcil, t’he preparat el fitxer <code class="docutils literal notranslate"><span class="pre">.introprg</span></code> que
+serà incorporat al teu repositori tan aviat com hagi registrat el teu
+repositori.</p>
+<p>El podràs recuperar amb la comanda <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span> <span class="pre">origin</span> <span class="pre">master</span></code>.
+Parla amb mi si veus que està tardant molt en arribar-te.</p>
+<p>Un cop tinguis <code class="docutils literal notranslate"><span class="pre">.introprg</span></code>, només et caldrà afegir-ho a un fitxer de
+configuració del sistema perquè sigui carregat cada cop obris un terminal.
+Per fer-ho, executa <strong>exactament</strong> la següent
+comanda des de consola:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> grep <span class="s1">&#39;source $HOME/introprg/.introprg&#39;</span> ~/.bashrc <span class="o">||</span> <span class="nb">echo</span> <span class="s1">&#39;source $HOME/introprg/.introprg&#39;</span> &gt;&gt; ~/.bashrc
+</pre></div>
+</div>
+<p>Si la comanda no genera cap sortida, és que tot ha anat bé i tindràs una
+nova instrucció al teu fitxer de configuració <code class="docutils literal notranslate"><span class="pre">~/.bashrc</span></code>.</p>
+<p>Si et genera algun missatge, probablement sigui per què l’has executada
+més d’un cop. No et preocupis.</p>
+<p>Per veure que tot ha anat bé, escriu a la mateixa consola:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">source</span> ~/.bashrc
+</pre></div>
+</div>
+<p>En cas que es queixi, revisa que hagis fet totes les passes de <a class="reference internal" href="#espai-de-treball">Espai de
+treball</a></p>
+<p>Al teu repositori hi trobaràs també un petit guió anomenat
+<code class="docutils literal notranslate"><span class="pre">comprovaprg.sh</span></code>. En executar-ho, et dirà si tot està preparat o bé tens
+algun problema en la teva configuració.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> bash comprovaprg.sh
+</pre></div>
+</div>
+<p>En cas que no tinguis clar com resoldre algun problema, avisa.</p>
 </div>
 <div class="section" id="com-lliurar-un-exercici">
 <span id="instruccions-git"></span><h2>Com lliurar un exercici<a class="headerlink" href="#com-lliurar-un-exercici" title="Link permanent a aquest títol">¶</a></h2>

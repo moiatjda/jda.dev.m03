@@ -235,37 +235,6 @@ Passem a personalitzar el teu repositori local:
     $ git config user.name "el teu nom"
     $ git config user.email "latevaadreça@iesjoandaustria.org"
 
-Configuració de l'entorn
-------------------------
-
-Perquè el sistema trobi tota la informació necessària per poder provar els
-programes que faràs durant el curs, cal definir una sèrie d'elements
-anomenats *variables d'entorn*.
-
-Per què et resulti molt fàcil, t'he preparat el fitxer ``.introprg`` que
-ja has descarregat al teu repositori. Ara només has de *presentar* aquest
-fitxer en "societat". Per fer-ho, executa **exactament** la següent
-comanda des de consola:
-
-.. code-block:: console
-
-    $ grep 'source $HOME/introprg/.introprg' ~/.bashrc || echo 'source $HOME/introprg/.introprg' >> ~/.bashrc
-
-Si la comanda no genera cap sortida, és que tot ha anat bé i tindràs una
-nova instrucció al teu fitxer de configuració ``~/.bashrc``.
-
-Si et genera algun missatge, probablement sigui per què l'has executada
-més d'un cop. No et preocupis.
-
-Per veure que tot ha anat bé, escriu a la mateixa consola:
-
-.. code-block:: console
-
-    $ source ~/.bashrc
-
-En cas que es queixi, revisa que hagis fet totes les passes de `Espai de
-treball`_
-
 Pugem els primers continguts al GitHub
 --------------------------------------
 
@@ -388,6 +357,54 @@ Si vols practicar una mica més, pots tornar a ``/tmp/temporal/`` i fer un ``git
 pull`` per que el fitxer quedi eliminat també allà.
 
 |exerciseicon___| :doc:`exercici_00_03_resum_comandes`
+
+Configuració de l'entorn
+========================
+
+Perquè el sistema trobi tota la informació necessària per poder provar els
+programes que faràs durant el curs, cal definir una sèrie d'elements
+anomenats *variables d'entorn*.
+
+Per què et resulti molt fàcil, t'he preparat el fitxer ``.introprg`` que
+serà incorporat al teu repositori tan aviat com hagi registrat el teu
+repositori. 
+
+El podràs recuperar amb la comanda ``git pull origin master``.
+Parla amb mi si veus que està tardant molt en arribar-te.
+
+Un cop tinguis ``.introprg``, només et caldrà afegir-ho a un fitxer de
+configuració del sistema perquè sigui carregat cada cop obris un terminal.
+Per fer-ho, executa **exactament** la següent
+comanda des de consola:
+
+.. code-block:: console
+
+    $ grep 'source $HOME/introprg/.introprg' ~/.bashrc || echo 'source $HOME/introprg/.introprg' >> ~/.bashrc
+
+Si la comanda no genera cap sortida, és que tot ha anat bé i tindràs una
+nova instrucció al teu fitxer de configuració ``~/.bashrc``.
+
+Si et genera algun missatge, probablement sigui per què l'has executada
+més d'un cop. No et preocupis.
+
+Per veure que tot ha anat bé, escriu a la mateixa consola:
+
+.. code-block:: console
+
+    $ source ~/.bashrc
+
+En cas que es queixi, revisa que hagis fet totes les passes de `Espai de
+treball`_
+
+Al teu repositori hi trobaràs també un petit guió anomenat
+``comprovaprg.sh``. En executar-ho, et dirà si tot està preparat o bé tens
+algun problema en la teva configuració.
+
+.. code-block:: console
+
+    $ bash comprovaprg.sh
+
+En cas que no tinguis clar com resoldre algun problema, avisa.
 
 
 .. _instruccions_git:
