@@ -1,0 +1,383 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ca" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Instruccions d’entrada/sortida &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Variables i tipus" href="variables.html" />
+    <link rel="prev" title="Declaracions i assignacions" href="declaracions_i_assignacions.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació amb Java
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-21
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="instruccions.html">Instruccions seqüencials</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="declaracions_i_assignacions.html">Declaracions i assignacions</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Instruccions d’entrada/sortida</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html">Variables i tipus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressions.html">Operadors i expressions</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació amb Java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="basics.html">Elements bàsics de la programació</a> &raquo;</li>
+        
+          <li><a href="instruccions.html">Instruccions seqüencials</a> &raquo;</li>
+        
+      <li>Instruccions d’entrada/sortida</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="instruccions-d-entrada-sortida">
+<h1>Instruccions d’entrada/sortida<a class="headerlink" href="#instruccions-d-entrada-sortida" title="Link permanent a aquest títol">¶</a></h1>
+<div class="figure align-center">
+<p class="plantuml">
+<img src="_images/plantuml-f1717daa21e22f03d5a9eed50630a5c184a8f65b.png" alt="&#64;startuml
+
+hide circle
+hide empty members
+skinparam monochrome true
+left to right direction
+
+class Instruccions
+class Seqüencials extends Instruccions
+class EntradaSortida extends Seqüencials
+
+&#64;enduml"/>
+</p>
+</div>
+<p>En una primera aproximació, les instruccions d’entrada recullen un valor
+des d’un dispositiu d’entrada (ex. teclat) i l’assignen a una variable.</p>
+<p>Per la seva banda, les instruccions de sortida dipositen el resultat d’una
+expressió a un dispositiu de sortida (ex. pantalla).</p>
+<p>Quan llencem un programa per ser executat, el sistema operatiu li obre
+automàticament tres canals (o fitxers) anomenats <em>entrada estàndard</em>,
+<em>sortida estàndard</em> i <em>sortida estàndard d’error</em>. A menys que es faci
+res especial, el fitxer d’entrada queda <em>connectat</em> al teclat, mentre
+que els dos canals de sortida queden <em>connectats</em> a la pantalla.</p>
+<img alt="_images/esquema_es.png" class="align-center" src="_images/esquema_es.png" />
+<p>De moment no en farem gaire cas de la sortida estàndard d’error.</p>
+<div class="section" id="sortida">
+<h2>Sortida<a class="headerlink" href="#sortida" title="Link permanent a aquest títol">¶</a></h2>
+<p>Ja hem vist en vàries ocasions com podem escriure un missatge des dels
+nostres programes en Java. Veiem uns quants exemples:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Amb print() mostra un missatge i &quot;</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;no salta de línia&quot;</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>   <span class="c1">// Això fa un salt de línia sense missatge</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Amb println() fa salt de línia&quot;</span><span class="p">);</span>
+<span class="kt">int</span> <span class="n">edat</span> <span class="o">=</span> <span class="mi">18</span><span class="p">;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Amb &quot;</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">edat</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; anys ja es pot conduir un cotxe.&quot;</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Repeteixo: amb &quot;</span> <span class="o">+</span> <span class="n">edat</span> <span class="o">+</span> <span class="s">&quot; anys ja es pot conduir un cotxe.&quot;</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El doble de &quot;</span> <span class="o">+</span> <span class="n">edat</span> <span class="o">+</span> <span class="s">&quot; és &quot;</span> <span class="o">+</span> <span class="p">(</span><span class="n">edat</span> <span class="o">*</span> <span class="mi">2</span><span class="p">));</span>
+</pre></div>
+</td></tr></table></div>
+<p>De moment farem amb aquestes possibilitats, més endavant aniran apareixent
+més.</p>
+<p>El que també és important és que ens fixem en el paper de les cometes
+dobles i el símbol <code class="docutils literal notranslate"><span class="pre">+</span></code>.</p>
+<p>Quan posem cometes dobles, el que hi ha dins les cometes es mostra tal
+qual, mentre que quan no posem les cometes (ex. línia 7) el que es mostra
+és el valor assignat a la variable (en el cas d”<code class="docutils literal notranslate"><span class="pre">edat</span></code> el valor <code class="docutils literal notranslate"><span class="pre">10</span></code>)</p>
+<p>Per altra banda quan, fora de les cometes, hi posem un <code class="docutils literal notranslate"><span class="pre">+</span></code> el que fa és
+<em>afegir</em> o <em>concatenar</em> trocets de missatge un darrera de l’altre.</p>
+<p><img alt="exerciseiconO__" src="_images/exerciseiconO__.png" /> <a class="reference internal" href="exercici_01_04_reduccio_de_prints.html"><span class="doc"> Exercici 01_04. Reduïm prints</span></a></p>
+</div>
+<div class="section" id="entrada">
+<h2>Entrada<a class="headerlink" href="#entrada" title="Link permanent a aquest títol">¶</a></h2>
+<p>Obtenir dades de l’entrada estàndard és molt típic quan comences a
+programar. Malauradament els dissenyadors de Java no ho van tenir present
+i han deixat que aquesta funcionalitat sigui una mica incòmoda.</p>
+<p>Per simplificar-nos la vida ara que tot just estem arrencant, t’he
+preparat una utilitat anomenada <code class="docutils literal notranslate"><span class="pre">Entrada.java</span></code> que farem servir per
+per la lectura de l’entrada estàndard dels nostres primers
+programes.</p>
+<p>Trobaràs aquest fitxer ja instal·lat al teu repositori. Si no és així,
+demana-m’ho.</p>
+<p>Fem un petit programa que demostri com es pot llegir:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">ComEtDius</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Com et dius?&quot;</span><span class="p">);</span>
+        <span class="n">String</span> <span class="n">nom</span> <span class="o">=</span> <span class="n">Entrada</span><span class="p">.</span><span class="na">readLine</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hola &quot;</span> <span class="o">+</span> <span class="n">nom</span> <span class="o">+</span> <span class="s">&quot;, quan de temps!&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Compila’l i executa’l:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> javac ComEtDius.java
+<span class="gp">$</span> java ComEtDius
+<span class="go">Com et dius?</span>
+<span class="go">Renat</span>
+<span class="go">Hola Renat, quan de temps!</span>
+</pre></div>
+</div>
+<div class="sidebar">
+<p class="sidebar-title">En cas d’error</p>
+<p>Si en compilar o executar el programa t’apareix algun error,
+comenta-m’ho, tot indicant el resultat que et generin les següents
+comandes:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">echo</span> <span class="nv">$CLASSPATH</span>
+<span class="gp">$</span> <span class="nb">echo</span> <span class="nv">$INTROPRGDIR</span>
+<span class="gp">$</span> ls -R <span class="nv">$INTROPRGDIR</span>/
+</pre></div>
+</div>
+</div>
+<p>El programa fa el següent:</p>
+<ul>
+<li><p>A la línia 3 el programa mostra el missatge que demana el nom</p></li>
+<li><p>La línia 4 declara la variable <code class="docutils literal notranslate"><span class="pre">nom</span></code> i li assigna el valor
+<code class="docutils literal notranslate"><span class="pre">Entrada.readLine()</span></code>. Aquest valor es correspondrà amb el que els
+usuaris ens responguin.</p>
+<p>No et preocupis de què voldrà dir <code class="docutils literal notranslate"><span class="pre">String</span></code>. Aviat el coneixerem. De
+moment, ja veus que es troba en el mateix lloc que en altres
+declaracions posàvem <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
+</li>
+<li><p>Ara que ja tenim el nom, podem saludar els nostres usuaris. Això és el
+que fa la línia 5.</p></li>
+</ul>
+<p><img alt="exerciseicon___" src="_images/exerciseicon___.png" /> <a class="reference internal" href="exercici_01_05_noms_i_cognoms.html"><span class="doc"> Exercici 01_05. Noms i cognoms</span></a></p>
+</div>
+<div class="section" id="llegint-diferents-tipus">
+<span id="continguts-llegint-diferents-tipus"></span><h2>Llegint diferents tipus<a class="headerlink" href="#llegint-diferents-tipus" title="Link permanent a aquest títol">¶</a></h2>
+<p>El tipus de dades que ens retorna <code class="docutils literal notranslate"><span class="pre">Entrada.readLine()</span></code> és <code class="docutils literal notranslate"><span class="pre">String</span></code>.
+Sovint ens interessarà que el tipus sigui un altre. Per això, ens caldrà
+convertir-ho al que ens interessi.</p>
+<p>Aquí tens la llista dels tipus que més farem servir inicialment. El primer
+ja el coneixem i l’últim és una mica diferent.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code>: <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">variable</span> <span class="pre">=</span> <span class="pre">Integer.parseInt(Entrada.readLine());</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">double</span></code>: <code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">variable</span> <span class="pre">=</span> <span class="pre">Double.parseDouble(Entrada.readLine());</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">char</span></code>: <code class="docutils literal notranslate"><span class="pre">char</span> <span class="pre">variable</span> <span class="pre">=</span> <span class="pre">Entrada.readLine().charAt(0);</span></code></p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="variables.html" class="btn btn-neutral float-right" title="Variables i tipus" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="declaracions_i_assignacions.html" class="btn btn-neutral float-left" title="Declaracions i assignacions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2021 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

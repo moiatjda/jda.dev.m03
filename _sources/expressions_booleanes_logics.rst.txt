@@ -1,0 +1,146 @@
+##########################################
+Expressions booleanes amb operadors lògics
+##########################################
+
+Les expressions booleanes les podem combinar entre sí, fent preguntes més
+complexes:
+
+* la clara i tu heu fet ja els 18 anys?
+
+* la clara és major d'edat o bé tu ets més jove que ella?
+
+Anem a pams. Comencem per la primera pregunta. Per poder-la representar
+necessitem una variable per l'edat de la Clara i una altra per la teva.
+Així, la podem reformular d'una manera més redundant: "l'edat de la Clara
+és més gran o igual a 18 anys i la teva edat és més gran o igual als 18
+anys?"
+
+Ara podem trencar la pregunta en dues preguntes:
+
+* l'edat de la Clara és més gran o igual a 18 anys?
+
+* la teva edat és més gran o igual a 18 anys?
+
+* no és cert que tu siguis més jove que la Clara
+
+Aquestes dues preguntes les podem expressar de la següent manera:
+
+* edatClara >= 18
+
+* edatTeva >= 18
+
+Com combinem aquestes dues expressions? Ens falta alguna manera
+d'expressar un **i** (conjunció) En Java, la conjunció es representa amb
+l'operador ``&&``. Així, l'expressió completa pel primer exemple serà:
+
+* edatClara >= 18 && edatTeva >= 18
+
+Java no ens permet fer compactacions com ara ``edatClara && edatTeva >=
+18``. La raó és bàsicament perquè els dos operands de ``&&`` han de ser
+booleans i tant ``edatClara`` com ``edatTeva`` són probablement numèrics.
+
+Intentem ara construir l'expressió per la segona pregunta "la clara és
+major d'edat o bé tu ets més jove que ella?".
+
+En primer lloc, podem trencar la pregunta en dues preguntes i ja les
+combinarem amb aquell **o** (disjunció):
+
+* la Clara és major d'edat
+
+* tu ets més jove que la Clara (sí, redundant)
+
+Per la primera ja tenim expressió coneguda de l'exemple anterior:
+
+* edatClara >= 18
+
+Per la segona, pot ser ens caldrà reformular-la una mica per fer-la més
+fàcil. Què et sembla "la teva edat és menor que l'edat de la Clara"?
+
+Aquesta nova versió de la pregunta la podem formular:
+
+* edatTeva < edatClara
+
+Ara ja tenim les dues subpreguntes. Si sabem que la disjunció s'expressa
+en Java amb l'operador ``||``, podem combinar les dues subexpressions de
+la següent manera:
+
+* edatClara >= 18 || edatTeva < edatClara
+
+Molt bé, però què passa amb el tercer exemple: "no és cert que tu siguis
+més jove que la Clara"?
+
+Aquesta afirmació la podem descomposar de la seqüent manera:
+
+* tu ets més jove que la Clara
+
+* no és cert l'anterior
+
+Per la primera part ja tenim expressió: ``edatTeva < edatClara``. Podríem,
+per exemple, crear una nova variable per guardar el resultat d'aquesta
+expressió:
+
+.. code-block:: java
+
+    boolean anterior = edatTeva < edatClara;
+
+Potser, un nom més adequat per aquesta variable seria:
+
+.. code-block:: java
+
+    boolean tuEtsMesJoveQueClara = edatTeva < edatClara;
+
+Ara només ens cal negar ``tuEtsMesJoveQueClara``. En Java neguem amb
+l'operador ``!``. Així, per dir que tu no ets més jove que la Clara,
+escriurem:
+
+* ! tuEtsMesJoveQueClara
+
+Aquesta expressió es llegiria, per exemple "el valor de
+``tuEtsMesJoveQueClara`` no és ``true``" o més naturalment "no
+és cert que tu siguis més jove que la Clara".
+
+A diferència dels operadors anteriors, aquest només té un operand. A
+aquest tipus d'operadors se'n diu *unaris*. Els valors numèrics en tenen
+també un operador unari similar, el ``-``. Per exemple, pensa en
+l'expressió:
+
+* - ( 2 + 3 ) → - (5) → -5
+
+També podríem estalviar-nos crear la variable ``tuEtsMesJoveQueClara`` i
+negar-ho directament
+
+* ! edatTeva < edatClara
+
+Una manera equivalent d'expressar-ho seria dir que "és fals que tu siguis
+més jove que la Clara" o bé:
+
+* edatTeva < edatClara == fals
+* fals == edatTeva < edatClara
+
+
+Encara més, això ho podríem simplificar fent servir l'operador ``>=``:
+
+* edatTeva >= edatClara
+
+No està malament, oi?
+
+De moment, doncs, tenim els operadors lògics ``&&``, ``|`` i ``!``.
+
+Cal tenir present que, a l'igual dels operadors aritmètics, els lògics
+tenen una precedència natural. Es poden establir paral·lelismes entre els
+lògics i els aritmètics:
+
+* 5 + 4 * -3 → 5 + ( 4 * -(3) )
+
+* cert o fals i no cert → cert o ( fals i no (cert) )
+
+És a dir, que el negador s'aplica a l'operador inmmeditat, com el ``-`` al
+número que el segueix; el producte i la conjunció van després i,
+finalment, la disjunció i la suma.
+
+En cas de dubtes, no et faci vergonya fer servir parèntesis encara que no
+calguin!
+
+|exerciseicon___| :doc:`exercici_01_10_expressions_amb_operadors_logics`
+
+|exerciseicon___| :doc:`exercici_01_11_precedencia_operadors`

@@ -1,0 +1,53 @@
+#####################
+Expressions booleanes
+#####################
+
+El tipus booleà el trobarem sovint en programació, per tant és important
+que el comencem a conèixer.
+
+Sabem que un booleà pot ser ``true`` o ``false``. Aquest tipus de valor
+apareix quan ens preguntem si quelcom és cert o fals. Per exemple, les
+següents són maneres diferents de preguntar sobre la majoria d'edat:
+
+* ets major d'edat?
+
+* la teva edat és més gran o igual a 18 anys?
+
+* tens més de 17 anys?
+
+* has fet ja els 18 anys?
+
+* tens com a mínim 18 anys?
+
+* la diferència en anys entre la data del teu naixement i avui és com a
+  mínim 18?
+
+Totes aquestes preguntes fan servir *operadors relacionals*:
+
+* ``==``: igual
+
+*  ``!=``: diferent
+
+*  ``>``: més gran que
+
+*  ``<``: més petit que
+
+*  ``>=``: més gran o igual que
+
+*  ``<=``: més petit o igual que
+
+Per exemple, podem representar les preguntes anteriors, suposant que
+disposem de la teva edat a la variable ``edat`` de la següent manera:
+
+* edat >= 18 → probablement ``true`` en el teu cas
+
+Els operadors ``==`` i ``!=`` poden rebre també operands booleans. Per
+exemple:
+
+* true == (5 > 4) → true == true → true
+
+* (5 > 4) != false → true != false → true
+
+
+|exerciseicon___| :doc:`exercici_01_09_operadors_relacionals`
+

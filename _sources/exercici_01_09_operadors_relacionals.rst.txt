@@ -1,0 +1,50 @@
+:orphan:
+
+###############################################################################
+|exerciseicon___| Exercici 01_09. Algunes expressions amb operadors relacionals
+###############################################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_09_operadors_relacionals/``
+
+* Continguts relacionats: :doc:`expressions_booleanes_relacionals`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+.. rubric:: Enunciat
+
+
+Escriu una expressió per cadascuna de les següents preguntes.
+
+Considera fer servir els operadors aritmètics i els relacionals vists als
+apunts.
+
+Pots inventar-te el nom de les variables que et calguin. Si creus que cal
+algun aclariment, fes servir comentaris.
+
+#. la teva edat és superior als 18 anys
+
+#. tens menys de 5 germans
+
+#. la suma de 2 més 5 és igual a 7
+
+#. la suma de 2 més 5 és diferent de 7
+
+#. l'any que ve seràs major d'edat
+
+#. l'any passat encara no eres menor d'edat
+
+#. tens com a molt 35 companys a classe
+
+#. tens tants companys a classe com anys
+
+#. el Renat té quatre potes
+
+#. estem a més de 28 graus
+
+Afegeix com a mínim 2 (dos) expressions addicionals inventades per tu. Cal que
+afegeixis tant la descripció "humana" com l'expressió que proposes. Si no
+tens gaires idees, modifica lleugerament les anteriors, però recorda que
+en programació la creativitat juga un paper importantíssim i es pot
+entrenar.

@@ -19,6 +19,5 @@ Els continguts d'aquest curs estan organitzats en els següents temes:
     :maxdepth: 1
 
     primeres_passes.rst
-
-.. basics.rst
+    basics.rst
 

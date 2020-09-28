@@ -1,0 +1,35 @@
+:orphan:
+
+#############################################################
+|exerciseicon___| Exercici 01_13. Simplificació d'expressions
+#############################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_13_simplificacions_expressions/``
+
+* Continguts relacionats: :doc:`taules_veritat`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+.. rubric:: Enunciat
+
+
+Fent servir taules de veritat, comprova que les següents expressions són
+equivalents:
+
+#. ``true && A``, ``A``
+
+#. ``A && A``, ``A``
+
+#. ``A || false``, ``A``
+
+#. ``A || A``, ``A``
+
+#. ``A && false``, ``false``
+
+#. ``A || true``, ``true``
+
+#. ``! (A && B)``, ``!A || !B``
+
+#. ``! (A || B)``, ``!A && !B``

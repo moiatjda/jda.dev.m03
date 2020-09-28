@@ -1,0 +1,759 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ca" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Taules de veritat &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="prev" title="Expressions booleanes amb operadors lògics" href="expressions_booleanes_logics.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació amb Java
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-21
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="instruccions.html">Instruccions seqüencials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html">Variables i tipus</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="expressions.html">Operadors i expressions</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="expressions_numeriques.html">Expressions numèriques</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions_booleanes_relacionals.html">Expressions booleanes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions_booleanes_logics.html">Expressions booleanes amb operadors lògics</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Taules de veritat</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació amb Java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="basics.html">Elements bàsics de la programació</a> &raquo;</li>
+        
+          <li><a href="expressions.html">Operadors i expressions</a> &raquo;</li>
+        
+      <li>Taules de veritat</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="taules-de-veritat">
+<h1>Taules de veritat<a class="headerlink" href="#taules-de-veritat" title="Link permanent a aquest títol">¶</a></h1>
+<p>Els operadors lògics es comporten d’una manera determinada. Per exemple,
+per que resulti certa l’expressió «la Clara és major d’edat i tu ets major
+d’edat», cal que tant la Clara com tu sigueu majors d’edat.</p>
+<p>Abans hem vist que les expressions compostes amb operadors lògics, les
+podem <em>descomposar</em> en subexpressions. En aquest cas:</p>
+<ul class="simple">
+<li><p>la Clara és major d’edat</p></li>
+<li><p>tu ets major d’edat</p></li>
+</ul>
+<p>Tal i com varem fer amb la negació, crearem una variable per cada
+subexpressió. En aquesta ocasió els noms que farem servir per cada
+variable seran <code class="docutils literal notranslate"><span class="pre">A</span></code> i <code class="docutils literal notranslate"><span class="pre">B</span></code>. Així, si diem <code class="docutils literal notranslate"><span class="pre">A</span></code> estarem dient «la Clara
+és major d’edat». Això, en forma de programa seria:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">boolean</span> <span class="n">A</span> <span class="o">=</span> <span class="n">edatClara</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Potser et queixaràs amb que els noms de les variables no han de començar
+amb majúscules. Tindràs raó! En un programa no l’anomenarem en majúscules,
+però ara ens va bé perquè és més visible una <code class="docutils literal notranslate"><span class="pre">A</span></code> que una <code class="docutils literal notranslate"><span class="pre">a</span></code> amb el
+que et mostraré a continuació.</p>
+<p>Així, l’afirmació anterior es podria dir «A i B» o expressada en Java:</p>
+<ul class="simple">
+<li><p>A &amp;&amp; B</p></li>
+</ul>
+<p>Considerem ara l’afirmació «la temperatura d’avui és de 28 graus i la
+humitat del 78%». Ja sabem que podríem expressar-ho per exemple com:</p>
+<ul class="simple">
+<li><p>temperatura == 28 &amp;&amp; humitat == 78</p></li>
+</ul>
+<p>Si a la subexpressió de la temperatura li diem <code class="docutils literal notranslate"><span class="pre">A</span></code> i la de la humitat
+<code class="docutils literal notranslate"><span class="pre">B</span></code>, ens trobem que podem expressar l’afirmació novament com <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">i</span> <span class="pre">B</span></code>,
+tal i com amb l’expressió de les edats.</p>
+<p>Aquesta manera tan abstracta ens permetrà parlar de totes les expressions
+que continguin una conjunció de dues subexpressions lògiques. De <strong>totes</strong>!</p>
+<p>Donat que «la Clara és major d’edat» pot ser cert o fals, i «la
+temperatura és de 28 graus» també pot ser cert o fals, <code class="docutils literal notranslate"><span class="pre">A</span></code> pot ser cert
+o fals. El mateix passa amb <code class="docutils literal notranslate"><span class="pre">B</span></code> o les subexpressions associades («tu ets
+major d’edat», «la humitat és del 78%»)</p>
+<p>Això ens porta a tenir les següents combinacions:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 31%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>nr.</p></th>
+<th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>A i B</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>cert</p></td>
+<td><p>cert</p></td>
+<td><p>cert</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>cert</p></td>
+<td><p>fals</p></td>
+<td><p>fals</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>fals</p></td>
+<td><p>cert</p></td>
+<td><p>fals</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>fals</p></td>
+<td><p>fals</p></td>
+<td><p>fals</p></td>
+</tr>
+</tbody>
+</table>
+<p>Per exemple, la primera combinació diu «quan <code class="docutils literal notranslate"><span class="pre">A</span></code> és cert i <code class="docutils literal notranslate"><span class="pre">B</span></code> és
+cert, <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">i</span> <span class="pre">B</span></code> és cert». La segona combinació indica «quan <code class="docutils literal notranslate"><span class="pre">A</span></code> és cert
+però <code class="docutils literal notranslate"><span class="pre">B</span></code> és fals, llavors <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">i</span> <span class="pre">B</span></code> és fals.
+També ho podem llegir com «per què <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">i</span> <span class="pre">B</span></code> sigui cert, és necessari que
+tant <code class="docutils literal notranslate"><span class="pre">A</span></code> com <code class="docutils literal notranslate"><span class="pre">B</span></code> siguin certs; o també «només que un dels dos (<code class="docutils literal notranslate"><span class="pre">A</span></code> o
+<code class="docutils literal notranslate"><span class="pre">B</span></code>) sigui fals, <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">i</span> <span class="pre">B</span></code> serà fals.</p>
+<p>La taula anterior es diu <em>taula de veritat</em>.</p>
+<p>Permet expressar totes les combinacions dels valors de les diferents
+variables perquè cada variable només té dos valors possibles. T’imagines
+haver de posar tots els valors de variables enteres en una taula?</p>
+<p>Tot i que les combinacions es poden expressar en qualsevol ordre, per la
+teva salut mental et recomano que facis servir el següent:</p>
+<ul class="simple">
+<li><p>la columna de la B ves alternant els valors de cert a fals</p></li>
+<li><p>la columna de la A repeteix els valors dos cops seguits, també començant
+per cert.</p></li>
+</ul>
+<p>La taula anterior també s’hagués pogut expressar com:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 4%" />
+<col style="width: 31%" />
+<col style="width: 25%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>nr.</p></th>
+<th class="head"><p>la Clara és major d’edat</p></th>
+<th class="head"><p>tu ets major d’edat</p></th>
+<th class="head"><p>la Clara i tu sou majors d’edat</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>cert</p></td>
+<td><p>cert</p></td>
+<td><p>cert</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>cert</p></td>
+<td><p>fals</p></td>
+<td><p>fals</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>fals</p></td>
+<td><p>cert</p></td>
+<td><p>fals</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>fals</p></td>
+<td><p>fals</p></td>
+<td><p>fals</p></td>
+</tr>
+</tbody>
+</table>
+<p>També, és clar,</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 3%" />
+<col style="width: 28%" />
+<col style="width: 20%" />
+<col style="width: 49%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>nr.</p></th>
+<th class="head"><p>la temperatura és de 28 graus</p></th>
+<th class="head"><p>la humitat és del 78%</p></th>
+<th class="head"><p>la temperatura és de 28 graus i la humitat del 78%</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>cert</p></td>
+<td><p>cert</p></td>
+<td><p>cert</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>cert</p></td>
+<td><p>fals</p></td>
+<td><p>fals</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>fals</p></td>
+<td><p>cert</p></td>
+<td><p>fals</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>fals</p></td>
+<td><p>fals</p></td>
+<td><p>fals</p></td>
+</tr>
+</tbody>
+</table>
+<p>No em negaràs que és més fàcil de llegir amb <code class="docutils literal notranslate"><span class="pre">A</span></code> i <code class="docutils literal notranslate"><span class="pre">B</span></code>, oi?</p>
+<p>En cas que un dels dos operands sigui una constant, per exemple <code class="docutils literal notranslate"><span class="pre">true</span></code>,
+la taula es pot simplificar:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 21%" />
+<col style="width: 21%" />
+<col style="width: 42%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>nr.</p></th>
+<th class="head"><p>A</p></th>
+<th class="head"><p>cert</p></th>
+<th class="head"><p>A i cert</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>cert</p></td>
+<td><p>cert</p></td>
+<td><p>cert</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>cert</p></td>
+<td><p>cert</p></td>
+<td><p>cert</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>fals</p></td>
+<td><p>cert</p></td>
+<td><p>fals</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>fals</p></td>
+<td><p>cert</p></td>
+<td><p>fals</p></td>
+</tr>
+</tbody>
+</table>
+<p>Fixa’t que la darrera columna té exactament els mateixos valors que la de
+la <code class="docutils literal notranslate"><span class="pre">A</span></code>. Quan dues columnes tenen els mateixos valors i en el mateix
+ordre, les podem considerar equivalents. Així, <code class="docutils literal notranslate"><span class="pre">A</span></code> és equivalent a <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">i</span>
+<span class="pre">cert</span></code> i, per tant, sempre que trobem qualsevol subexpressió i cert,
+podem simplificar-la deixant només la primera subexpressió.</p>
+<p>La taula de veritat dels operadors lògics que hem vist fins ara (més un de
+regal que comentarem de seguida) és</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 16%" />
+<col style="width: 14%" />
+<col style="width: 11%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>nr.</p></th>
+<th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>A i B</p></th>
+<th class="head"><p>A o B</p></th>
+<th class="head"><p>no A</p></th>
+<th class="head"><p>A o-exclusiva B</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>cert</p></td>
+<td><p>cert</p></td>
+<td><p>cert</p></td>
+<td><p>cert</p></td>
+<td><p>fals</p></td>
+<td><p>fals</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>cert</p></td>
+<td><p>fals</p></td>
+<td><p>fals</p></td>
+<td><p>cert</p></td>
+<td><p>fals</p></td>
+<td><p>cert</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>fals</p></td>
+<td><p>cert</p></td>
+<td><p>fals</p></td>
+<td><p>cert</p></td>
+<td><p>cert</p></td>
+<td><p>cert</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>fals</p></td>
+<td><p>fals</p></td>
+<td><p>fals</p></td>
+<td><p>fals</p></td>
+<td><p>cert</p></td>
+<td><p>fals</p></td>
+</tr>
+</tbody>
+</table>
+<p>En Java l’expressarem amb:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 18%" />
+<col style="width: 16%" />
+<col style="width: 13%" />
+<col style="width: 18%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>nr.</p></th>
+<th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>A &amp;&amp; B</p></th>
+<th class="head"><p>A || B</p></th>
+<th class="head"><p>! A</p></th>
+<th class="head"><p>A ^ B</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>true</p></td>
+<td><p>true</p></td>
+<td><p>true</p></td>
+<td><p>true</p></td>
+<td><p>false</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>true</p></td>
+<td><p>false</p></td>
+<td><p>false</p></td>
+<td><p>true</p></td>
+<td><p>false</p></td>
+<td><p>true</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>false</p></td>
+<td><p>true</p></td>
+<td><p>false</p></td>
+<td><p>true</p></td>
+<td><p>true</p></td>
+<td><p>true</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>false</p></td>
+<td><p>false</p></td>
+<td><p>false</p></td>
+<td><p>false</p></td>
+<td><p>true</p></td>
+<td><p>false</p></td>
+</tr>
+</tbody>
+</table>
+<p>Aviat ens aprendrem de memòria aquestes taules sense adonar-nos.</p>
+<p>El nou operador anomenat <em>o exclusiva</em> ens ajudarà a entendre la potència
+d’aquestes taules. Aquest operador (sovint anomenat <em>xor</em> pronunciat
+<em>ix-or</em>) es pot llegir com «<code class="docutils literal notranslate"><span class="pre">A</span></code> o <code class="docutils literal notranslate"><span class="pre">B</span></code> però no <code class="docutils literal notranslate"><span class="pre">A</span></code> i <code class="docutils literal notranslate"><span class="pre">B</span></code>», Això vol
+dir que també el podem expressar com una expressió complexa:</p>
+<ul class="simple">
+<li><p>(A o B) i no (A i B)</p></li>
+</ul>
+<p>Fixa’t que cal afegir els parèntesis perquè de manera natural, el Java els
+agruparia així:</p>
+<ul class="simple">
+<li><p>(A o (B i (no A))) o B</p></li>
+</ul>
+<p>Ara ve la gràcia de donar-li noms a les subexpressions:</p>
+<ul class="simple">
+<li><p>direm <code class="docutils literal notranslate"><span class="pre">D</span></code> a la subexpressió <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">o</span> <span class="pre">B</span></code></p></li>
+<li><p>direm <code class="docutils literal notranslate"><span class="pre">E</span></code> a l’expressió <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">i</span> <span class="pre">B</span></code></p></li>
+<li><p>direm <code class="docutils literal notranslate"><span class="pre">F</span></code> a l’expressió <code class="docutils literal notranslate"><span class="pre">no</span> <span class="pre">(A</span> <span class="pre">i</span> <span class="pre">B)</span></code> ara també <code class="docutils literal notranslate"><span class="pre">no</span> <span class="pre">E</span></code></p></li>
+</ul>
+<p>Així, tenim la següent taula de veritat:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 18%" />
+<col style="width: 16%" />
+<col style="width: 13%" />
+<col style="width: 18%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>nr.</p></th>
+<th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>A &amp;&amp; B</p>
+<p>E</p>
+</th>
+<th class="head"><p>A || B</p>
+<p>D</p>
+</th>
+<th class="head"><p>! E</p>
+<p>F</p>
+</th>
+<th class="head"><p>D &amp;&amp; F</p>
+<p>A ^ B</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>true</p></td>
+<td><p>true</p></td>
+<td><p>true</p></td>
+<td><p>true</p></td>
+<td><p>false</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>true</p></td>
+<td><p>false</p></td>
+<td><p>false</p></td>
+<td><p>true</p></td>
+<td><p>true</p></td>
+<td><p>true</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>false</p></td>
+<td><p>true</p></td>
+<td><p>false</p></td>
+<td><p>true</p></td>
+<td><p>true</p></td>
+<td><p>true</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>false</p></td>
+<td><p>false</p></td>
+<td><p>false</p></td>
+<td><p>false</p></td>
+<td><p>true</p></td>
+<td><p>false</p></td>
+</tr>
+</tbody>
+</table>
+<p>Donat que la darrera columna és equivalent a la que havíem vist de <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">^</span>
+<span class="pre">B</span></code>, aquesta taula serviria de demostració que «<code class="docutils literal notranslate"><span class="pre">A</span></code> <em>o-exclusiva</em> <code class="docutils literal notranslate"><span class="pre">B</span></code>
+equival a <code class="docutils literal notranslate"><span class="pre">A</span></code> o <code class="docutils literal notranslate"><span class="pre">B</span></code> però no <code class="docutils literal notranslate"><span class="pre">A</span></code> i <code class="docutils literal notranslate"><span class="pre">B</span></code>.</p>
+<p>L’operador <em>o-exclusiva</em> no el farem servir gaire en aquest curs, però ens
+ha servit prou com a exemple per combinar subexpressions en una taula de
+veritat.</p>
+<p>Fins ara hem vist taules amb només dues variables, però en podem posar
+tantes com ens calguin. Únicament cal tenir en compte que la taula es farà
+més gran. Per exemple, l’afirmació «Tant la Clara, com el Marc com tu, sou
+majors d’edat» es podria representar com</p>
+<ul class="simple">
+<li><p>edatClara &gt;= 18 &amp;&amp; edatMarc &gt;= 18 &amp;&amp; edatTeva &gt;= 18</p></li>
+<li><p>A &amp;&amp; B &amp;&amp; C → (A &amp;&amp; B) &amp;&amp; C → D &amp;&amp; C</p></li>
+</ul>
+<p>La taula corresponent tindria el següent aspecte:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 8%" />
+<col style="width: 19%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 16%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>nr.</p></th>
+<th class="head"><p>A</p></th>
+<th class="head"><p>B</p></th>
+<th class="head"><p>C</p></th>
+<th class="head"><p>A &amp;&amp; B</p>
+<p>D</p>
+</th>
+<th class="head"><p>D &amp;&amp; C</p>
+<p>A &amp;&amp; B &amp;&amp; C</p>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>true</p></td>
+<td><p>true</p></td>
+<td><p>true</p></td>
+<td><p>true</p></td>
+<td><p>true</p></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p>true</p></td>
+<td><p>true</p></td>
+<td><p>false</p></td>
+<td><p>true</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>true</p></td>
+<td><p>false</p></td>
+<td><p>true</p></td>
+<td><p>false</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p>true</p></td>
+<td><p>false</p></td>
+<td><p>false</p></td>
+<td><p>false</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p>false</p></td>
+<td><p>true</p></td>
+<td><p>true</p></td>
+<td><p>false</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p>false</p></td>
+<td><p>true</p></td>
+<td><p>false</p></td>
+<td><p>false</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>false</p></td>
+<td><p>false</p></td>
+<td><p>true</p></td>
+<td><p>false</p></td>
+<td><p>false</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>false</p></td>
+<td><p>false</p></td>
+<td><p>false</p></td>
+<td><p>false</p></td>
+<td><p>false</p></td>
+</tr>
+</tbody>
+</table>
+<p>Fixa’t que, com que hi ha tres variables, la columna C alterna valors per
+cada fila, la B alterna cada dues files i la A cada 4 (2²→4). Si n’hi
+haguessin 4 variables, la A alternaria cada 8 (2³→8). En general, el
+nombre de files amb el mateix valor el podrem calcular a partir de 2
+elevat al nombre de variables que venen a continuació. No et preocupis
+doncs en aquest curs no passarem de 4 variables.</p>
+<p><img alt="exerciseicon___" src="_images/exerciseicon___.png" /> <a class="reference internal" href="exercici_01_12_taules_veritat.html"><span class="doc"> Exercici 01_12. Algunes taules</span></a></p>
+<p><img alt="exerciseicon___" src="_images/exerciseicon___.png" /> <a class="reference internal" href="exercici_01_13_simplificacions_expressions.html"><span class="doc"> Exercici 01_13. Simplificació d’expressions</span></a></p>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="expressions_booleanes_logics.html" class="btn btn-neutral float-left" title="Expressions booleanes amb operadors lògics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2021 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

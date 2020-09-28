@@ -1,0 +1,57 @@
+######################
+Expressions numèriques
+######################
+
+Direm que una expressió és numèrica si el seu resultat és numèric.
+
+Hem vist que podem composar expressions numèriques fent servir nombres
+combinats amb els operadors ``+``, ``-``, ``*`` i ``/`` per sumar, restar,
+multiplicar i dividir, respectivament.
+
+També hem vist la funció ``Math.abs()`` que ens permet treure el signe
+d'un valor numèric.
+
+Quan dividim, cal tenir en compte que ``/`` en Java manté el tipus. Per
+exemple, si els dos operands són enters, el resultat serà enter, mentre
+que si un és decimal, el resultat serà decimal
+
+* 1 / 2 → 0
+
+* 1.0 / 2 → 0.5
+
+* 1 / 2.0 → 0.5
+
+* 1 / 2d → 0.5
+
+Fixa't com, en el primer cas, el resultat és 0, mentre que en els altres
+tres és 0.5. En el moment que un dels operadors és decimal, el resultat
+serà decimal. Ah! la ``d`` que apareix al darrer exemple és de ``double``
+i permet indicar a Java que el literal s'ha de considerar d'aquest tipus.
+s
+
+Saps, però, quin és el valor de l'expressió ``5 / 0``? Potser has pensat que
+infinit, però com que infinit és un número molt gran per Java, et
+respondrà de la següent manera:
+
+.. code-block:: console
+
+    jshell> 5/ 0
+    |  Exception java.lang.ArithmeticException: / by zero
+    |        at (#9:1)
+
+
+Es a dir, et generarà un error en intentar executar-ho de divisió per
+zero.
+
+A banda, és interessant conèixer l'operador ``%`` que correspon al mòdul o
+resta de la divisió entera.
+
+* 11 % 2 → 1
+
+* 12 % 2 → 0
+
+En aquest cas, calcular mòdul 2 ens permet saber si un nombre és parell o
+senar doncs els parells sempre resultaran amb resta 0 i els senars amb 1.
+
+|exerciseicon___| :doc:`exercici_01_08_calculadora_basica`
+

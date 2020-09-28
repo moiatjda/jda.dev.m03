@@ -1,0 +1,229 @@
+#################
+Taules de veritat
+#################
+
+Els operadors lògics es comporten d'una manera determinada. Per exemple,
+per que resulti certa l'expressió "la Clara és major d'edat i tu ets major
+d'edat", cal que tant la Clara com tu sigueu majors d'edat.
+
+Abans hem vist que les expressions compostes amb operadors lògics, les
+podem *descomposar* en subexpressions. En aquest cas:
+
+* la Clara és major d'edat
+
+* tu ets major d'edat
+
+Tal i com varem fer amb la negació, crearem una variable per cada
+subexpressió. En aquesta ocasió els noms que farem servir per cada
+variable seran ``A`` i ``B``. Així, si diem ``A`` estarem dient "la Clara
+és major d'edat". Això, en forma de programa seria:
+
+.. code-block:: java
+
+    boolean A = edatClara >= 18;
+
+Potser et queixaràs amb que els noms de les variables no han de començar
+amb majúscules. Tindràs raó! En un programa no l'anomenarem en majúscules,
+però ara ens va bé perquè és més visible una ``A`` que una ``a`` amb el
+que et mostraré a continuació.
+
+Així, l'afirmació anterior es podria dir "A i B" o expressada en Java:
+
+* A && B
+
+Considerem ara l'afirmació "la temperatura d'avui és de 28 graus i la
+humitat del 78%". Ja sabem que podríem expressar-ho per exemple com:
+
+* temperatura == 28 && humitat == 78
+
+Si a la subexpressió de la temperatura li diem ``A`` i la de la humitat
+``B``, ens trobem que podem expressar l'afirmació novament com ``A i B``,
+tal i com amb l'expressió de les edats.
+
+Aquesta manera tan abstracta ens permetrà parlar de totes les expressions
+que continguin una conjunció de dues subexpressions lògiques. De **totes**!
+
+Donat que "la Clara és major d'edat" pot ser cert o fals, i "la
+temperatura és de 28 graus" també pot ser cert o fals, ``A`` pot ser cert
+o fals. El mateix passa amb ``B`` o les subexpressions associades ("tu ets
+major d'edat", "la humitat és del 78%")
+
+Això ens porta a tenir les següents combinacions:
+
+===   ====    ====     =====
+nr.   A       B        A i B
+===   ====    ====     =====
+1     cert    cert     cert
+2     cert    fals     fals
+3     fals    cert     fals
+4     fals    fals     fals
+===   ====    ====     =====
+
+Per exemple, la primera combinació diu "quan ``A`` és cert i ``B`` és
+cert, ``A i B`` és cert". La segona combinació indica "quan ``A`` és cert
+però ``B`` és fals, llavors ``A i B`` és fals.
+També ho podem llegir com "per què ``A i B`` sigui cert, és necessari que
+tant ``A`` com ``B`` siguin certs; o també "només que un dels dos (``A`` o
+``B``) sigui fals, ``A i B`` serà fals.
+
+La taula anterior es diu *taula de veritat*.
+
+Permet expressar totes les combinacions dels valors de les diferents
+variables perquè cada variable només té dos valors possibles. T'imagines
+haver de posar tots els valors de variables enteres en una taula?
+
+Tot i que les combinacions es poden expressar en qualsevol ordre, per la
+teva salut mental et recomano que facis servir el següent:
+
+* la columna de la B ves alternant els valors de cert a fals
+
+* la columna de la A repeteix els valors dos cops seguits, també començant
+  per cert.
+
+La taula anterior també s'hagués pogut expressar com:
+
+
+===   ========================    ===================    ===============================
+nr.   la Clara és major d'edat    tu ets major d'edat    la Clara i tu sou majors d'edat
+===   ========================    ===================    ===============================
+1     cert                        cert                   cert
+2     cert                        fals                   fals
+3     fals                        cert                   fals
+4     fals                        fals                   fals
+===   ========================    ===================    ===============================
+
+També, és clar,
+
+===   =============================    =====================  ==================================================
+nr.   la temperatura és de 28 graus    la humitat és del 78%  la temperatura és de 28 graus i la humitat del 78%
+===   =============================    =====================  ==================================================
+1     cert                             cert                   cert
+2     cert                             fals                   fals
+3     fals                             cert                   fals
+4     fals                             fals                   fals
+===   =============================    =====================  ==================================================
+
+No em negaràs que és més fàcil de llegir amb ``A`` i ``B``, oi?
+
+En cas que un dels dos operands sigui una constant, per exemple ``true``,
+la taula es pot simplificar:
+
+===   ====    ====     ========
+nr.   A       cert     A i cert
+===   ====    ====     ========
+1     cert    cert     cert
+2     cert    cert     cert
+3     fals    cert     fals
+4     fals    cert     fals
+===   ====    ====     ========
+
+Fixa't que la darrera columna té exactament els mateixos valors que la de
+la ``A``. Quan dues columnes tenen els mateixos valors i en el mateix
+ordre, les podem considerar equivalents. Així, ``A`` és equivalent a ``A i
+cert`` i, per tant, sempre que trobem qualsevol subexpressió i cert,
+podem simplificar-la deixant només la primera subexpressió.
+
+
+La taula de veritat dels operadors lògics que hem vist fins ara (més un de
+regal que comentarem de seguida) és
+
+===   ====  ====  =======  ======  =====  ===============
+nr.   A     B     A i B    A o B   no A   A o-exclusiva B
+===   ====  ====  =======  ======  =====  ===============
+1     cert  cert  cert     cert     fals  fals
+2     cert  fals  fals     cert     fals  cert
+3     fals  cert  fals     cert     cert  cert
+4     fals  fals  fals     fals     cert  fals
+===   ====  ====  =======  ======  =====  ===============
+
+En Java l'expressarem amb:
+
+===   =====   =====   =======  ======  =====  =======
+nr.   A       B       A && B   A || B  ! A    A ^ B
+===   =====   =====   =======  ======  =====  =======
+1     true    true    true     true    false  false
+2     true    false   false    true    false  true
+3     false   true    false    true    true   true
+4     false   false   false    false   true   false
+===   =====   =====   =======  ======  =====  =======
+
+Aviat ens aprendrem de memòria aquestes taules sense adonar-nos.
+
+El nou operador anomenat *o exclusiva* ens ajudarà a entendre la potència
+d'aquestes taules. Aquest operador (sovint anomenat *xor* pronunciat
+*ix-or*) es pot llegir com "``A`` o ``B`` però no ``A`` i ``B``", Això vol
+dir que també el podem expressar com una expressió complexa:
+
+* (A o B) i no (A i B)
+
+Fixa't que cal afegir els parèntesis perquè de manera natural, el Java els
+agruparia així:
+
+* (A o (B i (no A))) o B
+
+Ara ve la gràcia de donar-li noms a les subexpressions:
+
+* direm ``D`` a la subexpressió ``A o B``
+
+* direm ``E`` a l'expressió ``A i B``
+
+* direm ``F`` a l'expressió ``no (A i B)`` ara també ``no E``
+
+Així, tenim la següent taula de veritat:
+
+===   =====   =====   =======  ======  =====  =======
+nr.   A       B       A && B   A || B  ! E    D && F
+
+                      E        D       F      A ^ B
+===   =====   =====   =======  ======  =====  =======
+1     true    true    true     true    false  false
+2     true    false   false    true    true   true
+3     false   true    false    true    true   true
+4     false   false   false    false   true   false
+===   =====   =====   =======  ======  =====  =======
+
+Donat que la darrera columna és equivalent a la que havíem vist de ``A ^
+B``, aquesta taula serviria de demostració que "``A`` *o-exclusiva* ``B``
+equival a ``A`` o ``B`` però no ``A`` i ``B``.
+
+L'operador *o-exclusiva* no el farem servir gaire en aquest curs, però ens
+ha servit prou com a exemple per combinar subexpressions en una taula de
+veritat.
+
+Fins ara hem vist taules amb només dues variables, però en podem posar
+tantes com ens calguin. Únicament cal tenir en compte que la taula es farà
+més gran. Per exemple, l'afirmació "Tant la Clara, com el Marc com tu, sou
+majors d'edat" es podria representar com
+
+* edatClara >= 18 && edatMarc >= 18 && edatTeva >= 18
+
+* A && B && C → (A && B) && C → D && C
+
+La taula corresponent tindria el següent aspecte:
+
+===   =======  =====   =====   ======  ===========
+nr.   A        B       C       A && B  D && C
+
+                               D       A && B && C
+===   =======  =====   =====   ======  ===========
+1     true     true    true    true    true
+2     true     true    false   true    false
+3     true     false   true    false   false
+4     true     false   false   false   false
+5     false    true    true    false   false
+6     false    true    false   false   false
+7     false    false   true    false   false
+8     false    false   false   false   false
+===   =======  =====   =====   ======  ===========
+
+Fixa't que, com que hi ha tres variables, la columna C alterna valors per
+cada fila, la B alterna cada dues files i la A cada 4 (2²→4). Si n'hi
+haguessin 4 variables, la A alternaria cada 8 (2³→8). En general, el
+nombre de files amb el mateix valor el podrem calcular a partir de 2
+elevat al nombre de variables que venen a continuació. No et preocupis
+doncs en aquest curs no passarem de 4 variables.
+
+
+|exerciseicon___| :doc:`exercici_01_12_taules_veritat`
+
+|exerciseicon___| :doc:`exercici_01_13_simplificacions_expressions`

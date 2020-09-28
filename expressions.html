@@ -1,0 +1,335 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ca" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Operadors i expressions &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Expressions numèriques" href="expressions_numeriques.html" />
+    <link rel="prev" title="Variables i tipus" href="variables.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació amb Java
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-21
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="instruccions.html">Instruccions seqüencials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html">Variables i tipus</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Operadors i expressions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="expressions_numeriques.html">Expressions numèriques</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions_booleanes_relacionals.html">Expressions booleanes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="expressions_booleanes_logics.html">Expressions booleanes amb operadors lògics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="taules_veritat.html">Taules de veritat</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació amb Java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="basics.html">Elements bàsics de la programació</a> &raquo;</li>
+        
+      <li>Operadors i expressions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="operadors-i-expressions">
+<h1>Operadors i expressions<a class="headerlink" href="#operadors-i-expressions" title="Link permanent a aquest títol">¶</a></h1>
+<div class="figure align-center">
+<p class="plantuml">
+<img src="_images/plantuml-0b733f4c3ea1bce7ab123f7f073f7e625a6c9897.png" alt="&#64;startuml
+
+hide circle
+hide empty members
+skinparam monochrome true
+left to right direction
+
+Instruccions &lt;|-- Seqüencials
+Seqüencials &lt;|-- Assignacions
+Assignacions *-- Variables
+Assignacions *-- Expressions
+Expressions *-- Operadors
+Expressions *-- Valors
+
+&#64;enduml"/>
+</p>
+</div>
+<p>Les dades, siguin representades amb valors literals o referenciades amb
+variables, poden ser combinades entre sí per obtenir nous valors. Aquestes
+combinacions es realitzen mitjançant <em>operadors</em> i reben el nom
+d”<em>expressions</em>.</p>
+<p>Uns quants exemples d’expressions seguits per → valor:</p>
+<ul>
+<li><p>1 + 2 → 3</p>
+<p>En aquest cas tenim dues dades (1 i 2) combinades amb l’operador de suma
+<code class="docutils literal notranslate"><span class="pre">+</span></code>. El valor que resulta d’aquesta expressió, naturalment és 3.</p>
+</li>
+<li><p>1 → 1</p>
+<p>Sí, un literal és també una expressió que resulta en, sense sorpreses,
+ell mateix.</p>
+</li>
+<li><p>1 + 3 - 4 * 5 / 2 → (1 + 3) - ((4 * 5) / 2) → 4 - (20 / 2) → 4 - 10 → -6</p>
+<p>Podem fer expressions molt complexes. Els operadors tenen precedències
+que probablement hem estudiat abans (multiplicacio i divisió abans que
+suma i resta per exemple) i que podem explicitar amb
+parèntesis.</p>
+</li>
+<li><p>(1 + 2) * 3 → 3 * 3 → 9</p>
+<p>Amb els parèntesis també podem definir un ordre diferent</p>
+</li>
+<li><p>&quot;Re&quot; + &quot;nat&quot; → &quot;Renat&quot;</p>
+<p>Les expressions no tenen per què ser sempre numèriques. Ah! Fixa’t que
+fem servir el mateix símbol <code class="docutils literal notranslate"><span class="pre">+</span></code> per sumar enters i per <em>concatenar</em>
+Strings!</p>
+</li>
+<li><p>edat + 1 → ?</p>
+<p>En comptes de literals, podem fer servir variables. Evidentment, el
+resultat de l’expressió no el podem saber fins que no tinguem el valor a
+que fa referència la variable.</p>
+</li>
+<li><p>Math.abs(-3) → 3</p>
+<p>Hi ha uns elements anomenats <em>funcions</em> que ens permeten calcular nous
+valors a partir d’altres. A l’exemple, la funció <code class="docutils literal notranslate"><span class="pre">Math.abs()</span></code> ens
+retornarà el valor positiu del nombre que hi posem entre parèntesis.</p>
+<p>Per descomptat, podem combinar les funcions dins de les expressions de
+manera similar als operadors.</p>
+</li>
+<li><p>5 &lt; 6 → true</p>
+<p>Fixa’t que no necessàriament el resultat d’una expressió ha de ser del
+tipus dels seus valors. En aquest exemple, l’expressió <em>afirma</em> que 5 és
+més petit que 6, cosa que és certa (<code class="docutils literal notranslate"><span class="pre">true</span></code>)</p>
+</li>
+<li><p>5 &gt; 6 → false</p>
+<p>Aquest exemple és molt similar a l’anterior. Ara afirma que 5 és més
+gran que 6 i el seu resultat, evidentment, és fals.</p>
+</li>
+</ul>
+<p>I què podem fer amb una expressió? Doncs amb el que sabem de programació,
+de moment podem assignar el seu resultat a una variable, fer-la servir per
+composar una expressió més gran o bé mostrar el resultat per pantalla.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">edat</span> <span class="o">=</span> <span class="mi">18</span><span class="p">;</span>
+<span class="c1">// simulem que passa un any</span>
+<span class="n">edat</span> <span class="o">=</span> <span class="n">edat</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:</span>
+<span class="c1">// mostrem el resultat</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">edat</span><span class="p">);</span>   <span class="c1">// mostrarà 19</span>
+</pre></div>
+</div>
+<p>Hi ha diferents tipus d’expressions. En veurem algunes de les més
+importants a continuació:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="expressions_numeriques.html">Expressions numèriques</a></li>
+<li class="toctree-l1"><a class="reference internal" href="expressions_booleanes_relacionals.html">Expressions booleanes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="expressions_booleanes_logics.html">Expressions booleanes amb operadors lògics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="taules_veritat.html">Taules de veritat</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="expressions_numeriques.html" class="btn btn-neutral float-right" title="Expressions numèriques" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="variables.html" class="btn btn-neutral float-left" title="Variables i tipus" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2021 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

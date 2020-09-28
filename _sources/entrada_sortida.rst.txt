@@ -1,0 +1,161 @@
+##############################
+Instruccions d'entrada/sortida
+##############################
+
+.. uml::
+    :align: center
+
+    @startuml
+
+    hide circle
+    hide empty members
+    skinparam monochrome true
+    left to right direction
+
+    class Instruccions
+    class Seqüencials extends Instruccions
+    class EntradaSortida extends Seqüencials
+
+    @enduml
+
+
+En una primera aproximació, les instruccions d’entrada recullen un valor
+des d’un dispositiu d’entrada (ex. teclat) i l’assignen a una variable.
+
+Per la seva banda, les instruccions de sortida dipositen el resultat d’una
+expressió a un dispositiu de sortida (ex. pantalla).
+
+Quan llencem un programa per ser executat, el sistema operatiu li obre
+automàticament tres canals (o fitxers) anomenats *entrada estàndard*,
+*sortida estàndard* i *sortida estàndard d'error*. A menys que es faci
+res especial, el fitxer d'entrada queda *connectat* al teclat, mentre
+que els dos canals de sortida queden *connectats* a la pantalla.
+
+.. image:: _images/esquema_es.png
+   :align: center
+
+De moment no en farem gaire cas de la sortida estàndard d'error.
+
+Sortida
+=======
+
+Ja hem vist en vàries ocasions com podem escriure un missatge des dels
+nostres programes en Java. Veiem uns quants exemples:
+
+
+.. code-block:: java
+    :linenos:
+
+    System.out.print("Amb print() mostra un missatge i ");
+    System.out.println("no salta de línia");
+    System.out.println();   // Això fa un salt de línia sense missatge
+    System.out.println("Amb println() fa salt de línia");
+    int edat = 18;
+    System.out.print("Amb ");
+    System.out.print(edat);
+    System.out.println(" anys ja es pot conduir un cotxe.");
+    System.out.println("Repeteixo: amb " + edat + " anys ja es pot conduir un cotxe.");
+    System.out.println("El doble de " + edat + " és " + (edat * 2));
+
+De moment farem amb aquestes possibilitats, més endavant aniran apareixent
+més.
+
+El que també és important és que ens fixem en el paper de les cometes
+dobles i el símbol ``+``.
+
+Quan posem cometes dobles, el que hi ha dins les cometes es mostra tal
+qual, mentre que quan no posem les cometes (ex. línia 7) el que es mostra
+és el valor assignat a la variable (en el cas d'``edat`` el valor ``10``)
+
+Per altra banda quan, fora de les cometes, hi posem un ``+`` el que fa és
+*afegir* o *concatenar* trocets de missatge un darrera de l'altre.
+
+|exerciseiconO__| :doc:`exercici_01_04_reduccio_de_prints`
+
+Entrada
+=======
+
+Obtenir dades de l'entrada estàndard és molt típic quan comences a
+programar. Malauradament els dissenyadors de Java no ho van tenir present
+i han deixat que aquesta funcionalitat sigui una mica incòmoda.
+
+Per simplificar-nos la vida ara que tot just estem arrencant, t'he
+preparat una utilitat anomenada ``Entrada.java`` que farem servir per
+per la lectura de l'entrada estàndard dels nostres primers
+programes.
+
+Trobaràs aquest fitxer ja instal·lat al teu repositori. Si no és així,
+demana-m'ho.
+
+Fem un petit programa que demostri com es pot llegir:
+
+.. code-block:: java
+    :linenos:
+
+    class ComEtDius {
+        public static void main(String[] args) {
+            System.out.println("Com et dius?");
+            String nom = Entrada.readLine();
+            System.out.println("Hola " + nom + ", quan de temps!");
+        }
+    }
+
+Compila'l i executa'l:
+
+.. code-block:: console
+
+    $ javac ComEtDius.java 
+    $ java ComEtDius 
+    Com et dius?
+    Renat
+    Hola Renat, quan de temps!
+
+.. sidebar:: En cas d'error
+
+    Si en compilar o executar el programa t'apareix algun error,
+    comenta-m'ho, tot indicant el resultat que et generin les següents
+    comandes:
+
+    .. code-block:: console
+
+        $ echo $CLASSPATH
+        $ echo $INTROPRGDIR
+        $ ls -R $INTROPRGDIR/
+
+
+El programa fa el següent:
+
+* A la línia 3 el programa mostra el missatge que demana el nom
+
+* La línia 4 declara la variable ``nom`` i li assigna el valor
+  ``Entrada.readLine()``. Aquest valor es correspondrà amb el que els
+  usuaris ens responguin.
+
+  No et preocupis de què voldrà dir ``String``. Aviat el coneixerem. De
+  moment, ja veus que es troba en el mateix lloc que en altres
+  declaracions posàvem ``int``.
+
+* Ara que ja tenim el nom, podem saludar els nostres usuaris. Això és el
+  que fa la línia 5.
+
+|exerciseicon___| :doc:`exercici_01_05_noms_i_cognoms`
+
+.. _continguts_llegint_diferents_tipus:
+
+Llegint diferents tipus
+=======================
+
+El tipus de dades que ens retorna ``Entrada.readLine()`` és ``String``.
+Sovint ens interessarà que el tipus sigui un altre. Per això, ens caldrà
+convertir-ho al que ens interessi.
+
+Aquí tens la llista dels tipus que més farem servir inicialment. El primer
+ja el coneixem i l'últim és una mica diferent.
+
+* ``int``: ``int variable = Integer.parseInt(Entrada.readLine());``
+
+* ``double``: ``double variable = Double.parseDouble(Entrada.readLine());``
+
+* ``char``: ``char variable = Entrada.readLine().charAt(0);``
+
+

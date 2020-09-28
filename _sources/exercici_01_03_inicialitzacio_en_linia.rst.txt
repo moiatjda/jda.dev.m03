@@ -1,0 +1,28 @@
+:orphan:
+
+#########################################################
+|exerciseiconO__| Exercici 01_03. Inicialització en línia
+#########################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_03_inicialitzacio_en_linia/``
+
+* Continguts relacionats: :doc:`declaracions_i_assignacions`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [☼] Exercici :ref:`optatiu<descripcio_exercicis_optatius>`
+
+.. rubric:: Enunciat
+
+Recorda un altre cop el programa ``EndevinaNombre``
+
+.. literalinclude:: _recursos/EndevinaNombre.java
+    :language: java
+    :linenos:
+
+Crea una nova versió que faci el mateix però que faci totes les
+declaracions i les inicialitzacions en la mateixa línia.
+
+*Pista*: el resultat serà un programa amb dues línies menys.

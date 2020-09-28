@@ -1,0 +1,62 @@
+:orphan:
+
+################################################
+|exerciseicon___| Exercici 01_05. Noms i cognoms
+################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_05_noms_i_cognoms/``
+
+* Continguts relacionats: :doc:`entrada_sortida`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+.. rubric:: Enunciat
+
+
+Desenvolupa un programa que demani per entrada estàndard el nom dels
+usuaris. Un cop obtingut, demanarà el seu cognom.  Finalment respondrà:
+``"Ei «nom», tinc una amiga que també és «cognom»."``.
+
+Aquí tens una plantilla pel teu codi. Pots copiar-la i enganxar-la al teu
+editor pel fitxer ``NomICognom.java``. Únicament hauràs de
+reemplaçar els comentaris ``/*█████*/`` pel codi corresponent.
+
+
+.. code-block:: java
+
+    /*
+     * Aquest programa demana el nom i el primer cognom als usuaris
+     * i els mostra un missatge amistós.
+     *
+     * El programa no controla valors no adequats d'entrada
+     */
+
+    class NomICognom {
+        public static void main(String[] args) {
+
+            // obté el nom
+            System.out.println("Com et dius?");
+            String nom = /*█████*/;
+
+
+            // obté el cognom
+            System.out.println("I quin és el teu primer cognom?");
+            String cognom = /*█████*/;
+
+            // Mostra resultat
+            System.out.println("Ei " + nom + ", tinc una amiga que també és " +  /*█████*/);
+        }
+    }
+
+L'execució tindrà un aspecte similar al següent
+
+.. code-block:: console
+
+    $ java NomICognom.java
+    Com et dius?
+    Renat
+    I quin és el teu primer cognom?
+    Taner
+    Ei Renat, tinc una amiga que també és Taner.

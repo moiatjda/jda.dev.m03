@@ -1,0 +1,79 @@
+:orphan:
+
+####################################################
+|exerciseicon___| Exercici 01_08. Calculadora bàsica
+####################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_08_calculadora_basica/``
+
+* Continguts relacionats: :doc:`expressions_numeriques`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+.. rubric:: Enunciat
+
+
+Desenvolupa una calculadora bàsica
+
+El programa demanarà dos nombres enters i mostrarà el resultat de
+sumar-los, restar el segon al primer, multiplicar-los i dividir el primer
+pel segon
+
+No ens preocuparem si els usuaris ens introdueixen valors que no siguin
+adequats, com per exemple lletres o una divisió per zero.
+
+Aquí tens una plantilla pel teu codi. Pots copiar-la i enganxar-la al teu
+editor pel fitxer ``CalculadoraBasica.java``. Únicament hauràs de
+reemplaçar els comentaris ``/*█████*/`` pel codi corresponent.
+
+.. code-block:: java
+
+    /*
+     * Aquest programa implementa una calculadora bàsica
+     *
+     * Demana dos nombres per entrada estàndard i mostra el
+     * resultat de sumar-los, restar-li el segon al primer, multiplicar-los,
+     * dividir el primer entre el segon.
+     *
+     * El programa no controla valors no adequats d'entrada
+     */
+
+    class CalculadoraBasica {
+        public static void main(String[] args) {
+
+            // obté operands d'entrada
+            System.out.println("Primer operand:");
+            int primerOperand = Integer.parseInt(Entrada.readLine());
+            System.out.println("Segon operand:");
+            int segonOperand = Integer.parseInt(Entrada.readLine());
+
+            // operacions
+            int suma = primerOperand + segonOperand;
+            int resta = primerOperand /*█████*/ segonOperand;
+            int multiplicacio = /*█████*/;
+            /*█████*/;
+
+            // mostra resultats
+            System.out.println("" + primerOperand + " + " + segonOperand + " = " + suma);
+            System.out.println("" + primerOperand + /*█████*/ + segonOperand + " = " + resta);
+            System.out.println("" + primerOperand + /*█████*/ + segonOperand + " = " + /*█████*/);
+            System.out.println(/*█████*/);
+        }
+    }
+
+Quan l'executis hauràs d'introduir dos nombres i et mostrarà el resultat
+per cada operació. Una simulació de l'execució és:
+
+.. code-block:: console
+
+    $ java CalculadoraBasica
+    Primer operand:
+    3
+    Segon operand:
+    5
+    3 + 5 = 8
+    3 - 5 = -2
+    3 * 5 = 15
+    3 / 5 = 0

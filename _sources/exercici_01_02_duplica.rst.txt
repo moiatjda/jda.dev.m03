@@ -1,0 +1,65 @@
+:orphan:
+
+###################################################
+|exerciseicon__T| Exercici 01_02. Duplica un número
+###################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_02_duplica/``
+
+* Continguts relacionats: :doc:`declaracions_i_assignacions`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+
+Desenvolupa un programa que dupliqui per 2 el número que rep en
+executar-ho
+
+Aquí tens una plantilla pel teu codi. Pots copiar-la i enganxar-la al teu
+editor pel fitxer ``Duplica.java``. Únicament hauràs de
+reemplaçar els comentaris ``/*█████*/`` pel codi corresponent.
+
+
+.. code-block:: java
+
+    /*
+     * Aquest programa duplica el valor que rep com a primer argument
+     *
+     * El programa no controla valors no adequats d'entrada
+     */
+
+    class Duplica {
+        public static void main(String[] args) {
+
+            // declara les variables a utilitzar
+            int nombreADuplicar;
+            int nombreDuplicat;
+
+            // obté el nombre a duplicar
+            nombreADuplicar = Integer.parseInt(args[0]);
+
+            // calcula el doble
+            nombreDuplicat =  /*█████*/;
+
+            // mostra resultats
+            System.out.print("El doble de ");
+            System.out.print(/*█████*/);
+            System.out.print(" és ");
+            System.out.println(/*█████*/);
+        }
+    }
+
+Per exemple, considera la següent execució:
+
+.. code-block:: console
+
+    $ java Duplica 5
+    El doble de 5 és 10
+
+En acabar, no oblidis pujar els canvis a GitHub! Si has oblidat com
+fer-ho, torna a revisar la guia :ref:`instruccions_git`

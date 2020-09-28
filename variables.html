@@ -1,0 +1,415 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ca" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Variables i tipus &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Operadors i expressions" href="expressions.html" />
+    <link rel="prev" title="Instruccions d’entrada/sortida" href="entrada_sortida.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació amb Java
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-21
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="instruccions.html">Instruccions seqüencials</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Variables i tipus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressions.html">Operadors i expressions</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació amb Java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="basics.html">Elements bàsics de la programació</a> &raquo;</li>
+        
+      <li>Variables i tipus</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="variables-i-tipus">
+<h1>Variables i tipus<a class="headerlink" href="#variables-i-tipus" title="Link permanent a aquest títol">¶</a></h1>
+<div class="figure align-center">
+<p class="plantuml">
+<img src="_images/plantuml-37519ba6b30fee33084cd8acec09a75431fecec4.png" alt="&#64;startuml
+
+hide circle
+hide empty members
+skinparam monochrome true
+left to right direction
+
+Instruccions &lt;|-- Seqüencials
+Seqüencials &lt;|-- Declaracions
+Declaracions &lt;|-- Variables
+Variables *-- Nom
+Variables *-- Tipus
+
+&#64;enduml"/>
+</p>
+</div>
+<p>Tal i com vam veure a <a class="reference internal" href="declaracions_i_assignacions.html"><span class="doc">Declaracions i assignacions</span></a>, en programació
+tenim el concepte de <em>variable</em>.</p>
+<p>Una variable és un nom que ens inventem per referir-nos a alguna cosa.</p>
+<div class="section" id="el-valor-d-una-variable">
+<h2>El valor d’una variable<a class="headerlink" href="#el-valor-d-una-variable" title="Link permanent a aquest títol">¶</a></h2>
+<p>Hem dit que amb la variable ens estem referint a alguna cosa. Aquesta
+<em>alguna cosa</em> li direm <em>valor</em> o <em>dada</em>.</p>
+<p>Alguns exemples de valor són:</p>
+<ul class="simple">
+<li><p>la teva talla de sabates</p></li>
+<li><p>la data del teu aniversari</p></li>
+<li><p>el teu nom</p></li>
+<li><p>el color de fons del teu escriptori</p></li>
+<li><p>si t’agrada o no el gust de la llimona</p></li>
+<li><p>la lletra de la teva cançó preferida</p></li>
+<li><p>la llista de pel·lícules i llibres que més t’han marcat</p></li>
+</ul>
+<p>Per exemple, en el cas del Renat,</p>
+<ul>
+<li><p>la seva talla de sabates és la 4 (li agrada anar ample),</p></li>
+<li><p>la data del seu naixement el 23 de juny de 2003 (sí, ha plogut)</p></li>
+<li><p>el seu nom és, naturalment, Renat</p></li>
+<li><p>és fals que li agradi el gust a llimona. De fet, l’odia</p></li>
+<li><p>la lletra de la seva cançó preferida (només un trocet) és</p>
+<div class="line-block">
+<div class="line">Marrameu torra castanyes</div>
+<div class="line">a la voreta del foc</div>
+<div class="line">Ja n’hi peta una als morros</div>
+<div class="line">Ja tenim Marrameu mort.</div>
+<div class="line">Pica ben fort</div>
+<div class="line">Pica ben fort</div>
+<div class="line">Que piques fusta</div>
+<div class="line">Pica ben fort.</div>
+<div class="line">…</div>
+</div>
+</li>
+<li><p>Mai no ha llegit un llibre però li agraden totes les pel·lícules del seu
+heroi, en Garfield</p></li>
+</ul>
+</div>
+<div class="section" id="el-nom-d-una-variable">
+<h2>El nom d’una variable<a class="headerlink" href="#el-nom-d-una-variable" title="Link permanent a aquest títol">¶</a></h2>
+<p>A les variables ja sabem que les hem de donar un nom que ens inventem.
+Aquest nom, però, no pot ser qualsevol cosa.</p>
+<p>Per començar, el llenguatge de programació ens imposarà restriccions a les
+que haurem d’incloure temes de convenció i estil. Com que no ens volem
+passar ara una estona llegint-nos la lletra petita, et faré un breu resum
+de les regles bàsiques que hauràs de seguir en aquest curs:</p>
+<ul>
+<li><p>el nom d’una variable ha de començar per lletra minúscula</p>
+<p>Per exemple, <code class="docutils literal notranslate"><span class="pre">nombre</span></code> o <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
+</li>
+<li><p>a continuació de la inicial, pots continuar amb lletres i números</p>
+<p>Per exemple, <code class="docutils literal notranslate"><span class="pre">color1</span></code> o <code class="docutils literal notranslate"><span class="pre">dies2i3</span></code>.</p>
+<p>Si t’és possible, intenta evitar, però, fer servir nombres en els noms
+de les variables. Es veurà molt més clar.</p>
+</li>
+<li><p>Si el nom conté més d’una paraula, la inicial de cada paraula, excepte
+la primera, anirà en majúscules</p>
+<p>Per exemple, <code class="docutils literal notranslate"><span class="pre">primerColor</span></code>, <code class="docutils literal notranslate"><span class="pre">diesFestius</span></code>, <code class="docutils literal notranslate"><span class="pre">dataNeixement</span></code></p>
+<p>En Java no està ben vist separar les paraules que formen el nom d’una
+variable amb guions baixos <code class="docutils literal notranslate"><span class="pre">_</span></code>. Per exemple, <code class="docutils literal notranslate"><span class="pre">primer_color</span></code> seria
+considerat un mal nom en Java. Tot i que el compilador te l’acceptaria,
+els teus futurs col·legues de professió no estaran gaire contents.</p>
+</li>
+<li><p>El nom, ha d’explicar a què fa referència</p>
+<p>Per exemple, encara que a una variable que fa referència a una data de
+naixement li podem dir <code class="docutils literal notranslate"><span class="pre">v1</span></code> o <code class="docutils literal notranslate"><span class="pre">baixantDeLaFontDelGat</span></code> però
+segurament estaràs d’acord amb mi que aquests noms no diuen gaire del
+valor a què farà referència la variable.</p>
+<p>Un nom adequat per una variable que fa referència a la data de naixement
+pot ser: <code class="docutils literal notranslate"><span class="pre">dataNaixement</span></code> o <code class="docutils literal notranslate"><span class="pre">data</span></code> si no hi ha confusió amb altres
+dates.</p>
+<p>Els noms poden ser tant llargs com et calguin, però, és preferible no
+afegir paraules que no aportin significat. Per exemple, la variable
+<code class="docutils literal notranslate"><span class="pre">laDataDeNaixementDelGatRenat</span></code> pot prescindir de partícules i altres
+dades conegudes, quedant en <code class="docutils literal notranslate"><span class="pre">dataNaixementRenat</span></code></p>
+</li>
+<li><p>Finalment, el nom d’una variable ha de ser únic en el seu context. És a
+dir, cada variable ha de tenir un nom diferent o sinó tornaríem boig al
+Java per saber a quin valor ens referim!</p>
+<p>No pateixis, si intentes declarar dues variables amb el mateix nom, el
+Java t’ho farà saber.</p>
+</li>
+</ul>
+<p><img alt="exerciseicon___" src="_images/exerciseicon___.png" /> <a class="reference internal" href="exercici_01_06_nom_variables.html"><span class="doc"> Exercici 01_06. Noms de variables</span></a></p>
+</div>
+<div class="section" id="el-tipus-d-una-variable">
+<h2>El tipus d’una variable<a class="headerlink" href="#el-tipus-d-una-variable" title="Link permanent a aquest títol">¶</a></h2>
+<p>Fixa’t que, tot i que tots aquests són exemples de valors o dades, no
+poden ser qualsevol cosa. Per exemple, que li agrada la
+llimona podria ser <em>cert</em>, però no, diguem <em>blanc</em> o <em>42</em>.</p>
+<p>Als valors que tenen sentit per una determinada variable li diem <em>tipus de
+dades</em>.</p>
+<p>Els tipus de dades amb els que començarem a jugar en aquest curs, si no ho
+hem fet ja, són:</p>
+<ul>
+<li><p>enters</p>
+<p>Java els coneix com <code class="docutils literal notranslate"><span class="pre">int</span></code></p>
+<p>Es tracta de valors numèrics enters com el 42 i el -12</p>
+<p>Per exemple:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">edat</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">temperaturaMinima</span> <span class="o">=</span> <span class="o">-</span><span class="mi">12</span><span class="p">;</span>
+</pre></div>
+</div>
+</li>
+<li><p>booleans</p>
+<p>Java els coneix com a <code class="docutils literal notranslate"><span class="pre">boolean</span></code></p>
+<p>Els valors possibles per una variable booleana són només <em>cert</em>
+(<code class="docutils literal notranslate"><span class="pre">true</span></code>) i <em>fals</em> (<code class="docutils literal notranslate"><span class="pre">false</span></code>)</p>
+<p>Uns exemples:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">boolean</span> <span class="n">mAgradaProgramar</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+<span class="kt">boolean</span> <span class="n">portoTresSabates</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+</pre></div>
+</div>
+</li>
+<li><p>caracters</p>
+<p>En Java en diem <code class="docutils literal notranslate"><span class="pre">char</span></code></p>
+<p>Es tracta dels diferents símbols que poden aparèixer en un text. Són per
+exemple les lletres com <code class="docutils literal notranslate"><span class="pre">a</span></code> i <code class="docutils literal notranslate"><span class="pre">Ç</span></code>, els signes de puntuació com el
+<code class="docutils literal notranslate"><span class="pre">;</span></code> o <code class="docutils literal notranslate"><span class="pre">)</span></code> i d’altres més peculiars com ara <code class="docutils literal notranslate"><span class="pre">↑</span></code> i <code class="docutils literal notranslate"><span class="pre">€</span></code>.</p>
+<p>En Java escriurem els valors de tipus caracter entre cometes simples.</p>
+<p>Alguns exemples</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="n">lletraInicial</span> <span class="o">=</span> <span class="sc">&#39;R&#39;</span><span class="p">;</span>
+<span class="kt">char</span> <span class="n">hiraganaA</span> <span class="o">=</span> <span class="sc">&#39;あ&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+</li>
+<li><p>cadenes de text o de caracters</p>
+<p>En Java parlem de <code class="docutils literal notranslate"><span class="pre">String</span></code></p>
+<p>Els valors de tipus String són zero o més caracters que representem sempre
+entre cometes dobles.</p>
+<p>Per exemple,</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">nom</span> <span class="o">=</span> <span class="s">&quot;Renat&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">cadenaBuida</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Fixa’t que el darrer exemple és també una cadena de text, encara que no
+conté cap lletra!</p>
+</li>
+<li><p>decimals</p>
+<p>Quan ens calgui representar nombres amb decimals, farem servir el
+<code class="docutils literal notranslate"><span class="pre">double</span></code> de Java.</p>
+<p>Uns exemples:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span> <span class="n">radi</span> <span class="o">=</span> <span class="mf">2.36</span><span class="p">;</span>
+<span class="kt">double</span> <span class="n">unMig</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Com veus, a diferència del que faríem en català, la coma decimal la
+representem amb un punt.</p>
+<p>Curiosament, quan mostrem els valors per pantalla i quan els llegim, és
+possible que el punt sigui transformat en coma. Coses de la configuració
+del teu equip.</p>
+</li>
+</ul>
+<p><img alt="exerciseicon___" src="_images/exerciseicon___.png" /> <a class="reference internal" href="exercici_01_07_valors_del_tipus_adequat.html"><span class="doc"> Exercici 01_07. Valors del tipus adequat</span></a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="expressions.html" class="btn btn-neutral float-right" title="Operadors i expressions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="entrada_sortida.html" class="btn btn-neutral float-left" title="Instruccions d’entrada/sortida" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2021 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

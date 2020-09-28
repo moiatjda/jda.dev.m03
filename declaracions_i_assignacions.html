@@ -1,0 +1,606 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ca" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Declaracions i assignacions &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Instruccions d’entrada/sortida" href="entrada_sortida.html" />
+    <link rel="prev" title="Instruccions seqüencials" href="instruccions.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació amb Java
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-21
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="instruccions.html">Instruccions seqüencials</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Declaracions i assignacions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="entrada_sortida.html">Instruccions d’entrada/sortida</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html">Variables i tipus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressions.html">Operadors i expressions</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació amb Java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="basics.html">Elements bàsics de la programació</a> &raquo;</li>
+        
+          <li><a href="instruccions.html">Instruccions seqüencials</a> &raquo;</li>
+        
+      <li>Declaracions i assignacions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="declaracions-i-assignacions">
+<h1>Declaracions i assignacions<a class="headerlink" href="#declaracions-i-assignacions" title="Link permanent a aquest títol">¶</a></h1>
+<div class="figure align-center">
+<p class="plantuml">
+<img src="_images/plantuml-9678872ea422db1672db84402af573a00f43a9b3.png" alt="&#64;startuml
+
+hide circle
+hide empty members
+skinparam monochrome true
+left to right direction
+
+class Instruccions
+class Seqüencials extends Instruccions
+class Declaracions extends Seqüencials
+class Assignacions extends Seqüencials
+
+&#64;enduml"/>
+</p>
+</div>
+<div class="section" id="un-petit-joc">
+<h2>Un petit joc<a class="headerlink" href="#un-petit-joc" title="Link permanent a aquest títol">¶</a></h2>
+<p>Fem un petit joc dels d’endevinar un nombre.</p>
+<p>Segueix les instruccions:</p>
+<ul class="simple">
+<li><p>pensa’t un nombre</p></li>
+<li><p>multiplica el resultat` per 3</p></li>
+<li><p>suma-li 6</p></li>
+<li><p>divideix-ho entre 3</p></li>
+<li><p>resta-li el número que et vas pensar</p></li>
+</ul>
+<p>Deixa’m que endevini. Et queden, et queden… 2, oi que sí?</p>
+</div>
+<div class="section" id="el-joc-en-codi">
+<h2>El joc en codi<a class="headerlink" href="#el-joc-en-codi" title="Link permanent a aquest títol">¶</a></h2>
+<p>Aquestes instruccions són molt repetitives i podrien perfectament ser
+codificades en Java.</p>
+<p>Per exemple, fes una ullada al següent codi. Simplement llegeix-lo per
+sobre sense intentar entendre tots els detalls. És totalment raonable que
+no entenguis res. De seguida te’ls explicaré.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    <span class="cm">/*</span>
+<span class="cm">     * Aquest programa mostra capacitats d&#39;endevinació</span>
+<span class="cm">     *</span>
+<span class="cm">     * Per executar-ho, fes</span>
+<span class="cm">     * $ java EndevinaNombre 42</span>
+<span class="cm">     */</span>
+
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">EndevinaNombre</span> <span class="p">{</span>
+
+        <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+
+            <span class="kt">int</span> <span class="n">numeroPensat</span><span class="p">;</span>   <span class="c1">// guardarà el número pensat</span>
+            <span class="kt">int</span> <span class="n">numero</span><span class="p">;</span>         <span class="c1">// guardarà els càlculs intermitjos</span>
+
+            <span class="c1">// pensa un número</span>
+            <span class="n">numeroPensat</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;El número pensat és &quot;</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">numeroPensat</span><span class="p">);</span>
+
+            <span class="c1">// Multiplica&#39;l per 3</span>
+            <span class="n">numero</span> <span class="o">=</span> <span class="n">numeroPensat</span> <span class="o">*</span> <span class="mi">3</span><span class="p">;</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Quan el multipliques per 3 obtens &quot;</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">numero</span><span class="p">);</span>
+
+            <span class="c1">// Suma-li 6</span>
+            <span class="n">numero</span> <span class="o">=</span> <span class="n">numero</span> <span class="o">+</span> <span class="mi">6</span><span class="p">;</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Quan li sumes 6 arriba a &quot;</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">numero</span><span class="p">);</span>
+
+            <span class="c1">// divideix-ho tot per 3</span>
+            <span class="n">numero</span> <span class="o">=</span> <span class="n">numero</span> <span class="o">/</span> <span class="mi">3</span><span class="p">;</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Un cop dividit per 3 queda &quot;</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">numero</span><span class="p">);</span>
+
+            <span class="c1">// resta-li el número pensat</span>
+            <span class="n">numero</span> <span class="o">=</span> <span class="n">numero</span> <span class="o">-</span> <span class="n">numeroPensat</span><span class="p">;</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Finalment, en restar-li el valor inicial, queda &quot;</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">numero</span><span class="p">);</span>
+
+            <span class="c1">// compara el resultat</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;A que el resultat és 2?&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="executem-el-programa">
+<h2>Executem el programa<a class="headerlink" href="#executem-el-programa" title="Link permanent a aquest títol">¶</a></h2>
+<p>Per començar, intentem fer-lo funcionar. Recordes com?</p>
+<p>Primer havíem de <em>compilar-lo</em>. És a dir, generar el <code class="docutils literal notranslate"><span class="pre">.class</span></code> que
+permetrà l’execució.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> javac EndevinaNombre.java
+</pre></div>
+</div>
+<p>Ara que ja tenim <code class="docutils literal notranslate"><span class="pre">EndevinaNombre.class</span></code>, fem una prova d’execució. Ens
+pensarem el número 10:</p>
+<div class="highlight-console notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">$</span> java EndevinaNombre <span class="m">10</span>
+<span class="go">El número pensat és 10</span>
+<span class="go">Quan el multipliques per 3 obtens 30</span>
+<span class="go">Quan li sumes 6 arriba a 36</span>
+<span class="go">Un cop dividit per 3 queda 12</span>
+<span class="go">Finalment, en restar-li el valor inicial, queda 2</span>
+<span class="go">A que el resultat és 2?</span>
+</pre></div>
+</td></tr></table></div>
+<p>Fixa’t que el número a endevinar li indiquem en el moment de llençar el
+programa.</p>
+<p>Apa, una altra execució, aquest cop amb el número 42:</p>
+<div class="highlight-console notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">$</span> java EndevinaNombre <span class="m">42</span>
+<span class="go">El número pensat és 42</span>
+<span class="go">Quan el multipliques per 3 obtens 126</span>
+<span class="go">Quan li sumes 6 arriba a 132</span>
+<span class="go">Un cop dividit per 3 queda 44</span>
+<span class="go">Finalment, en restar-li el valor inicial, queda 2</span>
+<span class="go">A que el resultat és 2?</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="entenem-el-programa">
+<h2>Entenem el programa<a class="headerlink" href="#entenem-el-programa" title="Link permanent a aquest títol">¶</a></h2>
+<p>Analitzem el codi del programa poc a poc. Respira fons, ment <strong>molt
+oberta</strong> i intenta entendre tot el que puguis sense obsessionar-te per
+entendre-ho tot.</p>
+<ul>
+<li><p>Fins la línia 6 són els comentaris de capçalera. El Java no els intenta
+entendre i per tant no s’executen. Amb tot són molt importants. Es
+tracta de comentaris que ens ajuden a les persones a saber què fa el
+programa sense haver de llegir el codi.</p>
+<p>T’hauràs d’acostumar a escriure aquests comentaris de capçalera en tots
+els teus programes. A banda de ser de bons ciutadans afegir aquestes
+descripcions, en aquest curs és obligatori.</p>
+</li>
+<li><p>La línia 8 especifica el nom del nostre programa. El codi queda comprés
+entre les dues claus <code class="docutils literal notranslate"><span class="pre">{</span></code> i <code class="docutils literal notranslate"><span class="pre">}</span></code> (el tancament es troba a la darrera
+línia)</p></li>
+<li><p>La línia 10 especifica l’inici de la part <em>principal</em> (<em>main</em>) del codi.
+Novament podràs veure que hi ha un bloc de codi entre claus (fixa’t el
+tancament a la línia 42)</p></li>
+<li><p>La línia 12 és especialment important pel tema en el que estem. Es
+tracta de la <em>declaració</em> d’una <em>variable</em> anomenada <code class="docutils literal notranslate"><span class="pre">numeroPensat</span></code>.</p>
+<p>De moment, pots entendre <em>variable</em> com un espai on ens apuntarem
+quelcom per recordar-ho després. En el cas de <code class="docutils literal notranslate"><span class="pre">numeroPensat</span></code> guardarem el
+número que hem pensat.</p>
+<p>També és important que, malgrat l’hem declarada, la variable de moment
+no fa referència a cap valor. És a dir, encara no sabem quin número ens
+hem pensat!</p>
+<p>Per cert, t’has fixat en el punt i coma (<code class="docutils literal notranslate"><span class="pre">;</span></code>) al final de la
+declaració? És obligatori i si no el posem, el Java es queixarà.</p>
+<p>Pots veure en aquest codi algun altre exemple de declaració de
+variables?</p>
+</li>
+<li><p>La línia 15 és també un comentari, com els de la capçalera. En aquest
+cas, el comentari és d’una sola línia i descriu que és el moment en què
+fem la part de pensar el número del nostre joc.</p></li>
+<li><p>la línia 15 és també molt important per a aquest tema. Es tracta d’una
+<em>assignació</em>. No et preocupis pel que ve a continuació del <code class="docutils literal notranslate"><span class="pre">=</span></code>. En
+realitat, el que està fent és simplement dir que el <code class="docutils literal notranslate"><span class="pre">numeroPensat</span></code> és
+l’indicat quan executem el programa. Per exemple, serà 10 en la primera
+prova d’execució.</p>
+<p>Quan assignem un valor per primera vegada a una variable, com és el cas,
+es diu que hem <em>inicialitzat</em> la variable.</p>
+<p>En aquesta execució, estem <em>assignant</em> a <code class="docutils literal notranslate"><span class="pre">numeroPensat</span></code> el valor
+que li passem a l’hora d’executar el programa; per exemple <code class="docutils literal notranslate"><span class="pre">10</span></code>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java EndevinaNombre <span class="m">10</span>
+</pre></div>
+</div>
+<p>De moment queda’t amb això i aviat entendrem els detalls.</p>
+</li>
+<li><p>les línies 17 i 18 fan que s’escrigui a la pantalla el missatge que
+tenen entre parèntesis <code class="docutils literal notranslate"><span class="pre">(</span></code> i <code class="docutils literal notranslate"><span class="pre">)</span></code></p>
+<p>En aquest cas, el missatge que escriuen aquestes dues línies és <code class="docutils literal notranslate"><span class="pre">El</span>
+<span class="pre">número</span> <span class="pre">pensat</span> <span class="pre">és</span> <span class="pre">10</span></code></p>
+</li>
+<li><p>La línia 26 és també especial. Aquí <code class="docutils literal notranslate"><span class="pre">numero</span></code> rep el resultat de
+sumar-li 6 al valor que guardés <code class="docutils literal notranslate"><span class="pre">numero</span></code> abans de fe l’assignació.</p>
+<p>Per dins, el Java fa quelcom similar al següent codi (suposa que aquí
+<code class="docutils literal notranslate"><span class="pre">numero</span></code> correspon a 30):</p>
+<div class="highlight-Java notranslate"><div class="highlight"><pre><span></span><span class="n">numero</span> <span class="o">=</span> <span class="n">numero</span> <span class="o">+</span> <span class="mi">6</span><span class="p">;</span>
+<span class="c1">//       ↑ aquí numero val 30</span>
+<span class="c1">//       30 + 6 → 36</span>
+<span class="c1">//       36</span>
+<span class="c1">//       ↑ aquest és el valor que assigna finalment a numero</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><img alt="exerciseicon___" src="_images/exerciseicon___.png" /> <a class="reference internal" href="exercici_01_01_compresio_endevinanombre.html"><span class="doc"> Exercici 01_01. Comprensió de EndevinaNombre</span></a></p>
+<p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_01_02_duplica.html"><span class="doc"> Exercici 01_02. Duplica un número</span></a></p>
+</div>
+<div class="section" id="recapitulem">
+<h2>Recapitulem<a class="headerlink" href="#recapitulem" title="Link permanent a aquest títol">¶</a></h2>
+<p>Hem vist un programa que executa el joc d’endevinar un número.</p>
+<p>Malgrat el codi inclou molts elements desconeguts, hi ha coses que
+comencem a entendre.</p>
+<p>Aquí els elements més importants per a aquesta secció són: la <em>declaració</em>,
+l”<em>assignació</em> i el cas especial d’assignació que anomenem <em>inicialització</em>.</p>
+<div class="section" id="declaracio">
+<h3>Declaració<a class="headerlink" href="#declaracio" title="Link permanent a aquest títol">¶</a></h3>
+<p>Al codi hem declarat <em>variables</em>.</p>
+<p>Una variable és un nom que ens inventem per referir-nos a un valor. Per
+exemple <code class="docutils literal notranslate"><span class="pre">numeroPensat</span></code> i <code class="docutils literal notranslate"><span class="pre">numero</span></code>.</p>
+<p>De moment aquestes variables les hem declarat amb un <code class="docutils literal notranslate"><span class="pre">int</span></code> davant i un
+punt i coma <code class="docutils literal notranslate"><span class="pre">;</span></code> darrere.</p>
+<p>El punt i coma és quelcom que indica a Java que la instrucció ha
+finalitzat.</p>
+<p><code class="docutils literal notranslate"><span class="pre">int</span></code> indica a Java que la variable contindrà números enters (<em>integer</em>
+en anglès)</p>
+</div>
+<div class="section" id="assignacio">
+<h3>Assignació<a class="headerlink" href="#assignacio" title="Link permanent a aquest títol">¶</a></h3>
+<p>L’assignació és una instrucció en la que <em>assignem</em> o si vols <em>associem</em>
+un valor a una variable que hem declarat.</p>
+<p>Per exemple:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Aquesta instrucció <em>assigna</em> el valor enter 10 a la variable <code class="docutils literal notranslate"><span class="pre">nombre</span></code>. A
+partir d’aquest moment, serà el mateix dir <code class="docutils literal notranslate"><span class="pre">nombre</span></code> que dir 10. Per
+exemple, 10 + 1 equival a <code class="docutils literal notranslate"><span class="pre">nombre</span></code> + 1.</p>
+<p>Fixa’t que la manera d’assignar un valor en Java és posant a la banda
+esquerra el nom de la variable, i a la dreta el valor a assignar. Entre
+mig fem servir el signe <em>igual</em> (<code class="docutils literal notranslate"><span class="pre">=</span></code>)</p>
+<p>Ah! Com amb la declaració, després d’assignar, afegim el <code class="docutils literal notranslate"><span class="pre">;</span></code>.</p>
+<p>Així, quan veiem el codi <code class="docutils literal notranslate"><span class="pre">numero</span> <span class="pre">=</span> <span class="pre">10;</span></code> li està dient a Java «a partir
+d’ara, on digui <code class="docutils literal notranslate"><span class="pre">numero</span></code>, si no va seguit de <code class="docutils literal notranslate"><span class="pre">=</span></code>, vull dir 10.</p>
+<p>Podem assignar-li valors a una variable més d’un cop. Per exemple:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">numero</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>             <span class="c1">// numero rep 1</span>
+<span class="n">numero</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>         <span class="c1">// numero rep 2</span>
+<span class="n">numero</span> <span class="o">=</span> <span class="n">numero</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>    <span class="c1">// numero rep 3</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="inicialitzacio">
+<h3>Inicialització<a class="headerlink" href="#inicialitzacio" title="Link permanent a aquest títol">¶</a></h3>
+<p>Com amb el primer amor, la primera assignació d’una variable és especial.
+Tant que rep un nom especial: <em>inicialització</em>.</p>
+<p>Abans de ser inicialitzada, la variable no tenia valor i, per tant, no
+podia ser utilitzada a la banda dreta del <code class="docutils literal notranslate"><span class="pre">=</span></code> ni dins dels parèntesis
+del <code class="docutils literal notranslate"><span class="pre">System.out.print*(</span></code>.</p>
+<p>No em creus? Doncs apa, intenta compilar el següent codi:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">VariableNoInicialitzada</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">variableSenseInicialitzar</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">variableSenseInicialitzar</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> javac VariableNoInicialitzada.java
+<span class="go">VariableNoInicialitzada.java:4: error: variable variableSenseInicialitzar might not have been initialized</span>
+<span class="go">        System.out.println(variableSenseInicialitzar);</span>
+<span class="go">                           ^</span>
+<span class="go">1 error</span>
+</pre></div>
+</div>
+<p>Ops! Java es queixa molt explícitament dient-nos (segurament en anglès)
+que la variable <code class="docutils literal notranslate"><span class="pre">variableSenseInicialitzar</span></code> podria no haver estat
+inicialitzada.  Fixa’t que el missatge d’error indica un <code class="docutils literal notranslate"><span class="pre">4</span></code>. És la
+línia on ha trobat el problema. A continuació, amb <code class="docutils literal notranslate"><span class="pre">^</span></code> ens diu en quina
+part de la línia 4 ha trobat el problema</p>
+<p>Només caldria afegir una instrucció d’assignació abans d’intentar mostrar
+el seu valor. Per exemple,</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">variableSenseInicialitzar</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Si vols, pots comprovar que ara ja no tindràs problemes per compilar ni,
+de fet, executar aquest senzill programa. Això sí, tant el nom de la
+variable com del programa ja no tindran sentit.</p>
+<p>De la mateixa manera que no es pot tenir més d’un primer amor (encara que
+sigui per mil·lèsimes de segon), tampoc no es pot inicialitzar dos cops
+una variable.</p>
+<p>Ah! i de la mateixa manera que quan arriba el següent amor, una variable
+oblida completament l’anterior tan bon punt com se li assigna un de nou.</p>
+</div>
+<div class="section" id="declaracio-i-inicialitzacio-en-una-linia">
+<h3>Declaració i inicialització en una línia<a class="headerlink" href="#declaracio-i-inicialitzacio-en-una-linia" title="Link permanent a aquest títol">¶</a></h3>
+<p>Donat que assignar i inicialitzar és molt freqüent, Java ens permet
+realitzar-ho tot en una sola línia.</p>
+<p>Així, per exemple:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">nombre</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Pràctic, no?</p>
+<p><img alt="exerciseiconO__" src="_images/exerciseiconO__.png" /> <a class="reference internal" href="exercici_01_03_inicialitzacio_en_linia.html"><span class="doc"> Exercici 01_03. Inicialització en línia</span></a></p>
+</div>
+<div class="section" id="no-oblidis-el-punt-i-coma-al-final">
+<h3>No oblidis el punt i coma al final!<a class="headerlink" href="#no-oblidis-el-punt-i-coma-al-final" title="Link permanent a aquest títol">¶</a></h3>
+<p>Java ens requereix indicar el final de les instruccions de declaració i
+d’assignació amb un punt i coma <code class="docutils literal notranslate"><span class="pre">;</span></code>. La bona notícia és que, si ens
+l’oblidem, <code class="docutils literal notranslate"><span class="pre">javac</span></code> ens ho recordarà.</p>
+</div>
+<div class="section" id="ja-ho-sabem-tot-d-aquest-tema">
+<h3>Ja ho sabem tot d’aquest tema?<a class="headerlink" href="#ja-ho-sabem-tot-d-aquest-tema" title="Link permanent a aquest títol">¶</a></h3>
+<p>Ui, no! Encara queden algunes coses com ara:</p>
+<ul class="simple">
+<li><p>quins noms podem posar a les variables?</p></li>
+<li><p>podem declarar més d’un cop una mateixa variable?</p></li>
+<li><p>de quins tipus poden ser les variables?</p></li>
+</ul>
+<p>No tinguem presa, doncs ara ens interessa més poder començar a veure com
+fer que els nostres programes puguin interaccionar (<em>parlar</em> i <em>escoltar</em>)
+amb l’exterior.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="entrada_sortida.html" class="btn btn-neutral float-right" title="Instruccions d’entrada/sortida" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="instruccions.html" class="btn btn-neutral float-left" title="Instruccions seqüencials" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2021 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

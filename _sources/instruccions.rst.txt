@@ -1,0 +1,57 @@
+########################
+Instruccions seqüencials
+########################
+
+Si penses en el que varem veure al :doc:`primer_contacte`, 
+un programa no deixa de ser una llista d'instruccions que
+l'ordinador va executant una darrera de l'altra.
+
+Podem classificar les instruccions bàsiques en tres categories:
+seqüencials, condicionals i repeticions.
+
+.. uml::
+    :align: center
+
+    @startuml
+
+    hide circle
+    hide empty members
+    skinparam monochrome true
+
+    class Instruccions
+    class Seqüencials extends Instruccions
+    class Condicionals extends Instruccions
+    class Repeticions extends Instruccions
+
+    @enduml
+
+
+En aquesta secció coneixerem les instruccions seqüencials. Les
+instruccions seqüencials les classificarem en tres: declaracions,
+assignacions i d'entrada/sortida, i només amb aquestes, ja podrem
+desenvolupar els nostres primers programes.
+
+.. uml::
+    :align: center
+
+    @startuml
+
+    hide circle
+    hide empty members
+    skinparam monochrome true
+
+    class Seqüencials
+    class Declaracions extends Seqüencials
+    class Assignacions extends Seqüencials
+    class EntradaSortida extends Seqüencials
+
+    @enduml
+
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    declaracions_i_assignacions.rst
+    entrada_sortida.rst
+

@@ -1,0 +1,29 @@
+:orphan:
+
+###################################################
+|exerciseiconO__| Exercici 01_04. Reduïm ``prints``
+###################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_04_reduccio_de_prints/``
+
+* Continguts relacionats: :doc:`entrada_sortida`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [☼] Exercici :ref:`optatiu<descripcio_exercicis_optatius>`
+
+.. rubric:: Enunciat
+
+
+Recorda un altre cop el programa ``EndevinaNombre``
+
+.. literalinclude:: _recursos/EndevinaNombre.java
+    :language: java
+    :linenos:
+
+Crea una nova versió que faci el mateix però que compacti les crides a
+``System.out.print()`` fent servir la notació que hem vist
+``System.out.println("El número és " + numero):``.
+
