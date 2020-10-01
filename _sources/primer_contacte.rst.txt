@@ -40,6 +40,7 @@ Versió C
       scanf("%f", &radi);               /* conversió de String a float */
       area = PI * radi * radi;
       printf("L'àrea és %f\n", area);
+      return 0;
     }
 
 Versió Python

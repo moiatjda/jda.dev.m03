@@ -30,7 +30,7 @@ Segueix les instruccions:
 
 * pensa't un nombre
 
-* multiplica el resultat` per 3
+* multiplica el nombre pensat per 3
 
 * suma-li 6
 
@@ -253,7 +253,7 @@ Tant que rep un nom especial: *inicialització*.
 
 Abans de ser inicialitzada, la variable no tenia valor i, per tant, no
 podia ser utilitzada a la banda dreta del ``=`` ni dins dels parèntesis
-del ``System.out.print*(``.
+del ``System.out.print()``.
 
 
 No em creus? Doncs apa, intenta compilar el següent codi:
