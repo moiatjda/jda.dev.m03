@@ -54,7 +54,7 @@ L'execució tindrà un aspecte similar al següent
 
 .. code-block:: console
 
-    $ java NomICognom.java
+    $ java NomICognom
     Com et dius?
     Renat
     I quin és el teu primer cognom?
