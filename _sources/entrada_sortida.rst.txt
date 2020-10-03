@@ -65,7 +65,7 @@ dobles i el símbol ``+``.
 
 Quan posem cometes dobles, el que hi ha dins les cometes es mostra tal
 qual, mentre que quan no posem les cometes (ex. línia 7) el que es mostra
-és el valor assignat a la variable (en el cas d'``edat`` el valor ``10``)
+és el valor assignat a la variable (en el cas d'``edat`` el valor ``18``)
 
 Per altra banda quan, fora de les cometes, hi posem un ``+`` el que fa és
 *afegir* o *concatenar* trocets de missatge un darrera de l'altre.

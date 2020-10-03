@@ -276,6 +276,8 @@ ser avaluats sense problemes:</p>
 <h2>Espai de treball<a class="headerlink" href="#espai-de-treball" title="Link permanent a aquest títol">¶</a></h2>
 <p>Ara que ja tenim la part <em>remota</em> enllestida, passem a preparar el nostre
 espai de treball al PC.</p>
+<div class="section" id="vinculem-nos-amb-github">
+<h3>Vinculem-nos amb GitHub<a class="headerlink" href="#vinculem-nos-amb-github" title="Link permanent a aquest títol">¶</a></h3>
 <p>Obre una consola o terminal, per exemple amb <code class="docutils literal notranslate"><span class="pre">ctrl-alt-t</span></code> o <code class="docutils literal notranslate"><span class="pre">alt-f2</span>
 <span class="pre">gnome-terminal</span></code>, tot i que segurament trobaràs també opcions als menús.</p>
 <p>Escriu a la consola les següents línies que comencen amb dòlar <code class="docutils literal notranslate"><span class="pre">$</span></code>. No
@@ -296,7 +298,22 @@ GitHub.</p>
 <p>Nota: no et preocupis pel missatge d’avís <em>warning: You appear to have
 cloned an empty repository</em>. Només t’està informant que el teu repositori
 està buit i això és quelcom que solucionarem de seguida.</p>
-<p>El primer fitxer que cal afegir és una descripció de què contindrà el
+</div>
+<div class="section" id="diguem-qui-som">
+<h3>Diguem qui som<a class="headerlink" href="#diguem-qui-som" title="Link permanent a aquest títol">¶</a></h3>
+<p>Per què git pugui funcionar bé, necessita saber algunes coses de tu.</p>
+<p>Escriu per consola les següents comandes, tot indicant el teu nom real i
+la teva adreça de correu:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git config user.name <span class="s2">&quot;el teu nom&quot;</span>
+<span class="gp">$</span> git config user.email <span class="s2">&quot;latevaadreça@iesjoandaustria.org&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="creem-el-primer-fitxer">
+<h3>Creem el primer fitxer<a class="headerlink" href="#creem-el-primer-fitxer" title="Link permanent a aquest títol">¶</a></h3>
+<p>La finalitat de git és gestionar les versions de fitxers, així que toca
+afegir-ne.</p>
+<p>El primer fitxer que afegirem és una descripció de què contindrà el
 repositori. En els repositoris <code class="docutils literal notranslate"><span class="pre">git</span></code> és convenció que aquest fitxer es
 digui <code class="docutils literal notranslate"><span class="pre">readme</span></code> (<em>llegeix-me</em> en anglès). Fins i tot el <code class="docutils literal notranslate"><span class="pre">GitHub</span></code> farà
 un tractament especial d’aquest fitxer.</p>
@@ -342,13 +359,6 @@ la combinació de tecles <code class="docutils literal notranslate"><span class=
 </pre></div>
 </div>
 <p>Ara ja has estrenat el teu repositori!</p>
-<div class="section" id="personalitzacio-de-git">
-<h3>Personalització de git<a class="headerlink" href="#personalitzacio-de-git" title="Link permanent a aquest títol">¶</a></h3>
-<p>Passem a personalitzar el teu repositori local:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git config user.name <span class="s2">&quot;el teu nom&quot;</span>
-<span class="gp">$</span> git config user.email <span class="s2">&quot;latevaadreça@iesjoandaustria.org&quot;</span>
-</pre></div>
-</div>
 </div>
 <div class="section" id="pugem-els-primers-continguts-al-github">
 <h3>Pugem els primers continguts al GitHub<a class="headerlink" href="#pugem-els-primers-continguts-al-github" title="Link permanent a aquest títol">¶</a></h3>

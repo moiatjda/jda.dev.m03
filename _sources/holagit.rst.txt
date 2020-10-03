@@ -139,6 +139,10 @@ Espai de treball
 Ara que ja tenim la part *remota* enllestida, passem a preparar el nostre
 espai de treball al PC.
 
+
+Vinculem-nos amb GitHub
+-----------------------
+
 Obre una consola o terminal, per exemple amb ``ctrl-alt-t`` o ``alt-f2
 gnome-terminal``, tot i que segurament trobaràs també opcions als menús.
 
@@ -164,7 +168,27 @@ Nota: no et preocupis pel missatge d'avís *warning: You appear to have
 cloned an empty repository*. Només t'està informant que el teu repositori
 està buit i això és quelcom que solucionarem de seguida.
 
-El primer fitxer que cal afegir és una descripció de què contindrà el
+Diguem qui som
+--------------
+
+Per què git pugui funcionar bé, necessita saber algunes coses de tu.
+
+Escriu per consola les següents comandes, tot indicant el teu nom real i
+la teva adreça de correu:
+
+.. code-block:: console
+
+    $ git config user.name "el teu nom"
+    $ git config user.email "latevaadreça@iesjoandaustria.org"
+
+
+Creem el primer fitxer
+----------------------
+
+La finalitat de git és gestionar les versions de fitxers, així que toca
+afegir-ne.
+
+El primer fitxer que afegirem és una descripció de què contindrà el
 repositori. En els repositoris ``git`` és convenció que aquest fitxer es
 digui ``readme`` (*llegeix-me* en anglès). Fins i tot el ``GitHub`` farà
 un tractament especial d'aquest fitxer.
@@ -224,16 +248,6 @@ Si és així, registrem el nou fitxer en el ``git``:
 
 Ara ja has estrenat el teu repositori!
 
-
-Personalització de git
-----------------------
-
-Passem a personalitzar el teu repositori local:
-
-.. code-block:: console
-
-    $ git config user.name "el teu nom"
-    $ git config user.email "latevaadreça@iesjoandaustria.org"
 
 Pugem els primers continguts al GitHub
 --------------------------------------
