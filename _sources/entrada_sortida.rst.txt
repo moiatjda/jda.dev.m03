@@ -149,10 +149,12 @@ El tipus de dades que ens retorna ``Entrada.readLine()`` és ``String``.
 Sovint ens interessarà que el tipus sigui un altre. Per això, ens caldrà
 convertir-ho al que ens interessi.
 
-Aquí tens la llista dels tipus que més farem servir inicialment. El primer
-ja el coneixem i l'últim és una mica diferent.
+Aquí tens la llista dels tipus que més farem servir inicialment. Els dos primers
+ja els coneixem i l'últim és una mica diferent.
 
 * ``int``: ``int variable = Integer.parseInt(Entrada.readLine());``
+
+* ``float``: ``float variable = Float.parseFloat(Entrada.readLine());``
 
 * ``double``: ``double variable = Double.parseDouble(Entrada.readLine());``
 

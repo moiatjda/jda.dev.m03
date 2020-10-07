@@ -1,0 +1,24 @@
+########################
+Instruccions seqüencials
+########################
+
+La llista d'exercicis sobre instruccions seqüencials d'aquest tema
+és:
+
+.. toctree::
+    :titlesonly:
+
+    exercici_01_01_compresio_endevinanombre.rst
+    exercici_01_02_duplica.rst
+    exercici_01_03_inicialitzacio_en_linia.rst
+    exercici_01_04_reduccio_de_prints.rst
+    exercici_01_05_noms_i_cognoms.rst
+    exercici_01_06_nom_variables.rst
+    exercici_01_07_valors_del_tipus_adequat.rst
+    exercici_01_08_calculadora_basica.rst
+    exercici_01_09_operadors_relacionals.rst
+    exercici_01_10_expressions_amb_operadors_logics.rst
+    exercici_01_11_precedencia_operadors.rst
+    exercici_01_12_taules_veritat.rst
+    exercici_01_13_simplificacions_expressions.rst
+

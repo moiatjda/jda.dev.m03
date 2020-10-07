@@ -93,10 +93,12 @@ Amb tot això en ment, comencem!
     instruccions.rst
     variables.rst
     expressions.rst
+    condicionals.rst
 
-..    condicionals.rst
+    basics_exercicis.rst
+
 ..    while.rst
 ..    recorreguts.rst
-..    basics_exercicis.rst
+
 
 
