@@ -1,0 +1,87 @@
+:orphan:
+
+##########################################################
+|exerciseicon__T| Exercici 01_22. Una calculadora senzilla
+##########################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_22_calculadora_senzilla/``
+
+* Continguts relacionats: :doc:`condicionals_niament`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+
+En aquesta ocasió desenvoluparem una calculadora senzilla que demani a l'usuari un primer operand
+numèric, una operació entre (+ - * /) i un segon operand, i escrigui el
+resultat d'aplicar l'operació als operands.
+
+Exemple d'interacció: ::
+
+    $ java CalculadoraSenzilla
+    Primer operand?
+    4
+    Operador?
+    +
+    Segon operand?
+    5
+    4,00 + 5,00 = 9,00
+    $ java CalculadoraSenzilla
+    Primer operand?
+    4
+    Operador?
+    /
+    Segon operand?
+    0
+    No es pot dividir entre 0
+    $ java CalculadoraSenzilla
+    Primer operand?
+    4
+    Operador?
+    ^
+    Segon operand?
+    3
+    L'operador ^ no està disponible
+
+
+Aquest programa presenta algunes particularitats que no hem treballat fins
+ara. En concret, les variables que hauràs de fer servir seran de tipus
+diferents de l'habitual ``int``. En concret, farem servir ``double`` i
+``char``. Si et cal recordar com es convertíen, torna a repassar la secció
+:ref:`continguts_llegint_diferents_tipus`.
+
+Et proposo que facis servir la següent plantilla. Per descomptat, caldrà
+que emplenis els espais comentats amb ``/*█████*/``
+
+.. code-block:: Java
+
+    /*
+     * Aquest programa demana dos operands i un operador binari (+, -, * o /)
+     * i mostra el resultat del càlcul corresponent
+     */
+    public class CalculadoraSenzilla {
+        public static void main(String[] args) {
+            System.out.println("Operand1?");
+            double operand1 = Double.parseDouble(Entrada.readLine());
+            System.out.println("Operador?");
+            char operador = Entrada.readLine().charAt(0);
+            /* █████ Aquí falta una variable encara */
+
+            if (operador == '+') {
+                double resultat = operand1 + operand2;
+                System.out.println("" + operand1 + " + " + operand2 + " = " + resultat);
+            } else if (operador == '-') {
+                /* █████ */
+            } /* █████ */
+        }
+    }
+
+
+Vols una mica més de complexitat? Intenta realitzar el problema sense
+repetir la instrucció ``System.out.println("" + operand1 + " + " +
+operand2 + " = " + resultat);``

@@ -1,0 +1,59 @@
+:orphan:
+
+############################################
+|exerciseicon_ST| Exercici 01_26. L'ascensor
+############################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_26_ascensor/``
+
+* Continguts relacionats: :doc:`condicionals_niament`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [☆] Exercici amb :ref:`dificultat addicional<descripcio_exercicis_dificils>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+
+Considerem un ascensor d'un edifici amb planta baixa i dos pisos (primer pis i
+segon pis) que tingui els següents botons: ‘pujar un', ‘pujar dos', ‘baixar un'
+i ‘baixar dos'. L'ascensor es comporta, a partir dels botons esmentats, segons
+el següent diagrama de transició d'estats:
+
+.. image:: _images/esquemaascensor.png
+   :align: center
+
+Es demana desenvolupar un programa que simuli el funcionament d'aquest
+ascensor.
+
+El programa demanarà el pis en que es troba i el botó que es prem, i
+mostrarà el nou pis.
+
+Cal comprovar que els botons i les plantes siguin correctes. En cas que no ho
+siguin, el programa mostrarà un missatge d'error en comptes del nou pis.
+
+Exemple d'interacció: ::
+
+    $ java Ascensor
+    pis?
+    planta baixa
+    botó?
+    pujar un
+    primer pis
+    $ java Ascensor
+    pis?
+    golfes
+    botó?
+    baixar un
+    error
+    $ java Ascensor
+    pis?
+    segon pis
+    botó?
+    pujar un
+    error
+

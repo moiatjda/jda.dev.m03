@@ -1,0 +1,65 @@
+:orphan:
+
+##########################################
+|exerciseicon__T| Exercici 01_14. La presó
+##########################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_14_preso/``
+
+* Continguts relacionats: :doc:`condicionals_simple`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+
+Desenvolupa un programa que demani el nom i l'edat per entrada
+estàndard i, 
+si és major de 18 anys li digui “Vos ja podeu anar a la presó!”.
+Finalment, sigui quina sigui l'edat de l'usuari el programa s'acomiadarà dient
+“Aneu amb compte «nom de l'usuari»!”.
+
+Exemples d'interacció: ::
+
+    $ java Preso
+    Com us dieu?
+    Manel
+    Quants anys teniu?
+    17
+    Aneu amb compte Manel
+    $ java Preso
+    Com us dieu?
+    Anna
+    Quants anys teniu?
+    19
+    Vos ja podeu anar a la presó!
+    Aneu amb compte Anna
+
+
+Aquí tens una plantilla pel teu codi. Pots copiar-la i enganxar-la en el
+fitxer corresponent. Únicament et caldrà
+reemplaçar els comentaris ``/*█████*/`` pel codi corresponent.
+
+.. code-block:: java
+
+    /*
+     * Programa que recorda que els majors d'edat són responsables davant la
+     * llei
+     */
+    public class Preso {
+        public static void main(String[] args) {
+            System.out.println("Com es diu?");
+            String nom = Entrada.readLine();
+            System.out.println("Quina edat té?");
+            int edat = Integer.parseInt(Entrada.readLine());
+            if (/* █████condició */) {
+                /* █████instruccions quan la condició és certa */
+            }
+            /* █████instruccions independentment de la condició */
+        }
+    }
+

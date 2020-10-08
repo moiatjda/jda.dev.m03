@@ -1,0 +1,48 @@
+############
+Condicionals
+############
+
+Intenta resoldre el següent exercici:
+
+Desenvolupa un programa que donat un número enter retorni si és *parell* o
+*senar*.
+
+Per exemple, considera les següents interaccions:
+
+.. code-block:: none
+
+    $ java ParellSenar 4
+    Parell
+    $ java ParellSenar 5
+    Senar
+
+Si veus que no te'n surts, no et sentis malament i continua llegint.
+
+Instruccions condicionals
+=========================
+
+Amb el que sabem fins ara, els nostres programes són una seqüència
+d'instruccions que s'executen de la primera a la darrera.
+
+Però el programa ``ParellSenar`` requereix que es mostri una instrucció o
+una altra depenent d'una condició. Com ho podem fer?
+
+Els llenguatges de programació ofereixen el que anomenarem *instruccions
+condicionals*.
+
+La idea bàsica és que les instruccions condicionals ens permeten decidir
+quin codi executem depenent d'una *condició*. Una condició no és més que
+una expressió amb resultat booleà que ja em vist a
+:doc:`expressions_booleanes_relacionals`.
+
+Els continguts d'aquesta secció s'estructuren en les següents entrades:
+
+.. toctree::
+    :titlesonly:
+    :maxdepth: 1
+
+    condicionals_simple.rst
+    condicionals_doble.rst
+    indentacio.rst
+    condicionals_niament.rst
+
