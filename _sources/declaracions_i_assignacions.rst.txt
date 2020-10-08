@@ -142,7 +142,7 @@ entendre-ho tot.
   cas, el comentari és d'una sola línia i descriu que és el moment en què
   fem la part de pensar el número del nostre joc.
 
-* la línia 15 és també molt important per a aquest tema. Es tracta d'una
+* la línia 16 és també molt important per a aquest tema. Es tracta d'una
   *assignació*. No et preocupis pel que ve a continuació del ``=``. En
   realitat, el que està fent és simplement dir que el ``numeroPensat`` és
   l'indicat quan executem el programa. Per exemple, serà 10 en la primera
