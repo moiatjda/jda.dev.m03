@@ -52,9 +52,9 @@ reemplaçar els comentaris ``/*█████*/`` pel codi corresponent.
      */
     public class Preso {
         public static void main(String[] args) {
-            System.out.println("Com es diu?");
+            System.out.println("Com us dieu?");
             String nom = Entrada.readLine();
-            System.out.println("Quina edat té?");
+            System.out.println("Quants anys teniu?");
             int edat = Integer.parseInt(Entrada.readLine());
             if (/* █████condició */) {
                 /* █████instruccions quan la condició és certa */
