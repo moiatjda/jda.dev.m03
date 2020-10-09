@@ -230,6 +230,21 @@ alguns llocs trobaràs que fan servir <em>imbricades</em>. Bé, el significat
 <p>Aquesta situació de tenir més d’una condició, però, és tant comuna que
 molts llenguatges ofereixen una manera més compacta d’expressar-les. En el
 cas de Java, ho podem fer de la següent manera:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">edat</span> <span class="o">==</span> <span class="mi">18</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Tot just major d&#39;edat&quot;</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">edat</span> <span class="o">&gt;</span> <span class="mi">18</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Ets major d&#39;edat&quot;</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Ets menor d&#39;edat&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
 <p>Aquesta nova versió estalvia dues línies de codi i un nivell d’indentació.
 Amb tot, només és una millora estètica. Els dos programes funcionen
 exactament iguals. Amb tot, com passa amb la indentació, a mida que anem

@@ -63,7 +63,7 @@ molts llenguatges ofereixen una manera més compacta d'expressar-les. En el
 cas de Java, ho podem fer de la següent manera:
 
 .. code-block:: java
-    :linenos;
+    :linenos:
 
     if (edat == 18) {
         System.out.println("Tot just major d'edat");
