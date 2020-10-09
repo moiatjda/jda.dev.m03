@@ -29,7 +29,7 @@ En Java ho escriuríem de manera semblant a:
 .. code-block:: java
 
     if (edat >= 18) {
-        System.out.println("Ets major d'edat"):
+        System.out.println("Ets major d'edat");
     }
 
 La forma bàsica d'aquesta instrucció és:

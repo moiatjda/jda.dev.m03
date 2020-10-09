@@ -13,9 +13,9 @@ Comprova la teva versió amb les comandes:
 
 .. code-block:: sh
 
-    $ javac --version
+    $ javac -version
     javac 11.0.8
-    $ java --version
+    $ java -version
     openjdk 11.0.8 2020-07-14
     OpenJDK Runtime Environment (build 11.0.8+10-post-Debian-1deb10u1)
     OpenJDK 64-Bit Server VM (build 11.0.8+10-post-Debian-1deb10u1, mixed mode, sharing)

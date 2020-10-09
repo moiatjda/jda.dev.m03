@@ -37,12 +37,12 @@ En Java, aquest tros de codi el podem codificar com:
     :linenos:
 
     if (edat == 18) {
-        System.out.println("Tot just major d'edat"):
+        System.out.println("Tot just major d'edat");
     } else {
         if (edat > 18) {
-            System.out.println("Ets major d'edat"):
+            System.out.println("Ets major d'edat");
         } else {
-            System.out.println("Ets menor d'edat"):
+            System.out.println("Ets menor d'edat");
         }
     }
 
@@ -63,14 +63,14 @@ molts llenguatges ofereixen una manera més compacta d'expressar-les. En el
 cas de Java, ho podem fer de la següent manera:
 
 .. code-block:: java
-    :linenos:
+    :linenos;
 
     if (edat == 18) {
-        System.out.println("Tot just major d'edat"):
+        System.out.println("Tot just major d'edat");
     } else if (edat > 18) {
-        System.out.println("Ets major d'edat"):
+        System.out.println("Ets major d'edat");
     } else {
-        System.out.println("Ets menor d'edat"):
+        System.out.println("Ets menor d'edat");
     }
 
 Aquesta nova versió estalvia dues línies de codi i un nivell d'indentació.
@@ -79,7 +79,7 @@ exactament iguals. Amb tot, com passa amb la indentació, a mida que anem
 programant veurem que tota millora en la legibilitat del codi serà molt
 valuosa.
 
-Per cert, podem indicar tants ``elif`` com ens calguin i no és obligatori acabar
+Per cert, podem indicar tants ``else if`` com ens calguin i no és obligatori acabar
 amb un ``else``.
 
 Exercicis

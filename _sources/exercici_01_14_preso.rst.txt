@@ -19,7 +19,7 @@
 
 Desenvolupa un programa que demani el nom i l'edat per entrada
 estàndard i, 
-si és major de 18 anys li digui “Vos ja podeu anar a la presó!”.
+si és major d'edat li digui “Vos ja podeu anar a la presó!”.
 Finalment, sigui quina sigui l'edat de l'usuari el programa s'acomiadarà dient
 “Aneu amb compte «nom de l'usuari»!”.
 

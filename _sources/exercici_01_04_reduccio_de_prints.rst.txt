@@ -25,5 +25,5 @@ Recorda un altre cop el programa ``EndevinaNombre``
 
 Crea una nova versió que faci el mateix però que compacti les crides a
 ``System.out.print()`` fent servir la notació que hem vist
-``System.out.println("El número és " + numero):``.
+``System.out.println("El número és " + numero);``.
 

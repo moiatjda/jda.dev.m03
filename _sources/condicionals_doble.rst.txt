@@ -9,10 +9,10 @@ Podem codificar aquesta nova condició de la següent manera:
 .. code-block:: java
 
     if (edat >= 18) {
-        System.out.println("Ets major d'edat"):
+        System.out.println("Ets major d'edat");
     }
     if (! (edat >= 18)) {
-        System.out.println("Ets menor d'edat"):
+        System.out.println("Ets menor d'edat");
     }
 
 Fixa't que la segona condició és la negació de la primera. Podíem haver-la
@@ -81,9 +81,9 @@ tradueix com *sinó*.
 .. code-block:: java
 
     if (edat >= 18) {
-        System.out.println("Ets major d'edat"):
+        System.out.println("Ets major d'edat");
     } else {
-        System.out.println("Ets menor d'edat"):
+        System.out.println("Ets menor d'edat");
     }
 
 Amb aquesta nova forma de condicional, podem especificar quines

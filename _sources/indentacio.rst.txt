@@ -11,9 +11,9 @@ Considera aquest codi en Java:
         public static void main(String[] args) {
             int edat = Integer.parseInt(args[0]);
             if (edat >= 18) {
-                System.out.println("Ets major d'edat"):
+                System.out.println("Ets major d'edat");
             } else {
-                System.out.println("Ets menor d'edat"):
+                System.out.println("Ets menor d'edat");
             }
         }
     }
@@ -26,9 +26,9 @@ Compara'l amb el següent:
     public static void main(String[] args) {
     int edat = Integer.parseInt(args[0]);
     if (edat >= 18) {
-    System.out.println("Ets major d'edat"):
+    System.out.println("Ets major d'edat");
     } else {
-    System.out.println("Ets menor d'edat"):
+    System.out.println("Ets menor d'edat");
     }
     }
     }
@@ -37,7 +37,7 @@ Encara una altra versió:
 
 .. code-block:: java
 
-    public class MajorEdat { public static void main(String[] args) { int edat = Integer.parseInt(args[0]); if (edat >= 18) { System.out.println("Ets major d'edat"): } else { System.out.println("Ets menor d'edat"): } } }
+    public class MajorEdat { public static void main(String[] args) { int edat = Integer.parseInt(args[0]); if (edat >= 18) { System.out.println("Ets major d'edat"); } else { System.out.println("Ets menor d'edat"); } } }
 
 Els tres programes són equivalents des del punt de vista de Java. Per
 Java, els salts de línia i els espais són generalment superflus. Així que
@@ -79,7 +79,7 @@ de fitxers:
     public class MajorEdat
     └── public static void main(String[] args)
         ├── int edat = Integer.parseInt(args[0])
-        ├──_if (edat >= 18)
+        ├── if (edat >= 18)
         │   └── System.out.println("Ets major d'edat")
         └── else
             └── System.out.println("Ets menor d'edat")
