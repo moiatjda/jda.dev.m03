@@ -33,7 +33,7 @@ algun aclariment, fes servir comentaris.
 
 #. l'any que ve seràs major d'edat
 
-#. l'any passat encara no eres menor d'edat
+#. l'any passat encara no eres major d'edat
 
 #. tens com a molt 35 companys a classe
 
