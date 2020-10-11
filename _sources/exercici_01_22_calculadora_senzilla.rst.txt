@@ -24,27 +24,27 @@ resultat d'aplicar l'operació als operands.
 Exemple d'interacció: ::
 
     $ java CalculadoraSenzilla
-    Primer operand?
+    Operand1?
     4
     Operador?
     +
-    Segon operand?
+    Operand2?
     5
     4,00 + 5,00 = 9,00
     $ java CalculadoraSenzilla
-    Primer operand?
+    Operand1?
     4
     Operador?
     /
-    Segon operand?
+    Operand2?
     0
     No es pot dividir entre 0
     $ java CalculadoraSenzilla
-    Primer operand?
+    Operand1?
     4
     Operador?
     ^
-    Segon operand?
+    Operand2?
     3
     L'operador ^ no està disponible
 

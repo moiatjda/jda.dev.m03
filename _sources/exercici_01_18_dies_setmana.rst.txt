@@ -44,19 +44,13 @@ Considera les següents simulacions d'execució:
 
 .. code-block:: console
 
-    $ java DiesSetmana
-    Número del dia?
-    1
+    $ java DiesSetmana 1
     dilluns
-    $ java DiesSetmana
-    Número del dia?
-    5
+    $ java DiesSetmana 5
     divendres
-    Número del dia?
-    0
+    Número del dia? 0
     error
-    Número del dia?
-    8
+    Número del dia? 8
     error
 
-Pots suposar que sempre introduiran un valor enter.
+Pots suposar que sempre rebrà un valor enter.
