@@ -29,3 +29,5 @@ Exemple d'interacció:
     Any?
     2003
     Anterior 9/2003 i posterior 11/2003
+
+Pots suposar que l'entrada sempre serà un més i un any correcte
