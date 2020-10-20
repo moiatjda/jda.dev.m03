@@ -56,9 +56,9 @@ reemplaçar els comentaris ``/*█████*/`` pel codi corresponent.
             /*█████*/;
 
             // mostra resultats
-            System.out.println("" + primerOperand + " + " + segonOperand + " = " + suma);
-            System.out.println("" + primerOperand + /*█████*/ + segonOperand + " = " + resta);
-            System.out.println("" + primerOperand + /*█████*/ + segonOperand + " = " + /*█████*/);
+            System.out.println(primerOperand + " + " + segonOperand + " = " + suma);
+            System.out.println(primerOperand + /*█████*/ + segonOperand + " = " + resta);
+            System.out.println(primerOperand + /*█████*/ + segonOperand + " = " + /*█████*/);
             System.out.println(/*█████*/);
         }
     }
