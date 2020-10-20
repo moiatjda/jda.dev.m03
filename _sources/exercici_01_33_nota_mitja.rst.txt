@@ -1,0 +1,51 @@
+:orphan:
+
+###############################################
+|exerciseicon___| Exercici 01_33. La nota mitja
+###############################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_33_nota_mitja/``
+
+* Continguts relacionats: :doc:`while_exercicis`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+.. rubric:: Enunciat
+
+
+Recordes l'exercici de :doc:`sumar notes <exercici_01_29_suma_notes>`?
+Doncs en aquesta ocasió en faràs un que, en comptes de dir-te la suma de
+notes, t'informarà de la nota mitja corresponent a les notes introduïdes.
+
+Un parell de simulacions:
+
+.. code-block:: console
+
+    $ java NotaMitja
+    Introdueix una nota
+    -5
+    Cap nota vàlida introduïda
+    $ java NotaMitja
+    Introdueix una nota
+    5
+    Introdueix una nota
+    90
+    Introdueix una nota
+    73
+    Introdueix una nota
+    123
+    La mitja de les notes vàlides és 56
+
+Pista: la mitja d'uns valors numèrics es calcula a partir de sumar tots
+els valors i dividir el resultat pel nombre de valors. En l'exemple, la
+mitja dels tres valors vàlids correspon a ``(5 + 90 + 73) / 3``
+
+Per tant, en aquest exercici necessitaràs, no un sinó dos acumuladors! Per
+una banda un per anar guardant la suma i per un altre un comptador per
+anar guardant quants en portes. Doncs res, farem servir dues variables.
+
+A banda, per simplicitat, fes servir totes les dades de tipus enter
+(``int``) malgrat en aquest cas seria més precís tenir en comptes
+decimals.

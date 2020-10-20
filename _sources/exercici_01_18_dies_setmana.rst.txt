@@ -48,9 +48,9 @@ Considera les següents simulacions d'execució:
     Dilluns
     $ java DiaSetmana 5
     Divendres
-    $ java DiaSetmana 0
+    Número del dia? 0
     Error
-    $ java DiaSetmana 8
+    Número del dia? 8
     Error
 
 Pots suposar que sempre rebrà un valor enter.

@@ -1,0 +1,110 @@
+######
+Bucles
+######
+
+En programació estructurada no està permès saltar d'una
+instrucció a una altra.
+
+Hi ha altres tipus de programació no estructurada que sí ho
+permeten, mitjançant instruccions de salt que diuen *ves a
+la línia 5* o en l'anglès compacte dels llenguatges de
+programació ``goto 5``.
+
+Al llarg dels anys, els desenvolupadors hem aprés d'una
+manera molt dura que aquesta instrucció és un dels nostres
+**diables**. El codi que genera acaba sent un malson quan
+el volem entendre i corregir.
+
+Java directament no ofereix el ``goto`` tot i que té la
+paraula reservada. En altres llenguatges que encara la
+ofereixen, està molt desaconsellat.
+
+Si mai et trobes un codi amb ``goto`` … bé, avisa i pregarem
+per la teva ànima.
+
+Malgrat aquest salt cap enrere no el podrem fer, hi ha altres maneres
+d'aconseguir el mateix efecte si ho *retoquem* retoquem una mica.  Per
+exemple:
+
+.. graphviz::
+    :align: center
+
+    digraph {
+        inici[shape="box", style=rounded];
+        instruccio0 [label="suma = 0", shape="rectangle", style=""];
+        instruccio3 [label="escriu suma", shape="rectangle", style=""]
+        lectura1 [label="valor = llegeix(\"un valor\")", shape="rectangle", style=""];
+        lectura2 [label="valor = llegeix(\"un valor\")", shape="rectangle", style="", color="red"];
+        condicio1 [label="valor >=0", shape="diamond", style=""];
+        instruccio1 [label="suma = suma + valor", shape="rectangle", style=""]
+        final[shape="box", style=rounded];
+
+        inici -> instruccio0
+        instruccio0 -> lectura1;
+        lectura1 -> condicio1;
+        condicio1 -> instruccio1 [label="cert"];
+        condicio1 -> instruccio3 [label="fals"];
+        instruccio1 -> lectura2 [color="red"];
+        lectura2 -> condicio1 [color="red"];
+        instruccio3 -> final;
+    }
+
+
+
+Deixa'm que ho torni a escriure amb altres paraules: el que volem en
+realitat és anar llegint i sumant valors **mentre** ens introdueixin
+valors positius. Aquí la paraula clau, evidentment, és el *mentre*
+(*while* en anglès)
+
+A veure que et sembla el següent codi
+
+.. code-block:: java
+    :linenos:
+
+    public class SumaPositius {
+        public static void main(String[] args) {
+
+            // creem la variable on guardarem el resultat de sumar
+            int suma = 0;   // inicialment no hem sumat res i per tant és 0
+
+            // demana el primer valor
+            System.out.println("Introdueix valor");
+            int valor = Integer.parseInt(Entrada.readLine());
+
+            // ves sumant mentre el valor sigui positiu
+            while (valor >= 0) {
+                suma = suma + valor;
+                // demana un nou valor
+                System.out.println("Introdueix valor");
+                valor = Integer.parseInt(Entrada.readLine());
+            }
+
+            // mostrem el resultat
+            System.out.println("La suma és " + suma);
+        }
+    }
+
+La clau està en la línia 12. Allà hi trobem que en comptes de ``if`` ara
+apareix ``while``
+
+El funcionament és el següent:
+
+* comença llegint un primer valor (línia 9)
+
+* tot seguit comprova si el valor llegit és positiu (línia 12)
+
+  Tal i com faria Java si hagués estat un ``if``, en cas que la condició
+  resulti certa, entra dins del bloc i acumula el valor a la variable
+  ``suma``.
+
+Fixa't que l'estructura del ``while`` és idèntica a la del ``if`` excepte
+que el ``while`` en Java no té ``else``.
+
+.. code-block:: java
+
+    if (condicio) {                     while (condicio) {
+        instruccions;                       instruccions;
+    }                                   }
+
+|exerciseicon__T| :doc:`exercici_01_29_suma_notes`
+
