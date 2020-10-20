@@ -1,0 +1,56 @@
+################
+Bucle per sempre
+################
+
+Què passaria si dins del bloc del ``while`` no llegim un nou valor? Per
+exemple, què passa si executem el següent codi:
+
+.. code-block:: java
+    :linenos:
+
+    public class SumaPositius {
+        public static void main(String[] args) {
+            int suma = 0;
+            int valor = 0;
+            while (valor >= 0) {
+                System.out.println("Introdueix valor");
+                // oblidem llegir el nou valor: valor = Integer.parseInt(Entrada.readLine());
+                if (valor >= 0) {
+                    suma = suma + valor;
+                }
+            }
+            System.out.println("La suma és " + suma);
+        }
+    }
+
+
+Si l'has provat, probablement se t'ha quedat escrivint el missatge
+demanant el nou valor *per sempre*.
+
+Evidentment, per sempre no esperarem. Si encara no ho has fet, fes
+``ctrl-c`` i avorta l'execució al terminal.
+
+Podríem haver simplificat el programa anterior amb:
+
+.. code-block:: java
+    :linenos:
+
+    public class Infinit {
+        public static void main(String[] args) {
+            while (true) {
+                System.out.println("No em canso de dir-t'ho");
+            }
+            System.out.println("Aquest missatge mai no s'escriurà");
+        }
+    }
+
+La condició d'aquest programa té tantes possibilitats d'avaluar-se a fals
+com la de l'anterior. És a dir, **mai** no serà falsa!
+
+D'aquesta breu secció ens ha de quedar una cosa clara: dins del bloc del
+``while`` cal que fem alguna cosa que permeti que en algun moment la
+condició pugui evaluar a fals. Altrament, el nostre programa es quedarà
+donant voltes fins que prenguem mesures dràstiques (``ctrl-c``), s'acabi
+la bateria del nostre portàtil, vingui la fi del món… penso que ja m'has
+entès, oi?
+

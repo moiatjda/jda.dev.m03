@@ -1,0 +1,103 @@
+############################
+Afegim un pas de complexitat
+############################
+
+Ja hem resolt una simplificació força radical del problema. Compliquem-lo
+una mica.
+
+Ara imagina't que el problema a resoldre fos llegir dos enters. Llavors,
+el codi passaria a ser quelcom semblant a:
+
+
+.. code-block:: java
+    :linenos:
+
+    public class SumaPositius {
+        public static void main(String[] args) {
+
+            // creem la variable on guardarem el resultat de sumar
+            int suma = 0;   // inicialment no hem sumat res i per tant és 0
+
+            // declarem la variable que contindrà els valors llegits
+            int valor;
+
+            // processem el primer valor
+            System.out.println("Introdueix un valor");
+            valor = Integer.parseInt(Entrada.readLine());
+            if (valor >= 0) {
+                suma = suma + valor;
+            }
+
+            // processem el segon valor
+            System.out.println("Introdueix un valor");
+            valor = Integer.parseInt(Entrada.readLine());
+            if (valor >= 0) {
+                suma = suma + valor;
+            }
+
+            // mostrem el resultat
+            System.out.println("La suma és " + suma);
+        }
+    }
+
+Com que volem reaprofitar la variable ``valor`` per cada valor llegit, el
+declarem a la línia 8 i li assignem el valor introduït pels usuaris
+(línies 12 i 19)
+
+Fixa't que a la línia 14 hi afegim el primer valor, mentre
+que a la 21 hi afegim el segon; em ambdós casos, sempre i quant el valor
+sigui positiu.
+
+Ara la variable ``suma`` pren sentit doncs va *acumulant* els valors que
+ens interessen.
+
+|exerciseiconO__| :doc:`exercici_01_27_suma_tres_positius`
+
+L'esquema del programa de sumar dos positius seria quelcom similar a:
+
+.. graphviz::
+    :align: center
+
+    digraph G {
+        inici[shape="box", style=rounded];
+        final[shape="box", style=rounded];
+        instruccio0 [label="suma = 0", shape="rectangle", style=""];
+        instruccio3 [label="escriu suma", shape="rectangle", style=""]
+
+
+        compound=true;
+        subgraph cluster0 {
+            lectura1 [label="valor = llegeix(\"un valor\")", shape="rectangle", style=""];
+            condicio1 [label="valor >=0", shape="diamond", style=""];
+            instruccio1 [label="suma = suma + valor", shape="rectangle", style=""]
+            label="// primer valor";
+        }
+
+        subgraph cluster1 {
+            lectura2 [label="valor = llegeix(\"un valor\")", shape="rectangle", style=""];
+            condicio2 [label="valor >=0", shape="diamond", style=""];
+            instruccio2 [label="suma = suma + valor", shape="rectangle", style=""]
+            label="// segon valor";
+        }
+
+        inici -> instruccio0
+        instruccio0 -> lectura1 [lhead=cluster0];
+        lectura1 -> condicio1
+        condicio1 -> instruccio1 [label="cert"];
+        condicio1 -> lectura2 [label="fals",lhead=cluster1];
+        instruccio1 -> lectura2 [lhead=cluster1];
+
+        lectura2 -> condicio2;
+        condicio2 -> instruccio2 [label="cert"];
+        condicio2 -> instruccio3[label="fals"];
+        instruccio2 -> instruccio3;
+
+        instruccio3 -> final;
+    }
+
+Si et fixes, el bloc que processa el primer valor conté exactament el
+mateix que el que processa el segon. De fet, si has fet 
+correctament :doc:`l'exercici dels tres positius <exercici_01_27_suma_tres_positius>`,
+el diagrama corresponent seria com l'anterior tot afegint-hi una tercera
+caixa idèntica!
+

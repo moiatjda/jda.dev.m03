@@ -1,0 +1,46 @@
+:orphan:
+
+################################################
+|exerciseicon__T| Exercici 01_30. Quants parells
+################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_30_quants_parells/``
+
+* Continguts relacionats: :doc:`while_redundancia`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+
+Desenvolupa un programa que vagi demanant enters positius i que, en el
+moment que rebi un de negatiu, mostri el nombre de valors parells
+introduïts i finalitzi l'execució.
+
+Un exemple d'execució seria:
+
+.. code-block:: console
+
+    $ java ComptaParells
+    Introdueix un valor
+    2
+    Introdueix un valor
+    5
+    Introdueix un valor
+    4
+    Introdueix un valor
+    -1
+    Parells introduïts: 2
+
+Pista: Et proposo que abans de seguir llegint aquesta pista, intentis
+pensar la solució pel teu compte. Només continua llegint si et quedes
+sense idees.
+
+Declara la variable corresponent al comptador. No oblidis inicialitzar-la
+adequadament!  Dins del bloc del bucle només has de sumar-li un al
+comptador quan el valor introduït sigui parell (recorda el mòdul)
+

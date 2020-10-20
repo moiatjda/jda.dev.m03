@@ -1,0 +1,29 @@
+###################
+Bucles condicionals
+###################
+
+En aquest tema, treballarem un concepte nou: la repetició d'instruccions
+
+Fins ara sabem posar instruccions que seran executades una darrera
+l'altra, i també sabem fer que, depenent d'una condició, s'executin unes o
+altres instruccions. El que no hem vist és com fer que unes instruccions
+es tornin a executar, oi? Veiem si això pot ser-nos útil.
+
+El tema està descomposat en els següents punts:
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    while_context.rst
+    while_simplifiquem.rst
+    while_mes_complexitat.rst
+    while_petita_correccio.rst
+    while_cas_general.rst
+    while_no_goto.rst
+    while_redundancia.rst
+    while_infinit.rst
+    while_exercicis.rst
+    while_conclusions.rst
+
+

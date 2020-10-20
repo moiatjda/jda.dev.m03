@@ -23,34 +23,34 @@ entre el 1 i el 7 i respongui segons la taula:
 +---------+-----------+
 | entrada | sortida   |
 +=========+===========+
-| 1       | Dilluns   |
+| 1       | dilluns   |
 +---------+-----------+
-| 2       | Dimarts   |
+| 2       | dimarts   |
 +---------+-----------+
-| 3       | Dimecres  |
+| 3       | dimecres  |
 +---------+-----------+
-| 4       | Dijous    |
+| 4       | dijous    |
 +---------+-----------+
-| 5       | Divendres |
+| 5       | divendres |
 +---------+-----------+
-| 6       | Dissabte  |
+| 6       | dissabte  |
 +---------+-----------+
-| 7       | Diumenge  |
+| 7       | diumenge  |
 +---------+-----------+
-| altre   | Error     |
+| altre   | error     |
 +---------+-----------+
 
 Considera les següents simulacions d'execució:
 
 .. code-block:: console
 
-    $ java DiaSetmana 1
-    Dilluns
-    $ java DiaSetmana 5
-    Divendres
+    $ java DiesSetmana 1
+    dilluns
+    $ java DiesSetmana 5
+    divendres
     Número del dia? 0
-    Error
+    error
     Número del dia? 8
-    Error
+    error
 
 Pots suposar que sempre rebrà un valor enter.

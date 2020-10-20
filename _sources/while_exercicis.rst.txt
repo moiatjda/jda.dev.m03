@@ -1,0 +1,17 @@
+################
+Alguns exercicis
+################
+
+Practica una mica més els coneixements de bucles d'aquest tema.
+
+|exerciseicon__T| :doc:`exercici_01_31_lloro`
+
+|exerciseicon__T| :doc:`exercici_01_32_troba_maxim`
+
+|exerciseicon___| :doc:`exercici_01_33_nota_mitja`
+
+|exerciseiconOS_| :doc:`exercici_01_34_dowhile`
+
+|exerciseicon__T| :doc:`exercici_01_35_endevina`
+
+|exerciseiconO_T| :doc:`exercici_01_36_endevina_cancel`

@@ -1,0 +1,99 @@
+################
+Petita correcció
+################
+
+Ara ja sabem fer el programa corresponent depenent del nombre de valors
+que hàgim de demanar.
+
+Si ens fixem, però, això no és ben bé el que ens demanava l'enunciat del
+problema original. Tal i com l'estem resolent, el programa demana sempre **tots**
+els valors. És a dir, no s'atura quan llegeix el primer negatiu!
+
+El que voldríem és quelcom similar al següent diagrama:
+
+.. graphviz::
+    :align: center
+
+    digraph G {
+        inici[shape="box", style=rounded];
+        final[shape="box", style=rounded];
+        instruccio0 [label="suma = 0", shape="rectangle", style=""];
+        instruccio3 [label="escriu suma", shape="rectangle", style=""]
+
+
+        compound=true;
+        subgraph cluster0 {
+            lectura1 [label="valor = llegeix(\"un valor\")", shape="rectangle", style=""];
+            condicio1 [label="valor >=0", shape="diamond", style=""];
+            instruccio1 [label="suma = suma + valor", shape="rectangle", style=""]
+            label="// primer valor";
+        }
+
+        subgraph cluster1 {
+            lectura2 [label="valor = llegeix(\"un valor\")", shape="rectangle", style=""];
+            condicio2 [label="valor >=0", shape="diamond", style=""];
+            instruccio2 [label="suma = suma + valor", shape="rectangle", style=""]
+            label="// segon valor";
+        }
+
+        inici -> instruccio0
+        instruccio0 -> lectura1 [lhead=cluster0];
+        lectura1 -> condicio1
+        condicio1 -> instruccio1 [label="cert"];
+        condicio1 -> instruccio3 [label="fals",lhead=cluster1, color="red"];
+        instruccio1 -> lectura2 [lhead=cluster1];
+
+        lectura2 -> condicio2;
+        condicio2 -> instruccio2 [label="cert"];
+        condicio2 -> instruccio3[label="fals"];
+        instruccio2 -> instruccio3;
+
+        instruccio3 -> final;
+    }
+
+
+És a dir, en cas que el primer número llegit sigui negatiu, ja no
+demanarem el segon!
+
+Això encara ho podem fer amb els coneixements que tenim! Com?
+
+Fàcil, posem el bloc de processament del segon valor dins del primer
+condicional!
+
+El codi resultant seria:
+
+.. code-block:: java
+    :linenos:
+
+    public class SumaPositius {
+        public static void main(String[] args) {
+
+            // creem la variable on guardarem el resultat de sumar
+            int suma = 0;   // inicialment no hem sumat res i per tant és 0
+
+            // declarem la variable que contindrà els valors llegits
+            int valor;
+
+            // processem el primer valor
+            System.out.println("Introdueix un valor");
+            valor = Integer.parseInt(Entrada.readLine());
+            if (valor >= 0) {
+                suma = suma + valor;
+
+                // processem el segon valor
+                System.out.println("Introdueix un valor");
+                valor = Integer.parseInt(Entrada.readLine());
+                if (valor >= 0) {
+                    suma = suma + valor;
+                }
+            }
+            // mostrem el resultat
+            System.out.println("La suma és " + suma);
+        }
+    }
+
+Fixa't com, ara només llegim el segon valor si hem sumat el primer, és a
+dir, si el primer no era negatiu!
+
+|exerciseiconO__| :doc:`exercici_01_28_suma_com_a_molt_tres_positius`
+

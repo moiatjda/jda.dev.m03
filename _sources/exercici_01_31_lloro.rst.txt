@@ -1,0 +1,55 @@
+:orphan:
+
+##########################################
+|exerciseicon__T| Exercici 01_31. El lloro
+##########################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_31_lloro/``
+
+* Continguts relacionats: :doc:`while_exercicis`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+
+Desenvolupa un programa que vagi demanant paraules i les repeteixi fins
+que rebi una resposta en blanc o bé buida. És a dir, la resposta sigui un
+return directament o bé només espais.
+
+Un exemple d'execució seria:
+
+.. code-block:: console
+
+    $ java Lloro
+    El lloro pregunta paraula:
+    hola
+    El lloro diu: hola
+    El lloro pregunta paraula:
+    què tal?
+    El lloro diu: què tal?
+    El lloro pregunta paraula:
+    
+    Adéu
+
+Fixa't que la resposta del lloro canvia lleugerament en finalitzar.
+
+Pista: considera el següent codi per comprovar si una cadena és buida o
+només de blancs:
+
++------------+----------------------+----------------------+---------------------------+
+| cadena     | ``cadena.isEmpty()`` | ``cadena.isBlank()`` |  comentari                |
++============+======================+======================+===========================+
+| ``""``     |   true               |   true               |  Cadena buida             |
++------------+----------------------+----------------------+---------------------------+
+| ``"  "``   |   false              |   true               |  Només espais             |
++------------+----------------------+----------------------+---------------------------+
+| ``" \t "`` |   false              |   true               |  Espais i tabuladors      |
++------------+----------------------+----------------------+---------------------------+
+| ``" eo "`` |   false              |   false              |  Alguna cosa no espai     |
++------------+----------------------+----------------------+---------------------------+
+

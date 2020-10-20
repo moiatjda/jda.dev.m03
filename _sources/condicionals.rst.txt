@@ -45,4 +45,5 @@ Els continguts d'aquesta secció s'estructuren en les següents entrades:
     condicionals_doble.rst
     indentacio.rst
     condicionals_niament.rst
+    condicionals_conclusions.rst
 
