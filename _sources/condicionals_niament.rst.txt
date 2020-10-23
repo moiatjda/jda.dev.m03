@@ -105,7 +105,7 @@ només fer els opcionals d'ampliació si disposes de prou temps.
 
 |exerciseiconO_T| :doc:`exercici_01_23_pagaments`
 
-|exerciseiconO_T| :doc:`exercici_01_24_semafor`
+|exerciseicon__T| :doc:`exercici_01_24_semafor`
 
 |exerciseiconO_T| :doc:`exercici_01_25_nombre_de_fills`
 
