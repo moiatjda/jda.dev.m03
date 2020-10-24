@@ -49,7 +49,3 @@ Un exemple d'execució seria:
     Encertat!
 
 Nota: podem suposar que sempre ens introduiran valors enters.
-
-Vols fer una versió més complexa? La versió actual obliga els usuaris a
-encertar per poder finalitzar.  Et proposo que ofereixis la possibilitat
-de sortir del joc en introduir una cadena buida (recorda ``isEmpty()``.

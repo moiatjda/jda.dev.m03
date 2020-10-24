@@ -11,6 +11,7 @@ La llista d'exercicis sobre bucles condicionals d'aquest tema és:
     exercici_01_28_suma_com_a_molt_tres_positius.rst
     exercici_01_29_suma_notes.rst
     exercici_01_30_quants_parells.rst
+    exercici_01_31_lloro.rst
     exercici_01_32_troba_maxim.rst
     exercici_01_33_nota_mitja.rst
     exercici_01_34_dowhile.rst
