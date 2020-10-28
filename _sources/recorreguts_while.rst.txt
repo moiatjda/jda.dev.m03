@@ -1,0 +1,56 @@
+############################
+Recorreguts amb el ``while``
+############################
+
+Tornem a considerar l'enunciat del problema:
+
+    Desenvolupa un programa que escrigui els primers 10 números naturals. És
+    a dir: 1 2 3…10
+
+Una possible solució, probablement la que hauràs pensat, seria amb aquest
+fragment de codi:
+
+.. code-block:: java
+    :linenos:
+
+    int numero = 1;         // variable de recorregut assignada al primer valor
+    while (numero <= 10) {  // condició de sortida en passar del darrer valor
+        System.out.println(numero);
+        numero = numero + 1;    // passem el número al següent
+    }
+
+Si completem aquest codi perquè sigui un programa executable de Java, i
+l'executem, veurem que ens imprimeix els números del 1 al 10
+
+|exerciseiconO_T| :doc:`exercici_01_37_deu_primers`
+
+Aquest *recorregut* des del valor ``1`` fins el ``10`` es realitza amb
+quatre elements molt marcats:
+
+* declaració i inicialització de la variable de recorregut (``numero``)
+  al primer valor (``1``)
+
+* bucle ``while`` amb la condició de que la variable de recorregut
+  contingui encara un valor dins del rang del recorregut (``numero <=
+  10``). És a dir, que no ens hàgim passat.
+
+* dins del bucle processem el valor de la variable de recorregut.
+
+  En aquest cas, simplement la imprimim, però ja hem vist exemples en els
+  que les sumàvem, triàvem només els parells, calculàvem la mitja…
+
+* finalment, i també dins del bucle, fem que la variable de recorregut
+  passi al següent valor (``numero = numero + 1``)
+
+  El següent valor en aquest cas s'aconsegueix sumant-li 1. D'aquesta
+  manera, ens assegurem que el següent número està més a prop del final
+  del recorregut. Això és **important** doncs ens assegura que en algun
+  moment podrem sortir del bucle.
+
+Et proposo aquests exercicis per que practiquis aquests conceptes:
+
+|exerciseiconO__| :doc:`exercici_01_38_deu_primers_invertits`
+
+|exerciseiconO__| :doc:`exercici_01_39_primers_parells_fins_el_10`
+
+|exerciseiconO_T| :doc:`exercici_01_40_enters_de_principi_a_fi`

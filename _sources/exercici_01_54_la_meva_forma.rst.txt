@@ -1,0 +1,24 @@
+:orphan:
+
+#########################################################
+|exerciseicon___| Exercici 01_54. El teu repte amb formes
+#########################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_54_la_meva_forma/``
+
+* Continguts relacionats: :doc:`recorreguts_bucle_niat`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+.. rubric:: Enunciat
+
+
+T'has quedat amb les ganes de definir una forma? És la teva oportunitat
+d'impressionar els teus companys i, encara millor, a tu mateix/mateixa!
+
+Et proposo que construeixis la solució en forma d'exercici, amb el seu enunciat
+i els jocs de prova, tal i com si fos un exercici més dels que has vist
+anteriorment. Si resulta interessant, podria ser que el trobis afegit a aquests
+apunts associat amb el teu nom!

@@ -11,6 +11,5 @@ Els exercicis d'aquest bloc els trobaràs agrupats en les següents seccions:
     basics_exercicis_sequencials.rst
     basics_exercicis_condicionals.rst
     basics_exercicis_while.rst
-
-.. basics_exercicis_for_numerics.rst
-.. basics_exercicis_for_niats.rst
+    basics_exercicis_for_numerics.rst
+    basics_exercicis_for_niats.rst

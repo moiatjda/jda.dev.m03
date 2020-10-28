@@ -1,0 +1,46 @@
+:orphan:
+
+######################################################################
+|exerciseicon__T| Exercici 01_41. Els deu primers naturals amb ``for``
+######################################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_41_deu_primers_for/``
+
+* Continguts relacionats: :doc:`recorreguts_for`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Fem una nova versió de l'exercici dels :doc:`deu primers naturals
+<exercici_01_37_deu_primers>`, aquest cop amb el bucle ``for``.
+
+Recordem l'enunciat:
+
+Desenvolupa un programa que escrigui els primers 10 números naturals. És
+a dir: 1 2 3…10
+
+Una simulació de l'execució seria:
+
+.. code-block:: console
+
+    $ java DeuPrimers
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+    10
+
+**Pista**: Si no el tens encara, fes primer l'exercici original amb
+``while``, copia el codi a la carpeta d'aquest exercici i transforma el
+``while`` en ``for``. El tens directament als apunts!
+

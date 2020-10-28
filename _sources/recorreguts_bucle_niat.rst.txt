@@ -1,0 +1,138 @@
+#####################
+Bucles dins de bucles
+#####################
+
+Ara que ja tenim integrada la nova eina ``for``, anem a tractar un tipus
+de problemes una mica més complex.
+
+Fins ara, hem fet un recorregut *linial*, en el sentit que la variable de
+recorregut passava pels diferents valors dins d'una línia. 
+
+.. graphviz::
+    :align: center
+
+    digraph {
+        rankdir="LR";
+            infneg [label="-∞", shape=none] ;
+            infpos[label="+∞", shape=none];
+            inici, final [ shape=none];
+            infneg -> inici;
+            inici -> final;
+            final  -> infpos;
+    }
+
+Aquest tipus de problemes els resolem amb una estructura com la següent:
+
+
+.. code-block:: java
+
+    for (int variable = valorInicial; condició; variable = variable + increment) {
+        processaVariable;
+    }
+
+On la *condició* depenia de si el recorregut era creixent (``variable <=
+valorFinal``) o decreixent (``variable >= valorFinal``).
+
+Les instruccions que apareixen dins del bloc del bucle, típicament
+tenen en comptes la variable per mostrar-la per pantalla, acumular el seu
+valor (ex. sumant), etc.
+
+El nou tipus de problemes que considerem aquí tracta precissament amb la
+part de processar la variable. En comptes, però, de fer una acció
+"senzilla" com mostrar o sumar, en aquest cas, el que fa és incloure un
+altre recorregut.
+
+Considera el següent codi:
+
+.. code-block:: java
+    :linenos:
+
+    for (int linia=1; linia <= 5; linia++) {
+        for (int columna=1; columna <= 5; columna++) {
+            System.out.print(" " + columna);
+        }
+        System.out.println();
+    }
+
+El recorregut de la línia 1 ens diu que ``linia`` anirà canviant de valor
+de ``1`` fins a ``5`` de un en un.
+
+Què fa el recorregut, però? Què conté el seu bloc d'instruccions per cada
+valor de ``linia``? Un **altre** recorregut!
+
+El recorregut *intern* té com a variable de recorregut ``columna`` que, a
+l'igual que ``linia`` pren valors del ``1`` fins el ``5`` de un en un. El
+seu bloc d'instruccions simplement mostra el valor de ``columna`` amb un
+espai davant.
+
+Fixa't que la línia 3 fa servir ``print()`` en comptes de ``println()``,
+per la qual cosa, cada valor s'escriu en la mateixa línia.
+
+La línia 5 forma part del bloc del recorregut *extern* i simplement fa un
+salt de línia.
+
+En executar aquest codi, el resultat és:
+
+.. code-block:: console
+
+     1 2 3 4 5
+     1 2 3 4 5
+     1 2 3 4 5
+     1 2 3 4 5
+     1 2 3 4 5
+
+
+El nom de les variables ``linia`` i ``columna`` no han estat escollits a
+l'atzar. El recorregut extern és l'encarregat de recórrer línia a línia,
+mentre que l'intern ho fa, per una línia concreta, columna a columna.
+
+El fragment de codi podria haver estat més simple si fem la següent
+**trampa**:
+
+.. code-block:: java
+    :linenos:
+
+    for (int linia=1; linia <= 5; linia++) {
+        System.out.println(" 1 2 3 4 5");
+    }
+
+És una trampa una mica absurda ja que tard o d'hora, aquest tipus de
+problemes acaben requerint que sigui, no per 5, sinó per un valor
+variable.
+
+En tot cas, sí ens serveix per descriure un patró general d'aquest tipus
+de problemes:
+
+.. code-block:: java
+
+    for (int linia=iniciLinia; linia=finalLinia; linia+=incrementLinia) {
+        // instruccions abans de processar la línia
+        // processament de la línia (el recorregut intern)
+        // instruccions després de processar la línia
+    }
+
+Permet-me un comentari més: el recorregut extern se n'encarrega de les
+línies mentre que l'intern de les columnes, i no a l'inrevés, perquè
+``print()`` acaba generant d'esquerra a dreta i de dalt cap a baix. Ja ens
+trobarem altres contexts en el que aquesta restricció no existeix i podem
+recorrer una *superfície* o *taula* en qualsevol sentit.
+
+Exercicis
+=========
+
+Aquí tens uns quants exercicis per practicar aquest tipus de problemes.
+
+
+|exerciseicon__T| :doc:`exercici_01_48_quadrat_nombres`
+
+|exerciseicon___| :doc:`exercici_01_49_triangle_nombres`
+
+|exerciseicon___| :doc:`exercici_01_50_triangle_invertit`
+
+|exerciseicon___| :doc:`exercici_01_51_triangles`
+
+|exerciseicon___| :doc:`exercici_01_52_rombos`
+
+|exerciseiconO__| :doc:`exercici_01_53_trilal`
+
+|exerciseicon___| :doc:`exercici_01_54_la_meva_forma`

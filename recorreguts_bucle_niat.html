@@ -1,0 +1,355 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ca" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Bucles dins de bucles &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Llista d’exercicis" href="basics_exercicis.html" />
+    <link rel="prev" title="Recorreguts numèrics" href="recorreguts_numerics.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació amb Java
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-21
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="instruccions.html">Instruccions seqüencials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html">Variables i tipus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressions.html">Operadors i expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="while.html">Bucles condicionals</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="recorreguts.html">Recorreguts</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="recorreguts_while.html">Recorreguts amb el <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="recorreguts_for.html">Un nou tipus de bucle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="recorreguts_numerics.html">Recorreguts numèrics</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Bucles dins de bucles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="basics_exercicis.html">Llista d’exercicis</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació amb Java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="basics.html">Elements bàsics de la programació</a> &raquo;</li>
+        
+          <li><a href="recorreguts.html">Recorreguts</a> &raquo;</li>
+        
+      <li>Bucles dins de bucles</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="bucles-dins-de-bucles">
+<h1>Bucles dins de bucles<a class="headerlink" href="#bucles-dins-de-bucles" title="Link permanent a aquest títol">¶</a></h1>
+<p>Ara que ja tenim integrada la nova eina <code class="docutils literal notranslate"><span class="pre">for</span></code>, anem a tractar un tipus
+de problemes una mica més complex.</p>
+<p>Fins ara, hem fet un recorregut <em>linial</em>, en el sentit que la variable de
+recorregut passava pels diferents valors dins d’una línia.</p>
+<div align="center" class="align-center"><div class="graphviz"><img src="_images/graphviz-5eca337810ad0414d73ebc52a793e31dcae79ec9.png" alt="digraph {
+    rankdir=&quot;LR&quot;;
+        infneg [label=&quot;-∞&quot;, shape=none] ;
+        infpos[label=&quot;+∞&quot;, shape=none];
+        inici, final [ shape=none];
+        infneg -&gt; inici;
+        inici -&gt; final;
+        final  -&gt; infpos;
+}" class="graphviz" /></div>
+</div>
+<p>Aquest tipus de problemes els resolem amb una estructura com la següent:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">variable</span> <span class="o">=</span> <span class="n">valorInicial</span><span class="p">;</span> <span class="n">condició</span><span class="p">;</span> <span class="n">variable</span> <span class="o">=</span> <span class="n">variable</span> <span class="o">+</span> <span class="n">increment</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">processaVariable</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>On la <em>condició</em> depenia de si el recorregut era creixent (<code class="docutils literal notranslate"><span class="pre">variable</span> <span class="pre">&lt;=</span>
+<span class="pre">valorFinal</span></code>) o decreixent (<code class="docutils literal notranslate"><span class="pre">variable</span> <span class="pre">&gt;=</span> <span class="pre">valorFinal</span></code>).</p>
+<p>Les instruccions que apareixen dins del bloc del bucle, típicament
+tenen en comptes la variable per mostrar-la per pantalla, acumular el seu
+valor (ex. sumant), etc.</p>
+<p>El nou tipus de problemes que considerem aquí tracta precissament amb la
+part de processar la variable. En comptes, però, de fer una acció
+«senzilla» com mostrar o sumar, en aquest cas, el que fa és incloure un
+altre recorregut.</p>
+<p>Considera el següent codi:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">linia</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">linia</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">;</span> <span class="n">linia</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">columna</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">columna</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">;</span> <span class="n">columna</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">columna</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>El recorregut de la línia 1 ens diu que <code class="docutils literal notranslate"><span class="pre">linia</span></code> anirà canviant de valor
+de <code class="docutils literal notranslate"><span class="pre">1</span></code> fins a <code class="docutils literal notranslate"><span class="pre">5</span></code> de un en un.</p>
+<p>Què fa el recorregut, però? Què conté el seu bloc d’instruccions per cada
+valor de <code class="docutils literal notranslate"><span class="pre">linia</span></code>? Un <strong>altre</strong> recorregut!</p>
+<p>El recorregut <em>intern</em> té com a variable de recorregut <code class="docutils literal notranslate"><span class="pre">columna</span></code> que, a
+l’igual que <code class="docutils literal notranslate"><span class="pre">linia</span></code> pren valors del <code class="docutils literal notranslate"><span class="pre">1</span></code> fins el <code class="docutils literal notranslate"><span class="pre">5</span></code> de un en un. El
+seu bloc d’instruccions simplement mostra el valor de <code class="docutils literal notranslate"><span class="pre">columna</span></code> amb un
+espai davant.</p>
+<p>Fixa’t que la línia 3 fa servir <code class="docutils literal notranslate"><span class="pre">print()</span></code> en comptes de <code class="docutils literal notranslate"><span class="pre">println()</span></code>,
+per la qual cosa, cada valor s’escriu en la mateixa línia.</p>
+<p>La línia 5 forma part del bloc del recorregut <em>extern</em> i simplement fa un
+salt de línia.</p>
+<p>En executar aquest codi, el resultat és:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">1 2 3 4 5</span>
+<span class="go">1 2 3 4 5</span>
+<span class="go">1 2 3 4 5</span>
+<span class="go">1 2 3 4 5</span>
+<span class="go">1 2 3 4 5</span>
+</pre></div>
+</div>
+<p>El nom de les variables <code class="docutils literal notranslate"><span class="pre">linia</span></code> i <code class="docutils literal notranslate"><span class="pre">columna</span></code> no han estat escollits a
+l’atzar. El recorregut extern és l’encarregat de recórrer línia a línia,
+mentre que l’intern ho fa, per una línia concreta, columna a columna.</p>
+<p>El fragment de codi podria haver estat més simple si fem la següent
+<strong>trampa</strong>:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">linia</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">linia</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">;</span> <span class="n">linia</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot; 1 2 3 4 5&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>És una trampa una mica absurda ja que tard o d’hora, aquest tipus de
+problemes acaben requerint que sigui, no per 5, sinó per un valor
+variable.</p>
+<p>En tot cas, sí ens serveix per descriure un patró general d’aquest tipus
+de problemes:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">linia</span><span class="o">=</span><span class="n">iniciLinia</span><span class="p">;</span> <span class="n">linia</span><span class="o">=</span><span class="n">finalLinia</span><span class="p">;</span> <span class="n">linia</span><span class="o">+=</span><span class="n">incrementLinia</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// instruccions abans de processar la línia</span>
+    <span class="c1">// processament de la línia (el recorregut intern)</span>
+    <span class="c1">// instruccions després de processar la línia</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Permet-me un comentari més: el recorregut extern se n’encarrega de les
+línies mentre que l’intern de les columnes, i no a l’inrevés, perquè
+<code class="docutils literal notranslate"><span class="pre">print()</span></code> acaba generant d’esquerra a dreta i de dalt cap a baix. Ja ens
+trobarem altres contexts en el que aquesta restricció no existeix i podem
+recorrer una <em>superfície</em> o <em>taula</em> en qualsevol sentit.</p>
+<div class="section" id="exercicis">
+<h2>Exercicis<a class="headerlink" href="#exercicis" title="Link permanent a aquest títol">¶</a></h2>
+<p>Aquí tens uns quants exercicis per practicar aquest tipus de problemes.</p>
+<p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_01_48_quadrat_nombres.html"><span class="doc"> Exercici 01_48. Un quadrat de nombres</span></a></p>
+<p><img alt="exerciseicon___" src="_images/exerciseicon___.png" /> <a class="reference internal" href="exercici_01_49_triangle_nombres.html"><span class="doc"> Exercici 01_49. Un triangle de nombres</span></a></p>
+<p><img alt="exerciseicon___" src="_images/exerciseicon___.png" /> <a class="reference internal" href="exercici_01_50_triangle_invertit.html"><span class="doc"> Exercici 01_50. Un triangle invertit</span></a></p>
+<p><img alt="exerciseicon___" src="_images/exerciseicon___.png" /> <a class="reference internal" href="exercici_01_51_triangles.html"><span class="doc"> Exercici 01_51. Triangles</span></a></p>
+<p><img alt="exerciseicon___" src="_images/exerciseicon___.png" /> <a class="reference internal" href="exercici_01_52_rombos.html"><span class="doc"> Exercici 01_52. Rombos</span></a></p>
+<p><img alt="exerciseiconO__" src="_images/exerciseiconO__.png" /> <a class="reference internal" href="exercici_01_53_trilal.html"><span class="doc"> Exercici 01_53. Mega triangle “Trilal”</span></a></p>
+<p><img alt="exerciseicon___" src="_images/exerciseicon___.png" /> <a class="reference internal" href="exercici_01_54_la_meva_forma.html"><span class="doc"> Exercici 01_54. El teu repte amb formes</span></a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="basics_exercicis.html" class="btn btn-neutral float-right" title="Llista d’exercicis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="recorreguts_numerics.html" class="btn btn-neutral float-left" title="Recorreguts numèrics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2021 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

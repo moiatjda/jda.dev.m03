@@ -1,0 +1,310 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ca" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Exercici 01_48. Un quadrat de nombres &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Exercici 01_49. Un triangle de nombres" href="exercici_01_49_triangle_nombres.html" />
+    <link rel="prev" title="Recorreguts niuats" href="basics_exercicis_for_niats.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació amb Java
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-21
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="instruccions.html">Instruccions seqüencials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html">Variables i tipus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressions.html">Operadors i expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="while.html">Bucles condicionals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recorreguts.html">Recorreguts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="basics_exercicis.html">Llista d’exercicis</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="basics_exercicis_sequencials.html">Instruccions seqüencials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics_exercicis_condicionals.html">Instruccions condicionals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics_exercicis_while.html">Bucles condicionals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics_exercicis_for_numerics.html">Recorreguts numèrics</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="basics_exercicis_for_niats.html">Recorreguts niuats</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#"> Exercici 01_48. Un quadrat de nombres</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exercici_01_49_triangle_nombres.html"> Exercici 01_49. Un triangle de nombres</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exercici_01_50_triangle_invertit.html"> Exercici 01_50. Un triangle invertit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exercici_01_51_triangles.html"> Exercici 01_51. Triangles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exercici_01_52_rombos.html"> Exercici 01_52. Rombos</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exercici_01_53_trilal.html"> Exercici 01_53. Mega triangle “Trilal”</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exercici_01_54_la_meva_forma.html"> Exercici 01_54. El teu repte amb formes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació amb Java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="basics.html">Elements bàsics de la programació</a> &raquo;</li>
+        
+          <li><a href="basics_exercicis.html">Llista d’exercicis</a> &raquo;</li>
+        
+          <li><a href="basics_exercicis_for_niats.html">Recorreguts niuats</a> &raquo;</li>
+        
+      <li> Exercici 01_48. Un quadrat de nombres</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="exerciseicon-t-exercici-01-48-un-quadrat-de-nombres">
+<h1><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> Exercici 01_48. Un quadrat de nombres<a class="headerlink" href="#exerciseicon-t-exercici-01-48-un-quadrat-de-nombres" title="Link permanent a aquest títol">¶</a></h1>
+<p class="rubric">Context</p>
+<ul class="simple">
+<li><p>Carpeta de lliurament: <code class="docutils literal notranslate"><span class="pre">01_48_quadrat_nombres/</span></code></p></li>
+<li><p>Continguts relacionats: <a class="reference internal" href="recorreguts_bucle_niat.html"><span class="doc">Bucles dins de bucles</span></a></p></li>
+<li><p>Com lliurar-lo: <a class="reference internal" href="holagit.html#instruccions-git"><span class="std std-ref">instruccions</span></a></p></li>
+<li><p>[✓] Exercici amb <a class="reference internal" href="sobre_exercicis.html#descripcio-exercicis-autoavaluacio"><span class="std std-ref">autoavaluació</span></a></p></li>
+</ul>
+<p class="rubric">Enunciat</p>
+<p>Escriu un programa que demani un enter positiu més gran que 0 i
+«dibuixi» un quadrat amb els nombres del 1 fins el valor de l’entrada.</p>
+<p>Per exemple, considera la següent simulació:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java QuadratNombres
+<span class="go">Valor final?</span>
+<span class="go">5</span>
+<span class="go"> 1 2 3 4 5</span>
+<span class="go"> 1 2 3 4 5</span>
+<span class="go"> 1 2 3 4 5</span>
+<span class="go"> 1 2 3 4 5</span>
+<span class="go"> 1 2 3 4 5</span>
+</pre></div>
+</div>
+<p>En cas que l’entrada sigui menor que 1 o més gran de 9, el programa
+mostrarà el missatge <code class="docutils literal notranslate"><span class="pre">Valor</span> <span class="pre">inadequat</span></code>.</p>
+<p>Tot i que només se’t demana que facis aquest quadrat, i tenint en comptes
+que el codi del programa pràcticament el tens als apunts, et proposo que
+experimentis una mica amb les possibilitats dels dos bucles.</p>
+<p>Algunes propostes d’experiments (fes-les en fitxers diferents del del
+programa que se’t demana!):</p>
+<ul class="simple">
+<li><p>què passa si li treus el salt de línia del bucle extern?</p></li>
+<li><p>i si li poses salt de línia al <code class="docutils literal notranslate"><span class="pre">print()</span></code> del recorregut intern?</p></li>
+<li><p>Què passaria si en comptes de mostrar el valor de <code class="docutils literal notranslate"><span class="pre">columna</span></code> mostres el
+de <code class="docutils literal notranslate"><span class="pre">linia</span></code>?</p></li>
+<li><p>Què passa si en comptes de mostrar el valor de <code class="docutils literal notranslate"><span class="pre">columna</span></code> mostres el de
+<code class="docutils literal notranslate"><span class="pre">linia</span> <span class="pre">+</span> <span class="pre">columna</span></code></p></li>
+<li><p>I si mostres el de <code class="docutils literal notranslate"><span class="pre">linia</span> <span class="pre">*</span> <span class="pre">valorFinal</span> <span class="pre">+</span> <span class="pre">columna</span></code> ?</p></li>
+<li><p>I si fas el recorregut de <code class="docutils literal notranslate"><span class="pre">linia</span></code> o el de <code class="docutils literal notranslate"><span class="pre">columna</span></code> decreixents?</p></li>
+<li><p>I si fas que el recorregut de <code class="docutils literal notranslate"><span class="pre">columna</span></code> comenci en comptes de per
+<code class="docutils literal notranslate"><span class="pre">1</span></code> per <code class="docutils literal notranslate"><span class="pre">linia</span></code>?</p></li>
+<li><p>I si fas que el recorregut de <code class="docutils literal notranslate"><span class="pre">columna</span></code> finalitzi, en comptes de pel
+valor final, pel valor de <code class="docutils literal notranslate"><span class="pre">linia</span></code>?</p></li>
+<li><p>Què passa si en comptes de mostrar el valor de <code class="docutils literal notranslate"><span class="pre">columna</span></code> mostres una
+<code class="docutils literal notranslate"><span class="pre">X</span></code> si el valor de columna és parell i un <code class="docutils literal notranslate"><span class="pre">·</span></code> si és senar?</p></li>
+</ul>
+<p>Bé, potser se t’acudeixen fer més experiments. Si vols, pots comentar els
+resultats amb els teus companys.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="exercici_01_49_triangle_nombres.html" class="btn btn-neutral float-right" title="Exercici 01_49. Un triangle de nombres" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="basics_exercicis_for_niats.html" class="btn btn-neutral float-left" title="Recorreguts niuats" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2021 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+:orphan:
+
+##################################################
+|exerciseicon_ST| Exercici 01_47. Històric d'edats
+##################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_47_historic_edats/``
+
+* Continguts relacionats: :doc:`recorreguts_numerics`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [☆] Exercici amb :ref:`dificultat addicional<descripcio_exercicis_dificils>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+
+Desenvolupa un programa que demani el nom d'una persona, la seva edat i
+l'any actual, i escrigui l'edat que tenia aquella persona cada any des del
+seu naixement.
+
+Considera la següent simulació:
+
+.. code-block:: console
+
+    $ java HistoricEdats
+    nom?
+    Anna
+    edat?
+    5
+    any actual?
+    2012
+    El 2007 va néixer
+    El 2008 tenia 1 any
+    El 2009 tenia 2 anys
+    El 2010 tenia 3 anys
+    El 2011 tenia 4 anys
+    Adéu Anna
+
+L'aplicació no dirà l'edat que té la persona en l'any actual, donat que
+aquesta dada forma part de l'entrada. És a dir, si la persona ha nascut
+aquest any, simplement s'acomiadarà, i si ho va fer l'any passat, només
+dirà quan va néixer i s'acomiadarà de la persona.
+
+Considera aquesta altra simulació:
+
+.. code-block:: console
+
+    $ java HistoricEdats
+    nom?
+    Marc
+    edat?
+    0
+    any actual?
+    2020
+    Adéu Marc
+
+
+Addicionalment caldrà realitzar les següents comprovacions a l'entrada:
+
+* que el nom no estigui buit
+
+  **pista**: Java ens ofereix vàries maneres de comprovar si un *String*
+  és buit.  La més fàcil, potser és fer servir l'expressió
+  ``nom.isEmpty()`` però pots fer servir la típica ``nom.equals("")`` o,
+  molt més segura encara que, potser una mica estranya,
+  ``"".equals(nom)``.
+
+* que l'edat sigui un valor positiu (es pressuposa que serà
+  enter)
+
+* que l'any actual sigui com a mínim 1971 (també es pressuposa enter)
+
+En cas d'error, sempre retornarà el mateix missatge: *Entrada errònia*
+
+**Pista**: Et recomano que intentis fer l'exercici sense mirar aquesta
+pista i, tant si l'aconsegueixes com si no, que la llegeixis, doncs
+explica una tècnica molt habitual per resoldre aquest tipus de problemes.
+
+
+En aquest tipus d'exercicis, és important analitzar
+l'exemple d'entrada que ens donen. Intentem detectar què canvia a cada
+línia.
+
+En el cas de l'exemple, podem distingir els següents elements:
+
+.. code-block:: console
+
+    El 2007 va néixer               Aquesta és la primera línia
+
+    El 2008 tenia 1 any             Aquestes línies s'assemblen molt
+    El 2009 tenia 2 anys            amb un petit canvi (el plural) a
+    El 2010 tenia 3 anys            la primera
+    El 2011 tenia 4 anys
+
+    Adéu Anna                       Aquesta línia només depén del nom
+
+
+Així, el teu programa podria tenir una estructura similar a aquesta:
+
+.. code-block:: java
+
+    // escriu any de naixement (si no és aquest!)
+
+    // escriu les línies per cada any des del de naixement fins l'actual
+
+    // escriu comiat
+
+La part més complicada, potser, serà saber quina ha de ser la variable de
+recorregut. Et proposo dues opcions encara que hi ha d'altres:
+
+* recórrer per edat, aproximadament de 1 fins a l'actual
+
+* recórrer per any, aproximadament des del naixement fins l'actual

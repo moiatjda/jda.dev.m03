@@ -1,0 +1,367 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ca" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Recorreguts numèrics &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Bucles dins de bucles" href="recorreguts_bucle_niat.html" />
+    <link rel="prev" title="Un nou tipus de bucle" href="recorreguts_for.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació amb Java
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-21
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="instruccions.html">Instruccions seqüencials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html">Variables i tipus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressions.html">Operadors i expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="while.html">Bucles condicionals</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="recorreguts.html">Recorreguts</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="recorreguts_while.html">Recorreguts amb el <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="recorreguts_for.html">Un nou tipus de bucle</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Recorreguts numèrics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="recorreguts_bucle_niat.html">Bucles dins de bucles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="basics_exercicis.html">Llista d’exercicis</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació amb Java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="basics.html">Elements bàsics de la programació</a> &raquo;</li>
+        
+          <li><a href="recorreguts.html">Recorreguts</a> &raquo;</li>
+        
+      <li>Recorreguts numèrics</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="recorreguts-numerics">
+<h1>Recorreguts numèrics<a class="headerlink" href="#recorreguts-numerics" title="Link permanent a aquest títol">¶</a></h1>
+<p>Com hem vist, els recorreguts numèrics es resolen còmodament amb un bucle
+<code class="docutils literal notranslate"><span class="pre">for</span></code></p>
+<p>La seva forma general és:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span>
+    <span class="kt">int</span> <span class="n">variable</span> <span class="o">=</span> <span class="n">valorInicial</span><span class="p">;</span>
+    <span class="n">condició</span><span class="p">;</span>
+    <span class="n">variable</span> <span class="o">=</span> <span class="n">variable</span> <span class="o">+</span> <span class="n">increment</span>
+<span class="p">)</span> <span class="p">{</span>
+    <span class="n">processaVariable</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Per tant, tot recorregut ha de tenir clar els següents elements:</p>
+<ul class="simple">
+<li><p>quin és el valor inicial</p></li>
+<li><p>quin és el valor final</p></li>
+<li><p>quin és l’increment o pas d’un valor al següent</p></li>
+</ul>
+<p>Ens podem imaginar dues opcions: quan el recorregut és <em>creixent</em> i quan és
+<em>decreixent</em>.</p>
+<div class="section" id="recorreguts-creixents">
+<h2>Recorreguts creixents<a class="headerlink" href="#recorreguts-creixents" title="Link permanent a aquest títol">¶</a></h2>
+<p>Els recorreguts creixents es caracteritzen perquè <code class="docutils literal notranslate"><span class="pre">inici</span> <span class="pre">&lt;=</span> <span class="pre">final</span></code></p>
+<div align="center" class="align-center"><div class="graphviz"><img src="_images/graphviz-b3a6db62029670e64276ec47987bad1fb08661d4.png" alt="digraph {
+    rankdir=&quot;LR&quot;;
+        infneg [label=&quot;-∞&quot;, shape=none] ;
+        infpos[label=&quot;+∞&quot;, shape=none];
+        inici, final [ shape=none];
+        infneg -&gt; inici;
+        inici -&gt; final;
+        final  -&gt; infpos;
+}" class="graphviz" /></div>
+</div>
+<p>El bucle sol tenir la següent forma:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">variable</span><span class="o">=</span><span class="n">inici</span><span class="p">;</span> <span class="n">variable</span> <span class="o">&lt;=</span> <span class="kd">final</span><span class="p">;</span> <span class="n">variable</span> <span class="o">=</span> <span class="n">variable</span> <span class="o">+</span> <span class="n">increment</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">processaVariable</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Quan el bloc és molt reduït (poques línies), la variable de recorregut es
+sol anomenar simplement <code class="docutils literal notranslate"><span class="pre">i</span></code> de (i)nt o també d”(i)ndex.</p>
+<p>A banda, la part de l’increment, es sol fer amb alguna forma compacta de
+les que ofereix Java:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">increment</span>
+<span class="n">i</span> <span class="o">+=</span> <span class="n">increment1</span>
+<span class="n">i</span><span class="o">++</span>         <span class="c1">// quan increment == 1</span>
+<span class="o">++</span><span class="n">i</span>         <span class="c1">// quan increment == 1</span>
+</pre></div>
+</div>
+<p>Així, una forma molt típica d’expressar un recorregut creixent amb
+increment d’un en un és:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">inici</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="kd">final</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">processaVariable</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Quan <code class="docutils literal notranslate"><span class="pre">inici</span> <span class="pre">&gt;</span> <span class="pre">final</span></code> no entra mai a executar les instruccions del bloc.
+Al cap i a la fi, el <code class="docutils literal notranslate"><span class="pre">for</span></code> és un bucle <code class="docutils literal notranslate"><span class="pre">while</span></code> compacte, així que
+al primer intent ja no es compliria la condició per entrar-hi!</p>
+</div>
+<div class="section" id="recorreguts-decreixents">
+<h2>Recorreguts decreixents<a class="headerlink" href="#recorreguts-decreixents" title="Link permanent a aquest títol">¶</a></h2>
+<p>Els recorreguts decreixents es caracteritzen perquè <code class="docutils literal notranslate"><span class="pre">final</span> <span class="pre">&lt;=</span> <span class="pre">inici</span></code></p>
+<div align="center" class="align-center"><div class="graphviz"><img src="_images/graphviz-e703281d9bfb307d52685ed022ed2924419eca32.png" alt="digraph {
+    rankdir=&quot;RL&quot;;
+        infneg [label=&quot;-∞&quot;, shape=none] ;
+        infpos[label=&quot;+∞&quot;, shape=none];
+        inici, final [ shape=none];
+        infpos -&gt; inici;
+        inici -&gt; final;
+        final  -&gt; infneg;
+}" class="graphviz" /></div>
+</div>
+<p>El bucle sol tenir la següent forma:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">inici</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="kd">final</span><span class="p">;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="n">increment</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">processai</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>O si directament el valor de l’increment està expressat en negatiu</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">inici</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="kd">final</span><span class="p">;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">decrement</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">processai</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Java també ens ofereix una versió compacta per representar el decrement:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="n">increment</span>
+<span class="n">i</span> <span class="o">-=</span> <span class="n">increment1</span>
+<span class="n">i</span><span class="o">--</span>         <span class="c1">// quan increment == 1</span>
+<span class="o">--</span><span class="n">i</span>         <span class="c1">// quan increment == 1</span>
+</pre></div>
+</div>
+<p>Així, una forma molt típica d’expressar un recorregut decreixent és:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">inici</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="kd">final</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">processaVariable</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>No et capfiquis gaire amb les maneres compactes d’expressar
+increments i decrements. No hi ha cap problema si fas servir
+qualsevol de les opcions, incloent la menys compacta.</p>
+</div>
+</div>
+<div class="section" id="practiquem">
+<h2>Practiquem<a class="headerlink" href="#practiquem" title="Link permanent a aquest títol">¶</a></h2>
+<p>Uns quants exercicis per practicar el que acabem de veure:</p>
+<p><img alt="exerciseicon___" src="_images/exerciseicon___.png" /> <a class="reference internal" href="exercici_01_42_deu_primers_invertits_for.html"><span class="doc"> Exercici 01_42. Els deu primers naturals decreixent amb for</span></a></p>
+<p><img alt="exerciseicon___" src="_images/exerciseicon___.png" /> <a class="reference internal" href="exercici_01_43_primers_parells_fins_el_10_for.html"><span class="doc"> Exercici 01_43. Els primers parells naturals fins el 10 amb for</span></a></p>
+<p><img alt="exerciseicon___" src="_images/exerciseicon___.png" /> <a class="reference internal" href="exercici_01_44_enters_de_principi_a_fi_for.html"><span class="doc"> Exercici 01_44. Enters de principi a fi amb for</span></a></p>
+<p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_01_45_suma_nombres.html"><span class="doc"> Exercici 01_45. Suma valors entre dos nombres</span></a></p>
+<p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_01_46_enters_de_principi_a_fi.html"><span class="doc"> Exercici 01_46. Enters dins d’un interval</span></a></p>
+<p><img alt="exerciseicon_ST" src="_images/exerciseicon_ST.png" /> <a class="reference internal" href="exercici_01_47_historic_edats.html"><span class="doc"> Exercici 01_47. Històric d’edats</span></a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="recorreguts_bucle_niat.html" class="btn btn-neutral float-right" title="Bucles dins de bucles" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="recorreguts_for.html" class="btn btn-neutral float-left" title="Un nou tipus de bucle" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2021 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

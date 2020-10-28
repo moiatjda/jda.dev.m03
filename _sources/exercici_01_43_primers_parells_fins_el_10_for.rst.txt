@@ -1,0 +1,47 @@
+:orphan:
+
+#####################################################################################
+|exerciseicon___| Exercici 01_43. Els primers parells naturals fins el 10 amb ``for``
+#####################################################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_43_primers_parells_fins_el_10_for/``
+
+* Continguts relacionats: :doc:`recorreguts_numerics`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+.. rubric:: Enunciat
+
+Fem una nova versió de l'exercici dels :doc:`primers parells
+<exercici_01_39_primers_parells_fins_el_10>`, aquest cop amb el bucle ``for``.
+
+Recordem l'enunciat:
+
+Desenvolupa un programa que escrigui els primers números naturals que
+siguin parells fins el 10. És a dir: 2 4 6 8 10
+
+Una simulació de l'execució seria:
+
+.. code-block:: console
+
+    $ java DeuPrimersNaturals
+    2
+    4
+    6
+    8
+    10
+
+Per resoldre'l, intenta respondre les següents preguntes:
+
+* quin és el valor inicial?
+
+* quin és el valor final?
+
+* quin és l'increment?
+
+Per descomptat, ara no sortiran 10 números!
+
+És molt recomanable, si no ho has fet, que facis l'exercici original,
+doncs la resposta a aquestes preguntes ja les tindràs.

@@ -1,0 +1,53 @@
+:orphan:
+
+########################################################
+|exerciseicon___| Exercici 01_49. Un triangle de nombres
+########################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_49_triangle_nombres/``
+
+* Continguts relacionats: :doc:`recorreguts_bucle_niat`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+.. rubric:: Enunciat
+
+
+Desenvolupa un programa que demani un nombre positiu més gran que 0. El
+programa escriurà una línia per nombre entre el 1 i el nombre introduït
+(es a dir, creixentment). A cada línia escriurà tots els nombres des del
+nombre corresponent a la línia fins al 1.
+
+Si el valor introduït és menor que 1, el programa no mostrarà res.
+
+Una simulació:
+
+.. code-block:: console
+
+    $ java TriangleNombres
+
+     1
+     2 1
+     3 2 1
+     4 3 2 1
+     5 4 3 2 1
+
+**Pista**: si has fet els experiments de l'exercici
+del :doc:`quadrat de nombres <exercici_01_48_quadrat_nombres>`, aquesta
+pista no et cal. Per si no, a banda de recomanar-te **molt** que els
+facis, considera
+
+* el recorregut extern de quina línia a quina línia ha de dibuixar
+
+* el recorregut intern de quin valor a quin valor dibuixa per la primera
+  línia
+
+  I per la segona?
+
+  I per la línia número 4?
+
+  Potser veuràs que sempre comença pel número de línia i acaba per 1. Mmmm
+
+

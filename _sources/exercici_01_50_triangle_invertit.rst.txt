@@ -1,0 +1,40 @@
+:orphan:
+
+######################################################
+|exerciseicon___| Exercici 01_50. Un triangle invertit
+######################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_50_triangle_invertit/``
+
+* Continguts relacionats: :doc:`recorreguts_bucle_niat`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+.. rubric:: Enunciat
+
+
+Desenvolupa un programa que demani un nombre positiu més
+gran que 0. El programa escriurà una línia per nombre entre el nombre
+introduït i el 1 (és a dir, decreixentment). A cada línia escriurà
+tots els nombres des de l’1 fins el nombre corresponent a la línia.
+
+Si el valor introduït és menor que 1, el programa no mostrarà res.
+
+Una simulació:
+
+.. code-block:: console
+
+    $ java TriangleInvertit
+
+
+    1, 2, 3, 4, 5
+    1, 2, 3, 4
+    1, 2, 3
+    1, 2
+    1
+
+Fixa't que aquest problema és molt similar al del :doc:`triangle de
+nombres <exercici_01_49_triangle_nombres>`. En aquest cas, a banda de que
+els nombres es mostren de manera diferent, hi apareix una coma entre mig!

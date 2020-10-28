@@ -1,0 +1,16 @@
+##################
+Recorreguts niuats
+##################
+
+La llista d'exercicis sobre recorreguts niats d'aquest tema és:
+
+.. toctree::
+    :titlesonly:
+
+    exercici_01_48_quadrat_nombres.rst
+    exercici_01_49_triangle_nombres.rst
+    exercici_01_50_triangle_invertit.rst
+    exercici_01_51_triangles.rst
+    exercici_01_52_rombos.rst
+    exercici_01_53_trilal.rst
+    exercici_01_54_la_meva_forma.rst

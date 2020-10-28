@@ -1,0 +1,64 @@
+#####################
+Un nou tipus de bucle
+#####################
+
+Ara que ja sabem resoldre problemes de recorreguts amb el ``while``
+semblaria que ja hem acabat, oi? Doncs Java ens té preparada una sorpresa.
+
+Recordem el problema dels 10 nombres naturals:
+
+    Desenvolupa un programa que escrigui els primers 10 números naturals. És
+    a dir: 1 2 3…10
+
+I recordem també la solució més immediata:
+
+.. code-block:: java
+    :linenos:
+
+    int numero = 1;          // variable de recorregut assignada al primer valor
+    while (numero <= 10) {   // condició
+        System.out.println(numero);
+        numero = numero + 1; // passem el número al següent
+    }
+
+Ara, agafa aire i fixa't una altra manera d'escriure aquest fragment de
+codi:
+
+.. code-block:: java
+    :linenos:
+
+    for (int numero = 1;             // variable de recorregut
+         numero <= 10;               // condició
+         numero = numero + 1) {      // passa al número següent
+         System.out.println(numero); // processa el valor
+     }
+
+Ep! Què ha estat això?
+
+En realitat és només un canvi sintàctic:
+
+* hi ha una paraulota nova (``for``) que substitueix el ``while`` 
+
+* la declaració i inicialització, condició i increment apareixen entre els
+  parèntesis (incloent els punts i coma!)
+
+* a dins del bloc, només hi ha la part de processament dels valors de la
+  variable de recorregut.
+
+No sembla que hàgim guanyat gaire, oi?
+
+Normalment, aquest tipus de fragments de codi s'escriuen de la següent
+manera:
+
+.. code-block:: java
+    :linenos:
+
+    for (int numero = 1; numero <= 10; numero = numero + 1) {
+        System.out.println(numero);
+    }
+
+Això és més compacte que amb el ``while`` oi? Aquesta és bàsicament el
+principal avantatge.
+
+|exerciseicon__T| :doc:`exercici_01_41_deu_primers_for`
+

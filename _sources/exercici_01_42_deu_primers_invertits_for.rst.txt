@@ -1,0 +1,50 @@
+:orphan:
+
+#################################################################################
+|exerciseicon___| Exercici 01_42. Els deu primers naturals decreixent amb ``for``
+#################################################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_42_deu_primers_invertits_for/``
+
+* Continguts relacionats: :doc:`recorreguts_numerics`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+.. rubric:: Enunciat
+
+Fem una nova versió de l'exercici dels :doc:`deu primers naturals
+invertits <exercici_01_38_deu_primers_invertits>`, aquest cop amb el bucle ``for``.
+
+Recordem l'enunciat:
+
+Desenvolupa un programa que escrigui els primers 10 números naturals
+començant pel més gran. És a dir: 10 9 8 … 1
+
+Una simulació de l'execució seria:
+
+.. code-block:: console
+
+    $ java DeuPrimersNaturalsDecreixent
+    10
+    9
+    8
+    7
+    6
+    5
+    4
+    3
+    2
+    1
+
+Per resoldre'l, intenta respondre les següents preguntes:
+
+* quin és el valor inicial?
+
+* quin és el valor final?
+
+* quin és l'increment?
+
+És molt recomanable, si no ho has fet, que facis l'exercici original,
+doncs la resposta a aquestes preguntes ja les tindràs.

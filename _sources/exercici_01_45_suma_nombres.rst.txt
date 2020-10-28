@@ -1,0 +1,42 @@
+:orphan:
+
+###############################################################
+|exerciseicon__T| Exercici 01_45. Suma valors entre dos nombres
+###############################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_45_suma_nombres/``
+
+* Continguts relacionats: :doc:`recorreguts_numerics`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+
+En aquest exercici demanaràs dos valors enters i sumaràs tots els nombres
+que hi hagin entre el més petit i el més gran d'ells.
+
+Considera aquestes simulacions:
+
+.. code-block:: console
+
+    $ java SumaInterval
+    inici?
+    5
+    final?
+    7
+    18
+
+    $ java SumaInterval
+    inici?
+    7
+    final?
+    5
+    18
+
+Fixa't que el programa és capaç de comptar, independentment de si el
+primer és menor o major que el segon.

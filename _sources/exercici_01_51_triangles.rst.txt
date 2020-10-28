@@ -1,0 +1,46 @@
+:orphan:
+
+###########################################
+|exerciseicon___| Exercici 01_51. Triangles
+###########################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_51_triangles/``
+
+* Continguts relacionats: :doc:`recorreguts_bucle_niat`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+.. rubric:: Enunciat
+
+
+Desenvolupa un programa que demani un nombre enter positiu i dibuixi tants
+triangles com se li indiqui.
+
+.. code-block:: none
+
+        $ java Triangles
+        quants?
+        2
+        .........9.........
+        ........898........
+        .......78987.......
+        ......6789876......
+        .....567898765.....
+        ....45678987654....
+        ...3456789876543...
+        ..234567898765432..
+        .12345678987654321.
+        0123456789876543210
+        .........9.........
+        ........898........
+        .......78987.......
+        ......6789876......
+        .....567898765.....
+        ....45678987654....
+        ...3456789876543...
+        ..234567898765432..
+        .12345678987654321.
+        0123456789876543210
+

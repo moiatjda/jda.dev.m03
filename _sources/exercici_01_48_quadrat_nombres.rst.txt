@@ -1,0 +1,72 @@
+:orphan:
+
+#######################################################
+|exerciseicon__T| Exercici 01_48. Un quadrat de nombres
+#######################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_48_quadrat_nombres/``
+
+* Continguts relacionats: :doc:`recorreguts_bucle_niat`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+
+Escriu un programa que demani un enter positiu més gran que 0 i
+"dibuixi" un quadrat amb els nombres del 1 fins el valor de l'entrada.
+
+Per exemple, considera la següent simulació:
+
+.. code-block:: console
+
+    $ java QuadratNombres
+    Valor final?
+    5
+     1 2 3 4 5
+     1 2 3 4 5
+     1 2 3 4 5
+     1 2 3 4 5
+     1 2 3 4 5
+
+En cas que l'entrada sigui menor que 1 o més gran de 9, el programa
+mostrarà el missatge ``Valor inadequat``.
+
+Tot i que només se't demana que facis aquest quadrat, i tenint en comptes
+que el codi del programa pràcticament el tens als apunts, et proposo que
+experimentis una mica amb les possibilitats dels dos bucles.
+
+Algunes propostes d'experiments (fes-les en fitxers diferents del del
+programa que se't demana!):
+
+* què passa si li treus el salt de línia del bucle extern?
+
+* i si li poses salt de línia al ``print()`` del recorregut intern?
+
+* Què passaria si en comptes de mostrar el valor de ``columna`` mostres el
+  de ``linia``?
+
+* Què passa si en comptes de mostrar el valor de ``columna`` mostres el de
+  ``linia + columna``
+
+* I si mostres el de ``linia * valorFinal + columna`` ?
+
+* I si fas el recorregut de ``linia`` o el de ``columna`` decreixents?
+
+* I si fas que el recorregut de ``columna`` comenci en comptes de per
+  ``1`` per ``linia``?
+
+* I si fas que el recorregut de ``columna`` finalitzi, en comptes de pel
+  valor final, pel valor de ``linia``?
+
+* Què passa si en comptes de mostrar el valor de ``columna`` mostres una
+  ``X`` si el valor de columna és parell i un ``·`` si és senar?
+
+
+Bé, potser se t'acudeixen fer més experiments. Si vols, pots comentar els
+resultats amb els teus companys.
+

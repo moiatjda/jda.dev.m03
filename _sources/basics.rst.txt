@@ -95,6 +95,6 @@ Amb tot això en ment, comencem!
     expressions.rst
     condicionals.rst
     while.rst
+    recorreguts.rst
     basics_exercicis.rst
 
-..    recorreguts.rst

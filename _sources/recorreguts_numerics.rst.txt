@@ -1,0 +1,154 @@
+####################
+Recorreguts numèrics
+####################
+
+Com hem vist, els recorreguts numèrics es resolen còmodament amb un bucle
+``for``
+
+La seva forma general és:
+
+.. code-block:: java
+
+    for (
+        int variable = valorInicial;
+        condició;
+        variable = variable + increment
+    ) {
+        processaVariable;
+    }
+
+Per tant, tot recorregut ha de tenir clar els següents elements:
+
+* quin és el valor inicial
+
+* quin és el valor final
+
+* quin és l'increment o pas d'un valor al següent
+
+Ens podem imaginar dues opcions: quan el recorregut és *creixent* i quan és
+*decreixent*.
+
+Recorreguts creixents
+=====================
+
+Els recorreguts creixents es caracteritzen perquè ``inici <= final`` 
+
+.. graphviz::
+    :align: center
+
+    digraph {
+        rankdir="LR";
+            infneg [label="-∞", shape=none] ;
+            infpos[label="+∞", shape=none];
+            inici, final [ shape=none];
+            infneg -> inici;
+            inici -> final;
+            final  -> infpos;
+    }
+
+El bucle sol tenir la següent forma:
+
+.. code-block:: java
+
+    for (int variable=inici; variable <= final; variable = variable + increment) {
+        processaVariable;
+    }
+
+Quan el bloc és molt reduït (poques línies), la variable de recorregut es
+sol anomenar simplement ``i`` de (i)nt o també d'(i)ndex.
+
+A banda, la part de l'increment, es sol fer amb alguna forma compacta de
+les que ofereix Java:
+
+.. code-block:: java
+
+    i = i + increment
+    i += increment1
+    i++         // quan increment == 1
+    ++i         // quan increment == 1
+
+Així, una forma molt típica d'expressar un recorregut creixent amb
+increment d'un en un és:
+
+.. code-block:: java
+
+    for (int i = inici; i <= final; i++) {
+        processaVariable;
+    }
+
+Quan ``inici > final`` no entra mai a executar les instruccions del bloc.
+Al cap i a la fi, el ``for`` és un bucle ``while`` compacte, així que
+al primer intent ja no es compliria la condició per entrar-hi!
+
+Recorreguts decreixents
+=======================
+
+Els recorreguts decreixents es caracteritzen perquè ``final <= inici`` 
+
+.. graphviz::
+    :align: center
+
+    digraph {
+        rankdir="RL";
+            infneg [label="-∞", shape=none] ;
+            infpos[label="+∞", shape=none];
+            inici, final [ shape=none];
+            infpos -> inici;
+            inici -> final;
+            final  -> infneg;
+    }
+
+El bucle sol tenir la següent forma:
+
+.. code-block:: java
+
+    for (int i=inici; i >= final; i = i - increment) {
+        processai;
+    }
+
+O si directament el valor de l'increment està expressat en negatiu
+
+.. code-block:: java
+
+    for (int i=inici; i >= final; i = i + decrement) {
+        processai;
+    }
+
+
+Java també ens ofereix una versió compacta per representar el decrement:
+
+.. code-block:: java
+
+    i = i - increment
+    i -= increment1
+    i--         // quan increment == 1
+    --i         // quan increment == 1
+
+Així, una forma molt típica d'expressar un recorregut decreixent és:
+
+.. code-block:: java
+
+    for (int i = inici; i >= final; i--) {
+        processaVariable;
+    }
+
+.. note:: No et capfiquis gaire amb les maneres compactes d'expressar
+          increments i decrements. No hi ha cap problema si fas servir
+          qualsevol de les opcions, incloent la menys compacta.
+
+Practiquem
+==========
+
+Uns quants exercicis per practicar el que acabem de veure:
+
+|exerciseicon___| :doc:`exercici_01_42_deu_primers_invertits_for`
+
+|exerciseicon___| :doc:`exercici_01_43_primers_parells_fins_el_10_for`
+
+|exerciseicon___| :doc:`exercici_01_44_enters_de_principi_a_fi_for`
+
+|exerciseicon__T| :doc:`exercici_01_45_suma_nombres`
+
+|exerciseicon__T| :doc:`exercici_01_46_enters_de_principi_a_fi`
+
+|exerciseicon_ST| :doc:`exercici_01_47_historic_edats`

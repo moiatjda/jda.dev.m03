@@ -1,0 +1,51 @@
+:orphan:
+
+#########################################################
+|exerciseiconO_T| Exercici 01_40. Enters de principi a fi
+#########################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_40_enters_de_principi_a_fi/``
+
+* Continguts relacionats: :doc:`recorreguts_while`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [☼] Exercici :ref:`optatiu<descripcio_exercicis_optatius>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Desenvolupa un programa que demani tres nombres enters, i escrigui els
+valors entre el primer i el segon saltant d'un al següent amb el tercer.
+
+Podem suposar que sempre ens introduiran valors enters, que el primer
+valor serà sempre menor que el segon, i que el tercer serà sempre més gran
+de 0.
+
+Una simulació de l'execució seria:
+
+.. code-block:: console
+
+    $ java EntersIniciFi
+    Valor inicial?
+    9
+    Valor final?
+    16
+    Salt?
+    3
+    9
+    12
+    15
+
+Per resoldre'l, intenta respondre les següents preguntes:
+
+* quin és el valor inicial?
+
+* quin és el valor final?
+
+* quina és la condició adequada per mantenir-se dins del ``while``?
+
+* com es calcula el següent valor?

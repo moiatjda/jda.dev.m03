@@ -1,0 +1,42 @@
+:orphan:
+
+####################################################################
+|exerciseiconO_T| Exercici 01_37. Els deu primers naturals amb while
+####################################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_37_deu_primers/``
+
+* Continguts relacionats: :doc:`recorreguts_while`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [☼] Exercici :ref:`optatiu<descripcio_exercicis_optatius>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+
+Desenvolupa un programa que escrigui els primers 10 números naturals. És
+a dir: 1 2 3…10
+
+Una simulació de l'execució seria:
+
+.. code-block:: console
+
+    $ java DeuPrimers
+    1
+    2
+    3
+    4
+    5
+    6
+    7
+    8
+    9
+    10
+
+**Pista**: Tens pràcticament resolt l'exercici als apunts!
+

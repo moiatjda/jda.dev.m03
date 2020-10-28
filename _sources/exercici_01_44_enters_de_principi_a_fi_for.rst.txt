@@ -1,0 +1,55 @@
+:orphan:
+
+#####################################################################
+|exerciseicon___| Exercici 01_44. Enters de principi a fi amb ``for``
+#####################################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_44_enters_de_principi_a_fi_for/``
+
+* Continguts relacionats: :doc:`recorreguts_numerics`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+.. rubric:: Enunciat
+
+Fem una nova versió de l'exercici dels :doc:`enters de principi a fi
+<exercici_01_40_enters_de_principi_a_fi>`, aquest cop amb el bucle ``for``.
+
+Recordem l'enunciat:
+
+Desenvolupa un programa que demani tres nombres enters, i escrigui els
+valors entre el primer i el segon saltant d'un al següent amb el tercer.
+
+Podem suposar que sempre ens introduiran valors enters, que el primer
+sempre serà més petit o igual al segon, i que el tercer sempre serà
+positiu.
+
+Una simulació de l'execució seria:
+
+.. code-block:: console
+
+    $ java NaturalsIniciFi
+    Valor inicial?
+    9
+    Valor final?
+    16
+    Salt?
+    3
+    9
+    12
+    15
+
+Per resoldre'l, intenta respondre les següents preguntes:
+
+* quin és el valor inicial?
+
+* quin és el valor final?
+
+* quin és l'increment?
+
+És molt recomanable, si no ho has fet, que facis l'exercici original,
+doncs la resposta a aquestes preguntes ja les tindràs.
+
+
