@@ -63,7 +63,7 @@ les que ofereix Java:
 .. code-block:: java
 
     i = i + increment
-    i += increment1
+    i += increment
     i++         // quan increment == 1
     ++i         // quan increment == 1
 
@@ -119,10 +119,10 @@ Java també ens ofereix una versió compacta per representar el decrement:
 
 .. code-block:: java
 
-    i = i - increment
-    i -= increment1
-    i--         // quan increment == 1
-    --i         // quan increment == 1
+    i = i - decrement
+    i -= decrement
+    i--         // quan decrement == 1
+    --i         // quan decrement == 1
 
 Així, una forma molt típica d'expressar un recorregut decreixent és:
 
@@ -149,6 +149,6 @@ Uns quants exercicis per practicar el que acabem de veure:
 
 |exerciseicon__T| :doc:`exercici_01_45_suma_nombres`
 
-|exerciseicon__T| :doc:`exercici_01_46_enters_de_principi_a_fi`
+|exerciseicon__T| :doc:`exercici_01_46_mostra_interval`
 
 |exerciseicon_ST| :doc:`exercici_01_47_historic_edats`

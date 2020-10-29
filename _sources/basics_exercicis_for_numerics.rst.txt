@@ -16,6 +16,6 @@ La llista d'exercicis sobre recorreguts numèrics d'aquest tema és:
     exercici_01_43_primers_parells_fins_el_10_for.rst
     exercici_01_44_enters_de_principi_a_fi_for.rst
     exercici_01_45_suma_nombres.rst
-    exercici_01_46_enters_de_principi_a_fi.rst
+    exercici_01_46_mostra_interval.rst
     exercici_01_47_historic_edats.rst
 

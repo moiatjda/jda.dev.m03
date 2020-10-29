@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Exercici 01_47. Històric d’edats &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  <title>Exercici 01_46. Enters dins d’un interval &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
   
 
   
@@ -39,8 +39,8 @@
     <link rel="author" title="Quant a aquests documents" href="about.html" />
     <link rel="index" title="Índex" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
-    <link rel="next" title="Recorreguts niuats" href="basics_exercicis_for_niats.html" />
-    <link rel="prev" title="Exercici 01_46. Enters dins d’un interval" href="exercici_01_46_mostra_interval.html" />
+    <link rel="next" title="Exercici 01_47. Històric d’edats" href="exercici_01_47_historic_edats.html" />
+    <link rel="prev" title="Exercici 01_45. Suma valors entre dos nombres" href="exercici_01_45_suma_nombres.html" />
      
     <script class="googleanalytics" src="_static/moiscripts.js"></script>
 
@@ -111,8 +111,8 @@
 <li class="toctree-l4"><a class="reference internal" href="exercici_01_43_primers_parells_fins_el_10_for.html"> Exercici 01_43. Els primers parells naturals fins el 10 amb <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="exercici_01_44_enters_de_principi_a_fi_for.html"> Exercici 01_44. Enters de principi a fi amb <code class="docutils literal notranslate"><span class="pre">for</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="exercici_01_45_suma_nombres.html"> Exercici 01_45. Suma valors entre dos nombres</a></li>
-<li class="toctree-l4"><a class="reference internal" href="exercici_01_46_mostra_interval.html"> Exercici 01_46. Enters dins d’un interval</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#"> Exercici 01_47. Històric d’edats</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#"> Exercici 01_46. Enters dins d’un interval</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exercici_01_47_historic_edats.html"> Exercici 01_47. Històric d’edats</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="basics_exercicis_for_niats.html">Recorreguts niuats</a></li>
@@ -172,7 +172,7 @@
         
           <li><a href="basics_exercicis_for_numerics.html">Recorreguts numèrics</a> &raquo;</li>
         
-      <li> Exercici 01_47. Històric d’edats</li>
+      <li> Exercici 01_46. Enters dins d’un interval</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -190,96 +190,41 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="exerciseicon-st-exercici-01-47-historic-d-edats">
-<h1><img alt="exerciseicon_ST" src="_images/exerciseicon_ST.png" /> Exercici 01_47. Històric d’edats<a class="headerlink" href="#exerciseicon-st-exercici-01-47-historic-d-edats" title="Link permanent a aquest títol">¶</a></h1>
+  <div class="section" id="exerciseicon-t-exercici-01-46-enters-dins-d-un-interval">
+<h1><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> Exercici 01_46. Enters dins d’un interval<a class="headerlink" href="#exerciseicon-t-exercici-01-46-enters-dins-d-un-interval" title="Link permanent a aquest títol">¶</a></h1>
 <p class="rubric">Context</p>
 <ul class="simple">
-<li><p>Carpeta de lliurament: <code class="docutils literal notranslate"><span class="pre">01_47_historic_edats/</span></code></p></li>
+<li><p>Carpeta de lliurament: <code class="docutils literal notranslate"><span class="pre">01_46_mostra_interval/</span></code></p></li>
 <li><p>Continguts relacionats: <a class="reference internal" href="recorreguts_numerics.html"><span class="doc">Recorreguts numèrics</span></a></p></li>
 <li><p>Com lliurar-lo: <a class="reference internal" href="holagit.html#instruccions-git"><span class="std std-ref">instruccions</span></a></p></li>
-<li><p>[☆] Exercici amb <a class="reference internal" href="sobre_exercicis.html#descripcio-exercicis-dificils"><span class="std std-ref">dificultat addicional</span></a></p></li>
 <li><p>[✓] Exercici amb <a class="reference internal" href="sobre_exercicis.html#descripcio-exercicis-autoavaluacio"><span class="std std-ref">autoavaluació</span></a></p></li>
 </ul>
 <p class="rubric">Enunciat</p>
-<p>Desenvolupa un programa que demani el nom d’una persona, la seva edat i
-l’any actual, i escrigui l’edat que tenia aquella persona cada any des del
-seu naixement.</p>
-<p>Considera la següent simulació:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java HistoricEdats
-<span class="go">nom?</span>
-<span class="go">Anna</span>
-<span class="go">edat?</span>
+<p>Desenvolupa un programa que demani dos valors enters i mostri tots els
+enters que hi ha entre el primer i el segon, en l’ordre marcat per
+l’entrada.</p>
+<p>Considera les següents simulacions:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java MostraInterval
+<span class="go">inici?</span>
 <span class="go">5</span>
-<span class="go">any actual?</span>
-<span class="go">2012</span>
-<span class="go">El 2007 va néixer</span>
-<span class="go">El 2008 tenia 1 any</span>
-<span class="go">El 2009 tenia 2 anys</span>
-<span class="go">El 2010 tenia 3 anys</span>
-<span class="go">El 2011 tenia 4 anys</span>
-<span class="go">Adéu Anna</span>
+<span class="go">final?</span>
+<span class="go">7</span>
+<span class="go">5</span>
+<span class="go">6</span>
+<span class="go">7</span>
+
+<span class="gp">$</span> java MostraInterval
+<span class="go">inici?</span>
+<span class="go">7</span>
+<span class="go">final?</span>
+<span class="go">5</span>
+<span class="go">7</span>
+<span class="go">6</span>
+<span class="go">5</span>
 </pre></div>
 </div>
-<p>L’aplicació no dirà l’edat que té la persona en l’any actual, donat que
-aquesta dada forma part de l’entrada. És a dir, si la persona ha nascut
-aquest any, simplement s’acomiadarà, i si ho va fer l’any passat, només
-dirà quan va néixer i s’acomiadarà de la persona.</p>
-<p>Considera aquesta altra simulació:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java HistoricEdats
-<span class="go">nom?</span>
-<span class="go">Marc</span>
-<span class="go">edat?</span>
-<span class="go">0</span>
-<span class="go">any actual?</span>
-<span class="go">2020</span>
-<span class="go">Adéu Marc</span>
-</pre></div>
-</div>
-<p>Addicionalment caldrà realitzar les següents comprovacions a l’entrada:</p>
-<ul>
-<li><p>que el nom no estigui buit</p>
-<p><strong>pista</strong>: Java ens ofereix vàries maneres de comprovar si un <em>String</em>
-és buit.  La més fàcil, potser és fer servir l’expressió
-<code class="docutils literal notranslate"><span class="pre">nom.isEmpty()</span></code> però pots fer servir la típica <code class="docutils literal notranslate"><span class="pre">nom.equals(&quot;&quot;)</span></code> o,
-molt més segura encara que, potser una mica estranya,
-<code class="docutils literal notranslate"><span class="pre">&quot;&quot;.equals(nom)</span></code>.</p>
-</li>
-<li><p>que l’edat sigui un valor positiu (es pressuposa que serà
-enter)</p></li>
-<li><p>que l’any actual sigui com a mínim 1971 (també es pressuposa enter)</p></li>
-</ul>
-<p>En cas d’error, sempre retornarà el mateix missatge: <em>Entrada errònia</em></p>
-<p><strong>Pista</strong>: Et recomano que intentis fer l’exercici sense mirar aquesta
-pista i, tant si l’aconsegueixes com si no, que la llegeixis, doncs
-explica una tècnica molt habitual per resoldre aquest tipus de problemes.</p>
-<p>En aquest tipus d’exercicis, és important analitzar
-l’exemple d’entrada que ens donen. Intentem detectar què canvia a cada
-línia.</p>
-<p>En el cas de l’exemple, podem distingir els següents elements:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">El 2007 va néixer               Aquesta és la primera línia</span>
-
-<span class="go">El 2008 tenia 1 any             Aquestes línies s&#39;assemblen molt</span>
-<span class="go">El 2009 tenia 2 anys            amb un petit canvi (el plural) a</span>
-<span class="go">El 2010 tenia 3 anys            la primera</span>
-<span class="go">El 2011 tenia 4 anys</span>
-
-<span class="go">Adéu Anna                       Aquesta línia només depén del nom</span>
-</pre></div>
-</div>
-<p>Així, el teu programa podria tenir una estructura similar a aquesta:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// escriu any de naixement (si no és aquest!)</span>
-
-<span class="c1">// escriu les línies per cada any des del de naixement fins l&#39;actual</span>
-
-<span class="c1">// escriu comiat</span>
-</pre></div>
-</div>
-<p>La part més complicada, potser, serà saber quina ha de ser la variable de
-recorregut. Et proposo dues opcions encara que hi ha d’altres:</p>
-<ul class="simple">
-<li><p>recórrer per edat, aproximadament de 1 fins a l’actual</p></li>
-<li><p>recórrer per any, aproximadament des del naixement fins l’actual</p></li>
-</ul>
+<p>Fixa’t que el programa és capaç de mostrar l’interval creixent o
+decreixent segons els valors proporcionats a l’entrada.</p>
 </div>
 
 
@@ -313,10 +258,10 @@ recorregut. Et proposo dues opcions encara que hi ha d’altres:</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="basics_exercicis_for_niats.html" class="btn btn-neutral float-right" title="Recorreguts niuats" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="exercici_01_47_historic_edats.html" class="btn btn-neutral float-right" title="Exercici 01_47. Històric d’edats" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="exercici_01_46_mostra_interval.html" class="btn btn-neutral float-left" title="Exercici 01_46. Enters dins d’un interval" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="exercici_01_45_suma_nombres.html" class="btn btn-neutral float-left" title="Exercici 01_45. Suma valors entre dos nombres" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
