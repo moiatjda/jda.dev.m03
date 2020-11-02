@@ -14,3 +14,4 @@ La llista d'exercicis sobre recorreguts niats d'aquest tema és:
     exercici_01_52_rombos.rst
     exercici_01_53_trilal.rst
     exercici_01_54_la_meva_forma.rst
+    exercici_01_55_taula_multiplicar.rst

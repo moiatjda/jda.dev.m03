@@ -1,7 +1,7 @@
 :orphan:
 
 #########################################################
-|exerciseiconO__| Exercici 01_03. Inicialització en línia
+|exerciseiconO_T| Exercici 01_03. Inicialització en línia
 #########################################################
 
 .. rubric:: Context
@@ -13,6 +13,8 @@
 * Com lliurar-lo: :ref:`instruccions <instruccions_git>`
 
 * [☼] Exercici :ref:`optatiu<descripcio_exercicis_optatius>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
 
 .. rubric:: Enunciat
 

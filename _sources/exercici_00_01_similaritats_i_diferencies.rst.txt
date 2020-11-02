@@ -25,6 +25,9 @@ unes primeres conclusions d'aquests codis.
 Obre un document de text, sigui un LibreOffice Doc, un fitxer de text pla
 (.txt) o un nou email.
 
+Nota: si et veus amb temps, et proposo que ho intentis amb
+:doc:`reStructurreStructuredText <rst_intro>`.
+
 Intenta contestar les següents preguntes el millor que et sigui possible.
 
 Pregunta 1. Què fa el programa?

@@ -1,0 +1,68 @@
+:orphan:
+
+################################################################
+|exerciseicon__T| Exercici 01_55. La taula de multiplicar a mida
+################################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_55_taula_multiplicar/``
+
+* Continguts relacionats: :doc:`recorreguts_bucle_niat`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+
+En aquesta ocasió desenvoluparem un programa que permeti construir taules
+de multiplicar personalitzades.
+
+El programa demanarà un total de quatre valors numèrics:
+
+* valor inicial primers operands
+
+* valor final primers operands
+
+* valor inicial segons operands
+
+* valors finals segons operands
+
+En cas que un valor inicial sigui més gran que un valor final, simplement
+començarà pel més petit i acabarà pel més gran.
+
+A partir d'aquests valors, mostrarà les taules de multiplicar
+corresponents
+
+Considera la següent execució com a exemple:
+
+.. code-block:: console
+
+    $ java TaulesMultiplicar 1 3 4 5
+    1 x 4 = 4
+    2 x 4 = 8
+    3 x 4 = 12
+    1 x 5 = 5
+    2 x 5 = 10
+    3 x 5 = 15
+
+**Pista**: Fixa't que agafa els quatre valors dels arguments de la línia
+de comandes.
+
+Considera la següent plantilla de codi pel teu programa:
+
+.. code-block:: java
+
+    public class TaulesMultiplicar {
+        public static void main(String[] args) {
+            System.out.println("El primer argument és " + args[0]);
+            System.out.println("El segon argument és  " + args[1]);
+            System.out.println("El tercer argument és " + args[2]);
+            System.out.println("El quart argument és  " + args[3]);
+        }
+    }
+
+Executa-la amb la crida de l'exemple d'execució i comprova com ha estat
+capaç de recollir els valors dels arguments.

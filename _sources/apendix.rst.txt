@@ -1,0 +1,13 @@
+#######
+Apèndix
+#######
+
+A aquesta secció final dels apunts hi trobaràs elements addicionals que poden
+ser-te d'utilitat a l'hora d'ampliar els conceptes treballats durant el
+curs.
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    rst_intro.rst

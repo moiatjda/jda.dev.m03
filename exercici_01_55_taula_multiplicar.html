@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Exercici 01_50. Un triangle invertit &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  <title>Exercici 01_55. La taula de multiplicar a mida &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
   
 
   
@@ -39,8 +39,8 @@
     <link rel="author" title="Quant a aquests documents" href="about.html" />
     <link rel="index" title="Índex" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
-    <link rel="next" title="Exercici 01_51. Triangles" href="exercici_01_51_triangles.html" />
-    <link rel="prev" title="Exercici 01_49. Un triangle de nombres" href="exercici_01_49_triangle_nombres.html" />
+    <link rel="next" title="Apèndix" href="apendix.html" />
+    <link rel="prev" title="Exercici 01_54. El teu repte amb formes" href="exercici_01_54_la_meva_forma.html" />
      
     <script class="googleanalytics" src="_static/moiscripts.js"></script>
 
@@ -105,12 +105,12 @@
 <li class="toctree-l3 current"><a class="reference internal" href="basics_exercicis_for_niats.html">Recorreguts niuats</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="exercici_01_48_quadrat_nombres.html"> Exercici 01_48. Un quadrat de nombres</a></li>
 <li class="toctree-l4"><a class="reference internal" href="exercici_01_49_triangle_nombres.html"> Exercici 01_49. Un triangle de nombres</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#"> Exercici 01_50. Un triangle invertit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exercici_01_50_triangle_invertit.html"> Exercici 01_50. Un triangle invertit</a></li>
 <li class="toctree-l4"><a class="reference internal" href="exercici_01_51_triangles.html"> Exercici 01_51. Triangles</a></li>
 <li class="toctree-l4"><a class="reference internal" href="exercici_01_52_rombos.html"> Exercici 01_52. Rombos</a></li>
 <li class="toctree-l4"><a class="reference internal" href="exercici_01_53_trilal.html"> Exercici 01_53. Mega triangle “Trilal”</a></li>
 <li class="toctree-l4"><a class="reference internal" href="exercici_01_54_la_meva_forma.html"> Exercici 01_54. El teu repte amb formes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="exercici_01_55_taula_multiplicar.html"> Exercici 01_55. La taula de multiplicar a mida</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#"> Exercici 01_55. La taula de multiplicar a mida</a></li>
 </ul>
 </li>
 </ul>
@@ -170,7 +170,7 @@
         
           <li><a href="basics_exercicis_for_niats.html">Recorreguts niuats</a> &raquo;</li>
         
-      <li> Exercici 01_50. Un triangle invertit</li>
+      <li> Exercici 01_55. La taula de multiplicar a mida</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -188,34 +188,54 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="exerciseicon-exercici-01-50-un-triangle-invertit">
-<h1><img alt="exerciseicon___" src="_images/exerciseicon___.png" /> Exercici 01_50. Un triangle invertit<a class="headerlink" href="#exerciseicon-exercici-01-50-un-triangle-invertit" title="Link permanent a aquest títol">¶</a></h1>
+  <div class="section" id="exerciseicon-t-exercici-01-55-la-taula-de-multiplicar-a-mida">
+<h1><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> Exercici 01_55. La taula de multiplicar a mida<a class="headerlink" href="#exerciseicon-t-exercici-01-55-la-taula-de-multiplicar-a-mida" title="Link permanent a aquest títol">¶</a></h1>
 <p class="rubric">Context</p>
 <ul class="simple">
-<li><p>Carpeta de lliurament: <code class="docutils literal notranslate"><span class="pre">01_50_triangle_invertit/</span></code></p></li>
+<li><p>Carpeta de lliurament: <code class="docutils literal notranslate"><span class="pre">01_55_taula_multiplicar/</span></code></p></li>
 <li><p>Continguts relacionats: <a class="reference internal" href="recorreguts_bucle_niat.html"><span class="doc">Bucles dins de bucles</span></a></p></li>
 <li><p>Com lliurar-lo: <a class="reference internal" href="holagit.html#instruccions-git"><span class="std std-ref">instruccions</span></a></p></li>
+<li><p>[✓] Exercici amb <a class="reference internal" href="sobre_exercicis.html#descripcio-exercicis-autoavaluacio"><span class="std std-ref">autoavaluació</span></a></p></li>
 </ul>
 <p class="rubric">Enunciat</p>
-<p>Desenvolupa un programa que demani un nombre positiu més
-gran que 0. El programa escriurà una línia per nombre entre el nombre
-introduït i el 1 (és a dir, decreixentment). A cada línia escriurà
-tots els nombres des de l’1 fins el nombre corresponent a la línia.</p>
-<p>Si el valor introduït és menor que 1, el programa no mostrarà res.</p>
-<p>Una simulació:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java TriangleInvertit
-
-
-<span class="go">1, 2, 3, 4, 5</span>
-<span class="go">1, 2, 3, 4</span>
-<span class="go">1, 2, 3</span>
-<span class="go">1, 2</span>
-<span class="go">1</span>
+<p>En aquesta ocasió desenvoluparem un programa que permeti construir taules
+de multiplicar personalitzades.</p>
+<p>El programa demanarà un total de quatre valors numèrics:</p>
+<ul class="simple">
+<li><p>valor inicial primers operands</p></li>
+<li><p>valor final primers operands</p></li>
+<li><p>valor inicial segons operands</p></li>
+<li><p>valors finals segons operands</p></li>
+</ul>
+<p>En cas que un valor inicial sigui més gran que un valor final, simplement
+començarà pel més petit i acabarà pel més gran.</p>
+<p>A partir d’aquests valors, mostrarà les taules de multiplicar
+corresponents</p>
+<p>Considera la següent execució com a exemple:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java TaulesMultiplicar <span class="m">1</span> <span class="m">3</span> <span class="m">4</span> <span class="m">5</span>
+<span class="go">1 x 4 = 4</span>
+<span class="go">2 x 4 = 8</span>
+<span class="go">3 x 4 = 12</span>
+<span class="go">1 x 5 = 5</span>
+<span class="go">2 x 5 = 10</span>
+<span class="go">3 x 5 = 15</span>
 </pre></div>
 </div>
-<p>Fixa’t que aquest problema és molt similar al del <a class="reference internal" href="exercici_01_49_triangle_nombres.html"><span class="doc">triangle de
-nombres</span></a>. En aquest cas, a banda de que
-els nombres es mostren de manera diferent, hi apareix una coma entre mig!</p>
+<p><strong>Pista</strong>: Fixa’t que agafa els quatre valors dels arguments de la línia
+de comandes.</p>
+<p>Considera la següent plantilla de codi pel teu programa:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TaulesMultiplicar</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El primer argument és &quot;</span> <span class="o">+</span> <span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El segon argument és  &quot;</span> <span class="o">+</span> <span class="n">args</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El tercer argument és &quot;</span> <span class="o">+</span> <span class="n">args</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El quart argument és  &quot;</span> <span class="o">+</span> <span class="n">args</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Executa-la amb la crida de l’exemple d’execució i comprova com ha estat
+capaç de recollir els valors dels arguments.</p>
 </div>
 
 
@@ -249,10 +269,10 @@ els nombres es mostren de manera diferent, hi apareix una coma entre mig!</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="exercici_01_51_triangles.html" class="btn btn-neutral float-right" title="Exercici 01_51. Triangles" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="apendix.html" class="btn btn-neutral float-right" title="Apèndix" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="exercici_01_49_triangle_nombres.html" class="btn btn-neutral float-left" title="Exercici 01_49. Un triangle de nombres" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="exercici_01_54_la_meva_forma.html" class="btn btn-neutral float-left" title="Exercici 01_54. El teu repte amb formes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

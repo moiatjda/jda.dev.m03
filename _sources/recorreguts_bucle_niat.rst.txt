@@ -136,3 +136,5 @@ Aquí tens uns quants exercicis per practicar aquest tipus de problemes.
 |exerciseiconO__| :doc:`exercici_01_53_trilal`
 
 |exerciseicon___| :doc:`exercici_01_54_la_meva_forma`
+
+|exerciseicon__T| :doc:`exercici_01_55_taula_multiplicar`

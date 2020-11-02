@@ -1,0 +1,42 @@
+###########
+Conclusions
+###########
+
+En aquesta secció hem conegut una nova manera de fer bucles: amb el
+``for``.
+
+L'estructura ``for`` en Java és una mena de ``while`` compactat i, per
+tant, tots dos poden funcionar pràcticament igual.
+
+Malgrat això, t'he proposat que facis servir el ``for`` d'una manera molt
+particular: per resoldre problemes de recorreguts
+
+Els problemes de recorreguts són extremadament freqüents en programació.
+Consisteixen en anar passant per una llista de valors d'un punt d'inici a
+un de final, saltant de un en un, de dos en dos, etc.
+
+Així, si fem servir el ``for`` per recorreguts, ens resultarà molt fàcil,
+o si més no, més fàcil, resoldre i entendre una gran quantitat de
+programes.
+
+La recepta bàsica és:
+
+* identificar els límits del recorregut: inici i destinació
+
+* identificar el salt
+
+* processar dins del bloc, el valor actual de la variable de recorregut a
+  cada iteració del bucle
+
+Dins d'un recorregut podem fer qualsevol activitat **menys** modificar el
+valor de la variable de recorregut. De fet, poder podem però complicarem
+el nostre codi molt i és del tot desaconsellat.
+
+Una de les coses que sí podem fer dins d'un bucle és un altre bucle. Això ens
+permet resoldre problemes en dues dimensions. Em aprés a dibuixar
+diferents figures planes entre d'altres coses.
+
+A banda, hem descobert noves maneres d'incrementar i decrementar valors de
+variables, més compactes que la típica ``valor = valor + 1``. Són maneres
+que podem utilitzar als nostres codis si ens ve de gust.
+
