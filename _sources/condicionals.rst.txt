@@ -9,10 +9,12 @@ Desenvolupa un programa que donat un número enter retorni si és *parell* o
 
 Per exemple, considera les següents interaccions:
 
-.. code-block:: none
+.. code-block:: console
+    :emphasize-lines: 2, 5
 
     $ java ParellSenar 4
     Parell
+
     $ java ParellSenar 5
     Senar
 

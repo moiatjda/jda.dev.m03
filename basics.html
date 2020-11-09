@@ -39,7 +39,7 @@
     <link rel="author" title="Quant a aquests documents" href="about.html" />
     <link rel="index" title="Índex" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
-    <link rel="next" title="Instruccions seqüencials" href="instruccions.html" />
+    <link rel="next" title="Introducció" href="basics_intro.html" />
     <link rel="prev" title="Exercici 00_04. Presentem-nos" href="exercici_00_04_presentemnos.html" />
      
     <script class="googleanalytics" src="_static/moiscripts.js"></script>
@@ -91,12 +91,14 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Elements bàsics de la programació</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basics_intro.html">Introducció</a></li>
 <li class="toctree-l2"><a class="reference internal" href="instruccions.html">Instruccions seqüencials</a></li>
 <li class="toctree-l2"><a class="reference internal" href="variables.html">Variables i tipus</a></li>
 <li class="toctree-l2"><a class="reference internal" href="expressions.html">Operadors i expressions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="while.html">Bucles condicionals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="recorreguts.html">Recorreguts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">Strings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="basics_exercicis.html">Llista d’exercicis</a></li>
 </ul>
 </li>
@@ -167,80 +169,20 @@
             
   <div class="section" id="elements-basics-de-la-programacio">
 <h1>Elements bàsics de la programació<a class="headerlink" href="#elements-basics-de-la-programacio" title="Link permanent a aquest títol">¶</a></h1>
-<p>Malgrat molta gent pensa que la programació és quelcom molt complicat, en
-realitat es tracta de saber <em>jugar</em> amb un conjunt relativament reduït de
-conceptes bàsics.</p>
-<div class="sidebar">
-<p class="sidebar-title">Corredor amb Tangram</p>
-<a class="reference internal image-reference" href="_images/Tangram-man.svg"><img alt="Corredor fet amb Tangram" src="_images/Tangram-man.svg" width="200px" /></a>
-</div>
-<p>Potser t’ajuda la idea de la formació de siluetes mitjançant les peces
-d’un <a class="reference external" href="https://ca.wikipedia.org/wiki/Tangram">tangram</a></p>
-<p>Bàsicament, el joc del Tangram es basa en una silueta objectiu més un
-conjunt de peces amb les que conformar la silueta. La gràcia està en ser
-capaç de combinar aquestes peces en diferents posicions fins a aconseguir
-l’objectiu.</p>
-<p>En aquest joc són tan importants les peces com l’objectiu.  Evidentment,
-si et falta alguna de les peces necessàries per construir la figura, no la
-aconseguiràs. De la mateixa manera, si no tens clara la figura a
-construir, probablement pots passar-te una bona estona combinant peces i
-gaudint del que surti, però el que estaràs fent no serà ben be jugar al
-Tangram.</p>
-<p>Si bé, algunes figures del Tangram poden arribar a ser molt complexes i
-requerir-nos estona per descobrir-les, aviat veurem que els programes són
-un <em>joc</em> una mica més complex. Amb tot, la programació comparteix en certa
-mesura les característiques del joc del Tangram: ens cal un objectiu –allò
-que volem que faci el programa– i un conjunt de peces –codi: estructures i
-elements de programació que estem a punt de descobrir.</p>
-<p>Una diferència important és que en programació les peces es poden repetir
-tants cops com et calguin, i no cal que les facis servir totes.
-A aquesta part del curs, aprendrem a reconèixer i utilitzar les <em>peces
-bàsiques</em> de la programació.</p>
-<p>En quant a l’objectiu, bé, en trobaràs un bon grapat en forma d’enunciats
-d’exercicis.</p>
-<p>Hi ha un element important que al joc del Tangram queda amagat per
-obvi: saber si has aconseguit l’objectiu. En el cas del Tangram ho saps
-perquè veus o no la figura resultant i si et sobren o no peces. En
-programació, saber si hem aconseguit o no l’objectiu sol ser tan obvi i,
-per tant, ens caldrà realitzar comprovacions sovint més sofisticades que
-una simple ullada. D’això en direm <em>proves</em> o <em>tests</em>.</p>
-<p>Un altre element que no explicitem al Tangram és indicar quina és la
-figura que hem construït. En teoria la mateixa figura ja ho diu, oi? Ja
-veurem que saber què fan els programes no sempre serà tan evident. Per
-salut mental, els desenvolupadors hem aprés que cal <em>documentar</em>
-adequadament els nostres programes, de manera que, quan els vulguem
-revisar (cosa molt normal) puguem entendre’l.</p>
-<p>Una de les coses que aprens a mida que vas jugant al Tangram és a detectar
-patrons, és a dir, combinacions que has vist prèviament que fan
-determinades formes parcials què, combinades entre si, permeten generar
-figures més complexes. El curs persegueix facilitar-te el descobriment
-d’aquests patrons.</p>
-<div class="figure align-center">
-<p class="plantuml">
-<img src="_images/plantuml-97310ffa5a1dbe977837cabda65aaa6c1ce7e167.png" alt="&#64;startuml
-
-hide circle
-hide empty members
-skinparam monochrome true
-
-Programació *-down- Objectiu
-Programació *-down- Instruccions
-Programació *-down- Documentació
-Programació *-down- Proves
-Programació *-down- Patrons
-
-&#64;enduml"/>
-</p>
-</div>
-<p>Amb tot això en ment, comencem!</p>
+<p>En aquesta secció aprendrem els conceptes més essencials de la
+programació.</p>
+<p>Si no els has vist mai, probablement et sorprendran. Si ja els coneixies,
+probablement et servirà per repassar.</p>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="basics_intro.html">Introducció</a></li>
 <li class="toctree-l1"><a class="reference internal" href="instruccions.html">Instruccions seqüencials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="variables.html">Variables i tipus</a></li>
 <li class="toctree-l1"><a class="reference internal" href="expressions.html">Operadors i expressions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="while.html">Bucles condicionals</a></li>
 <li class="toctree-l1"><a class="reference internal" href="recorreguts.html">Recorreguts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="strings.html">Strings</a></li>
 <li class="toctree-l1"><a class="reference internal" href="basics_exercicis.html">Llista d’exercicis</a></li>
 </ul>
 </div>
@@ -277,7 +219,7 @@ Programació *-down- Patrons
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="instruccions.html" class="btn btn-neutral float-right" title="Instruccions seqüencials" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="basics_intro.html" class="btn btn-neutral float-right" title="Introducció" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="exercici_00_04_presentemnos.html" class="btn btn-neutral float-left" title="Exercici 00_04. Presentem-nos" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

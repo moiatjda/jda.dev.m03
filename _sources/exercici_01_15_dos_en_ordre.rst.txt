@@ -1,5 +1,3 @@
-:orphan:
-
 ##############################################
 |exerciseicon__T| Exercici 01_15. Dos en ordre
 ##############################################
@@ -23,7 +21,10 @@ ordenats creixentment (de menor a major). Per exemple, si els números són
 
 Indica amb un comentari, que passa si els dos números són iguals.
 
-Exemples d'interacció: ::
+Exemples d'interacció:
+
+.. code-block:: console
+    :emphasize-lines: 2, 4, 6, 9, 11, 13
 
     $ java DosEnOrdre
     Primer?
@@ -31,6 +32,7 @@ Exemples d'interacció: ::
     Segon?
     2
     2 i 3
+
     $ java DosEnOrdre
     Primer?
     3

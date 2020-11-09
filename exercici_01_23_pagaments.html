@@ -91,12 +91,14 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basics_intro.html">Introducció</a></li>
 <li class="toctree-l2"><a class="reference internal" href="instruccions.html">Instruccions seqüencials</a></li>
 <li class="toctree-l2"><a class="reference internal" href="variables.html">Variables i tipus</a></li>
 <li class="toctree-l2"><a class="reference internal" href="expressions.html">Operadors i expressions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="while.html">Bucles condicionals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="recorreguts.html">Recorreguts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">Strings</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="basics_exercicis.html">Llista d’exercicis</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="basics_exercicis_sequencials.html">Instruccions seqüencials</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="basics_exercicis_condicionals.html">Instruccions condicionals</a><ul class="current">
@@ -118,6 +120,7 @@
 <li class="toctree-l3"><a class="reference internal" href="basics_exercicis_while.html">Bucles condicionals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="basics_exercicis_for_numerics.html">Recorreguts numèrics</a></li>
 <li class="toctree-l3"><a class="reference internal" href="basics_exercicis_for_niats.html">Recorreguts niuats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics_exercicis_strings.html">Strings</a></li>
 </ul>
 </li>
 </ul>
@@ -211,25 +214,27 @@ diners.</p>
 continuació compararà les dues quantitats i escriurà els € que falten per
 pagar o bé els que se han de tornar.</p>
 <p>Exemple d’interacció:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ java Pagament
-Preu?
-102
-Paga?
-150
-Sobren 48€
-$ java Pagament
-Preu?
-102
-Paga?
-100
-Falten 2€
-$ java Pagament
-Preu?
-100
-Paga?
-100
-No sobra ni falta res
-</pre></div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java Pagament
+<span class="hll"><span class="go">Preu?</span>
+</span><span class="go">102</span>
+<span class="hll"><span class="go">Paga?</span>
+</span><span class="go">150</span>
+<span class="hll"><span class="go">Sobren 48€</span>
+</span>
+<span class="gp">$</span> java Pagament
+<span class="hll"><span class="go">Preu?</span>
+</span><span class="go">102</span>
+<span class="hll"><span class="go">Paga?</span>
+</span><span class="go">100</span>
+<span class="hll"><span class="go">Falten 2€</span>
+</span>
+<span class="gp">$</span> java Pagament
+<span class="hll"><span class="go">Preu?</span>
+</span><span class="go">100</span>
+<span class="hll"><span class="go">Paga?</span>
+</span><span class="go">100</span>
+<span class="hll"><span class="go">No sobra ni falta res</span>
+</span></pre></div>
 </div>
 <p>Nota: per simplicitat, totes les quantitats estaran en euros sencers
 (sense cèntims)</p>

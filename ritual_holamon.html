@@ -177,17 +177,17 @@ mateix!</p>
 <li><p>Obre un terminal (ex. ctrl-alt-t)</p></li>
 <li><p>Escriu a la línia de comandes (no incloguis <code class="docutils literal notranslate"><span class="pre">$</span></code>)</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> jshell
-<span class="go">|  Welcome to JShell -- Version 11.0.7</span>
-<span class="go">|  For an introduction type: /help intro</span>
-
-<span class="go">jshell&gt;</span>
+<span class="hll"><span class="go">|  Welcome to JShell -- Version 11.0.7</span>
+</span><span class="hll"><span class="go">|  For an introduction type: /help intro</span>
+</span><span class="hll">
+</span><span class="go">jshell&gt;</span>
 </pre></div>
 </div>
 </li>
 <li><p>Escriu després de <code class="docutils literal notranslate"><span class="pre">jshell&gt;</span></code> (no incloguis tampoc <code class="docutils literal notranslate"><span class="pre">jshell&gt;</span></code>)</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">jshell</span><span class="o">&gt;</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hola món!&quot;</span><span class="p">);</span>
-<span class="n">Hola</span> <span class="n">món</span><span class="o">!</span>
-</pre></div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">jshell&gt; System.out.println(&quot;Hola món!&quot;);</span>
+<span class="hll"><span class="go">Hola món!</span>
+</span></pre></div>
 </div>
 </li>
 <li><p>Si has vist la salutació al món, felicitats pel teu primer programa!</p></li>
@@ -241,8 +241,8 @@ provar fins que la comanda anterior no generi cap missatge.</p>
 </li>
 <li><p>Comprova que s’ha creat un nou fitxer</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> ls HolaMon.*
-<span class="go">HolaMon.class  HolaMon.java</span>
-</pre></div>
+<span class="hll"><span class="go">HolaMon.class  HolaMon.java</span>
+</span></pre></div>
 </div>
 <p>El nou fitxer <code class="docutils literal notranslate"><span class="pre">HolaMon.class</span></code> és la versió compilada del teu codi. El
 seu contingut <strong>no</strong> és de text pla i, per tant, no el podràs veure amb
@@ -251,8 +251,8 @@ funcioni.</p>
 </li>
 <li><p>Finalment, executa el teu programa</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java HolaMon
-<span class="go">Hola Món!</span>
-</pre></div>
+<span class="hll"><span class="go">Hola Món!</span>
+</span></pre></div>
 </div>
 <p>Fixa’t que ara no ha calgut dir l’extensió <code class="docutils literal notranslate"><span class="pre">.class</span></code>. El programa <code class="docutils literal notranslate"><span class="pre">java</span></code>
 és l’encarregat d’executar el codi compilat que apareix al fitxer <code class="docutils literal notranslate"><span class="pre">HolaMon.class</span></code>.</p>

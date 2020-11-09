@@ -1,0 +1,520 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ca" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>El tipus String &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="String: seqüència de lletres" href="strings_posicions.html" />
+    <link rel="prev" title="Diferents tipus de tipus" href="primitius_vs_classes.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació amb Java
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-21
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basics_intro.html">Introducció</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruccions.html">Instruccions seqüencials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html">Variables i tipus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressions.html">Operadors i expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="while.html">Bucles condicionals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recorreguts.html">Recorreguts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="strings.html">Strings</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="primitius_vs_classes.html">Diferents tipus de <em>tipus</em></a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">El tipus String</a></li>
+<li class="toctree-l3"><a class="reference internal" href="strings_posicions.html">String: seqüència de lletres</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="basics_exercicis.html">Llista d’exercicis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="apendix.html">Apèndix</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació amb Java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="basics.html">Elements bàsics de la programació</a> &raquo;</li>
+        
+          <li><a href="strings.html">Strings</a> &raquo;</li>
+        
+      <li>El tipus String</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="el-tipus-string">
+<h1>El tipus String<a class="headerlink" href="#el-tipus-string" title="Link permanent a aquest títol">¶</a></h1>
+<p>Ja hem vist a <a class="reference internal" href="primitius_vs_classes.html"><span class="doc">Diferents tipus de tipus</span></a>, els Strings no són un tipus primitiu a
+Java, sinó <em>objectes</em>. És a dir, una variable de tipus String <strong>no</strong> conté
+directament el text corresponent al seu valor, sinó una referència a la
+posició de memòria on es troba el text.</p>
+<p>Aquesta <em>peculiaritat</em> fa que els Strings no es facin servir exactament de
+la mateixa manera amb que usàvem variables de tipus primitiu.</p>
+<p>Amb tot, el tipus String és tan utilitzat que els dissenyadors de Java
+s’han pres moltes molèsties en fer-los més usables per nosaltres. Així,
+ens trobarem que aquest tipus té un tracte especial pel llenguatge.</p>
+<p>A aquesta secció trobaràs una visió resumida de les operacions més
+bàsiques que habitualment fem amb Strings. Algunes ja les hem vistes però
+d’altres te les presento per primer cop.</p>
+<div class="section" id="concatenacio-de-strings">
+<h2>Concatenació de Strings<a class="headerlink" href="#concatenacio-de-strings" title="Link permanent a aquest títol">¶</a></h2>
+<p>Java ens ofereix l’operador <code class="docutils literal notranslate"><span class="pre">+</span></code> per concatenar strings.
+Així</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">jshell&gt; &quot;hola&quot; + &quot; i &quot; +  &quot;adeu&quot;</span>
+<span class="hll"><span class="gp">$</span><span class="nv">1</span> <span class="o">==</span>&gt; <span class="s2">&quot;hola i adeu&quot;</span>
+</span></pre></div>
+</div>
+<p>Java ens permet concatenar automàticament altres tipus de dades. Per
+exemple, amb un caràcter:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">jshell&gt; String text = &quot;ho&quot; + 1 + &#39;a&#39;;</span>
+<span class="hll"><span class="go">text ==&gt; &quot;ho1a&quot;</span>
+</span></pre></div>
+</div>
+<p>Compte, però, en l’ordre en que li demanem les coses. Per exemple:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">jshell&gt; String text = &#39;a&#39; + 1 + &quot;oh&quot;;</span>
+<span class="hll"><span class="go">text ==&gt; &quot;98oh&quot;</span>
+</span></pre></div>
+</div>
+<p>Aquí, el caràcter <code class="docutils literal notranslate"><span class="pre">'a'</span></code> ha estat considerat com un número (el codi ASCII
+de la “a” és el 97). Java ha sumat 97 més 1 i, el resultat, l’ha convertit
+a String per concatenar-ho a <cite>«oh»</cite>!</p>
+<p>Ho podem solucionar, per exemple, explicitant-li a Java que volem que faci
+servir la concatenació de Strings tot afegint la cadena buida a l’inici.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">jshell&gt; String text = &quot;&quot; + &#39;a&#39; + 1 + &quot;oh&quot;;</span>
+<span class="hll"><span class="go">text ==&gt; &quot;a1oh&quot;</span>
+</span></pre></div>
+</div>
+</div>
+<div class="section" id="comparacio-d-igualtat">
+<h2>Comparació d’igualtat<a class="headerlink" href="#comparacio-d-igualtat" title="Link permanent a aquest títol">¶</a></h2>
+<p>Amb els tipus primitius (a excepció del nombres amb coma flotant)
+l’operador d’igualtat <code class="docutils literal notranslate"><span class="pre">==</span></code> ens permet decidir si un valor és igual a un
+altre. Això no és possible amb els Strings ja que la variable no <em>conté</em>
+el text sinó una referència a aquest. Per tant, <code class="docutils literal notranslate"><span class="pre">==</span></code> resultarà cert
+només si els texts dels dos strings a comparar es troben a la mateixa
+posició de memòria.</p>
+<div class="section" id="una-comparacio-amb-resultat-sorprenent">
+<h3>Una comparació amb resultat sorprenent<a class="headerlink" href="#una-comparacio-amb-resultat-sorprenent" title="Link permanent a aquest títol">¶</a></h3>
+<p>Considera el següent programa:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Hola</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">String</span> <span class="n">textIntern1</span> <span class="o">=</span> <span class="s">&quot;hola&quot;</span><span class="p">;</span>
+        <span class="n">String</span> <span class="n">textIntern2</span> <span class="o">=</span> <span class="s">&quot;hol&quot;</span> <span class="o">+</span> <span class="sc">&#39;a&#39;</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Introdueix un text: &quot;</span><span class="p">);</span>
+        <span class="n">String</span> <span class="n">textExtern</span> <span class="o">=</span> <span class="n">Entrada</span><span class="p">.</span><span class="na">readLine</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Comparem interns        : \&quot;&quot;</span> <span class="o">+</span>
+                            <span class="n">textIntern1</span> <span class="o">+</span> <span class="s">&quot;\&quot; == \&quot;&quot;</span> <span class="o">+</span>
+                            <span class="n">textIntern2</span> <span class="o">+</span> <span class="s">&quot;\&quot; → &quot;</span> <span class="o">+</span>
+                            <span class="p">(</span><span class="n">textIntern1</span> <span class="o">==</span> <span class="n">textIntern2</span><span class="p">)</span>
+                          <span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Comparem intern i extern: \&quot;&quot;</span> <span class="o">+</span>
+                            <span class="n">textIntern1</span> <span class="o">+</span> <span class="s">&quot;\&quot; == \&quot;&quot;</span> <span class="o">+</span>
+                            <span class="n">textExtern</span> <span class="o">+</span> <span class="s">&quot;\&quot; → &quot;</span> <span class="o">+</span>
+                            <span class="p">(</span><span class="n">textIntern1</span> <span class="o">==</span> <span class="n">textExtern</span><span class="p">)</span>
+                          <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Ara, considera aquesta interacció:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java Hola
+<span class="hll"><span class="go">Comparem interns        : &quot;hola&quot; == &quot;hola&quot; → true</span>
+</span><span class="hll"><span class="go">Comparem intern i extern: &quot;hola&quot; == &quot;hola&quot; → false</span>
+</span></pre></div>
+</div>
+<p>Què ha passat?</p>
+<p>En el primer cas, Java considera que <code class="docutils literal notranslate"><span class="pre">&quot;hola&quot;</span></code> és igual a <code class="docutils literal notranslate"><span class="pre">&quot;hola&quot;</span></code>.
+Sembla que és el que tothom esperaria malgrat els valors de
+<code class="docutils literal notranslate"><span class="pre">textIntern1</span></code> i <code class="docutils literal notranslate"><span class="pre">textIntern2</span></code> han estat construïts de manera diferent.</p>
+<p>En canvi, quan comparem <code class="docutils literal notranslate"><span class="pre">textIntern1</span></code> amb <code class="docutils literal notranslate"><span class="pre">textExtern</span></code>, el resultat és
+fals malgrat tots dos contenen el mateix text <code class="docutils literal notranslate"><span class="pre">&quot;hola&quot;</span></code>!</p>
+<p>L’explicació del segon cas és molt senzilla.</p>
+<p>Com sabem, Java no guarda el text d’un String directament a la seva
+variable. En comptes, guarda una referència al lloc on es troba el text en
+memòria.</p>
+<p>Suposem que el text de <code class="docutils literal notranslate"><span class="pre">textIntern1</span></code> està guardat a la posició <em>&#64;1000</em>.
+Vindria a ser com si el valor de <code class="docutils literal notranslate"><span class="pre">textIntern1</span></code> fos <code class="docutils literal notranslate"><span class="pre">1000</span></code>. Quan el
+programa llegeix el valor de l’entrada estàndard, aquest pot ser qualsevol
+text, potser també <code class="docutils literal notranslate"><span class="pre">&quot;hola&quot;</span></code>. Java guarda aquest valor a una nova
+posició, suposem <em>&#64;5000</em>. Així, <code class="docutils literal notranslate"><span class="pre">textExtern</span></code> tindria com a valor
+<code class="docutils literal notranslate"><span class="pre">5000</span></code>.  Quan comparem <code class="docutils literal notranslate"><span class="pre">textIntern1</span> <span class="pre">==</span> <span class="pre">textExtern</span></code> Java entén que
+volem saber si <code class="docutils literal notranslate"><span class="pre">1000</span> <span class="pre">==</span> <span class="pre">5000</span></code> cosa que, evidentment, no és certa.</p>
+<p>Però, llavors, perquè <code class="docutils literal notranslate"><span class="pre">textIntern1</span> <span class="pre">==</span> <span class="pre">textIntern2</span></code> sí funciona? Doncs
+resulta que el compilador de Java que estic fent servir, és prou
+<em>intel·ligent</em> com per realitzar la concatenació del segon text i
+adonar-se que ja disposa d’un text igual a la posició <em>&#64;1000</em> i, per
+tant, assigna a <code class="docutils literal notranslate"><span class="pre">textIntern2</span></code> la mateixa posició. Compte! És
+perfectament possible que un altre compilador de Java no realitzes aquesta
+optimització i guardés els dos texts per duplicat en memòria, el que faria
+que també aquesta comparació resultés en <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p>
+<p>Si ho representem amb la nostra simplificació de la memòria ens trobem
+quelcom similar a:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 16%" />
+<col style="width: 45%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>variable</p></th>
+<th class="head"><p>posició</p></th>
+<th class="head"><p>valor</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>String textIntern1</p></td>
+<td><p>&#64;100</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1000</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>String textIntern2</p></td>
+<td><p>&#64;101</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1000</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>String textExtern</p></td>
+<td><p>&#64;102</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">5000</span></code></p></td>
+</tr>
+<tr class="row-odd"><td colspan="3"><p>…</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>&#64;1000</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;hola&quot;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td colspan="3"><p>…</p></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>&#64;5000</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;hola&quot;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td colspan="3"><p>…</p></td>
+</tr>
+</tbody>
+</table>
+<p>Fixa’t que les variables <code class="docutils literal notranslate"><span class="pre">textIntern1</span></code> i <code class="docutils literal notranslate"><span class="pre">textIntern2</span></code> tenen el mateix
+valor <code class="docutils literal notranslate"><span class="pre">&#64;1000</span></code> mentre que <code class="docutils literal notranslate"><span class="pre">textExtern</span></code> té referència a un altre valor,
+malgrat les posicions <code class="docutils literal notranslate"><span class="pre">&#64;1000</span></code> i <code class="docutils literal notranslate"><span class="pre">&#64;5000</span></code> al final tenen el mateix
+valor. <code class="docutils literal notranslate"><span class="pre">equals()</span></code> és capaç de comparar els texts apuntats pels valors dels
+dos Strings, en comptes de les posicions on es troben.</p>
+<p>Se t’acut perquè Java no intenta fer aquesta optimització amb el text que
+llegeix de l’entrada estàndard? Pista: qui s’espera amb la primera
+optimització i qui s’esperaria amb la segona?</p>
+</div>
+<div class="section" id="comparem-correctament-els-strings">
+<h3>Comparem correctament els Strings<a class="headerlink" href="#comparem-correctament-els-strings" title="Link permanent a aquest títol">¶</a></h3>
+<p>La manera <strong>correcta</strong> i <strong>segura</strong> de comparar dos Strings per igualtat és la següent:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Hola</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">String</span> <span class="n">textIntern1</span> <span class="o">=</span> <span class="s">&quot;hola&quot;</span><span class="p">;</span>
+        <span class="n">String</span> <span class="n">textIntern2</span> <span class="o">=</span> <span class="s">&quot;hol&quot;</span> <span class="o">+</span> <span class="sc">&#39;a&#39;</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Introdueix un text: &quot;</span><span class="p">);</span>
+        <span class="n">String</span> <span class="n">textExtern</span> <span class="o">=</span> <span class="n">Entrada</span><span class="p">.</span><span class="na">readLine</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Comparem interns        : \&quot;&quot;</span> <span class="o">+</span>
+                            <span class="n">textIntern1</span> <span class="o">+</span> <span class="s">&quot;\&quot; == \&quot;&quot;</span> <span class="o">+</span>
+                            <span class="n">textIntern2</span> <span class="o">+</span> <span class="s">&quot;\&quot; → &quot;</span> <span class="o">+</span>
+                            <span class="n">textIntern1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">textIntern2</span><span class="p">)</span>
+                          <span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Comparem intern i extern: \&quot;&quot;</span> <span class="o">+</span>
+                            <span class="n">textIntern1</span> <span class="o">+</span> <span class="s">&quot;\&quot; == \&quot;&quot;</span> <span class="o">+</span>
+                            <span class="n">textExtern</span> <span class="o">+</span> <span class="s">&quot;\&quot; → &quot;</span> <span class="o">+</span>
+                            <span class="n">textIntern1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">textExtern</span><span class="p">)</span>
+                          <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Ara, la mateixa interacció que abans resulta així:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java Hola
+<span class="hll"><span class="go">Comparem interns        : &quot;hola&quot; == &quot;hola&quot; → true</span>
+</span><span class="hll"><span class="go">Comparem intern i extern: &quot;hola&quot; == &quot;hola&quot; → true</span>
+</span></pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Per comparar strings en Java farem servir <strong>sempre</strong> la funció <code class="docutils literal notranslate"><span class="pre">equals()</span></code>.</p>
+</div>
+</div>
+</div>
+<div class="section" id="conversions">
+<h2>Conversions<a class="headerlink" href="#conversions" title="Link permanent a aquest títol">¶</a></h2>
+<p>La API de Java ens ofereix diferents maneres per a realitzar conversions
+entre els diferents tipus primitius i els Strings. Ja les hem vist en
+funcionament abans. Recordem algunes:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">valorEnter</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="s">&quot;12345&quot;</span><span class="p">);</span>
+<span class="kt">double</span> <span class="n">valorDecimal</span> <span class="o">=</span> <span class="n">Double</span><span class="p">.</span><span class="na">parseDouble</span><span class="p">(</span><span class="s">&quot;123.45&quot;</span><span class="p">);</span>
+<span class="n">String</span> <span class="n">cadenaEntera</span> <span class="o">=</span> <span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">valorEnter</span><span class="p">);</span>
+<span class="n">String</span> <span class="n">cadenaDecimal</span> <span class="o">=</span> <span class="n">String</span><span class="p">.</span><span class="na">valueOf</span><span class="p">(</span><span class="n">valorDecimal</span><span class="p">);</span>
+<span class="n">String</span> <span class="n">unaAltraManera</span> <span class="o">=</span> <span class="s">&quot;&quot;</span> <span class="o">+</span> <span class="n">valorEnter</span><span class="p">;</span>    <span class="c1">// aprofita la concatenació</span>
+<span class="n">String</span> <span class="n">encaraUnaAltra</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">valorEnter</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="transformacions">
+<h2>Transformacions<a class="headerlink" href="#transformacions" title="Link permanent a aquest títol">¶</a></h2>
+<p>Els Strings disposen de moltes utilitats per transformar-los.</p>
+<p>Per exemple,``startsWith()``: permet saber si el text comença amb un determinat text.
+Podem usar aquesta utilitat, per exemple, de la següent manera:</p>
+<blockquote>
+<div><div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">jshell&gt; &quot;hola&quot;.startsWith(&quot;ho&quot;)</span>
+<span class="hll"><span class="gp">$</span><span class="nv">1</span> <span class="o">==</span>&gt; <span class="nb">true</span>
+</span>
+<span class="go">jshell&gt; &quot;adéu&quot;.startsWith(&quot;ho&quot;)</span>
+<span class="hll"><span class="gp">$</span><span class="nv">2</span> <span class="o">==</span>&gt; <span class="nb">false</span>
+</span></pre></div>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="construccio-de-strings">
+<h2>Construcció de Strings<a class="headerlink" href="#construccio-de-strings" title="Link permanent a aquest títol">¶</a></h2>
+<p>De vegades ens pot ser útil construir un String a partir de diferents
+valors. Una manera molt còmoda de fer-ho és aprofitar la funció
+<code class="docutils literal notranslate"><span class="pre">String.format()</span></code> que espera com a paràmetres un String que defineix un
+patró amb marques de variables més tants valors com hi hagi a les marques
+del String.</p>
+<p>Per exemple, considera el següent codi:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">edat</span> <span class="o">=</span> <span class="mi">19</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">nom</span> <span class="o">=</span> <span class="s">&quot;Nefertiti&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">cognoms</span> <span class="o">=</span> <span class="s">&quot;Peláez Ramírez&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">missatge</span> <span class="o">=</span> <span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;%s %s és %s d&#39;edat doncs té %d any%s%n&quot;</span><span class="p">,</span>
+                                <span class="n">nom</span><span class="p">,</span> <span class="n">cognoms</span><span class="p">,</span>
+                                <span class="n">edat</span> <span class="o">&lt;</span> <span class="mi">18</span> <span class="o">?</span> <span class="s">&quot;menor&quot;</span><span class="p">:</span> <span class="s">&quot;major&quot;</span><span class="p">,</span>
+                                <span class="n">edat</span><span class="p">,</span>
+                                <span class="n">edat</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">?</span> <span class="s">&quot;&quot;</span> <span class="p">:</span> <span class="s">&quot;s&quot;</span><span class="p">);</span>
+
+<span class="c1">// missatge.equals(&quot;Nefertiti Peláez Ramírez és major d&#39;edat doncs té 19 anys\n&quot;)</span>
+</pre></div>
+</div>
+<div class="sidebar">
+<p class="sidebar-title">Un operador ternari</p>
+<p>Fins ara potser no t’havies trobat amb l’expressió <code class="docutils literal notranslate"><span class="pre">edat</span> <span class="pre">&lt;</span> <span class="pre">18</span> <span class="pre">?</span> <span class="pre">&quot;menor&quot;:</span> <span class="pre">&quot;major&quot;</span></code>.
+Es tracta d’un operador que presenta tres operands <code class="docutils literal notranslate"><span class="pre">edat</span> <span class="pre">&lt;</span> <span class="pre">18</span></code>,
+<code class="docutils literal notranslate"><span class="pre">menor</span></code> i <code class="docutils literal notranslate"><span class="pre">major</span></code>.</p>
+<p>Bàsicament fa que si la condició és certa, resulta en el segon operand
+(en aquest cas <code class="docutils literal notranslate"><span class="pre">&quot;menor&quot;</span></code>) i si és falsa, en el tercer.</p>
+</div>
+<p>Trobaràs tot el detall sobre els elements que poden aparèixer dins del
+patró de <code class="docutils literal notranslate"><span class="pre">String.format()</span></code> a la secció <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html#syntax">Format String Syntax</a>.</p>
+</div>
+<div class="section" id="per-saber-mes">
+<h2>Per saber més<a class="headerlink" href="#per-saber-mes" title="Link permanent a aquest títol">¶</a></h2>
+<p>Hi ha tot un munt d’altres possibilitats de manipulació i de conversió a i de Strings a:</p>
+<ul class="simple">
+<li><p>API <a class="reference external" href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html">Strings</a></p></li>
+<li><p>API <a class="reference external" href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Integer.html">Integer</a></p></li>
+<li><p>API <a class="reference external" href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Double.html">Double</a></p></li>
+<li><p>API <a class="reference external" href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Character.html">Character</a></p></li>
+</ul>
+<p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_01_57_utilitats_strings.html"><span class="doc"> Exercici 01_57. Utilitats de Strings</span></a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="strings_posicions.html" class="btn btn-neutral float-right" title="String: seqüència de lletres" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="primitius_vs_classes.html" class="btn btn-neutral float-left" title="Diferents tipus de tipus" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2021 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

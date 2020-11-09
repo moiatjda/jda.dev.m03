@@ -1,5 +1,3 @@
-:orphan:
-
 ##########################################
 |exerciseicon__T| Exercici 01_31. El lloro
 ##########################################
@@ -24,6 +22,7 @@ return directament o bé només espais.
 Un exemple d'execució seria:
 
 .. code-block:: console
+    :emphasize-lines: 2, 4, 5, 7, 8, 10
 
     $ java Lloro
     El lloro pregunta paraula:
@@ -33,7 +32,7 @@ Un exemple d'execució seria:
     què tal?
     El lloro diu: què tal?
     El lloro pregunta paraula:
-    
+
     Adéu
 
 Fixa't que la resposta del lloro canvia lleugerament en finalitzar.

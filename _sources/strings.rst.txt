@@ -1,0 +1,18 @@
+#######
+Strings
+#######
+
+Fins ara hem tingut una visió molt pràctica dels tipus de dades que estem
+fent servir. En aquesta secció tornarem a reprendre el tema per
+endinsar-nos una mica més en els tipus de dades de Java, especialment amb
+un de ben important: els Strings.
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    primitius_vs_classes.rst
+    strings_tipus.rst
+    strings_posicions.rst
+
+..  strings_recorreguts.rst

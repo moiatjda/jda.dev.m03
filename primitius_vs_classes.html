@@ -1,0 +1,475 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ca" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Diferents tipus de tipus &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="El tipus String" href="strings_tipus.html" />
+    <link rel="prev" title="Strings" href="strings.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació amb Java
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-21
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basics_intro.html">Introducció</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruccions.html">Instruccions seqüencials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html">Variables i tipus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressions.html">Operadors i expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="while.html">Bucles condicionals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recorreguts.html">Recorreguts</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="strings.html">Strings</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Diferents tipus de <em>tipus</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="strings_tipus.html">El tipus String</a></li>
+<li class="toctree-l3"><a class="reference internal" href="strings_posicions.html">String: seqüència de lletres</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="basics_exercicis.html">Llista d’exercicis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="apendix.html">Apèndix</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació amb Java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="basics.html">Elements bàsics de la programació</a> &raquo;</li>
+        
+          <li><a href="strings.html">Strings</a> &raquo;</li>
+        
+      <li>Diferents tipus de <em>tipus</em></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="diferents-tipus-de-tipus">
+<h1>Diferents tipus de <em>tipus</em><a class="headerlink" href="#diferents-tipus-de-tipus" title="Link permanent a aquest títol">¶</a></h1>
+<p>Java distingeix clarament entre tipus <em>primitius</em> i <em>referències</em> (també
+coneguts com <em>objectes</em>)</p>
+<p>Per simplificar, podem entendre els tipus primitius com aquells que
+disposen d’un valor directament associat a la variable a la que estan
+assignats. En canvi, en el cas dels objectes, les variables no contenen
+directament el seu valor sinó que fan <em>referència</em> a la posició de memòria<a class="footnote-reference brackets" href="#referencies" id="id1">1</a>
+on està emmagatzemat el valor.</p>
+<p>Per mirar d’entendre-ho, deixa’m que et faci una <em>simplificació</em> del model
+de memòria que fa servir Java:</p>
+<ul class="simple">
+<li><p>les posicions de memòria seran nombres enters que, per distingir-los,
+aquí els prefixarem amb <code class="docutils literal notranslate"><span class="pre">&#64;</span></code> (atenció que no és notació de Java!)</p></li>
+<li><p>tots els valors ocupen el mateix en memòria</p></li>
+</ul>
+<p>Per exemple, considera el següent fragment de codi:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">edat</span> <span class="o">=</span> <span class="mi">18</span><span class="p">;</span>
+<span class="kt">double</span> <span class="n">pes</span> <span class="o">=</span> <span class="mf">72.16</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">nom</span> <span class="o">=</span> <span class="s">&quot;Miranda&quot;</span><span class="p">;</span>
+<span class="n">String</span> <span class="n">cognoms</span> <span class="o">=</span> <span class="s">&quot;Garcia Orujo&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Representem aquestes dades en la nostra simplificació de la memòria del
+programa:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 17%" />
+<col style="width: 49%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>variable</p></th>
+<th class="head"><p>posició</p></th>
+<th class="head"><p>valor</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>int edat</p></td>
+<td><p>&#64;100</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">18</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>double pes</p></td>
+<td><p>&#64;101</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">72.16</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>String nom</p></td>
+<td><p>&#64;102</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1000</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>String cognoms</p></td>
+<td><p>&#64;103</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">1001</span></code></p></td>
+</tr>
+<tr class="row-even"><td colspan="3"><p>…</p></td>
+</tr>
+<tr class="row-odd"><td rowspan="2"></td>
+<td><p>&#64;1000</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;Miranda&quot;</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>&#64;1001</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;Garcia</span> <span class="pre">Orujo&quot;</span></code></p></td>
+</tr>
+<tr class="row-odd"><td colspan="3"><p>…</p></td>
+</tr>
+</tbody>
+</table>
+<p>Així, observem que:</p>
+<ul>
+<li><p>el valor de la variable <code class="docutils literal notranslate"><span class="pre">edat</span></code> estaria guardat a la posició <em>&#64;100</em></p></li>
+<li><p>el valor de <code class="docutils literal notranslate"><span class="pre">pes</span></code> estaria guardat a la posició <em>&#64;101</em></p></li>
+<li><p>el valor de <code class="docutils literal notranslate"><span class="pre">nom</span></code> estaria guardat a la posició <em>&#64;102</em> però aquí hi
+ha una cosa diferent. El valor de <code class="docutils literal notranslate"><span class="pre">nom</span></code> no és l’esperat <code class="docutils literal notranslate"><span class="pre">&quot;Miranda&quot;</span></code>
+sinó <code class="docutils literal notranslate"><span class="pre">1000</span></code>!</p>
+<p>El que ha passat aquí és que, <code class="docutils literal notranslate"><span class="pre">nom</span></code> no guarda directament el valor del
+String, sinó la posició on es troba aquest valor, en aquest cas <em>&#64;1000</em>.</p>
+</li>
+<li><p>el valor de <code class="docutils literal notranslate"><span class="pre">cognom</span></code> mostra el mateix comportament de <code class="docutils literal notranslate"><span class="pre">nom</span></code>. No
+és el text sinó una posició on està guardat el text!</p></li>
+</ul>
+<p>Anirem treballant aquests conceptes constantment durant el curs, així que
+no pateixis si ho veus una mica confós encara.</p>
+<p>Considera el següent diagrama:</p>
+<div class="figure align-center" id="id2">
+<p class="plantuml">
+<img src="_images/plantuml-4d9bd1a83564d7adde01f6c33766c3a87a2402e9.png" alt="&#64;startuml
+
+hide class circle
+skinparam class {
+    BackgroundColor White
+    BorderColor Black
+    ArrowColor Black
+}
+
+class &quot;Tipus de dades&quot; as Tipus
+class &quot;Tipus primitiu&quot; as Primitiu
+Tipus &lt;|-- Primitiu
+Tipus &lt;|-- Objecte
+hide class circle
+hide class members
+
+Primitiu &lt;|-- boolean
+Primitiu &lt;|-- byte
+Primitiu &lt;|-- char
+Primitiu &lt;|-- double
+Primitiu &lt;|-- float
+Primitiu &lt;|-- int
+Primitiu &lt;|-- long
+Primitiu &lt;|-- short
+
+Objecte &lt;|-- String
+
+&#64;enduml"/>
+</p>
+<p class="caption"><span class="caption-text">Esquema <em>parcial</em> dels tipus de dades de Java</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>El diagrama mostra un bon grapat de tipus primitius, alguns que no hem
+presentat encara. D’objectes, però, només en mostra els Strings. Ja
+t’avanço que n’hi ha força més!</p>
+<p>Permetem-nos una breu repassada, amb alguna ampliació, sobre els tipus primitius</p>
+<ul>
+<li><p>Els literals de tipus enter en base 10, s’especifiquen directament amb
+el valor. Si ens interessa fer servir altres bases, ho podem fer com als
+següents exemples:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="mi">42</span>        <span class="c1">// correspon al valor 42 en decimal</span>
+<span class="mh">0x2a</span>      <span class="c1">// correspon al valor 42 en hexadecimal</span>
+<span class="mb">0b101010</span>  <span class="c1">// correspon al valor 42 en binari</span>
+</pre></div>
+</div>
+<p>Fixa’t com simplement afegint <code class="docutils literal notranslate"><span class="pre">0x</span></code> i <code class="docutils literal notranslate"><span class="pre">0b</span></code> ja estem indicant a Java
+que el valor està representat en hexadecimal i binari (respectivament)</p>
+</li>
+<li><p>El tipus <code class="docutils literal notranslate"><span class="pre">boolean</span></code> admet només els valors <em>true</em> i <em>false</em>, escrits
+així, en minúscules.</p></li>
+<li><p>El tipus <code class="docutils literal notranslate"><span class="pre">int</span></code> es poden quedar curts per representar alguns enters
+grandets. Java ens ofereix un tipus primitiu una mica més gran, anomenat
+<code class="docutils literal notranslate"><span class="pre">long</span></code>.</p>
+<p>Quan volem explicitar que un literal és <code class="docutils literal notranslate"><span class="pre">long</span></code>, ho farem acabant-lo amb
+<code class="docutils literal notranslate"><span class="pre">l</span></code> o <code class="docutils literal notranslate"><span class="pre">L</span></code>. Per exemple:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="mi">10000000000000000L</span>
+</pre></div>
+</div>
+</li>
+<li><p>els literals dels tipus numèric amb coma flotant <code class="docutils literal notranslate"><span class="pre">float</span></code> els acabarem <code class="docutils literal notranslate"><span class="pre">f</span></code> o <code class="docutils literal notranslate"><span class="pre">F</span></code>.
+Els <code class="docutils literal notranslate"><span class="pre">double</span></code> no necessiten cap marca, però ho podem explicitar amb <code class="docutils literal notranslate"><span class="pre">d</span></code>,
+o <code class="docutils literal notranslate"><span class="pre">D</span></code>. També es pot especificar amb notació científica, fent servir
+<code class="docutils literal notranslate"><span class="pre">e</span></code>. Exemples:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="mf">10.5F</span>       <span class="c1">// és un float</span>
+<span class="mf">100.1D</span>      <span class="c1">// és un double</span>
+<span class="mf">100.1</span>       <span class="c1">// també un double com l&#39;anterior</span>
+<span class="mf">1.001e2</span>     <span class="c1">// el mateix valor double que l&#39;anterior</span>
+</pre></div>
+</div>
+<p>A diferència de la resta de tipus primitius, els numèrics amb coma
+flotant no responen massa bé al comparador d’igualtat <code class="docutils literal notranslate"><span class="pre">==</span></code>.</p>
+<p>Considera el següent exemple:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">jshell&gt; double pes1 = Double.parseDouble(&quot;.3&quot;);</span>
+<span class="hll"><span class="go">pes2 ==&gt; 0.3</span>
+</span>
+<span class="go">jshell&gt; double pes2 = .1 + .1 + .1;</span>
+<span class="hll"><span class="go">pes1 ==&gt; 0.30000000000000004</span>
+</span>
+<span class="go">jshell&gt; pes1 == pes2;</span>
+<span class="hll"><span class="gp">$</span><span class="nv">1</span> <span class="o">==</span>&gt; <span class="nb">false</span>
+</span></pre></div>
+</div>
+<p>Ops! Sembla que sumar tres cops <code class="docutils literal notranslate"><span class="pre">.1</span></code> no és exactament <code class="docutils literal notranslate"><span class="pre">.3</span></code>!</p>
+<p>Una manera senzilla de comparar aquests valors per igualtat és
+establir un llindar a partir del qual considerem els valors iguals</p>
+<p>Considera el següent fragment de codi:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">jshell&gt; double LLINDAR = .00000001;</span>
+<span class="hll"><span class="go">LLINDAR ==&gt; 1.0E-8</span>
+</span>
+<span class="go">jshell&gt; boolean pesosIguals = Math.abs(pes1 - pes2) &lt; LLINDAR;</span>
+<span class="hll"><span class="go">pesosIguals ==&gt; true</span>
+</span></pre></div>
+</div>
+</li>
+<li><p>el tipus <code class="docutils literal notranslate"><span class="pre">char</span></code> requereix dos bytes i els seus valors es codifiquen en
+Unicode, cosa que ens estalvia molts problemes als que fem servir
+caràcters com la <em>ç</em>.</p>
+<p>Podem assignar literals de tipus <code class="docutils literal notranslate"><span class="pre">char</span></code> envoltant-los entre cometes
+simples, com als exemples:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="sc">&#39;à&#39;</span><span class="p">;</span>
+<span class="n">c</span> <span class="o">=</span> <span class="sc">&#39;\u00e0&#39;</span><span class="p">;</span>   <span class="c1">// és el codi Unicode per à o sigui que c continua valent el mateix!</span>
+</pre></div>
+</div>
+<p>Podem fer servir alguns caràcters especials, com ara: <code class="docutils literal notranslate"><span class="pre">\t</span></code> (tab), <code class="docutils literal notranslate"><span class="pre">\n</span></code>
+(salt de línia), <code class="docutils literal notranslate"><span class="pre">\&quot;</span></code> (cometes dobles), <code class="docutils literal notranslate"><span class="pre">\'</span></code> (cometes simples), i <code class="docutils literal notranslate"><span class="pre">\\</span></code>
+(la pròpia contrabarra).</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="n">ch</span> <span class="o">=</span> <span class="sc">&#39;&quot;&#39;</span><span class="p">;</span>
+<span class="n">ch</span> <span class="o">=</span> <span class="sc">&#39;\&#39;&#39;</span><span class="p">;</span>     <span class="c1">// és el caràcter cometa simple. Cal escapar-ho</span>
+</pre></div>
+</div>
+</li>
+<li><p>Quan el valor numèric que volem assignar a una variable numèrica es
+troba fora dels límits, el compilador ens donarà un error. Sempre podem
+forçar al compilador a acceptar la conversió malgrat es pugui perdre
+informació</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">jshell&gt; byte b = 256;</span>
+<span class="hll"><span class="go">|  Error:</span>
+</span><span class="hll"><span class="go">|  incompatible types: possible lossy conversion from int to byte</span>
+</span><span class="hll"><span class="go">|  byte b = 256;</span>
+</span><span class="hll"><span class="go">|           ^-^</span>
+</span>
+<span class="go">jshell&gt; byte b = (byte) 256;</span>
+<span class="hll"><span class="go">b ==&gt; -24</span>
+</span></pre></div>
+</div>
+<p>A forçar al compilador a acceptar un tipus per un altre es sol anomenar
+<em>cast</em>. El compilador és prou llest com per no permetre conversions
+absurdes i, encara que sapiguem enganyar, després en executar-ho, es
+produiria un error.</p>
+</li>
+</ul>
+<p><img alt="exerciseicon___" src="_images/exerciseicon___.png" /> <a class="reference internal" href="exercici_01_56_tipus_primitius.html"><span class="doc"> Exercici 01_56. Els tipus primitius de Java</span></a></p>
+<hr class="docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="referencies"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>No és real que el valor sigui la posició de memòria on
+s’emmagatzema el text, però per nosaltres és còmode pensar-ho.</p>
+</dd>
+</dl>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="strings_tipus.html" class="btn btn-neutral float-right" title="El tipus String" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="strings.html" class="btn btn-neutral float-left" title="Strings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2021 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

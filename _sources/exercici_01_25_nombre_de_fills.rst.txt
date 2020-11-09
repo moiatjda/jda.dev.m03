@@ -1,5 +1,3 @@
-:orphan:
-
 ####################################################
 |exerciseiconO_T| Exercici 01_25. El nombre de fills
 ####################################################
@@ -32,7 +30,10 @@ respongui segons el nombre de fills sigui:
 
 * més de 4: Tu sí fas país!
 
-Exemple d'interacció: ::
+Exemple d'interacció:
+
+.. code-block:: console
+    :emphasize-lines: 2, 4
 
     $ java Fills
     Quants fills tens?

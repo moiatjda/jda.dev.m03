@@ -1,0 +1,72 @@
+######################################################
+|exerciseicon__T| Exercici 01_64. Matrícules italianes
+######################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_64_matricula_italiana/``
+
+* Continguts relacionats: :doc:`strings_posicions`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Les matrícules dels vehicles a Europa han anat canviant al llarg de la
+història.  Cada cop hi ha més vehicles i la gent es mou més entre paisos,
+s'ha fet necessària una certa *estandardització*.
+
+Prenem pel cas les matrícules italianes que, des del 1994 tenen el següent
+aspecte:
+
+.. figure:: _images/una_matricula_italiana.png
+    :align: center
+
+    `Exemple
+    <https://ca.wikipedia.org/wiki/Plaques_de_matr%C3%ADcula_d%27It%C3%A0lia>`_
+    de matrícula italiana
+
+Ja et podràs imaginar que calen molts programes per poder realitzar la
+gestió informatitzada de les matrícules, oi?
+
+Una d'aquestes necessitats és saber si una matrícula és vàlida o no.
+Aquest és l'objectiu d'aquest exercici!
+
+Què hem de fer?
+===============
+
+Desenvolupa un programa que demani a l'usuari una matrícula i li digui si el que li ha introduït
+correspon a una matrícula italiana vàlida en el format vigent.
+
+Per simplicitat, no considerarem ni el codi del país, ni altres marques
+com ara l'any de matriculació o el codi de província.
+
+Una matrícula vàlida està formada per:
+
+* dues lletres inicials
+
+* tres dígits
+
+* dues lletres finals
+
+Les lletres poden ser qualsevol lletra majúscula sense caràcters especials
+com ``Ç``, ``À``, ``Ñ`` o ``ß``, i exceptuant les lletres que porten a
+confusió ``I``, ``O``, ``Q`` i ``U``.
+
+Considera les següents simulacions:
+
+.. code-block:: console
+    :emphasize-lines: 2, 4, 7, 9
+
+    $ java MatriculaValida
+    Introduïu una matrícula
+    DD029YJ
+    És una matrícula italiana vàlida
+
+    $ java MatriculaValida
+    Introduïu una matrícula
+    0291BYJ
+    No és una matrícula italiana vàlida
+

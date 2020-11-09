@@ -103,6 +103,7 @@ Fem un petit programa que demostri com es pot llegir:
 Compila'l i executa'l:
 
 .. code-block:: console
+    :emphasize-lines: 3-
 
     $ javac ComEtDius.java 
     $ java ComEtDius 

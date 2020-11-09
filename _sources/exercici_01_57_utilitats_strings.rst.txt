@@ -1,0 +1,98 @@
+######################################################
+|exerciseicon__T| Exercici 01_57. Utilitats de Strings
+######################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_57_utilitats_strings/``
+
+* Continguts relacionats: :doc:`strings_tipus`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Per manipular un tipus de dades tan especial com és String, Java ens
+ofereix una sèrie d'utilitats.
+
+Per exemple, ``cadena.length()`` ens indica el nombre de caràcters que
+té la cadena. És a dir, la seva longitud.
+
+D'entre les `moltes opcions
+<https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html>`_
+que ens ofereix Java, en considerarem les següents:
+
+========================================    ====================================================
+utilitat                                    descripció
+----------------------------------------    ----------------------------------------------------
+
+``length()``                                Longitud de la cadena
+
+``startWith(String unAltre)``               Boolean que indica si la cadena comença per l'altre
+
+``endsWith(String unAltre)``                Boolean que indica si la cadena comença per l'altre
+
+``equals(String unAltre)``                  Boolean que indica si la cadena és igual a l'altre
+
+``equalsIgnoreCase(String unAltre)``        Boolean que indica si la cadena és igual a l'altre
+
+``isBlank()``                               Boolean que indica si la cadena només conté caracters
+                                            blancs o bé està buida
+
+``isEmpty()``                               Boolean que indica si la cadena està buida
+
+``charAt(int posicio)``                     Caràcter a la posició indicada
+
+``concat(String unAltre)``                  Cadena resultant de concatenar la cadena amb l'altre
+
+``repeat(int cops)``                        Cadena repetida el nombre de cops indicat
+
+``toUpperCase()``                           Cadena amb tot en majúscules
+
+``toLowerCase()``                           Cadena amb tot en minúscules
+
+========================================    ====================================================
+
+Què hem de fer?
+===============
+
+Desenvolupa un programa que demani dos texts i un enter positiu i composi
+un petit informe amb el resultat de les funcions anteriors.
+
+Considera la següent simulació:
+
+.. code-block:: console
+    :emphasize-lines: 2,4, 6, 8-
+
+    $ java InformeString
+    Text principal?
+    String!
+    Text secundari ?
+    string!
+    Número positiu?
+    2
+    "String!".length(): 7
+    "String!".startsWith("string!"): false
+    "String!".endsWith("string!"): false
+    "String!".equals("string!"): false
+    "String!".equalsIgnoreCase("string!"): true
+    "String!".isBlank(): false
+    "String!".isEmpty(): false
+    "String!".charAt(2): r
+    "String!".concat("string!"): String!string!
+    "String!".repeat(2): String!String!
+    "String!".toUpperCase(): STRING!
+    "String!".toLowerCase(): string!
+
+
+La gràcia és que vegis com es comporta cada utilitat quan li dónes
+diferents valors i no tant que passis les proves.
+
+Et proposo que juguis una mica amb el teu programa, de manera que
+aconsegueixis que cada utilitat que retorna un valor booleà, respongui
+``true``.
+
+
+Nota: No et preocupis per validar res.

@@ -1,5 +1,3 @@
-:orphan:
-
 ###############################################################
 |exerciseiconO__| Exercici 01_28. Suma com a molt tres positius
 ###############################################################
@@ -26,6 +24,7 @@ Pots comprovar que estigui bé, tot executant el programa amb l'execució
 següent:
 
 .. code-block:: console
+    :emphasize-lines: 2, 4, 6
 
     $ java SumaPositius
     Introdueix el primer valor:

@@ -9,6 +9,7 @@ de tots els valors rebuts menys el darrer.
 Per exemple, considera la següent interacció:
 
 .. code-block:: console
+    :emphasize-lines: 2, 9
 
     $ java SumaPositius
     Introdueix nombres positius i un de negatiu per finalitzar

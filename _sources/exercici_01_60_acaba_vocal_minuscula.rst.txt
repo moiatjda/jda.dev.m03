@@ -1,0 +1,37 @@
+###########################################################
+|exerciseicon___| Exercici 01_60. Acaba amb vocal minúscula
+###########################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_60_acaba_vocal_minuscula/``
+
+* Continguts relacionats: :doc:`strings_posicions`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+.. rubric:: Enunciat
+
+Desenvolupa una nova versió del programa del Lloro que, en aquest cas
+només repeteixi les paraules que finalitzen amb una vocal en minúscules i
+s'aturi quan rebi una cadena en blanc.
+
+Considerarem com a vocals només els valors ``a``, ``e``, ``i``, ``o`` i
+``u``.
+
+Una simulació d'execució:
+
+.. code-block:: console
+    :emphasize-lines: 2, 4, 5, 7, 9, 11
+
+    $ java LloroVocalMinuscules
+    El lloro demana paraula que finalitzi per vocal en minúscules
+    amiga
+    El lloro diu: amiga
+    El lloro demana paraula que finalitzi per vocal en minúscules
+    AMIGA
+    El lloro demana paraula que finalitzi per vocal en minúscules
+    amic
+    El lloro demana paraula que finalitzi per vocal en minúscules
+
+    Adéu

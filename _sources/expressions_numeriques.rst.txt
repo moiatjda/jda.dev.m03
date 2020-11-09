@@ -34,6 +34,7 @@ infinit, però com que infinit és un número molt gran per Java, et
 respondrà de la següent manera:
 
 .. code-block:: console
+    :emphasize-lines: 2-
 
     jshell> 5/ 0
     |  Exception java.lang.ArithmeticException: / by zero

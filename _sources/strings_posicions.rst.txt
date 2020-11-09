@@ -1,0 +1,108 @@
+############################
+String: seqüència de lletres
+############################
+
+Fins ara, els strings els hem tractat de manera atòmica; és a dir, com un
+valor indivisible. Per exemple, els hem llegit, escrit, comparat o
+assignat en bloc.
+
+Considera la següent assignació:
+
+.. code-block:: java
+
+    String autor = "Ritchie";
+
+El resultat d'executar-ho serà un espai de memòria al que ens podrem
+referir amb el nom de variable ``autor`` que contindrà les set lletres
+'R', 'i', 't', 'c', 'h', 'i' i 'e'.
+
+Tot i que :doc:`ja sabem <strings_tipus>` que ``nom`` conté en realitat la
+referència on es troba el valor i no el valor, ho simplificarem en el
+següent diagrama de la següent manera:
+
+.. image:: _images/string_ritchie.png
+   :align: center
+
+Hem de tenir en compte, però, que els *strings* són bàscament seqüències o
+cadenes de lletres, i que les lletres són també un tipus de dades, en
+concret `char`.
+
+Podria tenir sentit accedir també de manera individual als elements d'un string?
+
+Doncs bé, d'això va aquest nou tema.
+
+Considera la següent interacció a la consola de JShell
+
+.. code-block:: none
+    :emphasize-lines: 2, 5, 8, 11, 14
+
+    jshell> String s = "Ameba";     // declarem i inicialitzem un String
+    s ==> "Ameba"
+
+    jshell> char primeraLletra = s.charAt(0); // obtenim el primer caràcter
+    primeraLletra ==> 'A'
+
+    jshell> s.charAt(1);            // obtenim el segon caràcter
+    $3 ==> 'm'
+
+    jshell> s.length();             // obtenim la longitud del String
+    $4 ==> 5
+
+    jshell> s.charAt(s.length()-1); // obtenim el darrer caràcter del String
+    $5 ==> 'a'
+
+    jshell> s.charAt(s.length());   // intentem aconseguir un caràcter fora de rang
+    |  Exception java.lang.StringIndexOutOfBoundsException: String index out of range: 5
+    |        at StringLatin1.charAt (StringLatin1.java:47)
+    |        at String.charAt (String.java:693)
+    |        at (#6:1)
+
+
+Fixa't com podem accedir a cada caràcter amb la utilitat ``charAt()`` tot
+posant entre els parèntesis la posició del caràcter a obtenir. Les
+posicions comencen pel número 0 i, per tant, la darrera posició correspon
+al nombre de caràcters que conté la cadena menys un.
+
+Podem saber quants caràcters té un String amb la utilitat ``length()``.
+Donat que és una seqüència, el nom de la utilitat retorna la *longitud*.
+
+Finalment, si ens passem de posició i demanem a ``charAt()`` una fora de
+rang, ens trobarem amb un error que indica clarament que ens hem anat fora
+de la cadena.
+
+Juguem una mica
+===============
+
+En els següents exercicis treballarem l'accés a diferents lletres d'un
+String. Se t'oferiran noves funcions de Java que podràs fer servir en
+successius exercicis, a menys que explícitament t'indiquin el contrari.
+
+Recorda: tot i que hi ha moltes funcions que ens ofereix Java que ens
+podrien simplificar els nostres codis, el nostre objectiu no és tant
+resoldre els problemes si no aprendre a programar. És a dir, fes servir
+**només** el que et vagin oferint aquests continguts.
+
+Et recomano que ampliïs les teves anotacions del :doc:`resum de comandes
+<exercici_00_03_resum_comandes>` amb les funcions que et vagi presentant.
+En cas que trobis d'altres, és important
+que les marquis com a **no permeses** en els exercicis base ni a les
+proves d'aquest curs.
+
+|exerciseicon___| :doc:`exercici_01_58_manipulant_strings`
+
+|exerciseicon___| :doc:`exercici_01_59_inicial_vocal_minuscula`
+
+|exerciseicon___| :doc:`exercici_01_60_acaba_vocal_minuscula`
+
+|exerciseicon___| :doc:`exercici_01_61_acaba_lletra`
+
+|exerciseicon__T| :doc:`exercici_01_62_segona_igual_penultima`
+
+|exerciseicon__T| :doc:`exercici_01_63_funcions_caracters`
+
+|exerciseicon__T| :doc:`exercici_01_64_matricula_italiana`
+
+|exerciseiconOS_| :doc:`exercici_01_65_matricula_valida_ampliada`
+
+|exerciseicon_ST| :doc:`exercici_01_66_analisi_caracter`
+

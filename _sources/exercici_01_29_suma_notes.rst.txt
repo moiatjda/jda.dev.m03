@@ -1,5 +1,3 @@
-:orphan:
-
 ############################################
 |exerciseicon__T| Exercici 01_29. Suma notes
 ############################################
@@ -27,6 +25,7 @@ més i mostrarà el valor resultant.
 Una simulació de l'execució podria ser:
 
 .. code-block:: console
+    :emphasize-lines: 2, 4, 6, 8, 10
 
     $ java SumaNotes
     Introdueix una nota

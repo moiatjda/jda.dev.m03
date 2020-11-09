@@ -80,13 +80,16 @@ línia de comandes. Així, les següents execucions tindran els resultats
 indicats:
 
 .. code-block:: console
+    :emphasize-lines: 2, 3, 6, 7, 10
 
     $ java MajorEdat 18
     Ets major d'edat
     Fi del programa
+
     $ java MajorEdat 19
     Ets major d'edat
     Fi del programa
+
     $ java MajorEdat 17
     Fi del programa
 

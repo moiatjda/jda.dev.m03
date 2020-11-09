@@ -74,6 +74,7 @@ salt de línia.
 En executar aquest codi, el resultat és:
 
 .. code-block:: console
+    :emphasize-lines: 1-
 
      1 2 3 4 5
      1 2 3 4 5
@@ -129,9 +130,9 @@ Aquí tens uns quants exercicis per practicar aquest tipus de problemes.
 
 |exerciseicon___| :doc:`exercici_01_50_triangle_invertit`
 
-|exerciseicon___| :doc:`exercici_01_51_triangles`
+|exerciseicon__T| :doc:`exercici_01_51_triangles`
 
-|exerciseicon___| :doc:`exercici_01_52_rombos`
+|exerciseicon__T| :doc:`exercici_01_52_rombos`
 
 |exerciseiconO__| :doc:`exercici_01_53_trilal`
 

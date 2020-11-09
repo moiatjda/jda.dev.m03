@@ -1,5 +1,6 @@
+############################
 Ordinador i sistema operatiu
-============================
+############################
 
 Per a poder seguir aquest curs, suposaré que disposes d'un PC amb una
 distribució Debian o Ubuntu estàndard, més o menys recent.

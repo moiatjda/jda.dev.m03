@@ -1,0 +1,53 @@
+######################################################
+|exerciseicon___| Exercici 01_61. Acaba amb una lletra
+######################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_61_acaba_lletra/``
+
+* Continguts relacionats: :doc:`strings_posicions`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+.. rubric:: Enunciat
+
+Desenvolupa una nova versió del programa del Lloro que, en aquest cas
+només repeteixi les paraules que comencen per una vocal en minúscules i
+s'aturi quan rebi una cadena en blanc.
+
+Una simulació d'execució:
+
+.. code-block:: console
+    :emphasize-lines: 2, 4, 5, 7, 9
+
+    $ java LloroAcabaLletra
+    El lloro demana paraula que finalitzi amb lletra
+    amic
+    El lloro diu: amic
+    El lloro demana paraula que finalitzi amb lletra
+    amic!
+    El lloro demana paraula que finalitzi amb lletra
+
+    Adéu
+
+
+En aquesta ocasió, és possible que et plantegis comprovar una per una,
+totes les lletres de l'alfabet del teu idioma tal i com vas fer amb les
+cinc vocals.
+
+Com que aquesta repetició no farà el problema més interessant, et proposo
+que consideris una funció que ens ofereix Java per fer-ho:
+``Character.isLetter()``. Considera la següent interacció al JShell
+
+.. code-block:: console
+    :emphasize-lines: 2, 5, 8
+
+    jshell> Character.isLetter('a');
+    $1 ==> true
+
+    jshell> Character.isLetter('ç');
+    $2 ==> true
+
+    jshell> Character.isLetter('!');
+    $3 ==> false

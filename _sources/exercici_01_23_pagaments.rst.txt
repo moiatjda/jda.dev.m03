@@ -1,5 +1,3 @@
-:orphan:
-
 ###########################################
 |exerciseiconO_T| Exercici 01_23. Pagaments
 ###########################################
@@ -28,7 +26,10 @@ continuació compararà les dues quantitats i escriurà els € que falten per
 pagar o bé els que se han de tornar.
 
 
-Exemple d'interacció: ::
+Exemple d'interacció:
+
+.. code-block:: console
+    :emphasize-lines: 2, 4, 6, 9, 11, 13, 16, 18, 20
 
     $ java Pagament
     Preu?
@@ -36,12 +37,14 @@ Exemple d'interacció: ::
     Paga?
     150
     Sobren 48€
+
     $ java Pagament
     Preu?
     102
     Paga?
     100
     Falten 2€
+
     $ java Pagament
     Preu?
     100

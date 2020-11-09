@@ -12,6 +12,7 @@ Segueix les passes:
 2. Escriu a la línia de comandes (no incloguis ``$``)
 
    .. code-block:: console
+        :emphasize-lines: 2-4
 
         $ jshell
         |  Welcome to JShell -- Version 11.0.7
@@ -21,7 +22,8 @@ Segueix les passes:
 
 3. Escriu després de ``jshell>`` (no incloguis tampoc ``jshell>``)
 
-   .. code-block:: java
+   .. code-block:: console
+        :emphasize-lines: 2
 
         jshell> System.out.println("Hola món!");
         Hola món!
@@ -86,6 +88,7 @@ minúscules!):
 #. Comprova que s'ha creat un nou fitxer
 
    .. code-block:: console
+        :emphasize-lines: 2
 
         $ ls HolaMon.*
         HolaMon.class  HolaMon.java
@@ -98,6 +101,7 @@ minúscules!):
 #. Finalment, executa el teu programa
 
    .. code-block:: console
+        :emphasize-lines: 2
 
         $ java HolaMon
         Hola Món!

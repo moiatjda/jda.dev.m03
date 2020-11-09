@@ -1,6 +1,6 @@
-
+#########################
 Llenguatge de programació
-=========================
+#########################
 
 En aquest curs farem servir el llenguatge de programació Java. En concret,
 farem servir una implementació anomenada *OpenJDK* en la seva versió 11.
@@ -11,7 +11,8 @@ seguir aquesta part del curs.
 
 Comprova la teva versió amb les comandes:
 
-.. code-block:: sh
+.. code-block:: console
+    :emphasize-lines: 2, 4-
 
     $ javac -version
     javac 11.0.8
@@ -24,7 +25,8 @@ El teu resultat no té perquè ser idèntic als meus. Únicament t'has
 d'assegurar que ha trobat la comanda. Altrament rebràs un missatge similar
 a:
 
-.. code-block:: none
+.. code-block:: console
+    :emphasize-lines: 2
 
     $ javac -version
     bash: javac: no s'ha trobat l'ordre
@@ -33,7 +35,7 @@ En cas que no tinguis el Java instal·lat, ho pots fer fàcilment amb la
 següent comanda que necessitarà privilegis d'administració. Si no els
 tens, demana ajuda.
 
-.. code-block:: sh
+.. code-block:: console
 
     $ sudo apt install default-jdk
 

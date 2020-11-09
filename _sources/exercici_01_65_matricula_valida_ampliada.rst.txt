@@ -1,0 +1,69 @@
+##################################################################
+|exerciseiconOS_| Exercici 01_65. Matrícules italianes (ampliació)
+##################################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_65_matricula_valida_ampliada/``
+
+* Continguts relacionats: :doc:`strings_posicions`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [☼] Exercici :ref:`optatiu<descripcio_exercicis_optatius>`
+
+* [☆] Exercici amb :ref:`dificultat addicional<descripcio_exercicis_dificils>`
+
+.. rubric:: Enunciat
+
+L'exercici de :doc:`les matrícules italianes
+<exercici_01_64_matricula_italiana>` és molt poc informatiu. Quan una
+matrícula no és vàlida, no et diu perquè.
+
+En aquesta ocasió, farem una versió millorada del programa, de manera que
+permeti saber què ha fallat.
+
+Considera les següents simulacions:
+
+.. code-block:: console
+    :linenos:
+    :emphasize-lines: 2, 4, 7, 9, 12, 14, 17, 19-26
+
+    $ java MatriculaValida
+    Introduïu una matrícula
+    DD029YJ
+    És una matrícula italiana vàlida
+
+    $ java MatriculaValida
+    Introduïu una matrícula
+    Hola
+    No és una matrícula italiana vàlida: massa curta
+
+    $ java MatriculaValida
+    Introduïu una matrícula
+    DD029iunmuntdecaractersaddicionals
+    No és una matrícula italiana vàlida: massa llarga
+
+    $ java MatriculaValida
+    Introduïu una matrícula
+    0291BQj
+    No és una matrícula italiana vàlida
+    0: Ha de ser una lletra
+    2: Ha de ser una lletra
+    9: Correcte
+    1: Correcte
+    B: Ha de ser un dígit
+    Q: No és una lletra vàlida
+    j: Ha de ser majúscula
+
+Nota: Quan hi ha més d'un error sobre la mateixa posició de la matrícula,
+el missatge tindrà la següent precedència:
+
+1. la longitud del text inserit
+
+2. que sigui una lletra quan s'espera un dígit o un dígit quan s'espera
+   una lletra
+
+3. que la lletra sigui minúscules
+
+4. que la lletra no sigui vàlida

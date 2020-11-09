@@ -72,6 +72,7 @@ pensarem el número 10:
 
 .. code-block:: console
     :linenos:
+    :emphasize-lines: 2-
 
     $ java EndevinaNombre 10
     El número pensat és 10
@@ -88,6 +89,7 @@ Apa, una altra execució, aquest cop amb el número 42:
 
 .. code-block:: console
     :linenos:
+    :emphasize-lines: 2-
 
     $ java EndevinaNombre 42
     El número pensat és 42
@@ -315,7 +317,7 @@ Així, per exemple:
 
 Pràctic, no?
 
-|exerciseiconO__| :doc:`exercici_01_03_inicialitzacio_en_linia`
+|exerciseiconO_T| :doc:`exercici_01_03_inicialitzacio_en_linia`
 
 No oblidis el punt i coma al final!
 -----------------------------------

@@ -1,5 +1,3 @@
-:orphan:
-
 ################################################
 |exerciseicon__T| Exercici 01_32. Troba el màxim
 ################################################
@@ -24,6 +22,7 @@ finalitzi l'execució.
 Un exemple d'execució seria:
 
 .. code-block:: console
+    :emphasize-lines: 2, 4, 6, 8, 10
 
     $ java TrobaMaxim
     Introdueix un valor
@@ -49,4 +48,3 @@ vist fins ara amb la condició d'entrar si el valor introduït és positiu.
 Dins del bloc del bucle hauràs de fer una comprovació per saber si el nou
 valor és més gran que el màxim conegut. Si és així, reemplaces el màxim
 pel nou valor. En sortir del bloc del bucle, mostres el màxim trobat.
-

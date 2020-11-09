@@ -150,6 +150,7 @@ Escriu a la consola les següents línies que comencen amb dòlar ``$``. No
 escriguis, però, el (``$``):
 
 .. code-block:: console
+    :emphasize-lines: 3-6
 
     $ cd
     $ git clone https://github.com/elteuusuariagithub/introprg.git
@@ -222,6 +223,7 @@ la combinació de tecles ``ctrl-s``)
 Comprovem que ha anat tot bé:
 
 .. code-block:: console
+    :emphasize-lines: 2-
 
     $ git status
     On branch master
@@ -239,6 +241,7 @@ Comprovem que ha anat tot bé:
 Si és així, registrem el nou fitxer en el ``git``:
 
 .. code-block:: console
+    :emphasize-lines: 3-
 
     $ git add readme.rst
     $ git commit -am "Primer commit"
@@ -305,6 +308,7 @@ línia:
 Podem comprovar que el fitxer hi és, fent servir la utilitat ``ls``
 
 .. code-block:: console
+    :emphasize-lines: 2-
 
     $ ls
     …
@@ -315,6 +319,7 @@ També podem consultar el contingut del fitxer, per exemple, fent servir la
 utilitat ``cat``:
 
 .. code-block:: console
+    :emphasize-lines: 2
 
     $ cat eliminam.txt
     un fitxer a eliminar
@@ -340,6 +345,7 @@ que hem realitzat al directori temporal:
 Un cop introduït el password, ja tindrem disponible el fitxer ``eliminam.txt``.
 
 .. code-block:: console
+    :emphasize-lines: 2
 
     $ cat eliminam.txt
     un fitxer a eliminar
@@ -349,6 +355,7 @@ podem eliminar aquest fitxer que no necessitem per res. Primer l'eliminarem del
 directori de treball i després del GitHub
 
 .. code-block:: console
+    :emphasize-lines: 3-
 
     $ rm eliminam.txt
     $ git status

@@ -1,0 +1,93 @@
+########################################################
+|exerciseicon__T| Exercici 01_63. Utilitats de caràcters
+########################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_63_funcions_caracters/``
+
+* Continguts relacionats: :doc:`strings_posicions`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Per a analitzar diferents aspectes d'un caràcter, Java ens ofereix una
+sèrie d'utilitats a partir de ``Character``.
+
+Per exemple, ``Character.getName()`` ens indica el nom del caràcter per la
+codificació *Unicode*:
+
+.. code-block:: console
+    :emphasize-lines: 2
+
+    jshell> Character.getName('a');
+    $1 ==> "LATIN SMALL LETTER A"
+
+D'entre les `moltes opcions
+<https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Character.html>`_
+que ens ofereix ``Character``, en considerarem les següents:
+
+================================    ====================================================
+utilitat                            descripció
+--------------------------------    ----------------------------------------------------
+``getName()``                       nom del caràcter
+
+``isDigit()``                       boolean que indica si és o no un dígit
+
+``isJavaIdentifierStart()``         boolean que indica si pot ser o no
+                                    l'inici d'un identificador vàlid per Java
+
+``isJavaIdentifierPart()``          boolean que indica si pot ser o
+                                    no part d'un identificador vàlid de Java (sense
+                                    considerar el caràcter inicial)
+
+``isLetter()``                      boolean que indica si correspon o no a una
+                                    lletra
+
+``isLowerCase()``                   boolean que indica si està o no en minúscules
+
+``isUpperCase()``                   boolean que indica si està o no en majúscules
+
+``isWhitespace()``                  boolean que indica si correspon o no amb
+                                    un espai blanc
+
+``toLowerCase()``                   retorna la versió del caràcter com a minúscules
+
+``toUpperCase()``                   retorna la versió del caràcter com a majúscules
+
+================================    ====================================================
+
+Què hem de fer?
+===============
+
+Desenvolupa un programa que demani un text i, respecte el primer caràcter,
+composi un petit informe amb el resultat de les funcions anteriors.
+
+Considera les següents simulacions:
+
+.. code-block:: console
+    :linenos:
+    :emphasize-lines: 2,4-14
+
+    $ java InformeCaracter
+    Caràcter?
+    Hola!
+    Caràcter?
+    Character.getName('H'): LATIN CAPITAL LETTER H
+    Character.isDigit('H'): false
+    Character.isJavaIdentifierStart('H'): true
+    Character.isJavaIdentifierPart('H'): true
+    Character.isLetter('H'): true
+    Character.isLowerCase('H'): false
+    Character.isUpperCase('H'): true
+    Character.isWhitespace('H'): false
+    Character.toLowerCase('H'): h
+    Character.toUpperCase('H'): H
+
+En cas que el text introduït estigui buit, mostrarà el missatge ``Caràcter buit``.
+
+Nota: La gràcia és que vegis com es comporta cada utilitat quan li dónes
+diferents valors i no tant que passis les proves.

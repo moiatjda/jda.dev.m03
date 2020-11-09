@@ -1,0 +1,36 @@
+########################################################
+|exerciseicon___| Exercici 01_58. Manipulació de Strings
+########################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_58_manipulant_strings/``
+
+* Continguts relacionats: :doc:`strings_posicions`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+.. rubric:: Enunciat
+
+En aquest exercici et toca revisar la documentació oficial.
+
+Considera que disposes d'una referència a String anomenada ``paraula`` que conté una paraula amb un
+mínim de quatre lletres.
+
+Proposa un codi que mostri:
+
+#. La segona lletra de la paraula
+
+#. La longitud de la paraula (quantes lletres conté)
+
+#. La darrera lletra de la paraula
+
+#. La penúltima lletra de la paraula
+
+#. La paraula amb totes les lletres en majúscules
+
+#. La paraula amb la quarta lletra moguda a l'inici (ex. si era "Hola" mostra "aHol")
+
+#. La paraula amb les primeres tres lletres en majúscules i la resta en minúscules
+
+Pots fer servir ``jshell`` per fer les proves.

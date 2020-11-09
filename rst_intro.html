@@ -181,15 +181,15 @@ necessitats bàsiques, si vols més opcions, et caldrà estudiar una mica més!<
 <p>Permet-me que et demostri com és de fàcil entendre un document rst, deixant que sigui ell qui faci
 la seva presentació. És qüestió de temps (poc) que et sembli natural llegir directament en aquest
 format!</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>##################
-Títol del document
-##################
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">##################</span>
+<span class="gh">Títol del document</span>
+<span class="gh">##################</span>
 
-Comencem
-========
+<span class="gh">Comencem</span>
+<span class="gh">========</span>
 
 La línia anterior correspon a un títol de secció principal. Fixa&#39;t com
-el símbol = subratlla *tota* la paraula sense passar-se. Altrament els
+el símbol = subratlla <span class="ge">*tota*</span> la paraula sense passar-se. Altrament els
 processadors automàtics ho considerarien un error. Fixa&#39;t també com,
 aquest altre paràgraf apareix separat una línia del subratllat del títol
 de secció.  Aquesta separació de, com a mínim una línia, és necessària.
@@ -201,22 +201,22 @@ l&#39;anterior amb una o més línies en blanc. Si en poso de més no importa.
 Si no deixo línia en blanc com en aquest cas totes aquestes línies
 apareixeran en el mateix paràgraf.
 
-Aquesta és una subsecció
-------------------------
+<span class="gh">Aquesta és una subsecció</span>
+<span class="gh">------------------------</span>
 
 Podem fer diferents nivells de seccions. En aquest cas, aquesta secció
-es consideraria dins de la secció *Comencem*.
+es consideraria dins de la secció <span class="ge">*Comencem*</span>.
 
-Podríem haver fet servir el guió &#39;-&#39; per la secció *Comencem* i l&#39;igual
+Podríem haver fet servir el guió &#39;-&#39; per la secció <span class="ge">*Comencem*</span> i l&#39;igual
 &#39;=&#39; per aquesta subsecció.  La relació entre secció i subsecció s&#39;hagués
 mantingut. No obstant, típicament l&#39;ordre que trobarem és =, -, ^, &#39;. Si
 el teu document necessita més de quatre nivells, considera si és la
 estructuració més idònia!
 
-Aquesta és una altra subsecció
-------------------------------
+<span class="gh">Aquesta és una altra subsecció</span>
+<span class="gh">------------------------------</span>
 
-Aquesta nova subsecció estaria també dins de la secció *Comencem* i a
+Aquesta nova subsecció estaria també dins de la secció <span class="ge">*Comencem*</span> i a
 continuació de l&#39;anterior.
 
 És important estructurar coherentment els continguts nostres documents
@@ -225,31 +225,31 @@ generar taules de continguts, enllaços a partir del nom de la secció,
 presentacions diferents (ex. un títol de primer nivell amb una lletra
 més gran que la del segon), etc.
 
-Estils bàsics
-=============
+<span class="gh">Estils bàsics</span>
+<span class="gh">=============</span>
 
-Negretes i cursives
--------------------
+<span class="gh">Negretes i cursives</span>
+<span class="gh">-------------------</span>
 
 A banda de l&#39;estructura del document, sovint necessitarem remarcar
 altres parts del document de manera especial. Habitualment això
 s&#39;aconsegueix posant en negreta o cursiva una o més paraules especials.
 
 En rst, posarem en cursiva una paraula, o grup de paraules,
-envoltant-les entre asteriscs. Per exemple, *aquestes paraules*
+envoltant-les entre asteriscs. Per exemple, <span class="ge">*aquestes paraules*</span>
 apareixeran en cursiva si convertim aquest document a format odt (del
 libreoffice).
 
 Si volem ressaltar una paraula en negreta, ho farem envoltant-la entre
-**dos** asteriscs (com és el cas de la paraula &#39;dos&#39; anterior)
+<span class="gs">**dos**</span> asteriscs (com és el cas de la paraula &#39;dos&#39; anterior)
 
 Alguns editors, ja preparats pel format rst, fins i tot podrien realment
 mostrar-te en negreta o cursiva aquestes paraules! En tot cas, amb el
-temps no et serà necessari. Com a la pel·lícula *Matrix*, ja podràs
+temps no et serà necessari. Com a la pel·lícula <span class="ge">*Matrix*</span>, ja podràs
 llegir el codi del document directament.
 
-Codi
-----
+<span class="gh">Codi</span>
+<span class="gh">----</span>
 
 Fins ara, les paraules del text que hem introduït apareixen separades
 per un espai. Podria ser més d&#39;un espai         com en aquest cas, però
@@ -260,29 +260,29 @@ exemple, el codi d&#39;un programa)
 En aquests casos, finalitzarem la línia anterior amb dos cops el símbol
 &#39;:&#39;
 
-Per exemple, considera aquest codi ::
+Per exemple, considera aquest codi <span class="se">::</span>
 
-    if (a == b) {
-        printf(&quot;iguals\n&quot;);
-    }
+<span class="s">    if (a == b) {</span>
+<span class="s">        printf(&quot;iguals\n&quot;);</span>
+<span class="s">    }</span>
 
 També podem indicar els dobles dos punts en una línia per separat.
 
-::
+<span class="se">::</span>
 
-    if (a == b) {
-        printf(&quot;iguals!\n&quot;);
-    }
+<span class="s">    if (a == b) {</span>
+<span class="s">        printf(&quot;iguals!\n&quot;);</span>
+<span class="s">    }</span>
 
 Alguns processadors de rst, poden fins i tot acceptar que se&#39;ls indiqui
 el tipus de codi. Per exemple, Sphinx (el generador de documentació amb
 el que es processen aquests continguts) accepta la notació:
 
-.. code-block:: c
+<span class="p">..</span> <span class="ow">code-block</span><span class="p">::</span> <span class="k">c</span>
 
-    if (a == b) {
-        printf(&quot;iguals\n&quot;);
-    }
+    <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;iguals</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
 
 En aquest darrer cas, el processador del document podria fins i tot
 distingir amb colors els diferents elements del codi (*sintax
@@ -291,28 +291,28 @@ highlighting*).
 En tots tres casos, fixa&#39;t que el codi apareix tabulat respecte l&#39;inici
 de la línia que conté el doble dos punts.
 
-Enllaços
---------
+<span class="gh">Enllaços</span>
+<span class="gh">--------</span>
 
-Un altre element típic són els enllaços (*links*) a pàgines web,
-recursos, etc. Els podem fer fàcilment així: `google &lt;http://google.com&gt;`_.
+Un altre element típic són els enllaços (<span class="ge">*links*</span>) a pàgines web,
+recursos, etc. Els podem fer fàcilment així: <span class="s">`google </span><span class="si">&lt;http://google.com&gt;</span><span class="s">`_</span>.
 
 Fixa&#39;t en que el text es troba entre cometes inclinades &#39;`&#39;, l&#39;adreça
 apareix entre angles &#39;&lt;&gt;&#39;, i en el guió baix del final.
 
 També podem fer referència a les nostres seccions, com per exemple
-`Comencem`_ faria enllaçar amb el títol de la primera secció d&#39;aquest
+<span class="s">`Comencem`_</span> faria enllaçar amb el títol de la primera secció d&#39;aquest
 document!
 
-Llistes
--------
+<span class="gh">Llistes</span>
+<span class="gh">-------</span>
 
 Un altre element típic són les llistes. En tenim bàsicament de dos
 tipus:
 
-* numerades
+<span class="m">*</span> numerades
 
-* no numerades
+<span class="m">*</span> no numerades
 
 Els dos tipus anteriors, col·locats darrera d&#39;un asterisc + espai, ja
 són una llista (no numerada en aquest cas) En comptes de l&#39;asterisc hi
@@ -321,28 +321,28 @@ podríem fer servir altres caràcters com ara el guió &#39;-&#39;.
 En cas que la vulguem numerada, per exemple, per indicar un ordre, podem
 fer servir directament els números, com a la següent recepta:
 
-1. agafa el pollastre
+<span class="m">1.</span> agafa el pollastre
 
-2. treu-li les plomes
+<span class="m">2.</span> treu-li les plomes
 
-3. posa&#39;l a la cassola amb la resta d&#39;ingredients
+<span class="m">3.</span> posa&#39;l a la cassola amb la resta d&#39;ingredients
 
-4. engega el foc i espera fins que estigui fet
+<span class="m">4.</span> engega el foc i espera fins que estigui fet
 
 A banda dels números seguits de punt, podem fer servir per exemple, lletres i parèntesis. Com ara
 
-1) Aquest element té tres subelements
+<span class="m">1)</span> Aquest element té tres subelements
 
    a. primer
 
    b. segon
 
-   c. tercer
+   <span class="m">c.</span> tercer
 
-2) Aquest no en té cap de subelement
+<span class="m">2)</span> Aquest no en té cap de subelement
 
-taules
-------
+<span class="gh">taules</span>
+<span class="gh">------</span>
 
 Sovint els nostres documents requeriran representar la informació de
 manera tabulada. El format rst ens ofereix diferents maneres de composar
@@ -359,8 +359,8 @@ Tot i que al principi pot ser una mica incòmode escriure aquestes
 taules, no em negaràs que és fàcil de llegir tal qual? A més, a la
 llarga, aprendràs trucs per construir-les i modificar-les.
 
-imatges
--------
+<span class="gh">imatges</span>
+<span class="gh">-------</span>
 
 De vegades voldrem incloure imatges als nostres documents. Evidentment
 aquestes imatges no es veuran en el text, però si escollim un bon nom
@@ -368,7 +368,7 @@ ens farem una idea clara del que contenen.
 
 Una manera fàcil és:
 
-.. image:: imatges/lamevafoto.png
+<span class="p">..</span> <span class="ow">image</span><span class="p">::</span> imatges/lamevafoto.png
 </pre></div>
 </div>
 </div>
@@ -378,7 +378,7 @@ Una manera fàcil és:
 <p>Per exemple, si el document de la secció anterior estigués en un fitxer
 anomenat intro.rst, el podríem convertir a format libreoffice amb la
 comanda:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ rst2odt intro.rst intro.odt
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> rst2odt intro.rst intro.odt
 </pre></div>
 </div>
 <p>El <code class="docutils literal notranslate"><span class="pre">docutils</span></code> és un paquet amb diferents utilitats de conversió (ex. rst2odt, rst2html,

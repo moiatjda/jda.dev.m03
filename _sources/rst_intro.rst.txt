@@ -26,7 +26,7 @@ Permet-me que et demostri com és de fàcil entendre un document rst, deixant qu
 la seva presentació. És qüestió de temps (poc) que et sembli natural llegir directament en aquest
 format!
 
-.. code-block:: none
+.. code-block:: rst
 
         ##################
         Títol del document
@@ -226,7 +226,7 @@ Per exemple, si el document de la secció anterior estigués en un fitxer
 anomenat intro.rst, el podríem convertir a format libreoffice amb la
 comanda:
 
-.. code-block:: sh
+.. code-block:: console
 
     $ rst2odt intro.rst intro.odt
 

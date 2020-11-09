@@ -1,0 +1,238 @@
+##########################
+Diferents tipus de *tipus*
+##########################
+
+Java distingeix clarament entre tipus *primitius* i *referències* (també
+coneguts com *objectes*)
+
+Per simplificar, podem entendre els tipus primitius com aquells que
+disposen d'un valor directament associat a la variable a la que estan
+assignats. En canvi, en el cas dels objectes, les variables no contenen
+directament el seu valor sinó que fan *referència* a la posició de memòria
+[#referencies]_
+on està emmagatzemat el valor.
+
+Per mirar d'entendre-ho, deixa'm que et faci una *simplificació* del model
+de memòria que fa servir Java:
+
+* les posicions de memòria seran nombres enters que, per distingir-los,
+  aquí els prefixarem amb ``@`` (atenció que no és notació de Java!)
+
+* tots els valors ocupen el mateix en memòria
+
+Per exemple, considera el següent fragment de codi:
+
+.. code-block:: java
+
+    int edat = 18;
+    double pes = 72.16;
+    String nom = "Miranda";
+    String cognoms = "Garcia Orujo";
+
+Representem aquestes dades en la nostra simplificació de la memòria del
+programa:
+
++------------------+---------+--------------------------+
+|   variable       | posició |   valor                  |
++==================+=========+==========================+
+|   int edat       | @100    |   ``18``                 |
++------------------+---------+--------------------------+
+| double pes       | @101    |   ``72.16``              |
++------------------+---------+--------------------------+
+| String nom       | @102    |   ``1000``               |
++------------------+---------+--------------------------+
+| String cognoms   | @103    |   ``1001``               |
++------------------+---------+--------------------------+
+| …                                                     |
++------------------+---------+--------------------------+
+|                  | @1000   |   ``"Miranda"``          |
++                  +---------+--------------------------+
+|                  | @1001   |   ``"Garcia Orujo"``     |
++------------------+---------+--------------------------+
+| …                                                     |
++------------------+---------+--------------------------+
+
+Així, observem que:
+
+* el valor de la variable ``edat`` estaria guardat a la posició *@100*
+
+* el valor de ``pes`` estaria guardat a la posició *@101*
+
+* el valor de ``nom`` estaria guardat a la posició *@102* però aquí hi
+  ha una cosa diferent. El valor de ``nom`` no és l'esperat ``"Miranda"``
+  sinó ``1000``!
+
+  El que ha passat aquí és que, ``nom`` no guarda directament el valor del
+  String, sinó la posició on es troba aquest valor, en aquest cas *@1000*.
+
+* el valor de ``cognom`` mostra el mateix comportament de ``nom``. No
+  és el text sinó una posició on està guardat el text!
+
+Anirem treballant aquests conceptes constantment durant el curs, així que
+no pateixis si ho veus una mica confós encara.
+
+Considera el següent diagrama:
+
+.. uml::
+    :align: center
+    :caption: Esquema *parcial* dels tipus de dades de Java
+
+    @startuml
+
+    hide class circle
+    skinparam class {
+        BackgroundColor White
+        BorderColor Black
+        ArrowColor Black
+    }
+
+    class "Tipus de dades" as Tipus
+    class "Tipus primitiu" as Primitiu
+    Tipus <|-- Primitiu
+    Tipus <|-- Objecte
+    hide class circle
+    hide class members
+
+    Primitiu <|-- boolean
+    Primitiu <|-- byte
+    Primitiu <|-- char
+    Primitiu <|-- double
+    Primitiu <|-- float
+    Primitiu <|-- int
+    Primitiu <|-- long
+    Primitiu <|-- short
+
+    Objecte <|-- String
+
+    @enduml
+
+.. <|--
+
+El diagrama mostra un bon grapat de tipus primitius, alguns que no hem
+presentat encara. D'objectes, però, només en mostra els Strings. Ja
+t'avanço que n'hi ha força més!
+
+Permetem-nos una breu repassada, amb alguna ampliació, sobre els tipus primitius
+
+* Els literals de tipus enter en base 10, s'especifiquen directament amb
+  el valor. Si ens interessa fer servir altres bases, ho podem fer com als
+  següents exemples:
+
+  .. code-block:: java
+
+        42        // correspon al valor 42 en decimal
+        0x2a      // correspon al valor 42 en hexadecimal
+        0b101010  // correspon al valor 42 en binari
+
+  Fixa't com simplement afegint ``0x`` i ``0b`` ja estem indicant a Java
+  que el valor està representat en hexadecimal i binari (respectivament)
+
+* El tipus ``boolean`` admet només els valors *true* i *false*, escrits
+  així, en minúscules.
+
+* El tipus ``int`` es poden quedar curts per representar alguns enters
+  grandets. Java ens ofereix un tipus primitiu una mica més gran, anomenat
+  ``long``.
+
+  Quan volem explicitar que un literal és ``long``, ho farem acabant-lo amb
+  ``l`` o ``L``. Per exemple:
+
+  .. code-block:: java
+
+        10000000000000000L
+
+* els literals dels tipus numèric amb coma flotant ``float`` els acabarem ``f`` o ``F``.
+  Els ``double`` no necessiten cap marca, però ho podem explicitar amb ``d``,
+  o ``D``. També es pot especificar amb notació científica, fent servir
+  ``e``. Exemples:
+
+  .. code-block:: java
+
+        10.5F       // és un float
+        100.1D      // és un double
+        100.1       // també un double com l'anterior
+        1.001e2     // el mateix valor double que l'anterior
+
+  A diferència de la resta de tipus primitius, els numèrics amb coma
+  flotant no responen massa bé al comparador d'igualtat ``==``.
+
+  Considera el següent exemple:
+
+  .. code-block:: console
+        :emphasize-lines: 2, 5, 8
+
+        jshell> double pes1 = Double.parseDouble(".3");
+        pes2 ==> 0.3
+
+        jshell> double pes2 = .1 + .1 + .1;
+        pes1 ==> 0.30000000000000004
+
+        jshell> pes1 == pes2;
+        $1 ==> false
+
+  Ops! Sembla que sumar tres cops ``.1`` no és exactament ``.3``!
+
+  Una manera senzilla de comparar aquests valors per igualtat és
+  establir un llindar a partir del qual considerem els valors iguals
+
+  Considera el següent fragment de codi:
+
+  .. code-block:: console
+        :emphasize-lines: 2, 5
+
+        jshell> double LLINDAR = .00000001;
+        LLINDAR ==> 1.0E-8
+
+        jshell> boolean pesosIguals = Math.abs(pes1 - pes2) < LLINDAR;
+        pesosIguals ==> true
+
+* el tipus ``char`` requereix dos bytes i els seus valors es codifiquen en
+  Unicode, cosa que ens estalvia molts problemes als que fem servir
+  caràcters com la *ç*.
+
+  Podem assignar literals de tipus ``char`` envoltant-los entre cometes
+  simples, com als exemples:
+
+  .. code-block:: java
+
+        char c = 'à';
+        c = '\u00e0';   // és el codi Unicode per à o sigui que c continua valent el mateix!
+
+  Podem fer servir alguns caràcters especials, com ara: ``\t`` (tab), ``\n``
+  (salt de línia), ``\"`` (cometes dobles), ``\'`` (cometes simples), i ``\\``
+  (la pròpia contrabarra).
+  
+  .. code-block:: java
+
+        char ch = '"';
+        ch = '\'';     // és el caràcter cometa simple. Cal escapar-ho
+
+* Quan el valor numèric que volem assignar a una variable numèrica es
+  troba fora dels límits, el compilador ens donarà un error. Sempre podem
+  forçar al compilador a acceptar la conversió malgrat es pugui perdre
+  informació
+
+
+  .. code-block:: console
+        :emphasize-lines: 2-5, 8
+
+        jshell> byte b = 256;
+        |  Error:
+        |  incompatible types: possible lossy conversion from int to byte
+        |  byte b = 256;
+        |           ^-^
+
+        jshell> byte b = (byte) 256;
+        b ==> -24
+
+  A forçar al compilador a acceptar un tipus per un altre es sol anomenar
+  *cast*. El compilador és prou llest com per no permetre conversions
+  absurdes i, encara que sapiguem enganyar, després en executar-ho, es
+  produiria un error.
+
+|exerciseicon___| :doc:`exercici_01_56_tipus_primitius`
+
+-----
+
+.. [#referencies] No és real que el valor sigui la posició de memòria on
+    s'emmagatzema el text, però per nosaltres és còmode pensar-ho.

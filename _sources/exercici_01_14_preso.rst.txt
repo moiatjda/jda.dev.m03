@@ -1,5 +1,3 @@
-:orphan:
-
 ##########################################
 |exerciseicon__T| Exercici 01_14. La presó
 ##########################################
@@ -23,7 +21,10 @@ si és major d'edat li digui “Vos ja podeu anar a la presó!”.
 Finalment, sigui quina sigui l'edat de l'usuari el programa s'acomiadarà dient
 “Aneu amb compte «nom de l'usuari»!”.
 
-Exemples d'interacció: ::
+Exemples d'interacció:
+
+.. code-block:: console
+    :emphasize-lines: 2, 4, 6, 9, 11, 13-
 
     $ java Preso
     Com us dieu?
@@ -31,6 +32,7 @@ Exemples d'interacció: ::
     Quants anys teniu?
     17
     Aneu amb compte Manel
+
     $ java Preso
     Com us dieu?
     Anna

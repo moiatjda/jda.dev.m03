@@ -1,5 +1,3 @@
-:orphan:
-
 ############################################
 |exerciseicon_ST| Exercici 01_26. L'ascensor
 ############################################
@@ -36,7 +34,10 @@ mostrarà el nou pis.
 Cal comprovar que els botons i les plantes siguin correctes. En cas que no ho
 siguin, el programa mostrarà un missatge d'error en comptes del nou pis.
 
-Exemple d'interacció: ::
+Exemple d'interacció:
+
+.. code-block:: console
+    :emphasize-lines: 2, 4, 6, 9, 11, 13, 16, 18, 20
 
     $ java Ascensor
     pis?
@@ -44,12 +45,14 @@ Exemple d'interacció: ::
     botó?
     pujar un
     primer pis
+
     $ java Ascensor
     pis?
     golfes
     botó?
     baixar un
     error
+
     $ java Ascensor
     pis?
     segon pis

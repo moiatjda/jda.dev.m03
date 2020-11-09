@@ -91,6 +91,7 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basics_intro.html">Introducció</a></li>
 <li class="toctree-l2"><a class="reference internal" href="instruccions.html">Instruccions seqüencials</a></li>
 <li class="toctree-l2"><a class="reference internal" href="variables.html">Variables i tipus</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="expressions.html">Operadors i expressions</a><ul class="current">
@@ -103,6 +104,7 @@
 <li class="toctree-l2"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="while.html">Bucles condicionals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="recorreguts.html">Recorreguts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">Strings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="basics_exercicis.html">Llista d’exercicis</a></li>
 </ul>
 </li>
@@ -192,7 +194,6 @@ anys?»</p>
 <ul class="simple">
 <li><p>l’edat de la Clara és més gran o igual a 18 anys?</p></li>
 <li><p>la teva edat és més gran o igual a 18 anys?</p></li>
-<li><p>no és cert que tu siguis més jove que la Clara</p></li>
 </ul>
 <p>Aquestes dues preguntes les podem expressar de la següent manera:</p>
 <ul class="simple">
@@ -263,15 +264,12 @@ aquest tipus d’operadors se’n diu <em>unaris</em>. Els valors numèrics en t
 també un operador unari similar, el <code class="docutils literal notranslate"><span class="pre">-</span></code>. Per exemple, pensa en
 l’expressió:</p>
 <ul class="simple">
-<li><ul>
-<li><p>( 2 + 3 ) → - (5) → -5</p></li>
-</ul>
-</li>
+<li><p>-(2 + 3) → - (5) → -5</p></li>
 </ul>
 <p>També podríem estalviar-nos crear la variable <code class="docutils literal notranslate"><span class="pre">tuEtsMesJoveQueClara</span></code> i
 negar-ho directament</p>
 <ul class="simple">
-<li><p>! edatTeva &lt; edatClara</p></li>
+<li><p>! (edatTeva &lt; edatClara)</p></li>
 </ul>
 <p>Una manera equivalent d’expressar-ho seria dir que «és fals que tu siguis
 més jove que la Clara» o bé:</p>
@@ -284,7 +282,7 @@ més jove que la Clara» o bé:</p>
 <li><p>edatTeva &gt;= edatClara</p></li>
 </ul>
 <p>No està malament, oi?</p>
-<p>De moment, doncs, tenim els operadors lògics <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">|</span></code> i <code class="docutils literal notranslate"><span class="pre">!</span></code>.</p>
+<p>De moment, doncs, tenim els operadors lògics <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">||</span></code> i <code class="docutils literal notranslate"><span class="pre">!</span></code>.</p>
 <p>Cal tenir present que, a l’igual dels operadors aritmètics, els lògics
 tenen una precedència natural. Es poden establir paral·lelismes entre els
 lògics i els aritmètics:</p>

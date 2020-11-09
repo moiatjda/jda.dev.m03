@@ -1,0 +1,298 @@
+###############
+El tipus String
+###############
+
+Ja hem vist a :doc:`primitius_vs_classes`, els Strings no són un tipus primitiu a
+Java, sinó *objectes*. És a dir, una variable de tipus String **no** conté
+directament el text corresponent al seu valor, sinó una referència a la
+posició de memòria on es troba el text.
+
+Aquesta *peculiaritat* fa que els Strings no es facin servir exactament de
+la mateixa manera amb que usàvem variables de tipus primitiu.
+
+Amb tot, el tipus String és tan utilitzat que els dissenyadors de Java
+s'han pres moltes molèsties en fer-los més usables per nosaltres. Així,
+ens trobarem que aquest tipus té un tracte especial pel llenguatge.
+
+A aquesta secció trobaràs una visió resumida de les operacions més
+bàsiques que habitualment fem amb Strings. Algunes ja les hem vistes però
+d'altres te les presento per primer cop.
+
+
+Concatenació de Strings
+=======================
+
+Java ens ofereix l'operador ``+`` per concatenar strings.
+Així
+
+.. code-block:: console
+    :emphasize-lines: 2
+
+    jshell> "hola" + " i " +  "adeu"
+    $1 ==> "hola i adeu"
+
+Java ens permet concatenar automàticament altres tipus de dades. Per
+exemple, amb un caràcter:
+
+.. code-block:: console
+    :emphasize-lines: 2
+
+    jshell> String text = "ho" + 1 + 'a';
+    text ==> "ho1a"
+
+Compte, però, en l'ordre en que li demanem les coses. Per exemple:
+
+.. code-block:: console
+    :emphasize-lines: 2
+
+    jshell> String text = 'a' + 1 + "oh";
+    text ==> "98oh"
+
+Aquí, el caràcter ``'a'`` ha estat considerat com un número (el codi ASCII
+de la 'a' és el 97). Java ha sumat 97 més 1 i, el resultat, l'ha convertit
+a String per concatenar-ho a `"oh"`!
+
+Ho podem solucionar, per exemple, explicitant-li a Java que volem que faci
+servir la concatenació de Strings tot afegint la cadena buida a l'inici.
+
+.. code-block:: console
+    :emphasize-lines: 2
+
+    jshell> String text = "" + 'a' + 1 + "oh";
+    text ==> "a1oh"
+
+
+Comparació d'igualtat
+=====================
+
+Amb els tipus primitius (a excepció del nombres amb coma flotant)
+l'operador d'igualtat ``==`` ens permet decidir si un valor és igual a un
+altre. Això no és possible amb els Strings ja que la variable no *conté*
+el text sinó una referència a aquest. Per tant, ``==`` resultarà cert
+només si els texts dels dos strings a comparar es troben a la mateixa
+posició de memòria.
+
+Una comparació amb resultat sorprenent
+--------------------------------------
+
+Considera el següent programa:
+
+.. code-block:: java
+
+    public class Hola {
+        public static void main(String[] args) {
+            String textIntern1 = "hola";
+            String textIntern2 = "hol" + 'a';
+            System.out.print("Introdueix un text: ");
+            String textExtern = Entrada.readLine();
+            System.out.println("Comparem interns        : \"" +
+                                textIntern1 + "\" == \"" + 
+                                textIntern2 + "\" → " + 
+                                (textIntern1 == textIntern2)
+                              );
+            System.out.println("Comparem intern i extern: \"" + 
+                                textIntern1 + "\" == \"" +
+                                textExtern + "\" → " + 
+                                (textIntern1 == textExtern)
+                              );
+        }
+    }
+
+Ara, considera aquesta interacció:
+
+.. code-block:: console
+    :emphasize-lines: 2, 3
+
+    $ java Hola 
+    Comparem interns        : "hola" == "hola" → true
+    Comparem intern i extern: "hola" == "hola" → false
+
+Què ha passat?
+
+En el primer cas, Java considera que ``"hola"`` és igual a ``"hola"``.
+Sembla que és el que tothom esperaria malgrat els valors de
+``textIntern1`` i ``textIntern2`` han estat construïts de manera diferent.
+
+En canvi, quan comparem ``textIntern1`` amb ``textExtern``, el resultat és
+fals malgrat tots dos contenen el mateix text ``"hola"``!
+
+L'explicació del segon cas és molt senzilla.
+
+Com sabem, Java no guarda el text d'un String directament a la seva
+variable. En comptes, guarda una referència al lloc on es troba el text en
+memòria.
+
+Suposem que el text de ``textIntern1`` està guardat a la posició *@1000*.
+Vindria a ser com si el valor de ``textIntern1`` fos ``1000``. Quan el
+programa llegeix el valor de l'entrada estàndard, aquest pot ser qualsevol
+text, potser també ``"hola"``. Java guarda aquest valor a una nova
+posició, suposem *@5000*. Així, ``textExtern`` tindria com a valor
+``5000``.  Quan comparem ``textIntern1 == textExtern`` Java entén que
+volem saber si ``1000 == 5000`` cosa que, evidentment, no és certa.
+
+Però, llavors, perquè ``textIntern1 == textIntern2`` sí funciona? Doncs
+resulta que el compilador de Java que estic fent servir, és prou
+*intel·ligent* com per realitzar la concatenació del segon text i
+adonar-se que ja disposa d'un text igual a la posició *@1000* i, per
+tant, assigna a ``textIntern2`` la mateixa posició. Compte! És
+perfectament possible que un altre compilador de Java no realitzes aquesta
+optimització i guardés els dos texts per duplicat en memòria, el que faria
+que també aquesta comparació resultés en ``false``.
+
+Si ho representem amb la nostra simplificació de la memòria ens trobem
+quelcom similar a:
+
++-----------------------+---------+--------------------------+
+|   variable            | posició |   valor                  |
++=======================+=========+==========================+
+| String textIntern1    | @100    |   ``1000``               |
++-----------------------+---------+--------------------------+
+| String textIntern2    | @101    |   ``1000``               |
++-----------------------+---------+--------------------------+
+| String textExtern     | @102    |   ``5000``               |
++-----------------------+---------+--------------------------+
+| …                                                          |
++-----------------------+---------+--------------------------+
+|                       | @1000   |   ``"hola"``             |
++-----------------------+---------+--------------------------+
+| …                                                          |
++-----------------------+---------+--------------------------+
+|                       | @5000   |   ``"hola"``             |
++-----------------------+---------+--------------------------+
+| …                                                          |
++-----------------------+---------+--------------------------+
+
+Fixa't que les variables ``textIntern1`` i ``textIntern2`` tenen el mateix
+valor ``@1000`` mentre que ``textExtern`` té referència a un altre valor,
+malgrat les posicions ``@1000`` i ``@5000`` al final tenen el mateix
+valor. ``equals()`` és capaç de comparar els texts apuntats pels valors dels
+dos Strings, en comptes de les posicions on es troben.
+
+Se t'acut perquè Java no intenta fer aquesta optimització amb el text que
+llegeix de l'entrada estàndard? Pista: qui s'espera amb la primera
+optimització i qui s'esperaria amb la segona?
+
+Comparem correctament els Strings
+---------------------------------
+
+La manera **correcta** i **segura** de comparar dos Strings per igualtat és la següent:
+
+.. code-block:: java
+
+    public class Hola {
+        public static void main(String[] args) {
+            String textIntern1 = "hola";
+            String textIntern2 = "hol" + 'a';
+            System.out.print("Introdueix un text: ");
+            String textExtern = Entrada.readLine();
+            System.out.println("Comparem interns        : \"" +
+                                textIntern1 + "\" == \"" + 
+                                textIntern2 + "\" → " + 
+                                textIntern1.equals(textIntern2)
+                              );
+            System.out.println("Comparem intern i extern: \"" + 
+                                textIntern1 + "\" == \"" +
+                                textExtern + "\" → " + 
+                                textIntern1.equals(textExtern)
+                              );
+        }
+    }
+
+Ara, la mateixa interacció que abans resulta així:
+
+.. code-block:: console
+    :emphasize-lines: 2, 3
+
+    $ java Hola 
+    Comparem interns        : "hola" == "hola" → true
+    Comparem intern i extern: "hola" == "hola" → true
+
+
+.. important:: Per comparar strings en Java farem servir **sempre** la funció ``equals()``.
+
+
+Conversions
+===========
+
+La API de Java ens ofereix diferents maneres per a realitzar conversions
+entre els diferents tipus primitius i els Strings. Ja les hem vist en
+funcionament abans. Recordem algunes:
+
+.. code-block:: java
+    :linenos:
+
+    int valorEnter = Integer.parseInt("12345");
+    double valorDecimal = Double.parseDouble("123.45");
+    String cadenaEntera = String.valueOf(valorEnter);
+    String cadenaDecimal = String.valueOf(valorDecimal);
+    String unaAltraManera = "" + valorEnter;    // aprofita la concatenació
+    String encaraUnaAltra = Integer.toString(valorEnter);
+
+Transformacions
+===============
+
+Els Strings disposen de moltes utilitats per transformar-los.
+
+Per exemple,``startsWith()``: permet saber si el text comença amb un determinat text.
+Podem usar aquesta utilitat, per exemple, de la següent manera:
+
+  .. code-block:: console
+      :emphasize-lines: 2, 5
+
+      jshell> "hola".startsWith("ho")
+      $1 ==> true
+
+      jshell> "adéu".startsWith("ho")
+      $2 ==> false
+
+Construcció de Strings
+======================
+
+De vegades ens pot ser útil construir un String a partir de diferents
+valors. Una manera molt còmoda de fer-ho és aprofitar la funció
+``String.format()`` que espera com a paràmetres un String que defineix un
+patró amb marques de variables més tants valors com hi hagi a les marques
+del String.
+
+Per exemple, considera el següent codi:
+
+.. code-block:: java
+
+    int edat = 19;
+    String nom = "Nefertiti";
+    String cognoms = "Peláez Ramírez";
+    String missatge = String.format("%s %s és %s d'edat doncs té %d any%s%n",
+                                    nom, cognoms, 
+                                    edat < 18 ? "menor": "major", 
+                                    edat, 
+                                    edat == 1 ? "" : "s");
+
+    // missatge.equals("Nefertiti Peláez Ramírez és major d'edat doncs té 19 anys\n")
+
+.. sidebar:: Un operador ternari
+
+    Fins ara potser no t'havies trobat amb l'expressió ``edat < 18 ? "menor": "major"``.
+    Es tracta d'un operador que presenta tres operands ``edat < 18``,
+    ``menor`` i ``major``.
+
+    Bàsicament fa que si la condició és certa, resulta en el segon operand
+    (en aquest cas ``"menor"``) i si és falsa, en el tercer.
+
+
+Trobaràs tot el detall sobre els elements que poden aparèixer dins del
+patró de ``String.format()`` a la secció `Format String Syntax
+<http://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html#syntax>`_.
+
+Per saber més
+=============
+
+Hi ha tot un munt d'altres possibilitats de manipulació i de conversió a i de Strings a:
+
+* API `Strings <https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html>`_
+* API `Integer <https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Integer.html>`_
+* API `Double <https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Double.html>`_
+* API `Character <https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/Character.html>`_
+
+
+|exerciseicon__T| :doc:`exercici_01_57_utilitats_strings`
+

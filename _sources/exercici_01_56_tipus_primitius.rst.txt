@@ -1,0 +1,41 @@
+#############################################################
+|exerciseicon___| Exercici 01_56. Els tipus primitius de Java
+#############################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_56_tipus_primitius/``
+
+* Continguts relacionats: :doc:`primitius_vs_classes`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+.. rubric:: Enunciat
+
+Llegeix `aquest article
+<https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html>`_
+de la documentació oficial de Java, que conté la descripció dels tipus
+primitius del llenguatge.
+
+Crea una taula amb les següents columnes:
+
+* el tipus de dades en Java
+
+* el nombre de bits amb que s'emmagatzema
+
+* valor mínim i valor màxim (si té sentit)
+
+* un exemple de valor
+
+
+Va, que la començo jo per tu:
+
++-----------------+----------------+-----------+-----------+-----------------------+
++ tipus           + bits           + mínim     + màxim     + exemple               +
++=================+================+===========+===========+=======================+
+| int             | 32             | -2^31     | (2^31)-1  | ``42``                |
++-----------------+----------------+-----------+-----------+-----------------------+
+| boolean         | indefinida     | ``true`` i ``false``  | ``true``              |
++-----------------+----------------+-----------+-----------+-----------------------+
+| char            |                |           |           |                       |
++-----------------+----------------+-----------+-----------+-----------------------+

@@ -1,5 +1,3 @@
-:orphan:
-
 ###############################################
 |exerciseicon___| Exercici 00_04. Presentem-nos
 ###############################################
@@ -45,8 +43,9 @@ Segueix les instruccions:
    comptes de *Hola Món!*, sortirà un missatge similar al següent:
 
    .. code-block:: console
+        :emphasize-lines: 1
 
-       Hola, sóc la Adelita, la futura millor desenvolupadora del Món!
+        Hola, sóc la Adelita, la futura millor desenvolupadora del Món!
 
    Per favor, si no et dius *Adelita*, canvia el nom. Pots modificar també la resta
    de la frase amb quelcom que sentis còmode.

@@ -285,11 +285,11 @@ espai de treball al PC.</p>
 escriguis, però, el (<code class="docutils literal notranslate"><span class="pre">$</span></code>):</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span>
 <span class="gp">$</span> git clone https://github.com/elteuusuariagithub/introprg.git
-<span class="go">Cloning into &#39;introprg&#39;...</span>
-<span class="go">Username for &#39;https://github.com&#39;: elteuusuariagithub</span>
-<span class="go">Password for &#39;https://elteuusuariagithub@github.com&#39;:</span>
-<span class="go">warning: You appear to have cloned an empty repository.</span>
-<span class="gp">$</span> <span class="nb">cd</span> introprg/
+<span class="hll"><span class="go">Cloning into &#39;introprg&#39;...</span>
+</span><span class="hll"><span class="go">Username for &#39;https://github.com&#39;: elteuusuariagithub</span>
+</span><span class="hll"><span class="go">Password for &#39;https://elteuusuariagithub@github.com&#39;:</span>
+</span><span class="hll"><span class="go">warning: You appear to have cloned an empty repository.</span>
+</span><span class="gp">$</span> <span class="nb">cd</span> introprg/
 </pre></div>
 </div>
 <p>Les comandes anteriors han creat una carpeta anomenada <code class="docutils literal notranslate"><span class="pre">introprg/</span></code> a la
@@ -339,25 +339,25 @@ desenvolupament al centre IES Joan d&#39;Àustria
 la combinació de tecles <code class="docutils literal notranslate"><span class="pre">ctrl-s</span></code>)</p>
 <p>Comprovem que ha anat tot bé:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git status
-<span class="go">On branch master</span>
-
-<span class="go">Initial commit</span>
-
-<span class="go">Untracked files:</span>
-<span class="go">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
-
-<span class="go">    readme.rst</span>
-
-<span class="go">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span>
-</pre></div>
+<span class="hll"><span class="go">On branch master</span>
+</span><span class="hll">
+</span><span class="hll"><span class="go">Initial commit</span>
+</span><span class="hll">
+</span><span class="hll"><span class="go">Untracked files:</span>
+</span><span class="hll"><span class="go">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span>
+</span><span class="hll">
+</span><span class="hll"><span class="go">    readme.rst</span>
+</span><span class="hll">
+</span><span class="hll"><span class="go">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span>
+</span></pre></div>
 </div>
 <p>Si és així, registrem el nou fitxer en el <code class="docutils literal notranslate"><span class="pre">git</span></code>:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git add readme.rst
 <span class="gp">$</span> git commit -am <span class="s2">&quot;Primer commit&quot;</span>
-<span class="go">[master (root-commit) f1f6b7f] Primer commit</span>
-<span class="go"> 1 file changed, 7 insertions(+)</span>
-<span class="go"> create mode 100644 readme.rst</span>
-</pre></div>
+<span class="hll"><span class="go">[master (root-commit) f1f6b7f] Primer commit</span>
+</span><span class="hll"><span class="go"> 1 file changed, 7 insertions(+)</span>
+</span><span class="hll"><span class="go"> create mode 100644 readme.rst</span>
+</span></pre></div>
 </div>
 <p>Ara ja has estrenat el teu repositori!</p>
 </div>
@@ -402,16 +402,16 @@ línia:</p>
 </div>
 <p>Podem comprovar que el fitxer hi és, fent servir la utilitat <code class="docutils literal notranslate"><span class="pre">ls</span></code></p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> ls
-<span class="go">…</span>
-<span class="go">eliminam.txt</span>
-<span class="go">…</span>
-</pre></div>
+<span class="hll"><span class="go">…</span>
+</span><span class="hll"><span class="go">eliminam.txt</span>
+</span><span class="hll"><span class="go">…</span>
+</span></pre></div>
 </div>
 <p>També podem consultar el contingut del fitxer, per exemple, fent servir la
 utilitat <code class="docutils literal notranslate"><span class="pre">cat</span></code>:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> cat eliminam.txt
-<span class="go">un fitxer a eliminar</span>
-</pre></div>
+<span class="hll"><span class="go">un fitxer a eliminar</span>
+</span></pre></div>
 </div>
 <p>Ara toca dir-li a <code class="docutils literal notranslate"><span class="pre">git</span></code> que ha de gestionar aquest nou fitxer:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> git add eliminam.txt
@@ -428,18 +428,18 @@ que hem realitzat al directori temporal:</p>
 </div>
 <p>Un cop introduït el password, ja tindrem disponible el fitxer <code class="docutils literal notranslate"><span class="pre">eliminam.txt</span></code>.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> cat eliminam.txt
-<span class="go">un fitxer a eliminar</span>
-</pre></div>
+<span class="hll"><span class="go">un fitxer a eliminar</span>
+</span></pre></div>
 </div>
 <p>Ara que ja hem vist com actualitzar la feina realitzada en un altre lloc, ja
 podem eliminar aquest fitxer que no necessitem per res. Primer l’eliminarem del
 directori de treball i després del GitHub</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> rm eliminam.txt
 <span class="gp">$</span> git status
-<span class="go">…</span>
-<span class="go">deleted:     eliminam.txt</span>
-<span class="go">…</span>
-</pre></div>
+<span class="hll"><span class="go">…</span>
+</span><span class="hll"><span class="go">deleted:     eliminam.txt</span>
+</span><span class="hll"><span class="go">…</span>
+</span></pre></div>
 </div>
 <p>Fixa’t que la resposta de <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> és que el fitxer <code class="docutils literal notranslate"><span class="pre">eliminam.txt</span></code> ha
 estat eliminat. Indicarem a <code class="docutils literal notranslate"><span class="pre">git</span></code> que el volem eliminat i pujarem els canvis a

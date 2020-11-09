@@ -93,7 +93,6 @@
 <li class="toctree-l2"><a class="reference internal" href="requeriments_coneixements_previs.html">Coneixements previs</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="requeriments_tecnics.html">Requeriments tècnics</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="requeriments_equip.html">Ordinador i sistema operatiu</a></li>
-<li class="toctree-l3"><a class="reference internal" href="requeriments_equip.html#en-resum">En resum</a></li>
 <li class="toctree-l3"><a class="reference internal" href="requeriments_editor.html">Editor</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Llenguatge de programació</a></li>
 <li class="toctree-l3"><a class="reference internal" href="requeriments_cvs.html">Control de versions</a></li>
@@ -185,25 +184,25 @@ farem servir una implementació anomenada <em>OpenJDK</em> en la seva versió 11
 sempre que la versió sigui &gt;=1.11) no hauries de tenir cap problema per
 seguir aquesta part del curs.</p>
 <p>Comprova la teva versió amb les comandes:</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ javac -version
-javac <span class="m">11</span>.0.8
-$ java -version
-openjdk <span class="m">11</span>.0.8 <span class="m">2020</span>-07-14
-OpenJDK Runtime Environment <span class="o">(</span>build <span class="m">11</span>.0.8+10-post-Debian-1deb10u1<span class="o">)</span>
-OpenJDK <span class="m">64</span>-Bit Server VM <span class="o">(</span>build <span class="m">11</span>.0.8+10-post-Debian-1deb10u1, mixed mode, sharing<span class="o">)</span>
-</pre></div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> javac -version
+<span class="hll"><span class="go">javac 11.0.8</span>
+</span><span class="gp">$</span> java -version
+<span class="hll"><span class="go">openjdk 11.0.8 2020-07-14</span>
+</span><span class="hll"><span class="go">OpenJDK Runtime Environment (build 11.0.8+10-post-Debian-1deb10u1)</span>
+</span><span class="hll"><span class="go">OpenJDK 64-Bit Server VM (build 11.0.8+10-post-Debian-1deb10u1, mixed mode, sharing)</span>
+</span></pre></div>
 </div>
 <p>El teu resultat no té perquè ser idèntic als meus. Únicament t’has
 d’assegurar que ha trobat la comanda. Altrament rebràs un missatge similar
 a:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ javac -version
-bash: javac: no s&#39;ha trobat l&#39;ordre
-</pre></div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> javac -version
+<span class="hll"><span class="go">bash: javac: no s&#39;ha trobat l&#39;ordre</span>
+</span></pre></div>
 </div>
 <p>En cas que no tinguis el Java instal·lat, ho pots fer fàcilment amb la
 següent comanda que necessitarà privilegis d’administració. Si no els
 tens, demana ajuda.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>$ sudo apt install default-jdk
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo apt install default-jdk
 </pre></div>
 </div>
 <div class="admonition note">

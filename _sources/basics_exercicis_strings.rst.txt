@@ -1,0 +1,20 @@
+#######
+Strings
+#######
+
+La llista d'exercicis sobre Strings són:
+
+.. toctree::
+    :titlesonly:
+
+    exercici_01_56_tipus_primitius.rst
+    exercici_01_57_utilitats_strings.rst
+    exercici_01_58_manipulant_strings.rst
+    exercici_01_59_inicial_vocal_minuscula.rst
+    exercici_01_60_acaba_vocal_minuscula.rst
+    exercici_01_61_acaba_lletra.rst
+    exercici_01_62_segona_igual_penultima.rst
+    exercici_01_63_funcions_caracters.rst
+    exercici_01_64_matricula_italiana.rst
+    exercici_01_65_matricula_valida_ampliada.rst
+    exercici_01_66_analisi_caracter.rst

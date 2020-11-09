@@ -29,6 +29,9 @@ Hem vist moltes coses importants en aquesta secció. Permet-me un resum:
   de quelcom més d'assignacions, condicionals i bucles per fer els nostres
   programes.
 
+* algunes utilitats amb Strings com ara saber si una cadena està buida o
+  només conté blancs.
+
 * Encara una cosa més: resoldre problemes per simplificació
 
   Es tracta d'una estratègia molt poderosa. Cada cop que et trobis amb un

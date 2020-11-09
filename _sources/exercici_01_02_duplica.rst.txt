@@ -1,5 +1,3 @@
-:orphan:
-
 ###################################################
 |exerciseicon__T| Exercici 01_02. Duplica un número
 ###################################################
@@ -57,6 +55,7 @@ reemplaçar els comentaris ``/*█████*/`` pel codi corresponent.
 Per exemple, considera la següent execució:
 
 .. code-block:: console
+    :emphasize-lines: 2
 
     $ java Duplica 5
     El doble de 5 és 10

@@ -1,0 +1,367 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ca" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Exercici 01_57. Utilitats de Strings &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Exercici 01_58. Manipulació de Strings" href="exercici_01_58_manipulant_strings.html" />
+    <link rel="prev" title="Exercici 01_56. Els tipus primitius de Java" href="exercici_01_56_tipus_primitius.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació amb Java
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-21
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basics_intro.html">Introducció</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruccions.html">Instruccions seqüencials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html">Variables i tipus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressions.html">Operadors i expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="while.html">Bucles condicionals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recorreguts.html">Recorreguts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">Strings</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="basics_exercicis.html">Llista d’exercicis</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="basics_exercicis_sequencials.html">Instruccions seqüencials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics_exercicis_condicionals.html">Instruccions condicionals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics_exercicis_while.html">Bucles condicionals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics_exercicis_for_numerics.html">Recorreguts numèrics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics_exercicis_for_niats.html">Recorreguts niuats</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="basics_exercicis_strings.html">Strings</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="exercici_01_56_tipus_primitius.html"> Exercici 01_56. Els tipus primitius de Java</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#"> Exercici 01_57. Utilitats de Strings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exercici_01_58_manipulant_strings.html"> Exercici 01_58. Manipulació de Strings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exercici_01_59_inicial_vocal_minuscula.html"> Exercici 01_59. Inicia amb vocal minúscula</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exercici_01_60_acaba_vocal_minuscula.html"> Exercici 01_60. Acaba amb vocal minúscula</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exercici_01_61_acaba_lletra.html"> Exercici 01_61. Acaba amb una lletra</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exercici_01_62_segona_igual_penultima.html"> Exercici 01_62. La segona lletra és igual a la penúltima</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exercici_01_63_funcions_caracters.html"> Exercici 01_63. Utilitats de caràcters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exercici_01_64_matricula_italiana.html"> Exercici 01_64. Matrícules italianes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exercici_01_65_matricula_valida_ampliada.html"> Exercici 01_65. Matrícules italianes (ampliació)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exercici_01_66_analisi_caracter.html"> Exercici 01_66. Analísis d’un caràcter a un String</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="apendix.html">Apèndix</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació amb Java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="basics.html">Elements bàsics de la programació</a> &raquo;</li>
+        
+          <li><a href="basics_exercicis.html">Llista d’exercicis</a> &raquo;</li>
+        
+          <li><a href="basics_exercicis_strings.html">Strings</a> &raquo;</li>
+        
+      <li> Exercici 01_57. Utilitats de Strings</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="exerciseicon-t-exercici-01-57-utilitats-de-strings">
+<h1><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> Exercici 01_57. Utilitats de Strings<a class="headerlink" href="#exerciseicon-t-exercici-01-57-utilitats-de-strings" title="Link permanent a aquest títol">¶</a></h1>
+<p class="rubric">Context</p>
+<ul class="simple">
+<li><p>Carpeta de lliurament: <code class="docutils literal notranslate"><span class="pre">01_57_utilitats_strings/</span></code></p></li>
+<li><p>Continguts relacionats: <a class="reference internal" href="strings_tipus.html"><span class="doc">El tipus String</span></a></p></li>
+<li><p>Com lliurar-lo: <a class="reference internal" href="holagit.html#instruccions-git"><span class="std std-ref">instruccions</span></a></p></li>
+<li><p>[✓] Exercici amb <a class="reference internal" href="sobre_exercicis.html#descripcio-exercicis-autoavaluacio"><span class="std std-ref">autoavaluació</span></a></p></li>
+</ul>
+<p class="rubric">Enunciat</p>
+<p>Per manipular un tipus de dades tan especial com és String, Java ens
+ofereix una sèrie d’utilitats.</p>
+<p>Per exemple, <code class="docutils literal notranslate"><span class="pre">cadena.length()</span></code> ens indica el nombre de caràcters que
+té la cadena. És a dir, la seva longitud.</p>
+<p>D’entre les <a class="reference external" href="https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html">moltes opcions</a>
+que ens ofereix Java, en considerarem les següents:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 43%" />
+<col style="width: 57%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>utilitat</p></td>
+<td><p>descripció</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">length()</span></code></p></td>
+<td><p>Longitud de la cadena</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">startWith(String</span> <span class="pre">unAltre)</span></code></p></td>
+<td><p>Boolean que indica si la cadena comença per l’altre</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">endsWith(String</span> <span class="pre">unAltre)</span></code></p></td>
+<td><p>Boolean que indica si la cadena comença per l’altre</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">equals(String</span> <span class="pre">unAltre)</span></code></p></td>
+<td><p>Boolean que indica si la cadena és igual a l’altre</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">equalsIgnoreCase(String</span> <span class="pre">unAltre)</span></code></p></td>
+<td><p>Boolean que indica si la cadena és igual a l’altre</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">isBlank()</span></code></p></td>
+<td><p>Boolean que indica si la cadena només conté caracters
+blancs o bé està buida</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">isEmpty()</span></code></p></td>
+<td><p>Boolean que indica si la cadena està buida</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">charAt(int</span> <span class="pre">posicio)</span></code></p></td>
+<td><p>Caràcter a la posició indicada</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">concat(String</span> <span class="pre">unAltre)</span></code></p></td>
+<td><p>Cadena resultant de concatenar la cadena amb l’altre</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">repeat(int</span> <span class="pre">cops)</span></code></p></td>
+<td><p>Cadena repetida el nombre de cops indicat</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">toUpperCase()</span></code></p></td>
+<td><p>Cadena amb tot en majúscules</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">toLowerCase()</span></code></p></td>
+<td><p>Cadena amb tot en minúscules</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="que-hem-de-fer">
+<h2>Què hem de fer?<a class="headerlink" href="#que-hem-de-fer" title="Link permanent a aquest títol">¶</a></h2>
+<p>Desenvolupa un programa que demani dos texts i un enter positiu i composi
+un petit informe amb el resultat de les funcions anteriors.</p>
+<p>Considera la següent simulació:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java InformeString
+<span class="hll"><span class="go">Text principal?</span>
+</span><span class="go">String!</span>
+<span class="hll"><span class="go">Text secundari ?</span>
+</span><span class="go">string!</span>
+<span class="hll"><span class="go">Número positiu?</span>
+</span><span class="go">2</span>
+<span class="hll"><span class="go">&quot;String!&quot;.length(): 7</span>
+</span><span class="hll"><span class="go">&quot;String!&quot;.startsWith(&quot;string!&quot;): false</span>
+</span><span class="hll"><span class="go">&quot;String!&quot;.endsWith(&quot;string!&quot;): false</span>
+</span><span class="hll"><span class="go">&quot;String!&quot;.equals(&quot;string!&quot;): false</span>
+</span><span class="hll"><span class="go">&quot;String!&quot;.equalsIgnoreCase(&quot;string!&quot;): true</span>
+</span><span class="hll"><span class="go">&quot;String!&quot;.isBlank(): false</span>
+</span><span class="hll"><span class="go">&quot;String!&quot;.isEmpty(): false</span>
+</span><span class="hll"><span class="go">&quot;String!&quot;.charAt(2): r</span>
+</span><span class="hll"><span class="go">&quot;String!&quot;.concat(&quot;string!&quot;): String!string!</span>
+</span><span class="hll"><span class="go">&quot;String!&quot;.repeat(2): String!String!</span>
+</span><span class="hll"><span class="go">&quot;String!&quot;.toUpperCase(): STRING!</span>
+</span><span class="hll"><span class="go">&quot;String!&quot;.toLowerCase(): string!</span>
+</span></pre></div>
+</div>
+<p>La gràcia és que vegis com es comporta cada utilitat quan li dónes
+diferents valors i no tant que passis les proves.</p>
+<p>Et proposo que juguis una mica amb el teu programa, de manera que
+aconsegueixis que cada utilitat que retorna un valor booleà, respongui
+<code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<p>Nota: No et preocupis per validar res.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="exercici_01_58_manipulant_strings.html" class="btn btn-neutral float-right" title="Exercici 01_58. Manipulació de Strings" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="exercici_01_56_tipus_primitius.html" class="btn btn-neutral float-left" title="Exercici 01_56. Els tipus primitius de Java" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2021 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+####################################################################
+|exerciseicon_ST| Exercici 01_66. Analísis d'un caràcter a un String
+####################################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_66_analisi_caracter/``
+
+* Continguts relacionats: :doc:`strings_posicions`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [☆] Exercici amb :ref:`dificultat addicional<descripcio_exercicis_dificils>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Desenvolupa un programa que demani un text i una posició.
+
+Si la posició no existeix dins del text, indicarà que està fora de rang.
+
+Si la posició és negativa, començarà a comptar a partir de l'últim
+caràcter del text introduït. Per exemple, -1 correspondrà a l'últim
+caràcter.
+
+Si tot ha anat bé, el programa indicarà:
+
+* el caràcter que correspon a la posició demanada
+
+* la categoria del caràcter:
+
+  - lletra
+
+  - nombre
+
+  - altre: quan no sigui cap dels anteriors
+
+Ja hem vist les utilitats de caràcters a un :doc:`exercici anterior
+<exercici_01_63_funcions_caracters>`. Aquí en farem servir només unes
+poques.
+
+.. code-block:: console
+    :emphasize-lines: 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36
+
+    $ java AnalitzaCaracter
+    Text?
+    Tinc 3 gats!
+    Posició?
+    3
+    'c' és una lletra
+    $ java AnalitzaCaracter
+    Text?
+    Tinc 3 gats!
+    Posició?
+    5
+    '3' és un nombre
+    $ java AnalitzaCaracter
+    Text?
+    Tinc 3 gats!
+    Posició?
+    -1
+    '!' és una altra cosa
+    $ java AnalitzaCaracter
+    Text?
+    Tinc 3 gats!
+    Posició?
+    -3
+    't' és una lletra
+    $ java AnalitzaCaracter
+    Text?
+    Hola
+    Posició?
+    4
+    Fora de rang
+    $ java AnalitzaCaracter
+    Text?
+    Hola
+    Posició?
+    -5
+    Fora de rang

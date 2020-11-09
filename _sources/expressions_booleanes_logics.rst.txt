@@ -21,8 +21,6 @@ Ara podem trencar la pregunta en dues preguntes:
 
 * la teva edat és més gran o igual a 18 anys?
 
-* no és cert que tu siguis més jove que la Clara
-
 Aquestes dues preguntes les podem expressar de la següent manera:
 
 * edatClara >= 18
@@ -104,12 +102,12 @@ aquest tipus d'operadors se'n diu *unaris*. Els valors numèrics en tenen
 també un operador unari similar, el ``-``. Per exemple, pensa en
 l'expressió:
 
-* - ( 2 + 3 ) → - (5) → -5
+* -(2 + 3) → - (5) → -5
 
 També podríem estalviar-nos crear la variable ``tuEtsMesJoveQueClara`` i
 negar-ho directament
 
-* ! edatTeva < edatClara
+* ! (edatTeva < edatClara)
 
 Una manera equivalent d'expressar-ho seria dir que "és fals que tu siguis
 més jove que la Clara" o bé:
@@ -124,7 +122,7 @@ Encara més, això ho podríem simplificar fent servir l'operador ``>=``:
 
 No està malament, oi?
 
-De moment, doncs, tenim els operadors lògics ``&&``, ``|`` i ``!``.
+De moment, doncs, tenim els operadors lògics ``&&``, ``||`` i ``!``.
 
 Cal tenir present que, a l'igual dels operadors aritmètics, els lògics
 tenen una precedència natural. Es poden establir paral·lelismes entre els

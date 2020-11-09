@@ -1,5 +1,3 @@
-:orphan:
-
 #######################################################
 |exerciseicon__T| Exercici 01_48. Un quadrat de nombres
 #######################################################
@@ -23,6 +21,7 @@ Escriu un programa que demani un enter positiu més gran que 0 i
 Per exemple, considera la següent simulació:
 
 .. code-block:: console
+    :emphasize-lines: 2, 4-
 
     $ java QuadratNombres
     Valor final?
