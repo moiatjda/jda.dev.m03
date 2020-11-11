@@ -40,10 +40,10 @@ Considera la següent execució com a exemple:
 
     $ java TaulesMultiplicar 1 3 4 5
     1 x 4 = 4
-    2 x 4 = 8
-    3 x 4 = 12
     1 x 5 = 5
+    2 x 4 = 8
     2 x 5 = 10
+    3 x 4 = 12
     3 x 5 = 15
 
 **Pista**: Fixa't que agafa els quatre valors dels arguments de la línia
