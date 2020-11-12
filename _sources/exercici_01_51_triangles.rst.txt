@@ -21,7 +21,7 @@ triangles com se li indiqui.
 .. code-block:: console
     :emphasize-lines: 2, 4-
 
-    $ java Triangles
+    $ java Triangle
     quants?
     2
     .........9.........
