@@ -101,9 +101,11 @@ Considera el següent programa:
 Ara, considera aquesta interacció:
 
 .. code-block:: console
-    :emphasize-lines: 2, 3
+    :emphasize-lines: 2, 4, 5
 
     $ java Hola 
+    Introdueix un text
+    hola
     Comparem interns        : "hola" == "hola" → true
     Comparem intern i extern: "hola" == "hola" → false
 
