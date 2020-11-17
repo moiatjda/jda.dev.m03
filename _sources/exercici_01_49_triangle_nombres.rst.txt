@@ -27,6 +27,7 @@ Una simulació:
 
     $ java TriangleNombres
     Nombre?
+    5
      1
      2 1
      3 2 1
@@ -48,5 +49,3 @@ facis, considera
   I per la línia número 4?
 
   Potser veuràs que sempre comença pel número de línia i acaba per 1. Mmmm
-
-

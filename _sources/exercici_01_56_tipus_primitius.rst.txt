@@ -28,7 +28,7 @@ Crea una taula amb les següents columnes:
 * un exemple de valor
 
 
-Va, que la començo jo per tu amb dos dels tipus primitius:
+Va, que la començo jo per tu:
 
 +-----------------+----------------+-----------+-----------+-----------------------+
 + tipus           + bits           + mínim     + màxim     + exemple               +
@@ -36,4 +36,6 @@ Va, que la començo jo per tu amb dos dels tipus primitius:
 | int             | 32             | -2^31     | (2^31)-1  | ``42``                |
 +-----------------+----------------+-----------+-----------+-----------------------+
 | boolean         | indefinida     | ``true`` i ``false``  | ``true``              |
++-----------------+----------------+-----------+-----------+-----------------------+
+| char            |                |           |           |                       |
 +-----------------+----------------+-----------+-----------+-----------------------+
