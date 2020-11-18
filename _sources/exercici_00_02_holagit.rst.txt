@@ -43,9 +43,6 @@ Segueix les instruccions:
 
         $ gedit primer_exercici.rst &
 
-   **Nota**: el símbol ``&`` el trobaràs molt probablement prement ``<ALT
-   GR> 6`` en un teclat estàndard amb disposició en català.
-
    Aquest fitxer conté text pla en un format anomenat *ReStructuredText*.
    Es tracta d'un format que permet ser llegit fàcilment per les persones,
    a l'hora que pot ser interpretat per programes i convertir-lo a altres

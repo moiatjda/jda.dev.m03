@@ -14,5 +14,4 @@ un de ben important: els Strings.
     primitius_vs_classes.rst
     strings_tipus.rst
     strings_posicions.rst
-
-..  strings_recorreguts.rst
+    strings_recorreguts.rst

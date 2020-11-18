@@ -1,0 +1,35 @@
+#################################################
+|exerciseicon___| Exercici 01_70. Cadena continua
+#################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_70_cadena_continua/``
+
+* Continguts relacionats: :doc:`strings_recorreguts`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+.. rubric:: Enunciat
+
+Desenvolupa un programa que demani un text i 
+un nombre enter, i mostri tants caràcters del text com indiqui el nombre enters, començant pel primer. 
+En cas que en faltin, el programa tornarà a mostrar el text a partir del primer caràcter fins que hagi
+aconseguit tots els caràcters demanats.
+
+En cas que se li demani menys d'un caràcter, simplement no mostrarà res.
+
+Considera la següent simulació:
+
+.. code-block:: console
+
+    $ java CadenaContinua
+    Text?
+    kuruma
+    nombre?
+    10
+    kurumakuru
+
+
+**Pista** Potser voldràs considerar l'operador mòdul ``%`` per fer aquest
+exercici en comptes d'haver d'usar una condició.

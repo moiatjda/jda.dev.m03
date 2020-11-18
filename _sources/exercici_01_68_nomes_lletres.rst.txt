@@ -1,0 +1,29 @@
+###############################################
+|exerciseicon__T| Exercici 01_68. Només lletres
+###############################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_68_nomes_lletres/``
+
+* Continguts relacionats: :doc:`strings_recorreguts`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Desenvolupa un programa que demani un text i mostri només les lletres que
+conté. Cada lletra apareixerà separada per una coma en l'ordre en que
+apareixia al text original. La resta de caràcters no es mostraran.
+
+Considera la següent simulació:
+
+.. code-block:: console
+    :emphasize-lines: 2, 4
+
+    $ java NomesLletres
+    Text?
+    Els 4 genets de l'Apocalipsi!
+    E, l, s, g, e, n, e, t, s, d, e, l, A, p, o, c, a, l, i, p, s, i

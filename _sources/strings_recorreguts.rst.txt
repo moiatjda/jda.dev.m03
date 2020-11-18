@@ -1,0 +1,133 @@
+######################
+Recorreguts de Strings
+######################
+
+Tal i com acabem de veure, és possible anar accedint als diferents
+caràcters que composen un String a partir de la seva posició dins la
+cadena.
+
+Considera el següent codi:
+
+.. code-block:: console
+
+    jshell> String s = "Ritchie"
+    s ==> "Ritchie"
+
+    jshell> s.charAt(0);
+    $2 ==> 'R'
+
+    jshell> s.charAt(1);
+    $3 ==> 'i'
+
+    jshell> s.charAt(2);
+    $4 ==> 't'
+
+Cap misteri, no? És el funcionament que ja coneixem de la utilitat
+``charAt()`` dels String.
+
+També ens podem imaginar que, en comptes de fer servir el literal concret
+de la posició, li podem indicar a partir d'una variable:
+
+.. code-block:: console
+
+    jshell> int posicio = 0;
+    posicio ==> 0
+
+    jshell> s.charAt(posicio);
+    $6 ==> 'R'
+
+    jshell> posicio += 1;
+    $7 ==> 1
+
+    jshell> s.charAt(posicio);
+    $8 ==> 'i'
+
+    jshell> posicio += 1;
+    $9 ==> 2
+
+    jshell> s.charAt(posicio);
+    $10 ==> 't'
+
+Te n'adones que, excepte pel valor de la variable ``posicio``, la
+instrucció per obtenir cada caràcter és la mateixa? Mmmm Interessant
+
+T'imagines poder automatitzar l'accés a cada caràcter sense haver d'anar
+incrementant explícitament la variable ``posicio``?
+
+És a dir, el que ens interessaria és anar fent que ``posicio`` agafi els
+valors del 0 (primera posició) fins el 6 (darrera posició de "Ritchie") o
+millor ``s.length() - 1``.
+
+Però, un moment, això ja ho tenim! ``posicio`` és una variable numèrica i
+sabem fer recorreguts numèrics, oi?
+
+.. code-block:: console
+
+    jshell> for (int posicio=0; posicio <= s.length() - 1; posicio += 1) {
+       ...>     System.out.println(posicio);
+       ...> }
+    0
+    1
+    2
+    3
+    4
+    5
+    6
+
+Creus que seria possible aplicar-ho al ``charAt()``?
+
+.. code-block:: console
+
+    jshell> for (int posicio=0; posicio <= s.length() - 1; posicio += 1) {
+       ...>     System.out.println(s.charAt(posicio));
+       ...> }
+    R
+    i
+    t
+    c
+    h
+    i
+    e
+
+Ueeeeee! Sí! funciona!
+
+A veure si ho hem entès. Fem-ho més explícit:
+
+.. code-block:: console
+
+    jshell> for (int posicio=0; posicio <= s.length() - 1; posicio += 1) {
+       ...>     System.out.println("El caracter a la posició  " + posicio + " és " + s.charAt(posicio));
+       ...> }
+    El caracter a la posició  0 és R
+    El caracter a la posició  1 és i
+    El caracter a la posició  2 és t
+    El caracter a la posició  3 és c
+    El caracter a la posició  4 és h
+    El caracter a la posició  5 és i
+    El caracter a la posició  6 és e
+
+Però, un moment, això vol dir que tot el que hem aprés de recorreguts
+numèrics ho podem aplicar a recorreguts amb Strings! Doncs sí, això mateix.
+
+Només una petita consideració més. Donat que és molt típic que hàgim de
+recórrer el String des de 0 fins a la longitud menys 1, és molt típic
+expressar el bucle de la següent manera
+
+.. code-block:: java
+
+    for (int posicio=0; posicio < s.length(); posicio++) {
+        System.out.println("el caracter a la posició  " + posicio + " és " + s.charAt(posicio));
+    }
+
+Fixa't com, en fer servir l'operador ``<`` (*extrictament menor què*), ja
+no cal restar-li 1 a la longitud.
+
+Ara sí, apa, a practicar!
+
+|exerciseicon__T| :doc:`exercici_01_67_parentitza`
+
+|exerciseicon__T| :doc:`exercici_01_68_nomes_lletres`
+
+|exerciseicon__T| :doc:`exercici_01_69_mostra_interval_string`
+
+|exerciseicon___| :doc:`exercici_01_70_cadena_continua`

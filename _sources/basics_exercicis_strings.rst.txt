@@ -18,3 +18,7 @@ La llista d'exercicis sobre Strings són:
     exercici_01_64_matricula_italiana.rst
     exercici_01_65_matricula_valida_ampliada.rst
     exercici_01_66_analisi_caracter.rst
+    exercici_01_67_parentitza.rst
+    exercici_01_68_nomes_lletres.rst
+    exercici_01_69_mostra_interval_string.rst
+    exercici_01_70_cadena_continua.rst
