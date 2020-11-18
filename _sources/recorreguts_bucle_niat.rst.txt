@@ -15,10 +15,10 @@ recorregut passava pels diferents valors dins d'una línia.
         rankdir="LR";
             infneg [label="-∞", shape=none] ;
             infpos[label="+∞", shape=none];
-            inici, final [ shape=none];
+            inici, fi [ shape=none];
             infneg -> inici;
-            inici -> final;
-            final  -> infpos;
+            inici -> fi;
+            fi  -> infpos;
     }
 
 Aquest tipus de problemes els resolem amb una estructura com la següent:
