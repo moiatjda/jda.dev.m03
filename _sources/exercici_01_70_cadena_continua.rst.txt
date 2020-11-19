@@ -1,5 +1,5 @@
 #################################################
-|exerciseicon___| Exercici 01_70. Cadena continua
+|exerciseicon__T| Exercici 01_70. Cadena continua
 #################################################
 
 .. rubric:: Context
@@ -9,6 +9,8 @@
 * Continguts relacionats: :doc:`strings_recorreguts`
 
 * Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
 
 .. rubric:: Enunciat
 
@@ -22,11 +24,12 @@ En cas que se li demani menys d'un caràcter, simplement no mostrarà res.
 Considera la següent simulació:
 
 .. code-block:: console
+    :emphasize-lines: 2, 4, 6
 
     $ java CadenaContinua
     Text?
     kuruma
-    nombre?
+    Nombre?
     10
     kurumakuru
 

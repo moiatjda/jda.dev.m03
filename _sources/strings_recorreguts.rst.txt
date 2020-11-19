@@ -130,4 +130,4 @@ Ara sí, apa, a practicar!
 
 |exerciseicon__T| :doc:`exercici_01_69_mostra_interval_string`
 
-|exerciseicon___| :doc:`exercici_01_70_cadena_continua`
+|exerciseicon__T| :doc:`exercici_01_70_cadena_continua`

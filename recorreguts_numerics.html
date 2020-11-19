@@ -202,19 +202,19 @@
 <em>decreixent</em>.</p>
 <div class="section" id="recorreguts-creixents">
 <h2>Recorreguts creixents<a class="headerlink" href="#recorreguts-creixents" title="Link permanent a aquest títol">¶</a></h2>
-<p>Els recorreguts creixents es caracteritzen perquè <code class="docutils literal notranslate"><span class="pre">inici</span> <span class="pre">&lt;=</span> <span class="pre">fi</span></code></p>
-<div align="center" class="align-center"><div class="graphviz"><img src="_images/graphviz-4e80cf08e5ea06f35330a1fe3169acfaf10fc25e.png" alt="digraph {
+<p>Els recorreguts creixents es caracteritzen perquè <code class="docutils literal notranslate"><span class="pre">inici</span> <span class="pre">&lt;=</span> <span class="pre">final</span></code></p>
+<div align="center" class="align-center"><div class="graphviz"><img src="_images/graphviz-b3a6db62029670e64276ec47987bad1fb08661d4.png" alt="digraph {
     rankdir=&quot;LR&quot;;
         infneg [label=&quot;-∞&quot;, shape=none] ;
         infpos[label=&quot;+∞&quot;, shape=none];
-        inici, fi [ shape=none];
+        inici, final [ shape=none];
         infneg -&gt; inici;
-        inici -&gt; fi;
-        fi  -&gt; infpos;
+        inici -&gt; final;
+        final  -&gt; infpos;
 }" class="graphviz" /></div>
 </div>
 <p>El bucle sol tenir la següent forma:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">variable</span><span class="o">=</span><span class="n">inici</span><span class="p">;</span> <span class="n">variable</span> <span class="o">&lt;=</span> <span class="n">fi</span><span class="p">;</span> <span class="n">variable</span> <span class="o">=</span> <span class="n">variable</span> <span class="o">+</span> <span class="n">increment</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">variable</span><span class="o">=</span><span class="n">inici</span><span class="p">;</span> <span class="n">variable</span> <span class="o">&lt;=</span> <span class="kd">final</span><span class="p">;</span> <span class="n">variable</span> <span class="o">=</span> <span class="n">variable</span> <span class="o">+</span> <span class="n">increment</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">processaVariable</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
@@ -231,36 +231,36 @@ les que ofereix Java:</p>
 </div>
 <p>Així, una forma molt típica d’expressar un recorregut creixent amb
 increment d’un en un és:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">inici</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">fi</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">inici</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="kd">final</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">processaVariable</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Quan <code class="docutils literal notranslate"><span class="pre">inici</span> <span class="pre">&gt;</span> <span class="pre">fi</span></code> no entra mai a executar les instruccions del bloc.
+<p>Quan <code class="docutils literal notranslate"><span class="pre">inici</span> <span class="pre">&gt;</span> <span class="pre">final</span></code> no entra mai a executar les instruccions del bloc.
 Al cap i a la fi, el <code class="docutils literal notranslate"><span class="pre">for</span></code> és un bucle <code class="docutils literal notranslate"><span class="pre">while</span></code> compacte, així que
 al primer intent ja no es compliria la condició per entrar-hi!</p>
 </div>
 <div class="section" id="recorreguts-decreixents">
 <h2>Recorreguts decreixents<a class="headerlink" href="#recorreguts-decreixents" title="Link permanent a aquest títol">¶</a></h2>
-<p>Els recorreguts decreixents es caracteritzen perquè <code class="docutils literal notranslate"><span class="pre">fi</span> <span class="pre">&lt;=</span> <span class="pre">inici</span></code></p>
-<div align="center" class="align-center"><div class="graphviz"><img src="_images/graphviz-d8c001419ed338c19d5457eb80cab24cb83f3a86.png" alt="digraph {
+<p>Els recorreguts decreixents es caracteritzen perquè <code class="docutils literal notranslate"><span class="pre">final</span> <span class="pre">&lt;=</span> <span class="pre">inici</span></code></p>
+<div align="center" class="align-center"><div class="graphviz"><img src="_images/graphviz-e703281d9bfb307d52685ed022ed2924419eca32.png" alt="digraph {
     rankdir=&quot;RL&quot;;
         infneg [label=&quot;-∞&quot;, shape=none] ;
         infpos[label=&quot;+∞&quot;, shape=none];
-        inici, fi [ shape=none];
+        inici, final [ shape=none];
         infpos -&gt; inici;
-        inici -&gt; fi;
-        fi  -&gt; infneg;
+        inici -&gt; final;
+        final  -&gt; infneg;
 }" class="graphviz" /></div>
 </div>
 <p>El bucle sol tenir la següent forma:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">inici</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">fi</span><span class="p">;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="n">increment</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">inici</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="kd">final</span><span class="p">;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="n">increment</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">processai</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>O si directament el valor de l’increment està expressat en negatiu</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">inici</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">fi</span><span class="p">;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">decrement</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">inici</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="kd">final</span><span class="p">;</span> <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">decrement</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">processai</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
@@ -273,7 +273,7 @@ al primer intent ja no es compliria la condició per entrar-hi!</p>
 </pre></div>
 </div>
 <p>Així, una forma molt típica d’expressar un recorregut decreixent és:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">inici</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="n">fi</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">inici</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="kd">final</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">processaVariable</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>

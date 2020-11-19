@@ -184,14 +184,14 @@
 de problemes una mica més complex.</p>
 <p>Fins ara, hem fet un recorregut <em>linial</em>, en el sentit que la variable de
 recorregut passava pels diferents valors dins d’una línia.</p>
-<div align="center" class="align-center"><div class="graphviz"><img src="_images/graphviz-80b546dd6828acb31f06efa647312c107b3126be.png" alt="digraph {
+<div align="center" class="align-center"><div class="graphviz"><img src="_images/graphviz-5eca337810ad0414d73ebc52a793e31dcae79ec9.png" alt="digraph {
     rankdir=&quot;LR&quot;;
         infneg [label=&quot;-∞&quot;, shape=none] ;
         infpos[label=&quot;+∞&quot;, shape=none];
-        inici, fi [ shape=none];
+        inici, final [ shape=none];
         infneg -&gt; inici;
-        inici -&gt; fi;
-        fi  -&gt; infpos;
+        inici -&gt; final;
+        final  -&gt; infpos;
 }" class="graphviz" /></div>
 </div>
 <p>Aquest tipus de problemes els resolem amb una estructura com la següent:</p>

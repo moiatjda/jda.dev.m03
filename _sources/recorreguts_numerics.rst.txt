@@ -31,7 +31,7 @@ Ens podem imaginar dues opcions: quan el recorregut és *creixent* i quan és
 Recorreguts creixents
 =====================
 
-Els recorreguts creixents es caracteritzen perquè ``inici <= fi`` 
+Els recorreguts creixents es caracteritzen perquè ``inici <= final`` 
 
 .. graphviz::
     :align: center
@@ -40,17 +40,17 @@ Els recorreguts creixents es caracteritzen perquè ``inici <= fi``
         rankdir="LR";
             infneg [label="-∞", shape=none] ;
             infpos[label="+∞", shape=none];
-            inici, fi [ shape=none];
+            inici, final [ shape=none];
             infneg -> inici;
-            inici -> fi;
-            fi  -> infpos;
+            inici -> final;
+            final  -> infpos;
     }
 
 El bucle sol tenir la següent forma:
 
 .. code-block:: java
 
-    for (int variable=inici; variable <= fi; variable = variable + increment) {
+    for (int variable=inici; variable <= final; variable = variable + increment) {
         processaVariable;
     }
 
@@ -72,18 +72,18 @@ increment d'un en un és:
 
 .. code-block:: java
 
-    for (int i = inici; i <= fi; i++) {
+    for (int i = inici; i <= final; i++) {
         processaVariable;
     }
 
-Quan ``inici > fi`` no entra mai a executar les instruccions del bloc.
+Quan ``inici > final`` no entra mai a executar les instruccions del bloc.
 Al cap i a la fi, el ``for`` és un bucle ``while`` compacte, així que
 al primer intent ja no es compliria la condició per entrar-hi!
 
 Recorreguts decreixents
 =======================
 
-Els recorreguts decreixents es caracteritzen perquè ``fi <= inici`` 
+Els recorreguts decreixents es caracteritzen perquè ``final <= inici`` 
 
 .. graphviz::
     :align: center
@@ -92,17 +92,17 @@ Els recorreguts decreixents es caracteritzen perquè ``fi <= inici``
         rankdir="RL";
             infneg [label="-∞", shape=none] ;
             infpos[label="+∞", shape=none];
-            inici, fi [ shape=none];
+            inici, final [ shape=none];
             infpos -> inici;
-            inici -> fi;
-            fi  -> infneg;
+            inici -> final;
+            final  -> infneg;
     }
 
 El bucle sol tenir la següent forma:
 
 .. code-block:: java
 
-    for (int i=inici; i >= fi; i = i - increment) {
+    for (int i=inici; i >= final; i = i - increment) {
         processai;
     }
 
@@ -110,7 +110,7 @@ O si directament el valor de l'increment està expressat en negatiu
 
 .. code-block:: java
 
-    for (int i=inici; i >= fi; i = i + decrement) {
+    for (int i=inici; i >= final; i = i + decrement) {
         processai;
     }
 
@@ -128,7 +128,7 @@ Així, una forma molt típica d'expressar un recorregut decreixent és:
 
 .. code-block:: java
 
-    for (int i = inici; i >= fi; i--) {
+    for (int i = inici; i >= final; i--) {
         processaVariable;
     }
 
