@@ -13,8 +13,8 @@
 .. rubric:: Enunciat
 
 Desenvolupa una nova versió del programa del Lloro que, en aquest cas
-només repeteixi les paraules que comencen per una vocal en minúscules i
-s'aturi quan rebi una cadena en blanc.
+només repeteixi les paraules que finalitzin en lletra,
+s'aturi quan rebi una cadena en blanc o buida.
 
 Una simulació d'execució:
 
@@ -26,7 +26,10 @@ Una simulació d'execució:
     amic
     El lloro diu: amic
     El lloro demana paraula que finalitzi amb lletra
-    amic!
+    color
+    El lloro diu: amic
+    El lloro demana paraula que finalitzi amb lletra
+    color!
     El lloro demana paraula que finalitzi amb lletra
 
     Adéu

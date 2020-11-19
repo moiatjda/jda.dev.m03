@@ -22,14 +22,14 @@ Segueix les instruccions:
 
 #. Obre una consola i col·loca't a la carpeta de treball (``~/introprg/``)
 
-#. Crea una nova carpeta amb el nom ``00_02_hola_git/`` on deixarem
+#. Crea una nova carpeta amb el nom ``00_02_holagit/`` on deixarem
    l'exercici, i entra-hi:
 
    .. code-block:: console
 
         $ cd ~/introprg
-        $ mkdir 00_02_hola_git
-        $ cd 00_02_hola_git
+        $ mkdir 00_02_holagit
+        $ cd 00_02_holagit
 
    **Nota**: Normalment les carpetes et seran creades automàticament. En
    aquest cas, no caldrà que facis la comanda ``mkdir``
@@ -73,7 +73,7 @@ Segueix les instruccions:
    .. code-block:: console
 
         $ git add primer_exercici.rst
-        $ git commit -am "Completat l'exercici hola_git"
+        $ git commit -am "Completat l'exercici hola git"
 
 #. Un cop estigui tal i com vols la teva resposta, puja els canvis a GitHub
 

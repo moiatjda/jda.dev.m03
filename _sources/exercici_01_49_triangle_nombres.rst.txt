@@ -1,5 +1,5 @@
 ########################################################
-|exerciseicon___| Exercici 01_49. Un triangle de nombres
+|exerciseicon__T| Exercici 01_49. Un triangle de nombres
 ########################################################
 
 .. rubric:: Context
@@ -9,6 +9,8 @@
 * Continguts relacionats: :doc:`recorreguts_bucle_niat`
 
 * Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
 
 .. rubric:: Enunciat
 

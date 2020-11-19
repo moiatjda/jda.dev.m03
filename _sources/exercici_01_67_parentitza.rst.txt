@@ -14,26 +14,15 @@
 
 .. rubric:: Enunciat
 
-.. rubric:: ConText?
-
-* Carpeta de lliurament: ``01_67_parentitza/``
-
-* Continguts relacionats: :doc:`strings_recorreguts`
-
-* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
-
-.. rubric:: Enunciat
-
 Desenvolupa un programa que demani un text i mostri cada lletra entre
 parèntesis
 
 Considera la següent simulació:
 
-.. code-block:: console
+.. code-block:: none
     :emphasize-lines: 2, 4
 
     $ java Parentitza
     Text?
     I have an apple.
     (I) (h)(a)(v)(e) (a)(n) (a)(p)(p)(l)(e).
-
