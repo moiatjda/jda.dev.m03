@@ -92,9 +92,9 @@ proves d'aquest curs.
 
 |exerciseicon__T| :doc:`exercici_01_59_inicial_vocal_minuscula`
 
-|exerciseicon___| :doc:`exercici_01_60_acaba_vocal_minuscula`
+|exerciseicon__T| :doc:`exercici_01_60_acaba_vocal_minuscula`
 
-|exerciseicon___| :doc:`exercici_01_61_acaba_lletra`
+|exerciseicon__T| :doc:`exercici_01_61_acaba_lletra`
 
 |exerciseicon__T| :doc:`exercici_01_62_segona_igual_penultima`
 

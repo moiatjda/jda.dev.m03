@@ -1,5 +1,5 @@
 ###########################################################
-|exerciseicon___| Exercici 01_60. Acaba amb vocal minúscula
+|exerciseicon__T| Exercici 01_60. Acaba amb vocal minúscula
 ###########################################################
 
 .. rubric:: Context
@@ -9,6 +9,8 @@
 * Continguts relacionats: :doc:`strings_posicions`
 
 * Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
 
 .. rubric:: Enunciat
 
