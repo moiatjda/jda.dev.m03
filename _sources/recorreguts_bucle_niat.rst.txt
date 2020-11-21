@@ -128,7 +128,7 @@ Aquí tens uns quants exercicis per practicar aquest tipus de problemes.
 
 |exerciseicon__T| :doc:`exercici_01_49_triangle_nombres`
 
-|exerciseicon___| :doc:`exercici_01_50_triangle_invertit`
+|exerciseicon__T| :doc:`exercici_01_50_triangle_invertit`
 
 |exerciseicon__T| :doc:`exercici_01_51_triangles`
 

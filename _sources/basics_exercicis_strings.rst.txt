@@ -2,10 +2,11 @@
 Strings
 #######
 
-La llista d'exercicis sobre Strings són:
+La llista d'exercicis sobre :doc:`strings` és:
 
 .. toctree::
     :titlesonly:
+    :maxdepth: 1
 
     exercici_01_56_tipus_primitius.rst
     exercici_01_57_utilitats_strings.rst
@@ -22,3 +23,4 @@ La llista d'exercicis sobre Strings són:
     exercici_01_68_nomes_lletres.rst
     exercici_01_69_mostra_interval_string.rst
     exercici_01_70_cadena_continua.rst
+    exercici_01_71_es_enter.rst

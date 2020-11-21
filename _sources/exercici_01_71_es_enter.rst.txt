@@ -1,0 +1,52 @@
+##########################################
+|exerciseicon__T| Exercici 01_71. És enter
+##########################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_71_es_enter/``
+
+* Continguts relacionats: :doc:`strings_recorreguts`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Desenvolupa un programa que vagi demanant texts fins rebre la cadena
+buida.
+
+Per cada text no buit que rebi, indicarà si correspon o no a un nombre
+enter escrit amb dígits.
+
+Cal tenir en comptes que:
+
+* cal ignorar espais extra a l'inici i al final del text
+
+* cal acceptar que el nombre comenci per ``+`` o per ``-``
+
+Considera les següents simulacions:
+
+.. code-block:: console
+    :emphasize-lines: 2, 4, 6, 8, 10, 12, 14
+
+    $ java EsEnter
+    Introdueix texts (enter sol per finalitzar)
+    123
+    És enter
+               321
+    És enter
+    -4
+    És enter
+    +5
+    És enter
+    cinc
+    No és enter
+
+    Adéu
+
+
+**Pista**: Considera la utilitat `strip()
+<https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#strip()>`_
+

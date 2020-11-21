@@ -90,7 +90,7 @@ proves d'aquest curs.
 
 |exerciseicon___| :doc:`exercici_01_58_manipulant_strings`
 
-|exerciseicon___| :doc:`exercici_01_59_inicial_vocal_minuscula`
+|exerciseicon__T| :doc:`exercici_01_59_inicial_vocal_minuscula`
 
 |exerciseicon___| :doc:`exercici_01_60_acaba_vocal_minuscula`
 

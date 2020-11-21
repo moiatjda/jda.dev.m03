@@ -20,6 +20,8 @@ En cas que en faltin, el programa tornarà a mostrar el text a partir del primer
 aconseguit tots els caràcters demanats.
 
 En cas que se li demani menys d'un caràcter, simplement no mostrarà res.
+En cas que el text introduït sigui buit, mostrarà el missatge ``"error"``
+finalitzarà l'execució sense demanar la longitud de la cadena a generar.
 
 Considera la següent simulació:
 

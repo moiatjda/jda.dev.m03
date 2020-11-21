@@ -2,8 +2,8 @@
 Instruccions seqüencials
 ########################
 
-La llista d'exercicis sobre instruccions seqüencials d'aquest tema
-és:
+La llista d'exercicis sobre ':doc:`instruccions seqüencials
+<instruccions>` és:
 
 .. toctree::
     :titlesonly:
