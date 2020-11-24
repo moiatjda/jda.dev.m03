@@ -1,0 +1,68 @@
+#################################################################
+|exerciseicon_ST| Exercici 01_81. Texts capicua (versió avançada)
+#################################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_81_text_capicua_rev/``
+
+* Continguts relacionats: :doc:`basics_conclusions`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [☆] Exercici amb :ref:`dificultat addicional<descripcio_exercicis_dificils>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Aquest exercici correspon a una versió més avançada de
+la versió bàsica de :doc:`text capicua <exercici_01_80_text_capicua>`
+
+Rellegeix amb atenció l'enunciat per veure els canvis.
+
+Desenvolupa un programa que demani un text i
+indiqui si el text és o no capicua.
+
+Es considera que un text és capicua si llegint les seves lletres
+d'esquerra a dreta són iguals que llegint-les de dreta a esquerra.
+
+Els caràcters que no corresponguin a lletres o dígits, seran ignorats.
+
+Considera la següent simulació
+
+.. code-block:: console
+    :emphasize-lines: 2, 4, 7, 9
+
+    $ java Capicua
+    Text?
+    A dit, sorprès, a l'obert avenc nevat, rebo la serp rostida.
+    És capicua
+
+    $ java Capicua
+    Text?
+    Aquesta és una frase palindròfoba
+    No és capicua
+
+*Pista*: aquest exercici és molt fàcil quan no hem de distingir lletres i
+dígits de la resta.
+
+Et proposo que comencis resolent la versió
+bàsica (passaràs algunes proves!) i que continuïs llegint aquesta pista
+*només* si no saps com fer la resta.
+
+Per la versió bàsica, considera aquestes dues propostes:
+
+* crea un string invers i compara els dos Strings 
+  
+  Potser t'ajudarà recordar :doc:`exercici_01_79_text_reves`
+
+* recorre l'entrada per l'inici i pel final a l'hora, i ves comparant
+  els caràcters dels extrems.
+
+Amb la restricció d'ignorar els caràcters que no són lletres ni dígits, la
+complexitat augmenta una mica. 
+
+Hi ha diferents maneres de resoldre aquest problema complet. Potser la més
+fàcil seria crear un String amb només lletres i dígits i aplicar la
+tècnica bàsica al resultat.

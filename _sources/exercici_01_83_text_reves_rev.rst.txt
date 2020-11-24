@@ -1,0 +1,52 @@
+#############################################################
+|exerciseicon_ST| Exercici 01_83. El text del revés (avançat)
+#############################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_83_text_reves_rev/``
+
+* Continguts relacionats: :doc:`basics_conclusions`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [☆] Exercici amb :ref:`dificultat addicional<descripcio_exercicis_dificils>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Aquest exercici és una versió més avançada d'un anterior (:doc:`text del
+revés <exercici_01_79_text_reves>`)
+
+Llegeix amb atenció per descobrir els canvis.
+
+Desenvolupa un programa que demani un text i
+el torni a mostrar però invertint l'ordre de les lletres i dígits. La
+resta de caràcters es mantindran en l'ordre original.
+
+Considera la següent simulació
+
+.. code-block:: console
+    :emphasize-lines: 2, 4
+
+    $ java TextReves
+    Text?
+    git branch -m <old-name> <new-name>
+    ema nwenem -a <ndl-omhc> <nar-btig>
+
+**Pista**: Com sempre, aquesta pista només si no saps per on atacar el
+problema.
+
+Et proposo dues maneres per orientar el problema:
+
+* crea un String amb només les lletres i dígits. Dóna-li la volta i ves
+  mostrant cada caràcter de la cadena original, tot agafant un caràcter de
+  la versió reversa quan trobes a l'original una lletra o dígit.
+
+* recorre l'entrada pels dos extrems de manera que la variable de
+  recorregut "principal" vagi escrivint els caràcters no lletres ni
+  dígits. Quan es trobi una lletra o dígit, recorrerà l'entrada des de la
+  darrera posició no utilitzada fins la primera lletra o dígit que trobi.
+  Pots assumir que per cada lletra o dígit sempre hi haurà una altra a
+  "l'altra banda" doncs com a mínim sempre tindrà ella mateixa.

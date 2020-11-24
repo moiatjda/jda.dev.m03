@@ -1,0 +1,322 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ca" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Exercici 01_81. Texts capicua (versió avançada) &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Exercici 01_82. Codifica bàsic" href="exercici_01_82_codifica.html" />
+    <link rel="prev" title="Exercici 01_80. Texts capicua (versió bàsica)" href="exercici_01_80_text_capicua.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació amb Java
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-21
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basics_intro.html">Introducció</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruccions.html">Instruccions seqüencials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html">Variables i tipus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressions.html">Operadors i expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="while.html">Bucles condicionals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recorreguts.html">Recorreguts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="control_bucles.html">Control de bucles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics_conclusions.html">Conclusions</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="basics_exercicis.html">Llista d’exercicis</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="basics_exercicis_sequencials.html">Instruccions seqüencials</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics_exercicis_condicionals.html">Instruccions condicionals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics_exercicis_while.html">Bucles condicionals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics_exercicis_for_numerics.html">Recorreguts numèrics</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics_exercicis_for_niats.html">Recorreguts niuats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics_exercicis_strings.html">Strings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="basics_exercicis_control.html">Control de bucles</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="basics_exercicis_generals.html">Exercicis generals</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="exercici_01_74_vocals_majuscules.html"> Exercici 01_74. Vocals en majúscules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exercici_01_75_comptavocals.html"> Exercici 01_75. Comptant vocals</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exercici_01_76_informe_text.html"> Exercici 01_76. Estadístiques d’un text</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exercici_01_77_inicials_majuscules.html"> Exercici 01_77. Inicials en majúscules (versió <em>naif</em>)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exercici_01_78_text_transformat.html"> Exercici 01_78. El text transformat</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exercici_01_79_text_reves.html"> Exercici 01_79. El text del revés (versió bàsica)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exercici_01_80_text_capicua.html"> Exercici 01_80. Texts capicua (versió bàsica)</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#"> Exercici 01_81. Texts capicua (versió avançada)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exercici_01_82_codifica.html"> Exercici 01_82. Codifica bàsic</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exercici_01_83_text_reves_rev.html"> Exercici 01_83. El text del revés (avançat)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="apendix.html">Apèndix</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació amb Java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="basics.html">Elements bàsics de la programació</a> &raquo;</li>
+        
+          <li><a href="basics_exercicis.html">Llista d’exercicis</a> &raquo;</li>
+        
+          <li><a href="basics_exercicis_generals.html">Exercicis generals</a> &raquo;</li>
+        
+      <li> Exercici 01_81. Texts capicua (versió avançada)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="exerciseicon-st-exercici-01-81-texts-capicua-versio-avancada">
+<h1><img alt="exerciseicon_ST" src="_images/exerciseicon_ST.png" /> Exercici 01_81. Texts capicua (versió avançada)<a class="headerlink" href="#exerciseicon-st-exercici-01-81-texts-capicua-versio-avancada" title="Link permanent a aquest títol">¶</a></h1>
+<p class="rubric">Context</p>
+<ul class="simple">
+<li><p>Carpeta de lliurament: <code class="docutils literal notranslate"><span class="pre">01_81_text_capicua_rev/</span></code></p></li>
+<li><p>Continguts relacionats: <a class="reference internal" href="basics_conclusions.html"><span class="doc">Conclusions</span></a></p></li>
+<li><p>Com lliurar-lo: <a class="reference internal" href="holagit.html#instruccions-git"><span class="std std-ref">instruccions</span></a></p></li>
+<li><p>[☆] Exercici amb <a class="reference internal" href="sobre_exercicis.html#descripcio-exercicis-dificils"><span class="std std-ref">dificultat addicional</span></a></p></li>
+<li><p>[✓] Exercici amb <a class="reference internal" href="sobre_exercicis.html#descripcio-exercicis-autoavaluacio"><span class="std std-ref">autoavaluació</span></a></p></li>
+</ul>
+<p class="rubric">Enunciat</p>
+<p>Aquest exercici correspon a una versió més avançada de
+la versió bàsica de <a class="reference internal" href="exercici_01_80_text_capicua.html"><span class="doc">text capicua</span></a></p>
+<p>Rellegeix amb atenció l’enunciat per veure els canvis.</p>
+<p>Desenvolupa un programa que demani un text i
+indiqui si el text és o no capicua.</p>
+<p>Es considera que un text és capicua si llegint les seves lletres
+d’esquerra a dreta són iguals que llegint-les de dreta a esquerra.</p>
+<p>Els caràcters que no corresponguin a lletres o dígits, seran ignorats.</p>
+<p>Considera la següent simulació</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java Capicua
+<span class="hll"><span class="go">Text?</span>
+</span><span class="go">A dit, sorprès, a l&#39;obert avenc nevat, rebo la serp rostida.</span>
+<span class="hll"><span class="go">És capicua</span>
+</span>
+<span class="gp">$</span> java Capicua
+<span class="hll"><span class="go">Text?</span>
+</span><span class="go">Aquesta és una frase palindròfoba</span>
+<span class="hll"><span class="go">No és capicua</span>
+</span></pre></div>
+</div>
+<p><em>Pista</em>: aquest exercici és molt fàcil quan no hem de distingir lletres i
+dígits de la resta.</p>
+<p>Et proposo que comencis resolent la versió
+bàsica (passaràs algunes proves!) i que continuïs llegint aquesta pista
+<em>només</em> si no saps com fer la resta.</p>
+<p>Per la versió bàsica, considera aquestes dues propostes:</p>
+<ul>
+<li><p>crea un string invers i compara els dos Strings</p>
+<p>Potser t’ajudarà recordar <a class="reference internal" href="exercici_01_79_text_reves.html"><span class="doc"> Exercici 01_79. El text del revés (versió bàsica)</span></a></p>
+</li>
+<li><p>recorre l’entrada per l’inici i pel final a l’hora, i ves comparant
+els caràcters dels extrems.</p></li>
+</ul>
+<p>Amb la restricció d’ignorar els caràcters que no són lletres ni dígits, la
+complexitat augmenta una mica.</p>
+<p>Hi ha diferents maneres de resoldre aquest problema complet. Potser la més
+fàcil seria crear un String amb només lletres i dígits i aplicar la
+tècnica bàsica al resultat.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="exercici_01_82_codifica.html" class="btn btn-neutral float-right" title="Exercici 01_82. Codifica bàsic" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="exercici_01_80_text_capicua.html" class="btn btn-neutral float-left" title="Exercici 01_80. Texts capicua (versió bàsica)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2021 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

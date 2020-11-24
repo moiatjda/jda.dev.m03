@@ -1,0 +1,87 @@
+###########
+Conclusions
+###########
+
+Hem arribat al final dels elements bàsics de la programació.
+
+Hem carregat el nostre arsenal d'eines per programar amb els elements
+bàsics:
+
+* dades, tipus, expressions… Entre els tipus, hem tractat especialment els
+  Stirngs.
+
+* assignacions i entrada/sortida bàsica
+
+* condicionals
+
+* bucles incloent especialment els recorreguts numèrics i la seva
+  aplicació en els Strings.
+
+* documentació: capçaleres, bons noms, bona indentació…
+
+Tot plegat, el que hem aprés està englobat en el que es coneix com a
+*programació estructurada*
+
+Hem fet molts exercicis. Una gran quantitat d'ells els podríem considerar
+com a *recorreguts*. Els recorreguts són tan importants que hem
+especialitzat un dels tipus de bucles (el ``for``) perquè només ens
+serveixi per recórrer, primer seqüències de nombres i després seqüències
+de caràcters (Strings).
+
+Els objectius dels recorreguts són variats. Alguns dels més típics han
+estat:
+
+* reduir la seqüència a un valor (ex. suma o es enter)
+
+* filtrar els elements de la seqüència (ex. només lletres)
+
+* transformar els elements de la seqüència (ex. lletres entre parèntesis)
+
+Pel camí, hem fet una primera ullada a l'enorme biblioteca del que, fins
+ara hem anomenat *utilitats* que ens ofereix el Java, com ara aquelles que
+ens permeten manipular els Strings.
+
+Ara tenim prou coneixements com per programar teòricament qualsevol cosa!
+
+Encara ens queden, però, moltes coses interessants per aprendre que faran
+els nostres programes més llegibles, reusadors i reusables. El més immediat
+que veurem seran els *mòduls* 
+
+Mentre esperem el següent capítol, et deixo uns quants exercicis per posar
+en pràctica tot el que has aprés.
+
+Tingues present que alguns exercicis són clàssics i trobaràs la solució
+fàcilment per internet. La meva recomanació, per descomptat, és que els
+facis amb els recursos que tens. Recorda quin és el teu objectiu (saber
+programar) i planteja't quina habilitat estàs desenvolupant si copies la
+solució d'un altre.
+
+Dit això, un cop tinguis la teva solució funcionant, per descomptat també,
+corre a veure com ho han fet d'altres!
+
+**Atenció**! alguns et poden presentar reptes interessants. Les ☆ no estan
+posades del tot aleatòriament aquí. Demana ajuda si algun d'ells et
+descol·loca i, sobretot, gaudeix-los, estimada nova programadora/estimat
+nou programador!
+
+
+|exerciseicon__T| :doc:`exercici_01_74_vocals_majuscules`
+
+|exerciseicon__T| :doc:`exercici_01_75_comptavocals`
+
+|exerciseicon_ST| :doc:`exercici_01_76_informe_text`
+
+|exerciseicon_ST| :doc:`exercici_01_77_inicials_majuscules`
+
+|exerciseicon_ST| :doc:`exercici_01_78_text_transformat`
+
+|exerciseicon___| :doc:`exercici_01_79_text_reves`
+
+|exerciseicon___| :doc:`exercici_01_80_text_capicua`
+
+|exerciseicon_ST| :doc:`exercici_01_81_text_capicua_rev`
+
+|exerciseicon__T| :doc:`exercici_01_82_codifica`
+
+|exerciseicon_ST| :doc:`exercici_01_83_text_reves_rev`
+

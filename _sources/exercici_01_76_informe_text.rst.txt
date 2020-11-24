@@ -1,0 +1,72 @@
+#########################################################
+|exerciseicon_ST| Exercici 01_76. Estadístiques d'un text
+#########################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_76_informe_text/``
+
+* Continguts relacionats: :doc:`basics_conclusions`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [☆] Exercici amb :ref:`dificultat addicional<descripcio_exercicis_dificils>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Desenvolupa un programa que demani un text i 
+mostri un petit informe resum d'estadístiques del text.
+
+L'informe indicarà quants caràcters, lletres i vocals catalanes
+(majúscules i minúscules), dígits i altres caràcters conté. A banda,
+indicarà, per cada categoria, el percentatge respecte el total dels
+caràcters.
+
+Considera les següents simulacions:
+
+.. code-block:: console
+
+    $ java InformeText
+    Text?
+    Amiga, que són 4 pipes. Ni 1 més, ni 1 menys!
+    Informe
+    =======
+    lletres en majúscules: 2 (4,44%)
+    lletres en minúscules: 26 (57,78%)
+    total lletres: 28 (62,22%)
+    vocals en majúscules: 1 (2,22%)
+    vocals en minúscules: 11 (24,44%)
+    total vocals: 12 (26,67%)
+    digits: 3 (6,67%)
+    altres caràcters: 14 (31,11%)
+    total caràcters: 45)),
+
+
+
+**Pista**: Intenta fer el programa sense llegir aquesta pista. Només
+fes-la servir si no te'n surts.
+
+Per escriure els estadístics del nombre de lletres en
+minúscules, podries fer servir la següent instrucció:
+
+.. code-block:: java
+
+    System.out.printf("lletres en majúscules: %d (%.2f%%)%n", lletresMajuscules, 100.0 * lletresMajuscules / totalCaracters);
+
+Fixa't que fa servir ``System.out.printf()``. El pots considerar com una
+*comoditat* que ens permet utilitzar la utilitat ``String.format()``
+directament per escriure-la per sortida estàndard.
+
+També observaràs que apareix ``%.2f``. És la manera que té
+``String.format()`` d'indicar el nombre de decimals que vol mostrar.
+
+Una altra peculiaritat és el ``%%``. Amb aquesta combinació
+``String.format()`` ens permet representar el caràcter ``%`` que altrament
+seria considerat un paràmetre a substituir!
+
+Recorda que amb ``%n`` estem fent un salt de línia totes les plataformes.
+
+Finalment, fixa't que multipliquem primer per ``100.0``. Això permetrà que
+la divisió no es consideri entera.

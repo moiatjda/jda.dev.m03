@@ -1,0 +1,47 @@
+#####################################################
+|exerciseicon_ST| Exercici 01_78. El text transformat
+#####################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_78_text_transformat/``
+
+* Continguts relacionats: :doc:`basics_conclusions`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [☆] Exercici amb :ref:`dificultat addicional<descripcio_exercicis_dificils>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Desenvolupa un programa que demani un text i
+mostri una versió transformada segons les següents regles:
+
+* les vocals (les catalanes) apareixeran en minúscules
+
+* les lletres no vocals apareixeran en majúscules
+
+* els nombres (atenció, no els dígits!) apareixeran entre parèntesis ``()``
+
+* la resta de caràcters, excepte els blancs, desapareixen a la versió
+  transformada
+
+Considera la següent simulació
+
+.. code-block:: console
+    :emphasize-lines: 2, 4
+
+    $ java TransformaText
+    Text?
+    Avui faig 19 anys!
+    aVui FaiG (19) aNYS
+
+**Pista**: Compte! Aquesta pista només si no saps per on atacar el
+problema, eh?
+
+La dificultat d'aquest problema rau en la parentització dels números. Una
+manera de fer-ho és amb un acumulador de tipus String que inicialment
+estigui buit i que vagi acumulant els dígits fins que vingui quelcom que
+no sigui dígit.

@@ -1,0 +1,32 @@
+#################################################
+|exerciseicon__T| Exercici 01_75. Comptant vocals
+#################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_75_comptavocals/``
+
+* Continguts relacionats: :doc:`basics_conclusions`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Desenvolupa un programa que demani un text i 
+compti quantes vocals conté.
+
+En aquesta ocasió, el programa comptarà com a vocals, a banda de les
+habituals ``a``, ``e``, ``i``, ``o`` i ``u``., també les seves variants al
+català: ``à``, ``é``, ``è``, ``í``, ``ï``, ``ó``, ``ò``, ``ú`` i ``ü``
+
+
+Considera la següent simulació:
+
+.. code-block:: console
+
+    $ java ComptaVocals
+    Text?
+    En Pinxo li va dir a en Panxo "vols que et punxi amb un punxó?"
+    20

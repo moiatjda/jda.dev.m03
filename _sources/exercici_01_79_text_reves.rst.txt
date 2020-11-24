@@ -1,0 +1,33 @@
+###################################################################
+|exerciseicon___| Exercici 01_79. El text del revés (versió bàsica)
+###################################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_79_text_reves/``
+
+* Continguts relacionats: :doc:`basics_conclusions`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+.. rubric:: Enunciat
+
+Desenvolupa un programa que demani un text i
+el torni a mostrar però invertint l'ordre dels caràcters que el composen.
+
+Considera la següent simulació
+
+.. code-block:: console
+    :emphasize-lines: 2, 4
+
+    $ java TextReves
+    Text?
+    git branch -m <old-name> <new-name>
+    >eman-wen< >eman-dlo< m- hcnarb tig
+
+**Pista**: Com sempre, aquesta pista només si no saps per on atacar el
+problema.
+
+Tot i que la majoria de les vegades fem els recorreguts de String de la
+posició 0 fins el darrer caràcter, també ho podríem fer des del darrer fins
+el 0.

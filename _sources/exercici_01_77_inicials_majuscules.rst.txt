@@ -1,0 +1,46 @@
+########################################################################
+|exerciseicon_ST| Exercici 01_77. Inicials en majúscules (versió *naif*)
+########################################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_77_inicials_majuscules/``
+
+* Continguts relacionats: :doc:`basics_conclusions`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [☆] Exercici amb :ref:`dificultat addicional<descripcio_exercicis_dificils>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Desenvolupa un programa que vagi demanant texts fins que rebi la cadena
+buida, i per cada entrada
+mostri el mateix text amb les inicials de cada paraula 
+en majúscules i la resta en minúscules.
+
+Una paraula és cada segment del text que només conté lletres que davant
+i darrere tenen quelcom que no sigui una lletra, o bé són la primera o
+darrera paraula del text.
+
+Considera la simulació:
+
+.. code-block:: console
+    :emphasize-lines: 2, 4
+
+    $ java MajusculitzaInicials
+    Text?
+    Je suis un homme de CRO-MAGNON
+    Je Suis Un Homme De Cro-Magnon
+
+**Pista**: Compte! Aquesta pista només si no saps per on atacar el
+problema, eh?
+
+la dificultat d'aquest exercici està principalment en saber si
+estem a la primera lletra d'una paraula. Una manera és disposar d'una
+variable que ens indiqui si la propera lletra que trobem ha de ser
+majúscules. Aquesta variable inicialment serà certa, deixarà de ser-ho un
+cop trobada la primera lletra i ho tornarà a ser quan trobem qualsevol no
+lletra.

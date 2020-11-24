@@ -1,0 +1,56 @@
+################################################
+|exerciseicon__T| Exercici 01_82. Codifica bàsic
+################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_82_codifica/``
+
+* Continguts relacionats: :doc:`basics_conclusions`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Cada lletra que trobem a un String té un codi, un nombre positiu.
+
+Podem accedir a aquest número a partir d'una lletra i també podem, a
+partir del número, obtenir la lletra que té associada. Considera la
+següent interacció:
+
+.. code-block:: console
+    :emphasize-lines: 2, 4, 6
+
+    jshell> char c = 'a'
+    c ==> 'a'
+
+    jshell> (int) c
+    $2 ==> 97
+
+    jshell> (char) ('a' + 1)
+    $9 ==> 'b'
+
+
+En aquesta ocasió, desenvoluparem un programa que demani un text i el
+mostri codificat segons les següents instruccions:
+
+* només codificarem les lletres entre la ``a`` i la ``z`` minúscules. La
+  resta d'elements que apareguin al text, es mantindran iguals.
+
+* la lletra ``z`` serà substituïda per la ``a``
+
+Considera la següent simulació:
+
+.. code-block:: console
+    :emphasize-lines: 2, 4
+
+    $ java CodificaBasic
+    Text?
+    Cada lletra que trobem a un string té un codi, un nombre positiu.
+    Cbeb mmfusb rvf uspcfn b vo tusjoh ué vo dpej, vo opncsf qptjujv.
+
+**Repte**: Si aquest exercici no et resulta difícil, aconsegueix fer-lo
+amb només un ``if`` (l'operador ternari també compta com a
+``if`` aquí, eh?)

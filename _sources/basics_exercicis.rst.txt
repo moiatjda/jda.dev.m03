@@ -15,3 +15,4 @@ Els exercicis d'aquest bloc els trobaràs agrupats en les següents seccions:
     basics_exercicis_for_niats.rst
     basics_exercicis_strings.rst
     basics_exercicis_control.rst
+    basics_exercicis_generals.rst

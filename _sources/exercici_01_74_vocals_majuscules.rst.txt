@@ -1,0 +1,42 @@
+######################################################
+|exerciseicon__T| Exercici 01_74. Vocals en majúscules
+######################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_74_vocals_majuscules/``
+
+* Continguts relacionats: :doc:`basics_conclusions`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Desenvolupa un programa que demani un text i
+mostri totes les lletres en minúscules excepte les vocals, que hauran
+d'estar en majúscules.
+
+Per simplicitat, considerarem només les vocals ``a``, ``e``, ``i``, ``o`` i ``u``.
+
+Un exemple d'execució seria:
+
+.. code-block:: console
+    :emphasize-lines: 2, 4
+
+    $ java VocalsMajuscules
+    Text?
+    Els 4 Genets de l'Apocalipsi!
+    Els 4 gEnEts dE l'ApOcAlIpsI!
+
+Nota: ja hem fet exercicis en els que havíem d'identificar si un caràcter
+corresponia o no a una vocal (per exemple :doc:`aquest
+<exercici_01_59_inicial_vocal_minuscula>`) 
+Probablement aquell cop ho vas resoldre amb un munt de condicionals.  Ara,
+però, ho podem fer molt millor. Una pista, ``"aeiou"`` és també un text i
+ja hem vist :doc:`aquí <control_break>` com comprovar si
+un caràcter es troba o no dins d'un text. Si et calen més pistes, fes-ho
+amb un munt de ``if`` per començar (total, només has de copiar i
+enganxar-les d'algun exercici previ) però més endavant demana més pistes.
+

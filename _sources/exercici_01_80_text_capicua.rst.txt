@@ -1,0 +1,43 @@
+###############################################################
+|exerciseicon___| Exercici 01_80. Texts capicua (versió bàsica)
+###############################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_80_text_capicua/``
+
+* Continguts relacionats: :doc:`basics_conclusions`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+.. rubric:: Enunciat
+
+Desenvolupa un programa que demani un text i
+indiqui si el text és o no capicua.
+
+Es considera que un text és capicua si llegint els seus caràcters
+d'esquerra a dreta són iguals que llegint-los de dreta a esquerra.
+
+Considera la següent simulació
+
+.. code-block:: console
+    :emphasize-lines: 2, 4, 7, 9
+
+    $ java Capicua
+    Text?
+    Anna
+    És capicua
+
+    $ java Capicua
+    Text?
+    Aquesta és una frase palindròfoba
+    No és capicua
+
+*Pista*: Et proposo que facis les següents dues implementacions
+
+* construeix un String recorrent l'original a l'inrevés i finalment
+  compara el resultat amb l'original. Si són iguals, són capicua
+
+* recorre la cadena original de dreta a esquerra i a l'hora d'esquerra a
+  dreta. Potser et resulta còmode pensar en dues variables de recorregut,
+  però amb una ja pots calcular l'altra.

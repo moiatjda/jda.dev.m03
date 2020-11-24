@@ -21,6 +21,5 @@ probablement et servirà per repassar.
     recorreguts.rst
     strings.rst
     control_bucles.rst
+    basics_conclusions.rst
     basics_exercicis.rst
-
-
