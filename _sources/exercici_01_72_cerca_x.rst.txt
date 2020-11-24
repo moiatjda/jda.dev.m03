@@ -1,0 +1,42 @@
+##########################################################
+|exerciseicon__T| Exercici 01_72. Conté el darrer caràcter
+##########################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_72_cerca_x/``
+
+* Continguts relacionats: :doc:`control_break`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Desenvolupa un programa que vagi demanant texts fins que un no contingui
+el darrer caràcter del text anterior. El primer text és acceptat sempre a
+menys que estigui buit.
+
+Considera els següents exemples d'execució:
+
+.. code-block:: console
+    :emphasize-lines: 2, 7, 10, 12
+
+    $ java ConteDarrer
+    Introdueix texts (enter sol per finalitzar)
+    Donam una A
+    Donam una B
+    Trobam una C
+    Pintam una D
+    Adéu
+
+    $ java ConteDarrer
+    Introdueix texts (enter sol per finalitzar)
+
+    Adéu
+
+Fixa't que la primera s'accepta sense problemes i marca que la següent ha
+de contenir una ``A``. La segona conté (més d')una ``a`` i finalitza amb
+``B``. La tercera té una ``b`` i demana una ``C``. La quarta no té ``C``
+i, per tant, finalitza amb "Adéu".

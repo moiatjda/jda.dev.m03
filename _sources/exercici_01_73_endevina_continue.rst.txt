@@ -1,0 +1,51 @@
+################################################################
+|exerciseicon__T| Exercici 01_73. Endevina el nombre (revisitat)
+################################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_73_endevina_continue/``
+
+* Continguts relacionats: :doc:`control_continue`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Recordes l`':doc:`exercici_01_35_endevina` ?
+
+En aquesta ocasió farem una nova versió que faci ús del ``break``.
+
+El programa realitzarà la mateixa funcionalitat que l'exercici original,
+més:
+
+* permetrà cancel·lar la partida en introduir una entrada buida (tal i com
+  demanava :doc:`exercici_01_36_endevina_cancel`
+
+* comprovarà que l'entrada siguin realment valors enters 
+  (com a :doc:`exercici_01_71_es_enter`)
+
+Una simulació podria ser:
+
+.. code-block:: console
+    :emphasize-lines: 2, 4, 5, 7, 8, 10, 11, 13, 14, 16
+
+    $ java Endevina
+    Nombre?
+    cinc
+    Només nombres
+    Nombre?
+    50
+    Massa gran
+    Nombre?
+    0
+    Fora de rang
+    Nombre?
+    101
+    Fora de rang
+    Nombre?
+
+    Cancel·lat!
+

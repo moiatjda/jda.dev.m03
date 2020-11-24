@@ -1,0 +1,162 @@
+#######################
+El programa s'ha acabat
+#######################
+
+Considera el següent programa:
+
+.. code-block:: java
+    :linenos:
+
+    /*
+     * Programa que demana un text i un nombre de cops, i mostra el text
+     * repetit tants cops com se li indiqui
+     */
+    public class RepeteixText {
+        public static void main(String[] args) {
+            System.out.println("Text?");
+            String text = Entrada.readLine();
+                System.out.println("Cops?");
+                int cops = Integer.parseInt(Entrada.readLine());
+            if (text.isEmpty()) {
+                System.out.println("Error: el text no pot ser buit");
+            } else if (cops < 1) {
+                System.out.println("Error: com a mínim un cop");
+            } else {
+                for (int i=0; i<cops; i++) {
+                    System.out.println(text);
+                }
+            }
+        }
+    }
+
+El programa és molt simple. Es limita a:
+
+* demanar els dos valors que necessita
+
+* comprovar que els valors introduïts siguin correctes per
+
+* mostrar un error si els valors no són adequats
+
+* repetir un text un nombre de cops, si els valors resulten adequats.
+
+El programa és correcte, però… El *però* està en que si ja saps que el
+text no es correcte, podries estalviar els usuaris d'introduir el nombre
+de cops, no creus?
+
+No és problema resoldre-ho, oi? Tenim ``if``!
+
+.. code-block:: java
+    :linenos:
+
+    /*
+     * Programa que demana un text i un nombre de cops, i mostra el text
+     * repetit tants cops com se li indiqui
+     */
+    public class RepeteixText {
+        public static void main(String[] args) {
+            System.out.println("Text?");
+            String text = Entrada.readLine();
+            if (text.isEmpty()) {
+                System.out.println("Error: el text no pot ser buit");
+            } else {
+                System.out.println("Cops?");
+                int cops = Integer.parseInt(Entrada.readLine());
+                if (cops < 1) {
+                    System.out.println("Error: com a mínim un cop");
+                } else {
+                    for (int i=0; i<cops; i++) {
+                        System.out.println(text);
+                    }
+                }
+            }
+        }
+    }
+
+Aquesta nova versió només pregunta el nombre de cops si el text és
+adequat.
+
+T'has fixat, però, quants nivells d'indentació han calgut per poder anar
+salvant els diferents casos d'error?
+
+És una llàstima doncs, un cop ja sabem que el text està buit, ja podríem
+finalitzar el programa, sense necessitat de fer res més.
+Hi haurà alguna manera d'indicar en Java que el programa s'acaba en un
+determinat moment?
+
+La resposta és **sí**. En qualsevol moment podem *retornar* de l'execució
+del nostre programa fent servir la paraula reservada ``return``.
+
+Mira com queda el programa:
+
+.. code-block:: java
+    :linenos:
+
+    /*
+     * Programa que demana un text i un nombre de cops, i mostra el text
+     * repetit tants cops com se li indiqui
+     */
+    public class RepeteixText {
+        public static void main(String[] args) {
+            System.out.println("Text?");
+            String text = Entrada.readLine();
+            if (text.isEmpty()) {
+                System.out.println("Error: el text no pot ser buit");
+                return;
+            }
+            System.out.println("Cops?");
+            int cops = Integer.parseInt(Entrada.readLine());
+            if (cops < 1) {
+                System.out.println("Error: com a mínim un cop");
+                return;
+            }
+            for (int i=0; i<cops; i++) {
+                System.out.println(text);
+            }
+        }
+    }
+
+Potser no hem guanyat molt en nombre de línies, però sí en complexitat
+d'indentació. Si l'estructura del nostre programa és més simple, hem
+guanyat en claredat.
+
+Fixa't com, si el programa executa la línia 13, sabem segur que el text no
+és buit. Altrament hauria finalitzat l'execució a la línia 11!
+
+Així, en arribar a la línia 19, sabem segur que tant el text com el nombre
+de cops tenen els valors esperats.
+
+Ho podem dibuixar de la següent manera:
+
+.. graphviz::
+    :align: center
+
+    digraph {
+        inici [shape="box", style=rounded];
+        instruccio1 [label="llegeix text", shape="rectangle", style=""];
+        condicio1 [label="text.isEmpty()", shape="diamond", style=""];
+        instruccio2 [label="llegeix quants cops", shape="rectangle", style=""]
+        condicio2 [label="cops < 1", shape="diamond", style=""];
+        instruccio3 [label="escriu text els cops indicats", shape="rectangle", style=""]
+        final[shape="box", style=rounded];
+        error1 [label="escriu error", shape="rectangle"];
+        error2 [label="escriu error", shape="rectangle"];
+
+        inici -> instruccio1
+        instruccio1 -> condicio1;
+        condicio1 -> error1 [label="cert"];
+        condicio1 -> instruccio2 [label="fals"];
+
+        instruccio2 -> condicio2;
+        condicio2 -> error2 [label="cert"];
+        condicio2 -> instruccio3 [label="fals"];
+
+        error1, error2 -> final [color="red"];
+        instruccio3 -> final;
+    }
+
+
+
+Podem imaginar-nos cada comprovació d'error com una mena de *vigilant* que
+no deixa passar les execucions que no compleixen les condicions
+requerides. En el cas de l'exemple, aquestes condicions són que el text no
+pot ser buit ni el nombre de cops inferior a 1.

@@ -1,0 +1,25 @@
+#################
+Control de bucles
+#################
+
+Veiem un aspecte més sobre els recorreguts del que encara no hem parlat.
+
+Ja sabem que els bucles ens permeten executar un mateix fragment
+de codi més d'una vegada.
+
+El bucle ``for`` ens resulta molt còmode per repetir un bloc de codi fent
+canviar el valor d'una variable (que anomenem *variable del recorregut*)
+entre els disponibles entre un valor inicial i un valor final. Per altra
+banda, el bucle ``while`` ens permet realitzar bucles de manera més
+lliure, basant-nos en una condició per mantenir-nos repetint.
+
+En aquesta secció no aprendrem noves maneres de fer bucles (que n'hi ha!)
+però sí descobrirem noves maneres de controlar els bucles que ja coneixem.
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    control_return.rst
+    control_break.rst
+    control_continue.rst

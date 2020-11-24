@@ -1,0 +1,113 @@
+#######################
+La iteració s'ha acabat
+#######################
+
+Ja hem vist com podem finalitzar el programa sencer quan vulguem
+(``return``). També sabem que podem finalitzar un bucle sense haver-nos
+d'esperar a consumir tots els valors del recorregut (pels ``for``) o bé a
+que es deixi de complir la condició (amb els ``while``)
+
+Imagina't ara que estàs dins d'una iteració d'un bucle i tens molt clar
+que aquesta no t'interessa però que encara vols *continuar* iterant.
+
+Per exemple, si volem fer una versió del *Lloro* que només repeteixi els
+texts que no comencin per *hola* ni per *adéu*, podríem fer:
+
+.. code-block:: java
+    :linenos:
+
+    // definim un valor que ens permeti entrar al bucle
+    String text = "qualsevol cosa no buida";
+
+    while (! text.isEmpty()) {
+        // obtenim una entrada
+        text = Entrada.readLine();
+
+        // definim les condicions que fan que una entrada ens interessi
+        if (! text.isEmpty() &&
+            ! text.startsWith("hola") &&
+            !text.startsWith("adéu")) {
+
+            // processem l'entrada quan ja sabem que ens interessa
+            System.out.println(text);
+        }
+    }
+    // resta del programa
+
+Si bé aquest codi és perfectament vàlid, considera la següent versió:
+
+.. code-block:: java
+    :linenos:
+
+    while (true) {
+        // obtenim una entrada
+        String text = Entrada.readLine();
+
+        // filtrem els casos que no ens interessen
+        if (text.isEmpty()) break;
+        if (text.startsWith("hola") continue;
+        if (text.startsWith("adéu") continue;
+
+        // processem l'entrada quan ja sabem que ens interessa
+        System.out.println(text);
+    }
+    // resta del programa
+
+Fixa't que aquesta segona versió fa servir ``break`` per sortir del bucle
+quan l'entrada és buida. Ja coneixem aquest ús, oi?
+
+Però a continuació hi ha dues condicions que responen amb un ``continue``
+quan són certes. Aquest ``continue`` fa que es torni a l'inici del bucle,
+tot descartant el valor de ``text`` doncs ja sabem que no ens interessa.
+
+Nota com ens hem saltat la norma de fer servir ``{}`` per definir els
+blocs d'un ``if``. A l'igual que quan fem ``else if()``, aquesta manera
+d'expressar aquests salts en l'execució, deixen un codi molt net i fàcil
+de llegir.
+
+Podríem dibuixar-ho de la següent manera:
+
+.. graphviz::
+    :align: center
+
+    digraph {
+        instruccio1 [label="llegeix entrada", shape="rectangle", style=""]
+        condicio1 [label="text.isEmpty()", shape="diamond", style=""];
+        condicio2 [label="text.startsWith(\"hola\")", shape="diamond", style=""];
+        condicio3 [label="text.startsWith(\"adéu\")", shape="diamond", style=""];
+        instruccio2 [label="escriu text", shape="rectangle", style=""]
+        resta [label="// resta del programa", shape="rectangle", style=""]
+
+        instruccio1 -> condicio1;
+        condicio1 -> resta [label="cert", color="red"];
+        condicio1 -> condicio2 [label="fals"];
+
+        condicio2 -> instruccio1 [label="cert", color="red"];
+        condicio2 -> condicio3 [label="fals"];
+
+        condicio3 -> instruccio1 [label="cert", color="red"];
+        condicio3 -> instruccio2 [label="fals"];
+
+        instruccio2 -> instruccio1;
+
+    }
+
+``continue`` a un ``for``
+=========================
+
+El ``continue`` també el podem fer serrvir dins d'un ``for``. Quan
+apareix, el bucle passarà al següent valor del recorregut.
+
+Per exemple, el següent fragment de codi filtrarà la lletra 'a':
+
+.. code-block:: java
+
+    for (int i = 0; i < text.length(); i++) {
+        char actual = text.charAt(i);
+        if (actual == 'a') continue;    // saltem les 'a's
+        System.out.print(actual);
+    }
+
+|exerciseicon__T| :doc:`exercici_01_73_endevina_continue`
+
+

@@ -1,0 +1,282 @@
+####################
+El bucle s'ha acabat
+####################
+
+El mateix que ens passava amb la finalització d'un programa, ens passa de
+vegades dins d'un bucle.
+
+Per exemple, considera el següent programa
+
+.. code-block:: java
+    :linenos:
+
+    /*
+     * Programa que demana un text i diu si aquest conté o no una 'J'
+     */
+    public class ConteJ {
+        public static void main(String[] args) {
+            System.out.println("Text?");
+            String text = Entrada.readLine();
+            boolean conteJ = false;
+            for (int i=0; i < text.length(); i++) {
+                if (! conteJ) {
+                    if (text.charAt(i) == 'J') {
+                        conteJ = true;
+                    }
+                }
+            }
+            if (conteJ) {
+                System.out.println("Conté J");
+            } else {
+                System.out.println("No conté J");
+            }
+        }
+    }
+
+Fixa't que el programa demana un text i el recorre cercant una 'J'. Un cop
+ha trobat una, continua recorrent-lo fins el final, això sí, sense
+molestar-se en mirar si hi ha o no més 'J'.
+
+El codi es podria simplificar molt si fem servir una bona expressió
+booleana
+
+En concret, considera el fragment de codi següent:
+
+.. code-block:: java
+
+    if (! conteJ) {
+        if (text.charAt(i) == 'J') {
+            conteJ = true;
+        }
+    }
+
+El codi anterior el podem simplificar amb una única línia:
+
+.. code-block:: java
+
+    conteJ = conteJ || text.charAt(i) == 'J';
+
+Aquesta seria la manera preferida normalment. En aquest context, però,
+continuarem amb la versió *expandida* perquè ens ajudarà millor a
+entendre el concepte que ens presenta aquesta secció.
+
+
+Imagina que el text de l'entrada fos simplement ``"Java"``. Sabem que la
+``'J'`` s'ha trobat al primer caràcter i que donarem encara tres iteracions
+més abans de poder donar un resultat que ja sabem. Total, tres iteracions
+de més no sembla un gran problema… oi?
+
+Si el text hagués estat el contingut d'un llibre de +800 pàgines que comença
+amb la paraula *Java*, potser les iteracions extres no ens semblarien tan
+poca cosa.
+
+``while`` to the rescue
+=======================
+
+Potser per resoldre aquest tipus de problemes en els que no cal arribar al
+final, podríem fer servir *l'altre* bucle: el ``while``.
+
+.. code-block:: java
+    :linenos:
+
+    /*
+     * Programa que demana un text i diu si aquest conté o no una 'J'
+     */
+    public class ConteJ {
+        public static void main(String[] args) {
+            System.out.println("Text?");
+            String text = Entrada.readLine();
+            boolean conteJ = false;
+            int i = 0;
+            while (! conteJ) {
+                conteJ = text.charAt(i) == 'J';
+                i++;
+            }
+            if (conteJ) {
+                System.out.println("Conté J");
+            } else {
+                System.out.println("No conté J");
+            }
+        }
+    }
+
+La solució és prou senzilla però perd l'elegància dels recorreguts amb
+``for``.
+
+Perquè no *finalitzant*
+=======================
+
+El ``for`` era adequat per *recórrer* el text. El que ens caldria és una
+manera de finalitzar quan sapiguem el resultat.
+
+No podríem tornar a fer servir ``return``?
+
+.. code-block:: java
+    :linenos:
+
+    /*
+     * Programa que demana un text i diu si aquest conté o no una 'J'
+     */
+    public class ConteJ {
+        public static void main(String[] args) {
+            System.out.println("Text?");
+            String text = Entrada.readLine();
+            for (int i=0; i < text.length(); i++) {
+                if (text.charAt(i) == 'J') {
+                    System.out.println("Conté J");
+                    return;
+                }
+            }
+            System.out.println("No conté J");
+        }
+    }
+
+En aquest cas sí. Al cap i a la fi, en mostrar el missatge, ja hem
+acabat. Què passaria, però, si després del bucle haguéssim de fer més
+coses? El ``return`` és massa dràstic i no ens serviria.
+
+*Trenquem* el bucle
+===================
+
+En comptes de finalitzar, el que volem és simplement *trencar* el bucle.
+
+.. code-block:: java
+    :linenos:
+
+    /*
+     * Programa que demana un text i diu si aquest conté o no una 'J'
+     */
+    public class ConteJ {
+        public static void main(String[] args) {
+            System.out.println("Text?");
+            String text = Entrada.readLine();
+            boolean conteJ = false;
+            for (int i=0; i < text.length(); i++) {
+                if (text.charAt(i) == 'J') {
+                    conteJ = true;
+                    break;
+                }
+            }
+            if (conteJ) {
+                System.out.println("Conté J");
+            } else {
+                System.out.println("No conté J");
+            }
+        }
+    }
+
+Doncs sí, el ``break``. Ja el coneixes
+si vas fer l\':doc:`exercici_01_19_dies_setmana_switch`. En aquella ocasió,
+el ``break`` feia no continuar executant a partir d'haver detectat un cas
+cert. En el cas dels bucles, la funció del ``break`` és similar: trencar
+el flux normal d'execució i anar a la instrucció següent un cop abandonat
+el bucle.
+
+En arribar al ``break``, Java surt del bucle més immediat
+tant si ha arribat al final com si no.
+
+Això de *més immediat* es refereix a que, en cas que hi hagi un bucle dins
+d'un altre, si fem ``break`` sortim del primer però seguim al segon.
+
+.. code-block:: console
+    :emphasize-lines: 8-
+
+    jshell> for (int i=1; i<=3; i++) {
+       ...>     System.out.println("i:" + i);
+       ...>     for (int j=1; j <=1000; j++) {
+       ...>         System.out.println("j:" + j);
+       ...>         break;
+       ...>     }
+       ...> }
+    i:1
+    j:1
+    i:2
+    j:1
+    i:3
+    j:1
+
+Fixa't al codi anterior com la ``j`` no passa mai de l\'``1`` doncs en
+mostrar el primer valor, surt del bucle amb ``break``. La ``i``, però, si
+aconsegueix passar per tots els valors del recorregut.
+
+Trencant el ``while``
+=====================
+
+Malgrat pot semblar que a ``while`` no li cal un ``break`` donat que
+disposem de la condició per poder controlar quan ha de finalitzar, el cert
+és que pot arribar a resultar molt còmode utilitzar-lo en certes
+situacions. Tant és així, que hi ha qui programa directament els bucles
+amb un ``while (true)`` i els fan finalitzar amb ``break``.
+
+Per exemple, recordem el codi que varem veure a :doc:`while_redundancia`:
+
+.. code-block:: java
+    :linenos:
+
+    public class SumaPositius {
+        public static void main(String[] args) {
+            int suma = 0;
+            int valor = 0;
+            while (valor >= 0) {
+                System.out.println("Introdueix valor");
+                valor = Integer.parseInt(Entrada.readLine());
+                if (valor >= 0) {
+                    suma = suma + valor;
+                }
+            }
+            System.out.println("La suma és " + suma);
+        }
+    }
+
+Ara que disposem del ``break``, podríem eliminar la redundància de la
+comprovació de la següent manera:
+
+.. code-block:: java
+    :linenos:
+
+    public class SumaPositius {
+        public static void main(String[] args) {
+            int suma = 0;
+            while (true) {
+                System.out.println("Introdueix valor");
+                int valor = Integer.parseInt(Entrada.readLine());
+                if (valor < 0) {
+                    break;
+                }
+                suma = suma + valor;
+            }
+            System.out.println("La suma és " + suma);
+        }
+    }
+
+Podríem dibuixar-ho de la següent manera:
+
+.. graphviz::
+    :align: center
+
+    digraph {
+        inici [shape="box", style=rounded];
+        instruccio1 [label="suma = 0", shape="rectangle", style=""];
+        instruccio2 [label="llegeix valor", shape="rectangle", style=""]
+        condicio2 [label="valor < 0", shape="diamond", style=""];
+        instruccio3 [label="suma = suma + valor", shape="rectangle", style=""]
+        instruccio4 [label="escriu suma", shape="rectangle", style=""]
+        final[shape="box", style=rounded];
+
+        inici -> instruccio1
+        instruccio1 -> instruccio2;
+        instruccio2 -> condicio2;
+        condicio2 -> instruccio4 [label="cert", color="red"];
+        condicio2 -> instruccio3 [label="fals"];
+        instruccio3 -> instruccio2;
+
+        instruccio4 -> final;
+    }
+
+
+Abans de la comoditat d'escriure'l, però, cal tenir sempre en compte
+sempre la llegibilitat del nostre codi. En aquest cas, la diferència és
+petita.
+
+
+|exerciseicon__T| :doc:`exercici_01_72_cerca_x`

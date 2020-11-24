@@ -1,0 +1,12 @@
+#################
+Control de bucles
+#################
+
+La llista d'exercicis sobre :doc:`control de bucles <control_bucles>` és:
+
+.. toctree::
+    :titlesonly:
+    :maxdepth: 1
+
+    exercici_01_72_cerca_x.rst
+    exercici_01_73_endevina_continue.rst

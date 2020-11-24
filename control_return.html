@@ -1,0 +1,451 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ca" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>El programa s’ha acabat &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="El bucle s’ha acabat" href="control_break.html" />
+    <link rel="prev" title="Control de bucles" href="control_bucles.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació amb Java
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-21
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="basics_intro.html">Introducció</a></li>
+<li class="toctree-l2"><a class="reference internal" href="instruccions.html">Instruccions seqüencials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html">Variables i tipus</a></li>
+<li class="toctree-l2"><a class="reference internal" href="expressions.html">Operadors i expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="condicionals.html">Condicionals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="while.html">Bucles condicionals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recorreguts.html">Recorreguts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="strings.html">Strings</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="control_bucles.html">Control de bucles</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">El programa s’ha acabat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="control_break.html">El bucle s’ha acabat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="control_continue.html">La iteració s’ha acabat</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="basics_exercicis.html">Llista d’exercicis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="apendix.html">Apèndix</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació amb Java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="basics.html">Elements bàsics de la programació</a> &raquo;</li>
+        
+          <li><a href="control_bucles.html">Control de bucles</a> &raquo;</li>
+        
+      <li>El programa s’ha acabat</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="el-programa-s-ha-acabat">
+<h1>El programa s’ha acabat<a class="headerlink" href="#el-programa-s-ha-acabat" title="Link permanent a aquest títol">¶</a></h1>
+<p>Considera el següent programa:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm"> * Programa que demana un text i un nombre de cops, i mostra el text</span>
+<span class="cm"> * repetit tants cops com se li indiqui</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">RepeteixText</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Text?&quot;</span><span class="p">);</span>
+        <span class="n">String</span> <span class="n">text</span> <span class="o">=</span> <span class="n">Entrada</span><span class="p">.</span><span class="na">readLine</span><span class="p">();</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Cops?&quot;</span><span class="p">);</span>
+            <span class="kt">int</span> <span class="n">cops</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">Entrada</span><span class="p">.</span><span class="na">readLine</span><span class="p">());</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">text</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error: el text no pot ser buit&quot;</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">cops</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error: com a mínim un cop&quot;</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">cops</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>El programa és molt simple. Es limita a:</p>
+<ul class="simple">
+<li><p>demanar els dos valors que necessita</p></li>
+<li><p>comprovar que els valors introduïts siguin correctes per</p></li>
+<li><p>mostrar un error si els valors no són adequats</p></li>
+<li><p>repetir un text un nombre de cops, si els valors resulten adequats.</p></li>
+</ul>
+<p>El programa és correcte, però… El <em>però</em> està en que si ja saps que el
+text no es correcte, podries estalviar els usuaris d’introduir el nombre
+de cops, no creus?</p>
+<p>No és problema resoldre-ho, oi? Tenim <code class="docutils literal notranslate"><span class="pre">if</span></code>!</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm"> * Programa que demana un text i un nombre de cops, i mostra el text</span>
+<span class="cm"> * repetit tants cops com se li indiqui</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">RepeteixText</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Text?&quot;</span><span class="p">);</span>
+        <span class="n">String</span> <span class="n">text</span> <span class="o">=</span> <span class="n">Entrada</span><span class="p">.</span><span class="na">readLine</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">text</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error: el text no pot ser buit&quot;</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Cops?&quot;</span><span class="p">);</span>
+            <span class="kt">int</span> <span class="n">cops</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">Entrada</span><span class="p">.</span><span class="na">readLine</span><span class="p">());</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">cops</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error: com a mínim un cop&quot;</span><span class="p">);</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">cops</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Aquesta nova versió només pregunta el nombre de cops si el text és
+adequat.</p>
+<p>T’has fixat, però, quants nivells d’indentació han calgut per poder anar
+salvant els diferents casos d’error?</p>
+<p>És una llàstima doncs, un cop ja sabem que el text està buit, ja podríem
+finalitzar el programa, sense necessitat de fer res més.
+Hi haurà alguna manera d’indicar en Java que el programa s’acaba en un
+determinat moment?</p>
+<p>La resposta és <strong>sí</strong>. En qualsevol moment podem <em>retornar</em> de l’execució
+del nostre programa fent servir la paraula reservada <code class="docutils literal notranslate"><span class="pre">return</span></code>.</p>
+<p>Mira com queda el programa:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm"> * Programa que demana un text i un nombre de cops, i mostra el text</span>
+<span class="cm"> * repetit tants cops com se li indiqui</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">RepeteixText</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Text?&quot;</span><span class="p">);</span>
+        <span class="n">String</span> <span class="n">text</span> <span class="o">=</span> <span class="n">Entrada</span><span class="p">.</span><span class="na">readLine</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">text</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error: el text no pot ser buit&quot;</span><span class="p">);</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Cops?&quot;</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">cops</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">Entrada</span><span class="p">.</span><span class="na">readLine</span><span class="p">());</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">cops</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error: com a mínim un cop&quot;</span><span class="p">);</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">cops</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">text</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Potser no hem guanyat molt en nombre de línies, però sí en complexitat
+d’indentació. Si l’estructura del nostre programa és més simple, hem
+guanyat en claredat.</p>
+<p>Fixa’t com, si el programa executa la línia 13, sabem segur que el text no
+és buit. Altrament hauria finalitzat l’execució a la línia 11!</p>
+<p>Així, en arribar a la línia 19, sabem segur que tant el text com el nombre
+de cops tenen els valors esperats.</p>
+<p>Ho podem dibuixar de la següent manera:</p>
+<div align="center" class="align-center"><div class="graphviz"><img src="_images/graphviz-dd0ddb3320c43229c85a8622d746a22043dde5da.png" alt="digraph {
+    inici [shape=&quot;box&quot;, style=rounded];
+    instruccio1 [label=&quot;llegeix text&quot;, shape=&quot;rectangle&quot;, style=&quot;&quot;];
+    condicio1 [label=&quot;text.isEmpty()&quot;, shape=&quot;diamond&quot;, style=&quot;&quot;];
+    instruccio2 [label=&quot;llegeix quants cops&quot;, shape=&quot;rectangle&quot;, style=&quot;&quot;]
+    condicio2 [label=&quot;cops &lt; 1&quot;, shape=&quot;diamond&quot;, style=&quot;&quot;];
+    instruccio3 [label=&quot;escriu text els cops indicats&quot;, shape=&quot;rectangle&quot;, style=&quot;&quot;]
+    final[shape=&quot;box&quot;, style=rounded];
+    error1 [label=&quot;escriu error&quot;, shape=&quot;rectangle&quot;];
+    error2 [label=&quot;escriu error&quot;, shape=&quot;rectangle&quot;];
+
+    inici -&gt; instruccio1
+    instruccio1 -&gt; condicio1;
+    condicio1 -&gt; error1 [label=&quot;cert&quot;];
+    condicio1 -&gt; instruccio2 [label=&quot;fals&quot;];
+
+    instruccio2 -&gt; condicio2;
+    condicio2 -&gt; error2 [label=&quot;cert&quot;];
+    condicio2 -&gt; instruccio3 [label=&quot;fals&quot;];
+
+    error1, error2 -&gt; final [color=&quot;red&quot;];
+    instruccio3 -&gt; final;
+}" class="graphviz" /></div>
+</div>
+<p>Podem imaginar-nos cada comprovació d’error com una mena de <em>vigilant</em> que
+no deixa passar les execucions que no compleixen les condicions
+requerides. En el cas de l’exemple, aquestes condicions són que el text no
+pot ser buit ni el nombre de cops inferior a 1.</p>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="control_break.html" class="btn btn-neutral float-right" title="El bucle s’ha acabat" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="control_bucles.html" class="btn btn-neutral float-left" title="Control de bucles" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2021 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
