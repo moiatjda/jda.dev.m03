@@ -75,9 +75,9 @@ nou programador!
 
 |exerciseicon_ST| :doc:`exercici_01_78_text_transformat`
 
-|exerciseicon___| :doc:`exercici_01_79_text_reves`
+|exerciseicon__T| :doc:`exercici_01_79_text_reves`
 
-|exerciseicon___| :doc:`exercici_01_80_text_capicua`
+|exerciseicon__T| :doc:`exercici_01_80_text_capicua`
 
 |exerciseicon_ST| :doc:`exercici_01_81_text_capicua_rev`
 
