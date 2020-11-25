@@ -88,7 +88,7 @@ final, podríem fer servir *l'altre* bucle: el ``while``.
             String text = Entrada.readLine();
             boolean conteJ = false;
             int i = 0;
-            while (! conteJ) {
+            while (! conteJ && i < text.length()) {
                 conteJ = text.charAt(i) == 'J';
                 i++;
             }
