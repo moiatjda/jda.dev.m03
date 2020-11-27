@@ -22,7 +22,7 @@ valors entre el primer i el segon saltant d'un al següent amb el tercer.
 
 Podem suposar que sempre ens introduiran valors enters, que el primer
 sempre serà més petit o igual al segon, i que el tercer sempre serà
-positiu.
+positiu més gran que 0.
 
 Una simulació de l'execució seria:
 

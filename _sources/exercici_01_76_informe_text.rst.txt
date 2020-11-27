@@ -24,9 +24,6 @@ L'informe indicarà quants caràcters, lletres i vocals catalanes
 indicarà, per cada categoria, el percentatge respecte el total dels
 caràcters.
 
-Recorda que les vocals catalanes són, a banda de les cinc habituals,
-``à``, ``è``, ``é``, ``í``, ``ï``, ``ò``, ``ó``, ``ú`` i ``ü``
-
 Considera les següents simulacions:
 
 .. code-block:: console
@@ -44,7 +41,7 @@ Considera les següents simulacions:
     total vocals: 12 (26,67%)
     digits: 3 (6,67%)
     altres caràcters: 14 (31,11%)
-    total caràcters: 45
+    total caràcters: 45)),
 
 
 
