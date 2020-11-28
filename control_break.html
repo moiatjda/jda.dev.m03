@@ -287,7 +287,7 @@ final, podríem fer servir <em>l’altre</em> bucle: el <code class="docutils li
         <span class="n">String</span> <span class="n">text</span> <span class="o">=</span> <span class="n">Entrada</span><span class="p">.</span><span class="na">readLine</span><span class="p">();</span>
         <span class="kt">boolean</span> <span class="n">conteJ</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
         <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-        <span class="k">while</span> <span class="p">(</span><span class="o">!</span> <span class="n">conteJ</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">while</span> <span class="p">(</span><span class="o">!</span> <span class="n">conteJ</span> <span class="o">&amp;&amp;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">text</span><span class="p">.</span><span class="na">length</span><span class="p">())</span> <span class="p">{</span>
             <span class="n">conteJ</span> <span class="o">=</span> <span class="n">text</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">==</span> <span class="sc">&#39;J&#39;</span><span class="p">;</span>
             <span class="n">i</span><span class="o">++</span><span class="p">;</span>
         <span class="p">}</span>

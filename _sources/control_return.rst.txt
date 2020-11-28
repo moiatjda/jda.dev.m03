@@ -15,8 +15,8 @@ Considera el següent programa:
         public static void main(String[] args) {
             System.out.println("Text?");
             String text = Entrada.readLine();
-                System.out.println("Cops?");
-                int cops = Integer.parseInt(Entrada.readLine());
+            System.out.println("Cops?");
+            int cops = Integer.parseInt(Entrada.readLine());
             if (text.isEmpty()) {
                 System.out.println("Error: el text no pot ser buit");
             } else if (cops < 1) {

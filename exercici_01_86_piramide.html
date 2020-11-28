@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Exercici 01_79. El text del revés (versió bàsica) &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  <title>Exercici 01_86. Una piràmide amb el nom &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
   
 
   
@@ -39,8 +39,8 @@
     <link rel="author" title="Quant a aquests documents" href="about.html" />
     <link rel="index" title="Índex" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
-    <link rel="next" title="Exercici 01_80. Texts capicua (versió bàsica)" href="exercici_01_80_text_capicua.html" />
-    <link rel="prev" title="Exercici 01_78. El text transformat" href="exercici_01_78_text_transformat.html" />
+    <link rel="next" title="Apèndix" href="apendix.html" />
+    <link rel="prev" title="Exercici 01_85. Un triangle de lletres invertit" href="exercici_01_85_triangle_invertit_lletres.html" />
      
     <script class="googleanalytics" src="_static/moiscripts.js"></script>
 
@@ -115,14 +115,14 @@
 <li class="toctree-l4"><a class="reference internal" href="exercici_01_76_informe_text.html"> Exercici 01_76. Estadístiques d’un text</a></li>
 <li class="toctree-l4"><a class="reference internal" href="exercici_01_77_inicials_majuscules.html"> Exercici 01_77. Inicials en majúscules (versió <em>naif</em>)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="exercici_01_78_text_transformat.html"> Exercici 01_78. El text transformat</a></li>
-<li class="toctree-l4 current"><a class="current reference internal" href="#"> Exercici 01_79. El text del revés (versió bàsica)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="exercici_01_79_text_reves.html"> Exercici 01_79. El text del revés (versió bàsica)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="exercici_01_80_text_capicua.html"> Exercici 01_80. Texts capicua (versió bàsica)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="exercici_01_81_text_capicua_rev.html"> Exercici 01_81. Texts capicua (versió avançada)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="exercici_01_82_codifica.html"> Exercici 01_82. Codifica bàsic</a></li>
 <li class="toctree-l4"><a class="reference internal" href="exercici_01_83_text_reves_rev.html"> Exercici 01_83. El text del revés (avançat)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="exercici_01_84_triangle_lletres.html"> Exercici 01_84. Un triangle de lletres</a></li>
 <li class="toctree-l4"><a class="reference internal" href="exercici_01_85_triangle_invertit_lletres.html"> Exercici 01_85. Un triangle de lletres invertit</a></li>
-<li class="toctree-l4"><a class="reference internal" href="exercici_01_86_piramide.html"> Exercici 01_86. Una piràmide amb el nom</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#"> Exercici 01_86. Una piràmide amb el nom</a></li>
 </ul>
 </li>
 </ul>
@@ -182,7 +182,7 @@
         
           <li><a href="basics_exercicis_generals.html">Exercicis generals</a> &raquo;</li>
         
-      <li> Exercici 01_79. El text del revés (versió bàsica)</li>
+      <li> Exercici 01_86. Una piràmide amb el nom</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -200,31 +200,28 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="exerciseicon-t-exercici-01-79-el-text-del-reves-versio-basica">
-<h1><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> Exercici 01_79. El text del revés (versió bàsica)<a class="headerlink" href="#exerciseicon-t-exercici-01-79-el-text-del-reves-versio-basica" title="Link permanent a aquest títol">¶</a></h1>
+  <div class="section" id="exerciseicon-t-exercici-01-86-una-piramide-amb-el-nom">
+<h1><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> Exercici 01_86. Una piràmide amb el nom<a class="headerlink" href="#exerciseicon-t-exercici-01-86-una-piramide-amb-el-nom" title="Link permanent a aquest títol">¶</a></h1>
 <p class="rubric">Context</p>
 <ul class="simple">
-<li><p>Carpeta de lliurament: <code class="docutils literal notranslate"><span class="pre">01_79_text_reves/</span></code></p></li>
+<li><p>Carpeta de lliurament: <code class="docutils literal notranslate"><span class="pre">01_86_piramide/</span></code></p></li>
 <li><p>Continguts relacionats: <a class="reference internal" href="basics_conclusions.html"><span class="doc">Conclusions</span></a></p></li>
 <li><p>Com lliurar-lo: <a class="reference internal" href="holagit.html#instruccions-git"><span class="std std-ref">instruccions</span></a></p></li>
 <li><p>[✓] Exercici amb <a class="reference internal" href="sobre_exercicis.html#descripcio-exercicis-autoavaluacio"><span class="std std-ref">autoavaluació</span></a></p></li>
 </ul>
 <p class="rubric">Enunciat</p>
 <p>Desenvolupa un programa que demani un text i
-el torni a mostrar però invertint l’ordre dels caràcters que el composen.
-Els caracters resultants apareixeran separats per comes.</p>
-<p>Considera la següent simulació</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java TextReves
-<span class="hll"><span class="go">Text?</span>
-</span><span class="go">Es gibt keinen Weg zurück</span>
-<span class="hll"><span class="go">k, c, ü, r, u, z,  , g, e, W,  , n, e, n, i, e, k,  , t, b, i, g,  , s, E</span>
+dibuixi un triangle amb les lletres del text en ordre invers al text
+introduït.</p>
+<p>Considera la següent simulació:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp"> $</span> java PiramideLletres
+<span class="hll"><span class="go"> Text?</span>
+</span><span class="go"> Eva</span>
+<span class="hll"><span class="go"> ....E-E....</span>
+</span><span class="hll"><span class="go"> ..E.v-v.E..</span>
+</span><span class="hll"><span class="go"> E.v.a-a.v.E</span>
 </span></pre></div>
 </div>
-<p><strong>Pista</strong>: Com sempre, aquesta pista només si no saps per on atacar el
-problema.</p>
-<p>Tot i que la majoria de les vegades fem els recorreguts de String de la
-posició 0 fins el darrer caràcter, també ho podríem fer des del darrer fins
-el 0.</p>
 </div>
 
 
@@ -258,10 +255,10 @@ el 0.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="exercici_01_80_text_capicua.html" class="btn btn-neutral float-right" title="Exercici 01_80. Texts capicua (versió bàsica)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="apendix.html" class="btn btn-neutral float-right" title="Apèndix" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="exercici_01_78_text_transformat.html" class="btn btn-neutral float-left" title="Exercici 01_78. El text transformat" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="exercici_01_85_triangle_invertit_lletres.html" class="btn btn-neutral float-left" title="Exercici 01_85. Un triangle de lletres invertit" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

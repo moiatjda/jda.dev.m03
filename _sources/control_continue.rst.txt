@@ -26,7 +26,7 @@ texts que no comencin per *hola* ni per *adéu*, podríem fer:
         // definim les condicions que fan que una entrada ens interessi
         if (! text.isEmpty() &&
             ! text.startsWith("hola") &&
-            !text.startsWith("adéu")) {
+            ! text.startsWith("adéu")) {
 
             // processem l'entrada quan ja sabem que ens interessa
             System.out.println(text);

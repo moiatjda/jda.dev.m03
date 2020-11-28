@@ -1,5 +1,5 @@
 ###################################################################
-|exerciseicon___| Exercici 01_79. El text del revés (versió bàsica)
+|exerciseicon__T| Exercici 01_79. El text del revés (versió bàsica)
 ###################################################################
 
 .. rubric:: Context
@@ -10,10 +10,13 @@
 
 * Com lliurar-lo: :ref:`instruccions <instruccions_git>`
 
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
 .. rubric:: Enunciat
 
 Desenvolupa un programa que demani un text i
 el torni a mostrar però invertint l'ordre dels caràcters que el composen.
+Els caracters resultants apareixeran separats per comes.
 
 Considera la següent simulació
 
@@ -22,8 +25,8 @@ Considera la següent simulació
 
     $ java TextReves
     Text?
-    git branch -m <old-name> <new-name>
-    >eman-wen< >eman-dlo< m- hcnarb tig
+    Es gibt keinen Weg zurück
+    k, c, ü, r, u, z,  , g, e, W,  , n, e, n, i, e, k,  , t, b, i, g,  , s, E
 
 **Pista**: Com sempre, aquesta pista només si no saps per on atacar el
 problema.

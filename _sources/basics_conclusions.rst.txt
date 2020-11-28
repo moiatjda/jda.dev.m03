@@ -8,7 +8,7 @@ Hem carregat el nostre arsenal d'eines per programar amb els elements
 bàsics:
 
 * dades, tipus, expressions… Entre els tipus, hem tractat especialment els
-  Stirngs.
+  Strings.
 
 * assignacions i entrada/sortida bàsica
 
@@ -75,13 +75,16 @@ nou programador!
 
 |exerciseicon_ST| :doc:`exercici_01_78_text_transformat`
 
-|exerciseicon___| :doc:`exercici_01_79_text_reves`
+|exerciseicon__T| :doc:`exercici_01_79_text_reves`
 
-|exerciseicon___| :doc:`exercici_01_80_text_capicua`
+|exerciseicon__T| :doc:`exercici_01_80_text_capicua`
 
 |exerciseicon_ST| :doc:`exercici_01_81_text_capicua_rev`
 
 |exerciseicon__T| :doc:`exercici_01_82_codifica`
 
-|exerciseicon_ST| :doc:`exercici_01_83_text_reves_rev`
+|exerciseicon__T| :doc:`exercici_01_84_triangle_lletres`
 
+|exerciseicon__T| :doc:`exercici_01_85_triangle_invertit_lletres`
+
+|exerciseicon__T| :doc:`exercici_01_86_piramide`
