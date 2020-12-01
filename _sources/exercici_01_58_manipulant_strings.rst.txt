@@ -29,7 +29,7 @@ Proposa un codi que mostri:
 
 #. La paraula amb totes les lletres en majúscules
 
-#. Una coposició formada per la darrera lletra de La paraula, seguida de
+#. Una coposició formada per la darrera lletra de la paraula, seguida de
    les tres primeres. (ex. si la paraula és "Nekane" mostrarà "eNek")
 
 #. La paraula amb les primeres tres lletres en majúscules i la resta en minúscules
