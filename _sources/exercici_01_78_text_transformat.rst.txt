@@ -28,9 +28,6 @@ mostri una versió transformada segons les següents regles:
 * la resta de caràcters, excepte els blancs, desapareixen a la versió
   transformada
 
-Recorda que les vocals catalanes són, a banda de les cinc habituals,
-``à``, ``è``, ``é``, ``í``, ``ï``, ``ò``, ``ó``, ``ú`` i ``ü``
-
 Considera la següent simulació
 
 .. code-block:: console

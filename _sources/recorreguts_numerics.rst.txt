@@ -145,7 +145,7 @@ Uns quants exercicis per practicar el que acabem de veure:
 
 |exerciseicon___| :doc:`exercici_01_43_primers_parells_fins_el_10_for`
 
-|exerciseicon__T| :doc:`exercici_01_44_enters_de_principi_a_fi_for`
+|exerciseicon___| :doc:`exercici_01_44_enters_de_principi_a_fi_for`
 
 |exerciseicon__T| :doc:`exercici_01_45_suma_nombres`
 

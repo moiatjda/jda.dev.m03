@@ -29,7 +29,8 @@ Proposa un codi que mostri:
 
 #. La paraula amb totes les lletres en majúscules
 
-#. La paraula amb la quarta lletra moguda a l'inici (ex. si era "Hola" mostra "aHol")
+#. Una coposició formada per la darrera lletra de La paraula, seguida de
+   les tres primeres. (ex. si la paraula és "Nekane" mostrarà "eNek")
 
 #. La paraula amb les primeres tres lletres en majúscules i la resta en minúscules
 
