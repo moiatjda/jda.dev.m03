@@ -32,6 +32,8 @@ Proposa un codi que mostri:
 #. Una coposició formada per la darrera lletra de la paraula, seguida de
    les tres primeres. (ex. si la paraula és "Nekane" mostrarà "eNek")
 
-#. La paraula amb les primeres tres lletres en majúscules i la resta en minúscules
+#. Una composició formada per la primera lletra de la paraula en
+   majúscules, seguida de les següents tres lletres en minúscules.  Per
+   exemple, si la paraula és "aIbIcId", resultatà en "Aibi".
 
 Pots fer servir ``jshell`` per fer les proves.

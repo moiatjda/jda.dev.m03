@@ -1,0 +1,36 @@
+########################################################
+|exerciseicon__T| Exercici 01_84. Un triangle de lletres
+########################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``01_84_triangle_lletres/``
+
+* Continguts relacionats: :doc:`basics_conclusions`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Desenvolupa un programa que demani un text i
+dibuixi un triangle amb les lletres del text.
+
+Considera la següent simulació:
+
+.. code-block:: console
+   :emphasize-lines: 2, 4-
+
+    $ java TriangleLletres
+    Text?
+    Nemesio
+    N
+    N, e
+    N, e, m
+    N, e, m, e
+    N, e, m, e, s
+    N, e, m, e, s, i
+    N, e, m, e, s, i, o
+
+En cas que la cadena d'entrada estigui buida, no mostrarà res.

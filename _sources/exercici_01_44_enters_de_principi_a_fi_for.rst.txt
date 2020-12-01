@@ -1,5 +1,5 @@
 #####################################################################
-|exerciseicon___| Exercici 01_44. Enters de principi a fi amb ``for``
+|exerciseicon__T| Exercici 01_44. Enters de principi a fi amb ``for``
 #####################################################################
 
 .. rubric:: Context
@@ -9,6 +9,8 @@
 * Continguts relacionats: :doc:`recorreguts_numerics`
 
 * Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
 
 .. rubric:: Enunciat
 
