@@ -21,15 +21,22 @@ menys que estigui buit.
 Considera els següents exemples d'execució:
 
 .. code-block:: console
-    :emphasize-lines: 2, 7, 10, 12
+    :emphasize-lines: 2, 4, 6, 8, 10
 
     $ java ConteDarrer
     Introdueix texts (enter sol per finalitzar)
     Donam una A
+    bé
     Donam una B
+    bé
     Trobam una C
+    bé
     Pintam una D
     Adéu
+
+
+.. code-block:: console
+    :emphasize-lines: 2, 4
 
     $ java ConteDarrer
     Introdueix texts (enter sol per finalitzar)
