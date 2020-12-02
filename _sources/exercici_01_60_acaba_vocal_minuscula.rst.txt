@@ -27,13 +27,13 @@ Una simulació d'execució:
     :emphasize-lines: 2, 4, 5, 7, 9, 11
 
     $ java LloroVocalMinuscules
-    El lloro demana paraula que finalitzi per vocal en minúscules
+    El lloro pregunta paraula que finalitzi per vocal en minúscules
     amiga
     El lloro diu: amiga
-    El lloro demana paraula que finalitzi per vocal en minúscules
+    El lloro pregunta paraula que finalitzi per vocal en minúscules
     AMIGA
-    El lloro demana paraula que finalitzi per vocal en minúscules
+    El lloro pregunta paraula que finalitzi per vocal en minúscules
     amic
-    El lloro demana paraula que finalitzi per vocal en minúscules
+    El lloro pregunta paraula que finalitzi per vocal en minúscules
 
     Adéu

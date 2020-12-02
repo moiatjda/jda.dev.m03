@@ -27,13 +27,13 @@ Una simulació d'execució:
     :emphasize-lines: 2, 4, 5, 7, 9, 11
 
     $ java LloroVocalMinuscules
-    El lloro demana paraula que comenci amb vocal en minúscules
+    El lloro pregunta paraula que comenci amb vocal en minúscules
     amic
     El lloro diu: amic
-    El lloro demana paraula que comenci amb vocal en minúscules
+    El lloro pregunta paraula que comenci amb vocal en minúscules
     Amic
-    El lloro demana paraula que comenci amb vocal en minúscules
+    El lloro pregunta paraula que comenci amb vocal en minúscules
     Lelo
-    El lloro demana paraula que comenci amb vocal en minúscules
+    El lloro pregunta paraula que comenci amb vocal en minúscules
 
     Adéu
