@@ -29,7 +29,7 @@ Una simulació d'execució:
     El lloro diu: amic
     El lloro demana paraula que finalitzi amb lletra
     color
-    El lloro diu: amic
+    El lloro diu: color
     El lloro demana paraula que finalitzi amb lletra
     color!
     El lloro demana paraula que finalitzi amb lletra
