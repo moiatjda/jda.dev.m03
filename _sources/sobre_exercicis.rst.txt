@@ -92,6 +92,9 @@ En resum, si l'exercici està marcat com autoavaluable:
 
 * no modifiquis el contingut de ``test/``.
 
+.. note:: La correcció d'alguns dels exercicis depén de la configuració de
+    l'idioma del teu equip. Si et trobes amb problemes, fes-li una ullada a
+    l'apèndix :doc:`locale_ca`
 
 .. _descripcio_exercicis_dificils:
 

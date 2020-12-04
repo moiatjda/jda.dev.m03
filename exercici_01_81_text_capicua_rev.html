@@ -219,13 +219,14 @@ indiqui si el text és o no capicua.</p>
 <p>Es considera que un text és capicua si llegint les seves lletres
 d’esquerra a dreta són iguals que llegint-les de dreta a esquerra.</p>
 <p>Els caràcters que no corresponguin a lletres o dígits, seran ignorats.</p>
-<p>Considera la següent simulació</p>
+<p>Considera les següents simulacions:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java Capicua
 <span class="hll"><span class="go">Text?</span>
-</span><span class="go">A dit, sorprès, a l&#39;obert avenc nevat, rebo la serp rostida.</span>
+</span><span class="go">A dit, sorpres, a l&#39;obert avenc nevat, rebo la serp rostida.</span>
 <span class="hll"><span class="go">És capicua</span>
-</span>
-<span class="gp">$</span> java Capicua
+</span></pre></div>
+</div>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java Capicua
 <span class="hll"><span class="go">Text?</span>
 </span><span class="go">Aquesta és una frase palindròfoba</span>
 <span class="hll"><span class="go">No és capicua</span>
@@ -238,7 +239,7 @@ bàsica (passaràs algunes proves!) i que continuïs llegint aquesta pista
 <em>només</em> si no saps com fer la resta.</p>
 <p>Per la versió bàsica, considera aquestes dues propostes:</p>
 <ul>
-<li><p>crea un string invers i compara els dos Strings</p>
+<li><p>crea un String invers i compara els dos Strings</p>
 <p>Potser t’ajudarà recordar <a class="reference internal" href="exercici_01_79_text_reves.html"><span class="doc"> Exercici 01_79. El text del revés (versió bàsica)</span></a></p>
 </li>
 <li><p>recorre l’entrada per l’inici i pel final a l’hora, i ves comparant
@@ -249,6 +250,14 @@ complexitat augmenta una mica.</p>
 <p>Hi ha diferents maneres de resoldre aquest problema complet. Potser la més
 fàcil seria crear un String amb només lletres i dígits i aplicar la
 tècnica bàsica al resultat.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Aquesta versió és encara millorable. Per exemple, el text de la
+primera simulació té una falta ortogràfica: <em>sorprés</em> hauria de portar
+accent a la <em>é</em>. Si et veus amb ganes, pots fer una versió ampliada
+d’aquest exercici, tot <em>normalitzant</em> les lletres especials del nostre
+idioma a la versió base de l’alfabet llatí.</p>
+</div>
 </div>
 
 

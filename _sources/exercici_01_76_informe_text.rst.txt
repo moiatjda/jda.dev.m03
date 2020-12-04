@@ -73,3 +73,7 @@ Recorda que amb ``%n`` estem fent un salt de línia totes les plataformes.
 
 Finalment, fixa't que multipliquem primer per ``100.0``. Això permetrà que
 la divisió no es consideri entera.
+
+.. note:: Si la correcció automàtica d'aquest exercici et presenta
+    problemes per la teva configuració d'idioma del teu sistema, et
+    proposo que li facis una ullada a :doc:`locale_ca`.

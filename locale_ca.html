@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Apèndix &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  <title>Configuració de l’idioma i prgtest.sh &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
   
 
   
@@ -39,8 +39,7 @@
     <link rel="author" title="Quant a aquests documents" href="about.html" />
     <link rel="index" title="Índex" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
-    <link rel="next" title="Introducció al reStructuredText" href="rst_intro.html" />
-    <link rel="prev" title="Exercici 01_86. Una piràmide amb el nom" href="exercici_01_86_piramide.html" />
+    <link rel="prev" title="Introducció al reStructuredText" href="rst_intro.html" />
      
     <script class="googleanalytics" src="_static/moiscripts.js"></script>
 
@@ -91,9 +90,9 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Apèndix</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="apendix.html">Apèndix</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="rst_intro.html">Introducció al reStructuredText</a></li>
-<li class="toctree-l2"><a class="reference internal" href="locale_ca.html">Configuració de l’idioma i <code class="docutils literal notranslate"><span class="pre">prgtest.sh</span></code></a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Configuració de l’idioma i <code class="docutils literal notranslate"><span class="pre">prgtest.sh</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -142,7 +141,9 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Apèndix</li>
+          <li><a href="apendix.html">Apèndix</a> &raquo;</li>
+        
+      <li>Configuració de l’idioma i <code class="docutils literal notranslate"><span class="pre">prgtest.sh</span></code></li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -160,16 +161,35 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="apendix">
-<h1>Apèndix<a class="headerlink" href="#apendix" title="Link permanent a aquest títol">¶</a></h1>
-<p>A aquesta secció final dels apunts hi trobaràs elements addicionals que poden
-ser-te d’utilitat a l’hora d’ampliar els conceptes treballats durant el
-curs.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="rst_intro.html">Introducció al reStructuredText</a></li>
-<li class="toctree-l1"><a class="reference internal" href="locale_ca.html">Configuració de l’idioma i <code class="docutils literal notranslate"><span class="pre">prgtest.sh</span></code></a></li>
-</ul>
+  <div class="section" id="configuracio-de-l-idioma-i-prgtest-sh">
+<h1>Configuració de l’idioma i <code class="docutils literal notranslate"><span class="pre">prgtest.sh</span></code><a class="headerlink" href="#configuracio-de-l-idioma-i-prgtest-sh" title="Link permanent a aquest títol">¶</a></h1>
+<p>La correcció d’alguns exercicis pot tenir problemes depenent de
+l’idioma en que estigui el teu equip. Per ser breus, el llenguatge
+Java genera alguns elements com els nombres decimals i les dates,
+segons el format en que es troba el sistema on s’executa.</p>
+<p>Si et trobes amb problemes d’aquest tipus, pots mirar de fer servir el
+<em>locale</em> català.</p>
+<p>Comprova que el tens instal·lat al teu sistema fent:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> locale -a <span class="p">|</span> grep ca
+<span class="hll"><span class="go">ca_ES.utf8</span>
+</span></pre></div>
+</div>
+<p>En cas que no t’aparegui, pots instal·lar-lo tot executant les següents
+instruccions (requereixen privilegis de sudo):</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo sed -i <span class="s1">&#39;s/^#ca_ES.UTF-8/ca_ES.UTF-8/&#39;</span> /etc/locale.gen
+<span class="gp">$</span> sudo locale-gen
+<span class="go">Generating locales (this might take a while)...</span>
+<span class="go">  ca_ES.UTF-8... done</span>
+<span class="go">Generation complete.</span>
+<span class="gp">$</span> locale -a <span class="p">|</span> grep ca
+<span class="go">ca_ES.utf8</span>
+</pre></div>
+</div>
+<p>Ara, per comprovar els programes que et donen problemes (per exemple, amb
+números decimals que la prova espera amb comes i el teu programa genera
+amb punts) pots fer servir el <code class="docutils literal notranslate"><span class="pre">prgtest.sh</span></code> de la següent manera:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nv">LANGUAGE</span><span class="o">=</span>ca.utf-8 prgtest.sh
+</pre></div>
 </div>
 </div>
 
@@ -204,10 +224,8 @@ curs.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="rst_intro.html" class="btn btn-neutral float-right" title="Introducció al reStructuredText" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-      
-        <a href="exercici_01_86_piramide.html" class="btn btn-neutral float-left" title="Exercici 01_86. Una piràmide amb el nom" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="rst_intro.html" class="btn btn-neutral float-left" title="Introducció al reStructuredText" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

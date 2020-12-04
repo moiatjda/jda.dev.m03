@@ -1,0 +1,41 @@
+#########################################
+Configuració de l'idioma i ``prgtest.sh``
+#########################################
+
+La correcció d'alguns exercicis pot tenir problemes depenent de
+l'idioma en que estigui el teu equip. Per ser breus, el llenguatge
+Java genera alguns elements com els nombres decimals i les dates,
+segons el format en que es troba el sistema on s'executa.
+
+Si et trobes amb problemes d'aquest tipus, pots mirar de fer servir el
+*locale* català.
+
+Comprova que el tens instal·lat al teu sistema fent:
+
+.. code-block:: console
+    :emphasize-lines: 2
+
+    $ locale -a | grep ca
+    ca_ES.utf8
+
+En cas que no t'aparegui, pots instal·lar-lo tot executant les següents
+instruccions (requereixen privilegis de sudo):
+
+.. code-block:: console
+
+    $ sudo sed -i 's/^#ca_ES.UTF-8/ca_ES.UTF-8/' /etc/locale.gen 
+    $ sudo locale-gen
+    Generating locales (this might take a while)...
+      ca_ES.UTF-8... done
+    Generation complete.
+    $ locale -a | grep ca
+    ca_ES.utf8
+
+Ara, per comprovar els programes que et donen problemes (per exemple, amb
+números decimals que la prova espera amb comes i el teu programa genera
+amb punts) pots fer servir el ``prgtest.sh`` de la següent manera:
+
+.. code-block:: console
+
+    $ LANGUAGE=ca.utf-8 prgtest.sh
+

@@ -29,15 +29,18 @@ d'esquerra a dreta són iguals que llegint-les de dreta a esquerra.
 
 Els caràcters que no corresponguin a lletres o dígits, seran ignorats.
 
-Considera la següent simulació
+Considera les següents simulacions:
 
 .. code-block:: console
-    :emphasize-lines: 2, 4, 7, 9
+    :emphasize-lines: 2, 4
 
     $ java Capicua
     Text?
-    A dit, sorprès, a l'obert avenc nevat, rebo la serp rostida.
+    A dit, sorpres, a l'obert avenc nevat, rebo la serp rostida.
     És capicua
+
+.. code-block:: console
+    :emphasize-lines: 2, 4
 
     $ java Capicua
     Text?
@@ -53,7 +56,7 @@ bàsica (passaràs algunes proves!) i que continuïs llegint aquesta pista
 
 Per la versió bàsica, considera aquestes dues propostes:
 
-* crea un string invers i compara els dos Strings 
+* crea un String invers i compara els dos Strings 
   
   Potser t'ajudarà recordar :doc:`exercici_01_79_text_reves`
 
@@ -66,3 +69,9 @@ complexitat augmenta una mica.
 Hi ha diferents maneres de resoldre aquest problema complet. Potser la més
 fàcil seria crear un String amb només lletres i dígits i aplicar la
 tècnica bàsica al resultat.
+
+.. note:: Aquesta versió és encara millorable. Per exemple, el text de la
+    primera simulació té una falta ortogràfica: *sorprés* hauria de portar
+    accent a la *é*. Si et veus amb ganes, pots fer una versió ampliada
+    d'aquest exercici, tot *normalitzant* les lletres especials del nostre
+    idioma a la versió base de l'alfabet llatí.

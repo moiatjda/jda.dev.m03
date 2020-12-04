@@ -11,3 +11,4 @@ curs.
     :titlesonly:
 
     rst_intro.rst
+    locale_ca.rst
