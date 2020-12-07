@@ -201,11 +201,42 @@ Permetem-nos una breu repassada, amb alguna ampliació, sobre els tipus primitiu
   Podem fer servir alguns caràcters especials, com ara: ``\t`` (tab), ``\n``
   (salt de línia), ``\"`` (cometes dobles), ``\'`` (cometes simples), i ``\\``
   (la pròpia contrabarra).
-  
+
   .. code-block:: java
 
         char ch = '"';
         ch = '\'';     // és el caràcter cometa simple. Cal escapar-ho
+
+* Java tracta el típus caràcter com un valor numèric, de manera que la
+  següent interacció amb jshell és possible:
+
+  .. code-block:: console
+     :linenos:
+     :emphasize-lines: 2, 5, 8, 13
+
+     jshell> char ch = 'a';
+     ch ==> 'a'
+
+     jshell> System.out.println(ch+1);
+     98
+
+     jshell> System.out.println((char)(ch+1));
+     b
+
+     jshell> if (ch >= 'a' && ch <= 'z') {
+        ...>     System.out.println("És una lletra minúscula de l'alfabet llatí");
+        ...> }
+     És una lletra minúscula de l'alfabet llatí
+
+  Fixa't com el caràcter 'a' (què té el codi ASCII 97) passa a ser
+  considerat com un enter quan se li suma 1 a la línia 5.
+
+  A la línia 8 veiem que podem fer que Java el torni a considerar un
+  caràcter si li posem davant ``(char)``. 
+
+  Finalment, la condició de la línia 10 ens mostra com podem fer per
+  mirar si ``ch`` es troba entre la 'a' i la 'z' en l'alfabet llatí (sense
+  caràcters especials com ara 'ç' o 'à')
 
 * Quan el valor numèric que volem assignar a una variable numèrica es
   troba fora dels límits, el compilador ens donarà un error. Sempre podem

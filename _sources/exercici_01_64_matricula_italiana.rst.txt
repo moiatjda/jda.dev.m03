@@ -70,3 +70,14 @@ Considera les següents simulacions:
     0291BYJ
     No és una matrícula italiana vàlida
 
+**Pista**: Aquest exercici et pot obligar a fer moltes condicions i el teu
+codi, molt probablement semblarà molt repetitiu. Per no complicar-te massa
+la vida, et proposo que intentis jugar amb la indentació, de manera que
+puguis copiar i enganxar còmodament el codi duplicat.
+
+No pateixis per la duplicació. Aviat veurem maneres d'evitar-la en aquest
+tipus de problemes.
+
+Ah! I si et preocupa com mirar si un caràcter correspon o no amb una de
+les lletres de l'alfabet, torna a fer una ullada al tema
+:doc:`primitius_vs_classes` on tens una bona pista de com gestionar-ho.

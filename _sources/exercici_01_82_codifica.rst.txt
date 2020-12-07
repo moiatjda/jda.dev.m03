@@ -14,10 +14,11 @@
 
 .. rubric:: Enunciat
 
-Cada lletra que trobem a un String té un codi, un nombre positiu.
+Com ja vam veure a :doc:`primitius_vs_classes`, cada lletra que trobem a
+un String té un codi, un nombre positiu.
 
 Podem accedir a aquest número a partir d'una lletra i també podem, a
-partir del número, obtenir la lletra que té associada. Considera la
+partir del número, obtenir la lletra que té associada. Recorda la
 següent interacció:
 
 .. code-block:: console
@@ -36,8 +37,9 @@ següent interacció:
 En aquesta ocasió, desenvoluparem un programa que demani un text i el
 mostri codificat segons les següents instruccions:
 
-* només codificarem les lletres entre la ``a`` i la ``z`` minúscules. La
-  resta d'elements que apareguin al text, es mantindran iguals.
+* només codificarem les lletres entre la ``a`` i la ``z`` minúscules de
+  l'alfabet llatí. La resta d'elements que apareguin al text, es
+  mantindran iguals.
 
 * la lletra ``z`` serà substituïda per la ``a``
 
@@ -52,5 +54,5 @@ Considera la següent simulació:
     Cbeb mmfusb rvf uspcfn b vo tusjoh ué vo dpej, vo opncsf qptjujv.
 
 **Repte**: Si aquest exercici no et resulta difícil, aconsegueix fer-lo
-amb només un ``if`` (l'operador ternari també compta com a
-``if`` aquí, eh?)
+amb només un ``if`` (l'operador ternari també compta com a ``if`` aquí,
+eh?)

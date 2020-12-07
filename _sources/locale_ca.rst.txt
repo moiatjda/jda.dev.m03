@@ -22,6 +22,8 @@ En cas que no t'aparegui, pots instal·lar-lo tot executant les següents
 instruccions (requereixen privilegis de sudo):
 
 .. code-block:: console
+    :emphasize-lines: 3-5, 7
+
 
     $ sudo sed -i 's/^#ca_ES.UTF-8/ca_ES.UTF-8/' /etc/locale.gen 
     $ sudo locale-gen

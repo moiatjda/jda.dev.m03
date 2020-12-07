@@ -178,12 +178,12 @@ segons el format en que es troba el sistema on s’executa.</p>
 instruccions (requereixen privilegis de sudo):</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo sed -i <span class="s1">&#39;s/^#ca_ES.UTF-8/ca_ES.UTF-8/&#39;</span> /etc/locale.gen
 <span class="gp">$</span> sudo locale-gen
-<span class="go">Generating locales (this might take a while)...</span>
-<span class="go">  ca_ES.UTF-8... done</span>
-<span class="go">Generation complete.</span>
-<span class="gp">$</span> locale -a <span class="p">|</span> grep ca
-<span class="go">ca_ES.utf8</span>
-</pre></div>
+<span class="hll"><span class="go">Generating locales (this might take a while)...</span>
+</span><span class="hll"><span class="go">  ca_ES.UTF-8... done</span>
+</span><span class="hll"><span class="go">Generation complete.</span>
+</span><span class="gp">$</span> locale -a <span class="p">|</span> grep ca
+<span class="hll"><span class="go">ca_ES.utf8</span>
+</span></pre></div>
 </div>
 <p>Ara, per comprovar els programes que et donen problemes (per exemple, amb
 números decimals que la prova espera amb comes i el teu programa genera

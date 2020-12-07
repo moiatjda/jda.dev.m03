@@ -374,6 +374,43 @@ simples, com als exemples:</p>
 </pre></div>
 </div>
 </li>
+<li><p>Java tracta el típus caràcter com un valor numèric, de manera que la
+següent interacció amb jshell és possible:</p>
+<div class="highlight-console notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="go">jshell&gt; char ch = &#39;a&#39;;</span>
+<span class="hll"><span class="go">ch ==&gt; &#39;a&#39;</span>
+</span>
+<span class="go">jshell&gt; System.out.println(ch+1);</span>
+<span class="hll"><span class="go">98</span>
+</span>
+<span class="go">jshell&gt; System.out.println((char)(ch+1));</span>
+<span class="hll"><span class="go">b</span>
+</span>
+<span class="go">jshell&gt; if (ch &gt;= &#39;a&#39; &amp;&amp; ch &lt;= &#39;z&#39;) {</span>
+<span class="go">   ...&gt;     System.out.println(&quot;És una lletra minúscula de l&#39;alfabet llatí&quot;);</span>
+<span class="go">   ...&gt; }</span>
+<span class="hll"><span class="go">És una lletra minúscula de l&#39;alfabet llatí</span>
+</span></pre></div>
+</td></tr></table></div>
+<p>Fixa’t com el caràcter “a” (què té el codi ASCII 97) passa a ser
+considerat com un enter quan se li suma 1 a la línia 5.</p>
+<p>A la línia 8 veiem que podem fer que Java el torni a considerar un
+caràcter si li posem davant <code class="docutils literal notranslate"><span class="pre">(char)</span></code>.</p>
+<p>Finalment, la condició de la línia 10 ens mostra com podem fer per
+mirar si <code class="docutils literal notranslate"><span class="pre">ch</span></code> es troba entre la “a” i la “z” en l’alfabet llatí (sense
+caràcters especials com ara “ç” o “à”)</p>
+</li>
 <li><p>Quan el valor numèric que volem assignar a una variable numèrica es
 troba fora dels límits, el compilador ens donarà un error. Sempre podem
 forçar al compilador a acceptar la conversió malgrat es pugui perdre
