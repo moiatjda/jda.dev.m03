@@ -24,15 +24,15 @@ Una simulació d'execució:
     :emphasize-lines: 2, 4, 5, 7, 9
 
     $ java LloroAcabaLletra
-    El lloro pregunta paraula que finalitzi amb lletra
+    El lloro pregunta paraula que finalitzi per lletra
     amic
     El lloro diu: amic
-    El lloro pregunta paraula que finalitzi amb lletra
+    El lloro pregunta paraula que finalitzi per lletra
     color
     El lloro diu: color
-    El lloro pregunta paraula que finalitzi amb lletra
+    El lloro pregunta paraula que finalitzi per lletra
     color!
-    El lloro pregunta paraula que finalitzi amb lletra
+    El lloro pregunta paraula que finalitzi per lletra
 
     Adéu
 
