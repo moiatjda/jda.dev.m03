@@ -2,6 +2,9 @@
 Bucles
 ######
 
+Com hem vist, el que ens caldria és poder tornar a executar una línia que
+ja hem executat.
+
 En programació estructurada no està permès saltar d'una
 instrucció a una altra.
 
@@ -96,6 +99,13 @@ El funcionament és el següent:
   Tal i com faria Java si hagués estat un ``if``, en cas que la condició
   resulti certa, entra dins del bloc i acumula el valor a la variable
   ``suma``.
+
+* a continuació, demana un nou valor (línia 16), i, molt important…
+
+* **torna** a comprovar si el valor llegit és positiu (línia 12)
+
+* quan el valor deixi de ser positiu, el programa passarà a la línia 20 i
+  continuarà fins el final.
 
 Fixa't que l'estructura del ``while`` és idèntica a la del ``if`` excepte
 que el ``while`` en Java no té ``else``.

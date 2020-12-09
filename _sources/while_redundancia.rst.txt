@@ -34,11 +34,10 @@ Recorda el codi:
     }
 
 Com podem observar, les línies 8 i 9 són idèntiques a les 15 i 16. D'això
-s'en diu *codi redundant* i és quelcom que els desenvolupadors intentem
-evitar doncs són una font de problemes. Per exemple, imagina que et cal
-canviar el missatge per demanar el següent valor. Et caldrà modificar-ho
-en dos llocs. En aquest codi tan reduït és fàcil però, creu-me, no sempre
-ho serà tant.
+se'n diu *codi redundant* i és quelcom que hem de defugir doncs són una
+font de problemes. Per exemple, pensa que et cal canviar el missatge per
+demanar el següent valor. Et caldrà modificar-ho en dos llocs. En aquest
+codi tan reduït és fàcil però, creu-me, no sempre ho serà tant.
 
 Per poder eliminar la redundància, una manera molt típica és inicialitzar
 la variable ``valor`` a un valor que faci que la condició del ``while``

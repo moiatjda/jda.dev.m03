@@ -75,7 +75,6 @@ Considera les següents simulacions:
     $ java InformeCaracter
     Caràcter?
     Hola!
-    Caràcter?
     Character.getName('H'): LATIN CAPITAL LETTER H
     Character.isDigit('H'): false
     Character.isJavaIdentifierStart('H'): true
