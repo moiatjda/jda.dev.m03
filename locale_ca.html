@@ -187,16 +187,14 @@ comanda <code class="docutils literal notranslate"><span class="pre">grep</span>
 </span></pre></div>
 </div>
 <p>Ara tocaria generar el <em>locale</em></p>
-<blockquote>
-<div><p>$ sudo locale-gen
-Generating locales (this might take a while)…</p>
-<blockquote>
-<div><p>ca_ES.UTF-8… done</p>
-</div></blockquote>
-<p>Generation complete.
-$ locale -a | grep ca
-ca_ES.utf8</p>
-</div></blockquote>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo locale-gen
+<span class="hll"><span class="go">Generating locales (this might take a while)...</span>
+</span><span class="hll"><span class="go">  ca_ES.UTF-8... done</span>
+</span><span class="hll"><span class="go">Generation complete.</span>
+</span><span class="gp">$</span> locale -a <span class="p">|</span> grep ca
+<span class="hll"><span class="go">ca_ES.utf8</span>
+</span></pre></div>
+</div>
 <p>Ara, per comprovar els programes que et donen problemes (per exemple, amb
 números decimals que la prova espera amb comes i el teu programa genera
 amb punts) pots fer servir el <code class="docutils literal notranslate"><span class="pre">prgtest.sh</span></code> de la següent manera:</p>

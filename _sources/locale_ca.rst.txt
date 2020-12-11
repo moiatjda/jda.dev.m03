@@ -37,6 +37,9 @@ comanda ``grep`` hauria de mostrar-te la sortida indicada
 
 Ara tocaria generar el *locale*
 
+.. code-block:: console
+    :emphasize-lines: 2, 3, 4, 6
+
     $ sudo locale-gen
     Generating locales (this might take a while)...
       ca_ES.UTF-8... done
