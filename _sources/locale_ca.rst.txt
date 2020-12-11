@@ -18,14 +18,25 @@ Comprova que el tens instal·lat al teu sistema fent:
     $ locale -a | grep ca
     ca_ES.utf8
 
-En cas que no t'aparegui, pots instal·lar-lo tot executant les següents
-instruccions (requereixen privilegis de sudo):
+En cas que no t'aparegui, pots instal·lar-lo descomentant una línia a
+``/etc/locale.gen``. La línia segurament t'apareixerà com a ``# ca_ES.UTF-8 UTF-8`` i l'has de modificar perquè aparegui sense ``#`` inicial, quedant la línia com:
+
+.. code-block:: none
+
+    ca_ES.UTF-8 UTF-8
+
+Si no vols complicar-te la vida, la següent instrucció ho farà per tu. La
+comanda ``grep`` hauria de mostrar-te la sortida indicada
 
 .. code-block:: console
-    :emphasize-lines: 3-5, 7
+    :emphasize-lines: 3
 
+    $ sudo sed -i 's/^# *ca_ES.UTF-8 UTF-8/ca_ES.UTF-8 UTF-8/' /etc/locale.gen
+    $ grep '^ca_' /etc/locale.gen
+    ca_ES.UTF-8 UTF-8
 
-    $ sudo sed -i 's/^#ca_ES.UTF-8/ca_ES.UTF-8/' /etc/locale.gen 
+Ara tocaria generar el *locale*
+
     $ sudo locale-gen
     Generating locales (this might take a while)...
       ca_ES.UTF-8... done

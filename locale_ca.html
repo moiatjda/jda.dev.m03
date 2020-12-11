@@ -174,17 +174,29 @@ segons el format en que es troba el sistema on s’executa.</p>
 <span class="hll"><span class="go">ca_ES.utf8</span>
 </span></pre></div>
 </div>
-<p>En cas que no t’aparegui, pots instal·lar-lo tot executant les següents
-instruccions (requereixen privilegis de sudo):</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo sed -i <span class="s1">&#39;s/^#ca_ES.UTF-8/ca_ES.UTF-8/&#39;</span> /etc/locale.gen
-<span class="gp">$</span> sudo locale-gen
-<span class="hll"><span class="go">Generating locales (this might take a while)...</span>
-</span><span class="hll"><span class="go">  ca_ES.UTF-8... done</span>
-</span><span class="hll"><span class="go">Generation complete.</span>
-</span><span class="gp">$</span> locale -a <span class="p">|</span> grep ca
-<span class="hll"><span class="go">ca_ES.utf8</span>
+<p>En cas que no t’aparegui, pots instal·lar-lo descomentant una línia a
+<code class="docutils literal notranslate"><span class="pre">/etc/locale.gen</span></code>. La línia segurament t’apareixerà com a <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">ca_ES.UTF-8</span> <span class="pre">UTF-8</span></code> i l’has de modificar perquè aparegui sense <code class="docutils literal notranslate"><span class="pre">#</span></code> inicial, quedant la línia com:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ca_ES.UTF-8 UTF-8
+</pre></div>
+</div>
+<p>Si no vols complicar-te la vida, la següent instrucció ho farà per tu. La
+comanda <code class="docutils literal notranslate"><span class="pre">grep</span></code> hauria de mostrar-te la sortida indicada</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> sudo sed -i <span class="s1">&#39;s/^# *ca_ES.UTF-8 UTF-8/ca_ES.UTF-8 UTF-8/&#39;</span> /etc/locale.gen
+<span class="gp">$</span> grep <span class="s1">&#39;^ca_&#39;</span> /etc/locale.gen
+<span class="hll"><span class="go">ca_ES.UTF-8 UTF-8</span>
 </span></pre></div>
 </div>
+<p>Ara tocaria generar el <em>locale</em></p>
+<blockquote>
+<div><p>$ sudo locale-gen
+Generating locales (this might take a while)…</p>
+<blockquote>
+<div><p>ca_ES.UTF-8… done</p>
+</div></blockquote>
+<p>Generation complete.
+$ locale -a | grep ca
+ca_ES.utf8</p>
+</div></blockquote>
 <p>Ara, per comprovar els programes que et donen problemes (per exemple, amb
 números decimals que la prova espera amb comes i el teu programa genera
 amb punts) pots fer servir el <code class="docutils literal notranslate"><span class="pre">prgtest.sh</span></code> de la següent manera:</p>
