@@ -1,0 +1,28 @@
+##########################################################
+|exerciseicon__T| Exercici 02_08. Lletres entre parèntesis
+##########################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``02_08_parentitza/``
+
+* Continguts relacionats: :doc:`moduls_parametritzacio`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Desenvolupa una nova versió de l'exercici que :doc:`posava parèntesis a les lletres <exercici_01_67_parentitza>`. 
+
+La nova versió passarà les mateixes proves que l'original però el mòdul
+``main()`` se n'encarregarà d'obtenir les dades d'entrada, i cridarà un
+nou mòdul anomenat ``paretntiza()`` que serà qui realitzi realment la
+feina.
+
+La signatura del nou mòdul serà:
+
+.. code-block:: java
+
+    public static void parentitza(String text)

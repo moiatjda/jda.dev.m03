@@ -1,0 +1,85 @@
+##############
+Reaprofitament
+##############
+
+Un dels grans avantatges dels mòduls és la reutilització de codi sense
+necessitat de fer copia-enganxa.
+
+Per exemple, ara que ja tenim un mòdul que dibuixa una línia, podem
+canviar el nostre programa de manera que dibuixi rectangles en comptes de
+quadrats
+
+.. code-block:: java
+
+    public static void dibuixaRectangle() {
+        for (int linia=1; linia <= 5; linia++) {
+            dibuixaLinia();
+            dibuixaLinia();
+            System.out.println();
+        }
+    }
+
+Fixa't que cridem dos cops ``dibuixaLinia()``. Cap problema!
+
+En cridar ``dibuixaRectangle()`` des de ``main()``, ens generarà
+l'esperada forma:
+
+.. code-block:: none
+
+     X X X X X X X X X X
+     X X X X X X X X X X
+     X X X X X X X X X X
+     X X X X X X X X X X
+     X X X X X X X X X X
+
+Sense mòduls, haguéssim hagut de duplicar la part del codi que dibuixa la
+línia, per fer això.
+
+
+.. code-block:: java
+
+    public static void main(String[] args) {
+        for (int linia=1; linia <= 5; linia++) {
+            for (int columna=1; columna <= 5; columna++) {
+                System.out.print(" X");
+            }
+            for (int columna=1; columna <= 5; columna++) {
+                System.out.print(" X");
+            }
+            System.out.println();
+        }
+    }
+
+Fixa't que si volem canviar alguna cosa com ara posar un punt en comptes
+d'una ``X`` al nostre dibuix, ho hem de fer en dos llocs. Amb mòduls,
+només ens hem de preocupar de modificar-ho a un únic lloc. Potser no et
+semblarà gran cosa ara, però imagina't haver d'identificar tots els llocs
+duplicats a un programa llarg on hi hagi múltiples versions de peces de
+codi amb aspecte diferent (ex. en comptes de ``columna`` la segona línia
+podria haver anomenat ``col`` a la variable de recorregut) Creu-me, un
+malson.
+
+Ah! i si al ``main()`` cridem **dos** cops a ``dibuixaRectangle()`` ens
+generarà un quadrat de 10x10
+
+.. code-block:: java
+
+    public static void main(String[] args) {
+        dibuixaRectangle();
+        dibuixaRectangle();
+    }
+
+La sortida:
+
+.. code-block:: none
+
+     X X X X X X X X X X
+     X X X X X X X X X X
+     X X X X X X X X X X
+     X X X X X X X X X X
+     X X X X X X X X X X
+     X X X X X X X X X X
+     X X X X X X X X X X
+     X X X X X X X X X X
+     X X X X X X X X X X
+     X X X X X X X X X X

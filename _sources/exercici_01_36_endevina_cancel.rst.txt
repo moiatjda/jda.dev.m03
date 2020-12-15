@@ -25,8 +25,8 @@ En aquesta ocasió desenvoluparem una nova versió que millorarà l'exercici.
 La versió anterior obligava els usuaris a
 encertar per poder finalitzar.
 
-Aquesta nova versió ofereix la possibilitat
-de sortir del joc en introduir una cadena buida (recorda ``isEmpty()``.
+Aquesta nova versió ofereix la possibilitat de sortir del joc en introduir
+una cadena buida (recorda ``isEmpty()``).
 
 Quan els usuaris entrin la cadena buida, el programa respondrà amb el
 missatge "Cancel·lat!" i finalitzarà.

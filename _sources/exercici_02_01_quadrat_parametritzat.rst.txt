@@ -1,0 +1,50 @@
+##########################################################
+|exerciseicon__T| Exercici 02_01. El quadrat parametritzat
+##########################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``02_01_quadrat_parametritzat/``
+
+* Continguts relacionats: :doc:`moduls_parametritzacio`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Desenvolupa un programa que esperi un valor enter positiu en ``args[0]]`` i
+mostri un quadrat de caràcters 'X' amb el costat indicat pel valor rebut.
+
+Una execució d'aquest programa podria ser:
+
+.. code-block:: console
+    :emphasize-lines: 2-
+
+    $ java Quadrat.java 5
+     X X X X X
+     X X X X X
+     X X X X X
+     X X X X X
+     X X X X X
+
+En cas que el valor rebut sigui menor que 1, no mostrarà res.
+
+Vinga, que et passo l'esquelet del programa. Com és habitual, hauràs de
+reemplaçar els comentaris ``/*█████*/`` pel codi corresponent.
+
+.. code-block:: java
+
+    /*
+     * Programa que dibuixa un quadrat de X amb el costat indicat per args[0]
+     * Pressuposa que args[0] conté un valor enter vàlid
+     */
+
+    public class Quadrat {
+        public static void main(String[] args) {
+            int costat = Integer.parseInt(args[0]);
+            dibuixaQuadrat(costat);
+        }
+        /* █████ El teu codi aquí */
+    }

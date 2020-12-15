@@ -70,7 +70,7 @@ Considera les següents simulacions:
 
 .. code-block:: console
     :linenos:
-    :emphasize-lines: 2,4-14
+    :emphasize-lines: 2,4-
 
     $ java InformeCaracter
     Caràcter?

@@ -1,0 +1,33 @@
+######
+Mòduls
+######
+
+Fins ara hem conegut assignacions, E/S, condicionals, bucles i tenim unes
+primeres nocions de bones pràctiques en la documentació dels nostres
+codis. Amb tot això, teòricament podem fer **qualsevol programa**!
+
+Atenció, però, a la paraula "teòricament". A la pràctica, la realització
+d'alguns programes ens requeriria un temps molt elevat doncs els programes
+esdevenen, de seguida, molt complexos.
+
+Ens cal quelcom que ens permeti *trencar* els programes en peces
+manejables. Al *què?* li direm **mòdul** i al *com?* el coneixem com
+*anàlisi descendent* o *top-down*.
+
+L'anàlisi descendent és una tècnica de resolució de problemes basada
+en la descomposició del problema en subproblemes. L'anàlisi descendent
+s'aplica també a aquests subproblemes fins que els subproblemes
+resultants presenten una solució trivial.
+
+Quan els problemes són de programació, cada subproblema es converteix en un mòdul.
+
+Anem a veure com es tradueix tot això a codi.
+
+
+.. toctree::
+    :titlesonly:
+    :maxdepth: 1
+
+
+    moduls_intro.rst
+    moduls_exercicis.rst

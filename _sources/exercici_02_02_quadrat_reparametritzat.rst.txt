@@ -1,0 +1,55 @@
+#############################################################
+|exerciseicon__T| Exercici 02_02. El quadrat re-parametritzat
+#############################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``02_02_quadrat_reparametritzat/``
+
+* Continguts relacionats: :doc:`moduls_parametritzacio`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Farem ara una nova versió del :doc:`quadrat
+parametritzat<exercici_02_01_quadrat_parametritzat>`. En aquesta
+ocasió, el programa serà capaç de mostrar un caràcter diferent de ``X`` a
+partir del que ``main()`` rebi a ``args[1]``
+
+Per simplificar, pressuposarem també que sempre ens donen aquest segon
+*argument* i que ens quedarem amb el primer caràcter.
+
+Una execució d'aquest programa podria ser:
+
+.. code-block:: console
+    :emphasize-lines: 2-
+
+    $ java Quadrat.java 5 Y
+     Y Y Y Y Y
+     Y Y Y Y Y
+     Y Y Y Y Y
+     Y Y Y Y Y
+     Y Y Y Y Y
+
+Vinga, que et passo l'esquelet del programa. Com és habitual, hauràs de
+reemplaçar els comentaris ``/*█████*/`` pel codi corresponent.
+
+.. code-block:: java
+
+    /*
+     * Programa que dibuixa un quadrat amb el costat indicat per args[0]
+     * Pressuposa que args[0] conté un valor enter vàlid i que args[1]
+     * està definit.
+     */
+
+    public class Quadrat {
+        public static void main(String[] args) {
+            int costat = Integer.parseInt(args[0]);
+            char caracter = args[1].charAt(0);
+            dibuixaQuadrat(costat, caracter);
+        }
+        /* █████ El teu codi aquí */
+    }

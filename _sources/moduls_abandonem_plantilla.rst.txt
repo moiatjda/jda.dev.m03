@@ -1,0 +1,52 @@
+######################
+Abandonem la plantilla
+######################
+
+No hi ha res per sempre, i la plantilla de la nostra *infantessa* com a
+desenvolupadores i desenvolupadors no és una excepció.
+
+Fixa't en el següent canvi:
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 5, 8
+
+    /* Programa que dibuixa un quadrat numèric de 5x5 */
+    public class Quadrat {
+
+        public static void main(String[] args) {
+            dibuixaQuadrat();
+        }
+
+        public static void dibuixaQuadrat() {
+            for (int linia=1; linia <= 5; linia++) {
+                for (int columna=1; columna <= 5; columna++) {
+                    System.out.print(" X");
+                }
+                System.out.println();
+            }
+        }
+    }
+
+Si l'executem, aquest nou programa, en ser executat, genera la mateixa
+resposta que l'anterior. Però ho fa amb més línies. Analitzem què són
+aquestes línies.
+
+Fins la línia 4 tot és igual a l'anterior, però a la línia 5 hi ha un
+canvi important. En comptes del bucle que dibuixava el quadrat, ens trobem
+amb ``dibuixaQuadrat();``. A continuació, el bloc del ``main()`` es tanca
+i dins no hi ha res més!
+
+Donat que dins de ``main()`` no hi ha res més i que el programa dibuixa el
+mateix que la versió original, hem de deduir que la línia 5 està fent el
+que diu amb el text que hi apareix: dibuixar el quadrat!
+
+El que ve a continuació del bloc del ``main()`` també és nou. Per
+començar, després del bloc del ``main()`` **hi ha alguna cosa a
+continuació**! Això és una novetat important respecte tot el que hem fet
+fins ara.
+
+El que apareix, però, presenta una estructura coneguda, oi? Pràcticament
+és el bloc del ``main()`` de la versió original del programa ``Quadrat``.
+La única diferència està en que en comptes de ``main()`` apareix
+``dibuixaQuadrat()``. Justament el mateix que hi ha a la línia 5!

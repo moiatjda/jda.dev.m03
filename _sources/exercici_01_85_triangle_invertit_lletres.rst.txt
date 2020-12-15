@@ -6,7 +6,7 @@
 
 * Carpeta de lliurament: ``01_85_triangle_invertit_lletres/``
 
-* Continguts relacionats: :doc:`basics_conclusions`, :doc:`basics_conclusions`
+* Continguts relacionats: :doc:`basics_conclusions`
 
 * Com lliurar-lo: :ref:`instruccions <instruccions_git>`
 

@@ -1,0 +1,23 @@
+###############################################
+Llista d'exercicis de la introducció als mòduls
+###############################################
+
+Els exercicis del tema :doc:`moduls_intro` són:
+
+.. toctree::
+    :titlesonly:
+    :maxdepth: 1
+
+    exercici_02_01_quadrat_parametritzat.rst
+    exercici_02_02_quadrat_reparametritzat.rst
+    exercici_02_03_analisi_caracter.rst
+    exercici_02_04_mostra_interval_string.rst
+    exercici_02_05_cadena_continua.rst
+    exercici_02_06_triangle_lletres.rst
+    exercici_02_07_triangle_invertit_lletres.rst
+    exercici_02_08_parentitza.rst
+    exercici_02_09_nomes_lletres.rst
+    exercici_02_10_vocals_majuscules.rst
+    exercici_02_11_inicials_majuscules.rst
+    exercici_02_12_text_reves.rst
+    exercici_02_13_codifica.rst

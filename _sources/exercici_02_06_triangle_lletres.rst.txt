@@ -1,0 +1,33 @@
+########################################################
+|exerciseicon__T| Exercici 02_06. Un triangle de lletres
+########################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``02_06_triangle_lletres/``
+
+* Continguts relacionats: :doc:`moduls_parametritzacio`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+
+Desenvolupa una nova versió de l'exercici que :doc:`dibuixava un triangle de lletres <exercici_01_84_triangle_lletres>`. 
+
+La nova versió passarà les mateixes proves que l'original però el mòdul
+``main()`` se n'encarregarà d'obtenir les dades d'entrada, i cridarà un
+nou mòdul anomenat ``dibuixaTriangle()`` que serà qui realitzi realment
+la feina de mostrar el triangle. De fet, aquest es recolzarà en un altre
+anomenat ``dibuixaLinia()`` que serà qui realment faci la feina de
+dibuixar cada línia del triangle.
+
+La signatura dels nous mòduls serà:
+
+.. code-block:: java
+
+    public static void dibuixaTriangle(String text)
+    public static void dibuixaLinia(String text, int linia)
+

@@ -1,0 +1,69 @@
+##################
+Un primer contacte
+##################
+
+Fins ara tots els nostres programes tenen **tot** el codi dins del bloc.
+Per exemple, considera el següent programa:
+
+.. code-block:: java
+    :linenos:
+
+    /* Programa que dibuixa un quadrat numèric de 5x5 */
+    public class Quadrat {
+
+        public static void main(String[] args) {
+            for (int linia=1; linia <= 5; linia++) {
+                for (int columna=1; columna <= 5; columna++) {
+                    System.out.print(" X");
+                }
+                System.out.println();
+            }
+        }
+    }
+
+Una execució d'aquest programa seria:
+
+.. code-block:: console
+    :emphasize-lines: 2-
+
+    $ java Quadrat 
+     X X X X X
+     X X X X X
+     X X X X X
+     X X X X X
+     X X X X X
+
+Com pots observar, ``Quadrat`` correspon perfectament a la coneguda plantilla:
+
+.. code-block:: java
+
+    public class NomDelPrograma {
+        public static void main(String[] args) {
+
+            /*
+                aquí tot el codi
+            */
+
+        }
+    }
+
+Fins ara, res especial a mencionar, oi? Hem fet un munt de programes com
+aquest a :doc:`basics` com per espantar-nos!
+
+De fet, **tots** els programes que hem fet fins ara, caben perfectament
+dins d'aquesta plantilla.
+
+En les properes pàgines descobrirem que podem *escapar* d'aquesta
+plantilla
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    moduls_abandonem_plantilla.rst
+    moduls_mes_bocinets.rst
+    moduls_reaprofitament.rst
+    moduls_parametritzacio.rst
+    moduls_primeres_definicions.rst
+
+

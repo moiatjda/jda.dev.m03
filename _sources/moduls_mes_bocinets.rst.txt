@@ -1,0 +1,32 @@
+############
+Més bocinets
+############
+
+Encara podem descomposar més el nostre programa. Fixa't en aquesta nova
+versió:
+
+.. code-block:: java
+
+    /* Programa que dibuixa un quadrat numèric de 5x5 */
+    public class Quadrat {
+        public static void main(String[] args) {
+            dibuixaQuadrat();
+        }
+
+        public static void dibuixaQuadrat() {
+            for (int linia=1; linia <= 5; linia++) {
+                dibuixaLinia();
+                System.out.println();
+            }
+        }
+
+        public static void dibuixaLinia() {
+            for (int columna=1; columna <= 5; columna++) {
+                System.out.print(" X");
+            }
+        }
+    }
+
+
+Com pots veure, estem cridant el nou mòdul ``dibuixaLinia()`` en múltiples
+ocasions, dins del bucle del mòdul ``dibuixaQuadrat()``.

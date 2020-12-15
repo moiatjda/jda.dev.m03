@@ -1,0 +1,28 @@
+#################################################
+|exerciseicon__T| Exercici 02_05. Cadena continua
+#################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``02_05_cadena_continua/``
+
+* Continguts relacionats: :doc:`moduls_parametritzacio`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Desenvolupa una nova versió de l'exercici que :doc:`mostrava una cadena contínua <exercici_01_70_cadena_continua>`. 
+
+La nova versió passarà les mateixes proves que l'original però el mòdul
+``main()`` se n'encarregarà d'obtenir les dades d'entrada, i cridarà un
+nou mòdul anomenat ``mostraInterval()`` que serà qui realitzi realment la
+feina de mostrar l'interval.
+
+La signatura del nou mòdul serà:
+
+.. code-block:: java
+
+    public static void mostraCadenaContinua(String text, int longitud)

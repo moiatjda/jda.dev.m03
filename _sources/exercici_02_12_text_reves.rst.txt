@@ -1,0 +1,28 @@
+###################################################################
+|exerciseicon__T| Exercici 02_12. El text del revés (versió bàsica)
+###################################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``02_12_text_reves/``
+
+* Continguts relacionats: :doc:`moduls_parametritzacio`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Desenvolupa una nova versió de l'exercici que :doc:`posava un text del revés <exercici_01_79_text_reves>`. 
+
+La nova versió passarà les mateixes proves que l'original però el mòdul
+``main()`` se n'encarregarà d'obtenir les dades d'entrada, i cridarà un
+nou mòdul que serà qui realitzi realment la feina.
+
+La signatura del nou mòdul serà:
+
+.. code-block:: java
+
+    public static void mostraReves(String text)
+

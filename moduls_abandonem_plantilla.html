@@ -1,0 +1,304 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ca" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Abandonem la plantilla &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Més bocinets" href="moduls_mes_bocinets.html" />
+    <link rel="prev" title="Un primer contacte" href="moduls_intro.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació amb Java
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-21
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a></li>
+<li class="toctree-l1"><a class="reference internal" href="apendix.html">Apèndix</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="moduls.html">Mòduls</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="moduls_intro.html">Un primer contacte</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Abandonem la plantilla</a></li>
+<li class="toctree-l3"><a class="reference internal" href="moduls_mes_bocinets.html">Més bocinets</a></li>
+<li class="toctree-l3"><a class="reference internal" href="moduls_reaprofitament.html">Reaprofitament</a></li>
+<li class="toctree-l3"><a class="reference internal" href="moduls_parametritzacio.html">Parametrització</a></li>
+<li class="toctree-l3"><a class="reference internal" href="moduls_primeres_definicions.html">Primeres definicions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="moduls_exercicis.html">Llista d’exercicis</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació amb Java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="moduls.html">Mòduls</a> &raquo;</li>
+        
+          <li><a href="moduls_intro.html">Un primer contacte</a> &raquo;</li>
+        
+      <li>Abandonem la plantilla</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="abandonem-la-plantilla">
+<h1>Abandonem la plantilla<a class="headerlink" href="#abandonem-la-plantilla" title="Link permanent a aquest títol">¶</a></h1>
+<p>No hi ha res per sempre, i la plantilla de la nostra <em>infantessa</em> com a
+desenvolupadores i desenvolupadors no és una excepció.</p>
+<p>Fixa’t en el següent canvi:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/* Programa que dibuixa un quadrat numèric de 5x5 */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Quadrat</span> <span class="p">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+<span class="hll">        <span class="n">dibuixaQuadrat</span><span class="p">();</span>
+</span>    <span class="p">}</span>
+
+<span class="hll">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">dibuixaQuadrat</span><span class="p">()</span> <span class="p">{</span>
+</span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">linia</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">linia</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">;</span> <span class="n">linia</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">columna</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">columna</span> <span class="o">&lt;=</span> <span class="mi">5</span><span class="p">;</span> <span class="n">columna</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot; X&quot;</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Si l’executem, aquest nou programa, en ser executat, genera la mateixa
+resposta que l’anterior. Però ho fa amb més línies. Analitzem què són
+aquestes línies.</p>
+<p>Fins la línia 4 tot és igual a l’anterior, però a la línia 5 hi ha un
+canvi important. En comptes del bucle que dibuixava el quadrat, ens trobem
+amb <code class="docutils literal notranslate"><span class="pre">dibuixaQuadrat();</span></code>. A continuació, el bloc del <code class="docutils literal notranslate"><span class="pre">main()</span></code> es tanca
+i dins no hi ha res més!</p>
+<p>Donat que dins de <code class="docutils literal notranslate"><span class="pre">main()</span></code> no hi ha res més i que el programa dibuixa el
+mateix que la versió original, hem de deduir que la línia 5 està fent el
+que diu amb el text que hi apareix: dibuixar el quadrat!</p>
+<p>El que ve a continuació del bloc del <code class="docutils literal notranslate"><span class="pre">main()</span></code> també és nou. Per
+començar, després del bloc del <code class="docutils literal notranslate"><span class="pre">main()</span></code> <strong>hi ha alguna cosa a
+continuació</strong>! Això és una novetat important respecte tot el que hem fet
+fins ara.</p>
+<p>El que apareix, però, presenta una estructura coneguda, oi? Pràcticament
+és el bloc del <code class="docutils literal notranslate"><span class="pre">main()</span></code> de la versió original del programa <code class="docutils literal notranslate"><span class="pre">Quadrat</span></code>.
+La única diferència està en que en comptes de <code class="docutils literal notranslate"><span class="pre">main()</span></code> apareix
+<code class="docutils literal notranslate"><span class="pre">dibuixaQuadrat()</span></code>. Justament el mateix que hi ha a la línia 5!</p>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="moduls_mes_bocinets.html" class="btn btn-neutral float-right" title="Més bocinets" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="moduls_intro.html" class="btn btn-neutral float-left" title="Un primer contacte" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2021 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

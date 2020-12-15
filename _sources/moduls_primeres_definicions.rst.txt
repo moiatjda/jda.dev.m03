@@ -1,0 +1,134 @@
+####################
+Primeres definicions
+####################
+
+Permet-me unes definicions per poder començar a parlar amb propietat del
+que hi ha aquí:
+
+.. graphviz::
+    :align: center
+
+    digraph G {
+        layout=neato;
+        edge [color="orange" ];
+        node [fontname=Arial, color="darkorange", fillcolor="orange", fontsize=12, style=filled];
+        mòdul [fillcolor="darkorange", shape=circle];
+        mòdul -> definició, crida;
+        definició -> signatura, cos;
+        signatura -> nom, paràmetre
+        crida -> argument;
+        argument -> paràmetre [dir="none", style="dashed"];
+
+    }
+
+
+* L'element ``dibuixaQuadrat()`` es coneix, entre d'altres maneres, com a *mòdul*.
+
+  Per si t'ho estàs preguntant, ``main()`` també és un mòdul!
+
+  Una altra manera habitual que trobarem per referir-nos als mòduls és
+  *subrutina*. Més endavant, encara veurem d'altres com *mètode* o
+  *servei*. De moment, parlem de mòduls, val?
+
+* El següent codi és la *definició* del mòdul ``dibuixaLinia()``:
+
+  .. code-block:: java
+
+        public static void dibuixaLinia(int linia) {
+            for (int columna=1; columna <= linia; columna++) {
+                System.out.print(" X");
+            }
+        }
+
+  El bloc de codi que hi ha entre les claus de la primera i darrera línia,
+  es coneix com el *cos* del mòdul. A la primera línia li diem *signatura*
+  del mòdul.
+
+* El nom del mòdul segueix les mateixes regles que els noms de les
+  variables que vam veure a :doc:`variables`
+
+  Encara hi afegirem una regla/recomanació addicional: donat que aquest
+  tipus de mòduls *fan* quelcom, és molt recomanable que el seu nom tingui
+  l'aspecte d'una acció. En el cas de ``dibuixaQuadrat()`` el nom ens
+  evoca a quelcom que *dibuixa* un quadrat.
+
+  El nom del mòdul és **molt important**. Hem de perseguir que ens permeti
+  saber què fa només en llegir-lo. De vegades, però, ens cal l'ajuda de
+  comentaris per a poder tenir més clar què fa.
+
+  .. code-block:: java
+     :emphasize-lines: 1, 2
+
+        /* Dibuixa un quadrat numèric de 5x5, to repetint la seqüència de
+           1 a 5 a cada línia */
+        public static void dibuixaQuadrat() {
+            for (int linia=1; linia <= 5; linia++) {
+                dibuixaLinia();
+                System.out.println();
+            }
+        }
+
+
+* Per poder fer servir un mòdul, fem el que es coneix com a *crida* al mòdul:
+
+  .. code-block:: java
+
+        dibuixaLinia(5);
+
+  La crida o *invocació* del mòdul és simplement el nom del mòdul seguit
+  de parèntesis.
+
+  En el moment que es realitza la crida, entra en execució el codi especificat al cos del mòdul.
+  En acabar d'executar el bloc del mòdul, l'execució passa a la següent
+  línia després de la crida.
+
+  Potser et preguntaràs, on és la crida del ``main()``?  Doncs és el ``java`` que executes quan fas:
+
+  .. code-block:: console
+
+     $ java Quadrat
+
+  Aquest ``java`` és també un programa. En ser executat agafa
+  ``Quadrat.class``, cerca ``main()`` i el crida si el troba o bé mostra
+  un error si no el troba exactament com l'espera. Potser te l'has trobat:
+
+  .. code-block:: none
+
+        Error: Main method not found in class Quadrat, please define the main method as:
+           public static void main(String[] args)
+        or a JavaFX application class must extend javafx.application.Application
+
+* Els mòduls poden *rebre* valors per adaptar la seva execució. Els valors
+  que reben, són guardats en variables declarades entre els parèntesis.
+  Aquestes variables s'anomenen *paràmetres*.
+
+  En podem especificar zero o més paràmetres a la definició d'un mòdul.
+  Quan en tenim més d'un, simplement els separem amb comes.
+
+  .. code-block:: java
+
+        public static void modulAmbTresParametres(int param1, char param2, String param3) {
+            /* aquí es fan coses de vital importància amb els tres paràmetres */
+        }
+
+  Els nom dels paràmetres només tenen *vida* dins del mòdul en que apareixen.
+
+* En el moment de la crida a un mòdul amb paràmetres, els valors que li
+  *passem* es diuen *arguments*.
+
+  Un argument és una expressió (no necessàriament una variable) i Java
+  comprovarà durant la compilació que sigui del mateix tipus que el
+  paràmetre corresponent segons la definició del mòdul.
+
+  Per descomptat, en cas que el mòdul requereixi més d'un paràmetre, l'hi
+  passarem més d'un argument. De fet, **exactament** tants com paràmetres
+  especifíqui i, **exactament** del tipus en l'ordre especificat
+
+  .. code-block:: java
+
+        modulAmbTresParametres(1, '2', "tres");
+
+* Es poden distingir diferents tipus de mòduls. Aquests que estem veient aquí se'ls
+  coneix com *procediments*. Més endavant veurem un altre tipus important:
+  les *funcions*.
+

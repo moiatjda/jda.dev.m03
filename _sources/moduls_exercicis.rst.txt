@@ -1,0 +1,11 @@
+##################
+Llista d'exercicis
+##################
+
+Els exercicis del tema :doc:`moduls` són:
+
+.. toctree::
+    :titlesonly:
+    :maxdepth: 1
+
+    moduls_exercicis_intro.rst

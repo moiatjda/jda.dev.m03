@@ -1,0 +1,191 @@
+###############
+Parametrització
+###############
+
+Com hem vist, els mòduls ens permeten fer el codi més llegible i ens
+eviten redundàncies. Amb això només, ja valdria la pena fer-los servir.
+Ens esperen, però, més sorpreses. T'explico una d'elles a continuació.
+
+De moment, sempre que cridem un mòdul dels que hem creat, acaba fent
+exactament el mateix.
+
+Suposa que volem desenvolupar un programa amb la següent forma:
+
+.. code-block:: none
+
+     X
+     X X
+     X X X
+     X X X X
+     X X X X X
+
+Una manera seria aquesta:
+
+.. code-block:: java
+    :linenos:
+
+    public class Triangle {
+        public static void main(String[] args) {
+            dibuixaTriangle ();
+        }
+
+        public static void dibuixaTriangle () {
+            dibuixaLinia1();
+            System.out.println();
+            dibuixaLinia2();
+            System.out.println();
+            dibuixaLinia3();
+            System.out.println();
+            dibuixaLinia4();
+            System.out.println();
+            dibuixaLinia5();
+            System.out.println();
+        }
+
+        public static void dibuixaLinia1() {
+            for (int columna=1; columna <= 1; columna++) {
+                System.out.print(" X");
+            }
+        }
+
+        public static void dibuixaLinia2() {
+            for (int columna=1; columna <= 2; columna++) {
+                System.out.print(" X");
+            }
+        }
+
+        public static void dibuixaLinia3() {
+            for (int columna=1; columna <= 3; columna++) {
+                System.out.print(" X");
+            }
+        }
+
+        public static void dibuixaLinia4() {
+            for (int columna=1; columna <= 4; columna++) {
+                System.out.print(" X");
+            }
+        }
+
+        public static void dibuixaLinia5() {
+            for (int columna=1; columna <= 5; columna++) {
+                System.out.print(" X");
+            }
+        }
+    }
+
+Bé, no és per llençar-hi coets, oi? Cinc mòduls! Era millor quan fèiem
+servir ``for`` niats!
+
+Si ens fixem en aquests mòduls que dibuixen les diferents línies, veurem
+que el codi és molt semblant. Més si els modifiquem una mica. Et poso dos
+dels cinc mòduls transformats perquè et facis la idea:
+
+.. code-block:: java
+    :emphasize-lines: 2, 9
+
+        public static void dibuixaLinia1() {
+            int linia = 1;
+            for (int columna=1; columna <= linia; columna++) {
+                System.out.print(" X");
+            }
+        }
+
+        public static void dibuixaLinia2() {
+            int linia = 2;
+            for (int columna=1; columna <= linia; columna++) {
+                System.out.print(" X");
+            }
+        }
+
+Realment, a banda del nom del mòdul, només varia la inicialització de la
+variable ``linia``.
+
+Java, com la majoria dels llenguatges, ens permet fer el següent:
+
+.. code-block:: java
+
+        public static void dibuixaLinia(int linia) {
+            for (int columna=1; columna <= linia; columna++) {
+                System.out.print(" X");
+            }
+        }
+
+Fixa't que ``dibuixaLinia()`` ara **rep** el número de la línia entre els
+parèntesis!
+
+Refem el programa perquè faci servir aquesta nova versió de línia:
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 8, 13, 14
+
+    public class Triangle {
+        public static void main(String[] args) {
+            dibuixaTriangle ();
+        }
+
+        public static void dibuixaTriangle () {
+            for (int linia=1; linia <= 5; linia++) {
+                dibuixaLinia(linia);
+                System.out.println();
+            }
+        }
+
+        public static void dibuixaLinia(int linia) {
+            for (int columna=1; columna <= linia; columna++) {
+                System.out.print(" X");
+            }
+        }
+    }
+
+Com veiem, la manera de *passar* valors a un mòdul té dues parts:
+
+* al mòdul li indiquem què ha de rebre (en el cas de ``dibuixaLinia()``
+  rebrà un enter i li dirà ``linia``
+
+* a la crida simplement passem el valor
+
+A aquest exemple, el valor que li passem es troba a una variable anomenada
+``linia``. El nom coincideix amb la variable que declarem a
+``dibuixaLinia()`` però no té perquè. De fet, ni tant sols cal passar una
+variable a la crida. La següent també funciona:
+
+.. code-block:: java
+
+     dibuixaLinia(5+linia*2);
+
+Per cert, aquest pas de valors ja el coneixíem. Per exemple el mòdul
+``main()`` rep un valor anomenat ``args`` d'un tipus que encara no hem
+vist en aquest curs anomenat ``String[]``, Sí, té a veure amb el tan
+conegut ``String``.
+
+``main()`` no és l'únic mòdul que hem vist. Per exemple,
+``System.out.println()`` també ho és. En aquest cas, el valor que rep és
+la cadena que ha d'escriure per sortida estàndard. La diferència més
+important per nosaltres entre els nostres ``main()`` i mòduls com el
+``System.out.println()`` és que aquests els han programat d'altres abans i
+els podem fer servir "gratis".
+
+|exerciseicon__T| :doc:`exercici_02_01_quadrat_parametritzat`
+
+|exerciseicon__T| :doc:`exercici_02_02_quadrat_reparametritzat`
+
+|exerciseicon__T| :doc:`exercici_02_03_analisi_caracter`
+
+|exerciseicon__T| :doc:`exercici_02_05_cadena_continua`
+
+|exerciseicon__T| :doc:`exercici_02_06_triangle_lletres`
+
+|exerciseicon__T| :doc:`exercici_02_07_triangle_invertit_lletres`
+
+|exerciseicon__T| :doc:`exercici_02_08_parentitza`
+
+|exerciseicon__T| :doc:`exercici_02_09_nomes_lletres`
+
+|exerciseicon__T| :doc:`exercici_02_10_vocals_majuscules`
+
+|exerciseicon__T| :doc:`exercici_02_11_inicials_majuscules`
+
+|exerciseicon__T| :doc:`exercici_02_12_text_reves`
+
+|exerciseicon__T| :doc:`exercici_02_13_codifica`

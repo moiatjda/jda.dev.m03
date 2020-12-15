@@ -1,0 +1,62 @@
+################################################
+|exerciseicon__T| Exercici 02_13. Codifica bàsic
+################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``02_13_codifica/``
+
+* Continguts relacionats: :doc:`moduls_parametritzacio`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Desenvolupa una nova versió de l'exercici que :doc:`codificava un text<exercici_01_82_codifica>`. 
+
+La nova versió inclou una modificació respecte la versió inicial. En
+aquesta ocasió permetrà decidir quants caràcters s'incrementen
+
+Considera les següents simulacions:
+
+.. code-block:: console
+    :emphasize-lines: 2, 4, 6
+
+    $ java CodificaBasic
+    Text?
+    abcz
+    Quants?
+    1
+    bcda
+
+.. code-block:: console
+    :emphasize-lines: 2, 4, 6
+
+    $ java CodificaBasic
+    Text?
+    abcz
+    Quants?
+    2
+    cdeb
+
+.. code-block:: console
+    :emphasize-lines: 2, 4, 6
+
+    $ java CodificaBasic
+    Text?
+    abcz
+    Quants?
+    -2
+    No s'accepten números negatius
+
+El mòdul ``main()`` se n'encarregarà només d'obtenir les dades d'entrada, i cridarà un
+nou mòdul que serà qui realitzi realment la feina.
+
+La signatura del nou mòdul serà:
+
+.. code-block:: java
+
+    public static void codifica(String text, int quants)
+
