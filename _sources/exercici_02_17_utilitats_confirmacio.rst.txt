@@ -1,0 +1,18 @@
+##########################################################
+|exerciseicon___| Exercici 02_17. Utilitats de confirmació
+##########################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``02_17_utilitats_confirmacio/``
+
+* Continguts relacionats: :doc:`moduls_biblioteques`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+.. rubric:: Enunciat
+
+Desenvolupa una versió dels programes ``Autodestruccio``,
+``AutodestruccioTotal`` i ``Semafor`` (versió amb confirmació de majoria
+d'edat) de manera que facin servir tots tres la funció
+``UtilitatsConfirmacio.respostaABoolean()``.

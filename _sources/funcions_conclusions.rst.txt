@@ -1,0 +1,43 @@
+###########
+Conclusions
+###########
+
+Com a resum d'aquesta secció ens queden les següents definicions:
+
+* funció: un mòdul que retorna un valor amb ``return``.
+
+  Les funcions que hem vist fins ara s'adapten a la plantilla:
+
+  .. code-block:: none
+
+    pubilc static «tipus» «nom de la funció»(«zero o més paràmetres») {
+        «instruccions del bloc»
+        return «valor del tipus»;
+    }
+
+* procediment: mòdul que no retorna cap valor amb ``return``.
+
+  Els procediments poden tenir ``return`` però aquest vindrà inmediatament
+  seguit del punt i coma que finalitza la sentència.
+
+  La plantilla pels procediments és:
+
+  .. code-block:: none
+
+    pubilc static void «nom de la funció»(«zero o més paràmetres») {
+        «instruccions del bloc»
+        return;
+    }
+
+* funció pura: funció que no modifica l'entorn i que, amb els mateixos
+  arguments, sempre retorna el mateix resultat en ser cridada.
+
+* funció impura: funció que altera l'entorn, per exemple, llegint de
+  l'entrada estàndard, i que pot no retornar sempre el mateix valor per
+  crides amb els mateixos arguments.
+
+  A aquesta alteració de l'entorn li diem "efectes col·laterals*
+
+* punt de sortida: cada punt pel que pot finalitzar un mòdul. Podem
+  considerar cada cop que apareix un ``return`` o bé quan s'acaben les
+  instruccions del cos del mòdul.

@@ -1,0 +1,67 @@
+##########################################
+|exerciseicon__T| Exercici 02_18. És vocal
+##########################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``02_18_es_vocal/``
+
+* Continguts relacionats: :doc:`moduls_biblioteques`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+En diferents exercicis ens hem trobat la necessitat de distingir si un
+caràcter és o no una vocal. Ara que ja coneixem les funcions, podem
+definir la nostra funció ``esVocal()`` que rebi un caràcter i retorni un
+booleà indicant si el caràcter correspon o no amb una vocal.
+
+Considerarem com a vocals totes les variants d'accents i dièresis de les
+vocals catalanes.
+
+Recorda que aquests variants són, a banda de les cinc habituals,
+``à``, ``è``, ``é``, ``í``, ``ï``, ``ò``, ``ó``, ``ú`` i ``ü``.
+
+Què has de fer
+==============
+
+En aquest exercici hi haurà tres fitxers:
+
+* ``UtilString.java``: contindrà la funció ``esVocal()``. No cal que
+  contingui ``main()``.
+
+* ``LloroVocals.java``: una nova versió entre mig de
+  :doc:`exercici_01_59_inicial_vocal_minuscula` i
+  :doc:`exercici_01_60_acaba_vocal_minuscula`
+  que farà servir la nova funció per que el lloro repeteixi qualsevol text
+  que comenci o acabi en vocal (siguin majúscules o minúscules)
+
+* ``UtilitatsConfirmacio``: que ja tens d'un :doc:`exercici anterior
+  <exercici_02_17_utilitats_confirmacio>`
+
+Una simulació d'execució seria:
+
+.. code-block:: console
+    :emphasize-lines: 2, 4, 5, 7, 8, 10, 12, 14, 16, 18
+
+    $ java LloroVocalIniciFi
+    El lloro demana paraula amb vocal a l'inici o/i final
+    ànec
+    El lloro diu: ànec
+    El lloro demana paraula amb vocal a l'inici o/i final
+    lleó
+    El lloro diu: lleó
+    El lloro demana paraula amb vocal a l'inici o/i final
+    gos
+    El lloro demana paraula amb vocal a l'inici o/i final
+
+    El lloro demana confirmació per finalitzar
+    Encara no
+    El lloro demana paraula amb vocal a l'inici o/i final
+
+    El lloro demana confirmació per finalitzar
+    sí
+    Adéu

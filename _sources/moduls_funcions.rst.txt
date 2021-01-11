@@ -1,0 +1,29 @@
+########
+Funcions
+########
+
+Hem vist que podem dividir els nostres programes en mòduls.
+
+Els mòduls no
+deixen de ser una peça de codi etiquetada amb un nom, que pot ser
+*cridada* tants cops com ens calgui.
+Fins i tot hem vist que gràcies als *paràmetres* podem adaptar el resultat
+de cada crida a les nostres necessitats del moment.
+
+No està malament, però no és el final de la història amb els mòduls… ni
+molt menys! No et perdis el següent episodi.
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    funcions_intro.rst
+    funcions_nou_tipus.rst
+    funcions_crides.rst
+    funcions_eficiencia.rst
+    funcions_return.rst
+    funcions_arreu.rst
+    funcions_collaterals.rst
+    moduls_reutilitzacio.rst
+    moduls_biblioteques.rst
+    funcions_conclusions.rst

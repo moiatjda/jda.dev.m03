@@ -1,0 +1,112 @@
+#####################
+Un nou tipus de mòdul
+#####################
+
+Si bé hem resolt el problema, el resultat potser no ens agrada del tot. Si
+més no, el mòdul ``comparaAiEs()`` ha de *tornar* a comptar les ocurrències
+de les dues lletres per poder fer la seva feina.
+
+Si poguéssim aconseguir guardar d'alguna manera el nombre de 'a's i el de
+'e's, la comparació seria immediata, no?
+
+Considera la següent versió amb molta atenció, que ara sí hi ha novetats:
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 13, 17, 18, 34
+
+    /*
+     * programa que mostra quantes 'a's i 'e's té un text
+     */
+    public class ComptaAiEs {
+        public static void main(String[] args) {
+            System.out.println("Introdueix un text");
+            String entrada = Entrada.readLine();
+            comptaLletra(entrada, 'a');
+            comptaLletra(entrada, 'e');
+            comparaAiEs(entrada);
+        }
+        public static void comptaLletra(String text, char lletra) {
+            int comptador = quantesOcurrencies(text, lletra);
+            System.out.println("Nombre de '" + lletra + "'s: " + comptador);
+        }
+        public static void comparaAiEs(String text) {
+            int comptadorA = quantesOcurrencies(text, 'a');
+            int comptadorE = quantesOcurrencies(text, 'e');
+            if (comptadorA > comptadorE) {
+                System.out.println("Hi ha més 'a's que 'e's");
+            } else if (comptadorA < comptadorE) {
+                System.out.println("Hi ha menys 'a's que 'e's");
+            } else {
+                System.out.println("Hi ha tantes 'a's com 'e's");
+            }
+        }
+        public static int quantesOcurrencies(String text, char lletra) {
+            int comptador = 0;
+            for (int i=0; i < text.length(); i++) {
+                if (text.charAt(i) == lletra) {
+                    comptador += 1;
+                }
+            }
+            return comptador;
+        }
+    }
+
+A veure què ha passat aquí!
+
+En primer lloc, ha aparegut un nou mòdul anomenat ``quantesOcurrencies()``
+Aquest mòdul rep el text i una lletra i calcula el nombre d'ocurrències de
+la lletra dins del text. Això és exactament el que feia
+``comptaLletra()``, excepte per un *petit* detall: en comptes de mostrar
+el resultat per la sortida estàndard, ``quantesOcurrencies()`` el
+**retorna**!
+
+Ara, a cada lloc on abans havíem d'incloure un bucle per comptar quantes
+vegades apareix una lletra al text, hem substituït el bucle per una crida
+a ``quantesOcurrencies()``. Mira les línies 13, 17 i 18.
+
+
+Fixa't en les diferències de ``quantesOcurrencies()`` respecte a altres
+mòduls com ara ``comptaLletra()``:
+
+* a la declaració del mòdul apareix, en comptes de ``void`` un tipus. En
+  aquest cas ``int``, però podria ser qualsevol altre.
+
+  Sovint ens referirem a aquest tipus com el *tipus de retorn* del mòdul.
+
+* la darrera línia del mòdul conté ``return comptador;``. El comptador és
+  una variable de tipus enter, a l'igual que el tipus de retorn del mòdul.
+
+  En realitat no cal que sigui una variable. Pot ser qualsevol expressió
+  que retorni un valor del mateix tipus que el tipus de retorn.
+
+* la manera de cridar a ``quantesOcurrencies()`` també és diferent. En
+  comptes de fer la crida com a instrucció (fixa't en la línia 8 per
+  exemple) ho fem *com a expressió*. Per exemple, la línia 13 assigna el
+  valor resultant de cridar a ``quantesOcurrencies()`` a la variable
+  ``comptador``.
+
+* la manera d'anomenar aquest mòdul és diferent la que hem vist fins ara.
+  La recomanació amb els mòduls anteriors era fer servir un nom d'acció
+  per descriure l'acció que realitzava. En aquest cas "quantes
+  ocurrències" no és ben bé un verb sinó un substantiu similar al que
+  faríem servir per anomenar una variable!
+
+Amb totes aquestes diferències ja pots imaginar que estem davant d'una
+*bestiola* diferent de les anteriors. I així és.
+
+A aquest tipus de mòduls que *retornen* un valor, els coneixem com
+*funcions*, en contraposició als que no retornen cap valor (``void``) que
+es solen anomenar *procediments* [#totsonfuncions]_.
+
+
+-----
+
+.. [#totsonfuncions] També val a dir que trobem molta gent que parla
+    directament de funcions per referir-se als mòduls, especialment en
+    llenguatges com java en els que la definició del mòdul la diferència
+    la marca si el tipus de retorn és o no ``void``. Pensa però que la
+    distinció és prou rellevant com per que altres llenguatges ho
+    remarquin.  Per exemple, els llenguatges *Pascal* i *Ada* fan servir
+    ``Procedure``/``procedure`` i ``Function``/``function`` per
+    declarar mòduls d'un o altre tipus.

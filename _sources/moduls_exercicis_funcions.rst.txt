@@ -1,0 +1,17 @@
+##############################
+Llista d'exercicis de funcions
+##############################
+
+Els exercicis del tema :doc:`moduls_funcions` són:
+
+.. toctree::
+    :titlesonly:
+    :maxdepth: 1
+
+    exercici_02_14_compara_ocurrencies.rst
+    exercici_02_15_compta_vocals.rst
+    exercici_02_16_tipus_moduls.rst
+    exercici_02_17_utilitats_confirmacio.rst
+    exercici_02_18_es_vocal.rst
+    exercici_02_19_matricula_italiana.rst
+    exercici_02_20_nomes_lletres.rst

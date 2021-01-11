@@ -1,0 +1,85 @@
+#################################################
+|exerciseicon_S_| Exercici 02_16. Tipus de mòduls
+#################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``02_16_tipus_moduls/``
+
+* Continguts relacionats: :doc:`funcions_collaterals`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [☆] Exercici amb :ref:`dificultat addicional<descripcio_exercicis_dificils>`
+
+.. rubric:: Enunciat
+
+Ja va sent hora de que et presenti davant d'un codi **real** en Java.
+
+Ho faré a partir d'un dels molts programes que composen el codi d'una
+popular aplicació d'ajuda a la traducció automàtica (CAT: Computer Aided
+Translation) anomenada `OmegaT <https://omegat.org/>`_. Si tens interès, hi pots trobar el codi a
+`https://github.com/omegat-org/omegat`
+
+Per a aquest exercici, només caldrà que analitzis el següent
+:download:`codi <_recursos/external/MachineTranslateTextArea.java>`.
+
+En descarregar i obrir aquest fitxer al teu editor, hi trobaràs molt de
+codi del que encara no tindràs ni idea, però també una gran quantitat que
+sí que sabràs interpretar. Si t'angoixa veure tantes coses desconegudes
+pensa quan de temps portes en aquest curs i quant en sabies abans de
+començar.
+
+L'objectiu de l'exercici no és entendre el codi. Només identificar els
+mòduls (funcions i procediments) que hi trobis. Hi apareixeran com a
+crides però també com a definicions.
+
+Amb tot el que trobis en faràs un informe en forma de taula amb les
+següents columnes:
+
+* nr. de línia en que apareix la crida o l'inici de la signatura
+
+* signatura: nom del mòdul, tipus dels paràmetres/arguments (o el valor
+  trobat si no el saps deduir) i  tipus de valor de retorn (si té sentit)
+
+* si és un mòdul, una funció pura o una funció impura, i sobretot, perquè
+  has decidit la classificació anterior
+
+Per descomptat, hi haurà
+coses que no tindràs ni idea si és o no un mòdul. Et poso un exemple.
+Fixa't en el ``@SuppressWarnings("serial")`` de la línia 55. En aquest cas
+no és mòdul sinó una *anotació*, quelcom que no hem vist del llenguatge
+però que "canta" una mica donat que apareix fora d'un mòdul i té aquesta
+estranya ``@`` al davant. Amb tot, presenta la forma d'una crida amb un
+argument de tipus String. Una altra cosa sorprenent pot ser que no a tot arreu apareix
+``public static`` i que, fins i tot, algunes coses que semblen definicions
+de mòduls (com ara ``public MachineTranslateTextArea()`` a la línia 64) ni
+tant sols tenen ``void`` com a tipus de retorn.
+
+Decideix si les vols ignorar o bé afegir a l'informe. En cas que et
+decantis per afegir-ho i tinguis curiositat, podem comentar-ho.
+
+Et poso unes primeres entrades per que et serveixin d'ajuda
+
++----------+-------------------------------------+--------------------------------------------+
+| línia    | signatura                           | classificació                              |
++==========+=======+=============================+============================================+
+| 58       | String OStrings.getString(String)   | Funció perquè la crida                     |
+|          |                                     | assigna el valor de retorn a una variable  |
+|          |                                     | Apostaria que és pura perquè rep un String |
++----------+-------------------------------------+--------------------------------------------+
+| 65       | super(boolean)                      | Procediment doncs la crida no recull el    |
+|          |                                     | valor de retorn.                           |
+|          |                                     |                                            |
+|          |                                     | **Nota**: en realitat no és ben bé un      |
+|          |                                     | procediment però és una bona aproximació.  |
++----------+-------------------------------------+--------------------------------------------+
+| 67       | setEditable(boolean)                | Procediment doncs la crida no recull el    |
+|          |                                     | valor de retorn.                           |
++----------+-------------------------------------+--------------------------------------------+
+| 68       | AlwaysVisibleCaret.apply(NiIdea)    | Procediment doncs la crida no recull el    |
+|          |                                     | valor de retorn.                           |
+|          |                                     |                                            |
+|          |                                     | El tipus de l'argument… ni idea.           |
+|          |                                     | **Nota**: *ni idea* és raonable aquí.      |
++----------+-------------------------------------+--------------------------------------------+

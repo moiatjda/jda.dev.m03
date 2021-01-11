@@ -1,0 +1,141 @@
+#########################
+Reutilització dels mòduls
+#########################
+
+Ara ja tenim una visió prou completa dels mòduls i sabem que els que ens
+ofereix Java (ex. ``length()`` dels Strings) els podem utilitzar en tots
+els nostres programes.
+
+Com podríem fer el mateix amb els nostres mòduls? És a dir, com podem
+reutilitzar un mòdul que hem definit nosaltres en diferents programes?
+
+Posem un exemple: un cop tenim desenvolupat el programa
+``Autodestruccio``, la funció ``respostaABoolean()`` ens pot ser útil per
+altres programes que requereixin demanar confirmació dels usuaris. Suposem
+que hem de fer una nova versió de ``Autodestruccio`` anomenat
+``AutodestruccioTotal`` que permeti destruir, no tant sols l'equip on
+s'executa sinó tot el món (!).
+
+Una primera resposta seria copiant i enganxant el mòdul al nou programa.
+Per exemple:
+
+.. code-block:: Java
+    :linenos:
+
+    /*
+     * Programa que destrueix el món.
+     * Abans de fer res, demana confirmació als usuaris.
+     * Nota: per si algun usuari acaba confirmant, ha estat un plaer
+     * conèixer-te
+     */
+    public class AutodestruccioTotal {
+        public static void main(String[] args) {
+            System.out.println("Estic apunt de destruir el món. Estàs d'acord?");
+            boolean confirma = true;
+            while (confirma) {
+                String resposta = Entrada.readLine();
+                confirma = respostaABoolean(resposta);
+                if (confirma) {
+                    System.out.println("Mira que és una decisió definitiva. Segur que vols?");
+                }
+            }
+            System.out.println(
+                    "Sàvia resposta. " +
+                    "De totes maneres la destrucció del món és una tasca que ja estem fent entre tots!");
+        }
+
+        /*
+         * Donada una resposta textual, aquesta funció tradueix la resposta a
+         * un booleà.
+         * Considera true quan la resposta és, independentment de majúscules i
+         * sense considerar espais a l'inici ni al final,
+         * "sí", "s", "yes" o "y", i algunes variants amb errors ortogràfics.
+         * Altrament considera false.
+         */
+        public static boolean respostaABoolean(String resposta) {
+            if (null == resposta) {     // si la resposta és null, la donem com a false
+                return false;
+            }
+            resposta = resposta.toLowerCase();
+            if (resposta.equals("s") || resposta.equals("y")) {
+                return true;
+            }
+            if (resposta.equals("sí") || resposta.equals("yes")) {
+                return true;
+            }
+            if (resposta.equals("si") || resposta.equals("vale") || resposta.equals("yeah")) {
+                return true;
+            }
+            return false;
+        }
+    }
+
+Aquesta solució ja ens estalvia feina, sí, però no és del tot
+satisfactòria. Ja sabem que la duplicació de codi és quelcom a defugir.
+
+Java ens ho posa molt fàcil.
+
+Considera la nova versió de ``AutodestruccioTotal``:
+
+.. code-block:: Java
+    :linenos:
+    :emphasize-lines: 13
+
+    /*
+     * Programa que destrueix el món.
+     * Abans de fer res, demana confirmació als usuaris.
+     * Nota: per si algun usuari acaba confirmant, ha estat un plaer
+     * conèixer-te
+     */
+    public class AutodestruccioTotal {
+        public static void main(String[] args) {
+            System.out.println("Estic apunt de destruir el món. Estàs d'acord?");
+            boolean confirma = true;
+            while (confirma) {
+                String resposta = Entrada.readLine();
+                confirma = Autodestruccio.respostaABoolean(resposta);
+                if (confirma) {
+                    System.out.println("Mira que és una decisió definitiva. Segur que vols?");
+                }
+            }
+            System.out.println(
+                    "Sàvia resposta. " +
+                    "De totes maneres la destrucció del món és una tasca que ja estem fent entre tots!");
+        }
+    }
+
+Si et fixes, la línia 13 fa el truc: simplement indiquem que
+``respostaABoolean()`` es troba dins del programa ``Autodestruccio`` i ja
+està!
+
+Amb la configuració que tens del teu repositori local, hauria de
+funcionar-te simplement col·locant ``AutodestruccioTotal.java`` i
+``Autodestruccio.java`` en la mateixa carpeta, 
+
+.. code-block:: console
+    :emphasize-lines: 2, 6,8,10,12,14
+
+    $ ls Autodestruccio*.java
+    Autodestruccio.java  AutodestruccioTotal.java
+    $ rm Autodestruccio*.class
+    $ javac AutodestruccioTotal.java
+    $ java AutodestruccioTotal
+    Estic apunt de destruir el món. Estàs d'acord?
+    Sí
+    Mira que és una decisió definitiva. Segur que vols?
+    Sí
+    Mira que és una decisió definitiva. Segur que vols?
+    s
+    Mira que és una decisió definitiva. Segur que vols?
+    val d'acord, no, però deixa de preguntar
+    Sàvia resposta. De totes maneres la destrucció del món és una tasca que ja estem fent entre tots!
+
+.. important:: Ara que ja tenim més d'un fitxer en joc, és possible que ``javac`` no
+    sempre sàpiga compilar el que cal. Et recomano que, de moment, facis com a
+    l'exemple i eliminis els ``.class`` de manera que sempre ho recompili
+    tot.
+
+.. note:: Més endavant veurem que tot plegat funciona gràcies a una variable
+    d'entorn anomenada ``CLASSPATH`` i les paraules ``public`` i
+    ``static``, però de moment no ens embolicarem amb aquest temes.
+

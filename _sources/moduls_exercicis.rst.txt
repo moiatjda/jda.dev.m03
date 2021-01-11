@@ -9,3 +9,4 @@ Els exercicis del tema :doc:`moduls` són:
     :maxdepth: 1
 
     moduls_exercicis_intro.rst
+    moduls_exercicis_funcions.rst

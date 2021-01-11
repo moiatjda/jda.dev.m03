@@ -1,0 +1,187 @@
+###########################
+El que ja sabem dels mòduls
+###########################
+
+A la :doc:`secció anterior <moduls_intro>` vam descobrir els mòduls.
+Revisem el que sabem fins ara.
+
+Considera el següent codi:
+
+.. code-block:: java
+    :linenos:
+
+    /*
+     * programa que mostra quantes 'a's té un text
+     */
+    public class ComptaAs {
+        public static void main(String[] args) {
+            System.out.println("Introdueix un text");
+            String entrada = Entrada.readLine();
+            comptaAs(entrada);
+        }
+        public static void comptaAs(String text) {
+            int comptador = 0;
+            for (int i=0; i < text.length(); i++) {
+                if (text.charAt(i) == 'a') {
+                    comptador += 1;
+                }
+            }
+            System.out.println("Nombre de 'a's: " + comptador);
+        }
+    }
+
+Una execució del programa anterior ens generaria:
+
+.. code-block:: console
+    :emphasize-lines: 2, 4
+
+    $ java ComptaAs
+    Introdueix un text
+    programem en java
+    Nombre de 'a's: 3
+
+Cap novetat fins aquí, oi?
+
+Ara, imagina que ens demanen ampliar el nostre programa de manera que
+mostri el nombre de 'e's també.
+
+Amb el *copy&paste* qui ha dit por?
+
+.. code-block:: java
+    :linenos:
+
+    /*
+     * programa que mostra quantes 'a's i 'e's té un text
+     */
+    public class ComptaAiEs {
+        public static void main(String[] args) {
+            System.out.println("Introdueix un text");
+            String entrada = Entrada.readLine();
+            comptaAs(entrada);
+            comptaEs(entrada);
+        }
+        public static void comptaAs(String text) {
+            int comptador = 0;
+            for (int i=0; i < text.length(); i++) {
+                if (text.charAt(i) == 'a') {
+                    comptador += 1;
+                }
+            }
+            System.out.println("Nombre de 'a's: " + comptador);
+        }
+        public static void comptaEs(String text) {
+            int comptador = 0;
+            for (int i=0; i < text.length(); i++) {
+                if (text.charAt(i) == 'e') {
+                    comptador += 1;
+                }
+            }
+            System.out.println("Nombre de 'e's: " + comptador);
+        }
+    }
+
+Amb la sortida aquest cop:
+
+.. code-block:: console
+    :emphasize-lines: 2, 4-
+
+    $ javac ComptaAiEs.java && java ComptaAiEs
+    Introdueix un text
+    programem en java
+    Nombre de 'a's: 3
+    Nombre de 'e's: 2
+
+Em, sí, funciona, però… i si ens demanen també comptar les 'i's? Tornem a
+copiar i enganxar? Vinga, que ho podem fer millor:
+
+.. code-block:: java
+    :linenos:
+
+    /*
+     * programa que mostra quantes 'a's i 'e's té un text
+     */
+    public class ComptaAiEs {
+        public static void main(String[] args) {
+            System.out.println("Introdueix un text");
+            String entrada = Entrada.readLine();
+            comptaLletra(entrada, 'a');
+            comptaLletra(entrada, 'e');
+        }
+        public static void comptaLletra(String text, char lletra) {
+            int comptador = 0;
+            for (int i=0; i < text.length(); i++) {
+                if (text.charAt(i) == lletra) {
+                    comptador += 1;
+                }
+            }
+            System.out.println("Nombre de '" + lletra + "'s: " + comptador);
+        }
+    }
+
+Fins aquí, cap novetat. Només he fet servir l'exemple per mostrar-te com
+podem fer servir els paràmetres per fer els nostres programes més
+compactes i reutilitzables.
+
+Què passaria si haguéssim d'ampliar el programa ``ComptaAiEs`` de
+manera que la seva execució fos:
+
+.. code-block:: console
+    :emphasize-lines: 2, 4-
+
+    $ javac ComptaAiEs.java && java ComptaAiEs
+    Introdueix un text
+    programem en java
+    Nombre de 'a's: 3
+    Nombre de 'e's: 2
+    Hi ha més 'a's que 'e's
+
+Doncs fàcil, no? Fem un nou mòdul que compari el nombre de 'a's amb el de
+'e's i ja està!
+
+.. code-block:: java
+    :linenos:
+
+    /*
+     * programa que mostra quantes 'a's i 'e's té un text
+     */
+    public class ComptaAiEs {
+        public static void main(String[] args) {
+            System.out.println("Introdueix un text");
+            String entrada = Entrada.readLine();
+            comptaLletra(entrada, 'a');
+            comptaLletra(entrada, 'e');
+            comparaAiEs(entrada);
+        }
+        public static void comptaLletra(String text, char lletra) {
+            int comptador = 0;
+            for (int i=0; i < text.length(); i++) {
+                if (text.charAt(i) == lletra) {
+                    comptador += 1;
+                }
+            }
+            System.out.println("Nombre de '" + lletra + "'s: " + comptador);
+        }
+        public static void comparaAiEs(String text) {
+            int comptadorA = 0;
+            int comptadorE = 0;
+            for (int i=0; i < text.length(); i++) {
+                if (text.charAt(i) == 'a') {
+                    comptadorA += 1;
+                } else if (text.charAt(i) == 'e') {
+                    comptadorE += 1;
+                }
+            }
+            if (comptadorA > comptadorE) {
+                System.out.println("Hi ha més 'a's que 'e's");
+            } else if (comptadorA < comptadorE) {
+                System.out.println("Hi ha menys 'a's que 'e's");
+            } else {
+                System.out.println("Hi ha tantes 'a's com 'e's");
+            }
+        }
+    }
+
+Apa, fem un exercici per veure si l'hem entès:
+
+|exerciseicon__T| :doc:`exercici_02_14_compara_ocurrencies`
+

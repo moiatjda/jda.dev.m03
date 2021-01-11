@@ -1,0 +1,45 @@
+##############
+Funcions arreu
+##############
+
+La manera en que t'he presentat les funcions, potser t'ha fet pensar que
+aquestes són una novetat, però no és el cas. Hem estat fent servir
+funcions (i procediments) des dels primers programes.
+
+Per exemple, el mòdul ``main()`` què serà? Doncs un procediment, és clar!
+No té ``return`` o, si el té, serà sense cap expressió a continuació donat
+que el valor de retorn declarat a la signatura és ``void``.
+
+Un altre mòdul que hem fet servir força és ``System.out.println()``. Com a
+argument li passem un String corresponent al que volem que escrigui per la
+sortida estàndard. No ens deixem confondre amb els puntets dins del nom.
+``System.out.println()`` és un procediment. Ho sabem perquè no esperem cap
+valor de la seva crida.
+
+Ah! No ens oblidem de ``Entrada.readLine()``! Què deu ser això?
+Evidentment podem mirar el codi (el tens a ``lib/Entrada.java`` dins del
+repositori on em lliures els exercicis! Però, no ens cal mirar el codi per
+saber quin tipus de mòdul és. Sabem que és una funció perquè recollim el
+seu valor i en fem quelcom amb ell. Per exemple:
+
+.. code-block:: java
+
+    String entrada = Entrada.readLine();
+
+Què em dius del ``length()`` dels Strings? Per exemple quan fem
+``entrada.length()``? Això ha de ser una funció. Perquè? Doncs perquè
+recollim el valor resultant i el fem servir com un enter. Per exemple:
+
+.. code-block:: java
+
+    String text =  "Don't worry. Be happy!";
+    int longitud = text.length();
+
+En aquesta ocasió, ens podria confondre el fet que *l'argument* estigui
+fora dels parèntesis. Semblaria potser més lògic que la crida fos
+quelcom similar a ``String.length(text)`` com passava amb
+``Character.isLowerCase()``. Malgrat això, ``length()`` dels Strings és
+també una funció.
+
+Com veus, hi ha funcions i procediments per tot arreu. Una sort!
+T'imagines haver de codificar-ho tot cada vegada?

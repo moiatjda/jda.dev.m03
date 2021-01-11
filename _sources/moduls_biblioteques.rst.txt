@@ -1,0 +1,79 @@
+##################
+La meva biblioteca
+##################
+
+Ara sabem que un mòdul definit a un programa el podem cridar des
+d'un altre programa.
+
+Queda, però, un tema: i si volem fer servir la funció
+``respostaABoolean()`` en un context que no tingui res a veure amb
+destrucció? Per exemple, imagina que has de desenvolupar una nova versió
+del programa :doc:`la guia de semàfors <exercici_01_24_semafor>` que abans
+de preguntar se n'asseguri que els usuaris són majors d'edat (recorda que
+no era un assistent adequat per a nens!)
+
+En aquest cas, podríem afegir el codi:
+
+.. code-block:: java
+
+    System.out.println("Ets major d'edat?");
+    if (Autodestruccio.respostaABoolean(Entrada.readLine())) {
+        // resta del programa original
+    } else {
+        System.out.println("Ho sento. Aquest és un programa per adults.");
+    }
+
+D'acord. Funciona. Però… què té a veure amb ``Autodestruccio``?
+
+Tot plegat, seria més comprensible si poguéssim independitzar
+``respostaABoolean()`` del programa ``Autodestruccio``. Una proposta seria
+crear ``UtilitatsConfirmacio`` amb la nostra funció. Així:
+
+.. code-block:: Java
+    :linenos:
+
+    /* Utilitats de confirmació
+     *
+     * Aquest mòdul conté diferents utilitats per gestionar les confirmacions
+     * Bé, de moment només en tenim una però potser anirem ampliant-ho
+     */
+    public class UtilitatsConfirmacio {
+        /*
+         * Donada una resposta textual, aquesta funció tradueix la resposta a
+         * un booleà.
+         * Considera true quan la resposta és, independentment de majúscules i
+         * sense considerar espais a l'inici ni al final,
+         * "sí", "s", "yes" o "y", i algunes variants amb errors ortogràfics.
+         * Altrament considera false.
+         */
+        public static boolean respostaABoolean(String resposta) {
+            if (null == resposta) {     // si la resposta és null, la donem com a false
+                return false;
+            }
+            resposta = resposta.toLowerCase();
+            if (resposta.equals("s") || resposta.equals("y")) {
+                return true;
+            }
+            if (resposta.equals("sí") || resposta.equals("yes")) {
+                return true;
+            }
+            if (resposta.equals("si") || resposta.equals("vale") || resposta.equals("yeah")) {
+                return true;
+            }
+            return false;
+        }
+    }
+
+Ara simplement hem de cridar ``UtilitatsConfirmacio.respostaABoolean()``
+des dels programes ``Autodestruccio``, ``AutodestruccioTotal``,
+``Semafor``, i tots els que a partir d'ara ens calgui demanar confirmació!
+
+Per cert, t'has fixat que ``UtilitatsConfirmacio`` no té ``main()``? No li
+cal doncs no serà executada mai directament per ``java``.
+
+|exerciseicon___| :doc:`exercici_02_17_utilitats_confirmacio`
+
+|exerciseicon__T| :doc:`exercici_02_18_es_vocal`
+
+|exerciseicon__T| :doc:`exercici_02_20_nomes_lletres`
+

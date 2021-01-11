@@ -1,0 +1,70 @@
+#####################################################
+|exerciseicon__T| Exercici 02_14. Compara ocurrències
+#####################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``02_14_compara_ocurrencies/``
+
+* Continguts relacionats: :doc:`funcions_intro`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Recorda el següent programa que hem vist als apunts:
+
+.. code-block:: java
+    :linenos:
+
+    /*
+     * programa que mostra quantes 'a's i 'e's té un text
+     */
+    public class ComptaAiEs {
+        public static void main(String[] args) {
+            System.out.println("Introdueix un text");
+            String entrada = Entrada.readLine();
+            comptaLletra(entrada, 'a');
+            comptaLletra(entrada, 'e');
+            comparaAiEs(entrada);
+        }
+        public static void comptaLletra(String text, char lletra) {
+            int comptador = 0;
+            for (int i=0; i < text.length(); i++) {
+                if (text.charAt(i) == lletra) {
+                    comptador += 1;
+                }
+            }
+            System.out.println("Nombre de '" + lletra + "'s: " + comptador);
+        }
+        public static void comparaAiEs(String text) {
+            int comptadorA = 0;
+            int comptadorE = 0;
+            for (int i=0; i < text.length(); i++) {
+                if (text.charAt(i) == 'a') {
+                    comptadorA += 1;
+                } else if (text.charAt(i) == 'e') {
+                    comptadorE += 1;
+                }
+            }
+            if (comptadorA > comptadorE) {
+                System.out.println("Hi ha més 'a's que 'e's");
+            } else if (comptadorA < comptadorE) {
+                System.out.println("Hi ha menys 'a's que 'e's");
+            } else {
+                System.out.println("Hi ha tantes 'a's com 'e's");
+            }
+        }
+    }
+
+
+
+Modifica el programa anterior de manera que el mòdul ``comparaAiEs()``
+sigui reemplaçat per ``comparaOcurrencies()`` amb la signatura
+``comparaOcurrencies(String text, char lletra1, char lletra2)``
+
+El programa resultant ha de tenir la mateixa sortida que el programa
+original, però en aquesta ocasió no farà servir ``comparaAiEs()`` sinó
+``comparaOcurrencies()``.

@@ -1,0 +1,119 @@
+##################################
+Breu consideració sobre eficiència
+##################################
+
+Comparem un altre cop les darreres versions del nostre ``ComptaAiEs``
+
+La versió que crida a ``quantesOcurrencies()`` cada cop que necessita el
+valor, sense importar-li si ja s'havia calculat abans:
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 13, 17, 18
+
+    /*
+     * programa que mostra quantes 'a's i 'e's té un text
+     */
+    public class ComptaAiEs {
+        public static void main(String[] args) {
+            System.out.println("Introdueix un text");
+            String entrada = Entrada.readLine();
+            comptaLletra(entrada, 'a');
+            comptaLletra(entrada, 'e');
+            comparaAiEs(entrada);
+        }
+        public static void comptaLletra(String text, char lletra) {
+            int comptador = quantesOcurrencies(text, lletra);
+            System.out.println("Nombre de '" + lletra + "'s: " + comptador);
+        }
+        public static void comparaAiEs(String text) {
+            int comptadorA = quantesOcurrencies(text, 'a');
+            int comptadorE = quantesOcurrencies(text, 'e');
+            if (comptadorA > comptadorE) {
+                System.out.println("Hi ha més 'a's que 'e's");
+            } else if (comptadorA < comptadorE) {
+                System.out.println("Hi ha menys 'a's que 'e's");
+            } else {
+                System.out.println("Hi ha tantes 'a's com 'e's");
+            }
+        }
+        public static int quantesOcurrencies(String text, char lletra) {
+            int comptador = 0;
+            for (int i=0; i < text.length(); i++) {
+                if (text.charAt(i) == lletra) {
+                    comptador += 1;
+                }
+            }
+            return comptador;
+        }
+    }
+
+La versió que crida a ``quantesOcurrencies()`` el mínim possible:
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 8, 9
+
+    /*
+     * programa que mostra quantes 'a's i 'e's té un text
+     */
+    public class ComptaAiEs {
+        public static void main(String[] args) {
+            System.out.println("Introdueix un text");
+            String entrada = Entrada.readLine();
+            int numAs = quantesOcurrencies(entrada, 'a');
+            int numEs = quantesOcurrencies(entrada, 'e');
+            mostraOcurrencies('a', numAs);
+            mostraOcurrencies('e', numEs);
+            mostraComparacio('a', numAs, 'e', numEs);
+        }
+        public static void mostraOcurrencies(char lletra, int quantes) {
+            System.out.println("Nombre de '" + lletra + "'s: " + quantes);
+        }
+        public static void mostraComparacio(char lletra1, int quantes1, char lletra2, int quantes2) {
+            if (quantes1 > quantes2) {
+                System.out.println("Hi ha més '" + lletra1 +"'s que '"+lletra2+"'s");
+            } else if (quantes1 < quantes2 ) {
+                System.out.println("Hi ha menys '" + lletra1 +"'s que '"+lletra2+"'s");
+            } else {
+                System.out.println("Hi ha tantes '" + lletra1 +"'s com '"+lletra2+"'s");
+            }
+        }
+        public static int quantesOcurrencies(String text, char lletra) {
+            int comptador = 0;
+            for (int i=0; i < text.length(); i++) {
+                if (text.charAt(i) == lletra) {
+                    comptador += 1;
+                }
+            }
+            return comptador;
+        }
+    }
+
+Fixa't que la darrera versió *només* calcula un cop les ocurrències de
+cada lletra, i guarda els resultats en les variables temporals ``numAs`` 
+``numEs``, per després passar els valors als procediments
+``mostraOcurrencies()`` i ``mostraComparacio()``.
+
+En canvi, a la versió anterior cridem més d'una vegada
+``quantesOcurrencies()`` amb exactament els mateixos arguments (mateix
+text i mateixa lletra) des dels procediments ``comptaLletra()`` i
+``comparaAiEs()``. Això farà que el programa hagi de recórrer el text de
+l'entrada més d'una vegada per fer el mateix. Es tracta d'una una *ineficiència* que
+podria presentar endarreriments d'execució per entrades molt llargues. A
+canvi, no fer servir variables temporals pot facilitar la modificació dels
+nostres programes en el futur. Els programes poden arribar a fer-se molt
+complexos i per poder extreure una part que es repeteix i fer-ne un nou
+mòdul, les variables temporals ens poden complicar molt la vida. Aquí
+m'hauràs de creure de moment i esperar-te a haver fet uns quants programes
+més per experimentar-ho personalment.
+
+Així doncs, què fem? Fem servir variables temporals i estalviem recalcular
+o bé fem el codi més mantenible?
+
+Com a consell general, és preferible no ficar-se massa aviat a
+optimitzar, especialment si s'ha de sacrificar la llegibilitat. El més
+probable és que la diferència en execució no sigui significativa per l'ús
+que tindrà el programa i, en cas de que així fos (que detectéssim que el
+programa va massa lent per aquesta raó) sempre podrem trobar maneres
+d'optimitzar-ho tot mirant de minimitzar la pèrdua de llegibilitat.

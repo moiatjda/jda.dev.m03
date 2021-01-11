@@ -1,0 +1,29 @@
+################################################################
+|exerciseicon__T| Exercici 02_19. Matricules italianes modulades
+################################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``02_19_matricula_italiana/``
+
+* Continguts relacionats: :doc:`funcions_collaterals`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+En aquesta ocasió rescatarem l'exercici de les :doc:`matrícules italanes
+<exercici_01_64_matricula_italiana>` i en farem una nova versió que farà
+servir la funció ``esLletraValidaPerMatriculaItaliana()`` que rep un
+caràcter i retorna un booleà a cert quan el caràcter pot ser una lletra
+vàlida per una matrícula italiana. 
+
+Així, caldrà reprogramar el ``main()`` del programa de manera que, allà on
+feies les comparacions per decidir si un caràcter era o no una lletra
+vàlida, ara faràs una crida a la nova funció.
+
+**Nota**: Aquell exercici va aparèixer en un context en que no s'havien
+presentat els recorreguts de Strings. Ara que ja en saps, potser voldràs
+simplificar encara més el teu programa.

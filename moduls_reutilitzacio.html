@@ -1,0 +1,449 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ca" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Reutilització dels mòduls &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="La meva biblioteca" href="moduls_biblioteques.html" />
+    <link rel="prev" title="Efectes col·laterals" href="funcions_collaterals.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació amb Java
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-21
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="moduls.html">Mòduls</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="moduls_junit.html">Una mica de bricolatge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moduls_intro.html">Un primer contacte</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="moduls_funcions.html">Funcions</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="funcions_intro.html">El que ja sabem dels mòduls</a></li>
+<li class="toctree-l3"><a class="reference internal" href="funcions_nou_tipus.html">Un nou tipus de mòdul</a></li>
+<li class="toctree-l3"><a class="reference internal" href="funcions_crides.html">Aprofitem la funció</a></li>
+<li class="toctree-l3"><a class="reference internal" href="funcions_eficiencia.html">Breu consideració sobre eficiència</a></li>
+<li class="toctree-l3"><a class="reference internal" href="funcions_return.html">Sobre el <code class="docutils literal notranslate"><span class="pre">return</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="funcions_arreu.html">Funcions arreu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="funcions_collaterals.html">Efectes col·laterals</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Reutilització dels mòduls</a></li>
+<li class="toctree-l3"><a class="reference internal" href="moduls_biblioteques.html">La meva biblioteca</a></li>
+<li class="toctree-l3"><a class="reference internal" href="funcions_conclusions.html">Conclusions</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="moduls_exercicis.html">Llista d’exercicis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="apendix.html">Apèndix</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació amb Java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="moduls.html">Mòduls</a> &raquo;</li>
+        
+          <li><a href="moduls_funcions.html">Funcions</a> &raquo;</li>
+        
+      <li>Reutilització dels mòduls</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="reutilitzacio-dels-moduls">
+<h1>Reutilització dels mòduls<a class="headerlink" href="#reutilitzacio-dels-moduls" title="Link permanent a aquest títol">¶</a></h1>
+<p>Ara ja tenim una visió prou completa dels mòduls i sabem que els que ens
+ofereix Java (ex. <code class="docutils literal notranslate"><span class="pre">length()</span></code> dels Strings) els podem utilitzar en tots
+els nostres programes.</p>
+<p>Com podríem fer el mateix amb els nostres mòduls? És a dir, com podem
+reutilitzar un mòdul que hem definit nosaltres en diferents programes?</p>
+<p>Posem un exemple: un cop tenim desenvolupat el programa
+<code class="docutils literal notranslate"><span class="pre">Autodestruccio</span></code>, la funció <code class="docutils literal notranslate"><span class="pre">respostaABoolean()</span></code> ens pot ser útil per
+altres programes que requereixin demanar confirmació dels usuaris. Suposem
+que hem de fer una nova versió de <code class="docutils literal notranslate"><span class="pre">Autodestruccio</span></code> anomenat
+<code class="docutils literal notranslate"><span class="pre">AutodestruccioTotal</span></code> que permeti destruir, no tant sols l’equip on
+s’executa sinó tot el món (!).</p>
+<p>Una primera resposta seria copiant i enganxant el mòdul al nou programa.
+Per exemple:</p>
+<div class="highlight-Java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm"> * Programa que destrueix el món.</span>
+<span class="cm"> * Abans de fer res, demana confirmació als usuaris.</span>
+<span class="cm"> * Nota: per si algun usuari acaba confirmant, ha estat un plaer</span>
+<span class="cm"> * conèixer-te</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AutodestruccioTotal</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Estic apunt de destruir el món. Estàs d&#39;acord?&quot;</span><span class="p">);</span>
+        <span class="kt">boolean</span> <span class="n">confirma</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">confirma</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">String</span> <span class="n">resposta</span> <span class="o">=</span> <span class="n">Entrada</span><span class="p">.</span><span class="na">readLine</span><span class="p">();</span>
+            <span class="n">confirma</span> <span class="o">=</span> <span class="n">respostaABoolean</span><span class="p">(</span><span class="n">resposta</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">confirma</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Mira que és una decisió definitiva. Segur que vols?&quot;</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span>
+                <span class="s">&quot;Sàvia resposta. &quot;</span> <span class="o">+</span>
+                <span class="s">&quot;De totes maneres la destrucció del món és una tasca que ja estem fent entre tots!&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="cm">/*</span>
+<span class="cm">     * Donada una resposta textual, aquesta funció tradueix la resposta a</span>
+<span class="cm">     * un booleà.</span>
+<span class="cm">     * Considera true quan la resposta és, independentment de majúscules i</span>
+<span class="cm">     * sense considerar espais a l&#39;inici ni al final,</span>
+<span class="cm">     * &quot;sí&quot;, &quot;s&quot;, &quot;yes&quot; o &quot;y&quot;, i algunes variants amb errors ortogràfics.</span>
+<span class="cm">     * Altrament considera false.</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">respostaABoolean</span><span class="p">(</span><span class="n">String</span> <span class="n">resposta</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="kc">null</span> <span class="o">==</span> <span class="n">resposta</span><span class="p">)</span> <span class="p">{</span>     <span class="c1">// si la resposta és null, la donem com a false</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">resposta</span> <span class="o">=</span> <span class="n">resposta</span><span class="p">.</span><span class="na">toLowerCase</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">resposta</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;s&quot;</span><span class="p">)</span> <span class="o">||</span> <span class="n">resposta</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;y&quot;</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">resposta</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;sí&quot;</span><span class="p">)</span> <span class="o">||</span> <span class="n">resposta</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;yes&quot;</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">resposta</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;si&quot;</span><span class="p">)</span> <span class="o">||</span> <span class="n">resposta</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;vale&quot;</span><span class="p">)</span> <span class="o">||</span> <span class="n">resposta</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;yeah&quot;</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Aquesta solució ja ens estalvia feina, sí, però no és del tot
+satisfactòria. Ja sabem que la duplicació de codi és quelcom a defugir.</p>
+<p>Java ens ho posa molt fàcil.</p>
+<p>Considera la nova versió de <code class="docutils literal notranslate"><span class="pre">AutodestruccioTotal</span></code>:</p>
+<div class="highlight-Java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm"> * Programa que destrueix el món.</span>
+<span class="cm"> * Abans de fer res, demana confirmació als usuaris.</span>
+<span class="cm"> * Nota: per si algun usuari acaba confirmant, ha estat un plaer</span>
+<span class="cm"> * conèixer-te</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AutodestruccioTotal</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Estic apunt de destruir el món. Estàs d&#39;acord?&quot;</span><span class="p">);</span>
+        <span class="kt">boolean</span> <span class="n">confirma</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">confirma</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">String</span> <span class="n">resposta</span> <span class="o">=</span> <span class="n">Entrada</span><span class="p">.</span><span class="na">readLine</span><span class="p">();</span>
+<span class="hll">            <span class="n">confirma</span> <span class="o">=</span> <span class="n">Autodestruccio</span><span class="p">.</span><span class="na">respostaABoolean</span><span class="p">(</span><span class="n">resposta</span><span class="p">);</span>
+</span>            <span class="k">if</span> <span class="p">(</span><span class="n">confirma</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Mira que és una decisió definitiva. Segur que vols?&quot;</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span>
+                <span class="s">&quot;Sàvia resposta. &quot;</span> <span class="o">+</span>
+                <span class="s">&quot;De totes maneres la destrucció del món és una tasca que ja estem fent entre tots!&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Si et fixes, la línia 13 fa el truc: simplement indiquem que
+<code class="docutils literal notranslate"><span class="pre">respostaABoolean()</span></code> es troba dins del programa <code class="docutils literal notranslate"><span class="pre">Autodestruccio</span></code> i ja
+està!</p>
+<p>Amb la configuració que tens del teu repositori local, hauria de
+funcionar-te simplement col·locant <code class="docutils literal notranslate"><span class="pre">AutodestruccioTotal.java</span></code> i
+<code class="docutils literal notranslate"><span class="pre">Autodestruccio.java</span></code> en la mateixa carpeta,</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> ls Autodestruccio*.java
+<span class="hll"><span class="go">Autodestruccio.java  AutodestruccioTotal.java</span>
+</span><span class="gp">$</span> rm Autodestruccio*.class
+<span class="gp">$</span> javac AutodestruccioTotal.java
+<span class="gp">$</span> java AutodestruccioTotal
+<span class="hll"><span class="go">Estic apunt de destruir el món. Estàs d&#39;acord?</span>
+</span><span class="go">Sí</span>
+<span class="hll"><span class="go">Mira que és una decisió definitiva. Segur que vols?</span>
+</span><span class="go">Sí</span>
+<span class="hll"><span class="go">Mira que és una decisió definitiva. Segur que vols?</span>
+</span><span class="go">s</span>
+<span class="hll"><span class="go">Mira que és una decisió definitiva. Segur que vols?</span>
+</span><span class="go">val d&#39;acord, no, però deixa de preguntar</span>
+<span class="hll"><span class="go">Sàvia resposta. De totes maneres la destrucció del món és una tasca que ja estem fent entre tots!</span>
+</span></pre></div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Ara que ja tenim més d’un fitxer en joc, és possible que <code class="docutils literal notranslate"><span class="pre">javac</span></code> no
+sempre sàpiga compilar el que cal. Et recomano que, de moment, facis com a
+l’exemple i eliminis els <code class="docutils literal notranslate"><span class="pre">.class</span></code> de manera que sempre ho recompili
+tot.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Més endavant veurem que tot plegat funciona gràcies a una variable
+d’entorn anomenada <code class="docutils literal notranslate"><span class="pre">CLASSPATH</span></code> i les paraules <code class="docutils literal notranslate"><span class="pre">public</span></code> i
+<code class="docutils literal notranslate"><span class="pre">static</span></code>, però de moment no ens embolicarem amb aquest temes.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="moduls_biblioteques.html" class="btn btn-neutral float-right" title="La meva biblioteca" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="funcions_collaterals.html" class="btn btn-neutral float-left" title="Efectes col·laterals" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2021 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

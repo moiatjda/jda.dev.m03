@@ -1,0 +1,250 @@
+######################
+Una mica de bricolatge
+######################
+
+El sistema de proves automàtiques pels exercicis que has presentat fins
+ara, comprovaven només l'entrada/sortida dels teus programes. Amb els nous
+conceptes que treballarem en la secció de :doc:`moduls` necessitarem
+realitzar tests més complexos.
+
+Un dels mecanismes més coneguts i utilitzats per realitzar proves de
+programes és `junit <https://junit.org/junit5/>`_. Aquest serà el que
+farem servir en la resta d'aquest curs.
+
+Instal·lació i configuració
+===========================
+
+La tasca es resumeix en descarregar un fitxer al nostre equip i dir-li a
+``java`` on el pot trobar.
+
+Per simplicitat, he creat un guió que hauria de realitzar totes les passes
+per tu. Si el vols fer servir, simplement escriu:
+
+.. code-block:: console
+
+    $ bash $INTROPRGDIR/lib/install_junit.sh
+
+En executar-ho, t'hauria de finalitzar amb un missatge indicant que *JUnit
+es troba instal·lada correctament*. Altrament t'indicarà algun error. Si
+tens problemes, com sempre, avisa'm.
+
+Ara, si vols fer servir la mateixa consola per
+començar a fer proves dels teus programes, caldrà que executis la següent
+comanda:
+
+.. code-block:: console
+
+    $ source ~/.bashrc
+
+
+.. note:: En cas que tinguis interès en saber els detalls del que fa aquest guió però
+    no vols dedicar el temps necessari a interpretar-ho del codi en bash
+    script, et faig un petit resum.
+
+    El guió descarregarà la versió 1.7.0 de JUnit (la darrera en el moment
+    d'escriure aquests materials) i la col·locarà dins del teu repositori.
+    Són uns 2.3 MB que la configuració per defecte del teu repositori hauria
+    d'evitar incloure al *git* doncs només farà que relentir la teva
+    comunicació amb els repositoris remots. Finalment afegirà el fitxer
+    descarregat a la variable d'entorn ``CLASSPATH`` que fa servir Java per
+    trobar programes dins del sistema.
+
+    En cas que vulguis assegurar-te de que disposes de la darrera versió,
+    aquesta la trobaràs a `junit-platform-console-standaloneXXX.jar
+    <https://search.maven.org/search?q=g:org.junit.platform%20AND%20a:junit-platform-console-standalone>`_
+
+Provant els nostres programes
+=============================
+
+.. note:: És possible que vulguis saltar-te aquesta secció o fer-li una
+    relectura quan hagis de començar a fer exercicis d'aquest nou tema.
+
+Un cop ja estigui tot, podràs continuar passant les proves als teus
+programes de la mateixa manera que has fet fins ara:
+
+.. code-block:: console
+
+    $ prgtest.sh
+
+Trobaràs diferent la sortida d'alguna de les proves doncs he mantingut la que proporciona JUnit.
+
+Quan tot va bé, com sempre, pots esperar el missatge tranquil·litzador que
+t'indica que el teu programa ha passat totes les proves.
+
+.. code-block:: console
+    :emphasize-lines: 13
+
+    $ prgtest.sh
+
+    Testing argio
+    =============
+
+    Fet
+
+    Testing junit
+    =============
+
+    Fet
+
+    El programa Quadrat.java ha passat totes les proves
+
+Fixa't que alguns programes tindran ara més d'una prova. Cap problema.
+
+Quan el programa no ha anat correctament a una prova d'entrada/sortida,
+els missatges d'error seran els habituals fins ara
+
+Per exemple, considera la següent sortida que t'hauria de ser familiar a
+hores d'ara.
+
+.. code-block:: console
+
+    $ prgtest.sh
+
+    Testing argio
+    =============
+
+    Test nr. 01: Error
+
+    Entrada
+    -------
+    5
+
+    Sortida esperada
+    ----------------
+     X X X X X
+     X X X X X
+     X X X X X
+     X X X X X
+     X X X X X
+
+
+    Sortida trobada
+    ---------------
+     X X X X X
+     X X X X X
+     X X X X X
+     X X X X X
+
+
+    Diferència
+    ----------
+    5d4
+    <  X X X X X
+
+Noves sortides d'error
+======================
+
+Quan l'error prové de les proves amb JUnit, però, la cosa es complica una
+mica i et tocarà acostumar-te a la nova sortida doncs és la manera en que
+les desenvolupadores i desenvolupadors professionals els toca sovint
+analitzar.
+
+Un exemple dels possibles errors que trobaràs:
+
+.. code-block:: console
+    :linenos:
+    :emphasize-lines: 11,17, 20, 21, 23
+
+    $ prgtest.sh
+
+    Testing argio
+    =============
+
+    Fet
+
+    Testing junit
+    =============
+
+    Error executant la prova
+    ------------------------
+
+    ╷
+    ├─ JUnit Jupiter ✔
+    │  └─ TestExercise ✔
+    │     └─ Comprovant que el mòdul requerit hi és ✘ No es troba el mòdul requerit. Revisa enunciat. ==> expected: <true> but was: <false>
+    └─ JUnit Vintage ✔
+
+    Failures (1):
+      JUnit Jupiter:TestExercise:Comprovant que el mòdul requerit hi és
+        MethodSource [className = 'TestExercise', methodName = 'dibuixaQuadrat', methodParameterTypes = '']
+        => org.opentest4j.AssertionFailedError: No es troba el mòdul requerit. Revisa enunciat. ==> expected: <true> but was: <false>
+           org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
+           org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:40)
+           org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:193)
+           TestExercise.dibuixaQuadrat(TestExercise.java:28)
+           java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+           java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+           java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+           java.base/java.lang.reflect.Method.invoke(Method.java:566)
+           org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)
+           org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+           [...]
+
+    Test run finished after 63 ms
+    [         3 containers found      ]
+    [         0 containers skipped    ]
+    [         3 containers started    ]
+    [         0 containers aborted    ]
+    [         3 containers successful ]
+    [         0 containers failed     ]
+    [         1 tests found           ]
+    [         0 tests skipped         ]
+    [         1 tests started         ]
+    [         0 tests aborted         ]
+    [         0 tests successful      ]
+    [         1 tests failed          ]
+
+
+No t'espantis. La major part de la sortida la pots ignorar amb força
+tranquil·litat. 
+Analitzem-la amb més calma:
+
+* El fet de no veure el missatge de *Fet* per la prova de Ujunit com sí
+  veiem per la de l'entrada/sortida (línia 6) vol dir que alguna cosa no
+  ha anat bé.
+
+  La línia 11 ens ho confirma.
+
+* Les línies 14 a 18 són un resum que ens ofereix JUnit per indicar-nos
+  quines proves han anat bé i quines no. En aqust cas concret només hi
+  havia una prova, la de la línia 17 i ha anat malament.
+
+  Ens diu:
+
+  - *Comprovant que el mòdul requerit hi és*: Aquest és el nom del test
+    que t'he posat per orientar-te una mica respecte el que estic provant
+    aquí. En aquest cas vull saber que el mòdul requerit hi sigui al codi.
+    No pateixis, aviat sabràs què vol dir això dels *mòduls*.
+
+  - ``✘``:  Aquest símbol, a diferència del ``✔`` ens està indicant que
+    aquest test ha fallat. Si tens configurat el terminal amb colors, et
+    sortirà de color vermell.
+
+  - *No es troba el mòdul requerit. Revisa enunciat.*: Aquesta és
+    l'explicació de l'error trobat que he afegit al test. En aquest cas
+    ens diu que el mòdul esperat no ha estat trobat.
+
+ - la resta de la línia la podem ignorar
+
+
+* La línia 20 ens diu el nombre d'errors trobats. En aquest cas 1.
+
+  A diferència dels tests d'entrada/sortida, els junit intentaran totes les
+  proves i, per tant, és molt probable que apareguin *molts* errors. És
+  quelcom similar a la quantitat d'errors que apareixen quan compiles. Ja
+  saps: de vegades modifiques una petita part del codi i arregles un munt
+  d'errors o bé, desapareix algun i en surten encara més.
+
+* La resta de les línies et poden ampliar la informació del que ha anat
+  malament. És similar a la sortida que ens genera java quan el nostre
+  programa té un error d'execució. De la mateixa manera, és preferible
+  quedar-nos només amb la informació relativa al nostre codi doncs ens
+  donarà pistes de per on actuar. En el cas de l'exemple, la informació
+  que ens ofereix és redundant respecte la línia 17 o bé ens resultaran
+  massa críptiques amb el coneixement que tenim actualment de Java.
+
+En cas que no sàpigues com treure-li sentit a un error, recorda que tens
+un docent encantat de poder ajudar-te.
+ 
+Ara que ja sabem més o menys el que ens espera, podem començar la nostra
+exploració dels *mòduls*.

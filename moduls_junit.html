@@ -1,0 +1,511 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ca" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Una mica de bricolatge &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Un primer contacte" href="moduls_intro.html" />
+    <link rel="prev" title="Mòduls" href="moduls.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació amb Java
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-21
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="moduls.html">Mòduls</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Una mica de bricolatge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moduls_intro.html">Un primer contacte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moduls_funcions.html">Funcions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moduls_exercicis.html">Llista d’exercicis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="apendix.html">Apèndix</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació amb Java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="moduls.html">Mòduls</a> &raquo;</li>
+        
+      <li>Una mica de bricolatge</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="una-mica-de-bricolatge">
+<h1>Una mica de bricolatge<a class="headerlink" href="#una-mica-de-bricolatge" title="Link permanent a aquest títol">¶</a></h1>
+<p>El sistema de proves automàtiques pels exercicis que has presentat fins
+ara, comprovaven només l’entrada/sortida dels teus programes. Amb els nous
+conceptes que treballarem en la secció de <a class="reference internal" href="moduls.html"><span class="doc">Mòduls</span></a> necessitarem
+realitzar tests més complexos.</p>
+<p>Un dels mecanismes més coneguts i utilitzats per realitzar proves de
+programes és <a class="reference external" href="https://junit.org/junit5/">junit</a>. Aquest serà el que
+farem servir en la resta d’aquest curs.</p>
+<div class="section" id="installacio-i-configuracio">
+<h2>Instal·lació i configuració<a class="headerlink" href="#installacio-i-configuracio" title="Link permanent a aquest títol">¶</a></h2>
+<p>La tasca es resumeix en descarregar un fitxer al nostre equip i dir-li a
+<code class="docutils literal notranslate"><span class="pre">java</span></code> on el pot trobar.</p>
+<p>Per simplicitat, he creat un guió que hauria de realitzar totes les passes
+per tu. Si el vols fer servir, simplement escriu:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> bash <span class="nv">$INTROPRGDIR</span>/lib/install_junit.sh
+</pre></div>
+</div>
+<p>En executar-ho, t’hauria de finalitzar amb un missatge indicant que <em>JUnit
+es troba instal·lada correctament</em>. Altrament t’indicarà algun error. Si
+tens problemes, com sempre, avisa’m.</p>
+<p>Ara, si vols fer servir la mateixa consola per
+començar a fer proves dels teus programes, caldrà que executis la següent
+comanda:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">source</span> ~/.bashrc
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>En cas que tinguis interès en saber els detalls del que fa aquest guió però
+no vols dedicar el temps necessari a interpretar-ho del codi en bash
+script, et faig un petit resum.</p>
+<p>El guió descarregarà la versió 1.7.0 de JUnit (la darrera en el moment
+d’escriure aquests materials) i la col·locarà dins del teu repositori.
+Són uns 2.3 MB que la configuració per defecte del teu repositori hauria
+d’evitar incloure al <em>git</em> doncs només farà que relentir la teva
+comunicació amb els repositoris remots. Finalment afegirà el fitxer
+descarregat a la variable d’entorn <code class="docutils literal notranslate"><span class="pre">CLASSPATH</span></code> que fa servir Java per
+trobar programes dins del sistema.</p>
+<p>En cas que vulguis assegurar-te de que disposes de la darrera versió,
+aquesta la trobaràs a <a class="reference external" href="https://search.maven.org/search?q=g:org.junit.platform%20AND%20a:junit-platform-console-standalone">junit-platform-console-standaloneXXX.jar</a></p>
+</div>
+</div>
+<div class="section" id="provant-els-nostres-programes">
+<h2>Provant els nostres programes<a class="headerlink" href="#provant-els-nostres-programes" title="Link permanent a aquest títol">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>És possible que vulguis saltar-te aquesta secció o fer-li una
+relectura quan hagis de començar a fer exercicis d’aquest nou tema.</p>
+</div>
+<p>Un cop ja estigui tot, podràs continuar passant les proves als teus
+programes de la mateixa manera que has fet fins ara:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> prgtest.sh
+</pre></div>
+</div>
+<p>Trobaràs diferent la sortida d’alguna de les proves doncs he mantingut la que proporciona JUnit.</p>
+<p>Quan tot va bé, com sempre, pots esperar el missatge tranquil·litzador que
+t’indica que el teu programa ha passat totes les proves.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> prgtest.sh
+
+<span class="go">Testing argio</span>
+<span class="go">=============</span>
+
+<span class="go">Fet</span>
+
+<span class="go">Testing junit</span>
+<span class="go">=============</span>
+
+<span class="go">Fet</span>
+
+<span class="hll"><span class="go">El programa Quadrat.java ha passat totes les proves</span>
+</span></pre></div>
+</div>
+<p>Fixa’t que alguns programes tindran ara més d’una prova. Cap problema.</p>
+<p>Quan el programa no ha anat correctament a una prova d’entrada/sortida,
+els missatges d’error seran els habituals fins ara</p>
+<p>Per exemple, considera la següent sortida que t’hauria de ser familiar a
+hores d’ara.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> prgtest.sh
+
+<span class="go">Testing argio</span>
+<span class="go">=============</span>
+
+<span class="go">Test nr. 01: Error</span>
+
+<span class="go">Entrada</span>
+<span class="go">-------</span>
+<span class="go">5</span>
+
+<span class="go">Sortida esperada</span>
+<span class="go">----------------</span>
+<span class="go"> X X X X X</span>
+<span class="go"> X X X X X</span>
+<span class="go"> X X X X X</span>
+<span class="go"> X X X X X</span>
+<span class="go"> X X X X X</span>
+
+
+<span class="go">Sortida trobada</span>
+<span class="go">---------------</span>
+<span class="go"> X X X X X</span>
+<span class="go"> X X X X X</span>
+<span class="go"> X X X X X</span>
+<span class="go"> X X X X X</span>
+
+
+<span class="go">Diferència</span>
+<span class="go">----------</span>
+<span class="go">5d4</span>
+<span class="go">&lt;  X X X X X</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="noves-sortides-d-error">
+<h2>Noves sortides d’error<a class="headerlink" href="#noves-sortides-d-error" title="Link permanent a aquest títol">¶</a></h2>
+<p>Quan l’error prové de les proves amb JUnit, però, la cosa es complica una
+mica i et tocarà acostumar-te a la nova sortida doncs és la manera en que
+les desenvolupadores i desenvolupadors professionals els toca sovint
+analitzar.</p>
+<p>Un exemple dels possibles errors que trobaràs:</p>
+<div class="highlight-console notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">$</span> prgtest.sh
+
+<span class="go">Testing argio</span>
+<span class="go">=============</span>
+
+<span class="go">Fet</span>
+
+<span class="go">Testing junit</span>
+<span class="go">=============</span>
+
+<span class="hll"><span class="go">Error executant la prova</span>
+</span><span class="go">------------------------</span>
+
+<span class="go">╷</span>
+<span class="go">├─ JUnit Jupiter ✔</span>
+<span class="go">│  └─ TestExercise ✔</span>
+<span class="hll"><span class="go">│     └─ Comprovant que el mòdul requerit hi és ✘ No es troba el mòdul requerit. Revisa enunciat. ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;</span>
+</span><span class="go">└─ JUnit Vintage ✔</span>
+
+<span class="hll"><span class="go">Failures (1):</span>
+</span><span class="hll"><span class="go">  JUnit Jupiter:TestExercise:Comprovant que el mòdul requerit hi és</span>
+</span><span class="go">    MethodSource [className = &#39;TestExercise&#39;, methodName = &#39;dibuixaQuadrat&#39;, methodParameterTypes = &#39;&#39;]</span>
+<span class="hll"><span class="go">    =&gt; org.opentest4j.AssertionFailedError: No es troba el mòdul requerit. Revisa enunciat. ==&gt; expected: &lt;true&gt; but was: &lt;false&gt;</span>
+</span><span class="go">       org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)</span>
+<span class="go">       org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:40)</span>
+<span class="go">       org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:193)</span>
+<span class="go">       TestExercise.dibuixaQuadrat(TestExercise.java:28)</span>
+<span class="go">       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)</span>
+<span class="go">       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)</span>
+<span class="go">       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</span>
+<span class="go">       java.base/java.lang.reflect.Method.invoke(Method.java:566)</span>
+<span class="go">       org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:688)</span>
+<span class="go">       org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)</span>
+<span class="go">       [...]</span>
+
+<span class="go">Test run finished after 63 ms</span>
+<span class="go">[         3 containers found      ]</span>
+<span class="go">[         0 containers skipped    ]</span>
+<span class="go">[         3 containers started    ]</span>
+<span class="go">[         0 containers aborted    ]</span>
+<span class="go">[         3 containers successful ]</span>
+<span class="go">[         0 containers failed     ]</span>
+<span class="go">[         1 tests found           ]</span>
+<span class="go">[         0 tests skipped         ]</span>
+<span class="go">[         1 tests started         ]</span>
+<span class="go">[         0 tests aborted         ]</span>
+<span class="go">[         0 tests successful      ]</span>
+<span class="go">[         1 tests failed          ]</span>
+</pre></div>
+</td></tr></table></div>
+<p>No t’espantis. La major part de la sortida la pots ignorar amb força
+tranquil·litat.
+Analitzem-la amb més calma:</p>
+<ul>
+<li><p>El fet de no veure el missatge de <em>Fet</em> per la prova de Ujunit com sí
+veiem per la de l’entrada/sortida (línia 6) vol dir que alguna cosa no
+ha anat bé.</p>
+<p>La línia 11 ens ho confirma.</p>
+</li>
+<li><p>Les línies 14 a 18 són un resum que ens ofereix JUnit per indicar-nos
+quines proves han anat bé i quines no. En aqust cas concret només hi
+havia una prova, la de la línia 17 i ha anat malament.</p>
+<p>Ens diu:</p>
+<ul class="simple">
+<li><p><em>Comprovant que el mòdul requerit hi és</em>: Aquest és el nom del test
+que t’he posat per orientar-te una mica respecte el que estic provant
+aquí. En aquest cas vull saber que el mòdul requerit hi sigui al codi.
+No pateixis, aviat sabràs què vol dir això dels <em>mòduls</em>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">✘</span></code>:  Aquest símbol, a diferència del <code class="docutils literal notranslate"><span class="pre">✔</span></code> ens està indicant que
+aquest test ha fallat. Si tens configurat el terminal amb colors, et
+sortirà de color vermell.</p></li>
+<li><p><em>No es troba el mòdul requerit. Revisa enunciat.</em>: Aquesta és
+l’explicació de l’error trobat que he afegit al test. En aquest cas
+ens diu que el mòdul esperat no ha estat trobat.</p></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>la resta de la línia la podem ignorar</p></li>
+</ul>
+</div></blockquote>
+<ul>
+<li><p>La línia 20 ens diu el nombre d’errors trobats. En aquest cas 1.</p>
+<p>A diferència dels tests d’entrada/sortida, els junit intentaran totes les
+proves i, per tant, és molt probable que apareguin <em>molts</em> errors. És
+quelcom similar a la quantitat d’errors que apareixen quan compiles. Ja
+saps: de vegades modifiques una petita part del codi i arregles un munt
+d’errors o bé, desapareix algun i en surten encara més.</p>
+</li>
+<li><p>La resta de les línies et poden ampliar la informació del que ha anat
+malament. És similar a la sortida que ens genera java quan el nostre
+programa té un error d’execució. De la mateixa manera, és preferible
+quedar-nos només amb la informació relativa al nostre codi doncs ens
+donarà pistes de per on actuar. En el cas de l’exemple, la informació
+que ens ofereix és redundant respecte la línia 17 o bé ens resultaran
+massa críptiques amb el coneixement que tenim actualment de Java.</p></li>
+</ul>
+<p>En cas que no sàpigues com treure-li sentit a un error, recorda que tens
+un docent encantat de poder ajudar-te.</p>
+<p>Ara que ja sabem més o menys el que ens espera, podem començar la nostra
+exploració dels <em>mòduls</em>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="moduls_intro.html" class="btn btn-neutral float-right" title="Un primer contacte" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="moduls.html" class="btn btn-neutral float-left" title="Mòduls" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2021 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

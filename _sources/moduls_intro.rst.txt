@@ -65,5 +65,3 @@ plantilla
     moduls_reaprofitament.rst
     moduls_parametritzacio.rst
     moduls_primeres_definicions.rst
-
-

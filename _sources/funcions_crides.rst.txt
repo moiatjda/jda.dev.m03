@@ -1,0 +1,108 @@
+###################
+Aprofitem la funció
+###################
+
+Amb l'ús de la funció ``quantesOcurrencies()``, el codi resultant del
+nostre programa és més llegible, ara que ja no necessita tants bucles fent
+el mateix, oi?
+
+Recordem la darrera versió de ``ComptaAiEs``.
+
+.. code-block:: java
+    :linenos:
+
+    /*
+     * programa que mostra quantes 'a's i 'e's té un text
+     */
+    public class ComptaAiEs {
+        public static void main(String[] args) {
+            System.out.println("Introdueix un text");
+            String entrada = Entrada.readLine();
+            comptaLletra(entrada, 'a');
+            comptaLletra(entrada, 'e');
+            comparaAiEs(entrada);
+        }
+        public static void comptaLletra(String text, char lletra) {
+            int comptador = quantesOcurrencies(text, lletra);
+            System.out.println("Nombre de '" + lletra + "'s: " + comptador);
+        }
+        public static void comparaAiEs(String text) {
+            int comptadorA = quantesOcurrencies(text, 'a');
+            int comptadorE = quantesOcurrencies(text, 'e');
+            if (comptadorA > comptadorE) {
+                System.out.println("Hi ha més 'a's que 'e's");
+            } else if (comptadorA < comptadorE) {
+                System.out.println("Hi ha menys 'a's que 'e's");
+            } else {
+                System.out.println("Hi ha tantes 'a's com 'e's");
+            }
+        }
+        public static int quantesOcurrencies(String text, char lletra) {
+            int comptador = 0;
+            for (int i=0; i < text.length(); i++) {
+                if (text.charAt(i) == lletra) {
+                    comptador += 1;
+                }
+            }
+            return comptador;
+        }
+    }
+
+
+El nostre codi encara podria fer un ús més raonable de la funció
+``quantesOcurrencies()``. Per exemple, considera la següent versió:
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 8, 9
+
+    /*
+     * programa que mostra quantes 'a's i 'e's té un text
+     */
+    public class ComptaAiEs {
+        public static void main(String[] args) {
+            System.out.println("Introdueix un text");
+            String entrada = Entrada.readLine();
+            int numAs = quantesOcurrencies(entrada, 'a');
+            int numEs = quantesOcurrencies(entrada, 'e');
+            mostraOcurrencies('a', numAs);
+            mostraOcurrencies('e', numEs);
+                mostraComparacio('a', numAs, 'e', numEs);
+        }
+        public static void mostraOcurrencies(char lletra, int quantes) {
+            System.out.println("Nombre de '" + lletra + "'s: " + quantes);
+        }
+        public static void mostraComparacio(char lletra1, int quantes1, char lletra2, int quantes2) {
+            if (quantes1 > quantes2) {
+                System.out.println("Hi ha més '" + lletra1 +"'s que '"+lletra2+"'s");
+            } else if (quantes1 < quantes2 ) {
+                System.out.println("Hi ha menys '" + lletra1 +"'s que '"+lletra2+"'s");
+            } else {
+                System.out.println("Hi ha tantes '" + lletra1 +"'s com '"+lletra2+"'s");
+            }
+        }
+        public static int quantesOcurrencies(String text, char lletra) {
+            int comptador = 0;
+            for (int i=0; i < text.length(); i++) {
+                if (text.charAt(i) == lletra) {
+                    comptador += 1;
+                }
+            }
+            return comptador;
+        }
+    }
+
+
+Fixa't també que ara ``mostraOcurrencies()``, a diferència de l'antic
+``comptaLletra()`` només s'ha de preocupar de fer una cosa: mostrar el
+missatge amb el nombre d'ocurrències d'una determinada lletra. D'això
+se'n diu *especialització*, és a dir, que el mòdul faci una sola cosa i
+que aquesta quedi ben descrita amb el nom del mòdul. Això és un punt
+interessant a tenir en compte a l'hora de descomposar els nostres
+programes en mòduls. Seguirem treballant aquest punt durant la resta del
+curs i, probablement, durant tota la nostra carrera com a desenvolupadores
+i desenvolupadors.
+
+|exerciseicon__T| :doc:`exercici_02_15_compta_vocals`
+
+

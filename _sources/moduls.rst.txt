@@ -2,9 +2,12 @@
 Mòduls
 ######
 
-Fins ara hem conegut assignacions, E/S, condicionals, bucles i tenim unes
-primeres nocions de bones pràctiques en la documentació dels nostres
-codis. Amb tot això, teòricament podem fer **qualsevol programa**!
+Has arribat fins aquí! Felicitats!
+
+Ha estat un camí intens fins ara. Hem conegut assignacions,
+entrada/sortida, condicionals, bucles i tenim unes primeres nocions de
+bones pràctiques en la documentació dels nostres codis. Amb tot això,
+teòricament podem fer **qualsevol programa**!
 
 Atenció, però, a la paraula "teòricament". A la pràctica, la realització
 d'alguns programes ens requeriria un temps molt elevat doncs els programes
@@ -21,13 +24,34 @@ resultants presenten una solució trivial.
 
 Quan els problemes són de programació, cada subproblema es converteix en un mòdul.
 
-Anem a veure com es tradueix tot això a codi.
+Primer de tot, però, ens caldrà fer una mica de "bricolatge" a la nostra
+instal·lació per poder realitzar les proves dels nous exercicis.
+Assegura't de no perdre't la secció :doc:`moduls_junit`.
 
+El que cal és que afegeixis junit al teu sistema i li diguis a Java on
+trobar-lo.  Per simplicitat, t'he creat un nou guió que hauria de fer-te
+tota la feina de que trobaràs a
+``~/introprg/lib/install_junit.sh``
+
+
+Un cop ja tenim el nostre sistema preparat, ja podem anar a veure com es
+tradueix tot això a codi.
 
 .. toctree::
     :titlesonly:
     :maxdepth: 1
 
-
+    moduls_junit.rst
     moduls_intro.rst
+    moduls_funcions.rst
     moduls_exercicis.rst
+
+.. moduls_variables.rst
+.. moduls_topdown.rst
+.. moduls_doc.rst
+.. moduls_arrays.rst
+.. moduls_mutabilitat.rst
+.. moduls_recursivitat.rst
+.. moduls_lambdas.rst
+.. moduls_projecte.rst
+

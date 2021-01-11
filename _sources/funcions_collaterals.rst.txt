@@ -1,0 +1,44 @@
+Efectes col·laterals
+====================
+
+La funció ``quantesOcurrencies()`` té una propietat interessant. Per
+moltes vegades que la cridem amb els mateixos arguments, sempre ens
+retornarà el mateix resultat i no canviarà res en el context del programa
+en que s'executi. Com a contrast, fixa't en el procediment
+``mostraOcurrencies()``. Cada cop que el cridem, a la sortida estàndard
+(la pantalla) hi haurà més contingut!
+
+Ens referirem a aquests canvis en el context del programa com a *efectes
+col·laterals*.
+
+Per descomptat, un procediment ha de tenir **necessàriament** efectes
+col·laterals.  Altrament voldria dir que no podríem veure cap diferència
+entre cridar-los o no!
+
+Ja hem vist que ``quantesOcurrencies()`` no té efectes col·laterals però,
+podria una funció tenir-ne?
+
+Doncs sí, és perfectament possible. Per exemple, ``Entrada.readLine()`` és
+una funció i té efectes col·laterals. En concret, cada cop que és
+executada, *processa* o *consumeix* una nova línia de l'entrada estàndard.
+És a dir, el context del programa és modificat cada cop que llegim una
+línia. Encara que una altra línia posterior tingui el mateix contingut,
+**no** tornarà a ser la mateixa línia.
+
+Com que a les desenvolupadores i desenvolupadors ens agrada posar-hi nom a
+tot, a les funcions sense efectes col·laterals en diem *pures* i a les
+altres *impures*.
+
+Es tracta d'uns noms amb connotacions elitistes, t'ho accepto. Al seu
+favor val a dir que són breus, explicatius i que, fins el moment en que
+estic escrivint aquests continguts no tinc constància de cap organització
+en defensa de la igualtat de les funcions.
+
+Les funcions pures són generalment preferibles entre d'altres coses perquè
+no importa l'ordre en que les executem i resulten més fàcils de comprovar
+que funcionen. Les impures… bé, de vegades dependrà del context.
+
+|exerciseicon_S_| :doc:`exercici_02_16_tipus_moduls`
+
+|exerciseicon__T| :doc:`exercici_02_19_matricula_italiana`
+

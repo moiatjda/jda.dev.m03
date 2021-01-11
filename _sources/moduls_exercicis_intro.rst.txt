@@ -1,6 +1,6 @@
-###############################################
-Llista d'exercicis de la introducció als mòduls
-###############################################
+#################################################
+Llista d'exercicis del primer contacte amb mòduls
+#################################################
 
 Els exercicis del tema :doc:`moduls_intro` són:
 

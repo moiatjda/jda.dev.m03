@@ -1,0 +1,69 @@
+############################################################
+|exerciseicon__T| Exercici 02_20. Només lletres (amb mòduls)
+############################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``02_20_nomes_lletres/``
+
+* Continguts relacionats: :doc:`moduls_biblioteques`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Rescatarem :doc:`exercici_01_68_nomes_lletres` i el farem modular.
+
+El programa ``NomesLletres.java`` rewsultant tindrà el següent codi (Només
+falta el comentari de capçalera!):
+
+.. code-block:: Java
+    :linenos:
+
+    /*
+     * ???
+     */
+
+    public class NomesLletres{
+        public static void main(String[] args) {
+            System.out.println("Text?");
+            String text = Entrada.readLine();
+            String nomesLletres = UtilString.nomesLletres(text);
+            String separades = UtilString.lletresSeparades(nomesLletres);
+            System.out.println(separades);
+        }
+    }
+
+T'ha semblat breu? Doncs espera't que t'ofereixo una versió encara més
+compacta:
+
+.. code-block:: Java
+    :linenos:
+
+    /*
+     * ???
+     */
+
+    public class NomesLletres{
+        public static void main(String[] args) {
+            System.out.println("Text?");
+            System.out.println(
+                    UtilString.lletresSeparades(
+                        UtilString.nomesLletres(
+                            Entrada.readLine()
+                            )
+                        )
+                    );
+        }
+    }
+
+Ueee! Són realment dues sentències! (compta els ``;``)
+
+Aquesta versió simplement està encadenant diferents funcions. A algunes
+persones, quan comencen a programar, les resulta una mica més complicat
+entendre aquest tipus de codi; no parlem ja de que se'ls acudeixi! Però és
+una manera molt habitual de desenvolupar i no està de més que comencis a
+veure-la. Per aquest exercici, i de fet per tot el curs, fes la versió que
+vulguis.

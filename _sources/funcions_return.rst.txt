@@ -1,0 +1,101 @@
+###################
+Sobre el ``return``
+###################
+
+Potser recordaràs la presentació del ``return`` a :doc:`control_return`.
+En aquella ocasió, el fèiem servir per finalitzar completament un programa
+sencer. Bé, en realitat finalitzàvem el ``main()`` però en aquells temps
+no érem conscients de l'existència dels mòduls.
+
+De fet, podem fer servir ``return`` en qualsevol dels dos tipus de mòduls
+que coneixem (funcions i procediments) En el cas de les funcions,
+``return`` ha d'estar seguit d'una expressió del tipus de retorn, mentre
+que en els procediments no ha d'estar segut de cap valor.
+
+Podem fer servir més d'un ``return`` al mateix mòdul? Doncs sí, és clar.
+Per exemple, considera el següent programa que promet destruir l'equip
+dels usuaris:
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 24, 28, 31, 34, 36, 46
+
+    /*
+     * Programa que destrueix l'equip en el que s'executa.
+     * Abans de fer res, demana confirmació als usuaris.
+     * Nota: potser al final no s'atreveix a fer-ho
+     */
+    public class Autodestruccio {
+        public static void main(String[] args) {
+            System.out.println("Estic apunt de destruir el teu ordinador. Estàs d'acord?");
+            String resposta = Entrada.readLine();
+            boolean confirma = respostaABoolean(resposta);
+            destrueixSiConfirmat(confirma);
+        }
+
+        /*
+         * Donada una resposta textual, aquesta funció tradueix la resposta a
+         * un booleà.
+         * Considera true quan la resposta és, independentment de majúscules i
+         * sense considerar espais a l'inici ni al final,
+         * "sí", "s", "yes" o "y", i algunes variants amb errors ortogràfics.
+         * Altrament considera false.
+         */
+        public static boolean respostaABoolean(String resposta) {
+            if (null == resposta) {     // si la resposta és null, la donem com a false
+                return false;
+            }
+            resposta = resposta.toLowerCase();
+            if (resposta.equals("s") || resposta.equals("y")) {
+                return true;
+            }
+            if (resposta.equals("sí") || resposta.equals("yes")) {
+                return true;
+            }
+            if (resposta.equals("si") || resposta.equals("vale") || resposta.equals("yeah")) {
+                return true;
+            }
+            return false;
+        }
+
+        /**
+         * En cas que li passin true a la confirmació, aquest procediment
+         * destrueix l'equip en el que s'estigui executant (bé, més o menys)
+         */
+        public static void destrueixSiConfirmat(boolean confirmacio) {
+            if (! confirmacio) {
+                System.out.println("Uf! Ha estat d'un pel!");
+                return;
+            }
+            System.out.println("El teu equip es destruirà en");
+            for (int i=5; i > 0; i--) {
+                System.out.println(i);
+            }
+            System.out.println("Valeeee. Anava de farol!");
+        }
+    }
+
+Aquest codi tan *perillós* presenta un bon grapat de ``return``.
+
+Comencem amb ``destrueixSiConfirmat()``. Aquest procediment presenta dos
+``return``. Potser només en veus un? Això és perquè no comptes el de la
+línia 53. És un ``return`` implícit que fan els procediments quan arriben
+al final de les línies del bloc. Si el posem explícitament només canviarà
+en que el nostre programa tindrà una línia més de codi.
+
+La funció ``respostaABoolean()`` que presenta fins a 5 ``return``. En el
+cas de les funcions, no podem deixar implícit el ``return`` del final del
+bloc doncs **cal** que retornem un valor del tipus indicat a la seva
+signatura. En aquest cas un booleà. Clar, java no es pot inventar el valor
+a retornar.
+
+Cada ``return`` es sol anomenar *punt de sortida*.
+
+Cal tenir present que un mòdul amb més d'un punt de sortida dificulta la
+seva modificabilitat. Pensa què passaria si ens calgués que
+``destrueixSiConfirmat()`` finalitzés sempre escrivint *Adéu*.
+
+Així, què fem? més d'un punt de sortida o només un? Tot i que la resposta
+variarà en funció de "l'escola" dels experts a qui demanis, la meva
+recomanació és: mira de fer sempre el que resulti en un codi més fàcil de
+llegir.

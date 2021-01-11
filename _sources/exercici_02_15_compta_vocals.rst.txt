@@ -1,0 +1,98 @@
+###############################################
+|exerciseicon__T| Exercici 02_15. Compta vocals
+###############################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``02_15_compta_vocals/``
+
+* Continguts relacionats: :doc:`funcions_crides`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Considera la següent versió simplificada del programa ``ComptaAiEs`` en la
+que comptem les ocurrències de 'a' i 'e' però no les comparem:
+
+.. code-block:: java
+    :linenos:
+
+    /*
+     * programa que mostra quantes 'a's i 'e's té un text
+     */
+    public class ComptaAiEs {
+        public static void main(String[] args) {
+            System.out.println("Introdueix un text");
+            String entrada = Entrada.readLine();
+            comptaLletra(entrada, 'a');
+            comptaLletra(entrada, 'e');
+            comparaAiEs(entrada);
+        }
+        public static void mostraOcurrencies(char lletra, int quantes) {
+            System.out.println("Nombre de '" + lletra + "'s: " + quantes);
+        }
+        public static int quantesOcurrencies(String text, char lletra) {
+            int comptador = 0;
+            for (int i=0; i < text.length(); i++) {
+                if (text.charAt(i) == lletra) {
+                    comptador += 1;
+                }
+            }
+            return comptador;
+        }
+    }
+
+
+Basant-te en aquest codi, desenvolupa un nou programa que mostri les
+ocurrències de totes les vocals catalanes.
+
+Una simulació d'execució seria:
+
+.. code-block:: console
+    :emphasize-lines: 2, 4-
+
+    $ java ComptaVocals
+    Introdueix un text
+    una prova més avuí
+    Nombre de 'a's: 3
+    Nombre de 'à's: 0
+    Nombre de 'e's: 0
+    Nombre de 'è's: 0
+    Nombre de 'é's: 1
+    Nombre de 'i's: 0
+    Nombre de 'í's: 1
+    Nombre de 'ï's: 0
+    Nombre de 'o's: 1
+    Nombre de 'ó's: 0
+    Nombre de 'ò's: 0
+    Nombre de 'u's: 2
+    Nombre de 'ú's: 0
+    Nombre de 'ü's: 0
+
+De regal, la plantilla, en la que només has de reemplaçar les ``XXX`` pel
+teu codi:
+
+.. code-block:: java
+
+    /* XXX */
+    public class ComptaVocals {
+        public static void main(String[] args) {
+            /* XXX */
+        }
+        public static void mostraOcurrencies(char lletra, int quantes) {
+            System.out.println("Nombre de '" + lletra + "'s: " + quantes);
+        }
+        public static int quantesOcurrencies(String text, char lletra) {
+            int comptador = 0;
+            for (int i=0; i < text.length(); i++) {
+                if (text.charAt(i) == lletra) {
+                    comptador += 1;
+                }
+            }
+            return comptador;
+        }
+    }
+
