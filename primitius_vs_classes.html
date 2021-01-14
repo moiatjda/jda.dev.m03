@@ -358,9 +358,9 @@ establir un llindar a partir del qual considerem els valors iguals</p>
 </span></pre></div>
 </div>
 </li>
-<li><p>el tipus <code class="docutils literal notranslate"><span class="pre">char</span></code> requereix dos bytes i els seus valors es codifiquen en
+<li><p>el tipus <code class="docutils literal notranslate"><span class="pre">char</span></code> requereix dos <em>bytes</em> i els seus valors es codifiquen en
 Unicode, cosa que ens estalvia molts problemes als que fem servir
-caràcters com la <em>ç</em>.</p>
+caràcters com la <code class="docutils literal notranslate"><span class="pre">'ç'</span></code>.</p>
 <p>Podem assignar literals de tipus <code class="docutils literal notranslate"><span class="pre">char</span></code> envoltant-los entre cometes
 simples, com als exemples:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">char</span> <span class="n">c</span> <span class="o">=</span> <span class="sc">&#39;à&#39;</span><span class="p">;</span>
@@ -404,13 +404,13 @@ següent interacció amb jshell és possible:</p>
 <span class="hll"><span class="go">És una lletra minúscula de l&#39;alfabet llatí</span>
 </span></pre></div>
 </td></tr></table></div>
-<p>Fixa’t com el caràcter “a” (què té el codi ASCII 97) passa a ser
+<p>Fixa’t com el caràcter <code class="docutils literal notranslate"><span class="pre">'a'</span></code> (què té el codi ASCII 97) passa a ser
 considerat com un enter quan se li suma 1 a la línia 5.</p>
 <p>A la línia 8 veiem que podem fer que Java el torni a considerar un
 caràcter si li posem davant <code class="docutils literal notranslate"><span class="pre">(char)</span></code>.</p>
-<p>Finalment, la condició de la línia 10 ens mostra com podem fer per
-mirar si <code class="docutils literal notranslate"><span class="pre">ch</span></code> es troba entre la “a” i la “z” en l’alfabet llatí (sense
-caràcters especials com ara “ç” o “à”)</p>
+<p>Finalment, la condició de la línia 10 ens mostra com podem fer per mirar
+si <code class="docutils literal notranslate"><span class="pre">ch</span></code> es troba entre la <code class="docutils literal notranslate"><span class="pre">'a'</span></code> i la <code class="docutils literal notranslate"><span class="pre">'z'</span></code> en l’alfabet llatí
+(sense caràcters especials com ara <code class="docutils literal notranslate"><span class="pre">'ç'</span></code> o <code class="docutils literal notranslate"><span class="pre">'à'</span></code>)</p>
 </li>
 <li><p>Quan el valor numèric que volem assignar a una variable numèrica es
 troba fora dels límits, el compilador ens donarà un error. Sempre podem

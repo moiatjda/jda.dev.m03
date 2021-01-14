@@ -26,10 +26,10 @@ Una manera seria aquesta:
 
     public class Triangle {
         public static void main(String[] args) {
-            dibuixaTriangle ();
+            dibuixaTriangle();
         }
 
-        public static void dibuixaTriangle () {
+        public static void dibuixaTriangle() {
             dibuixaLinia1();
             System.out.println();
             dibuixaLinia2();
@@ -121,10 +121,10 @@ Refem el programa perquè faci servir aquesta nova versió de línia:
 
     public class Triangle {
         public static void main(String[] args) {
-            dibuixaTriangle ();
+            dibuixaTriangle();
         }
 
-        public static void dibuixaTriangle () {
+        public static void dibuixaTriangle() {
             for (int linia=1; linia <= 5; linia++) {
                 dibuixaLinia(linia);
                 System.out.println();

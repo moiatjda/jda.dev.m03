@@ -67,7 +67,7 @@ El nostre codi encara podria fer un ús més raonable de la funció
             int numEs = quantesOcurrencies(entrada, 'e');
             mostraOcurrencies('a', numAs);
             mostraOcurrencies('e', numEs);
-                mostraComparacio('a', numAs, 'e', numEs);
+            mostraComparacio('a', numAs, 'e', numEs);
         }
         public static void mostraOcurrencies(char lletra, int quantes) {
             System.out.println("Nombre de '" + lletra + "'s: " + quantes);

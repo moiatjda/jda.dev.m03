@@ -193,7 +193,7 @@
 </ul>
 <p class="rubric">Enunciat</p>
 <p>Considera la següent versió simplificada del programa <code class="docutils literal notranslate"><span class="pre">ComptaAiEs</span></code> en la
-que comptem les ocurrències de “a” i “e” però no les comparem:</p>
+que comptem les ocurrències de <code class="docutils literal notranslate"><span class="pre">'a'</span></code> i <code class="docutils literal notranslate"><span class="pre">'e'</span></code> però no les comparem:</p>
 <div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -217,16 +217,18 @@ que comptem les ocurrències de “a” i “e” però no les comparem:</p>
 21
 22
 23
-24</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+24
+25</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/*</span>
 <span class="cm"> * programa que mostra quantes &#39;a&#39;s i &#39;e&#39;s té un text</span>
 <span class="cm"> */</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">ComptaAiEs</span> <span class="p">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Introdueix un text&quot;</span><span class="p">);</span>
         <span class="n">String</span> <span class="n">entrada</span> <span class="o">=</span> <span class="n">Entrada</span><span class="p">.</span><span class="na">readLine</span><span class="p">();</span>
-        <span class="n">comptaLletra</span><span class="p">(</span><span class="n">entrada</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">);</span>
-        <span class="n">comptaLletra</span><span class="p">(</span><span class="n">entrada</span><span class="p">,</span> <span class="sc">&#39;e&#39;</span><span class="p">);</span>
-        <span class="n">comparaAiEs</span><span class="p">(</span><span class="n">entrada</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">numAs</span> <span class="o">=</span> <span class="n">quantesOcurrencies</span><span class="p">(</span><span class="n">entrada</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">numEs</span> <span class="o">=</span> <span class="n">quantesOcurrencies</span><span class="p">(</span><span class="n">entrada</span><span class="p">,</span> <span class="sc">&#39;e&#39;</span><span class="p">);</span>
+        <span class="n">mostraOcurrencies</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="n">numAs</span><span class="p">);</span>
+        <span class="n">mostraOcurrencies</span><span class="p">(</span><span class="sc">&#39;e&#39;</span><span class="p">,</span> <span class="n">numEs</span><span class="p">);</span>
     <span class="p">}</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mostraOcurrencies</span><span class="p">(</span><span class="kt">char</span> <span class="n">lletra</span><span class="p">,</span> <span class="kt">int</span> <span class="n">quantes</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Nombre de &#39;&quot;</span> <span class="o">+</span> <span class="n">lletra</span> <span class="o">+</span> <span class="s">&quot;&#39;s: &quot;</span> <span class="o">+</span> <span class="n">quantes</span><span class="p">);</span>

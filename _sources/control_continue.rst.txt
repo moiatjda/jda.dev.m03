@@ -98,7 +98,7 @@ Podríem dibuixar-ho de la següent manera:
 El ``continue`` també el podem fer serrvir dins d'un ``for``. Quan
 apareix, el bucle passarà al següent valor del recorregut.
 
-Per exemple, el següent fragment de codi filtrarà la lletra 'a':
+Per exemple, el següent fragment de codi filtrarà la lletra ``'a'``:
 
 .. code-block:: java
 

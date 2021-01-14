@@ -33,9 +33,9 @@ Per exemple, considera el següent programa
         }
     }
 
-Fixa't que el programa demana un text i el recorre cercant una 'J'. Un cop
+Fixa't que el programa demana un text i el recorre cercant una ``'J'``. Un cop
 ha trobat una, continua recorrent-lo fins el final, això sí, sense
-molestar-se en mirar si hi ha o no més 'J'.
+molestar-se en mirar si hi ha o no més ``'J'``.
 
 El codi es podria simplificar molt si fem servir una bona expressió
 booleana

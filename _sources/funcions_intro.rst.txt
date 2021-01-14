@@ -43,7 +43,7 @@ Una execució del programa anterior ens generaria:
 Cap novetat fins aquí, oi?
 
 Ara, imagina que ens demanen ampliar el nostre programa de manera que
-mostri el nombre de 'e's també.
+mostri també el nombre de vegades que apareix ``'e'``.
 
 Amb el *copy&paste* qui ha dit por?
 
@@ -91,8 +91,8 @@ Amb la sortida aquest cop:
     Nombre de 'a's: 3
     Nombre de 'e's: 2
 
-Em, sí, funciona, però… i si ens demanen també comptar les 'i's? Tornem a
-copiar i enganxar? Vinga, que ho podem fer millor:
+Em, sí, funciona, però… i si ens demanen també comptar les aparicions de
+'i'? Tornem a copiar i enganxar? Vinga, que ho podem fer millor:
 
 .. code-block:: java
     :linenos:
@@ -135,8 +135,8 @@ manera que la seva execució fos:
     Nombre de 'e's: 2
     Hi ha més 'a's que 'e's
 
-Doncs fàcil, no? Fem un nou mòdul que compari el nombre de 'a's amb el de
-'e's i ja està!
+Doncs fàcil, no? Fem un nou mòdul que compari el nombre d'ocurrències de
+``'a'`` amb el de ``'e'`` i ja està!
 
 .. code-block:: java
     :linenos:

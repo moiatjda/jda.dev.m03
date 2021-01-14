@@ -186,9 +186,9 @@ Permetem-nos una breu repassada, amb alguna ampliació, sobre els tipus primitiu
         jshell> boolean pesosIguals = Math.abs(pes1 - pes2) < LLINDAR;
         pesosIguals ==> true
 
-* el tipus ``char`` requereix dos bytes i els seus valors es codifiquen en
+* el tipus ``char`` requereix dos *bytes* i els seus valors es codifiquen en
   Unicode, cosa que ens estalvia molts problemes als que fem servir
-  caràcters com la *ç*.
+  caràcters com la ``'ç'``.
 
   Podem assignar literals de tipus ``char`` envoltant-los entre cometes
   simples, com als exemples:
@@ -228,15 +228,15 @@ Permetem-nos una breu repassada, amb alguna ampliació, sobre els tipus primitiu
         ...> }
      És una lletra minúscula de l'alfabet llatí
 
-  Fixa't com el caràcter 'a' (què té el codi ASCII 97) passa a ser
+  Fixa't com el caràcter ``'a'`` (què té el codi ASCII 97) passa a ser
   considerat com un enter quan se li suma 1 a la línia 5.
 
   A la línia 8 veiem que podem fer que Java el torni a considerar un
   caràcter si li posem davant ``(char)``. 
 
-  Finalment, la condició de la línia 10 ens mostra com podem fer per
-  mirar si ``ch`` es troba entre la 'a' i la 'z' en l'alfabet llatí (sense
-  caràcters especials com ara 'ç' o 'à')
+  Finalment, la condició de la línia 10 ens mostra com podem fer per mirar
+  si ``ch`` es troba entre la ``'a'`` i la ``'z'`` en l'alfabet llatí
+  (sense caràcters especials com ara ``'ç'`` o ``'à'``)
 
 * Quan el valor numèric que volem assignar a una variable numèrica es
   troba fora dels límits, el compilador ens donarà un error. Sempre podem

@@ -6,8 +6,8 @@ Si bé hem resolt el problema, el resultat potser no ens agrada del tot. Si
 més no, el mòdul ``comparaAiEs()`` ha de *tornar* a comptar les ocurrències
 de les dues lletres per poder fer la seva feina.
 
-Si poguéssim aconseguir guardar d'alguna manera el nombre de 'a's i el de
-'e's, la comparació seria immediata, no?
+Si poguéssim aconseguir guardar d'alguna manera el nombre de vegades que
+apareixen les vocals ``'a'`` i ``'e'``, la comparació seria immediata, no?
 
 Considera la següent versió amb molta atenció, que ara sí hi ha novetats:
 
