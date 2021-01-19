@@ -1,0 +1,66 @@
+##############################################################
+|exerciseicon__T| Exercici 02_22. Secció d'un String (modular)
+##############################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``02_22_mostra_interval_string/``
+
+* Continguts relacionats: :doc:`moduls_variables`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Recuperem l'exercici que mostrava la :doc:`secció d'un
+String<exercici_01_69_mostra_interval_string>` i fem-ne la versió modular
+
+El programa ``MostraInterval`` farà pràcticament el mateix que la versió original.
+Considera els canvis a partir d'aquesta nova interacció:
+
+.. code-block:: console
+    :emphasize-lines: 2, 4, 6, 8
+
+    $ java MostraInterval
+    Text?
+    Java rocks
+    inici?
+    5
+    final?
+    7
+    roc
+
+.. code-block:: console
+    :emphasize-lines: 2, 4, 6, 8
+
+    $ java MostraInterval
+    Text?
+    Java rocks
+    inici?
+    7
+    final?
+    5
+    cor
+
+.. code-block:: console
+    :emphasize-lines: 2, 4, 6, 8
+
+    $ java MostraInterval
+    Text?
+    Java rocks
+    inici?
+    5
+    final?
+    1000
+    rocks
+
+És a dir, ara els caràcters resultants apareixen a la mateixa línia.
+
+L'operació de trobar els caràcters dins l'interval la realitzarà una funció anomenada ``intervalString()`` amb
+els paràmetres: la cadena de text corresponent, el valor inicial i el
+valor final. La funció retornarà la secció corresponent del text.
+
+``intervalString()`` estarà definida dins de ``UtilString.java`` i serà
+una funció pura.

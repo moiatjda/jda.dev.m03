@@ -1,0 +1,981 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ca" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Variables i mòduls &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Apèndix" href="apendix.html" />
+    <link rel="prev" title="Exercici 02_24. Cadena continua (modular)" href="exercici_02_24_cadena_continua.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació amb Java
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-21
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="moduls.html">Mòduls</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="moduls_junit.html">Una mica de bricolatge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moduls_intro.html">Un primer contacte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moduls_funcions.html">Funcions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moduls_exercicis.html">Llista d’exercicis</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Variables i mòduls</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="apendix.html">Apèndix</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació amb Java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="moduls.html">Mòduls</a> &raquo;</li>
+        
+      <li>Variables i mòduls</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="variables-i-moduls">
+<h1>Variables i mòduls<a class="headerlink" href="#variables-i-moduls" title="Link permanent a aquest títol">¶</a></h1>
+<p>Ara que ja coneixem els mòduls, cal fer una petita revisió a les
+variables.</p>
+<div class="section" id="les-variables-abans-dels-moduls">
+<h2>Les variables abans dels mòduls<a class="headerlink" href="#les-variables-abans-dels-moduls" title="Link permanent a aquest títol">¶</a></h2>
+<p>Fins ara no ens hem preocupat gaire d’una característica important de les
+variables: on tenen validessa. En paraules més tècniques, el seu <em>àmbit</em>
+o <em>scope</em>.</p>
+<p>Sabem que una variable està disponible per ser assignada a partir de que s’executa la seva
+definició, i que pot ser consultat el seu valor a partir de la seva
+inicialització</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">// Aquí la variable llenguatge és desconeguda. Qualsevol al·lusió a &#39;llenguatge&#39; que</span>
+<span class="c1">// no sigui per declarar-la, donarà error</span>
+
+<span class="n">String</span> <span class="n">llenguatge</span><span class="p">;</span>     <span class="c1">// declaració</span>
+
+<span class="c1">// Ara ja puc assignar-li un valor. ex. puc fer llenguatge = &quot;java&quot;;</span>
+
+<span class="c1">// Encara no puc consultar el seu valor. ex. donarà error System.out.println(llenguatge);</span>
+
+<span class="c1">// Ja no puc tornar a declarar una variable amb aquest mateix nom</span>
+
+<span class="n">llenguatge</span> <span class="o">=</span> <span class="s">&quot;java&quot;</span><span class="p">;</span>   <span class="c1">// inicialització</span>
+
+<span class="c1">// Ara puc encara assignar-li un nou valor. ex. llenguatge = &quot;javascript&quot;;</span>
+<span class="c1">// També puc consultar el seu valor. ex. System.out.println(llenguatge);</span>
+</pre></div>
+</td></tr></table></div>
+<p>També hem pogut experimentar que si declarem una variable dins del bloc d’un condicional o un
+bucle, aquesta variable <em>només</em> pot ser consultada dins del bloc:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">// Aquí encara no podem parlar de la variable llenguatge, a banda de declarar-la</span>
+<span class="c1">// Si la declarem, però, tornar-la a declarar dins del bucle provocaria un error</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="c1">// Aquí encara no existeix la variable llenguatge</span>
+
+    <span class="n">String</span> <span class="n">llenguatge</span> <span class="o">=</span> <span class="s">&quot;java&quot;</span><span class="p">;</span>     <span class="c1">// declaració i inicialització</span>
+
+    <span class="c1">// Ara ja està disponible la variable per assignar i consultar</span>
+
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">llenguatge</span><span class="p">);</span> <span class="c1">// podem consultar-la sense problemes</span>
+
+<span class="p">}</span>
+
+<span class="c1">// A partir d&#39;aquí, la variable ja no existeix. La podríem declarar sense problemes</span>
+<span class="kt">int</span> <span class="n">llenguatge</span> <span class="o">=</span> <span class="mi">42</span><span class="p">;</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">llenguatge</span><span class="p">);</span>
+</pre></div>
+</td></tr></table></div>
+<p>En el cas dels bucles <em>for</em> vam experimentar un cas particular quan
+declaràvem la variable de recorregut dins dels parèntesis del bucle:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">// La variable linia no existeix encara</span>
+<span class="c1">// Si la declarem aquí, al for donarà error</span>
+
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">linia</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">linia</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span> <span class="n">linia</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// a partir d&#39;aquí, linia ja existeix</span>
+
+    <span class="c1">// podem usar linia dins del bloc del for</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">linia</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// A partir d&#39;aquí linia no existeix. La podem tornar a declarar</span>
+<span class="n">String</span> <span class="n">linia</span> <span class="o">=</span> <span class="n">Entrada</span><span class="p">.</span><span class="na">readLine</span><span class="p">();</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="les-variables-amb-moduls">
+<h2>Les variables amb mòduls<a class="headerlink" href="#les-variables-amb-moduls" title="Link permanent a aquest títol">¶</a></h2>
+<p>Què passa amb les variables quan els mòduls entren en joc?</p>
+<p>Abans de començar amb els mòduls, l’únic mòdul disponible era <code class="docutils literal notranslate"><span class="pre">main()</span></code>
+i, per tant, no ens preocupàvem gaire.</p>
+<p>Ara, els mòduls tenen el seu propi bloc de codi i, a més a més, tenim els
+<em>paràmetres</em> que no deixen de ser unes variables que declarem a la
+signatura del mòdul.</p>
+<p>Considera el següent programa:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Quadrat</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">costat</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+        <span class="n">dibuixaQuadrat</span><span class="p">(</span><span class="n">costat</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El costat és &quot;</span> <span class="o">+</span> <span class="n">costat</span><span class="p">);</span>   <span class="c1">// escriurà 5</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">dibuixaQuadrat</span><span class="p">(</span><span class="kt">int</span> <span class="n">altura</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">altura</span> <span class="o">=</span> <span class="n">altura</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>    <span class="c1">// volem el doble</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">linia</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">linia</span> <span class="o">&lt;=</span> <span class="n">altura</span><span class="p">;</span> <span class="n">linia</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">dibuixaLinia</span><span class="p">(</span><span class="n">altura</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">dibuixaLinia</span><span class="p">(</span><span class="kt">int</span> <span class="n">costat</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">char</span> <span class="n">caracter</span> <span class="o">=</span> <span class="sc">&#39;X&#39;</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">columna</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">columna</span> <span class="o">&lt;=</span> <span class="n">costat</span><span class="p">;</span> <span class="n">columna</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">caracter</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>La variable <code class="docutils literal notranslate"><span class="pre">costat</span></code> només és disponible a partir de la seva declaració
+fins que s’acaba el bloc que la conté. És a dir, entre les línies 3 i 6.</p>
+<p>Similarment, <code class="docutils literal notranslate"><span class="pre">caracter</span></code> només està disponible entre les línies 17 i 21.
+Podríem declarar una variable anomenada <code class="docutils literal notranslate"><span class="pre">caracter</span></code> dins dels mòduls
+<code class="docutils literal notranslate"><span class="pre">main()</span></code> i <code class="docutils literal notranslate"><span class="pre">dibuixaQuadrat()</span></code> sense cap problema.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">dibuixaQuadrat()</span></code> no podem accedir a la variable <code class="docutils literal notranslate"><span class="pre">costat</span></code> encara
+que la crida de la línia 4 li passi el seu valor. És a dir, el paràmetre
+<code class="docutils literal notranslate"><span class="pre">altura</span></code> de <code class="docutils literal notranslate"><span class="pre">dibuixaQuadrat()</span></code> <em>rebrà</em> el valor de <code class="docutils literal notranslate"><span class="pre">costat</span></code> quan
+s’executi la línia 4 però no tindrà cap vinculació amb la variable
+<code class="docutils literal notranslate"><span class="pre">costat</span></code>. Tant és així que, malgrat canviem el valor de <code class="docutils literal notranslate"><span class="pre">altura</span></code> a la
+línia 9, en finalitzar l’execució del mòdul <code class="docutils literal notranslate"><span class="pre">dibuixaQuadrat()</span></code> i tornar
+el control a la línia 5, el valor de <code class="docutils literal notranslate"><span class="pre">costat</span></code> continua sent <code class="docutils literal notranslate"><span class="pre">5</span></code>. Això
+hagués estat cert malgrat haguéssim anomenat <code class="docutils literal notranslate"><span class="pre">costat</span></code> també al paràmetre
+de <code class="docutils literal notranslate"><span class="pre">dibuixaQuadrat()</span></code>.</p>
+<p>El mòdul <code class="docutils literal notranslate"><span class="pre">dibuixaLinia()</span></code> declara un paràmetre anomenat <code class="docutils literal notranslate"><span class="pre">costat</span></code>. Cap
+problema amb la variable declarada a la línia 3 doncs són blocs diferents.</p>
+</div>
+<div class="section" id="globalitat">
+<h2>Globalitat<a class="headerlink" href="#globalitat" title="Link permanent a aquest títol">¶</a></h2>
+<p>Hi haurà alguna manera de compartir la mateixa variable en dos mòduls
+diferents? La resposta és sí. Es diuen <em>variables globals</em>.</p>
+<p>Considera la següent modificació del programa <code class="docutils literal notranslate"><span class="pre">Quadrat</span></code>:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Quadrat</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">costat</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>       <span class="c1">// variable global</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">dibuixaQuadrat</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">dibuixaQuadrat</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">linia</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">linia</span> <span class="o">&lt;=</span> <span class="n">costat</span> <span class="p">;</span> <span class="n">linia</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">dibuixaLinia</span><span class="p">();</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">dibuixaLinia</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">char</span> <span class="n">caracter</span> <span class="o">=</span> <span class="sc">&#39;X&#39;</span><span class="p">;</span>            <span class="c1">// variable local</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">columna</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">columna</span> <span class="o">&lt;=</span> <span class="n">costat</span><span class="p">;</span> <span class="n">columna</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">caracter</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>T’esperaves que es pogués declarar una variable fora d’un mòdul?
+Sorpresa!</p>
+<p>Doncs sí, java ens permet declarar variables fora dels mòduls però dins
+del bloc de <code class="docutils literal notranslate"><span class="pre">class</span></code>. En aquest exemple, la variable <code class="docutils literal notranslate"><span class="pre">costat</span></code> és
+accessible entre les línies 2 i 21 i, el que és més important, <em>dins</em> del
+codi dels mòduls!</p>
+<p>D’aquesta manera, ja no ens cal passar-li el valor de costat als mòduls
+<code class="docutils literal notranslate"><span class="pre">dibuixaQuadrat()</span></code> i <code class="docutils literal notranslate"><span class="pre">dibuixaLinia()</span></code>, doncs el poden agafar
+directament ells mateixos!</p>
+<p>T’hauràs fixat en el canvi de <code class="docutils literal notranslate"><span class="pre">public</span></code> a <code class="docutils literal notranslate"><span class="pre">private</span></code>, oi? De moment no
+farem gaire cas a aquest punt. Queda’t amb que les variables globals dins
+d’un programa és preferible que siguin marcades amb <code class="docutils literal notranslate"><span class="pre">private</span></code> que amb
+<code class="docutils literal notranslate"><span class="pre">public</span></code>.</p>
+<p>Aquesta possibilitat de declarar variables vàlides per tots els mòduls dins
+d’un programa ens ofereix la possibilitat de distingir les variables
+segons el seu <em>àmbit</em>. Així direm:</p>
+<ul>
+<li><p>variable <em>global</em> o d’àmbit <em>global</em>: aquella variable que ha estat
+declarada fora del bloc en que ens trobem</p>
+<p>Per exemple, pel bloc definit a <code class="docutils literal notranslate"><span class="pre">dibuixaLinia()</span></code> la variable
+<code class="docutils literal notranslate"><span class="pre">costat</span></code> és <em>global</em> ja que no l’ha de declarar sinó que li ve de
+<em>regal</em> dins del context on es troba.</p>
+</li>
+<li><p>variable <em>local</em> o d’àmbit <em>local</em>: aquella variable que es defineix
+dins del bloc en que ens trobem. Les variables locals no poden ser
+accedides fora del bloc en que es defineixen.</p>
+<p>Per exemple, a <code class="docutils literal notranslate"><span class="pre">dibuixaLinia()</span></code> tenim la variable <em>local</em>
+<code class="docutils literal notranslate"><span class="pre">caracter</span></code>.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="les-variables-globals-es-poden-modificar">
+<h2>Les variables globals es poden modificar<a class="headerlink" href="#les-variables-globals-es-poden-modificar" title="Link permanent a aquest títol">¶</a></h2>
+<p>A banda de consultar el seu valor, una variable global també pot ser
+modificada des dels blocs pels que és global.</p>
+<p>Per exemple, recordem la següent versió del programa <code class="docutils literal notranslate"><span class="pre">ComptaAiEs</span></code>:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ComptaAiEs</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Introdueix un text&quot;</span><span class="p">);</span>
+        <span class="n">String</span> <span class="n">entrada</span> <span class="o">=</span> <span class="n">Entrada</span><span class="p">.</span><span class="na">readLine</span><span class="p">();</span>
+        <span class="kt">int</span> <span class="n">numAs</span> <span class="o">=</span> <span class="n">quantesOcurrencies</span><span class="p">(</span><span class="n">entrada</span><span class="p">,</span> <span class="sc">&#39;a&#39;</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">numEs</span> <span class="o">=</span> <span class="n">quantesOcurrencies</span><span class="p">(</span><span class="n">entrada</span><span class="p">,</span> <span class="sc">&#39;e&#39;</span><span class="p">);</span>
+        <span class="n">mostraOcurrencies</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="n">numAs</span><span class="p">);</span>
+        <span class="n">mostraOcurrencies</span><span class="p">(</span><span class="sc">&#39;e&#39;</span><span class="p">,</span> <span class="n">numEs</span><span class="p">);</span>
+        <span class="n">mostraComparacio</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="n">numAs</span><span class="p">,</span> <span class="sc">&#39;e&#39;</span><span class="p">,</span> <span class="n">numEs</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mostraOcurrencies</span><span class="p">(</span><span class="kt">char</span> <span class="n">lletra</span><span class="p">,</span> <span class="kt">int</span> <span class="n">quantes</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Nombre de &#39;&quot;</span> <span class="o">+</span> <span class="n">lletra</span> <span class="o">+</span> <span class="s">&quot;&#39;s: &quot;</span> <span class="o">+</span> <span class="n">quantes</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mostraComparacio</span><span class="p">(</span><span class="kt">char</span> <span class="n">lletra1</span><span class="p">,</span> <span class="kt">int</span> <span class="n">quantes1</span><span class="p">,</span> <span class="kt">char</span> <span class="n">lletra2</span><span class="p">,</span> <span class="kt">int</span> <span class="n">quantes2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">quantes1</span> <span class="o">&gt;</span> <span class="n">quantes2</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hi ha més &#39;&quot;</span> <span class="o">+</span> <span class="n">lletra1</span> <span class="o">+</span><span class="s">&quot;&#39;s que &#39;&quot;</span><span class="o">+</span><span class="n">lletra2</span><span class="o">+</span><span class="s">&quot;&#39;s&quot;</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">quantes1</span> <span class="o">&lt;</span> <span class="n">quantes2</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hi ha menys &#39;&quot;</span> <span class="o">+</span> <span class="n">lletra1</span> <span class="o">+</span><span class="s">&quot;&#39;s que &#39;&quot;</span><span class="o">+</span><span class="n">lletra2</span><span class="o">+</span><span class="s">&quot;&#39;s&quot;</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hi ha tantes &#39;&quot;</span> <span class="o">+</span> <span class="n">lletra1</span> <span class="o">+</span><span class="s">&quot;&#39;s com &#39;&quot;</span><span class="o">+</span><span class="n">lletra2</span><span class="o">+</span><span class="s">&quot;&#39;s&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">quantesOcurrencies</span><span class="p">(</span><span class="n">String</span> <span class="n">text</span><span class="p">,</span> <span class="kt">char</span> <span class="n">lletra</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">comptador</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">text</span><span class="p">.</span><span class="na">length</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">text</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">==</span> <span class="n">lletra</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">comptador</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">comptador</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Considera ara la següent versió del mateix programa:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ComptaAiEs</span> <span class="p">{</span>
+<span class="hll">    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">quantesAs</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class="hll">    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">quantesEs</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Introdueix un text&quot;</span><span class="p">);</span>
+        <span class="n">String</span> <span class="n">entrada</span> <span class="o">=</span> <span class="n">Entrada</span><span class="p">.</span><span class="na">readLine</span><span class="p">();</span>
+        <span class="n">comptaAiEs</span><span class="p">(</span><span class="n">entrada</span><span class="p">);</span>
+        <span class="n">mostraOcurrencies</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="p">,</span> <span class="n">quantesAs</span><span class="p">);</span>
+        <span class="n">mostraOcurrencies</span><span class="p">(</span><span class="sc">&#39;e&#39;</span><span class="p">,</span> <span class="n">quantesEs</span><span class="p">);</span>
+        <span class="n">comparaOcurrenciesAiEs</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mostraOcurrencies</span><span class="p">(</span><span class="kt">char</span> <span class="n">lletra</span><span class="p">,</span> <span class="kt">int</span> <span class="n">quantes</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Nombre de &#39;&quot;</span> <span class="o">+</span> <span class="n">lletra</span> <span class="o">+</span> <span class="s">&quot;&#39;s: &quot;</span> <span class="o">+</span> <span class="n">quantes</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">comparaOcurrenciesAiEs</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">quantesAs</span> <span class="o">&gt;</span> <span class="n">quantesEs</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hi ha més &#39;a&#39;s que &#39;e&#39;s&quot;</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">quantesAs</span> <span class="o">&lt;</span> <span class="n">quantesEs</span> <span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hi ha menys &#39;a&#39;s que &#39;e&#39;s&quot;</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Hi ha tantes &#39;a&#39;s com &#39;e&#39;s&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">comptaAiEs</span><span class="p">(</span><span class="n">String</span> <span class="n">text</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">text</span><span class="p">.</span><span class="na">length</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">text</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">==</span> <span class="sc">&#39;a&#39;</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">quantesAs</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">text</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">==</span> <span class="sc">&#39;e&#39;</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">quantesEs</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Aquesta nova versió ha reemplaçat la funció <code class="docutils literal notranslate"><span class="pre">quantesOcurrencies()</span></code> per
+un procediment que compta a l’hora les ocurrències de <code class="docutils literal notranslate"><span class="pre">'a'</span></code> i de
+<code class="docutils literal notranslate"><span class="pre">'e'</span></code>. Com que una funció no pot retornar més d’un valor, per poder
+obtenir els dos valors a l’hora, una manera és anar dipositant els càlculs
+a una variable global.</p>
+<p><em>Atenció</em>: la modificació de variables globals sol ser considerada una
+pràctica pobre de programació que, sovint, porta problemes. De moment
+se’ns perdona fer-ho servir fins que no descobrim alternatives.</p>
+</div>
+<div class="section" id="la-globalitat-es-relativa">
+<h2>La globalitat és relativa<a class="headerlink" href="#la-globalitat-es-relativa" title="Link permanent a aquest títol">¶</a></h2>
+<p>Com afirma el títol d’aquesta secció, que una variable sigui global (o
+local) és quelcom que depen des d’on la considerem.</p>
+<p>Atenció: el que ve a continuació pot resultar-te confós. Respira fons i
+posa-hi atenció.</p>
+<p>Veiem com, pels diferents blocs del següent codi, la mateixa variable pot
+ser local o global.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Ambit</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">llenguatge</span> <span class="o">=</span> <span class="s">&quot;java&quot;</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="n">String</span> <span class="n">altre</span> <span class="o">=</span> <span class="n">llenguatge</span> <span class="o">+</span> <span class="s">&quot;script&quot;</span><span class="p">;</span> <span class="c1">// &quot;javascript&quot;</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">String</span> <span class="n">missatge</span> <span class="o">=</span> <span class="n">llenguatge</span> <span class="o">+</span> <span class="s">&quot; rocks&quot;</span><span class="p">;</span>    <span class="c1">// &quot;java rocks&quot;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">String</span> <span class="n">exclama</span> <span class="o">=</span> <span class="s">&quot;!&quot;</span><span class="p">;</span>
+                <span class="n">missatge</span> <span class="o">=</span> <span class="n">missatge</span> <span class="o">+</span> <span class="n">exclama</span><span class="p">;</span>          <span class="c1">// &quot;java rocks!&quot;</span>
+            <span class="p">}</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">missatge</span><span class="p">);</span>
+            <span class="k">break</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">String</span> <span class="n">llenguatge</span> <span class="o">=</span> <span class="n">altre</span><span class="p">;</span>                      <span class="c1">// &quot;javascript&quot;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">String</span> <span class="n">missatge</span> <span class="o">=</span> <span class="n">llenguatge</span> <span class="o">+</span> <span class="s">&quot; no és &quot;</span> <span class="o">+</span> <span class="n">Ambit</span><span class="p">.</span><span class="na">llenguatge</span><span class="p">;</span>
+            <span class="c1">//                 ↑↑ &quot;javascript&quot;               ↑↑ &quot;java&quot;</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">missatge</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>La variable <code class="docutils literal notranslate"><span class="pre">llenguatge</span></code> és global pel <code class="docutils literal notranslate"><span class="pre">main()</span></code> i, per tant, per tots
+els blocs que estan dins del <code class="docutils literal notranslate"><span class="pre">main()</span></code>.</p>
+<p>En canvi, per la línia 3 en la
+que fem servir el seu valor per composar el nom d’un altre llenguatge,
+<code class="docutils literal notranslate"><span class="pre">llenguatge</span></code> és <em>local</em>! De fet, si intercanviem les línies 2 i 3 el
+compilador es queixarà doncs estarem intentant fer servir <code class="docutils literal notranslate"><span class="pre">llenguatge</span></code>
+abans de ser declarat!</p>
+<p>El bloc del <code class="docutils literal notranslate"><span class="pre">while</span></code> (línies 6 a 14) declara la variable <code class="docutils literal notranslate"><span class="pre">missatge</span></code> que
+és, per tant, local dins de <em>tot</em> el bloc del <code class="docutils literal notranslate"><span class="pre">whilw</span></code>, oi? Doncs no! Pel
+bloc del <code class="docutils literal notranslate"><span class="pre">if</span></code> que hi ha dins del <code class="docutils literal notranslate"><span class="pre">while</span></code> (línies 8 a 11), <code class="docutils literal notranslate"><span class="pre">missatge</span></code> és global!</p>
+<p>La variable <code class="docutils literal notranslate"><span class="pre">llenguatge</span></code> definida a la línia 15 dins del bloc del
+<code class="docutils literal notranslate"><span class="pre">main()</span></code> té el mateix nom que la de la línia 2! Això ens ho permet fer
+java perquè diferencia les variables definides dins o fora d’un mòdul. Per
+exemple, intentem declarar una variable <code class="docutils literal notranslate"><span class="pre">missatge</span></code> dins del bloc del
+<code class="docutils literal notranslate"><span class="pre">if</span></code> de la línia 8, el compilador es queixarà.</p>
+<p>La variable <code class="docutils literal notranslate"><span class="pre">lenguatge</span></code> definida a la línia 15 es diu que <em>oculta</em> la
+variable global amb el mateix nom. Per aquesta raó, el primer valor de
+l’expressió de la línia 17 és <code class="docutils literal notranslate"><span class="pre">&quot;javascript&quot;</span></code> en comptes de <code class="docutils literal notranslate"><span class="pre">&quot;java&quot;</span></code>.
+Per poder accedir a la variable <em>ocultada</em>, java ens ofereix la
+possibilitat tot indicant el nom de la classe davant de la variable
+(<code class="docutils literal notranslate"><span class="pre">Ambit.llenguatge</span></code>)</p>
+<p>Així, pel bloc entre les línies 16 i 20, <code class="docutils literal notranslate"><span class="pre">Ambit.llenguatge</span></code> és global a
+l’igual que <code class="docutils literal notranslate"><span class="pre">llenguatge</span></code>. Pel <code class="docutils literal notranslate"><span class="pre">main()</span></code> la variable <code class="docutils literal notranslate"><span class="pre">llenguatge</span></code> és
+global en començar el bloc però, a partir de la línia 15 passa a ser
+local!</p>
+<p>Confós? No pateixis. Mica en mica anirà guanyant sentit i et serà evident,
+donada una línia del codi, determinar si una variable és global o local.</p>
+</div>
+<div class="section" id="constants">
+<h2>Constants<a class="headerlink" href="#constants" title="Link permanent a aquest títol">¶</a></h2>
+<p>Tornem a considerar el codi del <code class="docutils literal notranslate"><span class="pre">Quadrat</span></code> amb definició global del
+<code class="docutils literal notranslate"><span class="pre">costat</span></code>.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Quadrat</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">costat</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>       <span class="c1">// variable global</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">dibuixaQuadrat</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">dibuixaQuadrat</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">linia</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">linia</span> <span class="o">&lt;=</span> <span class="n">costat</span> <span class="p">;</span> <span class="n">linia</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">dibuixaLinia</span><span class="p">();</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">dibuixaLinia</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">char</span> <span class="n">caracter</span> <span class="o">=</span> <span class="sc">&#39;X&#39;</span><span class="p">;</span>            <span class="c1">// variable local</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">columna</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">columna</span> <span class="o">&lt;=</span> <span class="n">costat</span><span class="p">;</span> <span class="n">columna</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">caracter</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Com pots observar, el valor de <code class="docutils literal notranslate"><span class="pre">costat</span></code> no és modificat en tot el
+programa.</p>
+<p>En ocasions fem servir variables als nostres programes que no varien. Quan
+sabem que una <em>variable</em> no ha de variar, podem declarar-la de manera
+especial perquè java ens avisi si accidentalment la modifiquem.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Quadrat</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">COSTAT</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">dibuixaQuadrat</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">dibuixaQuadrat</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">linia</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">linia</span> <span class="o">&lt;=</span> <span class="n">COSTAT</span><span class="p">;</span> <span class="n">linia</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">dibuixaLinia</span><span class="p">();</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="c1">// COSTAT += COSTAT + 1;    // error: cannot assign a value to final variable COSTAT</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">dibuixaLinia</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kt">char</span> <span class="n">caracter</span> <span class="o">=</span> <span class="sc">&#39;X&#39;</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">columna</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">columna</span> <span class="o">&lt;=</span> <span class="n">COSTAT</span><span class="p">;</span> <span class="n">columna</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">caracter</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>La paraula clau és <code class="docutils literal notranslate"><span class="pre">final</span></code> i s’ha de col·locar davant del
+tipus de la variable que volem marcar com a constant.</p>
+<p>Un cop hem definit una variable com a constant, qualsevol intent de
+canviar el seu valor produirà un error de compilació com l’indicat a la
+línia 13.</p>
+<p>Podem declarar que una variable com a constant també dins dels mòduls i,
+fins i tot als paràmetres. Això ens permetrà que, si ens equivoquem i
+modifiquem accidentalment el seu valor, el java ens avisi.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Quadrat</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">final</span> <span class="kt">int</span> <span class="n">AMPLADA_COSTAT</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+        <span class="c1">// AMPLADA_COSTAT = AMPLADA_COSTAT * 2; // error!</span>
+        <span class="n">dibuixaQuadrat</span><span class="p">(</span><span class="n">AMPLADA_COSTAT</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">dibuixaQuadrat</span><span class="p">(</span><span class="kd">final</span> <span class="kt">int</span> <span class="n">altura</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// altura = altura * 2;                 // error!</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">linia</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">linia</span> <span class="o">&lt;=</span> <span class="n">altura</span><span class="p">;</span> <span class="n">linia</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">dibuixaLinia</span><span class="p">(</span><span class="n">altura</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">dibuixaLinia</span><span class="p">(</span><span class="kd">final</span> <span class="kt">int</span> <span class="n">ample</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">final</span> <span class="kt">char</span> <span class="n">CARACTER</span> <span class="o">=</span> <span class="sc">&#39;X&#39;</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">columna</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">columna</span> <span class="o">&lt;=</span> <span class="n">ample</span><span class="p">;</span> <span class="n">columna</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">CARACTER</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Si descomentem la línia 4 o la 9, el compilador ens produiria un error de
+compilació:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> javac Quadrat.java
+<span class="hll"><span class="go">Quadrat.java:4: error: cannot assign a value to final variable AMPLADA_COSTAT</span>
+</span><span class="hll"><span class="go">        AMPLADA_COSTAT = AMPLADA_COSTAT * 2; // error!</span>
+</span><span class="hll"><span class="go">        ^</span>
+</span><span class="hll"><span class="go">1 error</span>
+</span></pre></div>
+</div>
+<p>Fixa’t que el nom d’algunes de les constants apareix en majúscules. La
+convenció és que, els noms de les constants s’han de posar en
+<em>SNAKE_CASE</em>, és a dir, tot en majúscules i les paraules separades amb
+guió baix.</p>
+<p>Aquesta convenció no s’aplica normalment als paràmetres.</p>
+<p>En resum:</p>
+<ul class="simple">
+<li><p>si sabem que el valor d’una variable no ha de canviar, és preferible
+marcar-la com a constant, de manera que Java ens avisi si la intentem
+modificar accidentalment.</p></li>
+<li><p>per declarar una variable com a constant en Java fem servir <code class="docutils literal notranslate"><span class="pre">final</span></code>.</p></li>
+<li><p>la convenció pel nom de les constants en java (excepte paràmetres) és
+<em>SNAKE_CASE</em></p></li>
+</ul>
+<p>Una última consideració: el disseny de Java per defecte permet modificar
+<em>alegrement</em> les variables. Per exemple, per evitar que una variable pugui
+ser modificada hem d’indicar explícitament que volem que sigui constant
+(<code class="docutils literal notranslate"><span class="pre">final</span></code>) Aquesta modificabilitat per defecte presenta molts problemes a
+la pràctica; tant que llenguatges més moderns intenten evitar tot
+requerint explicitar si una variable pot ser o no modificada. Java, per
+raons històriques, no ho fa així i això fa que, si ho intentem fer bé, el
+nostre codi acabi ple de <code class="docutils literal notranslate"><span class="pre">final</span></code> per tot arreu. No hi ha res perfecte;
+en els llenguatges de programació tampoc…</p>
+</div>
+<div class="section" id="la-globalitat-es-perniciosa">
+<h2>La globalitat és perniciosa<a class="headerlink" href="#la-globalitat-es-perniciosa" title="Link permanent a aquest títol">¶</a></h2>
+<p>Normalment és preferible tractar d’evitar l’ús de variables globals doncs
+genera programes més difícils de mantenir principalment per dos motius:</p>
+<ul>
+<li><p>per trobar errors: com que una variable global pot ser modificada en
+molts llocs diferents, en cas que trobem un valor erroni, aquest haurà
+pogut ser assignat en molts llocs. Prepara’t a investigar!</p>
+<p>Aquest problema el mitiguem força en Java declarant les variables
+globals dins d’un programa com a <code class="docutils literal notranslate"><span class="pre">private</span></code> doncs d’aquesta manera
+com a mínim sabem que no han estat modificades des d’un altre programa.
+Recorda la secció <a class="reference internal" href="moduls_reutilitzacio.html"><span class="doc">Reutilització dels mòduls</span></a> per més detalls.</p>
+</li>
+<li><p>per simplificar el codi: ja hem vist els avantatges de convertir codi
+duplicat en mòduls, oi? Quan fem servir variables globals això
+representa un problema doncs el «mateix codi» pot estar funcionant amb una
+variable local en un lloc i amb una global en un altre.</p></li>
+</ul>
+<p>Les variables globals no presenten tants problemes quan són constants.  En
+concret, no presenten el problema de poder ser modificades en múltiples
+llocs.</p>
+<p>De fet, pot ser acceptable declarar les constants com a <code class="docutils literal notranslate"><span class="pre">public</span></code> en
+comptes de <code class="docutils literal notranslate"><span class="pre">private</span></code>.  Per exemple, la classe <code class="docutils literal notranslate"><span class="pre">Integer</span></code> de Java ens
+&lt;ofereix la constant <cite>MAX-VALUE
+https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html#MAX_VALUE&gt;</cite>-
+que és declarada amb <code class="docutils literal notranslate"><span class="pre">public</span></code>. No et preocupis encara massa per
+<code class="docutils literal notranslate"><span class="pre">public</span></code> vs <code class="docutils literal notranslate"><span class="pre">private</span></code> encara. Ja arribarà el seu moment en aquest
+curs.</p>
+<p>De la mateixa manera, les funcions pures tenen menys problemes amb les
+variables globals doncs, sent pures, no les modificaran. Amb tot,
+continuen presentant el problema de la dependència de quelcom extern. Cal
+tenir-ho present.</p>
+<p>Les funcions impures, però, ho poden ser, no per fer entrada/sortida sinó
+simplement per modificar el valor d’una variable global. Aquestes solen
+ser considerades <em>perilloses</em> i una mala pràctica.
+De moment, però, les haurem de fer servir fins que aquest curs ens porti a
+maneres més <em>saludables</em> de codificar. Tot arribarà.</p>
+</div>
+<div class="section" id="repas-de-variables-i-moduls">
+<h2>Repàs de variables i mòduls<a class="headerlink" href="#repas-de-variables-i-moduls" title="Link permanent a aquest títol">¶</a></h2>
+<p>En aquesta secció hem revisat el nostre concepte de variable dins del nou
+context dels mòduls. Així, ens han aparegut els següents conceptes nous:</p>
+<ul class="simple">
+<li><p>variable <em>global</em>: variable definida en un bloc exterior a aquell en que
+ens trobem</p></li>
+<li><p>variable <em>local</em>: variable definida en el mateix bloc en que ens trobem
+i abans de la línia actual.</p></li>
+<li><p><em>ocultació</em>: les variables declarades fora d’un mòdul poden ser
+redeclarades dins d’un mòdul. Per poder accedir a la variable global cal
+especificar el nom de la classe.</p></li>
+<li><p><em>constants</em>: podem declarar variables constants fent servir <code class="docutils literal notranslate"><span class="pre">final</span></code>.</p></li>
+</ul>
+<p>Si a banda d’això, t’has quedat amb la idea de que <em>variables globals</em> és
+quelcom dolent i <em>constants</em> és quelcom bo, ja pots sentir-te satisfet/a.</p>
+<p><img alt="exerciseicon___" src="_images/exerciseicon___.png" /> <a class="reference internal" href="exercici_02_21_variables.html"><span class="doc"> Exercici 02_21. Classifiquem les variables</span></a></p>
+</div>
+<div class="section" id="exercicis-addicionals">
+<h2>Exercicis addicionals<a class="headerlink" href="#exercicis-addicionals" title="Link permanent a aquest títol">¶</a></h2>
+<p>A continuació tens una llista d’exercicis sobre mòduls en els que
+podràs posar a prova els coneixements que hem treballat fins ara.</p>
+<p>Posa especial atenció amb la modularitat i les característiques que hem
+analitzat sobre les variables.</p>
+<p>Per descomptat, podràs fer servir mòduls realitzats a exercicis anteriors.
+Únicament assegura’t d’afegir-los dins de la carpeta amb de l’exercici.</p>
+<p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_02_22_mostra_interval_string.html"><span class="doc"> Exercici 02_22. Secció d’un String (modular)</span></a></p>
+<p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_02_23_es_enter.html"><span class="doc"> Exercici 02_23. És enter (modular)</span></a></p>
+<p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_02_24_cadena_continua.html"><span class="doc"> Exercici 02_24. Cadena continua (modular)</span></a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="apendix.html" class="btn btn-neutral float-right" title="Apèndix" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="exercici_02_24_cadena_continua.html" class="btn btn-neutral float-left" title="Exercici 02_24. Cadena continua (modular)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2021 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

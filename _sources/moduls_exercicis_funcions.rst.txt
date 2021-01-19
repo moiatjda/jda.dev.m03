@@ -1,8 +1,8 @@
-##############################
-Llista d'exercicis de funcions
-##############################
+##########################################
+Llista d'exercicis de funcions i variables
+##########################################
 
-Els exercicis del tema :doc:`moduls_funcions` són:
+Els exercicis dels temes :doc:`moduls_funcions` i ``moduls_variables`` són:
 
 .. toctree::
     :titlesonly:
@@ -15,3 +15,7 @@ Els exercicis del tema :doc:`moduls_funcions` són:
     exercici_02_18_es_vocal.rst
     exercici_02_19_matricula_italiana.rst
     exercici_02_20_nomes_lletres.rst
+    exercici_02_21_variables.rst
+    exercici_02_22_mostra_interval_string.rst
+    exercici_02_23_es_enter.rst
+    exercici_02_24_cadena_continua.rst

@@ -1,0 +1,89 @@
+############################################################
+|exerciseicon___| Exercici 02_21. Classifiquem les variables
+############################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``02_21_variables/``
+
+* Continguts relacionats: :doc:`moduls_variables`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+.. rubric:: Enunciat
+
+Recordes l'exercici dels :doc:`tipus de mòduls
+<exercici_02_16_tipus_moduls>`? En aquella ocassió vas revisar un codi
+real de l'aplicació `OmegaT <https://omegat.org/>`_
+
+En aquest exercici hauràs de revisar novament un codi real, aquest cop a
+la cerca de variables.
+
+El codi que analitzaràs és :download:`aquest
+<_recursos/external/ProjectTMX.java>`.
+
+A continuació et llistaré el nom de diferents variables que pots trobar
+definides al fitxer ``ProjectTMX.java``. La teva feina consisteix en
+localitzar-la al codi i respondre a les següents preguntes:
+
+* Quin tipus de dades guardarà?
+
+* És un paràmetre?
+
+* És una constant?
+
+* Respecta la convenció *camelCase*?
+
+* Indica un mòdul pel que aquesta variable sigui global
+
+* Indica un mòdul pel que aquesta variable sigui local
+
+* Indica un mòdul pel que aquesta variable sigui inaccessible
+
+Per exemple, la variable ``creator`` declarada a la línia 294:
+
+* Quin tipus de dades guardarà?
+
+  String
+
+* És un paràmetre?
+
+  No
+
+* És una constant?
+
+  No
+
+* Respecta la convenció *camelCase*?
+
+  Sí
+
+* Indica un mòdul pel que aquesta variable sigui global
+
+  Cap
+
+* Indica un mòdul pel que aquesta variable sigui local
+
+  ``onEntry()`` (línia 288)
+
+* Indica un mòdul pel que aquesta variable sigui inaccessible
+
+    ``calcExternalLinkedMode()`` (línia 361)
+
+
+Les variables a analitzar són les següents:
+
+* ``externalLinked`` a la línia 366
+
+* ``id`` a la línia 330
+
+* ``levelTwo`` a la línia 162
+
+* ``ROP_FILE`` a la línia 61
+
+* ``segmentSource`` a la línia 317
+
+* ``sourceLang`` a la línia 278
+
+* ``translationUpdatedByUser`` a la línia 127
+

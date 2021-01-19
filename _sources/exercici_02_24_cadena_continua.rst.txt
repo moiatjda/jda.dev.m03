@@ -1,0 +1,56 @@
+###########################################################
+|exerciseicon__T| Exercici 02_24. Cadena continua (modular)
+###########################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``02_24_cadena_continua/``
+
+* Continguts relacionats: :doc:`moduls_variables`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Recuperem l'exercici que mostrava una :doc:`cadena continua
+<exercici_01_70_cadena_continua>` i programem la versió modular
+
+El programa ``CadenaContinua`` farà el *pràcticament* el mateix que la
+versió original però els càlculs els realitzarà una funció anomenada
+``cadenaContinua()``
+
+La nova versió, però, serà capaç de controlar el cas en que no
+introdueixin un número enter per la longitud de la cadena resultant.
+
+.. code-block:: console
+    :emphasize-lines: 2, 4, 6
+
+    $ java CadenaContinua
+    Text?
+    kuruma
+    Nombre?
+    vuit
+    error
+
+Per fer aquesta comprovació, ens vindrà molt bé la utilitat
+``UtilString.esEnter()`` que hem fet a un :doc:`exercici anterior
+<exercici_02_23_es_enter>`. Considera què passava quan ens introduïen un
+valor que no corresponia a un enter (
+.. code-block:: console
+
+    jshell> Integer.parseInt("vuit")
+    |  Exception java.lang.NumberFormatException: For input string: "vuit"
+    |        at NumberFormatException.forInputString (NumberFormatException.java:65)
+    |        at Integer.parseInt (Integer.java:652)
+    |        at Integer.parseInt (Integer.java:770)
+    |        at (#1:1)
+
+Amb ``UtilString.esEnter()`` dient-nos que un valor de text és realment un
+enter, ja podem fer la conversió amb tranquil·litat.
+
+``cadenaContinua()`` serà una funció pura que requerirà els paràmetres: la
+cadena de text corresponent i la longitud del text resultant, i estarà
+definida dins de ``UtilString.java``.
+

@@ -1,0 +1,26 @@
+####################################################
+|exerciseicon__T| Exercici 02_23. És enter (modular)
+####################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``02_23_es_enter/``
+
+* Continguts relacionats: :doc:`moduls_variables`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Recuperem l'exercici que mostrava si una cadena contenia o no :doc:`un
+valor enter
+<exercici_01_71_es_enter>` i fem-ne la versió modular
+
+El programa ``EsEnter`` farà el mateix que la versió original però
+els càlculs els realitzarà una funció anomenada ``esEnter()``, que rebrà
+el text corresponent i retornarà un booleà amb el resultat.
+
+``esEnter()`` estarà definida dins de ``UtilString.java`` i serà
+una funció pura.

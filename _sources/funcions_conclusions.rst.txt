@@ -10,7 +10,7 @@ Com a resum d'aquesta secció ens queden les següents definicions:
 
   .. code-block:: none
 
-    pubilc static «tipus» «nom de la funció»(«zero o més paràmetres») {
+    public static «tipus» «nom de la funció»(«zero o més paràmetres») {
         «instruccions del bloc»
         return «valor del tipus»;
     }
@@ -24,7 +24,7 @@ Com a resum d'aquesta secció ens queden les següents definicions:
 
   .. code-block:: none
 
-    pubilc static void «nom de la funció»(«zero o més paràmetres») {
+    public static void «nom de la funció»(«zero o més paràmetres») {
         «instruccions del bloc»
         return;
     }
@@ -36,7 +36,7 @@ Com a resum d'aquesta secció ens queden les següents definicions:
   l'entrada estàndard, i que pot no retornar sempre el mateix valor per
   crides amb els mateixos arguments.
 
-  A aquesta alteració de l'entorn li diem "efectes col·laterals*
+  A aquesta alteració de l'entorn li diem "efectes col·laterals"
 
 * punt de sortida: cada punt pel que pot finalitzar un mòdul. Podem
   considerar cada cop que apareix un ``return`` o bé quan s'acaben les

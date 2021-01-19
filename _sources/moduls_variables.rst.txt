@@ -1,0 +1,606 @@
+##################
+Variables i mòduls
+##################
+
+
+Ara que ja coneixem els mòduls, cal fer una petita revisió a les
+variables.
+
+Les variables abans dels mòduls
+===============================
+
+Fins ara no ens hem preocupat gaire d'una característica important de les
+variables: on tenen validessa. En paraules més tècniques, el seu *àmbit*
+o *scope*.
+
+Sabem que una variable està disponible per ser assignada a partir de que s'executa la seva
+definició, i que pot ser consultat el seu valor a partir de la seva
+inicialització
+
+.. code-block:: java
+    :linenos:
+
+
+    // Aquí la variable llenguatge és desconeguda. Qualsevol al·lusió a 'llenguatge' que
+    // no sigui per declarar-la, donarà error
+
+    String llenguatge;     // declaració
+
+    // Ara ja puc assignar-li un valor. ex. puc fer llenguatge = "java";
+
+    // Encara no puc consultar el seu valor. ex. donarà error System.out.println(llenguatge);
+
+    // Ja no puc tornar a declarar una variable amb aquest mateix nom
+
+    llenguatge = "java";   // inicialització
+
+    // Ara puc encara assignar-li un nou valor. ex. llenguatge = "javascript";
+    // També puc consultar el seu valor. ex. System.out.println(llenguatge);
+
+També hem pogut experimentar que si declarem una variable dins del bloc d'un condicional o un
+bucle, aquesta variable *només* pot ser consultada dins del bloc:
+
+.. code-block:: java
+    :linenos:
+
+    // Aquí encara no podem parlar de la variable llenguatge, a banda de declarar-la
+    // Si la declarem, però, tornar-la a declarar dins del bucle provocaria un error
+
+    if (true) {
+
+        // Aquí encara no existeix la variable llenguatge
+
+        String llenguatge = "java";     // declaració i inicialització
+
+        // Ara ja està disponible la variable per assignar i consultar
+
+        System.out.println(llenguatge); // podem consultar-la sense problemes
+
+    }
+
+    // A partir d'aquí, la variable ja no existeix. La podríem declarar sense problemes
+    int llenguatge = 42;
+    System.out.println(llenguatge);
+
+
+En el cas dels bucles *for* vam experimentar un cas particular quan
+declaràvem la variable de recorregut dins dels parèntesis del bucle:
+
+.. code-block:: java
+    :linenos:
+
+    // La variable linia no existeix encara
+    // Si la declarem aquí, al for donarà error
+
+    for (int linia=0; linia<10; linia++) {  // a partir d'aquí, linia ja existeix
+
+        // podem usar linia dins del bloc del for
+        System.out.println(linia);
+    }
+
+    // A partir d'aquí linia no existeix. La podem tornar a declarar
+    String linia = Entrada.readLine();
+
+Les variables amb mòduls
+========================
+
+Què passa amb les variables quan els mòduls entren en joc?
+
+Abans de començar amb els mòduls, l'únic mòdul disponible era ``main()``
+i, per tant, no ens preocupàvem gaire.
+
+Ara, els mòduls tenen el seu propi bloc de codi i, a més a més, tenim els
+*paràmetres* que no deixen de ser unes variables que declarem a la
+signatura del mòdul.
+
+Considera el següent programa:
+
+.. code-block:: java
+    :linenos:
+
+    public class Quadrat {
+        public static void main(String[] args) {
+            int costat = 5;
+            dibuixaQuadrat(costat);
+            System.out.println("El costat és " + costat);   // escriurà 5
+        }
+
+        public static void dibuixaQuadrat(int altura) {
+            altura = altura * 2;    // volem el doble
+            for (int linia=1; linia <= altura; linia++) {
+                dibuixaLinia(altura);
+                System.out.println();
+            }
+        }
+
+        public static void dibuixaLinia(int costat) {
+            char caracter = 'X';
+            for (int columna=1; columna <= costat; columna++) {
+                System.out.print(" " + caracter);
+            }
+        }
+    }
+
+La variable ``costat`` només és disponible a partir de la seva declaració
+fins que s'acaba el bloc que la conté. És a dir, entre les línies 3 i 6.
+
+Similarment, ``caracter`` només està disponible entre les línies 17 i 21.
+Podríem declarar una variable anomenada ``caracter`` dins dels mòduls
+``main()`` i ``dibuixaQuadrat()`` sense cap problema.
+
+A ``dibuixaQuadrat()`` no podem accedir a la variable ``costat`` encara
+que la crida de la línia 4 li passi el seu valor. És a dir, el paràmetre
+``altura`` de ``dibuixaQuadrat()`` *rebrà* el valor de ``costat`` quan
+s'executi la línia 4 però no tindrà cap vinculació amb la variable
+``costat``. Tant és així que, malgrat canviem el valor de ``altura`` a la
+línia 9, en finalitzar l'execució del mòdul ``dibuixaQuadrat()`` i tornar
+el control a la línia 5, el valor de ``costat`` continua sent ``5``. Això
+hagués estat cert malgrat haguéssim anomenat ``costat`` també al paràmetre
+de ``dibuixaQuadrat()``.
+
+El mòdul ``dibuixaLinia()`` declara un paràmetre anomenat ``costat``. Cap
+problema amb la variable declarada a la línia 3 doncs són blocs diferents.
+
+Globalitat
+==========
+
+Hi haurà alguna manera de compartir la mateixa variable en dos mòduls
+diferents? La resposta és sí. Es diuen *variables globals*.
+
+Considera la següent modificació del programa ``Quadrat``:
+
+.. code-block:: java
+    :linenos:
+
+    public class Quadrat {
+        private static int costat = 5;       // variable global
+
+        public static void main(String[] args) {
+            dibuixaQuadrat();
+        }
+
+        public static void dibuixaQuadrat() {
+            for (int linia=1; linia <= costat ; linia++) {
+                dibuixaLinia();
+                System.out.println();
+            }
+        }
+
+        public static void dibuixaLinia() {
+            char caracter = 'X';            // variable local
+            for (int columna=1; columna <= costat; columna++) {
+                System.out.print(" " + caracter);
+            }
+        }
+    }
+
+T'esperaves que es pogués declarar una variable fora d'un mòdul?
+Sorpresa!
+
+Doncs sí, java ens permet declarar variables fora dels mòduls però dins
+del bloc de ``class``. En aquest exemple, la variable ``costat`` és
+accessible entre les línies 2 i 21 i, el que és més important, *dins* del
+codi dels mòduls!
+
+D'aquesta manera, ja no ens cal passar-li el valor de costat als mòduls
+``dibuixaQuadrat()`` i ``dibuixaLinia()``, doncs el poden agafar
+directament ells mateixos!
+
+T'hauràs fixat en el canvi de ``public`` a ``private``, oi? De moment no
+farem gaire cas a aquest punt. Queda't amb que les variables globals dins
+d'un programa és preferible que siguin marcades amb ``private`` que amb
+``public``.
+
+Aquesta possibilitat de declarar variables vàlides per tots els mòduls dins
+d'un programa ens ofereix la possibilitat de distingir les variables
+segons el seu *àmbit*. Així direm:
+
+* variable *global* o d'àmbit *global*: aquella variable que ha estat
+  declarada fora del bloc en que ens trobem
+
+  Per exemple, pel bloc definit a ``dibuixaLinia()`` la variable
+  ``costat`` és *global* ja que no l'ha de declarar sinó que li ve de
+  *regal* dins del context on es troba.
+
+* variable *local* o d'àmbit *local*: aquella variable que es defineix
+  dins del bloc en que ens trobem. Les variables locals no poden ser
+  accedides fora del bloc en que es defineixen.
+
+  Per exemple, a ``dibuixaLinia()`` tenim la variable *local*
+  ``caracter``.
+
+Les variables globals es poden modificar
+========================================
+
+A banda de consultar el seu valor, una variable global també pot ser
+modificada des dels blocs pels que és global.
+
+Per exemple, recordem la següent versió del programa ``ComptaAiEs``:
+
+.. code-block:: java
+    :linenos:
+
+    public class ComptaAiEs {
+        public static void main(String[] args) {
+            System.out.println("Introdueix un text");
+            String entrada = Entrada.readLine();
+            int numAs = quantesOcurrencies(entrada, 'a');
+            int numEs = quantesOcurrencies(entrada, 'e');
+            mostraOcurrencies('a', numAs);
+            mostraOcurrencies('e', numEs);
+            mostraComparacio('a', numAs, 'e', numEs);
+        }
+        public static void mostraOcurrencies(char lletra, int quantes) {
+            System.out.println("Nombre de '" + lletra + "'s: " + quantes);
+        }
+        public static void mostraComparacio(char lletra1, int quantes1, char lletra2, int quantes2) {
+            if (quantes1 > quantes2) {
+                System.out.println("Hi ha més '" + lletra1 +"'s que '"+lletra2+"'s");
+            } else if (quantes1 < quantes2 ) {
+                System.out.println("Hi ha menys '" + lletra1 +"'s que '"+lletra2+"'s");
+            } else {
+                System.out.println("Hi ha tantes '" + lletra1 +"'s com '"+lletra2+"'s");
+            }
+        }
+        public static int quantesOcurrencies(String text, char lletra) {
+            int comptador = 0;
+            for (int i=0; i < text.length(); i++) {
+                if (text.charAt(i) == lletra) {
+                    comptador += 1;
+                }
+            }
+            return comptador;
+        }
+    }
+
+Considera ara la següent versió del mateix programa:
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 2, 3
+
+    public class ComptaAiEs {
+        private static int quantesAs = 0;
+        private static int quantesEs = 0;
+
+        public static void main(String[] args) {
+            System.out.println("Introdueix un text");
+            String entrada = Entrada.readLine();
+            comptaAiEs(entrada);
+            mostraOcurrencies('a', quantesAs);
+            mostraOcurrencies('e', quantesEs);
+            comparaOcurrenciesAiEs();
+        }
+        public static void mostraOcurrencies(char lletra, int quantes) {
+            System.out.println("Nombre de '" + lletra + "'s: " + quantes);
+        }
+        public static void comparaOcurrenciesAiEs() {
+            if (quantesAs > quantesEs) {
+                System.out.println("Hi ha més 'a's que 'e's");
+            } else if (quantesAs < quantesEs ) {
+                System.out.println("Hi ha menys 'a's que 'e's");
+            } else {
+                System.out.println("Hi ha tantes 'a's com 'e's");
+            }
+        }
+        public static void comptaAiEs(String text) {
+            for (int i=0; i < text.length(); i++) {
+                if (text.charAt(i) == 'a') {
+                    quantesAs += 1;
+                } else if (text.charAt(i) == 'e') {
+                    quantesEs += 1;
+                }
+            }
+        }
+    }
+
+Aquesta nova versió ha reemplaçat la funció ``quantesOcurrencies()`` per
+un procediment que compta a l'hora les ocurrències de ``'a'`` i de
+``'e'``. Com que una funció no pot retornar més d'un valor, per poder
+obtenir els dos valors a l'hora, una manera és anar dipositant els càlculs
+a una variable global.
+
+*Atenció*: la modificació de variables globals sol ser considerada una
+pràctica pobre de programació que, sovint, porta problemes. De moment
+se'ns perdona fer-ho servir fins que no descobrim alternatives.
+
+La globalitat és relativa
+=========================
+
+Com afirma el títol d'aquesta secció, que una variable sigui global (o
+local) és quelcom que depen des d'on la considerem.
+
+Atenció: el que ve a continuació pot resultar-te confós. Respira fons i
+posa-hi atenció.
+
+Veiem com, pels diferents blocs del següent codi, la mateixa variable pot
+ser local o global.
+
+
+.. code-block:: java
+    :linenos:
+
+    public class Ambit {
+        private static String llenguatge = "java";
+        private static String altre = llenguatge + "script"; // "javascript"
+
+        public static void main(String[] args) {
+            while (true) {
+                String missatge = llenguatge + " rocks";    // "java rocks"
+                if (true) {
+                    String exclama = "!";
+                    missatge = missatge + exclama;          // "java rocks!"
+                }
+                System.out.println(missatge);
+                break;
+            }
+            String llenguatge = altre;                      // "javascript"
+            if (true) {
+                String missatge = llenguatge + " no és " + Ambit.llenguatge;
+                //                 ↑↑ "javascript"               ↑↑ "java"
+                System.out.println(missatge);
+            }
+        }
+    }
+
+La variable ``llenguatge`` és global pel ``main()`` i, per tant, per tots
+els blocs que estan dins del ``main()``.
+
+En canvi, per la línia 3 en la
+que fem servir el seu valor per composar el nom d'un altre llenguatge,
+``llenguatge`` és *local*! De fet, si intercanviem les línies 2 i 3 el
+compilador es queixarà doncs estarem intentant fer servir ``llenguatge``
+abans de ser declarat!
+
+El bloc del ``while`` (línies 6 a 14) declara la variable ``missatge`` que
+és, per tant, local dins de *tot* el bloc del ``whilw``, oi? Doncs no! Pel
+bloc del ``if`` que hi ha dins del ``while`` (línies 8 a 11), ``missatge`` és global!
+
+La variable ``llenguatge`` definida a la línia 15 dins del bloc del
+``main()`` té el mateix nom que la de la línia 2! Això ens ho permet fer
+java perquè diferencia les variables definides dins o fora d'un mòdul. Per
+exemple, intentem declarar una variable ``missatge`` dins del bloc del
+``if`` de la línia 8, el compilador es queixarà.
+
+La variable ``lenguatge`` definida a la línia 15 es diu que *oculta* la
+variable global amb el mateix nom. Per aquesta raó, el primer valor de
+l'expressió de la línia 17 és ``"javascript"`` en comptes de ``"java"``.
+Per poder accedir a la variable *ocultada*, java ens ofereix la
+possibilitat tot indicant el nom de la classe davant de la variable
+(``Ambit.llenguatge``)
+
+Així, pel bloc entre les línies 16 i 20, ``Ambit.llenguatge`` és global a
+l'igual que ``llenguatge``. Pel ``main()`` la variable ``llenguatge`` és
+global en començar el bloc però, a partir de la línia 15 passa a ser
+local!
+
+Confós? No pateixis. Mica en mica anirà guanyant sentit i et serà evident,
+donada una línia del codi, determinar si una variable és global o local.
+
+Constants
+=========
+
+Tornem a considerar el codi del ``Quadrat`` amb definició global del
+``costat``.
+
+.. code-block:: java
+    :linenos:
+
+    public class Quadrat {
+        private static int costat = 5;       // variable global
+
+        public static void main(String[] args) {
+            dibuixaQuadrat();
+        }
+
+        public static void dibuixaQuadrat() {
+            for (int linia=1; linia <= costat ; linia++) {
+                dibuixaLinia();
+                System.out.println();
+            }
+        }
+
+        public static void dibuixaLinia() {
+            char caracter = 'X';            // variable local
+            for (int columna=1; columna <= costat; columna++) {
+                System.out.print(" " + caracter);
+            }
+        }
+    }
+
+Com pots observar, el valor de ``costat`` no és modificat en tot el
+programa.
+
+En ocasions fem servir variables als nostres programes que no varien. Quan
+sabem que una *variable* no ha de variar, podem declarar-la de manera
+especial perquè java ens avisi si accidentalment la modifiquem.
+
+.. code-block:: java
+    :linenos:
+
+    public class Quadrat {
+        private static final int COSTAT = 5;
+
+        public static void main(String[] args) {
+            dibuixaQuadrat();
+        }
+
+        public static void dibuixaQuadrat() {
+            for (int linia=1; linia <= COSTAT; linia++) {
+                dibuixaLinia();
+                System.out.println();
+            }
+            // COSTAT += COSTAT + 1;    // error: cannot assign a value to final variable COSTAT
+        }
+
+        public static void dibuixaLinia() {
+            char caracter = 'X';
+            for (int columna=1; columna <= COSTAT; columna++) {
+                System.out.print(" " + caracter);
+            }
+        }
+    }
+
+La paraula clau és ``final`` i s'ha de col·locar davant del
+tipus de la variable que volem marcar com a constant.
+
+Un cop hem definit una variable com a constant, qualsevol intent de
+canviar el seu valor produirà un error de compilació com l'indicat a la
+línia 13.
+
+
+Podem declarar que una variable com a constant també dins dels mòduls i,
+fins i tot als paràmetres. Això ens permetrà que, si ens equivoquem i
+modifiquem accidentalment el seu valor, el java ens avisi.
+
+.. code-block:: java
+    :linenos:
+
+    public class Quadrat {
+        public static void main(String[] args) {
+            final int AMPLADA_COSTAT = 5;
+            // AMPLADA_COSTAT = AMPLADA_COSTAT * 2; // error!
+            dibuixaQuadrat(AMPLADA_COSTAT);
+        }
+
+        public static void dibuixaQuadrat(final int altura) {
+            // altura = altura * 2;                 // error!
+            for (int linia=1; linia <= altura; linia++) {
+                dibuixaLinia(altura);
+                System.out.println();
+            }
+        }
+
+        public static void dibuixaLinia(final int ample) {
+            final char CARACTER = 'X';
+            for (int columna=1; columna <= ample; columna++) {
+                System.out.print(" " + CARACTER);
+            }
+        }
+    }
+
+Si descomentem la línia 4 o la 9, el compilador ens produiria un error de
+compilació:
+
+.. code-block:: console
+    :emphasize-lines: 2-
+
+    $ javac Quadrat.java 
+    Quadrat.java:4: error: cannot assign a value to final variable AMPLADA_COSTAT
+            AMPLADA_COSTAT = AMPLADA_COSTAT * 2; // error!
+            ^
+    1 error
+
+
+Fixa't que el nom d'algunes de les constants apareix en majúscules. La
+convenció és que, els noms de les constants s'han de posar en
+*SNAKE_CASE*, és a dir, tot en majúscules i les paraules separades amb
+guió baix.
+
+Aquesta convenció no s'aplica normalment als paràmetres.
+
+En resum:
+
+* si sabem que el valor d'una variable no ha de canviar, és preferible
+  marcar-la com a constant, de manera que Java ens avisi si la intentem
+  modificar accidentalment.
+
+* per declarar una variable com a constant en Java fem servir ``final``.
+
+* la convenció pel nom de les constants en java (excepte paràmetres) és
+  *SNAKE_CASE*
+
+Una última consideració: el disseny de Java per defecte permet modificar
+*alegrement* les variables. Per exemple, per evitar que una variable pugui
+ser modificada hem d'indicar explícitament que volem que sigui constant
+(``final``) Aquesta modificabilitat per defecte presenta molts problemes a
+la pràctica; tant que llenguatges més moderns intenten evitar tot
+requerint explicitar si una variable pot ser o no modificada. Java, per
+raons històriques, no ho fa així i això fa que, si ho intentem fer bé, el
+nostre codi acabi ple de ``final`` per tot arreu. No hi ha res perfecte;
+en els llenguatges de programació tampoc…
+
+
+La globalitat és perniciosa
+===========================
+
+Normalment és preferible tractar d'evitar l'ús de variables globals doncs
+genera programes més difícils de mantenir principalment per dos motius:
+
+* per trobar errors: com que una variable global pot ser modificada en
+  molts llocs diferents, en cas que trobem un valor erroni, aquest haurà
+  pogut ser assignat en molts llocs. Prepara't a investigar!
+
+  Aquest problema el mitiguem força en Java declarant les variables
+  globals dins d'un programa com a ``private`` doncs d'aquesta manera
+  com a mínim sabem que no han estat modificades des d'un altre programa.
+  Recorda la secció :doc:`moduls_reutilitzacio` per més detalls.
+
+* per simplificar el codi: ja hem vist els avantatges de convertir codi
+  duplicat en mòduls, oi? Quan fem servir variables globals això
+  representa un problema doncs el "mateix codi" pot estar funcionant amb una
+  variable local en un lloc i amb una global en un altre.
+
+Les variables globals no presenten tants problemes quan són constants.  En
+concret, no presenten el problema de poder ser modificades en múltiples
+llocs.
+
+De fet, pot ser acceptable declarar les constants com a ``public`` en
+comptes de ``private``.  Per exemple, la classe ``Integer`` de Java ens
+<ofereix la constant `MAX-VALUE
+https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html#MAX_VALUE>`-
+que és declarada amb ``public``. No et preocupis encara massa per
+``public`` vs ``private`` encara. Ja arribarà el seu moment en aquest
+curs.
+
+De la mateixa manera, les funcions pures tenen menys problemes amb les
+variables globals doncs, sent pures, no les modificaran. Amb tot,
+continuen presentant el problema de la dependència de quelcom extern. Cal
+tenir-ho present.
+
+Les funcions impures, però, ho poden ser, no per fer entrada/sortida sinó
+simplement per modificar el valor d'una variable global. Aquestes solen
+ser considerades *perilloses* i una mala pràctica.
+De moment, però, les haurem de fer servir fins que aquest curs ens porti a
+maneres més *saludables* de codificar. Tot arribarà.
+
+Repàs de variables i mòduls
+===========================
+
+En aquesta secció hem revisat el nostre concepte de variable dins del nou
+context dels mòduls. Així, ens han aparegut els següents conceptes nous:
+
+* variable *global*: variable definida en un bloc exterior a aquell en que
+  ens trobem
+
+* variable *local*: variable definida en el mateix bloc en que ens trobem
+  i abans de la línia actual.
+
+* *ocultació*: les variables declarades fora d'un mòdul poden ser
+  redeclarades dins d'un mòdul. Per poder accedir a la variable global cal
+  especificar el nom de la classe.
+
+* *constants*: podem declarar variables constants fent servir ``final``.
+
+Si a banda d'això, t'has quedat amb la idea de que *variables globals* és
+quelcom dolent i *constants* és quelcom bo, ja pots sentir-te satisfet/a.
+
+|exerciseicon___| :doc:`exercici_02_21_variables`
+
+Exercicis addicionals
+=====================
+
+A continuació tens una llista d'exercicis sobre mòduls en els que
+podràs posar a prova els coneixements que hem treballat fins ara.
+
+Posa especial atenció amb la modularitat i les característiques que hem
+analitzat sobre les variables.
+
+Per descomptat, podràs fer servir mòduls realitzats a exercicis anteriors.
+Únicament assegura't d'afegir-los dins de la carpeta amb de l'exercici.
+
+|exerciseicon__T| :doc:`exercici_02_22_mostra_interval_string`
+
+|exerciseicon__T| :doc:`exercici_02_23_es_enter`
+
+|exerciseicon__T| :doc:`exercici_02_24_cadena_continua`
