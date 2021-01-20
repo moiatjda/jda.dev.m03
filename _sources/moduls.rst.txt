@@ -44,8 +44,8 @@ tradueix tot això a codi.
     moduls_junit.rst
     moduls_intro.rst
     moduls_funcions.rst
-    moduls_exercicis.rst
     moduls_variables.rst
+    moduls_exercicis.rst
 
 .. moduls_topdown.rst
 .. moduls_doc.rst
