@@ -213,16 +213,15 @@ introdueixin un número enter per la longitud de la cadena resultant.</p>
 </div>
 <p>Per fer aquesta comprovació, ens vindrà molt bé la utilitat
 <code class="docutils literal notranslate"><span class="pre">UtilString.esEnter()</span></code> que hem fet a un <a class="reference internal" href="exercici_02_23_es_enter.html"><span class="doc">exercici anterior</span></a>. Considera què passava quan ens introduïen un
-valor que no corresponia a un enter (
-.. code-block:: console</p>
-<blockquote>
-<div><p>jshell&gt; Integer.parseInt(«vuit»)
-|  Exception java.lang.NumberFormatException: For input string: «vuit»
-|        at NumberFormatException.forInputString (NumberFormatException.java:65)
-|        at Integer.parseInt (Integer.java:652)
-|        at Integer.parseInt (Integer.java:770)
-|        at (#1:1)</p>
-</div></blockquote>
+valor que no corresponia a un enter:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">jshell&gt; Integer.parseInt(&quot;vuit&quot;)</span>
+<span class="go">|  Exception java.lang.NumberFormatException: For input string: &quot;vuit&quot;</span>
+<span class="go">|        at NumberFormatException.forInputString (NumberFormatException.java:65)</span>
+<span class="go">|        at Integer.parseInt (Integer.java:652)</span>
+<span class="go">|        at Integer.parseInt (Integer.java:770)</span>
+<span class="go">|        at (#1:1)</span>
+</pre></div>
+</div>
 <p>Amb <code class="docutils literal notranslate"><span class="pre">UtilString.esEnter()</span></code> dient-nos que un valor de text és realment un
 enter, ja podem fer la conversió amb tranquil·litat.</p>
 <p><code class="docutils literal notranslate"><span class="pre">cadenaContinua()</span></code> serà una funció pura que requerirà els paràmetres: la

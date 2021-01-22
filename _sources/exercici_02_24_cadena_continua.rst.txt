@@ -37,7 +37,8 @@ introdueixin un número enter per la longitud de la cadena resultant.
 Per fer aquesta comprovació, ens vindrà molt bé la utilitat
 ``UtilString.esEnter()`` que hem fet a un :doc:`exercici anterior
 <exercici_02_23_es_enter>`. Considera què passava quan ens introduïen un
-valor que no corresponia a un enter (
+valor que no corresponia a un enter:
+
 .. code-block:: console
 
     jshell> Integer.parseInt("vuit")

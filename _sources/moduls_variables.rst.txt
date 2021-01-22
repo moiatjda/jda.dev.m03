@@ -304,6 +304,42 @@ a una variable global.
 pràctica pobre de programació que, sovint, porta problemes. De moment
 se'ns perdona fer-ho servir fins que no descobrim alternatives.
 
+Pèrdua de la puresa
+===================
+
+Recordes que una funció era impura quan feia entrada/sortida? Doncs també
+es considera impura si modifica una variable global. Per exemple:
+
+.. code-block:: java
+
+    public class Impuresa {
+
+        private static int quantesVegades = 0;
+
+        public static void main(String[] args) {
+            String text = "a";
+            for (int i=0; i < 10: i++) {
+                System.out.println("El text " + text + " te " + comptaAsImpura(text) + " as")
+            }
+            System.out.println("Executat comptaAsImpura() " + quantesVegades + " cops";
+        }
+
+    public static int comptaAsImpura(String text) {
+        int comptador = 0;
+        for (int i=0; i < text.length(); i++) {
+            if (text.charAt(i) == 'a') {
+                comptador+=1;
+            }
+        }
+        quantesVegades +=1'
+        return comptador;
+    }
+
+Com pots veure, ``comptaAsImpura()`` està comptant les aparicions de la
+lletra ``'a'`` dins del text, però a l'hora està comptabilitzant el nombre
+de vegades que és executada dins del comptador ``quantesVegades``. Aquest
+"detall" la fa impura. Coses que passen…
+
 La globalitat és relativa
 =========================
 
@@ -547,8 +583,8 @@ llocs.
 
 De fet, pot ser acceptable declarar les constants com a ``public`` en
 comptes de ``private``.  Per exemple, la classe ``Integer`` de Java ens
-<ofereix la constant `MAX-VALUE
-https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html#MAX_VALUE>`-
+ofereix la constant `MAX_VALUE
+<https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html#MAX_VALUE>`_
 que és declarada amb ``public``. No et preocupis encara massa per
 ``public`` vs ``private`` encara. Ja arribarà el seu moment en aquest
 curs.
@@ -604,3 +640,5 @@ Per descomptat, podràs fer servir mòduls realitzats a exercicis anteriors.
 |exerciseicon__T| :doc:`exercici_02_23_es_enter`
 
 |exerciseicon__T| :doc:`exercici_02_24_cadena_continua`
+
+|exerciseicon__T| :doc:`exercici_02_25_enters_entre_comes_v1`

@@ -573,6 +573,39 @@ a una variable global.</p>
 pràctica pobre de programació que, sovint, porta problemes. De moment
 se’ns perdona fer-ho servir fins que no descobrim alternatives.</p>
 </div>
+<div class="section" id="perdua-de-la-puresa">
+<h2>Pèrdua de la puresa<a class="headerlink" href="#perdua-de-la-puresa" title="Link permanent a aquest títol">¶</a></h2>
+<p>Recordes que una funció era impura quan feia entrada/sortida? Doncs també
+es considera impura si modifica una variable global. Per exemple:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span>public class Impuresa {
+
+    private static int quantesVegades = 0;
+
+    public static void main(String[] args) {
+        String text = &quot;a&quot;;
+        for (int i=0; i &lt; 10: i++) {
+            System.out.println(&quot;El text &quot; + text + &quot; te &quot; + comptaAsImpura(text) + &quot; as&quot;)
+        }
+        System.out.println(&quot;Executat comptaAsImpura() &quot; + quantesVegades + &quot; cops&quot;;
+    }
+
+public static int comptaAsImpura(String text) {
+    int comptador = 0;
+    for (int i=0; i &lt; text.length(); i++) {
+        if (text.charAt(i) == &#39;a&#39;) {
+            comptador+=1;
+        }
+    }
+    quantesVegades +=1&#39;
+    return comptador;
+}
+</pre></div>
+</div>
+<p>Com pots veure, <code class="docutils literal notranslate"><span class="pre">comptaAsImpura()</span></code> està comptant les aparicions de la
+lletra <code class="docutils literal notranslate"><span class="pre">'a'</span></code> dins del text, però a l’hora està comptabilitzant el nombre
+de vegades que és executada dins del comptador <code class="docutils literal notranslate"><span class="pre">quantesVegades</span></code>. Aquest
+«detall» la fa impura. Coses que passen…</p>
+</div>
 <div class="section" id="la-globalitat-es-relativa">
 <h2>La globalitat és relativa<a class="headerlink" href="#la-globalitat-es-relativa" title="Link permanent a aquest títol">¶</a></h2>
 <p>Com afirma el títol d’aquesta secció, que una variable sigui global (o
@@ -860,8 +893,7 @@ concret, no presenten el problema de poder ser modificades en múltiples
 llocs.</p>
 <p>De fet, pot ser acceptable declarar les constants com a <code class="docutils literal notranslate"><span class="pre">public</span></code> en
 comptes de <code class="docutils literal notranslate"><span class="pre">private</span></code>.  Per exemple, la classe <code class="docutils literal notranslate"><span class="pre">Integer</span></code> de Java ens
-&lt;ofereix la constant <cite>MAX-VALUE
-https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html#MAX_VALUE&gt;</cite>-
+ofereix la constant <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Integer.html#MAX_VALUE">MAX_VALUE</a>
 que és declarada amb <code class="docutils literal notranslate"><span class="pre">public</span></code>. No et preocupis encara massa per
 <code class="docutils literal notranslate"><span class="pre">public</span></code> vs <code class="docutils literal notranslate"><span class="pre">private</span></code> encara. Ja arribarà el seu moment en aquest
 curs.</p>
@@ -904,6 +936,7 @@ analitzat sobre les variables.</p>
 <p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_02_22_mostra_interval_string.html"><span class="doc"> Exercici 02_22. Secció d’un String (modular)</span></a></p>
 <p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_02_23_es_enter.html"><span class="doc"> Exercici 02_23. És enter (modular)</span></a></p>
 <p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_02_24_cadena_continua.html"><span class="doc"> Exercici 02_24. Cadena continua (modular)</span></a></p>
+<p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <span class="xref std std-doc">exercici_02_25_enters_entre_comes_v1</span></p>
 </div>
 </div>
 
