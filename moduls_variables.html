@@ -577,28 +577,29 @@ se’ns perdona fer-ho servir fins que no descobrim alternatives.</p>
 <h2>Pèrdua de la puresa<a class="headerlink" href="#perdua-de-la-puresa" title="Link permanent a aquest títol">¶</a></h2>
 <p>Recordes que una funció era impura quan feia entrada/sortida? Doncs també
 es considera impura si modifica una variable global. Per exemple:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span>public class Impuresa {
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Impuresa</span> <span class="p">{</span>
 
-    private static int quantesVegades = 0;
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">quantesVegades</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
 
-    public static void main(String[] args) {
-        String text = &quot;a&quot;;
-        for (int i=0; i &lt; 10: i++) {
-            System.out.println(&quot;El text &quot; + text + &quot; te &quot; + comptaAsImpura(text) + &quot; as&quot;)
-        }
-        System.out.println(&quot;Executat comptaAsImpura() &quot; + quantesVegades + &quot; cops&quot;;
-    }
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">String</span> <span class="n">text</span> <span class="o">=</span> <span class="s">&quot;a&quot;</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El text &quot;</span> <span class="o">+</span> <span class="n">text</span> <span class="o">+</span> <span class="s">&quot; te &quot;</span> <span class="o">+</span> <span class="n">comptaAsImpura</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="o">+</span> <span class="s">&quot; as&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Executat comptaAsImpura() &quot;</span> <span class="o">+</span> <span class="n">quantesVegades</span> <span class="o">+</span> <span class="s">&quot; cops&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
 
-public static int comptaAsImpura(String text) {
-    int comptador = 0;
-    for (int i=0; i &lt; text.length(); i++) {
-        if (text.charAt(i) == &#39;a&#39;) {
-            comptador+=1;
-        }
-    }
-    quantesVegades +=1&#39;
-    return comptador;
-}
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">comptaAsImpura</span><span class="p">(</span><span class="n">String</span> <span class="n">text</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">comptador</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">text</span><span class="p">.</span><span class="na">length</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">text</span><span class="p">.</span><span class="na">charAt</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">==</span> <span class="sc">&#39;a&#39;</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">comptador</span><span class="o">+=</span><span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">quantesVegades</span> <span class="o">+=</span><span class="mi">1</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">comptador</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Com pots veure, <code class="docutils literal notranslate"><span class="pre">comptaAsImpura()</span></code> està comptant les aparicions de la
@@ -936,7 +937,6 @@ analitzat sobre les variables.</p>
 <p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_02_22_mostra_interval_string.html"><span class="doc"> Exercici 02_22. Secció d’un String (modular)</span></a></p>
 <p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_02_23_es_enter.html"><span class="doc"> Exercici 02_23. És enter (modular)</span></a></p>
 <p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_02_24_cadena_continua.html"><span class="doc"> Exercici 02_24. Cadena continua (modular)</span></a></p>
-<p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <span class="xref std std-doc">exercici_02_25_enters_entre_comes_v1</span></p>
 </div>
 </div>
 

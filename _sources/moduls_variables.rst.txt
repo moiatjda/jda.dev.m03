@@ -318,21 +318,22 @@ es considera impura si modifica una variable global. Per exemple:
 
         public static void main(String[] args) {
             String text = "a";
-            for (int i=0; i < 10: i++) {
-                System.out.println("El text " + text + " te " + comptaAsImpura(text) + " as")
+            for (int i=0; i < 10; i++) {
+                System.out.println("El text " + text + " te " + comptaAsImpura(text) + " as");
             }
-            System.out.println("Executat comptaAsImpura() " + quantesVegades + " cops";
+            System.out.println("Executat comptaAsImpura() " + quantesVegades + " cops");
         }
 
-    public static int comptaAsImpura(String text) {
-        int comptador = 0;
-        for (int i=0; i < text.length(); i++) {
-            if (text.charAt(i) == 'a') {
-                comptador+=1;
+        public static int comptaAsImpura(String text) {
+            int comptador = 0;
+            for (int i=0; i < text.length(); i++) {
+                if (text.charAt(i) == 'a') {
+                    comptador+=1;
+                }
             }
+            quantesVegades +=1;
+            return comptador;
         }
-        quantesVegades +=1'
-        return comptador;
     }
 
 Com pots veure, ``comptaAsImpura()`` està comptant les aparicions de la
@@ -640,5 +641,3 @@ Per descomptat, podràs fer servir mòduls realitzats a exercicis anteriors.
 |exerciseicon__T| :doc:`exercici_02_23_es_enter`
 
 |exerciseicon__T| :doc:`exercici_02_24_cadena_continua`
-
-|exerciseicon__T| :doc:`exercici_02_25_enters_entre_comes_v1`
