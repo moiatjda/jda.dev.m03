@@ -204,6 +204,25 @@ els càlculs els realitzarà una funció anomenada <code class="docutils literal
 el text corresponent i retornarà un booleà amb el resultat.</p>
 <p><code class="docutils literal notranslate"><span class="pre">esEnter()</span></code> estarà definida dins de <code class="docutils literal notranslate"><span class="pre">UtilString.java</span></code> i serà
 una funció pura.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Un dels usos més interessants de <code class="docutils literal notranslate"><span class="pre">esEnter()</span></code> és que ens ofereix la
+possiblitat de saber si <code class="docutils literal notranslate"><span class="pre">Integer.parseInt()</span></code> funcionarà o no, abans
+d’executar-ho.</p>
+<p>Per exemple, considera:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">jshell&gt; Integer.parseInt(&quot;   123  &quot;)</span>
+<span class="go">|  Exception java.lang.NumberFormatException: For input string: &quot;   123  &quot;</span>
+<span class="go">|        at NumberFormatException.forInputString (NumberFormatException.java:65)</span>
+<span class="go">|        at Integer.parseInt (Integer.java:638)</span>
+<span class="go">|        at Integer.parseInt (Integer.java:770)</span>
+<span class="go">|        at (#2:1)</span>
+</pre></div>
+</div>
+<p>Per aquesta raó, no podem acceptar que <code class="docutils literal notranslate"><span class="pre">esEnter()</span></code> ignori els espais
+en blanc, tal i com sí s’esperava del programa <code class="docutils literal notranslate"><span class="pre">EsEnter</span></code>.
+És a dir, la feina de treure-li els espais caldrà fer-la abans de fer servir
+<code class="docutils literal notranslate"><span class="pre">esEnter()</span></code>.</p>
+</div>
 </div>
 
 
