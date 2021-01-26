@@ -10,4 +10,3 @@ Els exercicis del tema :doc:`moduls` són:
 
     moduls_exercicis_intro.rst
     moduls_exercicis_funcions.rst
-    moduls_exercicis_arrays.rst

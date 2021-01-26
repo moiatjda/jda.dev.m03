@@ -16,8 +16,7 @@
 
 .. rubric:: Enunciat
 
-Desenvolupa un programa que vagi demanant texts fins que rebi la cadena
-buida, i per cada entrada
+Desenvolupa un programa que demani un text i
 mostri el mateix text amb les inicials de cada paraula 
 en majúscules i la resta en minúscules.
 
@@ -38,7 +37,7 @@ Considera la simulació:
 **Pista**: Compte! Aquesta pista només si no saps per on atacar el
 problema, eh?
 
-la dificultat d'aquest exercici està principalment en saber si
+La dificultat d'aquest exercici està principalment en saber si
 estem a la primera lletra d'una paraula. Una manera és disposar d'una
 variable que ens indiqui si la propera lletra que trobem ha de ser
 majúscules. Aquesta variable inicialment serà certa, deixarà de ser-ho un
