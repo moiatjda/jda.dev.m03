@@ -1,0 +1,42 @@
+######
+Arrays
+######
+
+.. XXX as a first glance they should be treated as inmutable
+    I've got a fight here
+    In one hand, I'd like to stick with the idea of immutable sequences
+    like String or python tuples, BUT
+    In the other, it could result in a cumbersome usage of the java arrays
+    since they're mutable by nature
+    The simpler is to introduce them as they are and then make students
+    notice their mutability nature by contrasting with functions and
+    modules with collateral effects
+
+Tot i que sabem que hi ha :doc:`diferents tipus de dades
+<primitius_vs_classes>`, durant aquest curs de moment només n'hem treballat
+amb un nombre força reduït, concretament enters (``int``), decimals
+(``float`` o ``double``), booleans (``boolean``), caràcters (``char``) i
+text (``String``).
+
+D'aquests tipus de dades, només els Strings els podem considerar
+agrupacions de dades d'un altre tipus; en concret, caràcters.
+
+Com hem vist, un String és bàsicament una seqüència de caràcters que podem
+recórrer, per exemple, per cercar-hi un caràcter concret, extreure'n una
+part (*substring*), posar un o més caràcters a majúscules, minúscules,
+etc.
+
+Però, què passaria si ens interessés disposar de seqüències d'altres tipus que no siguin caràcters?
+Per exemple, imagina't si volem disposar d'una seqüència amb els noms dels alumnes d'una classe
+o de les notes obtingudes per aquests alumnes en una determinada prova.
+
+Doncs ja tenim una nova eina a conèixer.
+
+.. toctree::
+    :titlesonly:
+    :maxdepth: 1
+
+    arrays_justificacio.rst
+    arrays_en_java.rst
+    arrays_taules.rst
+    arrays_mutabilitat.rst

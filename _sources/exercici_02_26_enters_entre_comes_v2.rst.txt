@@ -1,0 +1,46 @@
+#########################################################
+|exerciseicon__T| Exercici 02_26. Enters entre comes (v2)
+#########################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``02_26_enters_entre_comes_v2/``
+
+* Continguts relacionats: :doc:`arrays_en_java`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Una nova versió del programa :doc:`enters entre comes
+<exercici_02_25_enters_entre_comes_v1>`>
+
+En aquesta ocasió, el programa tindrà les següents modificacions:
+
+* els valors de l'array en comptes de ser assignats des del programa, els
+  especificaran els usuaris del programa.
+
+  De moment suposarem que els valors d'entrada són sempre enters vàlids.
+
+* en comptes de 3 valors a l'array, n'hi haurà 5
+
+Una simulació d'execució seria:
+
+.. code-block:: console
+    :emphasize-lines: 2, 4, 6, 8, 10, 12
+
+    
+    $ java EntersEntreComes 
+    Valor 1?
+    1
+    Valor 2?
+    2
+    Valor 3?
+    3
+    Valor 4?
+    4
+    Valor 5?
+    5
+    1, 2, 3, 4, 5

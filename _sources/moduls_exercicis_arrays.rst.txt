@@ -1,0 +1,15 @@
+#############################
+Llista d'exercicis d'*arrays*
+#############################
+
+Els exercicis del teme :doc:`arrays` són:
+
+.. toctree::
+    :titlesonly:
+    :maxdepth: 1
+
+    exercici_02_25_enters_entre_comes_v1.rst
+    exercici_02_26_enters_entre_comes_v2.rst
+    exercici_02_27_enters_entre_comes_v3.rst
+    exercici_02_28_enters_entre_comes_v4.rst
+    exercici_02_29_arguments.rst

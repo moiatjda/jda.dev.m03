@@ -1,0 +1,53 @@
+####################################################
+|exerciseicon__T| Exercici 02_29. Arguments del main
+####################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``02_29_arguments/``
+
+* Continguts relacionats: :doc:`arrays_en_java`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+T'has aturat a pensar de quin tipus és el paràmetre del procediment
+``main()`` que contenen tants programes que has fet en Java?
+
+
+.. code-block:: java
+
+     public static void main(String[] args)
+
+Sí, és un paràmetre de tipus array de String!
+
+En aquest exercici hauràs de fer un programa que analitzi els arguments
+que es passen per la línia de comandes i distingeixi si són o no enters.
+
+Considera les següents simulacions;
+
+.. code-block:: console
+    :emphasize-lines: 2
+
+    $ java Arguments
+    Cap argument
+
+
+.. code-block:: console
+    :emphasize-lines: 2
+
+    $ java Arguments 1
+    [0] "1": és enter
+
+
+.. code-block:: console
+    :emphasize-lines: 2-
+
+    $ java Arguments un 2 tres 4
+    [0] "un": no és enter
+    [1] "2": és enter
+    [2] "tres": no és enter
+    [3] "4": és enter

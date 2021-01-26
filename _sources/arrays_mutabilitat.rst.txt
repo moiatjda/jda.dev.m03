@@ -1,0 +1,312 @@
+###########
+Mutabilitat
+###########
+
+Els arrays ens introdueixen un concepte fins ara desconegut: la **mutabilitat**
+
+Fins ara, tots els tipus de dades que havíem vist tenien sempre el mateix
+valor. És a dir, són immutables. En cas de modificar-los, podíem considerar que era un nou valor.
+
+Deixa'm que m'expliqui
+
+Inmutabilitat dels enters
+=========================
+
+Considera el cas següent:
+
+.. code-block:: java
+    :linenos:
+
+    int edat = 18;
+    edat = edat + 1;
+
+Podem canviar el valor de ``edat`` per 19, però no hem modificat el valor
+18. És tan evident que costa d'entendre per on vaig, oi?
+
+Immutabilitat dels Strings
+==========================
+
+A veure què passa amb els Strings
+
+.. code-block:: java
+    :linenos:
+
+    String nom = "macarena";
+    nom = Character.toUpperCase(nom.charAt(0)) + nom.substring(1);
+
+El codi anterior corregeix el nom posant la inicial en majúscules. Podríem
+entendre que simplement s'ha substituït la ``'m'`` per ``'M'``, però no ha
+estat així.
+
+Analitzem l'execució del fragment anterior pas a pas. Ho farem de manera
+simplificada així que només quedat amb la idea i no amb els detalls.
+
+Comencem per la declaració
+
++----------------------------+------------------+------------------------+
+|   instrucció               | noms             |  Memòria               |
++============================+=========+========+================+=======+
+| String nom                 | nom → ?          |                        |
++----------------------------+------------------+------------------------+
+
+En aquest moment la memòria no té encara cap valor per a aquest fragment
+de codi. La variable ``nom`` de moment està marcada com no inicialitzada.
+
+A continuació, Java guardarà el literal ``"macarena"``. De fet, aquest
+literal estarà guardat en temps de compilació, però accepta'm la
+simplificació.
+
++----------------------------+------------------+------------------------+
+|   instrucció               | noms             |  Memòria               |
++============================+=========+========+================+=======+
+| "macarena"                 | nom → ?          | [@100] \"macarena\"    |
++----------------------------+------------------+------------------------+
+
+Suposarem que el literal es guarda a la posició de memòria *@100*.
+(evidentment el número 100 és inventat!)
+
+Ara, procedim a la inicialització de ``nom`` amb l'adreça de memòria on
+està emmagatzemat el text ``"macarena"``.
+
++----------------------------+------------------+------------------------+
+|   instrucció               | noms             |  Memòria               |
++============================+=========+========+================+=======+
+| nom = @100                 | nom → @100       | [@100] \"macarena\"    |
++----------------------------+------------------+------------------------+
+
+Fixa't que ``nom`` **no** conté ``"macarena"`` sinó simplement la posició
+de memòria on s'hi troba emmagatzemat el literal.
+
+Un cop resolta la primera línia del nostre codi, passem a la segona.
+
+En primer lloc, Java intentarà resoldre l'expressió
+``Character.toUpperCase(nom.charAt(0)) + nom.substring(1)`` abans
+d'assignar el resultat a ``nom``.
+
+El primer que farà serà ressoldre la primera part de l'expressió
+``Character.toUpperCase(nom.charAt(0))`` i per fer-ho, li caldrà encara
+fer un pas més: resoldre la subexpressió ``nom.charAt(0)`` per poder
+disposar del valor a passar-li a la funció ``Character.toUpperCase()``.
+
+De fet, també hauria de resoldre l'expressió ``0`` per poder disposar del
+valor que se li passa a la funció ``nom.charAt()``, però aquesta és molt
+bàsica i resulta en l'esperat valor enter ``0``.
+
++----------------------------+------------------+------------------------+
+|   instrucció               | noms             |  Memòria               |
++============================+=========+========+================+=======+
+| nom.charAt(0)              | nom → @100       | [@100] \"macarena\"    |
+|                            |                  +------------------------+
+|                            |                  | [@200] \'m\'           |
++----------------------------+------------------+------------------------+
+
+En aquesta ocasió, la funció ``charAt()`` recull el valor de la posició
+@100 i el literal ``0`` i retorna el caràcter en la posició ``0`` de
+``"macarena"``, és a dir \'m\'. Java guarda aquest resultat a memòria.
+
+Ara que ja tenim el valor de l'argument, podem fer el següent pas:
+
++----------------------------+------------------+------------------------+
+|   instrucció               | noms             |  Memòria               |
++============================+=========+========+================+=======+
+| Character.toUpper(@200)    | nom → @100       | [@100] \"macarena\"    |
+|                            |                  +------------------------+
+|                            |                  | [@200] \'m\'           |
+|                            |                  +------------------------+
+|                            |                  | [@300] \'M\'           |
++----------------------------+------------------+------------------------+
+
+En aquest nou pas, ``toUpper()`` recull el caràcter ``'m'`` guardat a la
+memòria i retorna la seva versió en majúscules, que Java guarda en una
+nova posició de memòria.
+
+Ara que ja tenim una part de l'expressió, Java mirarà d'avaluar l'altra.
+Per fer-ho, novament ens saltarem el pas de calcular el valor de
+l'argument (doncs és el literal ``1``) i passarem directament a la crida:
+
++----------------------------+------------------+------------------------+
+|   instrucció               | noms             |  Memòria               |
++============================+=========+========+================+=======+
+| nom.substring(1)           | nom → @100       | [@100] \"macarena\"    |
+|                            |                  +------------------------+
+|                            |                  | [@200] \'m\'           |
+|                            |                  +------------------------+
+|                            |                  | [@300] \'M\'           |
+|                            |                  +------------------------+
+|                            |                  | [@400] \"acarena\"     |
++----------------------------+------------------+------------------------+
+
+La funció ``substring`` considera el valor de la posició de memòria
+apuntada per ``nom`` i composa un nou String amb tots els caràcters de
+text a partir de la posició 1 (inclosa).
+
+El següent pas és la concatenació dels dos valors calculats:
+
++----------------------------+------------------+------------------------+
+|   instrucció               | noms             |  Memòria               |
++============================+=========+========+================+=======+
+| @300 + @400                | nom → @100       | [@100] \"macarena\"    |
+|                            |                  +------------------------+
+|                            |                  | [@200] \'m\'           |
+|                            |                  +------------------------+
+|                            |                  | [@300] \'M\'           |
+|                            |                  +------------------------+
+|                            |                  | [@400] \"acarena\"     |
+|                            |                  +------------------------+
+|                            |                  | [@500] \"Macarena\"    |
++----------------------------+------------------+------------------------+
+
+Tot i que queda amagat, el signe ``+`` és en realitat una funció de
+String, en concret `concat()
+<https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#concat(java.lang.String)>`_.
+En tot cas, el resultat és un nou String.
+
+Finalment, toca fer la part de l'assignació:
+
++----------------------------+------------------+------------------------+
+|   instrucció               | noms             |  Memòria               |
++============================+=========+========+================+=======+
+| nom = @500                 | nom → @500       |                        |
++----------------------------+------------------+------------------------+
+
+Fixa't que ara ``nom`` ha deixat d'apuntar a *@100* i apunta a una nova
+posició de memòria que conté la versió del nom amb la inicial en
+majúscules.
+
+Ara, si fem un ``System.out.println(nom);`` el que ens mostrarà serà
+``"Macarena"`` amb *M* majúscules.
+
+El més important que vegis en aquesta secció concreta és que el valor
+original ``"macarena"`` no ha estat modificat en cap moment. De fet,
+continua guardat a la posició *@100* fins que Java decideixi que ja no és
+necessari.
+  
+
+***********************
+Mutabilitat dels arrays
+***********************
+
+.. XXX
+    Potser ho pots fer mitjançant un array de caràcters amb el mot Macarena
+    again.
+    Així, de pas, els pots mostrar com convertir String a char[] i de tornada
+    new String(new char[] {'a', 'l'});
+    jshell> "hola".toCharArray()
+    $2 ==> char[4] { 'h', 'o', 'l', 'a' }
+
+Serà similar amb els arrays?
+
+Anem a veure-ho tot seguint la manera en que hem analitzat les dues
+instruccions amb Strings. 
+
+Posa-hi atenció doncs hi apareixeran funcions que no has vist encara en
+aquests apunts. No pateixis que te les explicaré.
+
+.. code-block:: java
+    :linenos:
+
+        String nom = "macarena";
+        char[] nomEnCaracters = nom.toCharArray();
+        nomEnCaracters[0] = Character.toUpperCase(nomEnCaracters[0]);
+        nom = new String(nomEnCaracters);
+
+El codi anterior té el mateix resultat que el codi que hem analitzat a la
+secció `Immutabilitat dels Strings`, però ho fa d'una manera diferent.
+Anem a pams:
+
+La primera línia és la mateixa: declarem una variable anomenada ``nom`` i
+li assignem un literal.
+
+La representació del sistema fins el moment podria ser:
+
++----------------------------+------------------+------------------------+
+|   instrucció               | noms             |  Memòria               |
++============================+=========+========+================+=======+
+| nom = @100                 | nom → @100       | [@100] \"macarena\"    |
++----------------------------+------------------+------------------------+
+
+A continuació declarem un array de ``char`` anomenat ``nomEnCaracters``
+
++----------------------------+-----------------------+------------------------+
+|   instrucció               | noms                  |  Memòria               |
++============================+=========+=============+================+=======+
+| char[] nomEnCaracters      | nom → @100            | [@100] \"macarena\"    |
+|                            +-----------------------+                        |
+|                            | nomEnCaracters → ?    |                        |
++----------------------------+-----------------------+------------------------+
+
+Com que encara no hem creat cap array, no tenim cap valor per
+``nomEnCaracters``. Cap problema.
+
+La següent part de la instrucció, l'assignació, requereix avaluar
+l'expressió que apareix després del ``=``. Es tracta de la crida a una
+funció que encara no coneixíem (``toCharArray()``) Aquesta funció, a
+partir del String apuntat per ``nom`` construeix un array de ``char`` i el
+retorna.
+
++----------------------------+-----------------------+-------------------------------------------------------------------------------+
+|   instrucció               | noms                  |  Memòria                                                                      |
++============================+=========+=============+================+==============================================================+
+| nom.toCharArray()          | nom → @100            | [@100] \"macarena\"                                                           |
+|                            +-----------------------+-------------------------------------------------------------------------------+
+|                            | nomEnCaracters → ?    | [@200] {\'m\', \'a\', \'c\', \'a\', \'r\', \'e\', \'n\', \'a\'}               |
++----------------------------+-----------------------+-------------------------------------------------------------------------------+
+
+Fixa't que he representat l'array de caràcters entre claus ``{}``. És una
+notació força comú. Fins i tot, si li demanes a JShell et retornarà quelcom
+molt similar.
+
+.. code-block:: console
+
+    jshell> "macarena".toCharArray()
+    $1 ==> char[8] { 'm', 'a', 'c', 'a', 'r', 'e', 'n', 'a' }
+
+
+El següent pas és completar l'assignació:
+
++----------------------------+-----------------------+-------------------------------------------------------------------------------+
+|   instrucció               | noms                  |  Memòria                                                                      |
++============================+=========+=============+================+==============================================================+
+| nom = @200                 | nom → @100            | [@100] \"macarena\"                                                           |
+|                            +-----------------------+-------------------------------------------------------------------------------+
+|                            | nomEnCaracters → @200 | [@200] {\'m\', \'a\', \'c\', \'a\', \'r\', \'e\', \'n\', \'a\'}               |
+|                            |                       |                                                                               |
+|                            |                       |                                                                               |
+|                            |                       |                                                                               |
+|                            |                       |                                                                               |
+|                            |                       |                                                                               |
+|                            |                       |                                                                               |
+|                            |                       |                                                                               |
+|                            |                       |                                                                               |
+|                            |                       |                                                                               |
++----------------------------+-----------------------+-------------------------------------------------------------------------------+
+
+Passem ara a executar la línia 3
+
+.. code-block:: java
+
+        nomEnCaracters[0] = Character.toUpperCase(nomEnCaracters[0]);
+
+Aquesta línia és també una assignació. Per tant, resoldrem primer la part de l'expressió.
+
+En primer lloc, necessitem aconseguir el valor a passar-li a la funció
+``Character.toUpperCase()``. Aquest valor s'aconsegueix a partir de l'expressió
+``nomEnCaracters[0]``.
+
+Donat que ``nomEnCaracters`` es troba en la posició *@200*, el primer caràcter
+(començant pel 0) es trobaria directament en aquesta posició, mentre que el
+segon caràcter es trobaria en la posició *@200 + 1*, el tercer en la *@200 + 2*
+i així.
+
+Veus ara perquè ens agrada tant començar a comptar pel zero?
+
+Així, el valor que li passem a ``Character.toUpperCase()`` és el que es troba a la posició *@200 + 0*
+
+Arrays i mòduls
+===============
+
+
+
+.. XXX vas per aquí
+
+    Finalment mostrar-ho tot entre mòduls
