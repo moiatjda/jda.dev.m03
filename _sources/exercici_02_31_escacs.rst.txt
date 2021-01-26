@@ -1,0 +1,77 @@
+#####################################################
+|exerciseicon__T| Exercici 02_31. Un moviment decisiu
+#####################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``02_31_escacs/``
+
+* Continguts relacionats: :doc:`arrays_taules`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Considerem la següent situació d'una partida d'escacs:
+
+.. image:: _images/escacsmat.png
+    :width: 256
+    :align: center
+
+Desenvolupa un programa que inicialitzi una taula de 8x8 de caràcters de
+manera que 
+a cada cel·la hi
+codifiquem el contingut d'una casella del taulell d'escacs. 
+
+El contingut pot ser:
+
+* cap peça: valor ``'·'``
+
+* una peça: La inicial de la peça. [**R**]ei, [**D**]ama, [**A**]lfil,
+  [**C**]avall, [**T**]orre, [**P**]eó. En cas de negres les posarem en
+  majúscules i les blanques en minúscules.
+
+
+Considera completar la plantilla següent:
+
+.. code-block:: java
+
+    /*
+     *  XXX Un comentari adequat
+     */
+    public class Escacs {
+        public static void main(String[] args){
+            // declarem la variable taulell
+            /* XXX */
+
+            // creem espai per les 8 x 8 cel·les
+            /* XXX */
+
+            // emplenem tot de blancs
+            /* XXX */
+
+            // col·loquem les peces
+            /* XXX */
+
+            // mostrem el resultat
+            /* XXX */
+        }
+    }
+
+
+La sortida esperada és la següent:
+
+.. code-block:: console
+    :emphasize-lines: 2-
+
+    $ java Escacs 
+    ········
+    p·······
+    ········
+    ········
+    ········
+    ······PR
+    ·····A··
+    ·······r
