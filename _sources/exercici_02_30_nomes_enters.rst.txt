@@ -1,0 +1,39 @@
+###################################################
+|exerciseicon__T| Exercici 02_30. Suma només enters
+###################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``02_30_nomes_enters/``
+
+* Continguts relacionats: :doc:`arrays_en_java`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Desenvolupa un programa que a partir dels arguments que rebi per línia de
+comandes, mostri el resultat de sumar els enters que s'hi trobin.
+
+Per realitzar les tasques es desenvoluparan els següents mòduls:
+
+.. code-block:: java
+
+    public static int quantsEnters(String[] valors)
+    public static int[] filtraEnters(String[] valors)
+    public static int sumaEnters(int[] valors)
+
+En cas que no hi hagi cap enter, el resultat serà 0
+
+Una simulació d'execució seria:
+
+.. code-block:: console
+
+    $ java Sumaenters a 1 2 -2 +4 5 sis
+    10
+
+Pista: ``filtraEnters()`` haurà de crear un array d'enters. Per saber la
+mida de l'array resultant farà servir ``quantsEnters()``.
+

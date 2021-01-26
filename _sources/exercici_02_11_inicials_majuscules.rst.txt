@@ -14,7 +14,8 @@
 
 .. rubric:: Enunciat
 
-Desenvolupa una nova versió de l'exercici que :doc:`posava en majúscules les inicials d'un text <exercici_01_77_inicials_majuscules>`. 
+Desenvolupa una nova versió de l'exercici que :doc:`posava en majúscules
+les inicials d'un text <exercici_01_77_inicials_majuscules>`. 
 
 La nova versió passarà les mateixes proves que l'original però el mòdul
 ``main()`` se n'encarregarà d'obtenir les dades d'entrada, i cridarà un

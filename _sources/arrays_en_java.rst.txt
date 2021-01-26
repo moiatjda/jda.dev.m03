@@ -1,0 +1,97 @@
+##################
+Seqüències en Java
+##################
+
+Recordem l'enunciat del problema anterior:
+
+    Desenvolupa un programa que vagi demanant les notes obtingudes pels
+    estudiants de programació en el darrer examen (com a mínim dues) i
+    indiqui quina ha estat la nota més alta.
+
+El problema anterior presenta la dificultat de requerir guardar, en algun
+lloc, les notes que anem rebent. El problema és que no coneixem encara cap
+tipus de dades que ens permeti guardar una seqüència d'enters.
+
+Java, com molts altres llenguatges de programació, ens ofereix diferents
+maneres d'emmagatzemar seqüències de dades. La més bàsica és la coneguda
+com *array*.
+
+Per Java un *array* és un contenidor d'un nombre fix d'elements d'un
+mateix tipus disposats en ordre.
+
+A l'hora de declarar un array, no ens cal saber quants elements tindrà,
+però sí de quin tipus seran.
+
+.. code-block:: java
+
+    int[] notesCurs;
+
+Amb això, el compilador sap que ``notesCurs`` és una referència a una seqüència
+de valors enters. De moment, però, no s'ha reservat espai per cap element.
+
+Suposant que un curs té quatre notes (quatre avaluacions), la
+inicialització es realitza de la següent manera:
+
+.. code-block:: java
+
+    notesCurs = new int[4];
+
+Ara tenim un array inicialitzat. Això vol dir que hi ha espai reservat per
+enmagatzemar el valor dels quatre enters.  Encara, però, no tenim valors
+a aquests espais. Ens caldrà assignar-los un valor abans de poder fer res
+amb ells.
+
+Els arrays en java s'indexen amb un valor enter, començant pel 0. Així,
+una manera d'inicialitzar les nostres notes serà:
+
+.. code-block:: java
+
+    notesCurs[0] = 8;
+    notesCurs[1] = 9;
+    notesCurs[2] = 10;
+    notesCurs[3] = 10;
+
+Java ens ofereix una manera d'inicialitzar els valors més compacta. En l'exemple:
+
+.. code-block:: java
+
+    int[] notesCurs = { 8, 9, 10, 10 };
+
+Fixa't que en aquest cas, el compilador ja es preocupa de comptar quants enters necessitem.
+
+Podrem mostrar els valors resultants, per exemple:
+
+.. code-block:: java
+
+    System.out.println("La nota de la primera avaluació és " + notesCurs[0]);
+    System.out.println("La nota de la segona avaluació és " + notesCurs[1]);
+    System.out.println("La nota de la tercera avaluació és " + notesCurs[2]);
+    System.out.println("La nota de la quarta avaluació és " + notesCurs[3]);
+
+Per suposat, els arrays permeten l'automatització d'aquest tipus de
+tasques repetitives, fent servir bucles. Per exemple:
+
+.. code-block:: java
+
+    for(int i=0;i<notesCurs.length;++i) {
+        System.out.println("La nota de l'avaluació " + i + " és " + notesCurs[i]);
+    }
+
+Fixa't que ``notesCurs.length`` ens retorna la longitud de l'array però, a
+diferència del ``length()`` dels strings, aquí no porta parèntesis. Sí,
+Java té aquests *cops* amagats per posar a prova la nostra memòria…
+
+A continuació tens un petit fil d'exercicis relacionats, per posar en
+pràctica aquests conceptes:
+
+|exerciseicon__T| :doc:`exercici_02_25_enters_entre_comes_v1`
+
+|exerciseicon__T| :doc:`exercici_02_26_enters_entre_comes_v2`
+
+|exerciseicon__T| :doc:`exercici_02_27_enters_entre_comes_v3`
+
+|exerciseicon__T| :doc:`exercici_02_28_enters_entre_comes_v4`
+
+|exerciseicon__T| :doc:`exercici_02_29_arguments`
+
+|exerciseicon__T| :doc:`exercici_02_30_nomes_enters`

@@ -1,0 +1,320 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ca" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Seqüències en Java &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Taules" href="arrays_taules.html" />
+    <link rel="prev" title="Necessitem les seqüències" href="arrays_justificacio.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació amb Java
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-21
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="moduls.html">Mòduls</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="moduls_junit.html">Una mica de bricolatge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moduls_intro.html">Un primer contacte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moduls_funcions.html">Funcions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="moduls_variables.html">Variables i mòduls</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="arrays.html">Arrays</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="arrays_justificacio.html">Necessitem les <em>seqüències</em></a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Seqüències en Java</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arrays_taules.html">Taules</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="moduls_exercicis.html">Llista d’exercicis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="apendix.html">Apèndix</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació amb Java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="moduls.html">Mòduls</a> &raquo;</li>
+        
+          <li><a href="arrays.html">Arrays</a> &raquo;</li>
+        
+      <li>Seqüències en Java</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sequencies-en-java">
+<h1>Seqüències en Java<a class="headerlink" href="#sequencies-en-java" title="Link permanent a aquest títol">¶</a></h1>
+<p>Recordem l’enunciat del problema anterior:</p>
+<blockquote>
+<div><p>Desenvolupa un programa que vagi demanant les notes obtingudes pels
+estudiants de programació en el darrer examen (com a mínim dues) i
+indiqui quina ha estat la nota més alta.</p>
+</div></blockquote>
+<p>El problema anterior presenta la dificultat de requerir guardar, en algun
+lloc, les notes que anem rebent. El problema és que no coneixem encara cap
+tipus de dades que ens permeti guardar una seqüència d’enters.</p>
+<p>Java, com molts altres llenguatges de programació, ens ofereix diferents
+maneres d’emmagatzemar seqüències de dades. La més bàsica és la coneguda
+com <em>array</em>.</p>
+<p>Per Java un <em>array</em> és un contenidor d’un nombre fix d’elements d’un
+mateix tipus disposats en ordre.</p>
+<p>A l’hora de declarar un array, no ens cal saber quants elements tindrà,
+però sí de quin tipus seran.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">notesCurs</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Amb això, el compilador sap que <code class="docutils literal notranslate"><span class="pre">notesCurs</span></code> és una referència a una seqüència
+de valors enters. De moment, però, no s’ha reservat espai per cap element.</p>
+<p>Suposant que un curs té quatre notes (quatre avaluacions), la
+inicialització es realitza de la següent manera:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">notesCurs</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="mi">4</span><span class="o">]</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Ara tenim un array inicialitzat. Això vol dir que hi ha espai reservat per
+enmagatzemar el valor dels quatre enters.  Encara, però, no tenim valors
+a aquests espais. Ens caldrà assignar-los un valor abans de poder fer res
+amb ells.</p>
+<p>Els arrays en java s’indexen amb un valor enter, començant pel 0. Així,
+una manera d’inicialitzar les nostres notes serà:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">notesCurs</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+<span class="n">notesCurs</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+<span class="n">notesCurs</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="n">notesCurs</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Java ens ofereix una manera d’inicialitzar els valors més compacta. En l’exemple:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="o">[]</span> <span class="n">notesCurs</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span> <span class="p">};</span>
+</pre></div>
+</div>
+<p>Fixa’t que en aquest cas, el compilador ja es preocupa de comptar quants enters necessitem.</p>
+<p>Podrem mostrar els valors resultants, per exemple:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;La nota de la primera avaluació és &quot;</span> <span class="o">+</span> <span class="n">notesCurs</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;La nota de la segona avaluació és &quot;</span> <span class="o">+</span> <span class="n">notesCurs</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;La nota de la tercera avaluació és &quot;</span> <span class="o">+</span> <span class="n">notesCurs</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="p">);</span>
+<span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;La nota de la quarta avaluació és &quot;</span> <span class="o">+</span> <span class="n">notesCurs</span><span class="o">[</span><span class="mi">3</span><span class="o">]</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Per suposat, els arrays permeten l’automatització d’aquest tipus de
+tasques repetitives, fent servir bucles. Per exemple:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">notesCurs</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;La nota de l&#39;avaluació &quot;</span> <span class="o">+</span> <span class="n">i</span> <span class="o">+</span> <span class="s">&quot; és &quot;</span> <span class="o">+</span> <span class="n">notesCurs</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Fixa’t que <code class="docutils literal notranslate"><span class="pre">notesCurs.length</span></code> ens retorna la longitud de l’array però, a
+diferència del <code class="docutils literal notranslate"><span class="pre">length()</span></code> dels strings, aquí no porta parèntesis. Sí,
+Java té aquests <em>cops</em> amagats per posar a prova la nostra memòria…</p>
+<p>A continuació tens un petit fil d’exercicis relacionats, per posar en
+pràctica aquests conceptes:</p>
+<p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_02_25_enters_entre_comes_v1.html"><span class="doc"> Exercici 02_25. Enters entre comes (v1)</span></a></p>
+<p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_02_26_enters_entre_comes_v2.html"><span class="doc"> Exercici 02_26. Enters entre comes (v2)</span></a></p>
+<p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_02_27_enters_entre_comes_v3.html"><span class="doc"> Exercici 02_27. Enters entre comes (v3)</span></a></p>
+<p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_02_28_enters_entre_comes_v4.html"><span class="doc"> Exercici 02_28. Enters entre comes (v4)</span></a></p>
+<p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_02_29_arguments.html"><span class="doc"> Exercici 02_29. Arguments del main</span></a></p>
+<p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_02_30_nomes_enters.html"><span class="doc"> Exercici 02_30. Suma només enters</span></a></p>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="arrays_taules.html" class="btn btn-neutral float-right" title="Taules" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="arrays_justificacio.html" class="btn btn-neutral float-left" title="Necessitem les seqüències" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2021 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
