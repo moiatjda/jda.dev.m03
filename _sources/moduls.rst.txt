@@ -50,7 +50,6 @@ tradueix tot això a codi.
 
 .. moduls_topdown.rst
 .. moduls_doc.rst
-.. moduls_arrays.rst
 .. moduls_mutabilitat.rst
 .. moduls_recursivitat.rst
 .. moduls_lambdas.rst

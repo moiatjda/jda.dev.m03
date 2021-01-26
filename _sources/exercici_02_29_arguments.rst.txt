@@ -51,3 +51,5 @@ Considera les següents simulacions;
     [1] "2": és enter
     [2] "tres": no és enter
     [3] "4": és enter
+
+Fes servir les utilitats que et calguin de ``UtilString``.

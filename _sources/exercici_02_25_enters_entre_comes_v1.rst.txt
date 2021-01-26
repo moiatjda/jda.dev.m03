@@ -6,7 +6,7 @@
 
 * Carpeta de lliurament: ``02_25_enters_entre_comes_v1/``
 
-* Continguts relacionats: :doc:`arrays_en_java`, :doc:`moduls_variables`
+* Continguts relacionats: :doc:`arrays_en_java`
 
 * Com lliurar-lo: :ref:`instruccions <instruccions_git>`
 
