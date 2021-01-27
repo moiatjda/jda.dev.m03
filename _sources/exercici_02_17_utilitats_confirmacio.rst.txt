@@ -1,5 +1,5 @@
 ##########################################################
-|exerciseicon___| Exercici 02_17. Utilitats de confirmació
+|exerciseicon__T| Exercici 02_17. Utilitats de confirmació
 ##########################################################
 
 .. rubric:: Context
@@ -10,15 +10,17 @@
 
 * Com lliurar-lo: :ref:`instruccions <instruccions_git>`
 
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
 .. rubric:: Enunciat
 
-Desenvolupa una versió dels programes :doc:`Autodestruccio<funcions_return>`,
-:doc:`AutodestruccioTotal<moduls_reutilitzacio>` i :doc:`Semafor<exercici_01_24_semafor>` (versió amb confirmació de majoria
-d'edat) de manera que facin servir tots tres la funció
+Desenvolupa una versió de l'exercici del :doc:`Semafor<exercici_01_24_semafor>` de 
+manera que abans de donar el consell, se n'asseguri que els usuaris són majors d'edat.
+
+La nova versió fara servir la funció la funció
 ``UtilitatsConfirmacio.respostaABoolean()``.
 
-En el cas del semàfor interactiu, considera les següents
-simulacions:
+Considera les següents simulacions:
 
 .. code-block:: console
     :emphasize-lines: 2, 4, 6
@@ -38,5 +40,7 @@ simulacions:
     Encara no
     No pots fer servir aquest programa sense supervisió
 
-Els altres dos programes es comportaran de la mateixa manera que la
-versió original.
+
+Si vols comprovar la potència de disposar d'aquesta funció, considera
+utilitzar-la també els programes :doc:`Autodestruccio<funcions_return>` i
+:doc:`AutodestruccioTotal<moduls_reutilitzacio>`.

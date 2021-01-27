@@ -71,7 +71,7 @@ des dels programes ``Autodestruccio``, ``AutodestruccioTotal``,
 Per cert, t'has fixat que ``UtilitatsConfirmacio`` no té ``main()``? No li
 cal doncs no serà executada mai directament per ``java``.
 
-|exerciseicon___| :doc:`exercici_02_17_utilitats_confirmacio`
+|exerciseicon__T| :doc:`exercici_02_17_utilitats_confirmacio`
 
 |exerciseicon__T| :doc:`exercici_02_18_es_vocal`
 
