@@ -229,14 +229,15 @@ Per exemple, considera el següent codi:
        }
   }
 
- Aquest codi generarà la sortida:
+Aquest codi generarà la sortida:
 
- .. code-block:: console
+.. code-block:: console
 
      $ java Fills
      Empleat 5 té Daphne, Velma i Fred
      Empleat 12 no en té
      Empleat 21 té Shaggy
+
 
 Quan hi ha més de dues dimensions
 ---------------------------------

@@ -12,7 +12,31 @@
 
 .. rubric:: Enunciat
 
-Desenvolupa una versió dels programes ``Autodestruccio``,
-``AutodestruccioTotal`` i ``Semafor`` (versió amb confirmació de majoria
+Desenvolupa una versió dels programes :doc:`Autodestruccio<funcions_return>`,
+:doc:`AutodestruccioTotal<moduls_reutilitzacio>` i :doc:`Semafor<exercici_01_24_semafor>` (versió amb confirmació de majoria
 d'edat) de manera que facin servir tots tres la funció
 ``UtilitatsConfirmacio.respostaABoolean()``.
+
+En el cas del semàfor interactiu, considera les següents
+simulacions:
+
+.. code-block:: console
+    :emphasize-lines: 2, 4, 6
+
+    $ java Semafor
+    Ets major d'edat?
+    Sí
+    Color?
+    groc
+    corre!
+
+.. code-block:: console
+    :emphasize-lines: 2, 4
+
+    $ java Semafor
+    Ets major d'edat?
+    Encara no
+    No pots fer servir aquest programa sense supervisió
+
+Els altres dos programes es comportaran de la mateixa manera que la
+versió original.

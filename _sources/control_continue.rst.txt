@@ -45,8 +45,8 @@ Si bé aquest codi és perfectament vàlid, considera la següent versió:
 
         // filtrem els casos que no ens interessen
         if (text.isEmpty()) break;
-        if (text.startsWith("hola") continue;
-        if (text.startsWith("adéu") continue;
+        if (text.startsWith("hola")) continue;
+        if (text.startsWith("adéu")) continue;
 
         // processem l'entrada quan ja sabem que ens interessa
         System.out.println(text);

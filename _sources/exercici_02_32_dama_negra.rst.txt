@@ -19,10 +19,10 @@ dama negra.
 
 Desenvolupa una funció anomenada ``teDamaNegra()`` que rebi un taulell
 d'escacs representat per un array de 8x8 chars segons la codificació de 
-l'exercici :doc:`anterior <exercici_02_31_escacs>` i retorni un boolean
+l'exercici :doc:`anterior <exercici_02_31_escacs>` i retorni un booleà
 indicant si en el taulell s'hi troba al menys una dama negra.
 
 Col·loca la funció dins de la classe ``Escacs``.
 
-La funció pot suposr que la taula rebuda té 8x8 posicions amb els
+La funció pot suposar que la taula rebuda té 8x8 posicions amb els
 caràcters adequats.
