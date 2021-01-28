@@ -1,0 +1,56 @@
+##################################################################
+|exerciseicon___| Exercici 02_36. Enrocament (versió simplificada)
+##################################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``02_36_enroca/``
+
+* Continguts relacionats: :doc:`arrays_mutabilitat`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+.. rubric:: Enunciat
+
+En aquest exercici et proposo que desenvolupis una funció que permeti enrocar el rei.
+
+Si els escacs no és el teu, l'enrocament consisteix en un moviment simultani de dues figures, el rei i una de les torres del seu color, quan es compleixen totes les següents condicions:
+
+* el rei i la torre es troben en les seves posicions de partida, com es
+  mostra a la imatge següent
+
+  .. image:: _images/escacsenrocpartida.png
+      :width: 256
+      :align: center
+
+* cap de les caselles entre l'una i l'altra està ocupada
+
+* cap de les dues figures han estat mogudes encara
+
+* cap de les caselles entre l'una i l'altra estan afectades per un atac. Una casella està afectada per un atac quan una figura del color contrari s'hi podria moure.
+
+Finalment, hi ha dues opcions per enrocar, l'enroc curt i l'enroc llarg.
+Aquestes possibilitats es repeteixen per les blanques i per les negres.
+
+L'enroc curt té el següent aspecte final:
+
+  .. image:: _images/escacsenrocdret.png
+      :width: 256
+      :align: center
+
+L'enroc llarg deixa aquesta altra posició final:
+
+  .. image:: _images/escacsenrocesquerra.png
+      :width: 256
+      :align: center
+
+
+Per reduir la complexitat d'aquest exercici, et proposo que només et
+preocupis de la segona condició. Així, la funció podrà enrocar si es
+compleix que les caselles entre el rei i la torre estan lliures i les dues
+peces implicades es troben en la seva posició original.
+
+Concretant, desenvolupa les funcions ``enroc()`` que espera com a
+paràmetres el taulell i la posició de la torre implicada a l'enroc. Per
+exemple, si volem fer l'enroc llarg de les blanques que apareix a les
+imatges d'exemple, cridarem la funció amb la fila 7 i la columna 0.

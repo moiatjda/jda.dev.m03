@@ -1,0 +1,45 @@
+############################################
+|exerciseicon__T| Exercici 02_35. Mou figura
+############################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``02_35_mou_figura/``
+
+* Continguts relacionats: :doc:`arrays_mutabilitat`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Una funció interessant per poder tenir un joc complet d'escacs seria poder moure una figura.
+
+Si bé, desenvolupar el moviment d'una peça en el taulell d'escacs requereix
+considerar molts casos diferents, en aquesta ocasió ens conformarem amb
+assegurar-nos que la peça existeix a la posició d'origen i que la de destinació
+està lliure.
+
+Així la nova funció ``mouFigura()`` rebrà el taulell, les coordenades d'origen
+i les de destinació. En cas de poder fer el moviment, modificarà el taulell i
+retornarà cert. Altrament no modificarà el taulell i retornarà fals.
+
+Construeix la teva solució a partir d'una còpia de l'exercici :doc:`anterior
+<exercici_02_34_posiciona_figura>`.
+
+Ampliacions
+===========
+
+Per descomptat, si et resulta còmode, pots fer servir els mòduls que ja has
+desenvolupat per a portar a terme la tasca actual. També pots modificar el
+``main()`` si vols fer proves que reflecteixin el moviment d'una peça.
+
+També és possible que detectis codi duplicat (ex. comprovar si unes coordenades
+són vàlides) i que consideris interessant crear-te nous mòduls que resolguin
+aquestes parts del codi.
+
+Malgrat l'exercici no requereix que tinguis en comptes si el moviment demanat
+és o no *legal* segons les regles dels escacs, els jocs de prova d'aquest
+exercici només comprovaran moviments vàlids. Això permetrà que la teva funció
+sigui més realista si és el teu gust ampliar el problema per fer-ho més real.

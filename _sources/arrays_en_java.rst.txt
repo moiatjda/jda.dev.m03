@@ -55,6 +55,13 @@ Java ens ofereix una manera d'inicialitzar els valors més compacta. En l'exempl
 
 .. code-block:: java
 
+    int[] notesCurs = new int[] { 8, 9, 10, 10 };
+
+Quan com en aquest cas fem l'assignació directament a la inicialització,
+ens permet, fins i tot, fer-ho així:
+
+.. code-block:: java
+
     int[] notesCurs = { 8, 9, 10, 10 };
 
 Fixa't que en aquest cas, el compilador ja es preocupa de comptar quants enters necessitem.

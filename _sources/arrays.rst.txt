@@ -39,5 +39,4 @@ Doncs ja tenim una nova eina a conèixer.
     arrays_justificacio.rst
     arrays_en_java.rst
     arrays_taules.rst
-
-..  arrays_mutabilitat.rst
+    arrays_mutabilitat.rst

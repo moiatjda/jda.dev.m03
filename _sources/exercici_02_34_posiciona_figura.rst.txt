@@ -1,0 +1,31 @@
+##################################################
+|exerciseicon__T| Exercici 02_34. Posiciona figura
+##################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``02_34_posiciona_figura/``
+
+* Continguts relacionats: :doc:`arrays_mutabilitat`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Continuant amb el tema dels escacs. En aquesta ocasió desenvoluparem una nova
+funció anomenada ``posicionaFigura()`` que rebrà el taulell d'escacs, les
+coordenades d'una posició al taulell i una figura. La funció col·locarà la
+figura a la posició indicada si aquesta està dins dels límits i no està ocupada
+per una altra figura.
+
+Podem suposar que el taulell rebut tindrà les dimensions 8x8 i que les figures
+són vàlides.
+
+Finalment, la funció retornarà ``true`` si ha posicionat la figura amb èxit.
+
+En aquesta nova versió, el codi original de l'exercici :doc:`anterior
+<exercici_02_33_compta_peons>` farà servir la nova funció en comptes de
+col·locar les figures directament. En executar-ho, la sortida serà la mateixa
+que abans. 
