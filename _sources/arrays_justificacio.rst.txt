@@ -122,8 +122,6 @@ indicant *només* les notes introduïdes que no corresponen a la més alta,
 segons la simulació següent:
 
 .. code-block:: none
-
-.. code-block:: none
     :emphasize-lines: 2, 12
 
     $ java NotaMesAlta
