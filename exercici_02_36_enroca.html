@@ -190,13 +190,14 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="exerciseicon-exercici-02-36-enrocament-versio-simplificada">
-<h1><img alt="exerciseicon___" src="_images/exerciseicon___.png" /> Exercici 02_36. Enrocament (versió simplificada)<a class="headerlink" href="#exerciseicon-exercici-02-36-enrocament-versio-simplificada" title="Link permanent a aquest títol">¶</a></h1>
+  <div class="section" id="exerciseicon-s-exercici-02-36-enrocament-versio-simplificada">
+<h1><img alt="exerciseicon_S_" src="_images/exerciseicon_S_.png" /> Exercici 02_36. Enrocament (versió simplificada)<a class="headerlink" href="#exerciseicon-s-exercici-02-36-enrocament-versio-simplificada" title="Link permanent a aquest títol">¶</a></h1>
 <p class="rubric">Context</p>
 <ul class="simple">
 <li><p>Carpeta de lliurament: <code class="docutils literal notranslate"><span class="pre">02_36_enroca/</span></code></p></li>
 <li><p>Continguts relacionats: <a class="reference internal" href="arrays_mutabilitat.html"><span class="doc">Mutabilitat</span></a></p></li>
 <li><p>Com lliurar-lo: <a class="reference internal" href="holagit.html#instruccions-git"><span class="std std-ref">instruccions</span></a></p></li>
+<li><p>[☆] Exercici amb <a class="reference internal" href="sobre_exercicis.html#descripcio-exercicis-dificils"><span class="std std-ref">dificultat addicional</span></a></p></li>
 </ul>
 <p class="rubric">Enunciat</p>
 <p>En aquest exercici et proposo que desenvolupis una funció que permeti enrocar el rei.</p>
@@ -212,16 +213,16 @@ mostra a la imatge següent</p>
 </ul>
 <p>Finalment, hi ha dues opcions per enrocar, l’enroc curt i l’enroc llarg.
 Aquestes possibilitats es repeteixen per les blanques i per les negres.</p>
-<p>L’enroc curt té el següent aspecte final:</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="_images/escacsenrocdret.png"><img alt="_images/escacsenrocdret.png" class="align-center" src="_images/escacsenrocdret.png" style="width: 256px;" /></a>
-</div></blockquote>
-<p>L’enroc llarg deixa aquesta altra posició final:</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="_images/escacsenrocesquerra.png"><img alt="_images/escacsenrocesquerra.png" class="align-center" src="_images/escacsenrocesquerra.png" style="width: 256px;" /></a>
-</div></blockquote>
+<p>Per l’enroc curt, considera el següent inici:</p>
+<a class="reference internal image-reference" href="_images/escacsenrocshort.png"><img alt="_images/escacsenrocshort.png" class="align-center" src="_images/escacsenrocshort.png" style="width: 256px;" /></a>
+<p>La posició final de l’enroc curt per les blanques resulta:</p>
+<a class="reference internal image-reference" href="_images/escacsenrocdret.png"><img alt="_images/escacsenrocdret.png" class="align-center" src="_images/escacsenrocdret.png" style="width: 256px;" /></a>
+<p>De similar manera, l’enroc llarg considera el següent inici:</p>
+<a class="reference internal image-reference" href="_images/escacsenroclong.png"><img alt="_images/escacsenroclong.png" class="align-center" src="_images/escacsenroclong.png" style="width: 256px;" /></a>
+<p>La posició final de l’enroc de les blanques resulta:</p>
+<a class="reference internal image-reference" href="_images/escacsenrocesquerra.png"><img alt="_images/escacsenrocesquerra.png" class="align-center" src="_images/escacsenrocesquerra.png" style="width: 256px;" /></a>
 <p>Per reduir la complexitat d’aquest exercici, et proposo que només et
-preocupis de la segona condició. Així, la funció podrà enrocar si es
+preocupis del següent: la funció podrà enrocar si es
 compleix que les caselles entre el rei i la torre estan lliures i les dues
 peces implicades es troben en la seva posició original.</p>
 <p>Concretant, desenvolupa les funcions <code class="docutils literal notranslate"><span class="pre">enroc()</span></code> que espera com a

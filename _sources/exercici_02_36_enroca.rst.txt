@@ -1,5 +1,5 @@
 ##################################################################
-|exerciseicon___| Exercici 02_36. Enrocament (versió simplificada)
+|exerciseicon_S_| Exercici 02_36. Enrocament (versió simplificada)
 ##################################################################
 
 .. rubric:: Context
@@ -9,6 +9,8 @@
 * Continguts relacionats: :doc:`arrays_mutabilitat`
 
 * Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [☆] Exercici amb :ref:`dificultat addicional<descripcio_exercicis_dificils>`
 
 .. rubric:: Enunciat
 
@@ -32,21 +34,34 @@ Si els escacs no és el teu, l'enrocament consisteix en un moviment simultani de
 Finalment, hi ha dues opcions per enrocar, l'enroc curt i l'enroc llarg.
 Aquestes possibilitats es repeteixen per les blanques i per les negres.
 
-L'enroc curt té el següent aspecte final:
+Per l'enroc curt, considera el següent inici:
 
-  .. image:: _images/escacsenrocdret.png
-      :width: 256
-      :align: center
+.. image:: _images/escacsenrocshort.png
+  :width: 256
+  :align: center
 
-L'enroc llarg deixa aquesta altra posició final:
+La posició final de l'enroc curt per les blanques resulta:
 
-  .. image:: _images/escacsenrocesquerra.png
-      :width: 256
-      :align: center
+.. image:: _images/escacsenrocdret.png
+  :width: 256
+  :align: center
+
+De similar manera, l'enroc llarg considera el següent inici:
+
+.. image:: _images/escacsenroclong.png
+  :width: 256
+  :align: center
+
+
+La posició final de l'enroc de les blanques resulta:
+
+.. image:: _images/escacsenrocesquerra.png
+  :width: 256
+  :align: center
 
 
 Per reduir la complexitat d'aquest exercici, et proposo que només et
-preocupis de la segona condició. Així, la funció podrà enrocar si es
+preocupis del següent: la funció podrà enrocar si es
 compleix que les caselles entre el rei i la torre estan lliures i les dues
 peces implicades es troben en la seva posició original.
 

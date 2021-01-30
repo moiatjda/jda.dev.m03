@@ -477,7 +477,7 @@ un tipus primitiu!)
 |                                 +---------------------------------+                                                                               |
 |                                 | majusculitza.posicio = 0        |                                                                               |
 |                                 +---------------------------------+                                                                               |
-|                                 | majusculitza.original = \'m'\   |                                                                               |
+|                                 | majusculitza.original = \'m\'   |                                                                               |
 +---------------------------------+---------------------------------+-------------------------------------------------------------------------------+
 
 Un cop completada la primera línia del cos de la funció
@@ -493,7 +493,7 @@ obtenir el valor a assignar.
 +---------------------------------+---------------------------------+-------------------------------------------------------------------------------+
 |   instrucció                    | noms                            |  Memòria                                                                      |
 +=================================+=========+=======================+================+==============================================================+
-|  Character.toUpperCase(\'m'\)   | nom → @100                      | [@100] \"macarena\"                                                           |
+|  Character.toUpperCase(\'m\')   | nom → @100                      | [@100] \"macarena\"                                                           |
 |                                 +---------------------------------+-------------------------------------------------------------------------------+
 |                                 | nomEnCaracters → @200           | [@200] {\'m\', \'a\', \'c\', \'a\', \'r\', \'e\', \'n\', \'a\'}               |
 |                                 +---------------------------------+-------------------------------------------------------------------------------+
@@ -501,7 +501,7 @@ obtenir el valor a assignar.
 |                                 +---------------------------------+                                                                               |
 |                                 | majusculitza.posicio = 0        |                                                                               |
 |                                 +---------------------------------+                                                                               |
-|                                 | majusculitza.original = \'m'\   |                                                                               |
+|                                 | majusculitza.original = \'m\'   |                                                                               |
 +---------------------------------+---------------------------------+-------------------------------------------------------------------------------+
 
 Un cop obtingut el valor, es produeix l'assignació. Donat que ``lletres``
@@ -519,7 +519,7 @@ situat a l'adreça *@200*
 |                                 +---------------------------------+                                                                               |
 |                                 | majusculitza.posicio = 0        |                                                                               |
 |                                 +---------------------------------+                                                                               |
-|                                 | majusculitza.original = \'m'\   |                                                                               |
+|                                 | majusculitza.original = \'m\'   |                                                                               |
 |                                 |                                 |                                                                               |
 |                                 |                                 |                                                                               |
 |                                 |                                 |                                                                               |
@@ -550,7 +550,7 @@ En primer lloc, avaluarà l'expressió, que resultarà en *true*
 |                                 +---------------------------------+-------------------------------------------------------------------------------+
 |                                 | majusculitza.posicio = 0        | [@400] true                                                                   |
 |                                 +---------------------------------+                                                                               |
-|                                 | majusculitza.original = \'m'\   |                                                                               |
+|                                 | majusculitza.original = \'m\'   |                                                                               |
 +---------------------------------+---------------------------------+-------------------------------------------------------------------------------+
 
 Finalment realitzarà el ``return`` que podem entendre com la resolució de la
@@ -599,7 +599,7 @@ Practiquem el que acabem de veure amb aquests exercicis.
 
 |exerciseicon__T| :doc:`exercici_02_35_mou_figura`
 
-|exerciseicon___| :doc:`exercici_02_36_enroca`
+|exerciseicon_S_| :doc:`exercici_02_36_enroca`
 
 -----
 
