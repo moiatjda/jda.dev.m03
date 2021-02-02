@@ -324,6 +324,6 @@ provar un llenguatge funcional com ara Haskell, Scala o Elixir.
 -----
 
 .. [#Marlonbrando] El nom *Marlonbrando* ve de la cançó `homònima
-    <https://www.youtube.com/watch?v=-1uJv203lfo>` del grup Hamburguessa
+    <https://www.youtube.com/watch?v=-1uJv203lfo>`_ del grup Hamburguessa
     Vegetal. 
         
