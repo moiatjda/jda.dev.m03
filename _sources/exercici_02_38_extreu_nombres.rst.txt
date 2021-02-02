@@ -1,0 +1,50 @@
+###########################################################
+|exerciseicon__T| Exercici 02_38. Extreu nombres (recursiu)
+###########################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``02_38_extreu_nombres/``
+
+* Continguts relacionats: :doc:`moduls_recursivitat`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+
+Desenvolupa un programa que demani un text i mostri només els valors
+numèrics que conté.
+
+Per fer aquest programa, completa la següent plantilla on no pots afegir
+cap iterador ``for``/``while``
+
+.. code-block:: java
+    :linenos:
+
+    /* XXX */
+    public class ExtreuNombres {
+        public static void main(String[] args){
+            System.out.println("Text?");
+            String text = Entrada.readLine();
+            String nombres = extreuNombres(text);
+            System.out.println(nombres);
+        }
+
+        // extreu els nombres i els retorna concatenats
+        public static String extreuNombres(String text) {
+            // cas base
+            // XXX
+
+            // tracta pas actual
+            // XXX
+
+            // tracta pas recursiu
+            // XXX
+
+            // composa resultat
+            // XXX
+        }
+    }

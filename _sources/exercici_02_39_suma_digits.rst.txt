@@ -1,0 +1,50 @@
+########################################################
+|exerciseicon__T| Exercici 02_39. Suma dígits (recursiu)
+########################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``02_39_suma_digits/``
+
+* Continguts relacionats: :doc:`moduls_recursivitat`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+
+Desenvolupa un programa que demani un text i mostri la suma dels dígits
+e conté.
+
+Per fer aquest programa, completa la següent plantilla on no pots afegir
+cap iterador ``for``/``while``
+
+.. code-block:: java
+    :linenos:
+
+    /* XXX */
+    public class ExtreuNombres {
+        public static void main(String[] args){
+            System.out.println("Text?");
+            String text = Entrada.readLine();
+            int nombres = sumaDigits(text);
+            System.out.println(nombres);
+        }
+
+        // XXX
+        public static int sumaDigits(String text) {
+            // cas base
+            // XXX
+
+            // tracta pas actual
+            // XXX
+
+            // tracta pas recursiu
+            // XXX
+
+            // composa resultat
+            // XXX
+        }
+    }

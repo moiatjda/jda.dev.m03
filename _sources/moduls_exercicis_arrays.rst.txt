@@ -2,7 +2,7 @@
 Llista d'exercicis d'arrays
 ###########################
 
-Els exercicis del teme :doc:`arrays` són:
+Els exercicis del tema :doc:`arrays` són:
 
 .. toctree::
     :titlesonly:

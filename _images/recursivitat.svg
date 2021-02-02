@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="197.51036mm"
+   height="99.856407mm"
+   viewBox="0 0 197.51036 99.856407"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)"
+   sodipodi:docname="recursivitat.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="414.93526"
+     inkscape:cy="149.23209"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1163"
+     inkscape:window-x="2560"
+     inkscape:window-y="143"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4663"
+       originx="-4.2225532"
+       originy="-180.59001" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-4.2225532,-16.553589)">
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.29917061;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect10"
+       width="196.2112"
+       height="98.557236"
+       x="4.8721385"
+       y="17.203175"
+       ry="12.742235" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:13.38431644px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.3346079"
+       x="44.681465"
+       y="29.63409"
+       id="text4532"><tspan
+         sodipodi:role="line"
+         id="tspan4530"
+         x="44.681465"
+         y="29.63409"
+         style="stroke-width:0.3346079">problema recursiu</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.01506352;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4534"
+       width="52.431171"
+       height="20.297396"
+       x="9.166502"
+       y="39.144119"
+       ry="10.148698" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.08709335px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.25217733"
+       x="12.982915"
+       y="53.530399"
+       id="text4538"
+       transform="scale(1.0291213,0.97170277)"><tspan
+         sodipodi:role="line"
+         id="tspan4536"
+         x="12.982915"
+         y="53.530399"
+         style="stroke-width:0.25217733">cas base</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.24750578;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4540"
+       width="133.6824"
+       height="76.030762"
+       x="64.755089"
+       y="37.083828"
+       ry="10.220541" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:13.38431644px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.3346079"
+       x="96.734238"
+       y="50.252396"
+       id="text4544"><tspan
+         sodipodi:role="line"
+         id="tspan4542"
+         x="96.734238"
+         y="50.252396"
+         style="stroke-width:0.3346079">cas recursiu</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:1.0162183;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4534-7"
+       width="33.957504"
+       height="22.041327"
+       x="66.145836"
+       y="60.646175"
+       ry="11.020663" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.71475792px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.19286896"
+       x="91.884605"
+       y="54.785816"
+       id="text4538-7"
+       transform="scale(0.73998486,1.351379)"><tspan
+         sodipodi:role="line"
+         id="tspan4536-6"
+         x="91.884605"
+         y="54.785816"
+         style="stroke-width:0.19286896">pas actual</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.6436438;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect10-4"
+       width="94.918053"
+       height="50.006016"
+       x="101.37878"
+       y="60.462734"
+       ry="6.4651618" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.47353363px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16183832"
+       x="120.63727"
+       y="66.479233"
+       id="text4532-6"><tspan
+         sodipodi:role="line"
+         id="tspan4530-9"
+         x="120.63727"
+         y="66.479233"
+         style="stroke-width:0.16183832">problema recursiu</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.49095127;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4534-2"
+       width="25.359152"
+       height="9.817152"
+       x="103.4599"
+       y="71.078903"
+       ry="4.908576" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:4.87877989px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.12196949"
+       x="102.5036"
+       y="79.555626"
+       id="text4538-2"
+       transform="scale(1.0291213,0.97170276)"><tspan
+         sodipodi:role="line"
+         id="tspan4536-4"
+         x="102.5036"
+         y="79.555626"
+         style="stroke-width:0.12196949">cas base</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.61572623;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4540-7"
+       width="63.373848"
+       height="39.070011"
+       x="130.3396"
+       y="70.075821"
+       ry="5.2520409" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.47353363px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16183832"
+       x="145.81342"
+       y="76.451599"
+       id="text4544-7"><tspan
+         sodipodi:role="line"
+         id="tspan4542-5"
+         x="145.81342"
+         y="76.451599"
+         style="stroke-width:0.16183832">cas recursiu</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.49150982;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4534-7-4"
+       width="16.424076"
+       height="10.660631"
+       x="131.63574"
+       y="81.389984"
+       ry="5.3303156" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.73136282px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.09328408"
+       x="179.09723"
+       y="65.019798"
+       id="text4538-7-8"
+       transform="scale(0.73998486,1.351379)"><tspan
+         sodipodi:role="line"
+         id="tspan4536-6-1"
+         x="179.09723"
+         y="65.019798"
+         style="stroke-width:0.09328408">pas actual</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.30590427;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect10-4-2"
+       width="40.548313"
+       height="26.441015"
+       x="151.05528"
+       y="81.226692"
+       ry="3.4184976" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.76544785px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.06913619"
+       x="159.28236"
+       y="83.796898"
+       id="text4532-6-8"><tspan
+         sodipodi:role="line"
+         id="tspan4530-9-9"
+         x="159.28236"
+         y="83.796898"
+         style="stroke-width:0.06913619">problema recursiu</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.20973089;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4534-2-3"
+       width="10.833249"
+       height="4.1938176"
+       x="151.94432"
+       y="85.761833"
+       ry="2.0969088" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.08418012px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0521045"
+       x="148.48686"
+       y="90.996277"
+       id="text4538-2-6"
+       transform="scale(1.0291213,0.97170275)"><tspan
+         sodipodi:role="line"
+         id="tspan4536-4-8"
+         x="148.48686"
+         y="90.996277"
+         style="stroke-width:0.0521045">cas base</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.29714876;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4540-7-0"
+       width="27.072853"
+       height="21.300619"
+       x="163.42714"
+       y="85.333336"
+       ry="2.8633649" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.76544785px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.06913619"
+       x="170.03745"
+       y="88.057014"
+       id="text4544-7-2"><tspan
+         sodipodi:role="line"
+         id="tspan4542-5-1"
+         x="170.03745"
+         y="88.057014"
+         style="stroke-width:0.06913619">cas recursiu</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.20996948;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4534-7-4-0"
+       width="7.0162482"
+       height="4.5541453"
+       x="163.98085"
+       y="90.166664"
+       ry="2.2770727" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:1.59401166px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.03985029"
+       x="222.11607"
+       y="68.769249"
+       id="text4538-7-8-5"
+       transform="scale(0.73998486,1.351379)"><tspan
+         sodipodi:role="line"
+         id="tspan4536-6-1-1"
+         x="222.11607"
+         y="68.769249"
+         style="stroke-width:0.03985029">pas actual</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.13945718;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect10-1"
+       width="17.330065"
+       height="12.857648"
+       x="171.98175"
+       y="90.16301"
+       ry="1.6623353" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:1.35708117px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.03392703"
+       x="201.4675"
+       y="79.801193"
+       id="text4532-0"
+       transform="scale(0.8710976,1.147977)"><tspan
+         sodipodi:role="line"
+         id="tspan4530-8"
+         x="201.4675"
+         y="79.801193"
+         style="stroke-width:0.03392703">problema recursiu</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.10292072;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4534-5"
+       width="4.6309056"
+       height="2.3625612"
+       x="172.36104"
+       y="92.716888"
+       ry="1.1812806" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:1.02276444px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.02556911"
+       x="192.68071"
+       y="84.460518"
+       id="text4538-0"
+       transform="scale(0.89646509,1.1154924)"><tspan
+         sodipodi:role="line"
+         id="tspan4536-64"
+         x="192.68071"
+         y="84.460518"
+         style="stroke-width:0.02556911">cas base</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.1360327;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4540-6"
+       width="11.807302"
+       height="10.235627"
+       x="177.27083"
+       y="92.477081"
+       ry="1.3759383" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:1.35708117px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.03392703"
+       x="206.74532"
+       y="81.891754"
+       id="text4544-2"
+       transform="scale(0.8710976,1.147977)"><tspan
+         sodipodi:role="line"
+         id="tspan4542-58"
+         x="206.74532"
+         y="81.891754"
+         style="stroke-width:0.03392703">cas recursiu</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.10303781;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4534-7-6"
+       width="2.9992464"
+       height="2.5655501"
+       x="177.39365"
+       y="95.219666"
+       ry="1.282775" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:0.78222543px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.01955564"
+       x="275.45316"
+       y="62.383171"
+       id="text4538-7-2"
+       transform="scale(0.64459903,1.551352)"><tspan
+         sodipodi:role="line"
+         id="tspan4536-6-8"
+         x="275.45316"
+         y="62.383171"
+         style="stroke-width:0.01955564">pas actual</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.07260577;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect10-4-4"
+       width="8.3834972"
+       height="7.2043853"
+       x="180.50555"
+       y="95.198303"
+       ry="0.93143815" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:0.65637344px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.01640933"
+       x="209.16891"
+       y="83.537048"
+       id="text4532-6-7"
+       transform="scale(0.8710976,1.147977)"><tspan
+         sodipodi:role="line"
+         id="tspan4530-9-2"
+         x="209.16891"
+         y="83.537048"
+         style="stroke-width:0.01640933">problema recursiu</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.0497792;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4534-2-4"
+       width="2.2398098"
+       height="1.1426897"
+       x="180.68936"
+       y="96.434006"
+       ry="0.57134485" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:0.49467596px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.0123669"
+       x="201.75749"
+       y="87.099312"
+       id="text4538-2-0"
+       transform="scale(0.89646509,1.1154924)"><tspan
+         sodipodi:role="line"
+         id="tspan4536-4-6"
+         x="201.75749"
+         y="87.099312"
+         style="stroke-width:0.0123669">cas base</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.07052767;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4540-7-2"
+       width="5.5974021"
+       height="5.8037801"
+       x="183.06348"
+       y="96.317245"
+       ry="0.78018117" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:0.65637344px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.01640933"
+       x="211.7216"
+       y="84.548187"
+       id="text4544-7-9"
+       transform="scale(0.8710976,1.147977)"><tspan
+         sodipodi:role="line"
+         id="tspan4542-5-9"
+         x="211.7216"
+         y="84.548187"
+         style="stroke-width:0.01640933">cas recursiu</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.04983584;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4534-7-4-08"
+       width="1.4506322"
+       height="1.2408683"
+       x="183.17796"
+       y="97.634186"
+       ry="0.62043417" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:0.37833548px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.00945839"
+       x="284.29593"
+       y="63.420818"
+       id="text4538-7-8-1"
+       transform="scale(0.64459903,1.551352)"><tspan
+         sodipodi:role="line"
+         id="tspan4536-6-1-3"
+         x="284.29593"
+         y="63.420818"
+         style="stroke-width:0.00945839">pas actual</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.03101667;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect10-4-2-1"
+       width="3.5813701"
+       height="3.077662"
+       x="184.89316"
+       y="97.615189"
+       ry="0.39790377" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:0.2803981px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.00700996"
+       x="213.08728"
+       y="85.292938"
+       id="text4532-6-8-1"
+       transform="scale(0.8710976,1.147977)"><tspan
+         sodipodi:role="line"
+         id="tspan4530-9-9-0"
+         x="213.08728"
+         y="85.292938"
+         style="stroke-width:0.00700996">problema recursiu</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.02126533;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4534-2-3-3"
+       width="0.95683074"
+       height="0.48814887"
+       x="184.97169"
+       y="98.143051"
+       ry="0.24407443" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:0.21132205px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.00528305"
+       x="206.41991"
+       y="88.259331"
+       id="text4538-2-6-4"
+       transform="scale(0.89646509,1.1154924)"><tspan
+         sodipodi:role="line"
+         id="tspan4536-4-8-0"
+         x="206.41991"
+         y="88.259331"
+         style="stroke-width:0.00528305">cas base</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.03012891;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4540-7-0-3"
+       width="2.39117"
+       height="2.4793339"
+       x="185.9859"
+       y="98.093185"
+       ry="0.33328781" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:0.2803981px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.00700996"
+       x="214.17776"
+       y="85.724884"
+       id="text4544-7-2-9"
+       transform="scale(0.8710976,1.147977)"><tspan
+         sodipodi:role="line"
+         id="tspan4542-5-1-1"
+         x="214.17776"
+         y="85.724884"
+         style="stroke-width:0.00700996">cas recursiu</tspan></text>
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.02128951;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4534-7-4-0-9"
+       width="0.61969984"
+       height="0.53009003"
+       x="186.03479"
+       y="98.655777"
+       ry="0.26504502" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:0.16162223px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.00404055"
+       x="288.65775"
+       y="63.800999"
+       id="text4538-7-8-5-6"
+       transform="scale(0.64459903,1.551352)"><tspan
+         sodipodi:role="line"
+         id="tspan4536-6-1-1-9"
+         x="288.65775"
+         y="63.800999"
+         style="stroke-width:0.00404055">pas actual</tspan></text>
+  </g>
+</svg>

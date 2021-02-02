@@ -1,0 +1,121 @@
+###########
+Conclusions
+###########
+
+Un camí interessant el que hem tingut en aquesta secció.
+
+Semblava que ja ho sabíem tot de la programació amb tot el que havíem
+treballat avanç però ha resultat que encara ens quedaven algunes
+sorpreses.
+
+El concepte més important que hem treballat és el de *mòdul*. Hem vist que
+els mòduls són bàsicament *troços* de codi als que els donem un nom i que,
+en invocar aquest nom, fem que s'executin com si fossin una instrucció més
+de les que ofereix el llenguatge.
+
+Els mòduls són una peça clau en l'estructuració dels programes. Entre
+altres coses permeten realitzar l'anàlisi descendent o *top down* que
+consisteix en trencar el problema a resoldre en elements més petits i
+aquests, a la seva vegada, en més petits, i així *recursivament* fins que
+els subproblemes siguin d'una mida resoluble per un simple bloc de codi.
+
+Em vist que els mòduls venen en diferents *sabors*. En concret n'hem
+parlat de *procediments* i *funcions*.
+
+Els procediments corresponen a accions que realitzen algun canvi en el
+sistema (ex. escriuen un missatge per pantalla)
+
+La signatura general d'un procediment tal i com els hem vist és:
+
+.. code-block:: java
+
+    public static void nomEnFormaDaccio(Tipus parametres)
+
+D'aquí, ``public`` i ``static`` els posem de moment a cegues, mentre que
+``void`` és important donat que és la marca visual de que el mòdul és un
+procediment.
+
+Les funcions es diferencien dels mòduls en un aspecte concret: retornen un
+valor. Aquest valor de retorn cal especificar-lo en el tipus de retorn que
+substituirà el ``void`` dels procediments.
+
+Les funcions es poden distingir entre *pures* i *impures*
+
+En diem funcions pures quan no tenen efectes
+col·laterals (no modifiquen de cap manera el sistema) i sempre retornen el
+mateix valor en rebre els mateixos paràmetres.
+
+La signatura general d'una funció pura és:
+
+.. code-block:: java
+
+    public static Tipus nomEnFormaDeDada(Tipus parametres)
+
+La diferència principal amb la signatura dels procediments és que, en comptes de
+``void`` ara tenim un tipus de dades de retorn (ex. ``int``, ``boolean`` o
+``String[]``.
+
+Una altra diferència és que el nom habitualment s'expressa en "forma de
+valor", de manera que quedi bé llegir-lo quan es troba a una expressió.
+Per exemple, direm ``longitud()``, ``nombreDeVocals()``, ``esEnter()``, …
+
+A banda, al cos de les funcions sempre ha d'haver-hi un o més ``return``
+que retornin un valor del tipus de la funció.
+
+Les funcions pures sempre es fan servir en expressions doncs la gràcia
+d'executar-les és obtenir el valor resultant. Altrament no
+serviria de res cridar-les!
+
+Les funcions impures serien una barreja entre funcions pures i
+procediments.
+
+Com les funcions pures, retornen un valor d'un determinat tipus (no val
+``void``) que ha de ser especificat a la seva signatura.
+
+Com els procediments, poden modificar el sistema (tenir efectes
+col·laterals) sigui llegint de l'entrada estàndard, escrivint a la
+sortida, o modificant el valor d'alguna variable.
+
+Donat que tenen aquesta vesant de modificar el sistema, sovint reben noms
+d'acció com els procediments i de vegades pot tenir sentit cridar-les
+sense recollir el valor de retorn.
+
+Per comunicar-nos amb els mòduls disposem de diferents possibilitats:
+
+* paràmetres/arguments: en cridar el mòdul li passem uns arguments que el
+  codi del mòdul fa referència a partir dels paràmetres corresponents.
+
+* valor de retorn: en cridar una funció, rebem un resultat
+
+* variables globals: quan el codi que crida el mòdul i el mòdul poden
+  accedir a una variable global a ambdós
+
+* variable mutables: en Java, quan fem una crida a un mòdul sempre li passem
+  valors, no variables. En el cas dels tipus primitius no hi ha cap dubte.
+  En els no primitius com els Strings, el valor no és el text sinó una
+  referència a on està emmagatzemat el text. És a dir que tant el codi que
+  fa la crida com el del mòdul cridat poden consultar la *mateixa* posició
+  de memòria.
+
+  En el cas dels Strings, Java no ens permet modificar el valor apuntat
+  per aquesta posició de memòria. Per aquesta raó, encara que el mòdul hi
+  accedeixi, no el pot modificar.
+
+  En el cas dels *arrays* però, Java sí ens permet modificar els valors
+  concrets d'aquests. De manera que allò que modifiqui el mòdul serà
+  visible allà on es crida.
+
+Aquest últim punt ens ha servit d'excusa per introduir els arrays,
+seqüències de valors d'un determinat tipus de dades, incloent també
+arrays. Hem vist que aquesta estructura de dades és la primera que hem
+estudiat amb la característica de ser mutables: mantenint la mateixa
+posició de memòria podem canviar-li part del valor.
+
+Finalment hem estudiat una manera molt particular de fer servir els
+mòduls: cridant-los des del seu propi cos! A aquest concepte li hem dit
+recursivitat i ens ha presentat una manera nova d'implementar bucles.
+
+No està malament, oi? Però encara no hem acabat aquí el nostre viatge.
+Prepara't doncs el proper tema et descobrirà un nou concepte crític per
+molts programes. Ja t'avanço un dels seus noms: *persistència*.
+

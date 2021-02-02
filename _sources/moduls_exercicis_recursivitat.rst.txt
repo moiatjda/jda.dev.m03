@@ -1,0 +1,14 @@
+##################################
+Llista d'exercicis de recursivitat
+##################################
+
+
+Els exercicis del tema :doc:`moduls_recursivitat` són:
+
+.. toctree::
+    :titlesonly:
+    :maxdepth: 1
+
+    exercici_02_37_mostralletres_rec.rst
+    exercici_02_38_extreu_nombres.rst
+    exercici_02_39_suma_digits.rst

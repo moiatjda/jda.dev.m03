@@ -1,0 +1,55 @@
+###########################################################
+|exerciseicon__T| Exercici 02_37. Mostra lletres (recursiu)
+###########################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``02_37_mostralletres_rec/``
+
+* Continguts relacionats: :doc:`moduls_recursivitat`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+
+Desenvolupa un programa que demani un text i mostri només les lletres
+d'aquest.
+
+Per fer aquest programa, completa la següent plantilla on no pots afegir
+cap iterador ``for``/``while``
+
+.. code-block:: java
+    :linenos:
+
+    /* XXX */
+    public class MostraLletres {
+        public static void main(String[] args){
+            System.out.println("Text?");
+            String text = Entrada.readLine();
+            mostraLletres(text);
+            System.out.println();   // un salt de línia final
+        }
+
+        // mostra només les lletres de text
+        public static void mostraLletres(String text) {
+            if ( /* XXX */ ) {      // cas base
+                // XXX
+            }
+
+            // hi ha al menys un caràcter. Comptem quantes lletres hi queden
+
+            // considerem el primer caràcter
+            char primer = text.charAt(0);
+            if (Character.isLetter(primer)) {
+                // XXX
+            }
+
+            // considerem les lletres que conté la resta del text
+            String restaText = /* XXX */;  // resta del text
+            mostraLletres(restaText);      // crida recursiva
+        }
+    }
+
