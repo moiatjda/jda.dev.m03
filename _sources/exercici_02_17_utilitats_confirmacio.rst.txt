@@ -17,7 +17,7 @@
 Desenvolupa una versió de l'exercici del :doc:`Semafor<exercici_01_24_semafor>` de 
 manera que abans de donar el consell, se n'asseguri que els usuaris són majors d'edat.
 
-La nova versió fara servir la funció la funció
+La nova versió fara servir la funció
 ``UtilitatsConfirmacio.respostaABoolean()``.
 
 Considera les següents simulacions:
