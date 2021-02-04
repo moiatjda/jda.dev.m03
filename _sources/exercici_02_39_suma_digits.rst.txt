@@ -25,7 +25,7 @@ cap iterador ``for``/``while``
     :linenos:
 
     /* XXX */
-    public class ExtreuNombres {
+    public class SumaDigits {
         public static void main(String[] args){
             System.out.println("Text?");
             String text = Entrada.readLine();
