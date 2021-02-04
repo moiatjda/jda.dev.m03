@@ -16,7 +16,7 @@
 
 Rescatarem :doc:`exercici_01_68_nomes_lletres` i el farem modular.
 
-El programa ``NomesLletres.java`` rewsultant tindrà el següent codi (Només
+El programa ``NomesLletres.java`` resultant tindrà el següent codi (Només
 falta el comentari de capçalera!):
 
 .. code-block:: Java
