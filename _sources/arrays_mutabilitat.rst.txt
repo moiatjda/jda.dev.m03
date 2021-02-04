@@ -599,7 +599,7 @@ Practiquem el que acabem de veure amb aquests exercicis.
 
 |exerciseicon__T| :doc:`exercici_02_35_mou_figura`
 
-|exerciseicon_S_| :doc:`exercici_02_36_enroca`
+|exerciseicon_ST| :doc:`exercici_02_36_enroca`
 
 -----
 

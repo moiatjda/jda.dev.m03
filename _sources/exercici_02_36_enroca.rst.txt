@@ -1,5 +1,5 @@
 ##################################################################
-|exerciseicon_S_| Exercici 02_36. Enrocament (versió simplificada)
+|exerciseicon_ST| Exercici 02_36. Enrocament (versió simplificada)
 ##################################################################
 
 .. rubric:: Context
@@ -11,6 +11,8 @@
 * Com lliurar-lo: :ref:`instruccions <instruccions_git>`
 
 * [☆] Exercici amb :ref:`dificultat addicional<descripcio_exercicis_dificils>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
 
 .. rubric:: Enunciat
 
