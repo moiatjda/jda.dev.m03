@@ -18,8 +18,8 @@ Desenvolupa una nova versió de l'exercici que :doc:`mostrava una cadena contín
 
 La nova versió passarà les mateixes proves que l'original però el mòdul
 ``main()`` se n'encarregarà d'obtenir les dades d'entrada, i cridarà un
-nou mòdul anomenat ``mostraInterval()`` que serà qui realitzi realment la
-feina de mostrar l'interval.
+nou mòdul anomenat ``mostraCadenaContinua()`` que serà qui realitzi realment la
+feina de mostrar el resultat.
 
 La signatura del nou mòdul serà:
 

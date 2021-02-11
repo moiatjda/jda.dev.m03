@@ -1,0 +1,150 @@
+###########################################################
+|exerciseicon_ST| Exercici 03_03. Valors separats per comes
+###########################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``03_03_csv/``
+
+* Continguts relacionats: :doc:`fitxers_lectura`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [☆] Exercici amb :ref:`dificultat addicional<descripcio_exercicis_dificils>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Els fitxers de text poden presentar diferents formats. Un de molt típic és
+el conegut com a *csv* que són les sigles de *Comma Separated Values* o
+en el nostre idioma *Valors Separats per Comes*.
+
+Un fitxer csv, en la seva forma més bàsica, és una seqüència de línies de
+text on cada línia presenta un o més valors separats per un caràcter
+especial, habitualment la coma ``,``.
+
+És un format molt típic perquè representa molt eficientment dades en forma
+tabular com les que s'emmagatzemen a una taula d'una base de dades
+relacional, o a un full de càlcul.
+
+Sovint la primera línia es considera les capçaleres. És a dir, el nom de
+cada columna.
+
+Per exemple, considera el següent fitxer:
+
+.. code-block:: console
+
+    $ cat notes.csv
+    alumne,uf1,uf2,uf3,uf4,uf5,uf6
+    Eleftèria Ortiz Luján,7,8,5,7,8,9
+    Daniel Carrasco Macadàmia,5,4,5,2,NP,NP
+    Gabriela Cirerer Nasal,6,7,5,8,9,5
+
+Aquest fitxer codifica, amb els valors separats per comes, les notes en
+sis unitats formatives d'alguns estudiants.
+
+Una representació tabular més *gràfica* d'aquestes dades podria ser:
+
++---------------------------+-----+-----+-----+-----+-----+-----+
+| alumne                    | uf1 | uf2 | uf3 | uf4 | uf5 | uf6 |
++===========================+=====+=====+=====+=====+=====+=====+
+| Eleftèria Ortiz Luján     | 7   | 8   | 5   | 7   | 8   | 9   |
++---------------------------+-----+-----+-----+-----+-----+-----+
+| Daniel Carrasco Macadàmia | 5   | 4   | 5   | 2   | NP  | NP  |
++---------------------------+-----+-----+-----+-----+-----+-----+
+| Gabriela Cirerer Nasal    | 6   | 7   | 5   | 8   | 9   | 5   |
++---------------------------+-----+-----+-----+-----+-----+-----+
+
+Per facilitar el processament d'aquest tipus de línies, et presentaré una
+utilitats força interessant: la funció ``split()`` dels Strings.
+
+Molta atenció al següent codi:
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 4
+
+    public class ProcesaLiniaCSV {
+         public static void main(String[] args) {
+              String linia = "Eleftèria Ortiz Luján,7,8,5,7,8,9";
+              String[] elements = linia.split(",");
+              System.out.println("La línia té " + elements.length + " elements");
+              for (int i=0; i<elements.length; i++) {
+                  System.out.printf("Element %d: %s%n", i, elements[i]);
+              }
+         }
+    }
+
+La sortida d'aquests programa és:
+
+.. code-block:: console
+    :emphasize-lines: 2-
+
+    $ java ProcesaLiniaCSV
+    La línia té 7 elements
+    Element 0: Eleftèria Ortiz Luján
+    Element 1: 7
+    Element 2: 8
+    Element 3: 5
+    Element 4: 7
+    Element 5: 8
+    Element 6: 9
+
+La crida a ``linia.split(",")`` retorna un array de String amb els valors
+que a la línia apareixien separats per coma.
+
+Potser aquesta interacció amb ``jshell`` t'ho deixa més clar:
+
+.. code-block:: console
+
+    jshell> String linia = "Eleftèria Ortiz Luján,7,8,5,7,8,9";
+    linia ==> "Eleftèria Ortiz Luján,7,8,5,7,8,9"
+
+    jshell> linia.split(",")
+    $1 ==> String[7] { "Eleftèria Ortiz Luján", "7", "8", "5", "7", "8", "9" }
+
+Un cop tenim un array de Strings, ja podem fer el que ens calgui amb cada
+element. En el cas del codi de ``ProcesaLiniaCSV`` el programa es limita a
+mostrar quants elements hi havia a la línia i a mostrar-los enumerats per
+sortida estàndardo
+
+Què has de fer?
+===============
+
+En aquest exercici desenvoluparàs un programa que calcularà la nota mitja
+dels estudiants que apareixen al fitxer de text ``notes.csv``, que
+presenta el format que apareix a l'exemple anterior, encara que
+possiblement amb més o menys estudiants i altres notes.
+
+El programa obrirà el fitxer i:
+
+* ignorarà la primera línia doncs correspon a les capçaleres
+
+* per cada estudiant mirarà quines notes té i, si són numèriques sumarà
+  els seus valors enters. El resultat el restarà per 6, per obtenir la
+  mitja.
+
+* un cop disposa de la mitja, el programa llistarà els noms seguits de la
+  nota entre parèntesis i amb dos decimals
+
+Suposant que tenim els valors de l'exemple, considera la següent
+simulació:
+
+.. code-block:: console
+
+    java NotaMitja 
+    Eleftèria Ortiz Luján (7,33)
+    Daniel Carrasco Macadàmia (2,67)
+    Gabriela Cirerer Nasal (6,67)
+
+
+Podem suposar que el fitxer existeix, que conté al menys una línia amb les
+capçaleres, i que totes les línies contenen el nom i sis valors.
+
+Per aconseguir els dos decimals, recorda
+
+.. code-block:: console
+
+    jshell> System.out.printf("Sense %fi. Amb %.2f%n", (1/6.0), (1/6.0))
+    Sense 0,166667i. Amb 0,17

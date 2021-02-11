@@ -1,0 +1,501 @@
+##########################
+Lectura de fitxers de text
+##########################
+
+En aquesta secció descobrirem com podem llegir fitxers de text en Java.
+
+Mostrar el contingut d'un fitxer
+================================
+
+Considera el següent programa:
+
+.. code-block:: java
+    :linenos:
+    :caption: :download:`Mostrat.java<_recursos/Mostrat.java>`
+
+    /*
+     * programa que mostra el seu propi codi
+     * Nota: pressuposa que el codi font es troba en la mateixa carpeta que
+     * l'executable.
+     */
+    import java.io.BufferedReader;
+    import java.io.FileReader;
+    import java.io.IOException;
+    public class Mostrat {
+        public static void main(String[] args) throws IOException {
+            String cami = "Mostrat.java";
+            FileReader fileReader = new FileReader(cami);
+            BufferedReader input = new BufferedReader(fileReader);
+            while (true) {
+                String linia = input.readLine();
+                if (null == linia) break;
+                System.out.println(linia);
+            } 
+            input.close();
+        }
+    }
+
+Si executem aquest programa, ens trobem amb el següent:
+
+.. code-block:: console
+    :emphasize-lines: 2-
+
+    $ javac Mostrat.java && java Mostrat 
+    /*
+     * programa que mostra el seu propi codi
+     * Nota: pressuposa que el codi font es troba en la mateixa carpeta que
+     * l'executable.
+     */
+    import java.io.IOException;
+    import java.io.FileReader;
+    import java.io.BufferedReader;
+    public class Mostrat {
+        public static void main(String[] args) throws IOException {
+            String cami = "Mostrat.java";
+            FileReader fileReader = new FileReader(cami);
+            BufferedReader input = new BufferedReader(fileReader);
+            while (true) {
+                String linia = input.readLine();
+                if (null == linia) break;
+                System.out.println(linia);
+            } 
+            input.close();
+        }
+    }
+
+Si bé, hi ha moltes novetats en aquest codi, la idea del que fa és força
+clara: llegeix el contingut d'un fitxer de text anomenat ``Mostrat.java``
+i el mostra per la sortida estàndard (la pantalla)
+
+La instrucció ``import``
+------------------------
+
+Tornem al codi:
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 6,7,8
+
+    /*
+     * programa que mostra el seu propi codi
+     * Nota: pressuposa que el codi font es troba en la mateixa carpeta que
+     * l'executable.
+     */
+    import java.io.BufferedReader;
+    import java.io.FileReader;
+    import java.io.IOException;
+    public class Mostrat {
+        public static void main(String[] args) throws IOException {
+            String cami = "Mostrat.java";
+            FileReader fileReader = new FileReader(cami);
+            BufferedReader input = new BufferedReader(fileReader);
+            while (true) {
+                String linia = input.readLine();
+                if (null == linia) break;
+                System.out.println(linia);
+            } 
+            input.close();
+        }
+    }
+
+
+En començar a llegit ja ens apareix una paraula que no hem vist abans a
+aquest curs, a banda d'algun exercici.
+
+Aquesta paraula ``import`` bàsicament indica a Java que el nostre programa
+farà servir un determinat tipus de dades. Els tipus del codi d'exemple són
+``java.io.BufferedReader``, ``java.io.FileReader`` i
+``java.io.IOException``.
+
+Sí, es tracta de tipus nous que no hem fet servir
+fins ara. Ves preparant-te perquè anar descobrint nous tipus serà una cosa
+cada cop més habitual en aquest curs. Jo t'he avisat!
+
+Sense ``import`` també podríem fer servir els tipus però d'una manera una
+mica més farragosa.  Per exemple, fitxa't en les diferències amb el
+següent codi, per altra banda equivalent:
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 7, 9, 10
+
+    /*
+     * programa que mostra el seu propi codi
+     * Nota: pressuposa que el codi font es troba en la mateixa carpeta que
+     * l'executable.
+     */
+    public class Mostrat {
+        public static void main(String[] args) throws java.io.IOException {
+            String cami = "Mostrat.java";
+            java.io.FileReader fileReader = new java.io.FileReader(cami);
+            java.io.BufferedReader input = new java.io.BufferedReader(fileReader);
+            while (true) {
+                String linia = input.readLine();
+                if (null == linia) break;
+                System.out.println(linia);
+            } 
+            input.close();
+        }
+    }
+
+És a dir, que, gràcies al ``import``, podem estalviar-nos haver d'indicar
+``java.io.`` davant dels nous tipus de dades. Una comoditat, no?
+
+La paraula reservada ``throws``
+-------------------------------
+
+Fixem-nos ara en signatura de ``main()``. 
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 10
+
+    /*
+     * programa que mostra el seu propi codi
+     * Nota: pressuposa que el codi font es troba en la mateixa carpeta que
+     * l'executable.
+     */
+    import java.io.BufferedReader;
+    import java.io.FileReader;
+    import java.io.IOException;
+    public class Mostrat {
+        public static void main(String[] args) throws IOException {
+            String cami = "Mostrat.java";
+            FileReader fileReader = new FileReader(cami);
+            BufferedReader input = new BufferedReader(fileReader);
+            while (true) {
+                String linia = input.readLine();
+                if (null == linia) break;
+                System.out.println(linia);
+            } 
+            input.close();
+        }
+    }
+
+Fins ara, després de la
+signatura sempre ens trobàvem una ``{`` per marcar l'inici del cos del
+mòdul. Aquest ``main()`` però presenta abans un ``throws IOException``.
+
+De moment no entrarem en detalls al respecte. Tant sols direm que el
+``throws`` indica a Java que el cos del mòdul que està a punt de definir
+podria trobar-se amb problemes que trenquin la seva execució normal.
+Aquests problemes, en el cas que ens ocupa, serien de tipus
+``IOException`` o *excepcions d'entrada/sortida*. 
+
+Pensem per un moment què passaria si el fitxer ``Mostrat.java`` no es
+trobés a la mateixa carpeta que el ``.class``. Bàsicament que no
+podríem llegir el seu contingut. Aquesta situació seria un exemple de les
+que podrien provocar aquest tipus de problemes que trencarien l'execució
+del programa.
+
+|exerciseicon___| :doc:`exercici_03_01_excepcional`
+
+Aviat veurem que ``throws`` no ens l'oblidarem fàcilment. Java es queixarà
+si no el posem a cada mòdul on pugui produir-se un error
+d'entrada/sortida. Això inclou els mòduls que criden a mòduls on es pot
+produir-se un d'aquests errors.
+
+
+Els camins en Java
+------------------
+
+Com ja hem parlat, per poder treballar amb fitxers, primer hem de poder
+especificar de quin fitxer en parlem. Això es realitza mitjançant *camins*
+(*path* en anglès)
+
+Fixem-nos novament en el codi de ``Mostrat``:
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 11, 12
+
+    /*
+     * programa que mostra el seu propi codi
+     * Nota: pressuposa que el codi font es troba en la mateixa carpeta que
+     * l'executable.
+     */
+    import java.io.BufferedReader;
+    import java.io.FileReader;
+    import java.io.IOException;
+    public class Mostrat {
+        public static void main(String[] args) throws IOException {
+            String cami = "Mostrat.java";
+            FileReader fileReader = new FileReader(cami);
+            BufferedReader input = new BufferedReader(fileReader);
+            while (true) {
+                String linia = input.readLine();
+                if (null == linia) break;
+                System.out.println(linia);
+            } 
+            input.close();
+        }
+    }
+
+El camí al fitxer el definim com un String a la línia 11. En aquest cas es
+tracta simplement del nom del fitxer. Això vol dir que el camí
+correspondria a ``./Mostrat.java``, és a dir, a un fitxer que es troba a
+la carpeta on executem el programa.
+
+.. important:: No et creguis el que et diré a continuació.  **Comprova-ho**!
+
+Per comprovar-ho, pots fer el següent:
+
+* descarrega :download:`Mostrat.java <_recursos/Mostrat.java>` a la carpeta ``/tmp/carpeta/subcarpeta/``:
+
+* compila el codi dins de ``subcarpeta/`` i comprova que mostra el
+  resultat esperat.
+
+* ara ves a la carpeta anterior i executa el codi. Per fer-ho, caldrà
+  dir-li a Java on es troba el ``.class``. Ho fem amb l'opció
+  ``-classpath``
+
+  .. code-block:: console
+     :emphasize-lines: 3, 5-
+
+     /tmp/carpeta/subcarpeta/ $ cd ..           # anem a la carpeta anterior
+     /tmp/carpeta/ $ ls                         # comprovem que no hi és el fitxer Mostrat.java
+     subcarpeta
+     /tmp/carpeta/ $ java -classpath subcarpeta Mostrat         # executem amb l'opció --classpath
+     Exception in thread "main" java.io.FileNotFoundException: Mostrat.java (El fitxer o directori no existeix)
+         at java.base/java.io.FileInputStream.open0(Native Method)
+         at java.base/java.io.FileInputStream.open(FileInputStream.java:219)
+         at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+         at java.base/java.io.FileInputStream.<init>(FileInputStream.java:112)
+         at java.base/java.io.FileReader.<init>(FileReader.java:60)
+         at Mostrat.main(Mostrat.java:9)
+
+El programa es queixa de no trobar el fitxer ``Mostrat.java``. És clar,
+ens trobem a ``/tmp/carpeta/`` i no a ``/tmp/carpeta/subcarpeta/``.
+
+Canvia per un moment el codi del programa
+``/tmp/carpeta/subcarpeta/Mostrat.java`` de manera que es vegi el següent:
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 11
+
+    /*
+     * programa que mostra el seu propi codi
+     * Nota: pressuposa que el codi font es troba en la mateixa carpeta que
+     * l'executable.
+     */
+    import java.io.BufferedReader;
+    import java.io.FileReader;
+    import java.io.IOException;
+    public class Mostrat {
+        public static void main(String[] args) throws IOException {
+            String cami = "/tmp/carpeta/subcarpeta/Mostrat.java";
+            FileReader fileReader = new FileReader(cami);
+            BufferedReader input = new BufferedReader(fileReader);
+            while (true) {
+                String linia = input.readLine();
+                if (null == linia) break;
+                System.out.println(linia);
+            } 
+            input.close();
+        }
+    }
+
+És a dir, ara el camí al fitxer és absolut.
+
+Si compilem i executem la nova versió, ens trobem que funciona tant des de
+``/tmp/carpeta/subcarpeta`` com des de ``/tmp/carpeta/`` o qualsevol altre
+directori en que especifiquem correctament el ``-classpath``.
+
+
+Els nous tipus ``FileReader`` i ``BufferedReader``
+--------------------------------------------------
+
+Tornem ara al codi per veure els nous tipus:
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 12, 13
+
+    /*
+     * programa que mostra el seu propi codi
+     * Nota: pressuposa que el codi font es troba en la mateixa carpeta que
+     * l'executable.
+     */
+    import java.io.BufferedReader;
+    import java.io.FileReader;
+    import java.io.IOException;
+    public class Mostrat {
+        public static void main(String[] args) throws IOException {
+            String cami = "Mostrat.java";
+            FileReader fileReader = new FileReader(cami);
+            BufferedReader input = new BufferedReader(fileReader);
+            while (true) {
+                String linia = input.readLine();
+                if (null == linia) break;
+                System.out.println(linia);
+            } 
+            input.close();
+        }
+    }
+
+``FileReader`` tal i com indica la `documentació oficial
+<https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/FileReader.html>`_
+permet llegir d'un fitxer tot descodificant els bytes en caràcters.  Això
+és important, doncs ens estalvia de preocupar-nos de temes sovint
+complexos com ara la codificació de caràcters.
+
+Per declarar un ``FileReader``, com amb qualsevol tipus, fem:
+
+.. code-block:: java
+
+    FileReader fileReader;
+
+La seva inicialització s'assembla una mica a la inicialització dels
+arrays, en el sentit que fem servir l'operador ``new`` seguit del tipus.
+En aquest cas, el tipus es presenta com una mena de crida a funció, doncs
+presenta uns parèntesis i dins sembla que li passem un argument (el camí
+al fitxer a obrir) De moment no ens hi capfiquem gaire. El que està fent
+la següent línia és obrir un fitxer de text per ser llegit.
+
+.. code-block:: java
+
+    new FileReader(cami);
+
+Disposant d'un ``FileReader`` ens veuríem llegint caràcter per caràcter
+els continguts del fitxer.  Encara ens ho podem posar més fàcil si fem
+servir un ``BufferedReader``.
+
+Un altre cop, `llegint la documentació
+<https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/BufferedReader.html>`_
+veiem que un ``BufferedReader`` ens permet llegir de manera eficient
+línies de text (Strings).
+
+Donat que amb la variable ``fileReader`` no en fem gaire més que definir
+el ``BufferedReader``, sovint la declaració i inicialització de les dues
+línies es simplifica en una sola línia:
+
+.. code-block:: java
+
+        BufferedReader input = new BufferedReader(new FileReader(cami));
+
+La lectura per fi
+-----------------
+
+Molt bé, tot això han estat preparatius, però… com es llegeix del fitxer?
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 15
+
+    /*
+     * programa que mostra el seu propi codi
+     * Nota: pressuposa que el codi font es troba en la mateixa carpeta que
+     * l'executable.
+     */
+    import java.io.BufferedReader;
+    import java.io.FileReader;
+    import java.io.IOException;
+    public class Mostrat {
+        public static void main(String[] args) throws IOException {
+            String cami = "Mostrat.java";
+            FileReader fileReader = new FileReader(cami);
+            BufferedReader input = new BufferedReader(fileReader);
+            while (true) {
+                String linia = input.readLine();
+                if (null == linia) break;
+                System.out.println(linia);
+            } 
+            input.close();
+        }
+    }
+
+La lectura del fitxer és molt similar a la que estem acostumats de
+``Entrada.readLine()``. En comptes de ``Entrada``, fem servir la variable
+de tipus ``BufferedReader`` que hem inicialitzat abans. 
+
+La crida a la funció ``readLine()`` com en el cas de
+``Entrada.readLine()`` ens retorna un String amb tot el contingut d'una
+línia del fitxer.
+
+Podem repetir la crida mentre no arribem al final del fitxer. Sabrem que
+hem arribat al final quan el valor del String resultant sigui el misteriós
+valor ``null``.
+
+Fixa't que el codi trenca el bucle ``while`` un cop detecta que ha arribat
+al final del fitxer.
+
+Per entendre millor com funciona tot plegat, imagina que el fitxer
+``continguts.txt`` conté el següent:
+
+.. code-block:: none
+
+    primera línia
+    segona línia
+    darrera línia
+
+Considera ara el següent codi:
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 8, 9, 10
+
+    import java.io.BufferedReader;
+    import java.io.FileReader;
+    import java.io.IOException;
+    public class Exemple {
+        public static void main(String[] args) throws IOException {
+            String cami = "continguts.txt";
+            BufferedReader input = new BufferedReader(new FileReader(cami));
+            System.out.println(input.readLine());       // escriu: primera línia
+            System.out.println(input.readLine());       // escriu: segona línia
+            System.out.println(input.readLine());       // escriu: null
+            input.close();
+        }
+    }
+
+|exerciseicon__T| :doc:`exercici_03_02_vocal_inici_fi`
+
+
+Tancant el fitxer
+-----------------
+
+Un cop ja no ens cal més el fitxer que hem obert, toca tancar-lo.
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 19
+
+    /*
+     * programa que mostra el seu propi codi
+     * Nota: pressuposa que el codi font es troba en la mateixa carpeta que
+     * l'executable.
+     */
+    import java.io.BufferedReader;
+    import java.io.FileReader;
+    import java.io.IOException;
+    public class Mostrat {
+        public static void main(String[] args) throws IOException {
+            String cami = "Mostrat.java";
+            FileReader fileReader = new FileReader(cami);
+            BufferedReader input = new BufferedReader(fileReader);
+            while (true) {
+                String linia = input.readLine();
+                if (null == linia) break;
+                System.out.println(linia);
+            } 
+            input.close();
+        }
+    }
+
+El tancament implica només agafar la variable amb el ``BufferedReader`` i
+cridar el procediment de tancament ``close()``.
+
+.. code-block:: java
+
+    input.close();
+
+No té gaire misteri aquesta acció. Simplement cal recordar-se'n!
+
+Practiquem la lectura de fitxers
+================================
+
+Aquí tens uns exercicis per practicar la lectura de fitxers.
+
+|exerciseicon_ST| :doc:`exercici_03_03_csv`
+

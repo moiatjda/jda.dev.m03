@@ -1,0 +1,54 @@
+#########################################################
+|exerciseicon___| Exercici 03_01. Situacions excepcionals
+#########################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``03_01_excepcional/``
+
+* Continguts relacionats: :doc:`fitxers_lectura`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+.. rubric:: Enunciat
+
+Considera el següent codi novament:
+
+.. code-block:: java
+    :linenos:
+
+    /*
+     * programa que mostra el seu propi codi
+     * Nota: pressuposa que el codi font es troba en la mateixa carpeta que
+     * l'executable.
+     */
+    import java.io.BufferedReader;
+    import java.io.FileReader;
+    import java.io.IOException;
+    public class Mostrat {
+        public static void main(String[] args) throws IOException {
+            String cami = "Mostrat.java";
+            FileReader fileReader = new FileReader(cami);
+            BufferedReader input = new BufferedReader(fileReader);
+            while (true) {
+                String linia = input.readLine();
+                if (null == linia) break;
+                System.out.println(linia);
+            } 
+        }
+    }
+
+Per realitzar aquest exercici, hauràs de realitzar algunes *trapelleries*
+al programa.
+
+Completa aquesta :download:`plantilla
+<_recursos/plantilla_trapelleries.rst>` tot reemplaçant les ``XXX`` per la
+teva resposta:
+
+.. literalinclude:: _recursos/plantilla_trapelleries.rst
+    :language: rst
+
+
+.. note:: Si et ve de gust, considera convertir aquest document resultant
+    a algun format que t'agradi més com ara ``html``. Trobaràs pistes de
+    com fer-ho a :doc:`rst_intro`.

@@ -1,0 +1,387 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ca" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Primeres definicions &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Lectura de fitxers de text" href="fitxers_lectura.html" />
+    <link rel="prev" title="Fitxers" href="fitxers.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació amb Java
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-21
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moduls.html">Mòduls</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="fitxers.html">Fitxers</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Primeres definicions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fitxers_lectura.html">Lectura de fitxers de text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fitxers_exercicis.html">Llistat d’exercicis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="apendix.html">Apèndix</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació amb Java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="fitxers.html">Fitxers</a> &raquo;</li>
+        
+      <li>Primeres definicions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="primeres-definicions">
+<h1>Primeres definicions<a class="headerlink" href="#primeres-definicions" title="Link permanent a aquest títol">¶</a></h1>
+<p>En aquesta secció et <em>disparo</em> unes quantes definicions de cop.
+Probablement ja les coneguis encara que sigui parcialment. Et recomano una
+lectura ràpida per saber on trobar-les en cas que més endavant et calguin.</p>
+<div class="section" id="que-es-un-fitxer">
+<h2>Què és un fitxer?<a class="headerlink" href="#que-es-un-fitxer" title="Link permanent a aquest títol">¶</a></h2>
+<p>Una definició més o menys formal de fitxer podria ser la següent:</p>
+<blockquote>
+<div><p>Un fitxer és una seqüència de bytes guardats en un
+dispositiu d’emmagatzemament secundari com ara un disc.</p>
+</div></blockquote>
+<p>On posa <em>seqüència de bytes</em> pots llegir perfectament un array de bytes,
+doncs això és bàsicament el que és.</p>
+<p>Què les dades siguin emmagatzemades a un dispositiu en comptes de
+directament a la memòria principal, té unes característiques que cal tenir
+present:</p>
+<ul class="simple">
+<li><p>no podem accedir directament a les dades</p></li>
+<li><p>tenim <strong>molt</strong> d’espai on deixar dades</p></li>
+<li><p>ens costarà més temps accedir a les dades que si fossin en memòria
+principal.</p></li>
+</ul>
+</div>
+<div class="section" id="acces-basic-a-un-fitxer">
+<h2>Accés bàsic a un fitxer<a class="headerlink" href="#acces-basic-a-un-fitxer" title="Link permanent a aquest títol">¶</a></h2>
+<p>Per accedir a les dades emmagatzemades o emmagatzemar-les, ens caldrà:</p>
+<ol class="arabic simple">
+<li><p>especificar <em>on</em> es troben guardats aquests valors</p></li>
+<li><p><em>obrir</em> el fitxer</p></li>
+<li><p><em>obtenir</em> o <em>deixar</em> les dades al fitxer</p></li>
+<li><p><em>tancar</em> el fitxer</p></li>
+</ol>
+</div>
+<div class="section" id="especificacio-dels-fitxers">
+<h2>Especificació dels fitxers<a class="headerlink" href="#especificacio-dels-fitxers" title="Link permanent a aquest títol">¶</a></h2>
+<div class="sidebar">
+<p class="sidebar-title">fitxers, carpetes, arxius…</p>
+<a class="reference external image-reference" href="https://ca.wikipedia.org/wiki/Arxiu#/media/Fitxer:Fondos_archivo.jpg"><img alt="_images/arxius.jpg" class="align-center" src="_images/arxius.jpg" /></a>
+</div>
+<p>Per especificar els fitxers caldrà que indiquem on es troben dins del
+sistema de fitxers de l’equip on s’està executant el nostre programa.</p>
+<p>El sistema de fitxers sol tenir una representació jeràrquica en forma de
+carpetes (o directoris) que contenen altres carpetes i fitxers. La
+jerarquia comença normalment amb l’arrel del sistema de fitxers i que
+podem considerar una carpeta que no és continguda per cap altra carpeta.</p>
+<p>Hi ha diferents tipus de sistemes de fitxers, sovint associats al sistema
+operatiu. És d’agrair que el llenguatge de programació que fem
+servir, ens permeti desenvolupar aplicacions sense que ens hàgim de
+preocupar de en quin sistema de fitxers s’executaran, però no sempre serà
+així. Sortosament, Java ens ofereix aquesta abstracció.</p>
+<p>Per fer-ho, habitualment fem servir el concepte de <em>camí</em> o <em>path</em> que
+consisteix en una seqüència de noms de carpetes finalitzant amb el nom del
+fitxer. Les passes d’aquests camins solen estar separades per un símbol,
+sovint <code class="docutils literal notranslate"><span class="pre">/</span></code> .</p>
+<p>Per exemple, depenent des d’on hi fem referència, el fitxer
+<code class="docutils literal notranslate"><span class="pre">comprovaprg.sh</span></code> podria ser especificat per camins com aquests:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/home/usuari/introprg/lib/comprovaprg.sh</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">../lib/comprovaprg.sh</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">comprovaprg.sh</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lib/comprovaprg.sh</span></code></p></li>
+</ul>
+<p>Els camins poden ser:</p>
+<ul class="simple">
+<li><p>absoluts: quan especifiquen la localització del fitxer independentment
+de des d’on s’estigui referenciant</p></li>
+<li><p>relatius: quan l’especificació del fitxer es fa a partir de la carpeta
+des d’on s’està referenciant.</p></li>
+</ul>
+<p>Als exemples anteriors, només el primer camí és absolut. Es veu fàcilment
+perquè comença amb <code class="docutils literal notranslate"><span class="pre">/</span></code> que indica l’arrel del sistema de fitxers.</p>
+</div>
+<div class="section" id="obertura-dels-fitxers">
+<h2>Obertura dels fitxers<a class="headerlink" href="#obertura-dels-fitxers" title="Link permanent a aquest títol">¶</a></h2>
+<p>Quan obrim un fitxer, ens caldrà indicar què voldrem fer amb ell. Les
+operacions bàsiques són:</p>
+<ul class="simple">
+<li><p>lectura: només volem llegir dades del fitxer</p></li>
+<li><p>escriptura: només volem escriure-hi valors al fitxer</p></li>
+</ul>
+</div>
+<div class="section" id="tancament-dels-fitxers">
+<h2>Tancament dels fitxers<a class="headerlink" href="#tancament-dels-fitxers" title="Link permanent a aquest títol">¶</a></h2>
+<p>Un cop hem finalitzat la nostra feina amb el fitxer que hem obert, toca
+tancar-ho.</p>
+<p>Si ens descuidem de fer-ho, és possible que el fitxer quedi corrupte o bé
+que algunes dades no quedin correctament emmagatzemades.</p>
+<p>A banda, és preferible tancar el fitxer tan aviat no pensem usar-lo més.
+Els fitxers oberts consumeixen recursos valuosos del sistema. Si no ens
+cal, retornem aquests recursos.</p>
+<p>Malauradament, Java no ens avisarà de que hem de tancar els fitxers
+oberts. Toca tenir disciplina aquí!</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>No oblidis tancar <strong>sempre</strong> els fitxers que obris en
+escriptura!</p>
+</div>
+</div>
+<div class="section" id="posicions">
+<h2>Posicions<a class="headerlink" href="#posicions" title="Link permanent a aquest títol">¶</a></h2>
+<p>Els fitxers disposen de tres posicions importants: la inicial, la
+final i l’actual.</p>
+<img alt="_images/fitxer_posicions.svg" class="align-center" src="_images/fitxer_posicions.svg" /><p>La posició inicial correspon a la que conté el
+primer byte (la posició 0 d’un array). La final és la que conté el
+darrer byte. Finalment, els fitxers també disposen de la posició en
+que tindrà lloc la següent operació sobre el fitxer. Les operacions
+són una lectura o una escriptura d’un byte.</p>
+<p>Pots imaginar-t’ho com quan fas un recorregut en un array:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kt">byte</span><span class="o">[]</span> <span class="n">dades</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="mi">10</span><span class="o">]</span><span class="p">;</span>    <span class="c1">// array amb les dades a recórrer</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">actual</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>            <span class="c1">// posició inicial de l&#39;array</span>
+         <span class="n">actual</span> <span class="o">&lt;</span> <span class="n">dades</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="c1">// posició final de l&#39;array</span>
+         <span class="n">actual</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>            <span class="c1">// següent posició al final de la iteració</span>
+     <span class="n">dades</span><span class="o">[</span><span class="n">actual</span><span class="o">]=</span><span class="mi">1</span><span class="p">;</span>           <span class="c1">// operació d&#39;escriptura a la posició actual</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Com en el cas del codi anterior, amb els fitxers generalment podem
+canviar la posició actual (<code class="docutils literal notranslate"><span class="pre">actual</span></code>) cap al començament, cap al
+final o avançar, retrocedir, anar a una posició concreta, etc.</p>
+</div>
+<div class="section" id="tipus-de-fitxers">
+<h2>Tipus de fitxers<a class="headerlink" href="#tipus-de-fitxers" title="Link permanent a aquest títol">¶</a></h2>
+<p>Malgrat tots els fitxers són bàsicament una seqüència de bytes, és molt còmode i
+habitual distingir dos tipus de fitxers:</p>
+<ul>
+<li><p>fitxers de text</p>
+<p>El seu contingut són bytes que corresponen a text. Poden ser llegits per un
+editor com el que fem servir per codificar els nostres programes. Internament,
+el text pot presentar, és clar, diferents formats. Per exemple, el codi d’un
+programa en Java, un document XML o la sortida esperada d’un dels nostres
+programes quan preparem proves.</p>
+<p>A banda, el contingut dels fitxers de text pot estar representat en un o
+altre format. Per exemple: text pla, csv (<em>comma separated values</em>),
+XML, HTML, YAML, i un llarg etcètera.</p>
+</li>
+<li><p>fitxers binaris</p>
+<p>El seu contingut no es pot llegir amb un editor convencional donat que conté
+valors fora del rang de les lletres que formen un text vàlid.</p>
+<p>Aquests fitxers necessiten un programa especial per a ser llegits (i escrits).
+Alguns exemples són els fitxers .class que genera <code class="docutils literal notranslate"><span class="pre">javac</span></code>, un fitxer
+<em>tar.gz</em> amb tots els teus programes empaquetats i comprimits, un <em>mp3</em> amb la
+teva cançó favorita o un <em>png</em> amb la foto d’un gatet.</p>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="fitxers_lectura.html" class="btn btn-neutral float-right" title="Lectura de fitxers de text" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="fitxers.html" class="btn btn-neutral float-left" title="Fitxers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2021 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

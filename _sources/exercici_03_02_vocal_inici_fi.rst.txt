@@ -1,0 +1,40 @@
+#############################################################
+|exerciseicon__T| Exercici 03_02. Vocals a l'inici o al final
+#############################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``03_02_vocal_inici_fi/``
+
+* Continguts relacionats: :doc:`fitxers_lectura`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Recordes :doc:`l'exercici <exercici_02_18_es_vocal>` en el que el lloro
+anava demanant texts i només repetia els que començaven o acabaven en
+vocal?
+
+Desenvoluparem un programa que farà servir una estructura molt similar,
+per mostrar totes les línies d'un fitxer de text anomenat ``frases.txt``
+que comencin o acabin en vocal catalana.
+
+Per descomptat, caldrà que facis servir la funció ``esVocal()`` que vas
+utilitzar per la versió de referència.
+
+Per exemple, considera la següent simulació d'execució:
+
+.. code-block:: console
+    :emphasize-lines: 1-4,6-
+
+    $ cat frases.txt
+    ànec
+    gat
+    lleó
+    gos
+    $ javac FitxerVocalIniciFi.java && java FitxerVocalIniciFi 
+    ànec
+    lleó

@@ -1,0 +1,36 @@
+#######
+Fitxers
+#######
+
+Fins ara els programes que hem realitzat únicament fan servir les dades
+disponibles a la memòria principal de l'ordinador. Això implica que, o bé és el
+programa el que conté, dins del codi, les dades a mostrar (com ara els missatges
+que escriu per pantalla) o bé les dades provenen de l'usuari que les ha
+introduït *pacientment* a partir d'alguna petició del nostre programa. Ah! i un
+cop finalitza el programa, totes les dades desapareixen. En tornar-lo a
+executar, cal començar tot de nou.
+
+Com s'ho fan altres programes per disposar de dades d'execucions anteriors? Fan
+servir **fitxers**.
+
+Bé, de fet ja els coneixem els fitxers. On sinó queda emmagatzemat el codi dels
+nostres programes?
+
+En aquest tema ens endinsarem en la definició i ús de fitxers. Tot plegat
+aprendrem a fer programes que puguin tornar a treballar amb dades introduïdes en
+execucions anteriors.
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    fitxers_intro.rst
+    fitxers_lectura.rst
+    fitxers_exercicis.rst
+
+
+..  fitxers_java.rst
+..  fitxers_gestio.rst
+..  java_flota_original.rst
+..  java_flota.rst
+
