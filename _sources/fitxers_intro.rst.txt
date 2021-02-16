@@ -37,9 +37,11 @@ Per accedir a les dades emmagatzemades o emmagatzemar-les, ens caldrà:
 
 #. *obrir* el fitxer
 
-#. *obtenir* o *deixar* les dades al fitxer
+#. *usar*: *obtenir* del fitxer o *deixar* les dades al fitxer
 
 #. *tancar* el fitxer
+
+Si volem fer servir fitxers, haurem d'aprendre el patró obrir→usar→tancar.
 
 Especificació dels fitxers
 ==========================
@@ -113,12 +115,23 @@ tancar-ho.
 Si ens descuidem de fer-ho, és possible que el fitxer quedi corrupte o bé
 que algunes dades no quedin correctament emmagatzemades.
 
-A banda, és preferible tancar el fitxer tan aviat no pensem usar-lo més.
-Els fitxers oberts consumeixen recursos valuosos del sistema. Si no ens
-cal, retornem aquests recursos.
+És preferible tancar el fitxer tan aviat no pensem usar-lo més.
+
+Els fitxers oberts consumeixen recursos valuosos del sistema com ara els
+descriptors de fitxers que es fan servir per cada fitxer obert i que estan
+limitats.
+
+De vegades els fitxers queden bloquejats perquè no els facin servir altres
+programes, el que pot implicar que afectem el bon funcionament d'aquests.
+
+En cas que no siguin bloquejats, mantenir-los oberts innecessàriament
+augmenta el risc de que altres programes hi escriguin causant
+situacions errònies de difícil reproducció i localització.
+
+Si no ens cal, retornem aquests recursos.
 
 Malauradament, Java no ens avisarà de que hem de tancar els fitxers
-oberts. Toca tenir disciplina aquí!
+oberts [#tryresources]_. Toca tenir disciplina aquí!
 
 .. important:: No oblidis tancar **sempre** els fitxers que obris en
     escriptura!
@@ -162,22 +175,29 @@ habitual distingir dos tipus de fitxers:
 
 * fitxers de text
 
-  El seu contingut són bytes que corresponen a text. Poden ser llegits per un
-  editor com el que fem servir per codificar els nostres programes. Internament,
-  el text pot presentar, és clar, diferents formats. Per exemple, el codi d'un
-  programa en Java, un document XML o la sortida esperada d'un dels nostres
-  programes quan preparem proves.
+  El seu contingut són bytes que corresponen a text. Poden ser llegits per
+  un editor com el que fem servir per codificar els nostres programes. Per
+  exemple, el codi d'un dels nostres programes en Java o la seva sortida
+  quan preparem proves.
 
   A banda, el contingut dels fitxers de text pot estar representat en un o
   altre format. Per exemple: text pla, csv (*comma separated values*),
-  XML, HTML, YAML, i un llarg etcètera.
+  XML, HTML, YAML, JSON i un llarg etcètera.
 
 * fitxers binaris
 
   El seu contingut no es pot llegir amb un editor convencional donat que conté
   valors fora del rang de les lletres que formen un text vàlid.
 
-  Aquests fitxers necessiten un programa especial per a ser llegits (i escrits).
-  Alguns exemples són els fitxers .class que genera ``javac``, un fitxer
-  *tar.gz* amb tots els teus programes empaquetats i comprimits, un *mp3* amb la
-  teva cançó favorita o un *png* amb la foto d'un gatet.
+  Aquests fitxers necessiten un programa especial per a ser llegits (i
+  escrits).  Alguns exemples són els fitxers .class que genera ``javac``,
+  un fitxer *tar.gz* amb tots els teus programes empaquetats i comprimits,
+  un *mp3* amb la teva cançó favorita o un *png* amb la foto d'un gatet.
+
+
+
+-----
+
+.. [#tryresources] Més endavant veurem que de fet Java sí ens ofereix
+    ajuda al respecte. Però haurem d'esperar-nos a conèixer les
+    *excepcions*.

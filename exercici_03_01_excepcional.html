@@ -201,7 +201,8 @@
 17
 18
 19
-20</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/*</span>
 <span class="cm"> * programa que mostra el seu propi codi</span>
 <span class="cm"> * Nota: pressuposa que el codi font es troba en la mateixa carpeta que</span>
 <span class="cm"> * l&#39;executable.</span>
@@ -219,6 +220,7 @@
             <span class="k">if</span> <span class="p">(</span><span class="kc">null</span> <span class="o">==</span> <span class="n">linia</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
             <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">linia</span><span class="p">);</span>
         <span class="p">}</span>
+        <span class="n">input</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -237,7 +239,7 @@ Resum de trapelleries al codi de <span class="s">``Mostrat.java``</span>
 <span class="gh">Trapelleria 1. Fitxer inexistent</span>
 <span class="gh">================================</span>
 
-Canvia el nom del fitxer de la línia 8 per <span class="s">``inexistent.txt``</span>. Compila
+Canvia el nom del fitxer de la línia 11 per <span class="s">``inexistent.txt``</span>. Compila
 i intenta executar el programa.
 
 L&#39;error que genera és: <span class="se">::</span>
@@ -256,8 +258,7 @@ Aquí tens unes instruccions que t&#39;ajudaran: <span class="se">::</span>
 <span class="s">    $ touch existent.txt</span>
 <span class="s">    $ chmod -r existent.txt</span>
 
-Canvia el nom de <span class="s">``inexistent.txt``</span> per <span class="s">``/tmp``</span>. Compila i torna a
-intentar executar-ho i copia aquí el que et genera: <span class="se">::</span>
+L&#39;error que genera és: <span class="se">::</span>
 
 <span class="s">    $ java Mostrat</span>
 <span class="s">    XXX</span>
@@ -266,7 +267,7 @@ intentar executar-ho i copia aquí el que et genera: <span class="se">::</span>
 <span class="gh">Trapelleria 3. Un directori en comptes d&#39;un fitxer</span>
 <span class="gh">==================================================</span>
 
-Canvia el nom de <span class="s">``inexistent.txt``</span> per <span class="s">``/tmp``</span>. Compila i torna a
+Canvia el nom de <span class="s">``existent.txt``</span> per <span class="s">``/tmp``</span>. Compila i torna a
 intentar executar-ho i copia aquí el que et genera: <span class="se">::</span>
 
 <span class="s">    $ java Mostrat</span>

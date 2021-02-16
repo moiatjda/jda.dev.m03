@@ -4,6 +4,9 @@ Lectura de fitxers de text
 
 En aquesta secció descobrirem com podem llegir fitxers de text en Java.
 
+Recordem el patró *obrir→usar→tancar*, oi? Doncs en aquest cas es concreta
+com *obrir→llegir→tancar*
+
 Mostrar el contingut d'un fitxer
 ================================
 
@@ -25,13 +28,13 @@ Considera el següent programa:
         public static void main(String[] args) throws IOException {
             String cami = "Mostrat.java";
             FileReader fileReader = new FileReader(cami);
-            BufferedReader input = new BufferedReader(fileReader);
+            BufferedReader input = new BufferedReader(fileReader);      // obrir
             while (true) {
-                String linia = input.readLine();
+                String linia = input.readLine();                        // llegir
                 if (null == linia) break;
                 System.out.println(linia);
             } 
-            input.close();
+            input.close();                                              // tancar
         }
     }
 
@@ -427,7 +430,6 @@ Per entendre millor com funciona tot plegat, imagina que el fitxer
 
     primera línia
     segona línia
-    darrera línia
 
 Considera ara el següent codi:
 
@@ -498,4 +500,3 @@ Practiquem la lectura de fitxers
 Aquí tens uns exercicis per practicar la lectura de fitxers.
 
 |exerciseicon_ST| :doc:`exercici_03_03_csv`
-

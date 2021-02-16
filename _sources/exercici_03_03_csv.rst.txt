@@ -122,7 +122,7 @@ El programa obrirà el fitxer i:
 * ignorarà la primera línia doncs correspon a les capçaleres
 
 * per cada estudiant mirarà quines notes té i, si són numèriques sumarà
-  els seus valors enters. El resultat el restarà per 6, per obtenir la
+  els seus valors enters. El resultat el dividirà per 6, per obtenir la
   mitja.
 
 * un cop disposa de la mitja, el programa llistarà els noms seguits de la

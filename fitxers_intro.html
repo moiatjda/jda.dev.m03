@@ -195,9 +195,10 @@ principal.</p></li>
 <ol class="arabic simple">
 <li><p>especificar <em>on</em> es troben guardats aquests valors</p></li>
 <li><p><em>obrir</em> el fitxer</p></li>
-<li><p><em>obtenir</em> o <em>deixar</em> les dades al fitxer</p></li>
+<li><p><em>usar</em>: <em>obtenir</em> del fitxer o <em>deixar</em> les dades al fitxer</p></li>
 <li><p><em>tancar</em> el fitxer</p></li>
 </ol>
+<p>Si volem fer servir fitxers, haurem d’aprendre el patró obrir→usar→tancar.</p>
 </div>
 <div class="section" id="especificacio-dels-fitxers">
 <h2>Especificació dels fitxers<a class="headerlink" href="#especificacio-dels-fitxers" title="Link permanent a aquest títol">¶</a></h2>
@@ -253,11 +254,18 @@ operacions bàsiques són:</p>
 tancar-ho.</p>
 <p>Si ens descuidem de fer-ho, és possible que el fitxer quedi corrupte o bé
 que algunes dades no quedin correctament emmagatzemades.</p>
-<p>A banda, és preferible tancar el fitxer tan aviat no pensem usar-lo més.
-Els fitxers oberts consumeixen recursos valuosos del sistema. Si no ens
-cal, retornem aquests recursos.</p>
+<p>És preferible tancar el fitxer tan aviat no pensem usar-lo més.</p>
+<p>Els fitxers oberts consumeixen recursos valuosos del sistema com ara els
+descriptors de fitxers que es fan servir per cada fitxer obert i que estan
+limitats.</p>
+<p>De vegades els fitxers queden bloquejats perquè no els facin servir altres
+programes, el que pot implicar que afectem el bon funcionament d’aquests.</p>
+<p>En cas que no siguin bloquejats, mantenir-los oberts innecessàriament
+augmenta el risc de que altres programes hi escriguin causant
+situacions errònies de difícil reproducció i localització.</p>
+<p>Si no ens cal, retornem aquests recursos.</p>
 <p>Malauradament, Java no ens avisarà de que hem de tancar els fitxers
-oberts. Toca tenir disciplina aquí!</p>
+oberts<a class="footnote-reference brackets" href="#tryresources" id="id1">1</a>. Toca tenir disciplina aquí!</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>No oblidis tancar <strong>sempre</strong> els fitxers que obris en
@@ -292,24 +300,31 @@ final o avançar, retrocedir, anar a una posició concreta, etc.</p>
 habitual distingir dos tipus de fitxers:</p>
 <ul>
 <li><p>fitxers de text</p>
-<p>El seu contingut són bytes que corresponen a text. Poden ser llegits per un
-editor com el que fem servir per codificar els nostres programes. Internament,
-el text pot presentar, és clar, diferents formats. Per exemple, el codi d’un
-programa en Java, un document XML o la sortida esperada d’un dels nostres
-programes quan preparem proves.</p>
+<p>El seu contingut són bytes que corresponen a text. Poden ser llegits per
+un editor com el que fem servir per codificar els nostres programes. Per
+exemple, el codi d’un dels nostres programes en Java o la seva sortida
+quan preparem proves.</p>
 <p>A banda, el contingut dels fitxers de text pot estar representat en un o
 altre format. Per exemple: text pla, csv (<em>comma separated values</em>),
-XML, HTML, YAML, i un llarg etcètera.</p>
+XML, HTML, YAML, JSON i un llarg etcètera.</p>
 </li>
 <li><p>fitxers binaris</p>
 <p>El seu contingut no es pot llegir amb un editor convencional donat que conté
 valors fora del rang de les lletres que formen un text vàlid.</p>
-<p>Aquests fitxers necessiten un programa especial per a ser llegits (i escrits).
-Alguns exemples són els fitxers .class que genera <code class="docutils literal notranslate"><span class="pre">javac</span></code>, un fitxer
-<em>tar.gz</em> amb tots els teus programes empaquetats i comprimits, un <em>mp3</em> amb la
-teva cançó favorita o un <em>png</em> amb la foto d’un gatet.</p>
+<p>Aquests fitxers necessiten un programa especial per a ser llegits (i
+escrits).  Alguns exemples són els fitxers .class que genera <code class="docutils literal notranslate"><span class="pre">javac</span></code>,
+un fitxer <em>tar.gz</em> amb tots els teus programes empaquetats i comprimits,
+un <em>mp3</em> amb la teva cançó favorita o un <em>png</em> amb la foto d’un gatet.</p>
 </li>
 </ul>
+<hr class="docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="tryresources"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Més endavant veurem que de fet Java sí ens ofereix
+ajuda al respecte. Però haurem d’esperar-nos a conèixer les
+<em>excepcions</em>.</p>
+</dd>
+</dl>
 </div>
 </div>
 

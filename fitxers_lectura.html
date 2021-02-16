@@ -168,6 +168,8 @@
   <div class="section" id="lectura-de-fitxers-de-text">
 <h1>Lectura de fitxers de text<a class="headerlink" href="#lectura-de-fitxers-de-text" title="Link permanent a aquest títol">¶</a></h1>
 <p>En aquesta secció descobrirem com podem llegir fitxers de text en Java.</p>
+<p>Recordem el patró <em>obrir→usar→tancar</em>, oi? Doncs en aquest cas es concreta
+com <em>obrir→llegir→tancar</em></p>
 <div class="section" id="mostrar-el-contingut-d-un-fitxer">
 <h2>Mostrar el contingut d’un fitxer<a class="headerlink" href="#mostrar-el-contingut-d-un-fitxer" title="Link permanent a aquest títol">¶</a></h2>
 <p>Considera el següent programa:</p>
@@ -205,13 +207,13 @@
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="p">{</span>
         <span class="n">String</span> <span class="n">cami</span> <span class="o">=</span> <span class="s">&quot;Mostrat.java&quot;</span><span class="p">;</span>
         <span class="n">FileReader</span> <span class="n">fileReader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileReader</span><span class="p">(</span><span class="n">cami</span><span class="p">);</span>
-        <span class="n">BufferedReader</span> <span class="n">input</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="p">(</span><span class="n">fileReader</span><span class="p">);</span>
+        <span class="n">BufferedReader</span> <span class="n">input</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="p">(</span><span class="n">fileReader</span><span class="p">);</span>      <span class="c1">// obrir</span>
         <span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">String</span> <span class="n">linia</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="na">readLine</span><span class="p">();</span>
+            <span class="n">String</span> <span class="n">linia</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="na">readLine</span><span class="p">();</span>                        <span class="c1">// llegir</span>
             <span class="k">if</span> <span class="p">(</span><span class="kc">null</span> <span class="o">==</span> <span class="n">linia</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
             <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">linia</span><span class="p">);</span>
         <span class="p">}</span>
-        <span class="n">input</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+        <span class="n">input</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>                                              <span class="c1">// tancar</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -677,7 +679,6 @@ al final del fitxer.</p>
 <code class="docutils literal notranslate"><span class="pre">continguts.txt</span></code> conté el següent:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>primera línia
 segona línia
-darrera línia
 </pre></div>
 </div>
 <p>Considera ara el següent codi:</p>

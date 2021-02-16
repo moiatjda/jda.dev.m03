@@ -35,6 +35,7 @@ Considera el següent codi novament:
                 if (null == linia) break;
                 System.out.println(linia);
             } 
+            input.close();
         }
     }
 
