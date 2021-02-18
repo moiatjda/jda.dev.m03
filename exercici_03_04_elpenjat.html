@@ -219,20 +219,47 @@ encertar-la. Quan no en quedin més paraules, es mostrarà el missatge <code cla
 </div>
 <div class="section" id="jugant-una-paraula">
 <h2>Jugant una paraula<a class="headerlink" href="#jugant-una-paraula" title="Link permanent a aquest títol">¶</a></h2>
-<p>Els jugadors van introduint lletres fins que:</p>
+<p>Un cop es presenta una paraula, el programa anirà demanant lletres.</p>
+<p>No es distingeixen majúscules i minúscules en l’entrada.</p>
+<p>Les possibilitats són:</p>
+<ul>
+<li><p>quan la lletra introduïda està dins de la paraula a encertar, aquesta
+quedarà descoberta.</p></li>
+<li><p>quan la lletra introduïda no estigui dins de la paraula a encertar, es
+considerarà un error, tot descomptant el nombre d’intents disponibles
+per la paraula.</p></li>
+<li><p>si l’entrada és <code class="docutils literal notranslate"><span class="pre">&quot;prou&quot;</span></code>, els jugadors ens indiquen que volen deixar
+de jugar. Aquí queda abandonada la paraula actual i la resta de les que
+no s’hagin jugat.</p></li>
+<li><p>quan l’entrada és <code class="docutils literal notranslate"><span class="pre">&quot;glups&quot;</span></code>, els jugadors ens indiquen que troben
+massa difícil la paraula actual i es rendeixen. La paraula actual es
+compta com abandonada/cancel·lada i es passa a la següent.</p></li>
+<li><p>quan la darrera lletra introduïda destapa tota la paraula actual en joc,
+el programa informa els jugadors que han encertat la paraula actual i
+se’ls ofereix la següent, si en queden, o es finalitza el joc.</p></li>
+<li><p>quan la darrera entrada no corresponia a una lletra de la paraula actual i ha
+exhaurit el nombre màxim intents, el programa informa els jugadors que han fallat
+aquesta paraula i se’ls ofereix la següent si en queden, o finalitza el
+joc.</p></li>
+<li><p>Si es torna a introduir una lletra ja introduïda, el joc informa que la
+lletra ja ha estat introduïda i no la comptarà com intent.</p></li>
+<li><p>quan no és una de les paraules reservades (<code class="docutils literal notranslate"><span class="pre">&quot;prou&quot;</span></code> o <code class="docutils literal notranslate"><span class="pre">&quot;glups&quot;</span></code>),
+s’espera que només sigui una lletra. Si no és el cas, es mostra un
+missatge però no se li compta com a intent.</p>
+<p>El missatge d’error és <code class="docutils literal notranslate"><span class="pre">&quot;Error:</span> <span class="pre">cal</span> <span class="pre">una</span> <span class="pre">lletra</span> <span class="pre">entre</span> <span class="pre">'a'</span> <span class="pre">i</span> <span class="pre">'z',</span> <span class="pre">'prou'</span>
+<span class="pre">o</span> <span class="pre">'glups'&quot;</span></code></p>
+</li>
+</ul>
+<p>Per cada paraula, en començar hi haurà disponibles tots els intents,
+independentment de com anés el joc amb la paraula anterior.</p>
+<p>A cada jugada, el programa informa de la situació de la partida tot
+mostrant:</p>
 <ul class="simple">
-<li><p>l’entrada és <code class="docutils literal notranslate"><span class="pre">&quot;prou&quot;</span></code>: els jugadors volen deixar de jugar. Aquí
-queda abandonada la paraula actual i la resta de les que no s’hagin
-jugat.</p></li>
-<li><p>l’entrada és <code class="docutils literal notranslate"><span class="pre">&quot;glups&quot;</span></code>: els jugadors troben massa difícil la paraula
-actual i es rendeixen. La paraula actual queda abandonada i es passa a
-la següent.</p></li>
-<li><p>la darrera entrada fa descobrir totes les lletres de la paraula actual:
-informem als jugadors que han encertat la paraula actual i passem a la
-següent.</p></li>
-<li><p>la darrera entrada no corresponia a una lletra de la paraula actual i ha
-exhaureix el nombre màxim intents: informem els jugadors que han fallat
-aquesta paraula i passem a la següent.</p></li>
+<li><p>la paraula ocultant les lletres encara per descobrir</p></li>
+<li><p>les lletres utilitzades fins ara. Apareixen en majúscules, en el mateix
+ordre en que van ser introduïdes i sense repeticions.</p></li>
+<li><p>el nombre d’intents disponibles. Un valor del 10 al 1 (quan és zero es
+considera fallada la paraula)</p></li>
 </ul>
 </div>
 <div class="section" id="lletra-erronia">
@@ -278,25 +305,83 @@ això cada cop.</p>
 <li><p>els jugadors han demanat finalitzar el joc</p></li>
 </ul>
 <p>En ambdós casos, el programa mostrarà un resum i s’acomiadarà</p>
+<p>El resum consistirà en indicar el nombre de paraules jugades, encertades,
+fallades i cancel·lades.</p>
 <p><strong>Nota</strong>: recorda que, si no ho has fet encara, aquest és el moment per
 tancar el fitxer de paraules!</p>
 </div>
-<div class="section" id="consideracions-addicionals-sobre-el-programa-resultant">
-<h2>Consideracions addicionals sobre el programa resultant<a class="headerlink" href="#consideracions-addicionals-sobre-el-programa-resultant" title="Link permanent a aquest títol">¶</a></h2>
-<p>Cal tenir en compte que:</p>
-<ul>
-<li><p>No es distingeixen majúscules i minúscules a l’entrada.</p></li>
-<li><p>quan no és una de les paraules reservades (<code class="docutils literal notranslate"><span class="pre">&quot;prou&quot;</span></code> o <code class="docutils literal notranslate"><span class="pre">&quot;glups&quot;</span></code>),
-s’espera que només sigui una lletra. Si no és el cas, es mostra un
-missatge però no se li compta com a intent.</p>
-<p>El missatge d’error és <code class="docutils literal notranslate"><span class="pre">&quot;Error:</span> <span class="pre">cal</span> <span class="pre">una</span> <span class="pre">lletra</span> <span class="pre">entre</span> <span class="pre">'a'</span> <span class="pre">i</span> <span class="pre">'z',</span> <span class="pre">'prou'</span>
-<span class="pre">o</span> <span class="pre">'glups'&quot;</span></code></p>
-</li>
-<li><p>Si es torna a introduir una lletra ja introduïda, el joc informa que la
-lletra ja ha estat introduïda i no la comptarà com intent.</p></li>
-<li><p>La seqüència de lletres utilitzades manté l’ordre d’entrada però no
-inclou repetits.</p></li>
-</ul>
+<div class="section" id="una-simulacio">
+<h2>Una simulació<a class="headerlink" href="#una-simulacio" title="Link permanent a aquest títol">¶</a></h2>
+<p>Considera la següent simulació en la que es mostra com juguem amb la
+primera paraula.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java Penjat
+<span class="hll"><span class="go">Comencem a jugar</span>
+</span><span class="hll"><span class="go">Paraula: ****</span>
+</span><span class="hll"><span class="go">Utilitzades: cap</span>
+</span><span class="hll"><span class="go">Intents disponibles: 10</span>
+</span><span class="hll"><span class="go">Introdueix una lletra</span>
+</span><span class="go">a</span>
+<span class="hll"><span class="go">Paraula: *a*a</span>
+</span><span class="hll"><span class="go">Utilitzades: A</span>
+</span><span class="hll"><span class="go">Intents disponibles: 10</span>
+</span><span class="hll"><span class="go">Introdueix una lletra</span>
+</span><span class="go">p</span>
+<span class="hll"><span class="go">    ··········</span>
+</span><span class="hll"><span class="go">    ··········</span>
+</span><span class="hll"><span class="go">    ··········</span>
+</span><span class="hll"><span class="go">    ··········</span>
+</span><span class="hll"><span class="go">    ··········</span>
+</span><span class="hll"><span class="go">    ··········</span>
+</span><span class="hll"><span class="go">    ··········</span>
+</span><span class="hll"><span class="go">    ··········</span>
+</span><span class="hll"><span class="go">    ··········</span>
+</span><span class="hll"><span class="go">    ··········</span>
+</span><span class="hll"><span class="go">    ··········</span>
+</span><span class="hll"><span class="go">    ··········</span>
+</span><span class="hll"><span class="go">    ··········</span>
+</span><span class="hll"><span class="go">    XXXXXXXXXX</span>
+</span><span class="hll"><span class="go">Paraula: *a*a</span>
+</span><span class="hll"><span class="go">Utilitzades: A i P</span>
+</span><span class="hll"><span class="go">Intents disponibles: 9</span>
+</span><span class="hll"><span class="go">Introdueix una lletra</span>
+</span><span class="go">u</span>
+<span class="hll"><span class="go">    ········X·</span>
+</span><span class="hll"><span class="go">    ········X·</span>
+</span><span class="hll"><span class="go">    ········X·</span>
+</span><span class="hll"><span class="go">    ········X·</span>
+</span><span class="hll"><span class="go">    ········X·</span>
+</span><span class="hll"><span class="go">    ········X·</span>
+</span><span class="hll"><span class="go">    ········X·</span>
+</span><span class="hll"><span class="go">    ········X·</span>
+</span><span class="hll"><span class="go">    ········X·</span>
+</span><span class="hll"><span class="go">    ········X·</span>
+</span><span class="hll"><span class="go">    ········X·</span>
+</span><span class="hll"><span class="go">    ········X·</span>
+</span><span class="hll"><span class="go">    ········X·</span>
+</span><span class="hll"><span class="go">    XXXXXXXXXX</span>
+</span><span class="hll"><span class="go">Paraula: *a*a</span>
+</span><span class="hll"><span class="go">Utilitzades: A, P i U</span>
+</span><span class="hll"><span class="go">Intents disponibles: 8</span>
+</span><span class="hll"><span class="go">Introdueix una lletra</span>
+</span><span class="go">v</span>
+<span class="hll"><span class="go">Paraula: *ava</span>
+</span><span class="hll"><span class="go">Utilitzades: A, P, U i V</span>
+</span><span class="hll"><span class="go">Intents disponibles: 8</span>
+</span><span class="hll"><span class="go">Introdueix una lletra</span>
+</span><span class="go">j</span>
+<span class="hll"><span class="go">Has encertat! La paraula era java</span>
+</span><span class="hll"><span class="go">Paraula: ******</span>
+</span><span class="hll"><span class="go">Utilitzades: cap</span>
+</span><span class="hll"><span class="go">Intents disponibles: 10</span>
+</span><span class="hll"><span class="go">Introdueix una lletra</span>
+</span><span class="go">prou</span>
+<span class="hll"><span class="go">Paraules jugades: 2</span>
+</span><span class="hll"><span class="go">Paraules encertades: 1</span>
+</span><span class="hll"><span class="go">Paraules fallades: 0</span>
+</span><span class="hll"><span class="go">Paraules cancel·lades: 1</span>
+</span><span class="hll"><span class="go">Espero que t&#39;hagis divertit</span>
+</span></pre></div>
+</div>
 </div>
 <div class="section" id="desenvolupament-i-lliurament">
 <h2>Desenvolupament i lliurament<a class="headerlink" href="#desenvolupament-i-lliurament" title="Link permanent a aquest títol">¶</a></h2>

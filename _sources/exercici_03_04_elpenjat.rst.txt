@@ -62,23 +62,59 @@ queden més paraules"`` i es finalitzarà el joc.
 Jugant una paraula
 ==================
 
-Els jugadors van introduint lletres fins que:
+Un cop es presenta una paraula, el programa anirà demanant lletres.
 
-* l'entrada és ``"prou"``: els jugadors volen deixar de jugar. Aquí
-  queda abandonada la paraula actual i la resta de les que no s'hagin
-  jugat.
+No es distingeixen majúscules i minúscules en l'entrada.
 
-* l'entrada és ``"glups"``: els jugadors troben massa difícil la paraula
-  actual i es rendeixen. La paraula actual queda abandonada i es passa a
-  la següent.
+Les possibilitats són:
 
-* la darrera entrada fa descobrir totes les lletres de la paraula actual:
-  informem als jugadors que han encertat la paraula actual i passem a la
-  següent.
+* quan la lletra introduïda està dins de la paraula a encertar, aquesta
+  quedarà descoberta.
 
-* la darrera entrada no corresponia a una lletra de la paraula actual i ha
-  exhaureix el nombre màxim intents: informem els jugadors que han fallat
-  aquesta paraula i passem a la següent.
+* quan la lletra introduïda no estigui dins de la paraula a encertar, es
+  considerarà un error, tot descomptant el nombre d'intents disponibles
+  per la paraula.
+
+* si l'entrada és ``"prou"``, els jugadors ens indiquen que volen deixar
+  de jugar. Aquí queda abandonada la paraula actual i la resta de les que
+  no s'hagin jugat.
+
+* quan l'entrada és ``"glups"``, els jugadors ens indiquen que troben
+  massa difícil la paraula actual i es rendeixen. La paraula actual es
+  compta com abandonada/cancel·lada i es passa a la següent.
+
+* quan la darrera lletra introduïda destapa tota la paraula actual en joc,
+  el programa informa els jugadors que han encertat la paraula actual i
+  se'ls ofereix la següent, si en queden, o es finalitza el joc.
+
+* quan la darrera entrada no corresponia a una lletra de la paraula actual i ha
+  exhaurit el nombre màxim intents, el programa informa els jugadors que han fallat
+  aquesta paraula i se'ls ofereix la següent si en queden, o finalitza el
+  joc.
+
+* Si es torna a introduir una lletra ja introduïda, el joc informa que la
+  lletra ja ha estat introduïda i no la comptarà com intent.
+
+* quan no és una de les paraules reservades (``"prou"`` o ``"glups"``),
+  s'espera que només sigui una lletra. Si no és el cas, es mostra un
+  missatge però no se li compta com a intent.
+
+  El missatge d'error és ``"Error: cal una lletra entre 'a' i 'z', 'prou'
+  o 'glups'"``
+
+Per cada paraula, en començar hi haurà disponibles tots els intents,
+independentment de com anés el joc amb la paraula anterior.
+
+A cada jugada, el programa informa de la situació de la partida tot
+mostrant:
+
+* la paraula ocultant les lletres encara per descobrir
+
+* les lletres utilitzades fins ara. Apareixen en majúscules, en el mateix
+  ordre en que van ser introduïdes i sense repeticions.
+
+* el nombre d'intents disponibles. Un valor del 10 al 1 (quan és zero es
+  considera fallada la paraula)
 
 Lletra errònia
 ==============
@@ -134,28 +170,89 @@ El joc finalitza en una de les següents condicions:
 
 En ambdós casos, el programa mostrarà un resum i s'acomiadarà
 
+El resum consistirà en indicar el nombre de paraules jugades, encertades,
+fallades i cancel·lades.
+
 **Nota**: recorda que, si no ho has fet encara, aquest és el moment per
 tancar el fitxer de paraules!
 
-Consideracions addicionals sobre el programa resultant
-======================================================
 
-Cal tenir en compte que:
+Una simulació
+=============
 
-* No es distingeixen majúscules i minúscules a l'entrada.
+Considera la següent simulació en la que es mostra com juguem amb la
+primera paraula.
 
-* quan no és una de les paraules reservades (``"prou"`` o ``"glups"``),
-  s'espera que només sigui una lletra. Si no és el cas, es mostra un
-  missatge però no se li compta com a intent.
+.. code-block:: console
+    :emphasize-lines: 2-6, 8-11, 13-30, 32-49, 51-54, 56-60, 62-
 
-  El missatge d'error és ``"Error: cal una lletra entre 'a' i 'z', 'prou'
-  o 'glups'"``
+    $ java Penjat 
+    Comencem a jugar
+    Paraula: ****
+    Utilitzades: cap
+    Intents disponibles: 10
+    Introdueix una lletra
+    a
+    Paraula: *a*a
+    Utilitzades: A
+    Intents disponibles: 10
+    Introdueix una lletra
+    p
+        ··········
+        ··········
+        ··········
+        ··········
+        ··········
+        ··········
+        ··········
+        ··········
+        ··········
+        ··········
+        ··········
+        ··········
+        ··········
+        XXXXXXXXXX
+    Paraula: *a*a
+    Utilitzades: A i P
+    Intents disponibles: 9
+    Introdueix una lletra
+    u
+        ········X·
+        ········X·
+        ········X·
+        ········X·
+        ········X·
+        ········X·
+        ········X·
+        ········X·
+        ········X·
+        ········X·
+        ········X·
+        ········X·
+        ········X·
+        XXXXXXXXXX
+    Paraula: *a*a
+    Utilitzades: A, P i U
+    Intents disponibles: 8
+    Introdueix una lletra
+    v
+    Paraula: *ava
+    Utilitzades: A, P, U i V
+    Intents disponibles: 8
+    Introdueix una lletra
+    j
+    Has encertat! La paraula era java
+    Paraula: ******
+    Utilitzades: cap
+    Intents disponibles: 10
+    Introdueix una lletra
+    prou
+    Paraules jugades: 2
+    Paraules encertades: 1
+    Paraules fallades: 0
+    Paraules cancel·lades: 1
+    Espero que t'hagis divertit
 
-* Si es torna a introduir una lletra ja introduïda, el joc informa que la
-  lletra ja ha estat introduïda i no la comptarà com intent.
-
-* La seqüència de lletres utilitzades manté l'ordre d'entrada però no
-  inclou repetits.
 
 Desenvolupament i lliurament
 ============================
