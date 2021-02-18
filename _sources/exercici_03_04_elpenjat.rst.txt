@@ -1,0 +1,229 @@
+###################################################
+|exerciseicon_ST| Exercici 03_04. El joc del penjat
+###################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``03_04_elpenjat/``
+
+* Continguts relacionats: :doc:`fitxers_lectura`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [☆] Exercici amb :ref:`dificultat addicional<descripcio_exercicis_dificils>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+En aquesta secció desenvoluparàs un programa que permeti jugar al joc del
+penjat.
+
+És tracta d'un exercici més llarg que l'habitual i, per tant, l'enunciat
+també resulta una mica més llarg i complex. Toca concentrar-se.
+
+Descripció general
+==================
+
+El joc del penjat consisteix en que algú, en aquest cas el programa, es
+pensa una paraula i mostra les seves lletres ocultes, de manera que
+l'altre (l'usuari del programa) pugui veure quantes lletres té.
+
+Quan els jugadors introdueixen una lletra, si aquesta és a la paraula
+oculta, el programa mostra la paraula oculta però amb les lletres
+encertades descobertes.
+
+Quan els jugadors introdueixen una lletra que no és a la paraula oculta, o bé
+una lletra que ja havia introduït abans, se li anota un error.  Hi ha
+disponible un màxim de 10 intents per cada paraula.
+
+Paraules en joc
+===============
+
+Les paraules disponibles es troben a un fitxer anomenat ``paraules.txt``
+que inclou una paraula per línia. Un exemple de contingut seria:
+
+.. code-block:: console
+    :emphasize-lines: 2-
+
+    $ cat paraules.txt 
+    java
+    kotlin
+    scala
+    clojure
+
+Per simplicitat, mantindrem el fitxer de paraules obert fins que finalitzi
+el joc.
+
+Als jugadors els anirem presentant una paraula cada cop per què intenti
+encertar-la. Quan no en quedin més paraules, es mostrarà el missatge ``"No
+queden més paraules"`` i es finalitzarà el joc.
+
+Jugant una paraula
+==================
+
+Els jugadors van introduint lletres fins que:
+
+* l'entrada és ``"prou"``: els jugadors volen deixar de jugar. Aquí
+  queda abandonada la paraula actual i la resta de les que no s'hagin
+  jugat.
+
+* l'entrada és ``"glups"``: els jugadors troben massa difícil la paraula
+  actual i es rendeixen. La paraula actual queda abandonada i es passa a
+  la següent.
+
+* la darrera entrada fa descobrir totes les lletres de la paraula actual:
+  informem als jugadors que han encertat la paraula actual i passem a la
+  següent.
+
+* la darrera entrada no corresponia a una lletra de la paraula actual i ha
+  exhaureix el nombre màxim intents: informem els jugadors que han fallat
+  aquesta paraula i passem a la següent.
+
+Lletra errònia
+==============
+
+Cada cop que els jugadors introdueixen una lletra que no és a la paraula
+actual, es mostra un missatge d'error i es dibuixa una figura que
+representa l'estat del penjat de manera més o menys gràfica.
+
+Les figures disponibles es troben definides a uns fitxers de text
+anomenats ``figura0.txt``, ``figura1.txt``… ``figura9.txt``
+
+Per exemple, la figura 8 conté el següent:
+
+.. code-block:: console
+  :emphasize-lines: 2-
+
+  $ cat figura7.txt 
+    ··XXXXXXX·
+    ···X····X·
+    ··oOo···X·
+    ··oOo···X·
+    ···O····X·
+    ·oOOOo··X·
+    ·oOOOo··X·
+    ·oOOOo··X·
+    ····O···X·
+    ····O···X·
+    ····Oo··X·
+    ········X·
+    ········X·
+    XXXXXXXXXX
+
+Per mostrar una figura, desenvoluparàs un procediment anomenat
+``mostraFigura(int intentsDisponibles)``. El mòdul mostrarà la figura
+corresponent als intents disponibles que se li indiqui al seu únic
+paràmetre.
+
+Així, quan queden 9 intents, la figura que mostrarem serà la 0. Quan en
+queden 8 la 1 i quan no en queden cap, la 9.
+
+El procediment ``mostraFigura()`` bàsicament obrirà el fitxer de la figura
+corresponent, mostrarà el seu contingut i el tancarà en finalitzar. Tot
+això cada cop.
+
+Finalització del joc
+====================
+
+El joc finalitza en una de les següents condicions:
+
+* s'han jugat totes les paraules que hi havia al fitxer de paraules.
+
+* els jugadors han demanat finalitzar el joc
+
+En ambdós casos, el programa mostrarà un resum i s'acomiadarà
+
+**Nota**: recorda que, si no ho has fet encara, aquest és el moment per
+tancar el fitxer de paraules!
+
+Consideracions addicionals sobre el programa resultant
+======================================================
+
+Cal tenir en compte que:
+
+* No es distingeixen majúscules i minúscules a l'entrada.
+
+* quan no és una de les paraules reservades (``"prou"`` o ``"glups"``),
+  s'espera que només sigui una lletra. Si no és el cas, es mostra un
+  missatge però no se li compta com a intent.
+
+  El missatge d'error és ``"Error: cal una lletra entre 'a' i 'z', 'prou'
+  o 'glups'"``
+
+* Si es torna a introduir una lletra ja introduïda, el joc informa que la
+  lletra ja ha estat introduïda i no la comptarà com intent.
+
+* La seqüència de lletres utilitzades manté l'ordre d'entrada però no
+  inclou repetits.
+
+Desenvolupament i lliurament
+============================
+
+A diferència d'altres activitats d'aquest curs, aquest exercici es pot i
+**es recomana** fer en grups.
+
+Per poder realitzar aquesta activitat en grup, caldrà:
+
+#. formar grup; el teu docent farà i escoltarà propostes
+
+#. crear un nou repositori a GitHub amb les següents característiques:
+ 
+  * L'ha de crear una/un dels participants i afegir com a
+    col·laboradores/col·laboradors a la resta del grup més a mi (el vostre
+    docent)
+
+  * Per simplicitat, suposaré que el nom del repositori remot i la carpeta
+    local és ``iespenjat``
+
+    Podeu, però, fer servir un altre
+
+  * Ha de ser *privat* com ``introprg``.
+
+  * Cal que algú del grup m'enviï un missatge per correu electrònic amb
+    l'enllaç al nou repositori, afegint amb còpia la resta de participants
+    del grup.
+
+Donat que ara treballareu amb un repositori compartit, caldrà una mica més
+de disciplina amb el joc ``push/pull`` i **sobretot** amb els comentaris
+dels ``commit``. És a dir, cada ``commit`` haurà de tenir un comentari que
+realment descrigui què inclou, de manera que pugui ser seguit amb la
+comanda ``git log``.
+
+A banda, de ben segur que apareixeran conflictes per col·lisions amb
+actuacions entre vosaltres. No dubteu en consultar-me quan això passi.
+
+Us recomano **molt** que aprofiteu aquesta activitat per experimentar el
+treball compartit amb una eina de gestió de versions com ``git``.
+
+Si per algun motiu no t'he convençut i ho vols fer pel teu compte, caldrà
+igualment que facis totes les passes anteriors, és a dir, crear el nou
+repositori, convidar-me, etc.  Les úniques diferències són que el teu grup
+estarà composat per una sola persona i que et perdràs una experiència molt
+enriquidora.
+
+Ampliacions
+===========
+
+És possible que et quedis amb les ganes de fer algunes ampliacions a
+aquest joc.
+
+En cas que sigui així, us proposo que creeu una carpeta diferent de la
+d'aquest exercici, per tal que no tingueu problemes amb les proves de la
+versió original.
+
+Si voleu que tingui en compte aquestes ampliacions, caldrà que hi afegiu
+un fitxer de text anomenat ``ampliacio.rst`` que contingui una descripció
+de l'ampliació que heu fet i, si cal, indicacions per a ser executada (ex.
+si cal instal·lar alguna biblioteca addicional)
+
+Algunes possibles ampliacions que potser et resulten interessants o/i divertides:
+
+* ampliar les paraules en joc
+
+* canviar el disseny de les figures
+
+* aconseguir un efecte *random*. És a dir, escollir les paraules
+  aleatòriament del fitxer d'entrada.
+
+* repetir les paraules que s'han fallat o/i cancel·lat

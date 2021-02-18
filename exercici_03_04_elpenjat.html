@@ -1,0 +1,433 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ca" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Exercici 03_04. El joc del penjat &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Apèndix" href="apendix.html" />
+    <link rel="prev" title="Exercici 03_03. Valors separats per comes" href="exercici_03_03_csv.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació amb Java
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-21
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moduls.html">Mòduls</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="fitxers.html">Fitxers</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="fitxers_intro.html">Primeres definicions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fitxers_lectura.html">Lectura de fitxers de text</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="fitxers_exercicis.html">Llistat d’exercicis</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_01_excepcional.html"> Exercici 03_01. Situacions excepcionals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_02_vocal_inici_fi.html"> Exercici 03_02. Vocals a l’inici o al final</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_03_csv.html"> Exercici 03_03. Valors separats per comes</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#"> Exercici 03_04. El joc del penjat</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="apendix.html">Apèndix</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació amb Java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="fitxers.html">Fitxers</a> &raquo;</li>
+        
+          <li><a href="fitxers_exercicis.html">Llistat d’exercicis</a> &raquo;</li>
+        
+      <li> Exercici 03_04. El joc del penjat</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="exerciseicon-st-exercici-03-04-el-joc-del-penjat">
+<h1><img alt="exerciseicon_ST" src="_images/exerciseicon_ST.png" /> Exercici 03_04. El joc del penjat<a class="headerlink" href="#exerciseicon-st-exercici-03-04-el-joc-del-penjat" title="Link permanent a aquest títol">¶</a></h1>
+<p class="rubric">Context</p>
+<ul class="simple">
+<li><p>Carpeta de lliurament: <code class="docutils literal notranslate"><span class="pre">03_04_elpenjat/</span></code></p></li>
+<li><p>Continguts relacionats: <a class="reference internal" href="fitxers_lectura.html"><span class="doc">Lectura de fitxers de text</span></a></p></li>
+<li><p>Com lliurar-lo: <a class="reference internal" href="holagit.html#instruccions-git"><span class="std std-ref">instruccions</span></a></p></li>
+<li><p>[☆] Exercici amb <a class="reference internal" href="sobre_exercicis.html#descripcio-exercicis-dificils"><span class="std std-ref">dificultat addicional</span></a></p></li>
+<li><p>[✓] Exercici amb <a class="reference internal" href="sobre_exercicis.html#descripcio-exercicis-autoavaluacio"><span class="std std-ref">autoavaluació</span></a></p></li>
+</ul>
+<p class="rubric">Enunciat</p>
+<p>En aquesta secció desenvoluparàs un programa que permeti jugar al joc del
+penjat.</p>
+<p>És tracta d’un exercici més llarg que l’habitual i, per tant, l’enunciat
+també resulta una mica més llarg i complex. Toca concentrar-se.</p>
+<div class="section" id="descripcio-general">
+<h2>Descripció general<a class="headerlink" href="#descripcio-general" title="Link permanent a aquest títol">¶</a></h2>
+<p>El joc del penjat consisteix en que algú, en aquest cas el programa, es
+pensa una paraula i mostra les seves lletres ocultes, de manera que
+l’altre (l’usuari del programa) pugui veure quantes lletres té.</p>
+<p>Quan els jugadors introdueixen una lletra, si aquesta és a la paraula
+oculta, el programa mostra la paraula oculta però amb les lletres
+encertades descobertes.</p>
+<p>Quan els jugadors introdueixen una lletra que no és a la paraula oculta, o bé
+una lletra que ja havia introduït abans, se li anota un error.  Hi ha
+disponible un màxim de 10 intents per cada paraula.</p>
+</div>
+<div class="section" id="paraules-en-joc">
+<h2>Paraules en joc<a class="headerlink" href="#paraules-en-joc" title="Link permanent a aquest títol">¶</a></h2>
+<p>Les paraules disponibles es troben a un fitxer anomenat <code class="docutils literal notranslate"><span class="pre">paraules.txt</span></code>
+que inclou una paraula per línia. Un exemple de contingut seria:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> cat paraules.txt
+<span class="hll"><span class="go">java</span>
+</span><span class="hll"><span class="go">kotlin</span>
+</span><span class="hll"><span class="go">scala</span>
+</span><span class="hll"><span class="go">clojure</span>
+</span></pre></div>
+</div>
+<p>Per simplicitat, mantindrem el fitxer de paraules obert fins que finalitzi
+el joc.</p>
+<p>Als jugadors els anirem presentant una paraula cada cop per què intenti
+encertar-la. Quan no en quedin més paraules, es mostrarà el missatge <code class="docutils literal notranslate"><span class="pre">&quot;No</span>
+<span class="pre">queden</span> <span class="pre">més</span> <span class="pre">paraules&quot;</span></code> i es finalitzarà el joc.</p>
+</div>
+<div class="section" id="jugant-una-paraula">
+<h2>Jugant una paraula<a class="headerlink" href="#jugant-una-paraula" title="Link permanent a aquest títol">¶</a></h2>
+<p>Els jugadors van introduint lletres fins que:</p>
+<ul class="simple">
+<li><p>l’entrada és <code class="docutils literal notranslate"><span class="pre">&quot;prou&quot;</span></code>: els jugadors volen deixar de jugar. Aquí
+queda abandonada la paraula actual i la resta de les que no s’hagin
+jugat.</p></li>
+<li><p>l’entrada és <code class="docutils literal notranslate"><span class="pre">&quot;glups&quot;</span></code>: els jugadors troben massa difícil la paraula
+actual i es rendeixen. La paraula actual queda abandonada i es passa a
+la següent.</p></li>
+<li><p>la darrera entrada fa descobrir totes les lletres de la paraula actual:
+informem als jugadors que han encertat la paraula actual i passem a la
+següent.</p></li>
+<li><p>la darrera entrada no corresponia a una lletra de la paraula actual i ha
+exhaureix el nombre màxim intents: informem els jugadors que han fallat
+aquesta paraula i passem a la següent.</p></li>
+</ul>
+</div>
+<div class="section" id="lletra-erronia">
+<h2>Lletra errònia<a class="headerlink" href="#lletra-erronia" title="Link permanent a aquest títol">¶</a></h2>
+<p>Cada cop que els jugadors introdueixen una lletra que no és a la paraula
+actual, es mostra un missatge d’error i es dibuixa una figura que
+representa l’estat del penjat de manera més o menys gràfica.</p>
+<p>Les figures disponibles es troben definides a uns fitxers de text
+anomenats <code class="docutils literal notranslate"><span class="pre">figura0.txt</span></code>, <code class="docutils literal notranslate"><span class="pre">figura1.txt</span></code>… <code class="docutils literal notranslate"><span class="pre">figura9.txt</span></code></p>
+<p>Per exemple, la figura 8 conté el següent:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> cat figura7.txt
+<span class="hll"><span class="go">  ··XXXXXXX·</span>
+</span><span class="hll"><span class="go">  ···X····X·</span>
+</span><span class="hll"><span class="go">  ··oOo···X·</span>
+</span><span class="hll"><span class="go">  ··oOo···X·</span>
+</span><span class="hll"><span class="go">  ···O····X·</span>
+</span><span class="hll"><span class="go">  ·oOOOo··X·</span>
+</span><span class="hll"><span class="go">  ·oOOOo··X·</span>
+</span><span class="hll"><span class="go">  ·oOOOo··X·</span>
+</span><span class="hll"><span class="go">  ····O···X·</span>
+</span><span class="hll"><span class="go">  ····O···X·</span>
+</span><span class="hll"><span class="go">  ····Oo··X·</span>
+</span><span class="hll"><span class="go">  ········X·</span>
+</span><span class="hll"><span class="go">  ········X·</span>
+</span><span class="hll"><span class="go">  XXXXXXXXXX</span>
+</span></pre></div>
+</div>
+<p>Per mostrar una figura, desenvoluparàs un procediment anomenat
+<code class="docutils literal notranslate"><span class="pre">mostraFigura(int</span> <span class="pre">intentsDisponibles)</span></code>. El mòdul mostrarà la figura
+corresponent als intents disponibles que se li indiqui al seu únic
+paràmetre.</p>
+<p>Així, quan queden 9 intents, la figura que mostrarem serà la 0. Quan en
+queden 8 la 1 i quan no en queden cap, la 9.</p>
+<p>El procediment <code class="docutils literal notranslate"><span class="pre">mostraFigura()</span></code> bàsicament obrirà el fitxer de la figura
+corresponent, mostrarà el seu contingut i el tancarà en finalitzar. Tot
+això cada cop.</p>
+</div>
+<div class="section" id="finalitzacio-del-joc">
+<h2>Finalització del joc<a class="headerlink" href="#finalitzacio-del-joc" title="Link permanent a aquest títol">¶</a></h2>
+<p>El joc finalitza en una de les següents condicions:</p>
+<ul class="simple">
+<li><p>s’han jugat totes les paraules que hi havia al fitxer de paraules.</p></li>
+<li><p>els jugadors han demanat finalitzar el joc</p></li>
+</ul>
+<p>En ambdós casos, el programa mostrarà un resum i s’acomiadarà</p>
+<p><strong>Nota</strong>: recorda que, si no ho has fet encara, aquest és el moment per
+tancar el fitxer de paraules!</p>
+</div>
+<div class="section" id="consideracions-addicionals-sobre-el-programa-resultant">
+<h2>Consideracions addicionals sobre el programa resultant<a class="headerlink" href="#consideracions-addicionals-sobre-el-programa-resultant" title="Link permanent a aquest títol">¶</a></h2>
+<p>Cal tenir en compte que:</p>
+<ul>
+<li><p>No es distingeixen majúscules i minúscules a l’entrada.</p></li>
+<li><p>quan no és una de les paraules reservades (<code class="docutils literal notranslate"><span class="pre">&quot;prou&quot;</span></code> o <code class="docutils literal notranslate"><span class="pre">&quot;glups&quot;</span></code>),
+s’espera que només sigui una lletra. Si no és el cas, es mostra un
+missatge però no se li compta com a intent.</p>
+<p>El missatge d’error és <code class="docutils literal notranslate"><span class="pre">&quot;Error:</span> <span class="pre">cal</span> <span class="pre">una</span> <span class="pre">lletra</span> <span class="pre">entre</span> <span class="pre">'a'</span> <span class="pre">i</span> <span class="pre">'z',</span> <span class="pre">'prou'</span>
+<span class="pre">o</span> <span class="pre">'glups'&quot;</span></code></p>
+</li>
+<li><p>Si es torna a introduir una lletra ja introduïda, el joc informa que la
+lletra ja ha estat introduïda i no la comptarà com intent.</p></li>
+<li><p>La seqüència de lletres utilitzades manté l’ordre d’entrada però no
+inclou repetits.</p></li>
+</ul>
+</div>
+<div class="section" id="desenvolupament-i-lliurament">
+<h2>Desenvolupament i lliurament<a class="headerlink" href="#desenvolupament-i-lliurament" title="Link permanent a aquest títol">¶</a></h2>
+<p>A diferència d’altres activitats d’aquest curs, aquest exercici es pot i
+<strong>es recomana</strong> fer en grups.</p>
+<p>Per poder realitzar aquesta activitat en grup, caldrà:</p>
+<ol class="arabic simple">
+<li><p>formar grup; el teu docent farà i escoltarà propostes</p></li>
+<li><p>crear un nou repositori a GitHub amb les següents característiques:</p></li>
+</ol>
+<blockquote>
+<div><ul>
+<li><p>L’ha de crear una/un dels participants i afegir com a
+col·laboradores/col·laboradors a la resta del grup més a mi (el vostre
+docent)</p></li>
+<li><p>Per simplicitat, suposaré que el nom del repositori remot i la carpeta
+local és <code class="docutils literal notranslate"><span class="pre">iespenjat</span></code></p>
+<p>Podeu, però, fer servir un altre</p>
+</li>
+<li><p>Ha de ser <em>privat</em> com <code class="docutils literal notranslate"><span class="pre">introprg</span></code>.</p></li>
+<li><p>Cal que algú del grup m’enviï un missatge per correu electrònic amb
+l’enllaç al nou repositori, afegint amb còpia la resta de participants
+del grup.</p></li>
+</ul>
+</div></blockquote>
+<p>Donat que ara treballareu amb un repositori compartit, caldrà una mica més
+de disciplina amb el joc <code class="docutils literal notranslate"><span class="pre">push/pull</span></code> i <strong>sobretot</strong> amb els comentaris
+dels <code class="docutils literal notranslate"><span class="pre">commit</span></code>. És a dir, cada <code class="docutils literal notranslate"><span class="pre">commit</span></code> haurà de tenir un comentari que
+realment descrigui què inclou, de manera que pugui ser seguit amb la
+comanda <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">log</span></code>.</p>
+<p>A banda, de ben segur que apareixeran conflictes per col·lisions amb
+actuacions entre vosaltres. No dubteu en consultar-me quan això passi.</p>
+<p>Us recomano <strong>molt</strong> que aprofiteu aquesta activitat per experimentar el
+treball compartit amb una eina de gestió de versions com <code class="docutils literal notranslate"><span class="pre">git</span></code>.</p>
+<p>Si per algun motiu no t’he convençut i ho vols fer pel teu compte, caldrà
+igualment que facis totes les passes anteriors, és a dir, crear el nou
+repositori, convidar-me, etc.  Les úniques diferències són que el teu grup
+estarà composat per una sola persona i que et perdràs una experiència molt
+enriquidora.</p>
+</div>
+<div class="section" id="ampliacions">
+<h2>Ampliacions<a class="headerlink" href="#ampliacions" title="Link permanent a aquest títol">¶</a></h2>
+<p>És possible que et quedis amb les ganes de fer algunes ampliacions a
+aquest joc.</p>
+<p>En cas que sigui així, us proposo que creeu una carpeta diferent de la
+d’aquest exercici, per tal que no tingueu problemes amb les proves de la
+versió original.</p>
+<p>Si voleu que tingui en compte aquestes ampliacions, caldrà que hi afegiu
+un fitxer de text anomenat <code class="docutils literal notranslate"><span class="pre">ampliacio.rst</span></code> que contingui una descripció
+de l’ampliació que heu fet i, si cal, indicacions per a ser executada (ex.
+si cal instal·lar alguna biblioteca addicional)</p>
+<p>Algunes possibles ampliacions que potser et resulten interessants o/i divertides:</p>
+<ul class="simple">
+<li><p>ampliar les paraules en joc</p></li>
+<li><p>canviar el disseny de les figures</p></li>
+<li><p>aconseguir un efecte <em>random</em>. És a dir, escollir les paraules
+aleatòriament del fitxer d’entrada.</p></li>
+<li><p>repetir les paraules que s’han fallat o/i cancel·lat</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="apendix.html" class="btn btn-neutral float-right" title="Apèndix" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="exercici_03_03_csv.html" class="btn btn-neutral float-left" title="Exercici 03_03. Valors separats per comes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2021 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
