@@ -131,7 +131,7 @@ Per exemple, la figura 8 conté el següent:
 .. code-block:: console
   :emphasize-lines: 2-
 
-  $ cat figura7.txt 
+  $ cat figura8.txt 
     ··XXXXXXX·
     ···X····X·
     ··oOo···X·
