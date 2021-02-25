@@ -1,0 +1,253 @@
+#############################
+Escriptura en fitxers de text
+#############################
+
+Un cop hem vist l'operació de lectura en fitxers de text, la d'escriptura no ens sorprendrà gaire.
+
+El conegut patró *obrir→usar→tancar* ara es concreta a *obrir→escrure→tancar*
+
+El que és escrit, roman
+=======================
+
+Comencem pel més bàsic. Considera aquest codi:
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 11, 12, 13
+
+    /*
+     * Programa que demostra una escriptura bàsica en fitxer de text
+     */
+    import java.io.IOException;
+    import java.io.FileWriter;
+    import java.io.BufferedWriter;
+    public class EscripturaBasica {
+        public static void main(String[] args) throws IOException {
+            String cami = "resultat.txt";
+            String text = "Verba volant, scripta manent";
+            BufferedWriter sortida = new BufferedWriter(new FileWriter(cami));  // obrir
+            sortida.write(text);                                                // escriure
+            sortida.close();                                                    // tancar
+        }
+    }
+
+Veiem-ne una execució:
+
+.. code-block:: console
+    :emphasize-lines: 3
+
+    $ javac EscripturaBasica.java && java EscripturaBasica 
+    $ cat resultat.txt 
+    Verba volant, scripta manent
+
+Doncs sí, sembla que el nostre programa ha escrit un text al fitxer
+``resultat.txt``.
+
+Experimentem una mica més:
+
+.. code-block:: console
+    :emphasize-lines: 3, 6, 9
+
+    $ rm resultat.txt                               # eliminem el fitxer
+    $ java EscripturaBasica                         # tornem a executar
+    $ cat resultat.txt 
+    Verba volant, scripta manent✓
+    $ echo "Text que no romandrà" > resultat.txt    # posem un altre text
+    $ cat resultat.txt 
+    Text que no romandrà
+    $ java EscripturaBasica                         # tornem a executar
+    $ cat resultat.txt 
+    Verba volant, scripta manent
+    $ java EscripturaBasica                         # un altre cop!
+    $ cat resultat.txt 
+    Verba volant, scripta manent
+
+A l'experiment anterior podem veure el següent comportament:
+
+* si el fitxer no existeix, el crea
+
+* si el fitxer existeix *sobreescriu* o, si vols, *reemplaça* el seu contingut
+
+* si l'executem més d'un cop seguit, no es distingeix cap canvi
+
+Salts de línia
+==============
+
+Si hem escrit una línia, bé en podrem escriure dues, oi?
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 13, 14
+
+    /*
+     * Programa que demostra una escriptura de dues línies en fitxer de text
+     */
+    import java.io.IOException;
+    import java.io.FileWriter;
+    import java.io.BufferedWriter;
+    public class EscripturaDuesLinies {
+        public static void main(String[] args) throws IOException {
+            String cami = "resultat.txt";
+            String primeraLinia = "Babau beu vi bo i viu bé.";
+            String segonaLinia = "En cap cap cap el que cap en aquest cap.";
+            BufferedWriter sortida = new BufferedWriter(new FileWriter(cami));
+            sortida.write(primeraLinia);
+            sortida.write(segonaLinia);
+            sortida.close();
+        }
+    }
+
+En executar aquest nou programa, però, ens trobem amb una no tan agradable
+sorpresa:
+
+.. code-block:: console
+
+    $ javac EscripturaDuesLinies.java && java EscripturaDuesLinies 
+    $ cat resultat.txt 
+    Babau beu vi bo i viu bé.En cap cap cap el que cap en aquest cap.
+
+Ops! Les dues línies s'han quedat… a la mateixa línia!
+
+El procediment ``write()`` dels ``BufferedWriter`` no ens escriu el salt
+de línia per nosaltres.
+
+De fet, et confesso que he fet una mica de trampes i t'he maquillat la
+sortida de la comanda ``cat`` de manera que no es veiés que el *prompt*
+de la meva *shell* apareix tot just seguint el resultat del `cat``.
+
+Per solucionar aquest problema us proposo dues opcions: la *bona* i la
+*còmoda*.
+
+La versió *bona* ens permet que el resultat sigui vàlid amb independència
+del sistema operatiu en que s'executi el nostre programa:
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 11, 12
+
+    /*
+     * Programa que demostra una escriptura de dues línies en fitxer de text
+     * Amb salt de línia preparat pel S.O.
+     */
+    import java.io.IOException;
+    import java.io.FileWriter;
+    import java.io.BufferedWriter;
+    public class EscripturaDuesLinies {
+        public static void main(String[] args) throws IOException {
+            String cami = "resultat.txt";
+            String primeraLinia = String.format("Babau beu vi bo i viu bé.%n");
+            String segonaLinia = String.format("En cap cap cap el que cap en aquest cap.%n");
+            BufferedWriter sortida = new BufferedWriter(new FileWriter(cami));
+            sortida.write(primeraLinia);
+            sortida.write(segonaLinia);
+            sortida.close();
+        }
+    }
+
+Bàsicament estem fent servir la funció ``String.format()`` que interpreta
+``%n`` com un salt de línia.
+
+Una variant d'aquesta versió *bona* faria servir explícitament la funció
+``System.lineSeparator()`` que ens retornarà un String que representa el
+salt de línia en el `sistama
+<https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/System.html#lineSeparator()>`_
+en que s'executa.
+
+.. code-block:: java
+    :linenos:
+    :lineno-start: 11
+
+        String primeraLinia = "Babau beu vi bo i viu bé." + System.lineSeparator();
+        String segonaLinia = "En cap cap cap el que cap en aquest cap." + System.lineSeparator();
+
+Tampoc no podem dir que sigui especialment compacta aquesta solució.
+
+Podem millorar-la si declarem una constant:
+
+.. code-block:: java
+    :linenos:
+    :lineno-start: 11
+
+        final String NL = System.lineSeparator();
+        String primeraLinia = "Babau beu vi bo i viu bé." + NL;
+        String segonaLinia = "En cap cap cap el que cap en aquest cap." + NL;
+
+La versió *còmoda* que faré servir en aquests apunts és amb el caràcter ``'\n'``.
+Aquesta versió no serà tan portable però és molt més clara per explicar.
+
+.. code-block:: java
+    :linenos:
+    :lineno-start: 11
+
+        String primeraLinia = "Babau beu vi bo i viu bé.\n";
+        String segonaLinia = "En cap cap cap el que cap en aquest cap.\n";
+
+Per a aquest curs, fes servir l'opció que més t'agradi.
+
+|exerciseicon__T| :doc:`exercici_03_05_lloro_memoria`
+
+|exerciseicon__T| :doc:`exercici_03_06_traduccio`
+
+Ampliació de fitxers
+====================
+
+Amb el que hem vist fins ara, cada cop que obrim un fitxer per escriptura,
+si existia perdem tot el que hi havia. Què passaria si volguéssim afegir
+noves línies a un fitxer existent, sense perdre les antigues?
+
+Una opció seria copiar el fitxer original a un altre lloc de manera que
+puguem llegir les línies originals. A continuació sobreescriuríem el
+fitxer original tot reescrivint les línies a partir de la còpia i, abans
+de tancar, afegint les noves línies. Finalment hauríem d'eliminar el
+fitxer còpia per deixar-ho tot net. No sembla gaire eficient, oi?
+
+Podem resoldre aquest problema molt més fàcilment obrint el fitxer en el
+que es coneix com a *mode ampliació*. En Java ho podem fer quan
+inicialitzem el nostre ``FileWriter``. 
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 7
+
+    import java.io.IOException;
+    import java.io.FileWriter;
+    import java.io.BufferedWriter;
+    public class Ampliant {
+        public static void main(String[] args) throws IOException {
+            String cami = "resultat.txt";
+            BufferedWriter sortida = new BufferedWriter(new FileWriter(cami, true));
+            //                          El mode ampliació s'especifica aquí  ↑↑↑↑
+            sortida.write("Bai Maitea, bai.\n");
+            sortida.close();
+        }
+    }
+
+El punt important és que a ``new FileWriter()`` li passem un ``true``.
+Només això!
+
+Trobaràs els detalls a la `documentació oficial
+<https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/FileWriter.html#%3Cinit%3E(java.io.File,boolean)>`_
+
+
+Considera la següent execució:
+
+.. code-block:: console
+
+    $ echo "M'has sentit?" > resultat.txt   # Creem un fitxer amb un contingut inicial
+    fitxering/$ cat resultat.txt 
+    M'has sentit?
+    $ java Ampliant                         # Hi afegim una línia
+    $ cat resultat.txt 
+    M'has sentit?
+    Bai Maitea, bai.
+    $ java Ampliant                         # Hi afegim una línia més
+    $ cat resultat.txt 
+    M'has sentit?
+    Bai Maitea, bai.
+    Bai Maitea, bai.
+
+
+
+
+|exerciseicon__T| :doc:`exercici_03_07_log`
+

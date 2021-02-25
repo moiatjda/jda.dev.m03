@@ -26,11 +26,5 @@ execucions anteriors.
 
     fitxers_intro.rst
     fitxers_lectura.rst
+    fitxers_escriptura.rst
     fitxers_exercicis.rst
-
-
-..  fitxers_java.rst
-..  fitxers_gestio.rst
-..  java_flota_original.rst
-..  java_flota.rst
-

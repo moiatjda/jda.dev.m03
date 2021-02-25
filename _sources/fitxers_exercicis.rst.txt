@@ -13,3 +13,6 @@ continuació:
     exercici_03_02_vocal_inici_fi.rst
     exercici_03_03_csv.rst
     exercici_03_04_elpenjat.rst
+    exercici_03_05_lloro_memoria.rst
+    exercici_03_06_traduccio.rst
+    exercici_03_07_log.rst

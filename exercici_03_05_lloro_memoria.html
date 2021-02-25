@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Exercici 03_01. Situacions excepcionals &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  <title>Exercici 03_05. El lloro amb memòria &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
   
 
   
@@ -39,8 +39,8 @@
     <link rel="author" title="Quant a aquests documents" href="about.html" />
     <link rel="index" title="Índex" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
-    <link rel="next" title="Exercici 03_02. Vocals a l’inici o al final" href="exercici_03_02_vocal_inici_fi.html" />
-    <link rel="prev" title="Llistat d’exercicis" href="fitxers_exercicis.html" />
+    <link rel="next" title="Exercici 03_06. Traducció" href="exercici_03_06_traduccio.html" />
+    <link rel="prev" title="Exercici 03_04. El joc del penjat" href="exercici_03_04_elpenjat.html" />
      
     <script class="googleanalytics" src="_static/moiscripts.js"></script>
 
@@ -97,11 +97,11 @@
 <li class="toctree-l2"><a class="reference internal" href="fitxers_lectura.html">Lectura de fitxers de text</a></li>
 <li class="toctree-l2"><a class="reference internal" href="fitxers_escriptura.html">Escriptura en fitxers de text</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="fitxers_exercicis.html">Llistat d’exercicis</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#"> Exercici 03_01. Situacions excepcionals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_01_excepcional.html"> Exercici 03_01. Situacions excepcionals</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_03_02_vocal_inici_fi.html"> Exercici 03_02. Vocals a l’inici o al final</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_03_03_csv.html"> Exercici 03_03. Valors separats per comes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_03_04_elpenjat.html"> Exercici 03_04. El joc del penjat</a></li>
-<li class="toctree-l3"><a class="reference internal" href="exercici_03_05_lloro_memoria.html"> Exercici 03_05. El lloro amb memòria</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#"> Exercici 03_05. El lloro amb memòria</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_03_06_traduccio.html"> Exercici 03_06. Traducció</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_03_07_log.html"> Exercici 03_07. El fitxer de log</a></li>
 </ul>
@@ -159,7 +159,7 @@
         
           <li><a href="fitxers_exercicis.html">Llistat d’exercicis</a> &raquo;</li>
         
-      <li> Exercici 03_01. Situacions excepcionals</li>
+      <li> Exercici 03_05. El lloro amb memòria</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -177,16 +177,59 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="exerciseicon-exercici-03-01-situacions-excepcionals">
-<h1><img alt="exerciseicon___" src="_images/exerciseicon___.png" /> Exercici 03_01. Situacions excepcionals<a class="headerlink" href="#exerciseicon-exercici-03-01-situacions-excepcionals" title="Link permanent a aquest títol">¶</a></h1>
+  <div class="section" id="exerciseicon-t-exercici-03-05-el-lloro-amb-memoria">
+<h1><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> Exercici 03_05. El lloro amb memòria<a class="headerlink" href="#exerciseicon-t-exercici-03-05-el-lloro-amb-memoria" title="Link permanent a aquest títol">¶</a></h1>
 <p class="rubric">Context</p>
 <ul class="simple">
-<li><p>Carpeta de lliurament: <code class="docutils literal notranslate"><span class="pre">03_01_excepcional/</span></code></p></li>
-<li><p>Continguts relacionats: <a class="reference internal" href="fitxers_lectura.html"><span class="doc">Lectura de fitxers de text</span></a></p></li>
+<li><p>Carpeta de lliurament: <code class="docutils literal notranslate"><span class="pre">03_05_lloro_memoria/</span></code></p></li>
+<li><p>Continguts relacionats: <a class="reference internal" href="fitxers_escriptura.html"><span class="doc">Escriptura en fitxers de text</span></a></p></li>
 <li><p>Com lliurar-lo: <a class="reference internal" href="holagit.html#instruccions-git"><span class="std std-ref">instruccions</span></a></p></li>
+<li><p>[✓] Exercici amb <a class="reference internal" href="sobre_exercicis.html#descripcio-exercicis-autoavaluacio"><span class="std std-ref">autoavaluació</span></a></p></li>
 </ul>
 <p class="rubric">Enunciat</p>
-<p>Considera el següent codi novament:</p>
+<p>Al llarg d’aquest curs hem fet servir el «patró del lloro» en multitud
+d’ocasions. Aquest patró ens va bé quan hem de <em>recorrer</em> una seqüència de
+valors de la que no coneixem la longitud però sí una marca de
+finalització.</p>
+<p>L’ús inicial era sobre l’entrada estàndard però recentment l’hem vist
+sobre <a class="reference internal" href="exercici_03_02_vocal_inici_fi.html"><span class="doc">les línies d’un fitxers de text</span></a>.</p>
+<p>En aquesta ocasió hauràs d’implementar una versió del lloro amb memòria.
+És a dir, el lloro serà capaç de guardar totes les frases que li diguin en
+un fitxer anomenat <code class="docutils literal notranslate"><span class="pre">records.txt</span></code>.</p>
+<p>Una simulació d’execució podria ser:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java Recordat
+<span class="hll"><span class="go">El lloro pregunta paraula:</span>
+</span><span class="go">Com estàs?</span>
+<span class="hll"><span class="go">El lloro registra: Com estàs?</span>
+</span><span class="hll"><span class="go">El lloro pregunta paraula:</span>
+</span><span class="go">Molt bé</span>
+<span class="hll"><span class="go">El lloro registra: Molt bé</span>
+</span><span class="hll"><span class="go">El lloro pregunta paraula:</span>
+</span><span class="go">Vinga, siau</span>
+<span class="hll"><span class="go">El lloro registra: Vinga, siau</span>
+</span><span class="hll"><span class="go">El lloro pregunta paraula:</span>
+</span>
+<span class="hll"><span class="go">D&#39;acord</span>
+</span><span class="hll"><span class="go">El lloro recorda: Com estàs?</span>
+</span><span class="hll"><span class="go">El lloro recorda: Molt bé</span>
+</span><span class="hll"><span class="go">El lloro recorda: Vinga, siau</span>
+</span><span class="hll"><span class="go">Adéu</span>
+</span></pre></div>
+</div>
+<p>És a dir, el programa funciona en dues fases:</p>
+<ul class="simple">
+<li><p>a la primera fase, el lloro anirà registrant les frases que rebi fins
+que l’entrada sigui buida.</p></li>
+<li><p>en rebre la cadena buida, el lloro passa a la fase de record i recita
+les entrades que ha registrat.</p></li>
+</ul>
+<p>Algunes consideracions addicionals:</p>
+<ul class="simple">
+<li><p>el lloro no guarda cap línia buida</p></li>
+<li><p>el lloro ignora els espais en blanc a l’inici i al final de cada
+entrada de manera que ni els registra ni els recorda.</p></li>
+</ul>
+<p>Per fer aquesta implementació, segueix aquesta plantilla:</p>
 <div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -207,84 +250,47 @@
 18
 19
 20
-21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/*</span>
-<span class="cm"> * programa que mostra el seu propi codi</span>
-<span class="cm"> * Nota: pressuposa que el codi font es troba en la mateixa carpeta que</span>
-<span class="cm"> * l&#39;executable.</span>
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm"> * programa que simula un lloro que recorda les frases que li han dit</span>
 <span class="cm"> */</span>
-<span class="kn">import</span> <span class="nn">java.io.BufferedReader</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">java.io.FileReader</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="p">;</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Mostrat</span> <span class="p">{</span>
+<span class="c1">// XXX aquí tots els imports. N&#39;hi ha 5!</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Recordat</span> <span class="p">{</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="p">{</span>
-        <span class="n">String</span> <span class="n">cami</span> <span class="o">=</span> <span class="s">&quot;Mostrat.java&quot;</span><span class="p">;</span>
-        <span class="n">FileReader</span> <span class="n">fileReader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileReader</span><span class="p">(</span><span class="n">cami</span><span class="p">);</span>
-        <span class="n">BufferedReader</span> <span class="n">input</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="p">(</span><span class="n">fileReader</span><span class="p">);</span>
-        <span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
-            <span class="n">String</span> <span class="n">linia</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="na">readLine</span><span class="p">();</span>
-            <span class="k">if</span> <span class="p">(</span><span class="kc">null</span> <span class="o">==</span> <span class="n">linia</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
-            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">linia</span><span class="p">);</span>
-        <span class="p">}</span>
-        <span class="n">input</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+        <span class="n">String</span> <span class="n">cami</span> <span class="o">=</span> <span class="s">&quot;records.txt&quot;</span><span class="p">;</span>
+        <span class="n">processaEntrada</span><span class="p">(</span><span class="n">cami</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;D&#39;acord&quot;</span><span class="p">);</span>
+        <span class="n">mostraRecords</span><span class="p">(</span><span class="n">cami</span><span class="p">);</span>
     <span class="p">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * Demana frases per entrada estàndard i les guarda a un fitxer</span>
+<span class="cm">     * @param nomFitxer: nom del fitxer</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">processaEntrada</span><span class="p">(</span><span class="kd">final</span> <span class="n">String</span> <span class="n">nomFitxer</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+        <span class="c1">// XXX: aquí la part d&#39;escriure les memòries</span>
+        <span class="c1">//      No oblidaràs tancar en sortir, oi?</span>
+    <span class="p">}</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * Mostra el contingut del fitxer amb nom nomFitxer</span>
+<span class="cm">     * @param nomFitxer: el nom del fitxer del que es mostrarà el contingut</span>
+<span class="cm">     */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">mostraRecords</span><span class="p">(</span><span class="kd">final</span> <span class="n">String</span> <span class="n">nomFitxer</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+        <span class="c1">// XXX: aquí la part de recordar les memòries escrites</span>
+    <span class="p">}</span>
+
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
-<p>Per realitzar aquest exercici, hauràs de realitzar algunes <em>trapelleries</em>
-al programa.</p>
-<p>Completa aquesta <a class="reference download internal" download="" href="_downloads/9afe7c22d04787bb27cecd3531ea23bf/plantilla_trapelleries.rst"><code class="xref download docutils literal notranslate"><span class="pre">plantilla</span></code></a> tot reemplaçant les <code class="docutils literal notranslate"><span class="pre">XXX</span></code> per la
-teva resposta:</p>
-<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">===========================</span>
-<span class="gh">Trapelleries a Mostrat.java</span>
-<span class="gh">===========================</span>
-
-Resum de trapelleries al codi de <span class="s">``Mostrat.java``</span>
-
-
-<span class="gh">Trapelleria 1. Fitxer inexistent</span>
-<span class="gh">================================</span>
-
-Canvia el nom del fitxer de la línia 11 per <span class="s">``inexistent.txt``</span>. Compila
-i intenta executar el programa.
-
-L&#39;error que genera és: <span class="se">::</span>
-
-<span class="s">    $ java Mostrat</span>
-<span class="s">    XXX</span>
-
-<span class="gh">Trapelleria 2. Fitxer protegit</span>
-<span class="gh">==============================</span>
-
-Crea ara un fitxer anomenat <span class="s">``existent.txt``</span> però protegeix-lo perquè
-no pugui ser llegit.
-
-Aquí tens unes instruccions que t&#39;ajudaran: <span class="se">::</span>
-
-<span class="s">    $ touch existent.txt</span>
-<span class="s">    $ chmod -r existent.txt</span>
-
-L&#39;error que genera és: <span class="se">::</span>
-
-<span class="s">    $ java Mostrat</span>
-<span class="s">    XXX</span>
-
-
-<span class="gh">Trapelleria 3. Un directori en comptes d&#39;un fitxer</span>
-<span class="gh">==================================================</span>
-
-Canvia el nom de <span class="s">``existent.txt``</span> per <span class="s">``/tmp``</span>. Compila i torna a
-intentar executar-ho i copia aquí el que et genera: <span class="se">::</span>
-
-<span class="s">    $ java Mostrat</span>
-<span class="s">    XXX</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Nota</p>
-<p>Si et ve de gust, considera convertir aquest document resultant
-a algun format que t’agradi més com ara <code class="docutils literal notranslate"><span class="pre">html</span></code>. Trobaràs pistes de
-com fer-ho a <a class="reference internal" href="rst_intro.html"><span class="doc">Introducció al reStructuredText</span></a>.</p>
-</div>
 </div>
 
 
@@ -318,10 +324,10 @@ com fer-ho a <a class="reference internal" href="rst_intro.html"><span class="do
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="exercici_03_02_vocal_inici_fi.html" class="btn btn-neutral float-right" title="Exercici 03_02. Vocals a l’inici o al final" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="exercici_03_06_traduccio.html" class="btn btn-neutral float-right" title="Exercici 03_06. Traducció" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="fitxers_exercicis.html" class="btn btn-neutral float-left" title="Llistat d’exercicis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="exercici_03_04_elpenjat.html" class="btn btn-neutral float-left" title="Exercici 03_04. El joc del penjat" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

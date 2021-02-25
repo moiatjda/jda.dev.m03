@@ -1,0 +1,175 @@
+##################################################
+|exerciseicon__T| Exercici 03_07. El fitxer de log
+##################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``03_07_log/``
+
+* Continguts relacionats: :doc:`fitxers_escriptura`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Quan executem programes complexos, sol ser interessant poder registrar les
+situacions significatives que es van produint. Això ens permet a
+posteriori entre altres coses, auditar com s'ha executat, descobrir i
+reproduir errors.
+
+Aquests registres es solen guardar en un fitxer de text amb una o més
+línies que descriuen què ha passat i sovint quan va passar. A aquest
+fitxer se'l sol conèixer com a *fitxer de log*.
+
+Els fitxers de log es poden veure com una mena de diari que descriu
+aspectes de l'execució d'un o més programes.
+
+Per implementar el registre, es sol fer mitjançant crides a mòduls que
+escriuen al fitxer, sense que el programa que els fa servir se n'hagi de
+preocupar de res més. Com si fes un ``System.out.println()``.
+
+En aquesta ocasió desenvoluparem una biblioteca d'utilitats per guardar un
+registre de les accions que van succeint al nostre programa.
+
+Per simplicitat, la nostra biblioteca considerarà que el fitxer de log es
+diu ``log.txt`` i es guardarà a la carpeta actual (des d'on executem el
+programa)
+
+
+Mòduls de registre
+==================
+
+La nostra biblioteca es dirà `Log` i oferirà els següents mòduls públics:
+
+* ``printError()``
+
+    Per indicar errors greus, sovint irrecuperables Ex. S'ha quedat sense
+    espai el disc.
+
+* ``printWarning()``
+
+    Per indicar situacions anòmales que, si bé són recuperables, poden
+    esdevenir un error. Ex. falta un fitxer de configuració.
+
+* ``printInfo()``
+
+    Permet indicar informació general, normalment no problemàtica, com
+    ara, l'inici i finalització d'una execució.
+
+* ``printDebug()``
+
+    Permet indicar detalls de l'execució, com per exemple, la crida a un
+    mòdul amb els arguments que se li passen o l'opertura/tancament dels
+    fitxers.
+
+    Aquests detalls es solen fer servir per depurar (debug) possibles
+    errors en el codi de l'aplicació.
+
+Quan són cridats, aquests mòduls obren el fitxer de log per ampliació,
+escriuen el missatge i el tanquen. Addicionalment retornen la línia que han
+escrit.
+
+Els quatre mòduls reben un missatge de text i el guarden com una línia
+nova al fitxer ``./log.txt`` de manera que si ja existia, n'afegirà les
+noves línies al final de les existents, i si no existia, en crearà un de
+nou.
+
+Els mòduls s'inclouran com a mòduls estàtics dins d'una classe
+anomenada ``Log``, de manera que seran cridats així:
+
+.. code-block:: java
+
+    Log.printDebug("quantesVocals(\"Vocals\") retorna 2");
+
+
+Contingut d'un registre
+=======================
+
+Cada registre tindrà la següent informació:
+
+* seqüencial: el nombre d'entrades de log introduïdes prèviament dins
+  d'aquesta execució.
+
+* tipus: ``ERROR``, ``WARNING``, ``INFO``, ``DEBUG``
+
+* missatge proporcionat
+
+Així, per la crida anterior, el missatge resultant podria ser:
+
+.. code-block:: none
+
+    [324] DEBUG: quantesVocals("Vocals") retorna 2
+
+Per descomptat, en cas que ens sigui d'interès, podrem disposar de la
+línia escrita al fitxer de log, de la següent manerea:
+
+.. code-block:: java
+
+    String liniaEscrita = Log.printDebug("quantesVocals(\"Vocals\") retorna 2");
+
+
+En un log real, normalment s'indica la data i hora en que es registra cada
+execució. Per simplificar les proves, en aquesta ocasió només guardarem un número
+seqüencial que indicarà quantes línies s'han escrit fins aquell moment en
+aquesta execució.  Així, la primera línia que s'escrigui portarà
+normalment el número 1, la segona el 2, etc.
+
+Per implementar aquesta funcionalitat, et proposo que facis servir una
+variable global (fes-la privada, d'acord?)
+
+La nostra biblioteca oferirà un mòdul addicional, anomenat ``reset()``,
+que permetrà reiniciar el comptador.  En ser cridat, la següent línia que
+es registri tornarà a començar pel número 1.
+
+
+Provem la nostra biblioteca
+===========================
+
+Per poder provar ``Log``, fes servir el següent codi:
+
+.. code-block:: java
+    :linenos:
+
+    /*
+     * Demostració d'ús del mòdul de Log
+     */
+    import java.io.IOException;
+    public class UsaLog {
+       public static void main(String[] args) throws IOException {
+           Log.printError("Això és un error greu");
+           Log.printWarning("Això és un avís");
+           for (int i=0; i < args.length; i++) {
+               Log.printInfo(String.format("Argument %d: %s", i, args[i]));
+           }
+           Log.reset();     // comencem a comptar un altre cop
+           Log.printDebug("Aquí s'acaba el main()");
+       }
+    }
+
+Considera la següent execució:
+
+.. code-block:: console
+
+    $ cat log.txt               # Comprovem que no existeix inicialment
+    cat: log.txt: El fitxer o directori no existeix
+    $ java UsaLog               # Primera execució
+    $ cat log.txt
+    [1] ERROR: Això és un error greu
+    [2] WARNING: Això és un avís
+    [1] DEBUG: Aquí s'acaba el main()
+    $ java UsaLog un dos tres   # Segona execució
+    $ cat log.txt
+    [1] ERROR: Això és un error greu
+    [2] WARNING: Això és un avís
+    [1] DEBUG: Aquí s'acaba el main()
+    [1] ERROR: Això és un error greu
+    [2] WARNING: Això és un avís
+    [3] INFO: Argument 0: un
+    [4] INFO: Argument 1: dos
+    [5] INFO: Argument 2: tres
+    [1] DEBUG: Aquí s'acaba el main()
+
+Fixa't que tant la primera línia de cada execució, com la darrera comencen
+sempre per 1.

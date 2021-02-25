@@ -1,0 +1,412 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ca" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Exercici 03_07. El fitxer de log &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Apèndix" href="apendix.html" />
+    <link rel="prev" title="Exercici 03_06. Traducció" href="exercici_03_06_traduccio.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació amb Java
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-21
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moduls.html">Mòduls</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="fitxers.html">Fitxers</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="fitxers_intro.html">Primeres definicions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fitxers_lectura.html">Lectura de fitxers de text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fitxers_escriptura.html">Escriptura en fitxers de text</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="fitxers_exercicis.html">Llistat d’exercicis</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_01_excepcional.html"> Exercici 03_01. Situacions excepcionals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_02_vocal_inici_fi.html"> Exercici 03_02. Vocals a l’inici o al final</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_03_csv.html"> Exercici 03_03. Valors separats per comes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_04_elpenjat.html"> Exercici 03_04. El joc del penjat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_05_lloro_memoria.html"> Exercici 03_05. El lloro amb memòria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_06_traduccio.html"> Exercici 03_06. Traducció</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#"> Exercici 03_07. El fitxer de log</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="apendix.html">Apèndix</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació amb Java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="fitxers.html">Fitxers</a> &raquo;</li>
+        
+          <li><a href="fitxers_exercicis.html">Llistat d’exercicis</a> &raquo;</li>
+        
+      <li> Exercici 03_07. El fitxer de log</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="exerciseicon-t-exercici-03-07-el-fitxer-de-log">
+<h1><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> Exercici 03_07. El fitxer de log<a class="headerlink" href="#exerciseicon-t-exercici-03-07-el-fitxer-de-log" title="Link permanent a aquest títol">¶</a></h1>
+<p class="rubric">Context</p>
+<ul class="simple">
+<li><p>Carpeta de lliurament: <code class="docutils literal notranslate"><span class="pre">03_07_log/</span></code></p></li>
+<li><p>Continguts relacionats: <a class="reference internal" href="fitxers_escriptura.html"><span class="doc">Escriptura en fitxers de text</span></a></p></li>
+<li><p>Com lliurar-lo: <a class="reference internal" href="holagit.html#instruccions-git"><span class="std std-ref">instruccions</span></a></p></li>
+<li><p>[✓] Exercici amb <a class="reference internal" href="sobre_exercicis.html#descripcio-exercicis-autoavaluacio"><span class="std std-ref">autoavaluació</span></a></p></li>
+</ul>
+<p class="rubric">Enunciat</p>
+<p>Quan executem programes complexos, sol ser interessant poder registrar les
+situacions significatives que es van produint. Això ens permet a
+posteriori entre altres coses, auditar com s’ha executat, descobrir i
+reproduir errors.</p>
+<p>Aquests registres es solen guardar en un fitxer de text amb una o més
+línies que descriuen què ha passat i sovint quan va passar. A aquest
+fitxer se’l sol conèixer com a <em>fitxer de log</em>.</p>
+<p>Els fitxers de log es poden veure com una mena de diari que descriu
+aspectes de l’execució d’un o més programes.</p>
+<p>Per implementar el registre, es sol fer mitjançant crides a mòduls que
+escriuen al fitxer, sense que el programa que els fa servir se n’hagi de
+preocupar de res més. Com si fes un <code class="docutils literal notranslate"><span class="pre">System.out.println()</span></code>.</p>
+<p>En aquesta ocasió desenvoluparem una biblioteca d’utilitats per guardar un
+registre de les accions que van succeint al nostre programa.</p>
+<p>Per simplicitat, la nostra biblioteca considerarà que el fitxer de log es
+diu <code class="docutils literal notranslate"><span class="pre">log.txt</span></code> i es guardarà a la carpeta actual (des d’on executem el
+programa)</p>
+<div class="section" id="moduls-de-registre">
+<h2>Mòduls de registre<a class="headerlink" href="#moduls-de-registre" title="Link permanent a aquest títol">¶</a></h2>
+<p>La nostra biblioteca es dirà <cite>Log</cite> i oferirà els següents mòduls públics:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">printError()</span></code></p>
+<blockquote>
+<div><p>Per indicar errors greus, sovint irrecuperables Ex. S’ha quedat sense
+espai el disc.</p>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">printWarning()</span></code></p>
+<blockquote>
+<div><p>Per indicar situacions anòmales que, si bé són recuperables, poden
+esdevenir un error. Ex. falta un fitxer de configuració.</p>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">printInfo()</span></code></p>
+<blockquote>
+<div><p>Permet indicar informació general, normalment no problemàtica, com
+ara, l’inici i finalització d’una execució.</p>
+</div></blockquote>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">printDebug()</span></code></p>
+<blockquote>
+<div><p>Permet indicar detalls de l’execució, com per exemple, la crida a un
+mòdul amb els arguments que se li passen o l’opertura/tancament dels
+fitxers.</p>
+<p>Aquests detalls es solen fer servir per depurar (debug) possibles
+errors en el codi de l’aplicació.</p>
+</div></blockquote>
+</li>
+</ul>
+<p>Quan són cridats, aquests mòduls obren el fitxer de log per ampliació,
+escriuen el missatge i el tanquen. Addicionalment retornen la línia que han
+escrit.</p>
+<p>Els quatre mòduls reben un missatge de text i el guarden com una línia
+nova al fitxer <code class="docutils literal notranslate"><span class="pre">./log.txt</span></code> de manera que si ja existia, n’afegirà les
+noves línies al final de les existents, i si no existia, en crearà un de
+nou.</p>
+<p>Els mòduls s’inclouran com a mòduls estàtics dins d’una classe
+anomenada <code class="docutils literal notranslate"><span class="pre">Log</span></code>, de manera que seran cridats així:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Log</span><span class="p">.</span><span class="na">printDebug</span><span class="p">(</span><span class="s">&quot;quantesVocals(\&quot;Vocals\&quot;) retorna 2&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="contingut-d-un-registre">
+<h2>Contingut d’un registre<a class="headerlink" href="#contingut-d-un-registre" title="Link permanent a aquest títol">¶</a></h2>
+<p>Cada registre tindrà la següent informació:</p>
+<ul class="simple">
+<li><p>seqüencial: el nombre d’entrades de log introduïdes prèviament dins
+d’aquesta execució.</p></li>
+<li><p>tipus: <code class="docutils literal notranslate"><span class="pre">ERROR</span></code>, <code class="docutils literal notranslate"><span class="pre">WARNING</span></code>, <code class="docutils literal notranslate"><span class="pre">INFO</span></code>, <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code></p></li>
+<li><p>missatge proporcionat</p></li>
+</ul>
+<p>Així, per la crida anterior, el missatge resultant podria ser:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[324] DEBUG: quantesVocals(&quot;Vocals&quot;) retorna 2
+</pre></div>
+</div>
+<p>Per descomptat, en cas que ens sigui d’interès, podrem disposar de la
+línia escrita al fitxer de log, de la següent manerea:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">liniaEscrita</span> <span class="o">=</span> <span class="n">Log</span><span class="p">.</span><span class="na">printDebug</span><span class="p">(</span><span class="s">&quot;quantesVocals(\&quot;Vocals\&quot;) retorna 2&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>En un log real, normalment s’indica la data i hora en que es registra cada
+execució. Per simplificar les proves, en aquesta ocasió només guardarem un número
+seqüencial que indicarà quantes línies s’han escrit fins aquell moment en
+aquesta execució.  Així, la primera línia que s’escrigui portarà
+normalment el número 1, la segona el 2, etc.</p>
+<p>Per implementar aquesta funcionalitat, et proposo que facis servir una
+variable global (fes-la privada, d’acord?)</p>
+<p>La nostra biblioteca oferirà un mòdul addicional, anomenat <code class="docutils literal notranslate"><span class="pre">reset()</span></code>,
+que permetrà reiniciar el comptador.  En ser cridat, la següent línia que
+es registri tornarà a començar pel número 1.</p>
+</div>
+<div class="section" id="provem-la-nostra-biblioteca">
+<h2>Provem la nostra biblioteca<a class="headerlink" href="#provem-la-nostra-biblioteca" title="Link permanent a aquest títol">¶</a></h2>
+<p>Per poder provar <code class="docutils literal notranslate"><span class="pre">Log</span></code>, fes servir el següent codi:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm"> * Demostració d&#39;ús del mòdul de Log</span>
+<span class="cm"> */</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="p">;</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">UsaLog</span> <span class="p">{</span>
+   <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+       <span class="n">Log</span><span class="p">.</span><span class="na">printError</span><span class="p">(</span><span class="s">&quot;Això és un error greu&quot;</span><span class="p">);</span>
+       <span class="n">Log</span><span class="p">.</span><span class="na">printWarning</span><span class="p">(</span><span class="s">&quot;Això és un avís&quot;</span><span class="p">);</span>
+       <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">args</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+           <span class="n">Log</span><span class="p">.</span><span class="na">printInfo</span><span class="p">(</span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;Argument %d: %s&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">args</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">));</span>
+       <span class="p">}</span>
+       <span class="n">Log</span><span class="p">.</span><span class="na">reset</span><span class="p">();</span>     <span class="c1">// comencem a comptar un altre cop</span>
+       <span class="n">Log</span><span class="p">.</span><span class="na">printDebug</span><span class="p">(</span><span class="s">&quot;Aquí s&#39;acaba el main()&quot;</span><span class="p">);</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Considera la següent execució:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> cat log.txt               <span class="c1"># Comprovem que no existeix inicialment</span>
+<span class="go">cat: log.txt: El fitxer o directori no existeix</span>
+<span class="gp">$</span> java UsaLog               <span class="c1"># Primera execució</span>
+<span class="gp">$</span> cat log.txt
+<span class="go">[1] ERROR: Això és un error greu</span>
+<span class="go">[2] WARNING: Això és un avís</span>
+<span class="go">[1] DEBUG: Aquí s&#39;acaba el main()</span>
+<span class="gp">$</span> java UsaLog un dos tres   <span class="c1"># Segona execució</span>
+<span class="gp">$</span> cat log.txt
+<span class="go">[1] ERROR: Això és un error greu</span>
+<span class="go">[2] WARNING: Això és un avís</span>
+<span class="go">[1] DEBUG: Aquí s&#39;acaba el main()</span>
+<span class="go">[1] ERROR: Això és un error greu</span>
+<span class="go">[2] WARNING: Això és un avís</span>
+<span class="go">[3] INFO: Argument 0: un</span>
+<span class="go">[4] INFO: Argument 1: dos</span>
+<span class="go">[5] INFO: Argument 2: tres</span>
+<span class="go">[1] DEBUG: Aquí s&#39;acaba el main()</span>
+</pre></div>
+</div>
+<p>Fixa’t que tant la primera línia de cada execució, com la darrera comencen
+sempre per 1.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="apendix.html" class="btn btn-neutral float-right" title="Apèndix" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="exercici_03_06_traduccio.html" class="btn btn-neutral float-left" title="Exercici 03_06. Traducció" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2021 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

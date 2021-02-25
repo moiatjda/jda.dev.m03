@@ -1,0 +1,104 @@
+######################################################
+|exerciseicon__T| Exercici 03_05. El lloro amb memòria
+######################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``03_05_lloro_memoria/``
+
+* Continguts relacionats: :doc:`fitxers_escriptura`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Al llarg d'aquest curs hem fet servir el "patró del lloro" en multitud
+d'ocasions. Aquest patró ens va bé quan hem de *recorrer* una seqüència de
+valors de la que no coneixem la longitud però sí una marca de
+finalització.
+
+L'ús inicial era sobre l'entrada estàndard però recentment l'hem vist
+sobre :doc:`les línies d'un fitxers de text
+<exercici_03_02_vocal_inici_fi>`.
+
+En aquesta ocasió hauràs d'implementar una versió del lloro amb memòria.
+És a dir, el lloro serà capaç de guardar totes les frases que li diguin en
+un fitxer anomenat ``records.txt``.
+
+Una simulació d'execució podria ser:
+
+.. code-block:: console
+    :emphasize-lines: 2,4,5, 7, 8, 10, 11, 13-
+
+    $ java Recordat 
+    El lloro pregunta paraula:
+    Com estàs?
+    El lloro registra: Com estàs?
+    El lloro pregunta paraula:
+    Molt bé
+    El lloro registra: Molt bé
+    El lloro pregunta paraula:
+    Vinga, siau
+    El lloro registra: Vinga, siau
+    El lloro pregunta paraula:
+
+    D'acord
+    El lloro recorda: Com estàs?
+    El lloro recorda: Molt bé
+    El lloro recorda: Vinga, siau
+    Adéu
+
+És a dir, el programa funciona en dues fases:
+
+* a la primera fase, el lloro anirà registrant les frases que rebi fins
+  que l'entrada sigui buida. 
+
+* en rebre la cadena buida, el lloro passa a la fase de record i recita
+  les entrades que ha registrat.
+
+Algunes consideracions addicionals:
+
+* el lloro no guarda cap línia buida
+
+* el lloro ignora els espais en blanc a l'inici i al final de cada
+  entrada de manera que ni els registra ni els recorda.
+
+
+Per fer aquesta implementació, segueix aquesta plantilla:
+
+.. code-block:: java
+    :linenos:
+
+    /*
+     * programa que simula un lloro que recorda les frases que li han dit
+     */
+    // XXX aquí tots els imports. N'hi ha 5!
+    public class Recordat {
+        public static void main(String[] args) throws IOException {
+            String cami = "records.txt";
+            processaEntrada(cami);
+            System.out.println("D'acord");
+            mostraRecords(cami);
+        }
+
+        /**
+         * Demana frases per entrada estàndard i les guarda a un fitxer
+         * @param nomFitxer: nom del fitxer
+         */
+        public static void processaEntrada(final String nomFitxer) throws IOException {
+            // XXX: aquí la part d'escriure les memòries
+            //      No oblidaràs tancar en sortir, oi?
+        }
+
+        /**
+         * Mostra el contingut del fitxer amb nom nomFitxer
+         * @param nomFitxer: el nom del fitxer del que es mostrarà el contingut
+         */
+        public static void mostraRecords(final String nomFitxer) throws IOException {
+            // XXX: aquí la part de recordar les memòries escrites
+        }
+
+    }
+

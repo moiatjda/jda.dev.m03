@@ -1,0 +1,139 @@
+###########################################
+|exerciseicon__T| Exercici 03_06. Traducció
+###########################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``03_06_traduccio/``
+
+* Continguts relacionats: :doc:`fitxers_escriptura`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+En aquest exercici desenvoluparem un programa que rebrà tres arguments per
+línia de comandes.
+
+* El primer correspondrà al nom d'un fitxer de text que suposarem que
+  existeix, i que contindrà un text arbitrari.
+
+  Ens referirem a aquest fitxer com *origen*.
+
+* El segon argument correspondrà al nom d'un altre fitxer de text que
+  també suposarem que existeix, i que anomenarem *traducció*
+
+  El contingut d'aquest fitxer serà un csv format per parelles de texts
+  separades amb una coma (``','``). Les línies que continguin un nombre
+  de comes diferent de 1 seran ignorades.
+
+  Al primer element de la parella li direm *clau* i al segon *valor*.
+
+* El tercer argument correspondrà al nom d'un fitxer de text que pot no
+  existir.
+
+  Ens referirem a aquest fitxer com la *destinació*.
+
+El programa escriurà en la destinació el contingut de l'origen pel que
+haurà reemplaçat les aparicions de les claus pels corresponents valors.
+
+Per exemple, suposa la següent simulació:
+
+.. code-block:: console
+
+    $ cat origen.txt
+    En George Orwell va publicar "Animal Farm" en 1945.
+    Al mateix any, en Federico García Lorca va publicar "La casa de Bernarda Alba".
+    $ cat traducció.csv
+    George Orwell, William Golding
+    Animal Farm, Lord of the Flies
+    en Federico García Lorca, la Nancy Mitford
+    La casa de Bernarda Alba, Madame de Pompadour
+    1945, 1954
+    $ java Traduccio origen.txt traduccio.csv resultat.txt
+    $ cat destinacio.txt
+    En William Golding publicar "Lord of the Flies" en 1954.
+    Al mateix any, la Nancy Mitford va publicar "Madame de Pompadour".
+
+
+En cas que la traducció inclogui dues línies amb la mateixa clau i
+diferents valors, `Traduccio`` considerarà la primera traducció.
+
+.. code-block:: console
+
+    $ cat origen.txt
+    "Animal Farm" es va publicar en 1945.
+    $ cat traducció.csv
+    Animal Farm, Lord of the Flies
+    1945, 1954
+    1945, 2020
+    $ java Traduccio origen.txt traduccio.csv resultat.txt
+    $ cat destinacio.txt
+    "Lord of the Flies" es va publicar en 1954.
+
+
+En cas que la traducció inclogui una línia amb una clau que és traducció
+per una altra línia, el nostre programa aplicarà primer la primera línia
+i després la segona.  Per exemple:
+
+.. code-block:: console
+
+    $ cat origen.txt
+    "Animal Farm" es va publicar en 1945.
+    $ cat traducció.csv
+    Animal Farm, Lord of the Flies
+    1945, 19ipico
+    19ipico, 1945
+    $ java Traduccio origen.txt traduccio.csv resultat.txt
+    $ cat destinacio.txt
+    "Lord of the Flies" es va publicar en 1954.
+
+Per simplicitat, ``Traduccio`` distingirà majúscules i minúscules.
+
+També per simplicitat, la traducció es realitzarà només per línies. És a
+dir, no es consideraran "claus trencades".
+
+.. code-block:: java
+
+    $ cat origen.txt
+    "Animal Farm" es va publicar en 1945. Des que es va publicar "Animal
+    Farm" el món no ha tornat a ser el que era.
+    $ cat traducció.csv
+    Animal Farm, Lord of the Flies
+    $ java Traduccio origen.txt traduccio.csv resultat.txt
+    $ cat destinacio.txt
+    "Lord of the Flies" es va publicar en 1954. Des que es va publicar "Animal
+    Farm" el món no ha tornat a ser el que era.
+
+
+Per poder passar totes les proves, caldrà que implementis els següents
+mòduls:
+
+* ``void tradueix(String fitxerOrigen, String fitxerTraduccio, String fitxerDestinacio)``
+
+  Aquest mòdul rebrà els camins als fitxers i realitzarà la funcionalitat
+  descrita.
+
+* ``String tradueixLinia(String linia, String fitxerTraduccio)``
+
+  Aquest mòdul rebrà una línia i reemplaçarà les claus pels valors
+  definits al fitxer de traducció.
+
+  Per simplicitat, cada cop que sigui cridada processarà novament el
+  fitxer de traducció.
+
+D'aquesta manera, al ``main()`` només es realitzaran les tasques de
+comprovació dels arguments. Aquestes comprovacions es reduiran a assegurar
+que el programa rep els camins als tres fitxers requerits, doncs donarem
+per suposat que els dos primers existeixen i que el segon pot ser
+sobreescrit sense problemes.
+
+
+Una pista que et pot estalviar molta feina:
+
+.. code-block:: console
+
+    jshell> "SuperMario".replace("Mario", "Girl");
+    $1 ==> "SuperGirl"
