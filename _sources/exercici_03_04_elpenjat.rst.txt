@@ -33,9 +33,9 @@ Quan els jugadors introdueixen una lletra, si aquesta és a la paraula
 oculta, el programa mostra la paraula oculta però amb les lletres
 encertades descobertes.
 
-Quan els jugadors introdueixen una lletra que no és a la paraula oculta, o bé
-una lletra que ja havia introduït abans, se li anota un error.  Hi ha
-disponible un màxim de 10 intents per cada paraula.
+Quan els jugadors introdueixen una lletra que no és a la paraula oculta i
+no havia estat introduïda abans, se li anota un error.  Hi ha disponible
+un màxim de 10 intents per cada paraula.
 
 Paraules en joc
 ===============

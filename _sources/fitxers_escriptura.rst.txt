@@ -51,7 +51,7 @@ Experimentem una mica més:
     $ rm resultat.txt                               # eliminem el fitxer
     $ java EscripturaBasica                         # tornem a executar
     $ cat resultat.txt 
-    Verba volant, scripta manent✓
+    Verba volant, scripta manent
     $ echo "Text que no romandrà" > resultat.txt    # posem un altre text
     $ cat resultat.txt 
     Text que no romandrà
@@ -226,8 +226,7 @@ El punt important és que a ``new FileWriter()`` li passem un ``true``.
 Només això!
 
 Trobaràs els detalls a la `documentació oficial
-<https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/FileWriter.html#%3Cinit%3E(java.io.File,boolean)>`_
-
+<https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/FileWriter.html#%3Cinit%3E(java.io.File)>`_
 
 Considera la següent execució:
 

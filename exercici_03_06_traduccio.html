@@ -212,15 +212,15 @@ haurà reemplaçat les aparicions de les claus pels corresponents valors.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> cat origen.txt
 <span class="go">En George Orwell va publicar &quot;Animal Farm&quot; en 1945.</span>
 <span class="go">Al mateix any, en Federico García Lorca va publicar &quot;La casa de Bernarda Alba&quot;.</span>
-<span class="gp">$</span> cat traducció.csv
+<span class="gp">$</span> cat traduccio.csv
 <span class="go">George Orwell, William Golding</span>
 <span class="go">Animal Farm, Lord of the Flies</span>
 <span class="go">en Federico García Lorca, la Nancy Mitford</span>
 <span class="go">La casa de Bernarda Alba, Madame de Pompadour</span>
 <span class="go">1945, 1954</span>
-<span class="gp">$</span> java Traduccio origen.txt traduccio.csv resultat.txt
+<span class="gp">$</span> java Traduccio origen.txt traduccio.csv destinacio.txt
 <span class="gp">$</span> cat destinacio.txt
-<span class="go">En William Golding publicar &quot;Lord of the Flies&quot; en 1954.</span>
+<span class="go">En William Golding va publicar &quot;Lord of the Flies&quot; en 1954.</span>
 <span class="go">Al mateix any, la Nancy Mitford va publicar &quot;Madame de Pompadour&quot;.</span>
 </pre></div>
 </div>
@@ -228,11 +228,11 @@ haurà reemplaçat les aparicions de les claus pels corresponents valors.</p>
 diferents valors, <code class="docutils literal notranslate"><span class="pre">Traduccio</span></code> considerarà la primera traducció.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> cat origen.txt
 <span class="go">&quot;Animal Farm&quot; es va publicar en 1945.</span>
-<span class="gp">$</span> cat traducció.csv
+<span class="gp">$</span> cat traduccio.csv
 <span class="go">Animal Farm, Lord of the Flies</span>
 <span class="go">1945, 1954</span>
 <span class="go">1945, 2020</span>
-<span class="gp">$</span> java Traduccio origen.txt traduccio.csv resultat.txt
+<span class="gp">$</span> java Traduccio origen.txt traduccio.csv destinacio.txt
 <span class="gp">$</span> cat destinacio.txt
 <span class="go">&quot;Lord of the Flies&quot; es va publicar en 1954.</span>
 </pre></div>
@@ -242,11 +242,11 @@ per una altra línia, el nostre programa aplicarà primer la primera línia
 i després la segona.  Per exemple:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> cat origen.txt
 <span class="go">&quot;Animal Farm&quot; es va publicar en 1945.</span>
-<span class="gp">$</span> cat traducció.csv
+<span class="gp">$</span> cat traduccio.csv
 <span class="go">Animal Farm, Lord of the Flies</span>
 <span class="go">1945, 19ipico</span>
 <span class="go">19ipico, 1954</span>
-<span class="gp">$</span> java Traduccio origen.txt traduccio.csv resultat.txt
+<span class="gp">$</span> java Traduccio origen.txt traduccio.csv destinacio.txt
 <span class="gp">$</span> cat destinacio.txt
 <span class="go">&quot;Lord of the Flies&quot; es va publicar en 1954.</span>
 </pre></div>
@@ -257,14 +257,17 @@ dir, no es consideraran «claus trencades».</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">$</span> <span class="n">cat</span> <span class="n">origen</span><span class="p">.</span><span class="na">txt</span>
 <span class="s">&quot;Animal Farm&quot;</span> <span class="n">es</span> <span class="n">va</span> <span class="n">publicar</span> <span class="n">en</span> <span class="mf">1945.</span> <span class="n">Des</span> <span class="n">que</span> <span class="n">es</span> <span class="n">va</span> <span class="n">publicar</span> <span class="s">&quot;Animal</span>
 <span class="s">Farm&quot;</span> <span class="n">el</span> <span class="n">món</span> <span class="n">no</span> <span class="n">ha</span> <span class="n">tornat</span> <span class="n">a</span> <span class="n">ser</span> <span class="n">el</span> <span class="n">que</span> <span class="n">era</span><span class="p">.</span>
-<span class="n">$</span> <span class="n">cat</span> <span class="n">traducció</span><span class="p">.</span><span class="na">csv</span>
+<span class="n">$</span> <span class="n">cat</span> <span class="n">traduccio</span><span class="p">.</span><span class="na">csv</span>
 <span class="n">Animal</span> <span class="n">Farm</span><span class="p">,</span> <span class="n">Lord</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Flies</span>
-<span class="n">$</span> <span class="n">java</span> <span class="n">Traduccio</span> <span class="n">origen</span><span class="p">.</span><span class="na">txt</span> <span class="n">traduccio</span><span class="p">.</span><span class="na">csv</span> <span class="n">resultat</span><span class="p">.</span><span class="na">txt</span>
+<span class="n">$</span> <span class="n">java</span> <span class="n">Traduccio</span> <span class="n">origen</span><span class="p">.</span><span class="na">txt</span> <span class="n">traduccio</span><span class="p">.</span><span class="na">csv</span> <span class="n">destinacio</span><span class="p">.</span><span class="na">txt</span>
 <span class="n">$</span> <span class="n">cat</span> <span class="n">destinacio</span><span class="p">.</span><span class="na">txt</span>
 <span class="s">&quot;Lord of the Flies&quot;</span> <span class="n">es</span> <span class="n">va</span> <span class="n">publicar</span> <span class="n">en</span> <span class="mf">1954.</span> <span class="n">Des</span> <span class="n">que</span> <span class="n">es</span> <span class="n">va</span> <span class="n">publicar</span> <span class="s">&quot;Animal</span>
 <span class="s">Farm&quot;</span> <span class="n">el</span> <span class="n">món</span> <span class="n">no</span> <span class="n">ha</span> <span class="n">tornat</span> <span class="n">a</span> <span class="n">ser</span> <span class="n">el</span> <span class="n">que</span> <span class="n">era</span><span class="p">.</span>
 </pre></div>
 </div>
+<p>En cas que la crida al programa no inclogui els tres paràmetres, es
+mostrarà el missatge d’error <code class="docutils literal notranslate"><span class="pre">&quot;ERROR:</span> <span class="pre">Cal</span> <span class="pre">especificar</span> <span class="pre">els</span> <span class="pre">fitxers</span> <span class="pre">origen,</span>
+<span class="pre">traduccio</span> <span class="pre">i</span> <span class="pre">destinació&quot;</span></code> i finalitza l’execució.</p>
 <p>Per poder passar totes les proves, caldrà que implementis els següents
 mòduls:</p>
 <ul>

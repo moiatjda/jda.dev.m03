@@ -46,15 +46,15 @@ Per exemple, suposa la següent simulació:
     $ cat origen.txt
     En George Orwell va publicar "Animal Farm" en 1945.
     Al mateix any, en Federico García Lorca va publicar "La casa de Bernarda Alba".
-    $ cat traducció.csv
+    $ cat traduccio.csv
     George Orwell, William Golding
     Animal Farm, Lord of the Flies
     en Federico García Lorca, la Nancy Mitford
     La casa de Bernarda Alba, Madame de Pompadour
     1945, 1954
-    $ java Traduccio origen.txt traduccio.csv resultat.txt
+    $ java Traduccio origen.txt traduccio.csv destinacio.txt
     $ cat destinacio.txt
-    En William Golding publicar "Lord of the Flies" en 1954.
+    En William Golding va publicar "Lord of the Flies" en 1954.
     Al mateix any, la Nancy Mitford va publicar "Madame de Pompadour".
 
 
@@ -65,11 +65,11 @@ diferents valors, ``Traduccio`` considerarà la primera traducció.
 
     $ cat origen.txt
     "Animal Farm" es va publicar en 1945.
-    $ cat traducció.csv
+    $ cat traduccio.csv
     Animal Farm, Lord of the Flies
     1945, 1954
     1945, 2020
-    $ java Traduccio origen.txt traduccio.csv resultat.txt
+    $ java Traduccio origen.txt traduccio.csv destinacio.txt
     $ cat destinacio.txt
     "Lord of the Flies" es va publicar en 1954.
 
@@ -82,11 +82,11 @@ i després la segona.  Per exemple:
 
     $ cat origen.txt
     "Animal Farm" es va publicar en 1945.
-    $ cat traducció.csv
+    $ cat traduccio.csv
     Animal Farm, Lord of the Flies
     1945, 19ipico
     19ipico, 1954
-    $ java Traduccio origen.txt traduccio.csv resultat.txt
+    $ java Traduccio origen.txt traduccio.csv destinacio.txt
     $ cat destinacio.txt
     "Lord of the Flies" es va publicar en 1954.
 
@@ -100,13 +100,17 @@ dir, no es consideraran "claus trencades".
     $ cat origen.txt
     "Animal Farm" es va publicar en 1945. Des que es va publicar "Animal
     Farm" el món no ha tornat a ser el que era.
-    $ cat traducció.csv
+    $ cat traduccio.csv
     Animal Farm, Lord of the Flies
-    $ java Traduccio origen.txt traduccio.csv resultat.txt
+    $ java Traduccio origen.txt traduccio.csv destinacio.txt
     $ cat destinacio.txt
     "Lord of the Flies" es va publicar en 1954. Des que es va publicar "Animal
     Farm" el món no ha tornat a ser el que era.
 
+
+En cas que la crida al programa no inclogui els tres paràmetres, es
+mostrarà el missatge d'error ``"ERROR: Cal especificar els fitxers origen,
+traduccio i destinació"`` i finalitza l'execució.
 
 Per poder passar totes les proves, caldrà que implementis els següents
 mòduls:
