@@ -499,6 +499,6 @@ Practiquem la lectura de fitxers
 
 Aquí tens uns exercicis per practicar la lectura de fitxers.
 
-|exerciseicon_ST| :doc:`exercici_03_03_csv`
+|exerciseicon__T| :doc:`exercici_03_03_csv`
 
 |exerciseicon_ST| :doc:`exercici_03_04_elpenjat`

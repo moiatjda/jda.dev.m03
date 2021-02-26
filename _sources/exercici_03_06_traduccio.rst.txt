@@ -59,7 +59,7 @@ Per exemple, suposa la següent simulació:
 
 
 En cas que la traducció inclogui dues línies amb la mateixa clau i
-diferents valors, `Traduccio`` considerarà la primera traducció.
+diferents valors, ``Traduccio`` considerarà la primera traducció.
 
 .. code-block:: console
 
@@ -85,7 +85,7 @@ i després la segona.  Per exemple:
     $ cat traducció.csv
     Animal Farm, Lord of the Flies
     1945, 19ipico
-    19ipico, 1945
+    19ipico, 1954
     $ java Traduccio origen.txt traduccio.csv resultat.txt
     $ cat destinacio.txt
     "Lord of the Flies" es va publicar en 1954.

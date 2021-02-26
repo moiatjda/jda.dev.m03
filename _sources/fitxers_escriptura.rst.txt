@@ -234,7 +234,7 @@ Considera la següent execució:
 .. code-block:: console
 
     $ echo "M'has sentit?" > resultat.txt   # Creem un fitxer amb un contingut inicial
-    fitxering/$ cat resultat.txt 
+    $ cat resultat.txt 
     M'has sentit?
     $ java Ampliant                         # Hi afegim una línia
     $ cat resultat.txt 
