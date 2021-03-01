@@ -169,7 +169,7 @@
   <div class="section" id="escriptura-en-fitxers-de-text">
 <h1>Escriptura en fitxers de text<a class="headerlink" href="#escriptura-en-fitxers-de-text" title="Link permanent a aquest títol">¶</a></h1>
 <p>Un cop hem vist l’operació de lectura en fitxers de text, la d’escriptura no ens sorprendrà gaire.</p>
-<p>El conegut patró <em>obrir→usar→tancar</em> ara es concreta a <em>obrir→escrure→tancar</em></p>
+<p>El conegut patró <em>obrir→usar→tancar</em> ara es concreta a <em>obrir→escriure→tancar</em></p>
 <div class="section" id="el-que-es-escrit-roman">
 <h2>El que és escrit, roman<a class="headerlink" href="#el-que-es-escrit-roman" title="Link permanent a aquest títol">¶</a></h2>
 <p>Comencem pel més bàsic. Considera aquest codi:</p>
@@ -331,7 +331,7 @@ del sistema operatiu en que s’executi el nostre programa:</p>
 <code class="docutils literal notranslate"><span class="pre">%n</span></code> com un salt de línia.</p>
 <p>Una variant d’aquesta versió <em>bona</em> faria servir explícitament la funció
 <code class="docutils literal notranslate"><span class="pre">System.lineSeparator()</span></code> que ens retornarà un String que representa el
-salt de línia en el <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/System.html#lineSeparator()">sistama</a>
+salt de línia en el <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/System.html#lineSeparator()">sistema</a>
 en que s’executa.</p>
 <div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>11
 12</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    <span class="n">String</span> <span class="n">primeraLinia</span> <span class="o">=</span> <span class="s">&quot;Babau beu vi bo i viu bé.&quot;</span> <span class="o">+</span> <span class="n">System</span><span class="p">.</span><span class="na">lineSeparator</span><span class="p">();</span>

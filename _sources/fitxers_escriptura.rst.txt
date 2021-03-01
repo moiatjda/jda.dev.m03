@@ -4,7 +4,7 @@ Escriptura en fitxers de text
 
 Un cop hem vist l'operació de lectura en fitxers de text, la d'escriptura no ens sorprendrà gaire.
 
-El conegut patró *obrir→usar→tancar* ara es concreta a *obrir→escrure→tancar*
+El conegut patró *obrir→usar→tancar* ara es concreta a *obrir→escriure→tancar*
 
 El que és escrit, roman
 =======================
@@ -149,7 +149,7 @@ Bàsicament estem fent servir la funció ``String.format()`` que interpreta
 
 Una variant d'aquesta versió *bona* faria servir explícitament la funció
 ``System.lineSeparator()`` que ens retornarà un String que representa el
-salt de línia en el `sistama
+salt de línia en el `sistema
 <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/System.html#lineSeparator()>`_
 en que s'executa.
 
