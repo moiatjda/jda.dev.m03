@@ -57,3 +57,6 @@ Per passar les proves, caldrà que implementis els següents mòduls:
   Pressuposarà que el fitxer existeix.
 
 * ``mostraPuzle()``: donat un nom de puzle, el mostra per sortida estàndard
+
+* ``mostraTaulell()``: donat un taulells (``char[][]``) el mostra per
+  sortida estàndard.
