@@ -1,0 +1,52 @@
+################################################################
+|exerciseiconO__| Exercici 03_17. Puzle d'escacs: elimina figura
+################################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``03_17_del/``
+
+* Continguts relacionats: :doc:`exercici_03_08_puzles`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [☼] Exercici :ref:`optatiu<descripcio_exercicis_optatius>`
+
+.. rubric:: Enunciat
+
+Afegeix la funcionalitat d'eliminar una figura d'un puzle existent.
+
+La comanda tindrà la forma: ``del «nom» «fila» «columna»``
+
+En ser executada, eliminarà la figura que hi hagi a la posició indicada
+del puzle corresponent.
+
+En cas que no es proporcioni algun dels arguments, es mostrarà el
+missatge ``ERROR: del «nom» «fila» «columna»`` i tornarà a
+mostrar el *prompt*.
+
+Com a les comandes anteriors, si no existeix el puzle, es queixarà.
+
+També ho farà en cas que les coordenades no siguin valors numèrics, tot
+mostrant el missatge ``ERROR: files i columnes han de ser valors
+numèrics entre el 0 i el 7``.
+
+En cas que les coordenades no estiguin dins el taulell o bé no
+corresponguin a cap peça al taulell; ho farà amb el missatge ``ERROR: no
+es pot eliminar``.
+
+
+Per passar les proves caldrà que implementis el següent mòdul:
+
+* ``eliminaFiguraEnPuzle()``: donat un nom de puzle i una coordenada,
+  eliminarà la figura que hi hagi a les coordenades indicades.
+
+  Com als mòduls anteriors, no realitzarà cap comprovació.
+
+* ``eliminaFigura()``: donat un taulell i les coordenades d'una casella,
+  posarà la casella corresponent en blanc. És a dir, modificarà el
+  contingut del taulell que rep.
+
+  Retornarà fals quan la casella indicada estigui fora del taulell o bé ja
+  estigués buida.
+

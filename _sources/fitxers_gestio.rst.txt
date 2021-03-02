@@ -1,0 +1,299 @@
+#########################
+Gestió de fitxers en Java
+#########################
+
+
+Ara que ja sabem llegir i escriure de fitxers, potser comença a ser hora
+de descobrir com podem saber coses dels fitxers, com ara si existeixen,
+quina mida tenen i si poden ser llegits o escrits abans d'intentar-ho.
+
+
+Hi és o no hi és
+================
+
+En els exercicis que hem fet fins ara que involucraven fitxers hem hagut
+de suposar que els fitxers existien, però sovint no podem suposar-ho i ens
+caldrà comprovar-ho.
+
+Considera aquesta nova versió del programa ``Mostrat.java``:
+
+.. literalinclude:: _recursos/MostratSiEstas.java
+    :language: java
+    :linenos:
+    :emphasize-lines: 6, 12, 13, 17
+    :caption: :download:`MostratSiEstas.java<_recursos/MostratSiEstas.java>`
+
+Observa com el codi fa servir la variable de tipus ``File``. A la línia 12
+la declara i inicialitza, especificant que el fitxer estarà associat al
+camí ``MostratSiEstas.java``. A la línia 13 comprova si el fitxer
+existeix. Això ho fa tot cridant a la funció booleana ``exists()``
+associada als fitxers (`File``).
+
+La crida ``fitxer.exists()`` retorna cert quan es troba el fitxer i fals
+altrament.
+
+És important entendre que el camí no té perquè existir per tal de crear un
+``File`` associat. Per exemple, considera la següent interacció:
+
+.. code-block:: console
+
+    jshell> File fitxer = new File("/un_fitxer_inexistent")
+    fitxer ==> /un_fitxer_inexistent
+
+    jshell> fitxer.exists()
+    $1 ==> false
+
+Com pots veure, inicialitzar ``fitxer`` no ha suposat cap problema. En
+canvi, com era d'esperar, en comprovar la seva existència ens retorna
+que no hi és.
+
+Encara més, el camí no necessàriament té perquè correspondre a un fitxer
+tal i com l'entenem. Per exemple, podria ser un directori:
+
+.. code-block:: console
+
+    jshell> File fitxer = new File("/tmp")
+    fitxer ==> /tmp
+
+    jshell> fitxer.exists()
+    $1 ==> true
+
+Podem entendre un ``File`` com un camí o ruta (*path*) que permet
+especificar un element del sistema de fitxers que, potser ni hi és.
+
+Finalment, com que en realitat **no estem obrint** el fitxer fins que no
+li passem a ``fileReader``, no cal tancar-lo.
+
+Per cert, t'has fixat que ara ``FileReader`` rep a la línia 17 un ``File``
+en comptes d'un String?  Ja que tens el ``File`` pots escollir si li
+passes el camí o el fitxer.
+
+És un fitxer o un directori?
+============================
+
+Ara que ja hem vist que ``File`` pot ser tant un fitxer com un directori,
+potser seria interessant poder-ho distingir. ``File`` ens ofereix un munt
+d'utilitats interessants a banda de ``exists()``.
+
+Per exemple, fixa't en aquesta interacció
+
+.. code-block:: console
+
+    shell> File fitxer = new File("/tmp")
+    fitxer ==> /tmp
+
+    jshell> fitxer.isDirectory()
+    $1 ==> true
+
+    jshell> fitxer.isFile()
+    $2 ==> false
+
+    jshell> new File("/usr/bin/java").isFile()
+    $3 ==> true
+
+Fixa't que ``/tmp`` és un directori i no un fitxer, mentre que
+``/usr/bin/java`` sí és un fitxer.
+
+Per què ``isDirectory()`` i ``isFile()`` retornin cert, és necessari que
+el camí correspongui a un objecte existent al sistema de fitxers. És a
+dir, si ``! fitxer.exists()`` llavors segur que ``! fitxer.isFile() && !
+fitxer.isDirectory()``.
+
+Més coses amb ``File``
+======================
+
+El cert és que ``File`` ens ofereix unes quantes funcionalitats prou
+interessants.
+
+Per exemple, considera el següent codi:
+
+.. code-block:: java
+    :linenos:
+
+    /* programa que demostra algunes funcionalitats interessants de File */
+    import java.io.File;
+    public class ExploraFile {
+        public static void main(String[] args) {
+            File fitxer = new File("ExploraFile.java");
+            System.out.println("Camí relatiu: " + fitxer);
+            System.out.println("Camí absolut: " + fitxer.getAbsolutePath());
+            System.out.println("Nom         : " + fitxer.getName());
+            System.out.println("Longitud    : " + fitxer.length());
+            File carpeta = fitxer.getAbsoluteFile().getParentFile();
+            System.out.println("Carpeta     : " + carpeta);
+            System.out.println("Continguts dins la carpeta " + carpeta);
+            String[] continguts = carpeta.list();
+            for (int i = 0; i < continguts.length; i++) {
+                String item = continguts[i];
+                System.out.println("\t" + item);
+            }
+        }
+    }
+
+Suposant que l'executem a la carpeta ``/tmp/carpeta/subcarpeta``, ens
+trobem el següent:
+
+.. code-block:: console
+
+    $ ls
+    ExploraFile.class   ExploraFile.java
+    $ java ExploraFile 
+    Camí relatiu: ExploraFile.java
+    Camí absolut: /tmp/carpeta/subcarpeta/ExploraFile.java
+    Nom         : ExploraFile.java
+    Longitud    : 803
+    Carpeta:    : /tmp/carpeta/subcarpeta
+    Continguts dins la carpeta /tmp/carpeta/subcarpeta
+        ExploraFile.class
+        ExploraFile.java
+
+Pots trobar el detall d'aquests mòduls i encara més a la documentació
+oficial de `File
+<https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html>`_.
+
+Una mica d'ordre
+================
+
+Com hem vist a l'exemple anterior, podem llistar el contingut d'una
+carpeta amb la funció ``File.list()``
+
+A l'exemple, hem volgut llistar la carpeta que contenia el codi del nostre
+programa, però podríem haver fet servir qualsevol altra carpeta.
+
+En cas que el que ens interessi sigui la carpeta actual, podem
+aconseguir-la amb ``new File(".")``.
+
+Així, un programa que llisti el contingut de la carpeta actual podria
+tenir el següent aspecte:
+
+.. code-block:: java
+    :linenos:
+
+    /* Programa que mostra els continguts de la carpeta actual */
+    import java.io.File;
+    public class Llista {
+        public static void main(String[] args) {
+            File carpeta = new File(".");
+            String[] continguts = carpeta.list();
+            for (int i = 0; i < continguts.length; i++) {
+                String item = continguts[i];
+                System.out.println("\t" + item);
+            }
+        }
+    }
+
+Ara observa aquesta execució:
+
+.. code-block:: console
+
+    $ touch un dos tres     # creem tres fitxers buits
+    $ ls
+    dos  Llista.class  Llista.java  tres  un
+    $ java Llista
+        Llista.java
+        dos
+        un
+        Llista.class
+        tres
+
+Molt bé, funciona, però… l'ordre en que apareixen els fitxers no és gaire…
+ordenat, oi? Com és possible que ``un`` surti abans de ``tres`` però
+després de ``dos``?
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 3, 8
+
+    /* Programa que mostra els continguts de la carpeta actual ordenats alfabèticament */
+    import java.io.File;
+    import java.util.Arrays;
+    public class Llista {
+        public static void main(String[] args) {
+            File carpeta = new File(".");
+            String[] continguts = carpeta.list();
+            Arrays.sort(continguts);
+            for (int i = 0; i < continguts.length; i++) {
+                String item = continguts[i];
+                System.out.println("\t" + item);
+            }
+        }
+    }
+
+La biblioteca de Java ens ofereix, entre tantes altres coses, una manera
+senzilla d'ordenar el contingut d'un array. En aquest cas, ho fem amb el
+procediment ``Arrays.sort()`` que podem trobar a la `documentació oficial
+<https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Arrays.html#sort(java.lang.Object%5B%5D)>`_
+
+Ara, si executem el nostre programa, ens trobem la sortida ordenada
+alfabèticament.
+
+.. code-block:: console
+
+    $ java Llista 
+        Llista.class
+        Llista.java
+        dos
+        tres
+        un
+
+No està malament, oi?
+
+Un altre iterador
+=================
+
+Fins ara no t'he presentat una modalitat de bucle que pot ser interessant
+en determinats contexts. Java l'anomena *enhanced for* o *for millorat*.
+
+Veiem com funciona a partir de l'exemple anterior:
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 9
+
+    /* Programa que mostra els continguts de la carpeta actual ordenats alfabèticament */
+    import java.io.File;
+    import java.util.Arrays;
+    public class Llista {
+        public static void main(String[] args) {
+            File carpeta = new File(".");
+            String[] continguts = carpeta.list();
+            Arrays.sort(continguts);
+            for (String item: continguts) {
+                System.out.println("\t" + item);
+            }
+        }
+    }
+
+A la versió anterior fèiem servir la variable de recorregut ``i`` *només*
+per a poder obtenir cada element del bucle. A banda d'això, no fèiem
+servir la ``i`` per a res. Quan ens passa això en Java, sovint podem fer
+servir aquesta nova modalitat de ``for``.
+
+El seu funcionament és molt simple. Declares una variable del tipus
+dels elements de l'array, afegeixes ``:`` i tot seguit l'array que vols
+recórrer.  La variable declarada anirà recollint un valor de l'array de
+manera seqüencial, a cada iteració.
+
+És còmode? Sí. Has de fer-ho servir obligatòriament? No.
+
+Malauradament encara no funciona amb Strings i de moment ens tocarà haver
+de declarar la variable de recorregut per passar per cada caràcter d'un
+text.
+
+|exerciseicon___| :doc:`exercici_03_08_puzles`
+
+
+Una nova biblioteca
+===================
+
+Java ha incorporat una nova manera de gestionar fitxers a partir de la
+biblioteca *nio* (*new I/O*).
+
+L'he deixada fora d'aquests apunts perquè
+algunes de les funcionalitats inclouen l'ús de *streams* i funcions
+*lambda*, característiques que es troben una mica per sobre en complexitat
+que el que els objectius d'aquesta introducció requereixen.
+
+En tot cas, si la curiositat et pot, considera consultar la documentació
+oficial de `la biblioteca nio
+<https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/package-summary.html>`_.

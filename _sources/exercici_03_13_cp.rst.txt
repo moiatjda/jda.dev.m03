@@ -1,0 +1,43 @@
+###############################################################
+|exerciseiconO__| Exercici 03_13. Puzle d'escacs: duplica puzle
+###############################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``03_13_cp/``
+
+* Continguts relacionats: :doc:`exercici_03_08_puzles`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [☼] Exercici :ref:`optatiu<descripcio_exercicis_optatius>`
+
+.. rubric:: Enunciat
+
+Ara toca afegir la funcionnalitat de duplicació de puzles.
+
+La comanda a afegir és ``cp`` i té el següent aspecte:
+``cp «nom1» «nom2»``
+
+En cas que no es proporcioni algun dels arguments, es mostrarà el missatge
+``ERROR: cp «nom1» «nom2»`` i tornarà a mostrar el *prompt*.
+
+En cas que ``nom1`` no existeixi, el programa mostrarà l'error ``ERROR:
+puzle desconegut`` i tornarà a mostrar el *prompt* sense fer cap canvi.
+
+En cas que ``nom2`` ja existeixi, demanarà confirmació amb el missatge
+``Ja existeix el puzle «nom2». El sobreescrivim?``. Només el sobreescriurà
+en cas que sigui confirmat.
+
+Revisa l'exercici de les :doc:`utilitats de confirmació
+<exercici_02_17_utilitats_confirmacio>`.
+
+Per passar les proves caldrà que implementis el següent mòdul:
+
+* ``duplicaPuzle()``: donats dos noms de puzle, crea o sobreescriu el
+  fitxer corresponent al segon nom amb el contingut del fitxer
+  corresponent al primer nom.
+
+  Per exemple, ``duplicaTaulell("negres_mmate_en_un", "blanques_mate_en_un")``
+  farà que el fitxer ``puzle_blanques_mate_en_un.txt`` contingui el mateix
+  que ``puzle_negres_mate_en_un.txt``.

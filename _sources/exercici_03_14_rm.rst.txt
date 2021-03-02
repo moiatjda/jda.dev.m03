@@ -1,0 +1,42 @@
+#########################################################
+|exerciseiconO__| Exercici 03_14. Puzle d'escacs: elimina
+#########################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``03_14_rm/``
+
+* Continguts relacionats: :doc:`exercici_03_08_puzles`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [☼] Exercici :ref:`optatiu<descripcio_exercicis_optatius>`
+
+.. rubric:: Enunciat
+
+Afegeix la funcionalitat d'eliminar un puzle a partir del seu nom.
+
+La comanda tindrà la forma ``rm «nom»``.
+
+En cas que no es proporcioni el nom, es mostrarà el missatge ``ERROR:
+rm «nom»``.
+
+En cas que no existeixi cap puzle amb aquest nom, es mostrarà el
+missatge ``ERROR: no es troba el puzle``
+
+Si el fitxer sí es troba, llavors es demanarà confirmació amb el
+missatge ``Acció no recuperable. Esteu segurs?`` i, només en cas que es
+confirmi serà eliminat el fitxer
+
+Per realitzar aquesta opció, revisa el mòdul `File.delete
+<https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html#delete()>`_
+a la documentació oficial.
+
+
+Per passar les proves caldrà que implementis el següent mòdul:
+
+* ``eliminaPuzle()`` que rep un nom de puzle i l'elimina.
+
+   No cal comprovar si el puzle existeix o no doncsnomés hauria de ser 
+   cridat quan aquest existeixi.
+

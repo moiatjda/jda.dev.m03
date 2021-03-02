@@ -1,0 +1,403 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ca" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Exercici 03_08. Puzle d’escacs &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Exercici 03_09. Puzle d’escacs: entorn operatiu" href="exercici_03_09_puzles_entrasurt.html" />
+    <link rel="prev" title="Exercici 03_07. El fitxer de log" href="exercici_03_07_log.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació amb Java
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-21
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moduls.html">Mòduls</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="fitxers.html">Fitxers</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="fitxers_intro.html">Primeres definicions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fitxers_lectura.html">Lectura de fitxers de text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fitxers_escriptura.html">Escriptura en fitxers de text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fitxers_gestio.html">Gestió de fitxers en Java</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="fitxers_exercicis.html">Llistat d’exercicis</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_01_excepcional.html"> Exercici 03_01. Situacions excepcionals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_02_vocal_inici_fi.html"> Exercici 03_02. Vocals a l’inici o al final</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_03_csv.html"> Exercici 03_03. Valors separats per comes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_04_elpenjat.html"> Exercici 03_04. El joc del penjat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_05_lloro_memoria.html"> Exercici 03_05. El lloro amb memòria</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_06_traduccio.html"> Exercici 03_06. Traducció</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_07_log.html"> Exercici 03_07. El fitxer de log</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#"> Exercici 03_08. Puzle d’escacs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_09_puzles_entrasurt.html"> Exercici 03_09. Puzle d’escacs: entorn operatiu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_10_puzles_ls.html"> Exercici 03_10. Puzle d’escacs: llista</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_11_show.html"> Exercici 03_11. Puzle d’escacs: mostra</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_12_new.html"> Exercici 03_12. Puzle d’escacs: nou puzle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_13_cp.html"> Exercici 03_13. Puzle d’escacs: duplica puzle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_14_rm.html"> Exercici 03_14. Puzle d’escacs: elimina</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_15_add.html"> Exercici 03_15. Puzle d’escacs: afegeix figura</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_16_mv.html"> Exercici 03_16. Puzle d’escacs: mou figura</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_17_del.html"> Exercici 03_17. Puzle d’escacs: elimina figura</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="apendix.html">Apèndix</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació amb Java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="fitxers.html">Fitxers</a> &raquo;</li>
+        
+          <li><a href="fitxers_exercicis.html">Llistat d’exercicis</a> &raquo;</li>
+        
+      <li> Exercici 03_08. Puzle d’escacs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="exerciseicon-exercici-03-08-puzle-d-escacs">
+<h1><img alt="exerciseicon___" src="_images/exerciseicon___.png" /> Exercici 03_08. Puzle d’escacs<a class="headerlink" href="#exerciseicon-exercici-03-08-puzle-d-escacs" title="Link permanent a aquest títol">¶</a></h1>
+<p class="rubric">Context</p>
+<ul class="simple">
+<li><p>Carpeta de lliurament: <code class="docutils literal notranslate"><span class="pre">03_08_puzles/</span></code></p></li>
+<li><p>Continguts relacionats: <a class="reference internal" href="fitxers_gestio.html"><span class="doc">Gestió de fitxers en Java</span></a></p></li>
+<li><p>Com lliurar-lo: <a class="reference internal" href="holagit.html#instruccions-git"><span class="std std-ref">instruccions</span></a></p></li>
+</ul>
+<p class="rubric">Enunciat</p>
+<p>Al món dels escacs hi ha molts <em>subjocs</em> a banda de fer una partida entre
+dos persones.</p>
+<p>Un d’ells és analitzar posicions concretes de partides, sovint dels grans
+jugadors, amb reptes de l’estil: «les negres juguen i mat en 1».</p>
+<a class="reference internal image-reference" href="_images/escacsmat.png"><img alt="_images/escacsmat.png" class="align-center" src="_images/escacsmat.png" style="width: 256px;" /></a>
+<p>A aquest tipus de jocs sovint se’ls coneix com a <a class="reference external" href="https://ca.wikipedia.org/wiki/Puzle_d%27escacs">puzles d’escacs</a></p>
+<p>Pots aconseguir centenars d’exemples de puzles amb una simple cerca com
+<a class="reference external" href="https://duckduckgo.com/?q=chess+puzzles&amp;t=ffab&amp;iar=images&amp;iax=images&amp;ia=images">aquesta</a></p>
+<p>A aquest exercici desenvoluparem un gestor de composicions de taulells
+d’escacs que corresponen a puzles.</p>
+<p>El gestor oferirà la possibilitat de:</p>
+<ul class="simple">
+<li><p>llistar els puzles</p></li>
+<li><p>mostrar un puzle a partir del seu nom</p></li>
+<li><p>afegir un puzle buit</p></li>
+<li><p>duplicar un puzle</p></li>
+<li><p>eliminar un puzle</p></li>
+<li><p>afegir una figura a un puzle</p></li>
+<li><p>moure una figura d’un puzle</p></li>
+<li><p>eliminar una figura d’un puzle</p></li>
+</ul>
+<div class="section" id="emmagatzemament-de-puzle">
+<h2>Emmagatzemament de puzle<a class="headerlink" href="#emmagatzemament-de-puzle" title="Link permanent a aquest títol">¶</a></h2>
+<p>Cada puzle s’emmagatzema a un fitxer de text.</p>
+<p>El nom del fitxer tindrà la següent plantilla: <em>puzle_«nom».txt</em></p>
+<p>El <em>«nom»</em> correspon al nom del puzle.</p>
+<p>Per exemple, <code class="docutils literal notranslate"><span class="pre">puzle_negres_mate_en_un.txt</span></code> té com a nom del puzle
+<code class="docutils literal notranslate"><span class="pre">&quot;negres_mate_en_un&quot;</span></code>.</p>
+<p>El contingut d’un puzle són vuit línies de 8 caràcters (més el salt de
+línia) cadascuna, que representarà les files del taulell, començant per la
+darrera línia (la fila 7 si comencem a comptar des de zero).</p>
+<p>El contingut del fitxer <code class="docutils literal notranslate"><span class="pre">puzle_negres_mate_en_un.txt</span></code> serà:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> cat puzle_negres_mate_en_un.txt
+<span class="go">········</span>
+<span class="go">p·······</span>
+<span class="go">········</span>
+<span class="go">········</span>
+<span class="go">········</span>
+<span class="go">······PR</span>
+<span class="go">·····A··</span>
+<span class="go">·······r</span>
+</pre></div>
+</div>
+<p>Un nom de puzle vàlid no pot ser buit i només podrà contenir lletres,
+números i el caràcter de subratllat <code class="docutils literal notranslate"><span class="pre">'_'</span></code>. D’aquesta manera ens
+assegurarem que pot correspondre a un nom de fitxer vàlid.</p>
+</div>
+<div class="section" id="funcionament-del-programa">
+<h2>Funcionament del programa<a class="headerlink" href="#funcionament-del-programa" title="Link permanent a aquest títol">¶</a></h2>
+<p>El programa de gestió de puzles funcionarà com un entorn operatiu que
+mostrarà el <em>prompt</em> <code class="docutils literal notranslate"><span class="pre">puzle&gt;</span></code> i acceptarà les següents <em>comandes</em>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">help</span></code>: ajuda sobre les comandes disponibles</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">quit</span></code>: sortir de l’entorn operatiu</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span></code>: llistar els puzles</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">show</span></code>: mostrar un puzle a partir del seu nom</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">new</span></code>: afegir un puzle buit</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cp</span></code>: duplicar un puzle</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rm</span></code>: eliminar un puzle</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">add</span></code>: afegir una figura a un puzle</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mv</span></code>: moure una figura d’un puzle</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">del</span></code>: eliminar una figura d’un puzle</p></li>
+</ul>
+<p>Cada cop que s’executi una comanda amb èxit, els fitxers afectats quedaran
+tancats. És a dir, els fitxers s’aniran obrint i tancant a mesura que
+siguin requerits i no es mantindràn oberts entre comandes. De fet, ni tant
+sols en espera de confirmació.</p>
+<p>Les comandes distingiran majúscules i minúscules.</p>
+<p>El programa mirarà de minimitzar les possibilitats de finalitzar per una
+excepció amb els fitxers o bé amb una posició fora de rang. Això ho farà
+comprovant sempre l’existència dels fitxers a llegir/escriure i que les
+coordinades siguin vàlides.</p>
+</div>
+<div class="section" id="desenvolupament">
+<h2>Desenvolupament<a class="headerlink" href="#desenvolupament" title="Link permanent a aquest títol">¶</a></h2>
+<p>Realitzaràs el desenvolupament d’aquest programa de manera incremental, a
+partir dels següents exercicis:</p>
+<p>Per ajudar-te en el desenvolupament, he dividit l’exercici en una sèrie de
+subexercicis que, donat que disposen de tests exclusius per cada
+funcionalitat, et permetran anar desenvolupant pas a pas sense barrejar
+amb la resta.</p>
+<p>Finalment, assegura’t que lliures la versió completa a la carpeta
+corresponent a aquest exercici, tot passant totes les proves.</p>
+<p><img alt="exerciseiconO_T" src="_images/exerciseiconO_T.png" /> <a class="reference internal" href="exercici_03_09_puzles_entrasurt.html"><span class="doc"> Exercici 03_09. Puzle d’escacs: entorn operatiu</span></a></p>
+<p><img alt="exerciseiconO_T" src="_images/exerciseiconO_T.png" /> <a class="reference internal" href="exercici_03_10_puzles_ls.html"><span class="doc"> Exercici 03_10. Puzle d’escacs: llista</span></a></p>
+<p><img alt="exerciseiconO__" src="_images/exerciseiconO__.png" /> <a class="reference internal" href="exercici_03_11_show.html"><span class="doc"> Exercici 03_11. Puzle d’escacs: mostra</span></a></p>
+<p><img alt="exerciseiconO__" src="_images/exerciseiconO__.png" /> <a class="reference internal" href="exercici_03_12_new.html"><span class="doc"> Exercici 03_12. Puzle d’escacs: nou puzle</span></a></p>
+<p><img alt="exerciseiconO__" src="_images/exerciseiconO__.png" /> <a class="reference internal" href="exercici_03_13_cp.html"><span class="doc"> Exercici 03_13. Puzle d’escacs: duplica puzle</span></a></p>
+<p><img alt="exerciseiconO__" src="_images/exerciseiconO__.png" /> <a class="reference internal" href="exercici_03_14_rm.html"><span class="doc"> Exercici 03_14. Puzle d’escacs: elimina</span></a></p>
+<p><img alt="exerciseiconO__" src="_images/exerciseiconO__.png" /> <a class="reference internal" href="exercici_03_15_add.html"><span class="doc"> Exercici 03_15. Puzle d’escacs: afegeix figura</span></a></p>
+<p><img alt="exerciseiconO__" src="_images/exerciseiconO__.png" /> <a class="reference internal" href="exercici_03_16_mv.html"><span class="doc"> Exercici 03_16. Puzle d’escacs: mou figura</span></a></p>
+<p><img alt="exerciseiconO__" src="_images/exerciseiconO__.png" /> <a class="reference internal" href="exercici_03_17_del.html"><span class="doc"> Exercici 03_17. Puzle d’escacs: elimina figura</span></a></p>
+</div>
+<div class="section" id="ampliacions">
+<h2>Ampliacions<a class="headerlink" href="#ampliacions" title="Link permanent a aquest títol">¶</a></h2>
+<p>En cas que t’hagis quedat amb ganes de més, hi ha moltes ampliacions que
+hi pots fer.  Les més interessants per aquest tema són les que et permeten
+experimentar amb els fitxers. En concret et proposo les següents:</p>
+<ul>
+<li><p>guardem tot el contingut en una única línia
+(sense salts de línia)</p></li>
+<li><p>guardem només les figures que hi ha al taulell</p>
+<p>Pel puzle d’exemple, guardaria simplement:<code class="docutils literal notranslate"><span class="pre">07r15A26P27R60p</span></code></p>
+<p>Fixa’t que només li cal indicar que a les coordenades 0, 7 es troba el
+rey blanc, i que no cal ni separar cada figura doncs sabem que cada
+entrada ocupa exàctament tres caràcters.</p>
+<p>Ens tocarà fer un conversor entre arrays i aquest format i viceversa.</p>
+<p>Variants d’aquesta n’hi ha moltes. Per exemple, podríem fer servir una
+marca de línia per cada fila i només indicar les columnes.  Al nostre
+exemple, considerant la <code class="docutils literal notranslate"><span class="pre">X</span></code> com a màrca de línia, el fitxer
+contindria: <code class="docutils literal notranslate"><span class="pre">7rX5AX6P7RXXXX0pX</span></code></p>
+</li>
+<li><p>format binari</p>
+<p>Fixa’t que només ens calen 13 valors per representar les diferents
+figures (això són 4 bits i ens sobren!) Així, amb 4 bytes
+podríem codificar tota una fila i amb 8 tot un taulell.</p>
+<p>En cas que t’animis a fer aquesta ampliació, et caldrà descobrir els
+operadors <em>bitwise</em></p>
+</li>
+<li><p>Amb un byte per figura al taulell en podríem tenir prou: 3 bits per
+coordenada més els 4 per la figura.o</p>
+<p>Ni ens caldria un valor per la casella buida!</p>
+<p>Compacte és aquest, oi?</p>
+</li>
+</ul>
+<p>En cas que t’animis a fer una d’aquestes ampliacions, pensa que no et
+passaran algunes de les proves de la versió bàsica. Per tant, et proposo
+que les facis en una carpeta a banda i, per favor, si te’n surts, fes-m’ho
+saber perquè li faci una ullada.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="exercici_03_09_puzles_entrasurt.html" class="btn btn-neutral float-right" title="Exercici 03_09. Puzle d’escacs: entorn operatiu" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="exercici_03_07_log.html" class="btn btn-neutral float-left" title="Exercici 03_07. El fitxer de log" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2021 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

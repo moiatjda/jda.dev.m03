@@ -1,0 +1,48 @@
+############################################################
+|exerciseiconO__| Exercici 03_16. Puzle d'escacs: mou figura
+############################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``03_16_mv/``
+
+* Continguts relacionats: :doc:`exercici_03_08_puzles`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [☼] Exercici :ref:`optatiu<descripcio_exercicis_optatius>`
+
+.. rubric:: Enunciat
+
+Afegeix la funcionalitat de moure una figura d'un puzle.
+
+Aquesta serà la forma de la comanda:  ``mv «nom» «fila0» «columna0» «fila1» «columna1»``
+
+El que farà serà moure la figura del puzle indicat que es troba a la
+posició ``(fila0, columna0)`` a la posició ``(fila1, columna1)``.
+
+En cas que no es proporcioni algun dels arguments, es mostrarà el
+missatge ``ERROR: mv «nom» «fila0» «columna0» «fila1» «columna1»`` i
+tornarà a mostrar el *prompt*.
+
+Si el puzle no existeix o les coordinades no són numèriques, es queixarà
+com sempre, mentre que si no es pot moure, sigui perquè alguna de les
+coordenades estan fora del taulell o bé per què no hi ha figura a la
+posició d'origen o perquè la de destinació està ocupada, mostrarà el
+missatge ``ERROR: no es pot moure``.
+
+
+Per passar les proves caldrà que implementis el següent mòdul:
+
+* ``mouFiguraEnPuzle()``: donat un nom de puzle i dues coordenades, mou la
+  figura de la primera coordenada a la segona dins del taulell contingut
+  al fitxer corresponent al puzle.
+
+  Aquest mòdul fa servir la funció ``mouFigura()`` que vas implementar a
+  l'exercici :doc:`mou figura <exercici_02_35_mou_figura>`.
+
+  Aquest mòdul tampoc no comprovarà res. Si el fitxer no hi és, o bé no
+  permet ser escrit, es produirà una excepció. Per altra banda, si el
+  moviment no és possible, simplement el fitxer no veurà modificat el seu
+  contingut.
+

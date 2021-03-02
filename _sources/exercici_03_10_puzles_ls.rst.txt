@@ -1,0 +1,80 @@
+########################################################
+|exerciseiconO_T| Exercici 03_10. Puzle d'escacs: llista
+########################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``03_10_puzles_ls/``
+
+* Continguts relacionats: :doc:`exercici_03_08_puzles`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [☼] Exercici :ref:`optatiu<descripcio_exercicis_optatius>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+En aquesta ocasió afegirem la comanda ``ls`` que permetrà llistar tots els
+puzles disponibles.
+
+Considerarà com a puzle aquells que corresponguin a un fitxer dins la
+carpeta actual, que comencin per ``puzle_``, tinguin extensió ``.txt`` i
+tot el seu nom contingui una combinació de lletres i el caràcter ``'_'``
+
+Considera la següent interacció:
+
+.. code-block:: console
+    :emphasize-lines: 2-5, 7, 9-12, 14
+
+    $ ls puzle_*.txt
+    puzle_blanques_mate_en_un.txt
+    puzle_negres_coronen_però_blanques_guanyen_en_dos.txt
+    puzle_negres_mate_en_un.txt
+    puzle_prova_tonta.txt
+    $ java Puzles
+    Gestor de puzles d'escacs. Escriviu help per ajuda.
+    puzle> ls
+    blanques_mate_en_un
+    negres_coronen_i_blanques_guanyen_en_dos
+    negres_mate_en_un
+    prova_tonta
+    puzle> quit
+    adéu
+
+En cas que no hi hagi cap fitxer de puzle, no donarà cap sortida i tornarà
+a oferir el *prompt*.
+
+La sortida apareixerà ordenada alfabèticament.
+
+Per a poder passar les proves caldrà que implementis els següents mòduls:
+
+* ``esNomPuzleValid()``: donat un nom de puzle, retornarà cert només si
+  és vàlid, És a dir, no és buit i està format per una combinació de
+  lletres, números i ``'_'``.
+
+* ``esNomFitxerDePuzleValid()``: donat un nom de fitxer retornarà cert només si
+  és vàlid com a nom de fitxer de puzle, És a dir, si comença per
+  ``puzle_``, té extensió ``.txt`` i entre ``puzle_`` i l'extensió hi ha
+  un nom de puzle vàlid.
+
+
+* ``composaNomFitxerDeNomPuzle()``: donat un nom de puzle, retorna un String amb el
+  nom del fitxer corresponent al puzle.
+
+  Pressuposa que el nom és vàlid
+
+  Ex. ``composaNomFitxerDePuzle("mate_en_dos")`` → ``"puzle_mate_en_dos.txt"``
+
+
+* ``extreuNomPuzleDeNomFitxer()``: donat el nom d'un fitxer retorna el
+  nom d'un puzle
+
+  Pot pressuposar que el nom del fitxer comença amb ``"puzle_"`` i acaba amb
+  ``".txt"``
+
+  Ex. ``extreuNomPuzleDeNomFitxer("puzle_mate_en_dos.txt")`` → ``"mate_en_dos"``
+
+* ``mostraLlista()``: mostra per sortida estàndard la llista de noms de
+  puzles que es troben a la carpeta actual, ordenada alfabèticament.

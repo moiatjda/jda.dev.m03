@@ -1,0 +1,44 @@
+###########################################################
+|exerciseiconO__| Exercici 03_12. Puzle d'escacs: nou puzle
+###########################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``03_12_new/``
+
+* Continguts relacionats: :doc:`exercici_03_08_puzles`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [☼] Exercici :ref:`optatiu<descripcio_exercicis_optatius>`
+
+.. rubric:: Enunciat
+
+Afegirem ara la funcionalitat de crear un puzle en blanc.
+
+La comanda serà ``new «nom»``.
+
+En cas que no es proporcioni el nom, es mostrarà el missatge ``ERROR: new
+«nom»`` i tornarà a mostrar el *prompt*.
+
+En cas que ``nom`` ja existeixi, demanarà confirmació amb el missatge ``Ja
+existeix el puzle «nom2». El sobreescrivim?``. Només el sobreescriurà en
+cas que sigui confirmat.
+
+Per passar les proves, caldrà que implementis:
+
+* ``creaPuzleBuit()``: donat un nom de puzle, hi escriu un taulell buit al
+  fitxer corresponent.
+
+  Recorda que un taulell buit és una taula de 8x8 de caràcters ``'·'``.
+
+* ``escriuPuzle()``: donat un nom de puzle i un array d'arrays de
+  caràcters representant el taulell, escriu al fitxer corresponent el
+  contingut del taulell.
+
+  Per exemple, si la crida és ``llegeixTaulell("negres_mmate_en_un", taulell)`` escriurà al fitxer
+  ``puzle_negres_mate_en_un.txt`` el contingut de l'array d'arrays de
+  caràcters referenciat per ``taulell``.
+
+  No es preocuparà si el fitxer existeix o no. És a dir, si existia,
+  sobreescriurà el seu contingut.

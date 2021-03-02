@@ -1,0 +1,70 @@
+################################################################
+|exerciseiconO__| Exercici 03_15. Puzle d'escacs: afegeix figura
+################################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``03_15_add/``
+
+* Continguts relacionats: :doc:`exercici_03_08_puzles`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [☼] Exercici :ref:`optatiu<descripcio_exercicis_optatius>`
+
+.. rubric:: Enunciat
+
+Afegeix la funcionalitat d'afegir una figura a un puzle existent.
+
+La comanda tindrà la forma  ``add «nom» «figura» «fila» «columna»``.
+
+En cas que no es proporcioni algun dels arguments, es mostrarà el
+missatge ``ERROR: add «nom» «figura» «fila» «columna»`` i tornarà a
+mostrar el *prompt*.
+
+Si el puzle no existeix, mostrarà el missatge habitual d'error i
+continuarà amb el *prompt*
+
+Si la figura no és vàlida, mostarà el missatge ``ERROR: figura no
+vàlida`` i tornarà al *prompt*.
+
+Si la fila o la columna no són valors numèrics, es mostrarà el missatge
+``ERROR: files i columnes han de ser valors numèrics entre el 0 i el
+7``.
+
+Si no es pot posicionar la figura a les coordenades indicades del
+taulell, sigui per què les coordenades no siguin vàlides, sigui perqué
+la posició del taulell ja està ocupada, mostarà el missatge ``ERROR: no
+es pot posicionar`` i continuarà amb el *prompt*.
+
+
+Per passar les proves caldrà que implementis el següent mòdul:
+
+* ``esFiguraValida()``: donada una figura (un caràcter) retornarà cert
+  només si el caràcter correspon a una figura vàlida. Les figures vàlides
+  són les negres ``'P'``, ``'T'``, ``'C'``, ``'A'``, ``'D'`` i ``'R'``, i
+  les blanques ``'p'``, ``'t'``, ``'c'``, ``'a'``, ``'d'`` i ``'r'`` .
+
+  Fixa't que tampoc no es considera una figura vàlida el caràcter de
+  casella buida ``'·'``.
+
+* ``posicionaFiguraEnPuzle()``: donat un nom de puzle, una figura i les
+  coordenades a la posició del taulell d'escacs corresponent, hi col·loca
+  la figura indicada a la posició indicada del fitxer corresponent.
+
+  Aquest mòdul fa servir la funció ``posicionaFigura()`` que vas
+  desenvolupar a l'exercici :doc:`posiciona figura
+  <exercici_02_34_posiciona_figura>`.
+
+  Aquest mòdul no comprovarà res i pressuposarà que:
+
+  * existeix el fitxer corresponent
+
+  * la figura és un valor correcte
+
+  * les coordenades són correctes
+
+  * la figura pot ser col·locada en el lloc indicat
+
+  Així, si el fitxer no existeix o no pot ser llegit/ =
+

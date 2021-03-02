@@ -1,0 +1,585 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ca" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Gestió de fitxers en Java &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Llistat d’exercicis" href="fitxers_exercicis.html" />
+    <link rel="prev" title="Escriptura en fitxers de text" href="fitxers_escriptura.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació amb Java
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-21
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moduls.html">Mòduls</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="fitxers.html">Fitxers</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="fitxers_intro.html">Primeres definicions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fitxers_lectura.html">Lectura de fitxers de text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fitxers_escriptura.html">Escriptura en fitxers de text</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Gestió de fitxers en Java</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fitxers_exercicis.html">Llistat d’exercicis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="apendix.html">Apèndix</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació amb Java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="fitxers.html">Fitxers</a> &raquo;</li>
+        
+      <li>Gestió de fitxers en Java</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="gestio-de-fitxers-en-java">
+<h1>Gestió de fitxers en Java<a class="headerlink" href="#gestio-de-fitxers-en-java" title="Link permanent a aquest títol">¶</a></h1>
+<p>Ara que ja sabem llegir i escriure de fitxers, potser comença a ser hora
+de descobrir com podem saber coses dels fitxers, com ara si existeixen,
+quina mida tenen i si poden ser llegits o escrits abans d’intentar-ho.</p>
+<div class="section" id="hi-es-o-no-hi-es">
+<h2>Hi és o no hi és<a class="headerlink" href="#hi-es-o-no-hi-es" title="Link permanent a aquest títol">¶</a></h2>
+<p>En els exercicis que hem fet fins ara que involucraven fitxers hem hagut
+de suposar que els fitxers existien, però sovint no podem suposar-ho i ens
+caldrà comprovar-ho.</p>
+<p>Considera aquesta nova versió del programa <code class="docutils literal notranslate"><span class="pre">Mostrat.java</span></code>:</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text"><a class="reference download internal" download="" href="_downloads/d2655e5d0daebf1cf7346c0d7a90e154/MostratSiEstas.java"><code class="xref download docutils literal notranslate"><span class="pre">MostratSiEstas.java</span></code></a></span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/*</span>
+<span class="cm"> * programa que mostra el seu propi codi</span>
+<span class="cm"> * Nota: en cas que el codi font no es trobi a la carpeta actual, mostra un error</span>
+<span class="cm"> */</span>
+<span class="kn">import</span> <span class="nn">java.io.BufferedReader</span><span class="p">;</span>
+<span class="hll"><span class="kn">import</span> <span class="nn">java.io.File</span><span class="p">;</span>
+</span><span class="kn">import</span> <span class="nn">java.io.FileReader</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="p">;</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MostratSiEstas</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+        <span class="n">String</span> <span class="n">cami</span> <span class="o">=</span> <span class="s">&quot;MostratSiEstas.java&quot;</span><span class="p">;</span>
+<span class="hll">        <span class="n">File</span> <span class="n">fitxer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="p">(</span><span class="n">cami</span><span class="p">);</span>
+</span><span class="hll">        <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="n">fitxer</span><span class="p">.</span><span class="na">exists</span><span class="p">())</span> <span class="p">{</span>
+</span>            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error: no es troba el fitxer: &quot;</span> <span class="o">+</span> <span class="n">cami</span><span class="p">);</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+<span class="hll">        <span class="n">FileReader</span> <span class="n">fileReader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileReader</span><span class="p">(</span><span class="n">fitxer</span><span class="p">);</span>
+</span>        <span class="n">BufferedReader</span> <span class="n">input</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="p">(</span><span class="n">fileReader</span><span class="p">);</span>
+        <span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">String</span> <span class="n">linia</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="na">readLine</span><span class="p">();</span>
+            <span class="k">if</span> <span class="p">(</span><span class="kc">null</span> <span class="o">==</span> <span class="n">linia</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">linia</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">input</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<p>Observa com el codi fa servir la variable de tipus <code class="docutils literal notranslate"><span class="pre">File</span></code>. A la línia 12
+la declara i inicialitza, especificant que el fitxer estarà associat al
+camí <code class="docutils literal notranslate"><span class="pre">MostratSiEstas.java</span></code>. A la línia 13 comprova si el fitxer
+existeix. Això ho fa tot cridant a la funció booleana <code class="docutils literal notranslate"><span class="pre">exists()</span></code>
+associada als fitxers (<cite>File`</cite>).</p>
+<p>La crida <code class="docutils literal notranslate"><span class="pre">fitxer.exists()</span></code> retorna cert quan es troba el fitxer i fals
+altrament.</p>
+<p>És important entendre que el camí no té perquè existir per tal de crear un
+<code class="docutils literal notranslate"><span class="pre">File</span></code> associat. Per exemple, considera la següent interacció:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">jshell&gt; File fitxer = new File(&quot;/un_fitxer_inexistent&quot;)</span>
+<span class="go">fitxer ==&gt; /un_fitxer_inexistent</span>
+
+<span class="go">jshell&gt; fitxer.exists()</span>
+<span class="gp">$</span><span class="nv">1</span> <span class="o">==</span>&gt; <span class="nb">false</span>
+</pre></div>
+</div>
+<p>Com pots veure, inicialitzar <code class="docutils literal notranslate"><span class="pre">fitxer</span></code> no ha suposat cap problema. En
+canvi, com era d’esperar, en comprovar la seva existència ens retorna
+que no hi és.</p>
+<p>Encara més, el camí no necessàriament té perquè correspondre a un fitxer
+tal i com l’entenem. Per exemple, podria ser un directori:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">jshell&gt; File fitxer = new File(&quot;/tmp&quot;)</span>
+<span class="go">fitxer ==&gt; /tmp</span>
+
+<span class="go">jshell&gt; fitxer.exists()</span>
+<span class="gp">$</span><span class="nv">1</span> <span class="o">==</span>&gt; <span class="nb">true</span>
+</pre></div>
+</div>
+<p>Podem entendre un <code class="docutils literal notranslate"><span class="pre">File</span></code> com un camí o ruta (<em>path</em>) que permet
+especificar un element del sistema de fitxers que, potser ni hi és.</p>
+<p>Finalment, com que en realitat <strong>no estem obrint</strong> el fitxer fins que no
+li passem a <code class="docutils literal notranslate"><span class="pre">fileReader</span></code>, no cal tancar-lo.</p>
+<p>Per cert, t’has fixat que ara <code class="docutils literal notranslate"><span class="pre">FileReader</span></code> rep a la línia 17 un <code class="docutils literal notranslate"><span class="pre">File</span></code>
+en comptes d’un String?  Ja que tens el <code class="docutils literal notranslate"><span class="pre">File</span></code> pots escollir si li
+passes el camí o el fitxer.</p>
+</div>
+<div class="section" id="es-un-fitxer-o-un-directori">
+<h2>És un fitxer o un directori?<a class="headerlink" href="#es-un-fitxer-o-un-directori" title="Link permanent a aquest títol">¶</a></h2>
+<p>Ara que ja hem vist que <code class="docutils literal notranslate"><span class="pre">File</span></code> pot ser tant un fitxer com un directori,
+potser seria interessant poder-ho distingir. <code class="docutils literal notranslate"><span class="pre">File</span></code> ens ofereix un munt
+d’utilitats interessants a banda de <code class="docutils literal notranslate"><span class="pre">exists()</span></code>.</p>
+<p>Per exemple, fixa’t en aquesta interacció</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">shell&gt; File fitxer = new File(&quot;/tmp&quot;)</span>
+<span class="go">fitxer ==&gt; /tmp</span>
+
+<span class="go">jshell&gt; fitxer.isDirectory()</span>
+<span class="gp">$</span><span class="nv">1</span> <span class="o">==</span>&gt; <span class="nb">true</span>
+
+<span class="go">jshell&gt; fitxer.isFile()</span>
+<span class="gp">$</span><span class="nv">2</span> <span class="o">==</span>&gt; <span class="nb">false</span>
+
+<span class="go">jshell&gt; new File(&quot;/usr/bin/java&quot;).isFile()</span>
+<span class="gp">$</span><span class="nv">3</span> <span class="o">==</span>&gt; <span class="nb">true</span>
+</pre></div>
+</div>
+<p>Fixa’t que <code class="docutils literal notranslate"><span class="pre">/tmp</span></code> és un directori i no un fitxer, mentre que
+<code class="docutils literal notranslate"><span class="pre">/usr/bin/java</span></code> sí és un fitxer.</p>
+<p>Per què <code class="docutils literal notranslate"><span class="pre">isDirectory()</span></code> i <code class="docutils literal notranslate"><span class="pre">isFile()</span></code> retornin cert, és necessari que
+el camí correspongui a un objecte existent al sistema de fitxers. És a
+dir, si <code class="docutils literal notranslate"><span class="pre">!</span> <span class="pre">fitxer.exists()</span></code> llavors segur que <code class="docutils literal notranslate"><span class="pre">!</span> <span class="pre">fitxer.isFile()</span> <span class="pre">&amp;&amp;</span> <span class="pre">!</span>
+<span class="pre">fitxer.isDirectory()</span></code>.</p>
+</div>
+<div class="section" id="mes-coses-amb-file">
+<h2>Més coses amb <code class="docutils literal notranslate"><span class="pre">File</span></code><a class="headerlink" href="#mes-coses-amb-file" title="Link permanent a aquest títol">¶</a></h2>
+<p>El cert és que <code class="docutils literal notranslate"><span class="pre">File</span></code> ens ofereix unes quantes funcionalitats prou
+interessants.</p>
+<p>Per exemple, considera el següent codi:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/* programa que demostra algunes funcionalitats interessants de File */</span>
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="p">;</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExploraFile</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">File</span> <span class="n">fitxer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="p">(</span><span class="s">&quot;ExploraFile.java&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Camí relatiu: &quot;</span> <span class="o">+</span> <span class="n">fitxer</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Camí absolut: &quot;</span> <span class="o">+</span> <span class="n">fitxer</span><span class="p">.</span><span class="na">getAbsolutePath</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Nom         : &quot;</span> <span class="o">+</span> <span class="n">fitxer</span><span class="p">.</span><span class="na">getName</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Longitud    : &quot;</span> <span class="o">+</span> <span class="n">fitxer</span><span class="p">.</span><span class="na">length</span><span class="p">());</span>
+        <span class="n">File</span> <span class="n">carpeta</span> <span class="o">=</span> <span class="n">fitxer</span><span class="p">.</span><span class="na">getAbsoluteFile</span><span class="p">().</span><span class="na">getParentFile</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Carpeta     : &quot;</span> <span class="o">+</span> <span class="n">carpeta</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Continguts dins la carpeta &quot;</span> <span class="o">+</span> <span class="n">carpeta</span><span class="p">);</span>
+        <span class="n">String</span><span class="o">[]</span> <span class="n">continguts</span> <span class="o">=</span> <span class="n">carpeta</span><span class="p">.</span><span class="na">list</span><span class="p">();</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">continguts</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">String</span> <span class="n">item</span> <span class="o">=</span> <span class="n">continguts</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\t&quot;</span> <span class="o">+</span> <span class="n">item</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Suposant que l’executem a la carpeta <code class="docutils literal notranslate"><span class="pre">/tmp/carpeta/subcarpeta</span></code>, ens
+trobem el següent:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> ls
+<span class="go">ExploraFile.class   ExploraFile.java</span>
+<span class="gp">$</span> java ExploraFile
+<span class="go">Camí relatiu: ExploraFile.java</span>
+<span class="go">Camí absolut: /tmp/carpeta/subcarpeta/ExploraFile.java</span>
+<span class="go">Nom         : ExploraFile.java</span>
+<span class="go">Longitud    : 803</span>
+<span class="go">Carpeta:    : /tmp/carpeta/subcarpeta</span>
+<span class="go">Continguts dins la carpeta /tmp/carpeta/subcarpeta</span>
+<span class="go">    ExploraFile.class</span>
+<span class="go">    ExploraFile.java</span>
+</pre></div>
+</div>
+<p>Pots trobar el detall d’aquests mòduls i encara més a la documentació
+oficial de <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/File.html">File</a>.</p>
+</div>
+<div class="section" id="una-mica-d-ordre">
+<h2>Una mica d’ordre<a class="headerlink" href="#una-mica-d-ordre" title="Link permanent a aquest títol">¶</a></h2>
+<p>Com hem vist a l’exemple anterior, podem llistar el contingut d’una
+carpeta amb la funció <code class="docutils literal notranslate"><span class="pre">File.list()</span></code></p>
+<p>A l’exemple, hem volgut llistar la carpeta que contenia el codi del nostre
+programa, però podríem haver fet servir qualsevol altra carpeta.</p>
+<p>En cas que el que ens interessi sigui la carpeta actual, podem
+aconseguir-la amb <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">File(&quot;.&quot;)</span></code>.</p>
+<p>Així, un programa que llisti el contingut de la carpeta actual podria
+tenir el següent aspecte:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/* Programa que mostra els continguts de la carpeta actual */</span>
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="p">;</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Llista</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">File</span> <span class="n">carpeta</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="p">(</span><span class="s">&quot;.&quot;</span><span class="p">);</span>
+        <span class="n">String</span><span class="o">[]</span> <span class="n">continguts</span> <span class="o">=</span> <span class="n">carpeta</span><span class="p">.</span><span class="na">list</span><span class="p">();</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">continguts</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">String</span> <span class="n">item</span> <span class="o">=</span> <span class="n">continguts</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\t&quot;</span> <span class="o">+</span> <span class="n">item</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Ara observa aquesta execució:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> touch un dos tres     <span class="c1"># creem tres fitxers buits</span>
+<span class="gp">$</span> ls
+<span class="go">dos  Llista.class  Llista.java  tres  un</span>
+<span class="gp">$</span> java Llista
+<span class="go">    Llista.java</span>
+<span class="go">    dos</span>
+<span class="go">    un</span>
+<span class="go">    Llista.class</span>
+<span class="go">    tres</span>
+</pre></div>
+</div>
+<p>Molt bé, funciona, però… l’ordre en que apareixen els fitxers no és gaire…
+ordenat, oi? Com és possible que <code class="docutils literal notranslate"><span class="pre">un</span></code> surti abans de <code class="docutils literal notranslate"><span class="pre">tres</span></code> però
+després de <code class="docutils literal notranslate"><span class="pre">dos</span></code>?</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/* Programa que mostra els continguts de la carpeta actual ordenats alfabèticament */</span>
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="p">;</span>
+<span class="hll"><span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="p">;</span>
+</span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Llista</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">File</span> <span class="n">carpeta</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="p">(</span><span class="s">&quot;.&quot;</span><span class="p">);</span>
+        <span class="n">String</span><span class="o">[]</span> <span class="n">continguts</span> <span class="o">=</span> <span class="n">carpeta</span><span class="p">.</span><span class="na">list</span><span class="p">();</span>
+<span class="hll">        <span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">continguts</span><span class="p">);</span>
+</span>        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">continguts</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">String</span> <span class="n">item</span> <span class="o">=</span> <span class="n">continguts</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\t&quot;</span> <span class="o">+</span> <span class="n">item</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>La biblioteca de Java ens ofereix, entre tantes altres coses, una manera
+senzilla d’ordenar el contingut d’un array. En aquest cas, ho fem amb el
+procediment <code class="docutils literal notranslate"><span class="pre">Arrays.sort()</span></code> que podem trobar a la <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Arrays.html#sort(java.lang.Object%5B%5D)">documentació oficial</a></p>
+<p>Ara, si executem el nostre programa, ens trobem la sortida ordenada
+alfabèticament.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java Llista
+<span class="go">    Llista.class</span>
+<span class="go">    Llista.java</span>
+<span class="go">    dos</span>
+<span class="go">    tres</span>
+<span class="go">    un</span>
+</pre></div>
+</div>
+<p>No està malament, oi?</p>
+</div>
+<div class="section" id="un-altre-iterador">
+<h2>Un altre iterador<a class="headerlink" href="#un-altre-iterador" title="Link permanent a aquest títol">¶</a></h2>
+<p>Fins ara no t’he presentat una modalitat de bucle que pot ser interessant
+en determinats contexts. Java l’anomena <em>enhanced for</em> o <em>for millorat</em>.</p>
+<p>Veiem com funciona a partir de l’exemple anterior:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/* Programa que mostra els continguts de la carpeta actual ordenats alfabèticament */</span>
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="p">;</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Llista</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">File</span> <span class="n">carpeta</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="p">(</span><span class="s">&quot;.&quot;</span><span class="p">);</span>
+        <span class="n">String</span><span class="o">[]</span> <span class="n">continguts</span> <span class="o">=</span> <span class="n">carpeta</span><span class="p">.</span><span class="na">list</span><span class="p">();</span>
+        <span class="n">Arrays</span><span class="p">.</span><span class="na">sort</span><span class="p">(</span><span class="n">continguts</span><span class="p">);</span>
+<span class="hll">        <span class="k">for</span> <span class="p">(</span><span class="n">String</span> <span class="n">item</span><span class="p">:</span> <span class="n">continguts</span><span class="p">)</span> <span class="p">{</span>
+</span>            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;\t&quot;</span> <span class="o">+</span> <span class="n">item</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>A la versió anterior fèiem servir la variable de recorregut <code class="docutils literal notranslate"><span class="pre">i</span></code> <em>només</em>
+per a poder obtenir cada element del bucle. A banda d’això, no fèiem
+servir la <code class="docutils literal notranslate"><span class="pre">i</span></code> per a res. Quan ens passa això en Java, sovint podem fer
+servir aquesta nova modalitat de <code class="docutils literal notranslate"><span class="pre">for</span></code>.</p>
+<p>El seu funcionament és molt simple. Declares una variable del tipus
+dels elements de l’array, afegeixes <code class="docutils literal notranslate"><span class="pre">:</span></code> i tot seguit l’array que vols
+recórrer.  La variable declarada anirà recollint un valor de l’array de
+manera seqüencial, a cada iteració.</p>
+<p>És còmode? Sí. Has de fer-ho servir obligatòriament? No.</p>
+<p>Malauradament encara no funciona amb Strings i de moment ens tocarà haver
+de declarar la variable de recorregut per passar per cada caràcter d’un
+text.</p>
+<p><img alt="exerciseicon___" src="_images/exerciseicon___.png" /> <a class="reference internal" href="exercici_03_08_puzles.html"><span class="doc"> Exercici 03_08. Puzle d’escacs</span></a></p>
+</div>
+<div class="section" id="una-nova-biblioteca">
+<h2>Una nova biblioteca<a class="headerlink" href="#una-nova-biblioteca" title="Link permanent a aquest títol">¶</a></h2>
+<p>Java ha incorporat una nova manera de gestionar fitxers a partir de la
+biblioteca <em>nio</em> (<em>new I/O</em>).</p>
+<p>L’he deixada fora d’aquests apunts perquè
+algunes de les funcionalitats inclouen l’ús de <em>streams</em> i funcions
+<em>lambda</em>, característiques que es troben una mica per sobre en complexitat
+que el que els objectius d’aquesta introducció requereixen.</p>
+<p>En tot cas, si la curiositat et pot, considera consultar la documentació
+oficial de <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/package-summary.html">la biblioteca nio</a>.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="fitxers_exercicis.html" class="btn btn-neutral float-right" title="Llistat d’exercicis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="fitxers_escriptura.html" class="btn btn-neutral float-left" title="Escriptura en fitxers de text" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2021 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

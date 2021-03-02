@@ -1,0 +1,206 @@
+################################################
+|exerciseicon___| Exercici 03_08. Puzle d'escacs
+################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``03_08_puzles/``
+
+* Continguts relacionats: :doc:`fitxers_gestio`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+.. rubric:: Enunciat
+
+Al món dels escacs hi ha molts *subjocs* a banda de fer una partida entre
+dos persones.
+
+Un d'ells és analitzar posicions concretes de partides, sovint dels grans
+jugadors, amb reptes de l'estil: "les negres juguen i mat en 1".
+
+.. image:: _images/escacsmat.png
+    :width: 256
+    :align: center
+
+A aquest tipus de jocs sovint se'ls coneix com a `puzles d'escacs
+<https://ca.wikipedia.org/wiki/Puzle_d%27escacs>`_
+
+Pots aconseguir centenars d'exemples de puzles amb una simple cerca com
+`aquesta
+<https://duckduckgo.com/?q=chess+puzzles&t=ffab&iar=images&iax=images&ia=images>`_
+
+A aquest exercici desenvoluparem un gestor de composicions de taulells
+d'escacs que corresponen a puzles.
+
+El gestor oferirà la possibilitat de:
+
+* llistar els puzles
+
+* mostrar un puzle a partir del seu nom
+
+* afegir un puzle buit
+
+* duplicar un puzle
+
+* eliminar un puzle
+
+* afegir una figura a un puzle
+
+* moure una figura d'un puzle
+
+* eliminar una figura d'un puzle
+
+Emmagatzemament de puzle
+========================
+
+Cada puzle s'emmagatzema a un fitxer de text.
+
+El nom del fitxer tindrà la següent plantilla: *puzle_«nom».txt*
+
+El *«nom»* correspon al nom del puzle.
+
+Per exemple, ``puzle_negres_mate_en_un.txt`` té com a nom del puzle
+``"negres_mate_en_un"``.
+
+El contingut d'un puzle són vuit línies de 8 caràcters (més el salt de
+línia) cadascuna, que representarà les files del taulell, començant per la
+darrera línia (la fila 7 si comencem a comptar des de zero).
+
+El contingut del fitxer ``puzle_negres_mate_en_un.txt`` serà:
+
+.. code-block:: console
+
+    $ cat puzle_negres_mate_en_un.txt
+    ········
+    p·······
+    ········
+    ········
+    ········
+    ······PR
+    ·····A··
+    ·······r
+
+Un nom de puzle vàlid no pot ser buit i només podrà contenir lletres,
+números i el caràcter de subratllat ``'_'``. D'aquesta manera ens
+assegurarem que pot correspondre a un nom de fitxer vàlid.
+
+
+Funcionament del programa
+=========================
+
+El programa de gestió de puzles funcionarà com un entorn operatiu que
+mostrarà el *prompt* ``puzle>`` i acceptarà les següents *comandes*:
+
+* ``help``: ajuda sobre les comandes disponibles
+
+* ``quit``: sortir de l'entorn operatiu
+
+* ``ls``: llistar els puzles
+
+* ``show``: mostrar un puzle a partir del seu nom
+
+* ``new``: afegir un puzle buit
+
+* ``cp``: duplicar un puzle
+
+* ``rm``: eliminar un puzle
+
+* ``add``: afegir una figura a un puzle
+
+* ``mv``: moure una figura d'un puzle
+
+* ``del``: eliminar una figura d'un puzle
+
+
+Cada cop que s'executi una comanda amb èxit, els fitxers afectats quedaran
+tancats. És a dir, els fitxers s'aniran obrint i tancant a mesura que
+siguin requerits i no es mantindràn oberts entre comandes. De fet, ni tant
+sols en espera de confirmació.
+
+Les comandes distingiran majúscules i minúscules.
+
+El programa mirarà de minimitzar les possibilitats de finalitzar per una
+excepció amb els fitxers o bé amb una posició fora de rang. Això ho farà
+comprovant sempre l'existència dels fitxers a llegir/escriure i que les
+coordinades siguin vàlides.
+
+
+Desenvolupament
+===============
+
+Realitzaràs el desenvolupament d'aquest programa de manera incremental, a
+partir dels següents exercicis:
+
+Per ajudar-te en el desenvolupament, he dividit l'exercici en una sèrie de
+subexercicis que, donat que disposen de tests exclusius per cada
+funcionalitat, et permetran anar desenvolupant pas a pas sense barrejar
+amb la resta.
+
+Finalment, assegura't que lliures la versió completa a la carpeta
+corresponent a aquest exercici, tot passant totes les proves.
+
+|exerciseiconO_T| :doc:`exercici_03_09_puzles_entrasurt`
+
+|exerciseiconO_T| :doc:`exercici_03_10_puzles_ls`
+
+|exerciseiconO__| :doc:`exercici_03_11_show`
+
+|exerciseiconO__| :doc:`exercici_03_12_new`
+
+|exerciseiconO__| :doc:`exercici_03_13_cp`
+
+|exerciseiconO__| :doc:`exercici_03_14_rm`
+
+|exerciseiconO__| :doc:`exercici_03_15_add`
+
+|exerciseiconO__| :doc:`exercici_03_16_mv`
+
+|exerciseiconO__| :doc:`exercici_03_17_del`
+
+
+Ampliacions
+===========
+
+
+En cas que t'hagis quedat amb ganes de més, hi ha moltes ampliacions que
+hi pots fer.  Les més interessants per aquest tema són les que et permeten
+experimentar amb els fitxers. En concret et proposo les següents:
+
+* guardem tot el contingut en una única línia
+  (sense salts de línia)
+
+* guardem només les figures que hi ha al taulell
+
+  Pel puzle d'exemple, guardaria simplement:``07r15A26P27R60p``
+
+  Fixa't que només li cal indicar que a les coordenades 0, 7 es troba el
+  rey blanc, i que no cal ni separar cada figura doncs sabem que cada
+  entrada ocupa exàctament tres caràcters.
+
+  Ens tocarà fer un conversor entre arrays i aquest format i viceversa.
+
+  Variants d'aquesta n'hi ha moltes. Per exemple, podríem fer servir una
+  marca de línia per cada fila i només indicar les columnes.  Al nostre
+  exemple, considerant la ``X`` com a màrca de línia, el fitxer
+  contindria: ``7rX5AX6P7RXXXX0pX``
+
+* format binari
+
+  Fixa't que només ens calen 13 valors per representar les diferents
+  figures (això són 4 bits i ens sobren!) Així, amb 4 bytes
+  podríem codificar tota una fila i amb 8 tot un taulell.
+
+  En cas que t'animis a fer aquesta ampliació, et caldrà descobrir els
+  operadors *bitwise*
+
+* Amb un byte per figura al taulell en podríem tenir prou: 3 bits per
+  coordenada més els 4 per la figura.o
+
+  Ni ens caldria un valor per la casella buida!
+
+  Compacte és aquest, oi?
+
+En cas que t'animis a fer una d'aquestes ampliacions, pensa que no et
+passaran algunes de les proves de la versió bàsica. Per tant, et proposo
+que les facis en una carpeta a banda i, per favor, si te'n surts, fes-m'ho
+saber perquè li faci una ullada.

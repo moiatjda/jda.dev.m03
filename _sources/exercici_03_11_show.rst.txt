@@ -1,0 +1,59 @@
+########################################################
+|exerciseiconO__| Exercici 03_11. Puzle d'escacs: mostra
+########################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``03_11_show/``
+
+* Continguts relacionats: :doc:`exercici_03_08_puzles`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [☼] Exercici :ref:`optatiu<descripcio_exercicis_optatius>`
+
+.. rubric:: Enunciat
+
+Afegirem ara la funcionalitat de mostrar un puzle a partir del seu nom.
+
+La comanda serà: ``show «nom»``
+
+En cas que no es proporcioni el nom, es mostrarà el missatge ``ERROR: show
+«nom»`` i tornarà a mostrar el *prompt*.
+
+Si el puzle no existeix, mostrarà el missatge ``ERROR: puzle desconegut``
+i tornarà a mostrar el *prompt*.
+
+En ser cridat, el mòdul escriurà per pantalla el contingut del taulell:
+
+.. code-block:: none
+
+    ········
+    p·······
+    ········
+    ········
+    ········
+    ······PR
+    ·····A··
+    ·······r
+
+Per passar les proves, caldrà que implementis els següents mòduls:
+
+* ``composaNomFitxerDeNomPuzle()``: donat un nom de puzle, retorna un String amb el
+  nom del fitxer corresponent al puzle.
+
+  Pressuposa que el nom és vàlid
+
+  Ex. ``composaNomFitxerDePuzle("mate_en_dos")`` → ``"puzle_mate_en_dos.txt"``
+
+* ``llegeixPuzle()``: donat un nom de puzle, llegeix el fitxer i
+  retorna un array d'arrays de caràcters representant el taulell.
+
+  Per exemple, si la crida és ``char[][] taulell =
+  llegeixPuzle("negres_mmate_en_un")`` llegirà del fitxer
+  ``puzle_negres_mate_en_un.txt`` i retornarà el seu contingut en forma
+  d'array d'arrays de caràcters.
+
+  Pressuposarà que el fitxer existeix.
+
+* ``mostraPuzle()``: donat un nom de puzle, el mostra per sortida estàndard

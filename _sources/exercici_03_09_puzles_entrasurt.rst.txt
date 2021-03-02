@@ -1,0 +1,80 @@
+#################################################################
+|exerciseiconO_T| Exercici 03_09. Puzle d'escacs: entorn operatiu
+#################################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``03_09_puzles_entrasurt/``
+
+* Continguts relacionats: :doc:`exercici_03_08_puzles`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [☼] Exercici :ref:`optatiu<descripcio_exercicis_optatius>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+En aquest subexercici només hauràs de preocupar-te per desenvolupar el
+codi del programa principal de manera que sigui capaç d'oferir les
+funcionalitats bàsiques d'ajuda i finalització.
+
+Això inclou les següents *comandes*:
+
+* ``quit``: finalitza l'execució
+
+* ``help``: mostrarà un missatge d'ajuda per poder saber quines són les
+  comandes disponibles.
+
+Quan la comanda no és una de les anteriors, s'informa amb el missatge ``ERROR:
+comanda no reconeguda. Escriviu help per ajuda``.
+
+Una simulació d'execució del programa podria ser la següent:
+
+.. code-block:: console
+    :emphasize-lines: 2, 4, 6-12, 14
+
+    $ java Puzle 
+    Gestor de puzles d'escacs. Escriviu help per ajuda.
+    puzle> ajuda
+    ERROR: comanda no reconeguda. Escriviu help per ajuda.
+    puzle> help
+    Comandes disponibles:
+    help
+    dup «nom1» «nom2»
+    add «nom» «figura» «fila» «columna»
+    del «nom» «fila» «columna»
+    mv »nom» «fila0» «columna0» «fila1» «columna1»
+    new «nom»
+    rm «nom»
+    quit
+    puzle> quit
+    adèu
+
+Nota: fixa't que el *prompt* no salta de línia. Per aquesta raó apareix
+seguit de la comanda introduïda pels usuaris.
+
+En cas que et calgui, considera la següent plantilla
+
+.. code-block:: java
+
+    /* XXX falta capçalera */
+    public class Puzle {
+        public static void main(String[] args) {
+            mostraBenvinguda();
+            while (true) {
+                mostraPrompt();
+                String comanda = Entrada.readLine().strip();
+                if (comanda.isEmpty()) continue;
+                if (comanda.equals("quit")) break;
+                if (comanda.equals("help")) {
+                    mostraAjuda();
+                    continue;
+                }
+                mostraErrorComandaDesconeguda();
+            }
+            System.out.println("adèu");
+        }
+        // XXX falten els mòduls que són cridats per aquest main()
+    }
