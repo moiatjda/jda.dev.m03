@@ -42,7 +42,7 @@ Una simulació d'execució del programa podria ser la següent:
     puzle> help
     Comandes disponibles:
     help
-    dup «nom1» «nom2»
+    cp «nom1» «nom2»
     add «nom» «figura» «fila» «columna»
     del «nom» «fila» «columna»
     mv »nom» «fila0» «columna0» «fila1» «columna1»

@@ -194,7 +194,7 @@ experimentar amb els fitxers. En concret et proposo les següents:
   operadors *bitwise*
 
 * Amb un byte per figura al taulell en podríem tenir prou: 3 bits per
-  coordenada més els 4 per la figura.o
+  coordenada més els 4 per la figurao
 
   Ni ens caldria un valor per la casella buida!
 
