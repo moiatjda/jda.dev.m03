@@ -1,10 +1,10 @@
 ############################################################
-|exerciseiconO__| Exercici 03_16. Puzle d'escacs: mou figura
+|exerciseiconO__| Exercici 03_15. Puzle d'escacs: mou figura
 ############################################################
 
 .. rubric:: Context
 
-* Carpeta de lliurament: ``03_16_mv/``
+* Carpeta de lliurament: ``03_15_mv/``
 
 * Continguts relacionats: :doc:`exercici_03_08_puzles`
 

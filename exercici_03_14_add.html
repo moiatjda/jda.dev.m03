@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Exercici 03_16. Puzle d’escacs: mou figura &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  <title>Exercici 03_14. Puzle d’escacs: afegeix figura &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
   
 
   
@@ -39,8 +39,8 @@
     <link rel="author" title="Quant a aquests documents" href="about.html" />
     <link rel="index" title="Índex" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
-    <link rel="next" title="Exercici 03_17. Puzle d’escacs: elimina figura" href="exercici_03_17_del.html" />
-    <link rel="prev" title="Exercici 03_15. Puzle d’escacs: afegeix figura" href="exercici_03_15_add.html" />
+    <link rel="next" title="Exercici 03_15. Puzle d’escacs: mou figura" href="exercici_03_15_mv.html" />
+    <link rel="prev" title="Exercici 03_13. Puzle d’escacs: duplica puzle" href="exercici_03_13_cp.html" />
      
     <script class="googleanalytics" src="_static/moiscripts.js"></script>
 
@@ -111,10 +111,9 @@
 <li class="toctree-l3"><a class="reference internal" href="exercici_03_11_show.html"> Exercici 03_11. Puzle d’escacs: mostra</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_03_12_new.html"> Exercici 03_12. Puzle d’escacs: nou puzle</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_03_13_cp.html"> Exercici 03_13. Puzle d’escacs: duplica puzle</a></li>
-<li class="toctree-l3"><a class="reference internal" href="exercici_03_14_rm.html"> Exercici 03_14. Puzle d’escacs: elimina</a></li>
-<li class="toctree-l3"><a class="reference internal" href="exercici_03_15_add.html"> Exercici 03_15. Puzle d’escacs: afegeix figura</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#"> Exercici 03_16. Puzle d’escacs: mou figura</a></li>
-<li class="toctree-l3"><a class="reference internal" href="exercici_03_17_del.html"> Exercici 03_17. Puzle d’escacs: elimina figura</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#"> Exercici 03_14. Puzle d’escacs: afegeix figura</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_15_mv.html"> Exercici 03_15. Puzle d’escacs: mou figura</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_16_del.html"> Exercici 03_16. Puzle d’escacs: elimina figura</a></li>
 </ul>
 </li>
 </ul>
@@ -170,7 +169,7 @@
         
           <li><a href="fitxers_exercicis.html">Llistat d’exercicis</a> &raquo;</li>
         
-      <li> Exercici 03_16. Puzle d’escacs: mou figura</li>
+      <li> Exercici 03_14. Puzle d’escacs: afegeix figura</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -188,39 +187,59 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="exerciseicono-exercici-03-16-puzle-d-escacs-mou-figura">
-<h1><img alt="exerciseiconO__" src="_images/exerciseiconO__.png" /> Exercici 03_16. Puzle d’escacs: mou figura<a class="headerlink" href="#exerciseicono-exercici-03-16-puzle-d-escacs-mou-figura" title="Link permanent a aquest títol">¶</a></h1>
+  <div class="section" id="exerciseicono-t-exercici-03-14-puzle-d-escacs-afegeix-figura">
+<h1><img alt="exerciseiconO_T" src="_images/exerciseiconO_T.png" /> Exercici 03_14. Puzle d’escacs: afegeix figura<a class="headerlink" href="#exerciseicono-t-exercici-03-14-puzle-d-escacs-afegeix-figura" title="Link permanent a aquest títol">¶</a></h1>
 <p class="rubric">Context</p>
 <ul class="simple">
-<li><p>Carpeta de lliurament: <code class="docutils literal notranslate"><span class="pre">03_16_mv/</span></code></p></li>
+<li><p>Carpeta de lliurament: <code class="docutils literal notranslate"><span class="pre">03_14_add/</span></code></p></li>
 <li><p>Continguts relacionats: <a class="reference internal" href="exercici_03_08_puzles.html"><span class="doc"> Exercici 03_08. Puzle d’escacs</span></a></p></li>
 <li><p>Com lliurar-lo: <a class="reference internal" href="holagit.html#instruccions-git"><span class="std std-ref">instruccions</span></a></p></li>
 <li><p>[☼] Exercici <a class="reference internal" href="sobre_exercicis.html#descripcio-exercicis-optatius"><span class="std std-ref">optatiu</span></a></p></li>
+<li><p>[✓] Exercici amb <a class="reference internal" href="sobre_exercicis.html#descripcio-exercicis-autoavaluacio"><span class="std std-ref">autoavaluació</span></a></p></li>
 </ul>
 <p class="rubric">Enunciat</p>
-<p>Afegeix la funcionalitat de moure una figura d’un puzle.</p>
-<p>Aquesta serà la forma de la comanda:  <code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">«nom»</span> <span class="pre">«fila0»</span> <span class="pre">«columna0»</span> <span class="pre">«fila1»</span> <span class="pre">«columna1»</span></code></p>
-<p>El que farà serà moure la figura del puzle indicat que es troba a la
-posició <code class="docutils literal notranslate"><span class="pre">(fila0,</span> <span class="pre">columna0)</span></code> a la posició <code class="docutils literal notranslate"><span class="pre">(fila1,</span> <span class="pre">columna1)</span></code>.</p>
+<p>Afegeix la funcionalitat d’afegir una figura a un puzle existent.</p>
+<p>La comanda tindrà la forma  <code class="docutils literal notranslate"><span class="pre">add</span> <span class="pre">«nom»</span> <span class="pre">«fila»</span> <span class="pre">«columna»</span> <span class="pre">«figura»</span></code>.</p>
 <p>En cas que no es proporcioni algun dels arguments, es mostrarà el
-missatge <code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">mv</span> <span class="pre">«nom»</span> <span class="pre">«fila0»</span> <span class="pre">«columna0»</span> <span class="pre">«fila1»</span> <span class="pre">«columna1»</span></code> i
-tornarà a mostrar el <em>prompt</em>.</p>
-<p>Si el puzle no existeix o les coordinades no són numèriques, es queixarà
-com sempre, mentre que si no es pot moure, sigui perquè alguna de les
-coordenades estan fora del taulell o bé per què no hi ha figura a la
-posició d’origen o perquè la de destinació està ocupada, mostrarà el
-missatge <code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">no</span> <span class="pre">es</span> <span class="pre">pot</span> <span class="pre">moure</span></code>.</p>
+missatge <code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">add</span> <span class="pre">«nom»</span> <span class="pre">«fila»</span> <span class="pre">«columna»</span> <span class="pre">«figura»</span></code> i tornarà a
+mostrar el <em>prompt</em>.</p>
+<p>Si el puzle no existeix, mostrarà el missatge habitual d’error i
+continuarà amb el <em>prompt</em></p>
+<p>Si la figura no és vàlida, mostarà el missatge <code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">figura</span> <span class="pre">no</span>
+<span class="pre">vàlida</span></code> i tornarà al <em>prompt</em>.</p>
+<p>Si la fila o la columna no són valors enters, es mostrarà el missatge
+<code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">files</span> <span class="pre">i</span> <span class="pre">columnes</span> <span class="pre">han</span> <span class="pre">de</span> <span class="pre">ser</span> <span class="pre">valors</span> <span class="pre">enters</span></code>. Recorda que ja tens
+definida una funció que ho comprova a <a class="reference internal" href="exercici_02_23_es_enter.html"><span class="doc">aquest
+exercici</span></a>.</p>
+<p>Si no es pot posicionar la figura a les coordenades indicades del
+taulell, sigui per què les coordenades no siguin vàlides, sigui perquè
+la posició del taulell ja està ocupada, mostrarà el missatge <code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">no</span>
+<span class="pre">es</span> <span class="pre">pot</span> <span class="pre">posicionar</span></code> i continuarà amb el <em>prompt</em>.</p>
 <p>Per passar les proves caldrà que implementis el següent mòdul:</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">mouFiguraEnPuzle()</span></code>: donat un nom de puzle i dues coordenades, mou la
-figura de la primera coordenada a la segona dins del taulell contingut
-al fitxer corresponent al puzle.</p>
-<p>Aquest mòdul fa servir la funció <code class="docutils literal notranslate"><span class="pre">mouFigura()</span></code> que vas implementar a
-l’exercici <a class="reference internal" href="exercici_02_35_mou_figura.html"><span class="doc">mou figura</span></a>.</p>
-<p>Aquest mòdul tampoc no comprovarà res. Si el fitxer no hi és, o bé no
-permet ser escrit, es produirà una excepció. Per altra banda, si el
-moviment no és possible, simplement el fitxer no veurà modificat el seu
-contingut.</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">processaAdd(String[])</span></code>: realitza la funcionalitat corresponent a la
+comanda <code class="docutils literal notranslate"><span class="pre">add</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">esFiguraValida()</span></code>: donada una figura (un caràcter) retornarà cert
+només si el caràcter correspon a una figura vàlida. Les figures vàlides
+són les negres <code class="docutils literal notranslate"><span class="pre">'P'</span></code>, <code class="docutils literal notranslate"><span class="pre">'T'</span></code>, <code class="docutils literal notranslate"><span class="pre">'C'</span></code>, <code class="docutils literal notranslate"><span class="pre">'A'</span></code>, <code class="docutils literal notranslate"><span class="pre">'D'</span></code> i <code class="docutils literal notranslate"><span class="pre">'R'</span></code>, i
+les blanques <code class="docutils literal notranslate"><span class="pre">'p'</span></code>, <code class="docutils literal notranslate"><span class="pre">'t'</span></code>, <code class="docutils literal notranslate"><span class="pre">'c'</span></code>, <code class="docutils literal notranslate"><span class="pre">'a'</span></code>, <code class="docutils literal notranslate"><span class="pre">'d'</span></code> i <code class="docutils literal notranslate"><span class="pre">'r'</span></code> .</p>
+<p>Fixa’t que tampoc no es considera una figura vàlida el caràcter de
+casella buida <code class="docutils literal notranslate"><span class="pre">'·'</span></code>.</p>
+<p>Aquest mòdul ha d’estar definit dis la classe <code class="docutils literal notranslate"><span class="pre">Escacs</span></code>.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">posicionaFiguraEnPuzle()</span></code>: donat un nom de puzle, una figura i les
+coordenades a la posició del taulell d’escacs corresponent, hi col·loca
+la figura indicada a la posició indicada del fitxer corresponent.</p>
+<p>Aquest mòdul fa servir la funció <code class="docutils literal notranslate"><span class="pre">posicionaFigura()</span></code> que vas
+desenvolupar a l’exercici <a class="reference internal" href="exercici_02_34_posiciona_figura.html"><span class="doc">posiciona figura</span></a>.</p>
+<p>Aquest mòdul no comprovarà res i pressuposarà que:</p>
+<ul class="simple">
+<li><p>existeix el fitxer corresponent</p></li>
+<li><p>la figura és un valor correcte</p></li>
+<li><p>les coordenades són correctes</p></li>
+<li><p>la figura pot ser col·locada en el lloc indicat</p></li>
+</ul>
+<p>Així, si el fitxer no existeix o no pot ser llegit/ =</p>
 </li>
 </ul>
 </div>
@@ -256,10 +275,10 @@ contingut.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="exercici_03_17_del.html" class="btn btn-neutral float-right" title="Exercici 03_17. Puzle d’escacs: elimina figura" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="exercici_03_15_mv.html" class="btn btn-neutral float-right" title="Exercici 03_15. Puzle d’escacs: mou figura" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="exercici_03_15_add.html" class="btn btn-neutral float-left" title="Exercici 03_15. Puzle d’escacs: afegeix figura" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="exercici_03_13_cp.html" class="btn btn-neutral float-left" title="Exercici 03_13. Puzle d’escacs: duplica puzle" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

@@ -33,7 +33,7 @@ comanda no reconeguda. Escriviu help per ajuda``.
 Una simulació d'execució del programa podria ser la següent:
 
 .. code-block:: console
-    :emphasize-lines: 2, 4, 6-12, 14
+    :emphasize-lines: 2, 4, 6-12, 15
 
     $ java Puzle 
     Gestor de puzles d'escacs. Escriviu help per ajuda.
@@ -74,7 +74,11 @@ En cas que et calgui, considera la següent plantilla
                 }
                 mostraErrorComandaDesconeguda();
             }
-            System.out.println("adèu");
+            mostraComiat();
         }
         // XXX falten els mòduls que són cridats per aquest main()
     }
+
+Per poder passar les proves, et caldrà implementar, com a mínim, el
+mòdul ``mostraAjuda()``, que, sense paràmetres, mostra el text d'ajuda.
+

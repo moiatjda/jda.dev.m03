@@ -42,8 +42,6 @@ El gestor oferirà la possibilitat de:
 
 * duplicar un puzle
 
-* eliminar un puzle
-
 * afegir una figura a un puzle
 
 * moure una figura d'un puzle
@@ -143,19 +141,17 @@ corresponent a aquest exercici, tot passant totes les proves.
 
 |exerciseiconO_T| :doc:`exercici_03_10_puzles_ls`
 
-|exerciseiconO__| :doc:`exercici_03_11_show`
+|exerciseiconO_T| :doc:`exercici_03_11_show`
 
-|exerciseiconO__| :doc:`exercici_03_12_new`
+|exerciseiconO_T| :doc:`exercici_03_12_new`
 
-|exerciseiconO__| :doc:`exercici_03_13_cp`
+|exerciseiconO_T| :doc:`exercici_03_13_cp`
 
-|exerciseiconO__| :doc:`exercici_03_14_rm`
+|exerciseiconO_T| :doc:`exercici_03_14_add`
 
-|exerciseiconO__| :doc:`exercici_03_15_add`
+|exerciseiconO__| :doc:`exercici_03_15_mv`
 
-|exerciseiconO__| :doc:`exercici_03_16_mv`
-
-|exerciseiconO__| :doc:`exercici_03_17_del`
+|exerciseiconO__| :doc:`exercici_03_16_del`
 
 
 Ampliacions
@@ -194,7 +190,7 @@ experimentar amb els fitxers. En concret et proposo les següents:
   operadors *bitwise*
 
 * Amb un byte per figura al taulell en podríem tenir prou: 3 bits per
-  coordenada més els 4 per la figurao
+  coordenada més els 4 per la figura.
 
   Ni ens caldria un valor per la casella buida!
 

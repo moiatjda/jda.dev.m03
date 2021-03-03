@@ -1,10 +1,10 @@
 ################################################################
-|exerciseiconO__| Exercici 03_17. Puzle d'escacs: elimina figura
+|exerciseiconO__| Exercici 03_16. Puzle d'escacs: elimina figura
 ################################################################
 
 .. rubric:: Context
 
-* Carpeta de lliurament: ``03_17_del/``
+* Carpeta de lliurament: ``03_16_del/``
 
 * Continguts relacionats: :doc:`exercici_03_08_puzles`
 

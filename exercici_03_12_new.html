@@ -111,10 +111,9 @@
 <li class="toctree-l3"><a class="reference internal" href="exercici_03_11_show.html"> Exercici 03_11. Puzle d’escacs: mostra</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#"> Exercici 03_12. Puzle d’escacs: nou puzle</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_03_13_cp.html"> Exercici 03_13. Puzle d’escacs: duplica puzle</a></li>
-<li class="toctree-l3"><a class="reference internal" href="exercici_03_14_rm.html"> Exercici 03_14. Puzle d’escacs: elimina</a></li>
-<li class="toctree-l3"><a class="reference internal" href="exercici_03_15_add.html"> Exercici 03_15. Puzle d’escacs: afegeix figura</a></li>
-<li class="toctree-l3"><a class="reference internal" href="exercici_03_16_mv.html"> Exercici 03_16. Puzle d’escacs: mou figura</a></li>
-<li class="toctree-l3"><a class="reference internal" href="exercici_03_17_del.html"> Exercici 03_17. Puzle d’escacs: elimina figura</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_14_add.html"> Exercici 03_14. Puzle d’escacs: afegeix figura</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_15_mv.html"> Exercici 03_15. Puzle d’escacs: mou figura</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_16_del.html"> Exercici 03_16. Puzle d’escacs: elimina figura</a></li>
 </ul>
 </li>
 </ul>
@@ -188,14 +187,15 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="exerciseicono-exercici-03-12-puzle-d-escacs-nou-puzle">
-<h1><img alt="exerciseiconO__" src="_images/exerciseiconO__.png" /> Exercici 03_12. Puzle d’escacs: nou puzle<a class="headerlink" href="#exerciseicono-exercici-03-12-puzle-d-escacs-nou-puzle" title="Link permanent a aquest títol">¶</a></h1>
+  <div class="section" id="exerciseicono-t-exercici-03-12-puzle-d-escacs-nou-puzle">
+<h1><img alt="exerciseiconO_T" src="_images/exerciseiconO_T.png" /> Exercici 03_12. Puzle d’escacs: nou puzle<a class="headerlink" href="#exerciseicono-t-exercici-03-12-puzle-d-escacs-nou-puzle" title="Link permanent a aquest títol">¶</a></h1>
 <p class="rubric">Context</p>
 <ul class="simple">
 <li><p>Carpeta de lliurament: <code class="docutils literal notranslate"><span class="pre">03_12_new/</span></code></p></li>
 <li><p>Continguts relacionats: <a class="reference internal" href="exercici_03_08_puzles.html"><span class="doc"> Exercici 03_08. Puzle d’escacs</span></a></p></li>
 <li><p>Com lliurar-lo: <a class="reference internal" href="holagit.html#instruccions-git"><span class="std std-ref">instruccions</span></a></p></li>
 <li><p>[☼] Exercici <a class="reference internal" href="sobre_exercicis.html#descripcio-exercicis-optatius"><span class="std std-ref">optatiu</span></a></p></li>
+<li><p>[✓] Exercici amb <a class="reference internal" href="sobre_exercicis.html#descripcio-exercicis-autoavaluacio"><span class="std std-ref">autoavaluació</span></a></p></li>
 </ul>
 <p class="rubric">Enunciat</p>
 <p>Afegirem ara la funcionalitat de crear un puzle en blanc.</p>
@@ -203,12 +203,39 @@
 <p>En cas que no es proporcioni el nom, es mostrarà el missatge <code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">new</span>
 <span class="pre">«nom»</span></code> i tornarà a mostrar el <em>prompt</em>.</p>
 <p>En cas que <code class="docutils literal notranslate"><span class="pre">nom</span></code> ja existeixi, demanarà confirmació amb el missatge <code class="docutils literal notranslate"><span class="pre">Ja</span>
-<span class="pre">existeix</span> <span class="pre">el</span> <span class="pre">puzle</span> <span class="pre">«nom2».</span> <span class="pre">El</span> <span class="pre">sobreescrivim?</span></code>. Només el sobreescriurà en
+<span class="pre">existeix.</span> <span class="pre">El</span> <span class="pre">sobreescrivim?</span></code>. Només el sobreescriurà en
 cas que sigui confirmat.</p>
+<p>En cas que finalment hagi creat el puzle, mostrarà el missatge de
+confirmació <code class="docutils literal notranslate"><span class="pre">fet</span></code>.</p>
+<p>Un simulacre d’execució seria:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> <span class="nb">echo</span> <span class="s2">&quot;contingut a eliminar&quot;</span> &gt; puzle_un_puzle.txt
+<span class="gp">$</span> java Puzle
+<span class="hll"><span class="go">Gestor de puzles d&#39;escacs. Escriviu help per ajuda.</span>
+</span><span class="go">puzle&gt; new un_puzle</span>
+<span class="hll"><span class="go">Ja existeix. El sobreescrivim?</span>
+</span><span class="go">sí</span>
+<span class="hll"><span class="go">fet</span>
+</span><span class="go">puzle&gt; quit</span>
+<span class="hll"><span class="go">adèu</span>
+</span><span class="gp">$</span> cat puzle_un_puzle.txt
+<span class="hll"><span class="go">········</span>
+</span><span class="hll"><span class="go">········</span>
+</span><span class="hll"><span class="go">········</span>
+</span><span class="hll"><span class="go">········</span>
+</span><span class="hll"><span class="go">········</span>
+</span><span class="hll"><span class="go">········</span>
+</span><span class="hll"><span class="go">········</span>
+</span><span class="hll"><span class="go">········</span>
+</span></pre></div>
+</div>
+<p>Revisa l’exercici de les <a class="reference internal" href="exercici_02_17_utilitats_confirmacio.html"><span class="doc">utilitats de confirmació</span></a>.</p>
 <p>Per passar les proves, caldrà que implementis:</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">creaPuzleBuit()</span></code>: donat un nom de puzle, hi escriu un taulell buit al
-fitxer corresponent.</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">processaNew(String[])</span></code>: donat un array amb les paraules que composen
+la comanda, realitza les comprovacions i mostra errors o crea el puzle
+demanat.</p>
+<p>És el mòdul que, un cop se sap que la comanda és <code class="docutils literal notranslate"><span class="pre">new</span></code> realitza la
+feina corresponent a la comanda.</p>
 <p>Recorda que un taulell buit és una taula de 8x8 de caràcters <code class="docutils literal notranslate"><span class="pre">'·'</span></code>.</p>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">escriuPuzle()</span></code>: donat un nom de puzle i un array d’arrays de
@@ -218,8 +245,12 @@ contingut del taulell.</p>
 <code class="docutils literal notranslate"><span class="pre">puzle_negres_mate_en_un.txt</span></code> el contingut de l’array d’arrays de
 caràcters referenciat per <code class="docutils literal notranslate"><span class="pre">taulell</span></code>.</p>
 <p>No es preocuparà si el fitxer existeix o no. És a dir, si existia,
-sobreescriurà el seu contingut.</p>
+sobreescriurà el seu contingut. Fixa’t que <code class="docutils literal notranslate"><span class="pre">processaNew()</span></code> ja se
+n’encarrega de fer aquestes comprovacions.</p>
 </li>
+<li><p><code class="docutils literal notranslate"><span class="pre">creaTaulellBuit()</span></code>: es tracta d’una funció que ha de ser implementada
+dins la classe <code class="docutils literal notranslate"><span class="pre">Escacs</span></code> que vas desenvolupar per exercicis com ara
+<a class="reference internal" href="exercici_02_31_escacs.html"><span class="doc">aquest</span></a>.</p></li>
 </ul>
 </div>
 

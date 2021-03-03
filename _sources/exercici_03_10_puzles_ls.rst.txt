@@ -60,14 +60,6 @@ Per a poder passar les proves caldrà que implementis els següents mòduls:
   un nom de puzle vàlid.
 
 
-* ``composaNomFitxerDeNomPuzle()``: donat un nom de puzle, retorna un String amb el
-  nom del fitxer corresponent al puzle.
-
-  Pressuposa que el nom és vàlid
-
-  Ex. ``composaNomFitxerDePuzle("mate_en_dos")`` → ``"puzle_mate_en_dos.txt"``
-
-
 * ``extreuNomPuzleDeNomFitxer()``: donat el nom d'un fitxer retorna el
   nom d'un puzle
 

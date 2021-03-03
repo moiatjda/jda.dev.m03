@@ -1,5 +1,5 @@
 ###########################################################
-|exerciseiconO__| Exercici 03_12. Puzle d'escacs: nou puzle
+|exerciseiconO_T| Exercici 03_12. Puzle d'escacs: nou puzle
 ###########################################################
 
 .. rubric:: Context
@@ -12,6 +12,8 @@
 
 * [☼] Exercici :ref:`optatiu<descripcio_exercicis_optatius>`
 
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
 .. rubric:: Enunciat
 
 Afegirem ara la funcionalitat de crear un puzle en blanc.
@@ -22,13 +24,48 @@ En cas que no es proporcioni el nom, es mostrarà el missatge ``ERROR: new
 «nom»`` i tornarà a mostrar el *prompt*.
 
 En cas que ``nom`` ja existeixi, demanarà confirmació amb el missatge ``Ja
-existeix el puzle «nom2». El sobreescrivim?``. Només el sobreescriurà en
+existeix. El sobreescrivim?``. Només el sobreescriurà en
 cas que sigui confirmat.
+
+En cas que finalment hagi creat el puzle, mostrarà el missatge de
+confirmació ``fet``.
+
+Un simulacre d'execució seria:
+
+.. code-block:: console
+    :emphasize-lines: 3, 5, 7, 9, 11-
+
+    $ echo "contingut a eliminar" > puzle_un_puzle.txt
+    $ java Puzle
+    Gestor de puzles d'escacs. Escriviu help per ajuda.
+    puzle> new un_puzle
+    Ja existeix. El sobreescrivim?
+    sí
+    fet
+    puzle> quit
+    adèu
+    $ cat puzle_un_puzle.txt
+    ········
+    ········
+    ········
+    ········
+    ········
+    ········
+    ········
+    ········
+    
+
+Revisa l'exercici de les :doc:`utilitats de confirmació
+<exercici_02_17_utilitats_confirmacio>`.
 
 Per passar les proves, caldrà que implementis:
 
-* ``creaPuzleBuit()``: donat un nom de puzle, hi escriu un taulell buit al
-  fitxer corresponent.
+* ``processaNew(String[])``: donat un array amb les paraules que composen
+  la comanda, realitza les comprovacions i mostra errors o crea el puzle
+  demanat.
+
+  És el mòdul que, un cop se sap que la comanda és ``new`` realitza la
+  feina corresponent a la comanda.
 
   Recorda que un taulell buit és una taula de 8x8 de caràcters ``'·'``.
 
@@ -41,4 +78,10 @@ Per passar les proves, caldrà que implementis:
   caràcters referenciat per ``taulell``.
 
   No es preocuparà si el fitxer existeix o no. És a dir, si existia,
-  sobreescriurà el seu contingut.
+  sobreescriurà el seu contingut. Fixa't que ``processaNew()`` ja se
+  n'encarrega de fer aquestes comprovacions.
+
+* ``creaTaulellBuit()``: es tracta d'una funció que ha de ser implementada
+  dins la classe ``Escacs`` que vas desenvolupar per exercicis com ara
+  :doc:`aquest <exercici_02_31_escacs>`.
+

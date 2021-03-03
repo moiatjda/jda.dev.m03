@@ -111,10 +111,9 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="#"> Exercici 03_11. Puzle d’escacs: mostra</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_03_12_new.html"> Exercici 03_12. Puzle d’escacs: nou puzle</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_03_13_cp.html"> Exercici 03_13. Puzle d’escacs: duplica puzle</a></li>
-<li class="toctree-l3"><a class="reference internal" href="exercici_03_14_rm.html"> Exercici 03_14. Puzle d’escacs: elimina</a></li>
-<li class="toctree-l3"><a class="reference internal" href="exercici_03_15_add.html"> Exercici 03_15. Puzle d’escacs: afegeix figura</a></li>
-<li class="toctree-l3"><a class="reference internal" href="exercici_03_16_mv.html"> Exercici 03_16. Puzle d’escacs: mou figura</a></li>
-<li class="toctree-l3"><a class="reference internal" href="exercici_03_17_del.html"> Exercici 03_17. Puzle d’escacs: elimina figura</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_14_add.html"> Exercici 03_14. Puzle d’escacs: afegeix figura</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_15_mv.html"> Exercici 03_15. Puzle d’escacs: mou figura</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_16_del.html"> Exercici 03_16. Puzle d’escacs: elimina figura</a></li>
 </ul>
 </li>
 </ul>
@@ -188,20 +187,23 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="exerciseicono-exercici-03-11-puzle-d-escacs-mostra">
-<h1><img alt="exerciseiconO__" src="_images/exerciseiconO__.png" /> Exercici 03_11. Puzle d’escacs: mostra<a class="headerlink" href="#exerciseicono-exercici-03-11-puzle-d-escacs-mostra" title="Link permanent a aquest títol">¶</a></h1>
+  <div class="section" id="exerciseicono-t-exercici-03-11-puzle-d-escacs-mostra">
+<h1><img alt="exerciseiconO_T" src="_images/exerciseiconO_T.png" /> Exercici 03_11. Puzle d’escacs: mostra<a class="headerlink" href="#exerciseicono-t-exercici-03-11-puzle-d-escacs-mostra" title="Link permanent a aquest títol">¶</a></h1>
 <p class="rubric">Context</p>
 <ul class="simple">
 <li><p>Carpeta de lliurament: <code class="docutils literal notranslate"><span class="pre">03_11_show/</span></code></p></li>
 <li><p>Continguts relacionats: <a class="reference internal" href="exercici_03_08_puzles.html"><span class="doc"> Exercici 03_08. Puzle d’escacs</span></a></p></li>
 <li><p>Com lliurar-lo: <a class="reference internal" href="holagit.html#instruccions-git"><span class="std std-ref">instruccions</span></a></p></li>
 <li><p>[☼] Exercici <a class="reference internal" href="sobre_exercicis.html#descripcio-exercicis-optatius"><span class="std std-ref">optatiu</span></a></p></li>
+<li><p>[✓] Exercici amb <a class="reference internal" href="sobre_exercicis.html#descripcio-exercicis-autoavaluacio"><span class="std std-ref">autoavaluació</span></a></p></li>
 </ul>
 <p class="rubric">Enunciat</p>
 <p>Afegirem ara la funcionalitat de mostrar un puzle a partir del seu nom.</p>
 <p>La comanda serà: <code class="docutils literal notranslate"><span class="pre">show</span> <span class="pre">«nom»</span></code></p>
 <p>En cas que no es proporcioni el nom, es mostrarà el missatge <code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">show</span>
 <span class="pre">«nom»</span></code> i tornarà a mostrar el <em>prompt</em>.</p>
+<p>En cas que el nom proporcionat no sigui un nom vàlid de puzle, mostrarà el
+missatge <code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">nom</span> <span class="pre">no</span> <span class="pre">vàlid</span></code> i tornarà al <em>prompt</em>..</p>
 <p>Si el puzle no existeix, mostrarà el missatge <code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">puzle</span> <span class="pre">desconegut</span></code>
 i tornarà a mostrar el <em>prompt</em>.</p>
 <p>En ser cridat, el mòdul escriurà per pantalla el contingut del taulell:</p>
@@ -217,10 +219,16 @@ p·······
 </div>
 <p>Per passar les proves, caldrà que implementis els següents mòduls:</p>
 <ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">processaShow(String[])</span></code>: donat un array amb les paraules que composen
+la comanda, realitza les comprovacions i mostra errors o el taulell
+corresponent.</p>
+<p>És el mòdul que, un cop se sap que la comanda és <code class="docutils literal notranslate"><span class="pre">show</span></code> realitza la
+feina corresponent a la comanda.</p>
+</li>
 <li><p><code class="docutils literal notranslate"><span class="pre">composaNomFitxerDeNomPuzle()</span></code>: donat un nom de puzle, retorna un String amb el
 nom del fitxer corresponent al puzle.</p>
 <p>Pressuposa que el nom és vàlid</p>
-<p>Ex. <code class="docutils literal notranslate"><span class="pre">composaNomFitxerDePuzle(&quot;mate_en_dos&quot;)</span></code> → <code class="docutils literal notranslate"><span class="pre">&quot;puzle_mate_en_dos.txt&quot;</span></code></p>
+<p>Ex. <code class="docutils literal notranslate"><span class="pre">composaNomFitxerDeNomPuzle(&quot;mate_en_dos&quot;)</span></code> → <code class="docutils literal notranslate"><span class="pre">&quot;puzle_mate_en_dos.txt&quot;</span></code></p>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">llegeixPuzle()</span></code>: donat un nom de puzle, llegeix el fitxer i
 retorna un array d’arrays de caràcters representant el taulell.</p>
@@ -228,12 +236,131 @@ retorna un array d’arrays de caràcters representant el taulell.</p>
 <span class="pre">llegeixPuzle(&quot;negres_mmate_en_un&quot;)</span></code> llegirà del fitxer
 <code class="docutils literal notranslate"><span class="pre">puzle_negres_mate_en_un.txt</span></code> i retornarà el seu contingut en forma
 d’array d’arrays de caràcters.</p>
-<p>Pressuposarà que el fitxer existeix.</p>
+<p>Pressuposarà que el fitxer existeix i que el seu contingut està en el
+format esperat.</p>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">mostraPuzle()</span></code>: donat un nom de puzle, el mostra per sortida estàndard</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">existeixPuzle()</span></code>: donat un nom de puzle vàlid retorna cert quan
+existeix un fitxer amb aquest nom.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">mostraTaulell()</span></code>: donat un taulells (<code class="docutils literal notranslate"><span class="pre">char[][]</span></code>) el mostra per
 sortida estàndard.</p></li>
 </ul>
+<div class="section" id="pistes-per-la-implementacio">
+<h2>Pistes per la implementació<a class="headerlink" href="#pistes-per-la-implementacio" title="Link permanent a aquest títol">¶</a></h2>
+<p>Aquesta comanda presenta una nova dificultat: té un argument.</p>
+<p>Donat que el problema està construït de manera que els nom dels puzles
+no puguin contenir espais, podem limitar-nos a fer servir <code class="docutils literal notranslate"><span class="pre">split()</span></code> de
+String.</p>
+<p>Si vols, pots fer servir la següent nova versió del <code class="docutils literal notranslate"><span class="pre">main()</span></code>.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+    <span class="n">mostraBenvinguda</span><span class="p">();</span>
+    <span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">mostraPrompt</span><span class="p">();</span>
+        <span class="n">String</span> <span class="n">resposta</span> <span class="o">=</span> <span class="n">Entrada</span><span class="p">.</span><span class="na">readLine</span><span class="p">().</span><span class="na">strip</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">resposta</span> <span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span> <span class="k">continue</span><span class="p">;</span>
+        <span class="n">String</span><span class="o">[]</span> <span class="n">elementsComanda</span> <span class="o">=</span> <span class="n">resposta</span> <span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">&quot;\\s+&quot;</span><span class="p">);</span>
+        <span class="n">String</span> <span class="n">comanda</span> <span class="o">=</span> <span class="n">elementsComanda</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">comanda</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;quit&quot;</span><span class="p">))</span> <span class="k">break</span><span class="p">;</span>
+        <span class="k">switch</span> <span class="p">(</span><span class="n">comanda</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">case</span> <span class="s">&quot;help&quot;</span><span class="p">:</span> <span class="n">mostraAjuda</span><span class="p">();</span>
+                         <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="s">&quot;ls&quot;</span><span class="p">:</span> <span class="n">mostraLlista</span><span class="p">();</span>
+                       <span class="k">break</span><span class="p">;</span>
+            <span class="k">case</span> <span class="s">&quot;show&quot;</span><span class="p">:</span> <span class="n">processaShow</span><span class="p">(</span><span class="n">elementsComanda</span><span class="p">);</span>
+                         <span class="k">break</span><span class="p">;</span>
+            <span class="k">default</span><span class="p">:</span> <span class="n">mostraErrorComandaDesconeguda</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">mostraComiat</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Fixa’t que aquesta nova versió, realitza la separació de paraules dins de
+la resposta rebuda. Ho fa amb la ja coneguda funció de Strings
+<code class="docutils literal notranslate"><span class="pre">split()</span></code>. A <code class="docutils literal notranslate"><span class="pre">split()</span></code> li demanem que separi per <code class="docutils literal notranslate"><span class="pre">&quot;\\s+&quot;</span></code> en comptes
+de per espais simplement <code class="docutils literal notranslate"><span class="pre">&quot;</span> <span class="pre">&quot;</span></code>.  Fent curta una llarga història,
+<code class="docutils literal notranslate"><span class="pre">split()</span></code> considera l’argument que rep com una <em>expressió regular</em>. En
+aquest cas el que diu és <em>seqüència d’un o més caracters blanc (espais,
+tabuladors, etc.)</em>.</p>
+<p>Et proposo que facis l’experiment de veure què retorna <code class="docutils literal notranslate"><span class="pre">&quot;show</span>
+<span class="pre">nom_puzle&quot;.split(&quot;</span> <span class="pre">&quot;)</span></code> i <code class="docutils literal notranslate"><span class="pre">&quot;show</span> <span class="pre">nom_puzle&quot;.split(&quot;\s+&quot;)</span></code></p>
+<p>Les expressions regulars estan fora de l’abast d’aquest exercici i els
+jocs de prova que t’he preparat no es preocupen de passar-te comandes amb
+més d’un espai (ni tabuladors) seguit. Així que, si vols, tu tampoc te
+n’has de preocupar.</p>
+<p>El <code class="docutils literal notranslate"><span class="pre">main()</span></code> fa servir <code class="docutils literal notranslate"><span class="pre">switch</span></code> per a distingir les diferents
+comandes. Si encara no el coneixes, <code class="docutils literal notranslate"><span class="pre">switch</span></code> és una manera compacta de
+fer condicions. Potser voldràs revisar <a class="reference internal" href="exercici_01_19_dies_setmana_switch.html"><span class="doc">aquest exercici</span></a>. Per descomptat, si ho prefereixes,
+pots continuar encadenant <code class="docutils literal notranslate"><span class="pre">if</span></code> amb <code class="docutils literal notranslate"><span class="pre">comanda.equals(&quot;show&quot;)</span></code> i
+similars.</p>
+<p>Com potser t’imaginaràs, a partir d’ara, afegir noves comandes serà anant
+afegint nous <code class="docutils literal notranslate"><span class="pre">case</span></code>.</p>
+<p>Finalment, el meu codi de <code class="docutils literal notranslate"><span class="pre">processaShow()</span></code> és el següent:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Processa la comanda show</span>
+<span class="cm"> * @param args: arguments de la comanda</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">processaShow</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="na">length</span> <span class="o">!=</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">mostraErrorComandaShow</span><span class="p">();</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">String</span> <span class="n">nomPuzle</span> <span class="o">=</span> <span class="n">args</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="n">esNomPuzleValid</span><span class="p">(</span><span class="n">nomPuzle</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">mostraErrorNomPuzleNoValid</span><span class="p">();</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="n">existeixPuzle</span><span class="p">(</span><span class="n">nomPuzle</span><span class="p">))</span> <span class="p">{</span>
+        <span class="n">mostraErrorPuzleDesconegut</span><span class="p">();</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">char</span><span class="o">[][]</span> <span class="n">taulell</span> <span class="o">=</span> <span class="n">llegeixPuzle</span><span class="p">(</span><span class="n">nomPuzle</span><span class="p">);</span>
+    <span class="n">mostraTaulell</span><span class="p">(</span><span class="n">taulell</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Si vols, pots fer-ho servir al teu programa amb les variacions que
+consideris.</p>
+</div>
 </div>
 
 

@@ -1,5 +1,5 @@
 ###############################################################
-|exerciseiconO__| Exercici 03_13. Puzle d'escacs: duplica puzle
+|exerciseiconO_T| Exercici 03_13. Puzle d'escacs: duplica puzle
 ###############################################################
 
 .. rubric:: Context
@@ -11,6 +11,8 @@
 * Com lliurar-lo: :ref:`instruccions <instruccions_git>`
 
 * [☼] Exercici :ref:`optatiu<descripcio_exercicis_optatius>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
 
 .. rubric:: Enunciat
 
@@ -26,18 +28,21 @@ En cas que ``nom1`` no existeixi, el programa mostrarà l'error ``ERROR:
 puzle desconegut`` i tornarà a mostrar el *prompt* sense fer cap canvi.
 
 En cas que ``nom2`` ja existeixi, demanarà confirmació amb el missatge
-``Ja existeix el puzle «nom2». El sobreescrivim?``. Només el sobreescriurà
+``Ja existeix. El sobreescrivim?``. Només el sobreescriurà
 en cas que sigui confirmat.
 
-Revisa l'exercici de les :doc:`utilitats de confirmació
-<exercici_02_17_utilitats_confirmacio>`.
-
 Per passar les proves caldrà que implementis el següent mòdul:
+
+* ``processaCp()``: realitza tota la funcionalitat esperada per atendre la
+  comanda ``cp`` incloent les comprovacions.
 
 * ``duplicaPuzle()``: donats dos noms de puzle, crea o sobreescriu el
   fitxer corresponent al segon nom amb el contingut del fitxer
   corresponent al primer nom.
 
-  Per exemple, ``duplicaTaulell("negres_mmate_en_un", "blanques_mate_en_un")``
+  Per exemple, ``duplicaPuzle("negres_mmate_en_un", "blanques_mate_en_un")``
   farà que el fitxer ``puzle_blanques_mate_en_un.txt`` contingui el mateix
   que ``puzle_negres_mate_en_un.txt``.
+
+  Tot i que hi ha altres mecanismes, et proposo que simplement obris els
+  dos fitxers i copiïs el contingut del primer al segon.

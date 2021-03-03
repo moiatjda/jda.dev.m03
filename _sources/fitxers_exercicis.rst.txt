@@ -22,7 +22,6 @@ continuació:
     exercici_03_11_show.rst
     exercici_03_12_new.rst
     exercici_03_13_cp.rst
-    exercici_03_14_rm.rst
-    exercici_03_15_add.rst
-    exercici_03_16_mv.rst
-    exercici_03_17_del.rst
+    exercici_03_14_add.rst
+    exercici_03_15_mv.rst
+    exercici_03_16_del.rst

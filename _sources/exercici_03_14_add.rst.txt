@@ -1,10 +1,10 @@
 ################################################################
-|exerciseiconO__| Exercici 03_15. Puzle d'escacs: afegeix figura
+|exerciseiconO_T| Exercici 03_14. Puzle d'escacs: afegeix figura
 ################################################################
 
 .. rubric:: Context
 
-* Carpeta de lliurament: ``03_15_add/``
+* Carpeta de lliurament: ``03_14_add/``
 
 * Continguts relacionats: :doc:`exercici_03_08_puzles`
 
@@ -12,14 +12,16 @@
 
 * [☼] Exercici :ref:`optatiu<descripcio_exercicis_optatius>`
 
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
 .. rubric:: Enunciat
 
 Afegeix la funcionalitat d'afegir una figura a un puzle existent.
 
-La comanda tindrà la forma  ``add «nom» «figura» «fila» «columna»``.
+La comanda tindrà la forma  ``add «nom» «fila» «columna» «figura»``.
 
 En cas que no es proporcioni algun dels arguments, es mostrarà el
-missatge ``ERROR: add «nom» «figura» «fila» «columna»`` i tornarà a
+missatge ``ERROR: add «nom» «fila» «columna» «figura»`` i tornarà a
 mostrar el *prompt*.
 
 Si el puzle no existeix, mostrarà el missatge habitual d'error i
@@ -28,17 +30,21 @@ continuarà amb el *prompt*
 Si la figura no és vàlida, mostarà el missatge ``ERROR: figura no
 vàlida`` i tornarà al *prompt*.
 
-Si la fila o la columna no són valors numèrics, es mostrarà el missatge
-``ERROR: files i columnes han de ser valors numèrics entre el 0 i el
-7``.
+Si la fila o la columna no són valors enters, es mostrarà el missatge
+``ERROR: files i columnes han de ser valors enters``. Recorda que ja tens
+definida una funció que ho comprova a :doc:`aquest
+exercici <exercici_02_23_es_enter>`.
 
 Si no es pot posicionar la figura a les coordenades indicades del
-taulell, sigui per què les coordenades no siguin vàlides, sigui perqué
-la posició del taulell ja està ocupada, mostarà el missatge ``ERROR: no
+taulell, sigui per què les coordenades no siguin vàlides, sigui perquè
+la posició del taulell ja està ocupada, mostrarà el missatge ``ERROR: no
 es pot posicionar`` i continuarà amb el *prompt*.
 
 
 Per passar les proves caldrà que implementis el següent mòdul:
+
+* ``processaAdd(String[])``: realitza la funcionalitat corresponent a la
+  comanda ``add``.
 
 * ``esFiguraValida()``: donada una figura (un caràcter) retornarà cert
   només si el caràcter correspon a una figura vàlida. Les figures vàlides
@@ -47,6 +53,8 @@ Per passar les proves caldrà que implementis el següent mòdul:
 
   Fixa't que tampoc no es considera una figura vàlida el caràcter de
   casella buida ``'·'``.
+
+  Aquest mòdul ha d'estar definit dis la classe ``Escacs``.
 
 * ``posicionaFiguraEnPuzle()``: donat un nom de puzle, una figura i les
   coordenades a la posició del taulell d'escacs corresponent, hi col·loca

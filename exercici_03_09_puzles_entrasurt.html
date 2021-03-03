@@ -111,10 +111,9 @@
 <li class="toctree-l3"><a class="reference internal" href="exercici_03_11_show.html"> Exercici 03_11. Puzle d’escacs: mostra</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_03_12_new.html"> Exercici 03_12. Puzle d’escacs: nou puzle</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_03_13_cp.html"> Exercici 03_13. Puzle d’escacs: duplica puzle</a></li>
-<li class="toctree-l3"><a class="reference internal" href="exercici_03_14_rm.html"> Exercici 03_14. Puzle d’escacs: elimina</a></li>
-<li class="toctree-l3"><a class="reference internal" href="exercici_03_15_add.html"> Exercici 03_15. Puzle d’escacs: afegeix figura</a></li>
-<li class="toctree-l3"><a class="reference internal" href="exercici_03_16_mv.html"> Exercici 03_16. Puzle d’escacs: mou figura</a></li>
-<li class="toctree-l3"><a class="reference internal" href="exercici_03_17_del.html"> Exercici 03_17. Puzle d’escacs: elimina figura</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_14_add.html"> Exercici 03_14. Puzle d’escacs: afegeix figura</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_15_mv.html"> Exercici 03_15. Puzle d’escacs: mou figura</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_03_16_del.html"> Exercici 03_16. Puzle d’escacs: elimina figura</a></li>
 </ul>
 </li>
 </ul>
@@ -224,9 +223,9 @@ comandes disponibles.</p></li>
 </span><span class="hll"><span class="go">mv »nom» «fila0» «columna0» «fila1» «columna1»</span>
 </span><span class="hll"><span class="go">new «nom»</span>
 </span><span class="go">rm «nom»</span>
-<span class="hll"><span class="go">quit</span>
-</span><span class="go">puzle&gt; quit</span>
-<span class="go">adèu</span>
+<span class="go">quit</span>
+<span class="hll"><span class="go">puzle&gt; quit</span>
+</span><span class="go">adèu</span>
 </pre></div>
 </div>
 <p>Nota: fixa’t que el <em>prompt</em> no salta de línia. Per aquesta raó apareix
@@ -247,12 +246,14 @@ seguit de la comanda introduïda pels usuaris.</p>
             <span class="p">}</span>
             <span class="n">mostraErrorComandaDesconeguda</span><span class="p">();</span>
         <span class="p">}</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;adèu&quot;</span><span class="p">);</span>
+        <span class="n">mostraComiat</span><span class="p">();</span>
     <span class="p">}</span>
     <span class="c1">// XXX falten els mòduls que són cridats per aquest main()</span>
 <span class="p">}</span>
 </pre></div>
 </div>
+<p>Per poder passar les proves, et caldrà implementar, com a mínim, el
+mòdul <code class="docutils literal notranslate"><span class="pre">mostraAjuda()</span></code>, que, sense paràmetres, mostra el text d’ajuda.</p>
 </div>
 
 
