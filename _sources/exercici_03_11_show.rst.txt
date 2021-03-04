@@ -73,8 +73,12 @@ Per passar les proves, caldrà que implementis els següents mòduls:
 * ``existeixPuzle()``: donat un nom de puzle vàlid retorna cert quan
   existeix un fitxer amb aquest nom.
 
-* ``mostraTaulell()``: donat un taulells (``char[][]``) el mostra per
+* ``mostraTaulell()``: donat un taulell (``char[][]``) el mostra per
   sortida estàndard.
+
+   Atenció: aquest mòdul s'ha de trobar dins de la classe ``Escacs`` que
+   vas desenvolupar als exercicis d'escacs començant per :doc:`aquest
+   <exercici_02_31_escacs>`.
 
 Pistes per la implementació
 ===========================

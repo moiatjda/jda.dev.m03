@@ -46,6 +46,10 @@ Per passar les proves caldrà que implementis el següent mòdul:
 * ``processaAdd(String[])``: realitza la funcionalitat corresponent a la
   comanda ``add``.
 
+  El posicionament dins del taulell el farà la funció
+  ``posicionaFigura()`` que vas desenvolupar a l'exercici :doc:`posiciona
+  figura <exercici_02_34_posiciona_figura>`.
+
 * ``esFiguraValida()``: donada una figura (un caràcter) retornarà cert
   només si el caràcter correspon a una figura vàlida. Les figures vàlides
   són les negres ``'P'``, ``'T'``, ``'C'``, ``'A'``, ``'D'`` i ``'R'``, i
@@ -55,24 +59,3 @@ Per passar les proves caldrà que implementis el següent mòdul:
   casella buida ``'·'``.
 
   Aquest mòdul ha d'estar definit dis la classe ``Escacs``.
-
-* ``posicionaFiguraEnPuzle()``: donat un nom de puzle, una figura i les
-  coordenades a la posició del taulell d'escacs corresponent, hi col·loca
-  la figura indicada a la posició indicada del fitxer corresponent.
-
-  Aquest mòdul fa servir la funció ``posicionaFigura()`` que vas
-  desenvolupar a l'exercici :doc:`posiciona figura
-  <exercici_02_34_posiciona_figura>`.
-
-  Aquest mòdul no comprovarà res i pressuposarà que:
-
-  * existeix el fitxer corresponent
-
-  * la figura és un valor correcte
-
-  * les coordenades són correctes
-
-  * la figura pot ser col·locada en el lloc indicat
-
-  Així, si el fitxer no existeix o no pot ser llegit/ =
-

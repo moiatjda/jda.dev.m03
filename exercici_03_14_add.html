@@ -218,7 +218,11 @@ la posició del taulell ja està ocupada, mostrarà el missatge <code class="doc
 <p>Per passar les proves caldrà que implementis el següent mòdul:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">processaAdd(String[])</span></code>: realitza la funcionalitat corresponent a la
-comanda <code class="docutils literal notranslate"><span class="pre">add</span></code>.</p></li>
+comanda <code class="docutils literal notranslate"><span class="pre">add</span></code>.</p>
+<p>El posicionament dins del taulell el farà la funció
+<code class="docutils literal notranslate"><span class="pre">posicionaFigura()</span></code> que vas desenvolupar a l’exercici <a class="reference internal" href="exercici_02_34_posiciona_figura.html"><span class="doc">posiciona
+figura</span></a>.</p>
+</li>
 <li><p><code class="docutils literal notranslate"><span class="pre">esFiguraValida()</span></code>: donada una figura (un caràcter) retornarà cert
 només si el caràcter correspon a una figura vàlida. Les figures vàlides
 són les negres <code class="docutils literal notranslate"><span class="pre">'P'</span></code>, <code class="docutils literal notranslate"><span class="pre">'T'</span></code>, <code class="docutils literal notranslate"><span class="pre">'C'</span></code>, <code class="docutils literal notranslate"><span class="pre">'A'</span></code>, <code class="docutils literal notranslate"><span class="pre">'D'</span></code> i <code class="docutils literal notranslate"><span class="pre">'R'</span></code>, i
@@ -226,20 +230,6 @@ les blanques <code class="docutils literal notranslate"><span class="pre">'p'</s
 <p>Fixa’t que tampoc no es considera una figura vàlida el caràcter de
 casella buida <code class="docutils literal notranslate"><span class="pre">'·'</span></code>.</p>
 <p>Aquest mòdul ha d’estar definit dis la classe <code class="docutils literal notranslate"><span class="pre">Escacs</span></code>.</p>
-</li>
-<li><p><code class="docutils literal notranslate"><span class="pre">posicionaFiguraEnPuzle()</span></code>: donat un nom de puzle, una figura i les
-coordenades a la posició del taulell d’escacs corresponent, hi col·loca
-la figura indicada a la posició indicada del fitxer corresponent.</p>
-<p>Aquest mòdul fa servir la funció <code class="docutils literal notranslate"><span class="pre">posicionaFigura()</span></code> que vas
-desenvolupar a l’exercici <a class="reference internal" href="exercici_02_34_posiciona_figura.html"><span class="doc">posiciona figura</span></a>.</p>
-<p>Aquest mòdul no comprovarà res i pressuposarà que:</p>
-<ul class="simple">
-<li><p>existeix el fitxer corresponent</p></li>
-<li><p>la figura és un valor correcte</p></li>
-<li><p>les coordenades són correctes</p></li>
-<li><p>la figura pot ser col·locada en el lloc indicat</p></li>
-</ul>
-<p>Així, si el fitxer no existeix o no pot ser llegit/ =</p>
 </li>
 </ul>
 </div>

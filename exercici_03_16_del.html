@@ -187,14 +187,15 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="exerciseicono-exercici-03-16-puzle-d-escacs-elimina-figura">
-<h1><img alt="exerciseiconO__" src="_images/exerciseiconO__.png" /> Exercici 03_16. Puzle d’escacs: elimina figura<a class="headerlink" href="#exerciseicono-exercici-03-16-puzle-d-escacs-elimina-figura" title="Link permanent a aquest títol">¶</a></h1>
+  <div class="section" id="exerciseicono-t-exercici-03-16-puzle-d-escacs-elimina-figura">
+<h1><img alt="exerciseiconO_T" src="_images/exerciseiconO_T.png" /> Exercici 03_16. Puzle d’escacs: elimina figura<a class="headerlink" href="#exerciseicono-t-exercici-03-16-puzle-d-escacs-elimina-figura" title="Link permanent a aquest títol">¶</a></h1>
 <p class="rubric">Context</p>
 <ul class="simple">
 <li><p>Carpeta de lliurament: <code class="docutils literal notranslate"><span class="pre">03_16_del/</span></code></p></li>
 <li><p>Continguts relacionats: <a class="reference internal" href="exercici_03_08_puzles.html"><span class="doc"> Exercici 03_08. Puzle d’escacs</span></a></p></li>
 <li><p>Com lliurar-lo: <a class="reference internal" href="holagit.html#instruccions-git"><span class="std std-ref">instruccions</span></a></p></li>
 <li><p>[☼] Exercici <a class="reference internal" href="sobre_exercicis.html#descripcio-exercicis-optatius"><span class="std std-ref">optatiu</span></a></p></li>
+<li><p>[✓] Exercici amb <a class="reference internal" href="sobre_exercicis.html#descripcio-exercicis-autoavaluacio"><span class="std std-ref">autoavaluació</span></a></p></li>
 </ul>
 <p class="rubric">Enunciat</p>
 <p>Afegeix la funcionalitat d’eliminar una figura d’un puzle existent.</p>
@@ -204,24 +205,22 @@ del puzle corresponent.</p>
 <p>En cas que no es proporcioni algun dels arguments, es mostrarà el
 missatge <code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">del</span> <span class="pre">«nom»</span> <span class="pre">«fila»</span> <span class="pre">«columna»</span></code> i tornarà a
 mostrar el <em>prompt</em>.</p>
-<p>Com a les comandes anteriors, si no existeix el puzle, es queixarà.</p>
-<p>També ho farà en cas que les coordenades no siguin valors numèrics, tot
-mostrant el missatge <code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">files</span> <span class="pre">i</span> <span class="pre">columnes</span> <span class="pre">han</span> <span class="pre">de</span> <span class="pre">ser</span> <span class="pre">valors</span>
-<span class="pre">numèrics</span> <span class="pre">entre</span> <span class="pre">el</span> <span class="pre">0</span> <span class="pre">i</span> <span class="pre">el</span> <span class="pre">7</span></code>.</p>
+<p>Com a les comandes anteriors, si no existeix el puzle, es queixarà.
+També ho farà en cas que les coordenades no siguin valors numèrics.</p>
 <p>En cas que les coordenades no estiguin dins el taulell o bé no
 corresponguin a cap peça al taulell; ho farà amb el missatge <code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">no</span>
 <span class="pre">es</span> <span class="pre">pot</span> <span class="pre">eliminar</span></code>.</p>
 <p>Per passar les proves caldrà que implementis el següent mòdul:</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">eliminaFiguraEnPuzle()</span></code>: donat un nom de puzle i una coordenada,
-eliminarà la figura que hi hagi a les coordenades indicades.</p>
-<p>Com als mòduls anteriors, no realitzarà cap comprovació.</p>
-</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">processaDel(String[])</span></code>: realitza la funcionalitat corresponent a la
+comanda <code class="docutils literal notranslate"><span class="pre">del</span></code>. És a dir, comprova els arguments de la comanda, mostra
+els missatges d’error i realitza l’eliminació.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">eliminaFigura()</span></code>: donat un taulell i les coordenades d’una casella,
 posarà la casella corresponent en blanc. És a dir, modificarà el
 contingut del taulell que rep.</p>
 <p>Retornarà fals quan la casella indicada estigui fora del taulell o bé ja
-estigués buida.</p>
+estigués buida; cert altrament.</p>
+<p>Aquesta funció es estarà dins la classe <code class="docutils literal notranslate"><span class="pre">Escacs</span></code>.</p>
 </li>
 </ul>
 </div>

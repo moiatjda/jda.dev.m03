@@ -1,5 +1,5 @@
 ############################################################
-|exerciseiconO__| Exercici 03_15. Puzle d'escacs: mou figura
+|exerciseiconO_T| Exercici 03_15. Puzle d'escacs: mou figura
 ############################################################
 
 .. rubric:: Context
@@ -11,6 +11,8 @@
 * Com lliurar-lo: :ref:`instruccions <instruccions_git>`
 
 * [☼] Exercici :ref:`optatiu<descripcio_exercicis_optatius>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
 
 .. rubric:: Enunciat
 
@@ -34,15 +36,14 @@ missatge ``ERROR: no es pot moure``.
 
 Per passar les proves caldrà que implementis el següent mòdul:
 
-* ``mouFiguraEnPuzle()``: donat un nom de puzle i dues coordenades, mou la
-  figura de la primera coordenada a la segona dins del taulell contingut
-  al fitxer corresponent al puzle.
+* ``processaMv(String[])``: realitza la funcionalitat corresponent a la
+  comanda ``mv``. És a dir, comprova els arguments de la comanda, mostra
+  els missatges d'error si n'hi ha i realitza el moviment de la figura si
+  és possible.
 
   Aquest mòdul fa servir la funció ``mouFigura()`` que vas implementar a
   l'exercici :doc:`mou figura <exercici_02_35_mou_figura>`.
 
-  Aquest mòdul tampoc no comprovarà res. Si el fitxer no hi és, o bé no
-  permet ser escrit, es produirà una excepció. Per altra banda, si el
-  moviment no és possible, simplement el fitxer no veurà modificat el seu
-  contingut.
-
+*Atenció*: l'exercici **no** demana que es comprovi si el moviment
+respecta les regles del joc dels escacs. Si ho vols fer com a ampliació,
+però, has de saber que els jocs de prova les respecten.

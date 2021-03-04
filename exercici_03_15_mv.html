@@ -187,14 +187,15 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="exerciseicono-exercici-03-15-puzle-d-escacs-mou-figura">
-<h1><img alt="exerciseiconO__" src="_images/exerciseiconO__.png" /> Exercici 03_15. Puzle d’escacs: mou figura<a class="headerlink" href="#exerciseicono-exercici-03-15-puzle-d-escacs-mou-figura" title="Link permanent a aquest títol">¶</a></h1>
+  <div class="section" id="exerciseicono-t-exercici-03-15-puzle-d-escacs-mou-figura">
+<h1><img alt="exerciseiconO_T" src="_images/exerciseiconO_T.png" /> Exercici 03_15. Puzle d’escacs: mou figura<a class="headerlink" href="#exerciseicono-t-exercici-03-15-puzle-d-escacs-mou-figura" title="Link permanent a aquest títol">¶</a></h1>
 <p class="rubric">Context</p>
 <ul class="simple">
 <li><p>Carpeta de lliurament: <code class="docutils literal notranslate"><span class="pre">03_15_mv/</span></code></p></li>
 <li><p>Continguts relacionats: <a class="reference internal" href="exercici_03_08_puzles.html"><span class="doc"> Exercici 03_08. Puzle d’escacs</span></a></p></li>
 <li><p>Com lliurar-lo: <a class="reference internal" href="holagit.html#instruccions-git"><span class="std std-ref">instruccions</span></a></p></li>
 <li><p>[☼] Exercici <a class="reference internal" href="sobre_exercicis.html#descripcio-exercicis-optatius"><span class="std std-ref">optatiu</span></a></p></li>
+<li><p>[✓] Exercici amb <a class="reference internal" href="sobre_exercicis.html#descripcio-exercicis-autoavaluacio"><span class="std std-ref">autoavaluació</span></a></p></li>
 </ul>
 <p class="rubric">Enunciat</p>
 <p>Afegeix la funcionalitat de moure una figura d’un puzle.</p>
@@ -211,17 +212,17 @@ posició d’origen o perquè la de destinació està ocupada, mostrarà el
 missatge <code class="docutils literal notranslate"><span class="pre">ERROR:</span> <span class="pre">no</span> <span class="pre">es</span> <span class="pre">pot</span> <span class="pre">moure</span></code>.</p>
 <p>Per passar les proves caldrà que implementis el següent mòdul:</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">mouFiguraEnPuzle()</span></code>: donat un nom de puzle i dues coordenades, mou la
-figura de la primera coordenada a la segona dins del taulell contingut
-al fitxer corresponent al puzle.</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">processaMv(String[])</span></code>: realitza la funcionalitat corresponent a la
+comanda <code class="docutils literal notranslate"><span class="pre">mv</span></code>. És a dir, comprova els arguments de la comanda, mostra
+els missatges d’error si n’hi ha i realitza el moviment de la figura si
+és possible.</p>
 <p>Aquest mòdul fa servir la funció <code class="docutils literal notranslate"><span class="pre">mouFigura()</span></code> que vas implementar a
 l’exercici <a class="reference internal" href="exercici_02_35_mou_figura.html"><span class="doc">mou figura</span></a>.</p>
-<p>Aquest mòdul tampoc no comprovarà res. Si el fitxer no hi és, o bé no
-permet ser escrit, es produirà una excepció. Per altra banda, si el
-moviment no és possible, simplement el fitxer no veurà modificat el seu
-contingut.</p>
 </li>
 </ul>
+<p><em>Atenció</em>: l’exercici <strong>no</strong> demana que es comprovi si el moviment
+respecta les regles del joc dels escacs. Si ho vols fer com a ampliació,
+però, has de saber que els jocs de prova les respecten.</p>
 </div>
 
 

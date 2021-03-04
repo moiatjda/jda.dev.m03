@@ -280,7 +280,7 @@ Malauradament encara no funciona amb Strings i de moment ens tocarà haver
 de declarar la variable de recorregut per passar per cada caràcter d'un
 text.
 
-|exerciseicon___| :doc:`exercici_03_08_puzles`
+|exerciseicon__T| :doc:`exercici_03_08_puzles`
 
 
 Una nova biblioteca
