@@ -73,7 +73,7 @@ Per passar les proves, caldrà que implementis:
   caràcters representant el taulell, escriu al fitxer corresponent el
   contingut del taulell.
 
-  Per exemple, si la crida és ``llegeixTaulell("negres_mmate_en_un", taulell)`` escriurà al fitxer
+  Per exemple, si la crida és ``escriuPuzle("negres_mmate_en_un", taulell)`` escriurà al fitxer
   ``puzle_negres_mate_en_un.txt`` el contingut de l'array d'arrays de
   caràcters referenciat per ``taulell``.
 
