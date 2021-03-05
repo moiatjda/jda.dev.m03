@@ -103,8 +103,6 @@ mostrarà el *prompt* ``puzle>`` i acceptarà les següents *comandes*:
 
 * ``cp``: duplicar un puzle
 
-* ``rm``: eliminar un puzle
-
 * ``add``: afegir una figura a un puzle
 
 * ``mv``: moure una figura d'un puzle
