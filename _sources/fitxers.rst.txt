@@ -28,4 +28,5 @@ execucions anteriors.
     fitxers_lectura.rst
     fitxers_escriptura.rst
     fitxers_gestio.rst
+    fitxers_conclusions.rst
     fitxers_exercicis.rst

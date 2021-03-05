@@ -1,0 +1,55 @@
+###########
+Conclusions
+###########
+
+Hem arribat al final d'aquest bloc.
+
+A la nostra motxilla d'eines de programació hem incorporat un element
+fonamental: que els nostres programes puguin *recordar* execucions
+passades o, fins i tot, realitzades per altres programes.
+
+Els fitxers permeten als nostres programes comunicar-se amb altres
+programes o fins i tot amb els mateixos en el passat i el futur!
+
+Hem conegut el patró *obrir→usar→tancar* que apliquem tant per llegir de com
+per escriure a un fitxer.
+
+També hem conegut les dues operacions bàsiques *lectura* i *escriptura*
+sobre fitxers de text. Encara més, d'escriptura hem vist dues variants:
+sobreescriptura i ampliació.
+
+Finalment hem fet un tastet de les possibilitats que ens ofereix la
+biblioteca de Java per gestionar fitxers: veure si existeixen, distingir
+fitxers de directoris, llistar continguts dins d'una carpeta…
+
+Tot plegat, en Java es pot resumir en l'ús de les classes ``File`` per
+definir camins o rutes, ``FileReader`` i ``FileWriter`` per poder
+manipular el contingut dels fitxers i els seus corresponents
+``BufferedReader`` i ``BufferedWriter`` que ens en milloren la usabilitat.
+Acompanyant a aquestes utilitats, hem sabut que amb ``import`` podem
+estalviar-nos d'escriure el nom sencer (ex. ``java.io.BufferedReader``)
+
+Hem descobert que treballant amb elements externs al programa, de vegades
+es poden produir situacions inesperades (ex. que el fitxer que volem
+llegir ja no estigui disponible) i com Java gestiona aquestes situacions
+excepcionals amb un mecanisme anomenat *exceptions*, en el cas dels
+fitxers amb ``IOException``.
+
+En paral·lel, hem pogut treballar el treball en equip fent el nostre
+primer projecte "complex" amb l'exercici del *Penjat* i hem simulat el
+desenvolupament dirigit per la prova amb l'exercici del *Puzle*.
+
+A més a més, hem descobert noves utilitats de la API de Java, com ara les
+funcions ``split()`` i ``replace()`` amb Strings i ``sort()`` d'Arrays.
+També que amb ``import`` podem estalviar-nos d'escriure el nom sencer  i,
+fins i tot, hem conegut un nou tipus de bucle. El *for millorat* o
+*enhanced for*.
+
+No ha estat malament, oi?
+
+Moltes felicitats per haver arribat fins aquí!
+
+Ara que les teves capacitats de programació estan començant a ser
+considerables, preparat per donar-li la volta a tot plegat i començar a
+entendre els programes des d'una nova perspectiva: la orientació a
+objectes.
