@@ -82,6 +82,5 @@ Per poder passar les proves, et caldrà implementar, com a mínim, el
 mòdul ``mostraAjuda()``, que, sense paràmetres, mostra el text d'ajuda.
 
 .. note:: Les cometes franceses ``'«'`` i ``'»'`` no solen estar mapejades a
-    tots els teclats. Malauradament d'això me n'he assabentat després de
-    dissenyar aquest exercici així que et proposo que simplement facis un
+    tots els teclats. Si és el teu cas, et proposo que simplement facis un
     *copy&paste* de les d'aquest enunciat.
