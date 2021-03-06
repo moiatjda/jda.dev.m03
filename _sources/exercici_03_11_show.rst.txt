@@ -167,7 +167,7 @@ Finalment, el meu codi de ``processaShow()`` és el següent:
             return;
         }
         char[][] taulell = llegeixPuzle(nomPuzle);
-        mostraTaulell(taulell);
+        Escacs.mostraTaulell(taulell);
     }
 
 Si vols, pots fer-ho servir al teu programa amb les variacions que
