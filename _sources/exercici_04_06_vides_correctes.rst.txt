@@ -1,0 +1,171 @@
+########################################################
+|exerciseicon___| Exercici 04_06. Vides sempre correctes
+########################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``04_06_vides_correctes/``
+
+* Continguts relacionats: :doc:`classes_i_objectes`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+.. rubric:: Enunciat
+
+Considera la següent implementació de ``GatRenat``:
+
+.. code-block:: java
+    :linenos:
+
+    public class GatRenat {
+        public int vides = 7;
+    }
+
+Aquesta declaració ens permet fer el següent:
+
+.. code-block:: java
+    :linenos:
+
+    public class UsaGatRenat {
+        public static void main(String[] args) {
+            GatRenat renat = new GatRenat();
+            renat.vides = -12;
+            System.out.println("El gat Renat té " + renat.vides + " vides");
+        }
+    }
+
+Que ``UsaGatRenat`` funcioni no ens hauria de deixar massa tranquil·litat.
+-12 de vida? Potser per un joc de zombis podria ser vàlid però en general
+no sembla quelcom gaire desitjable.
+
+El que voldríem és aconseguir evitar que ens puguin assignar un valor no
+vàlid per les vides del gat Renat.
+
+No et pensis que és quelcom a l'abast de tots els llenguatges de
+programació. Per Java, però, veurem que és força senzill.
+
+.. uml::
+    :align: center
+
+     @startuml
+     hide circle
+     skinparam monochrome true
+     skinparam classAttributeIconSize 0
+
+
+     class GatRenat {
+         - vides: int
+         + getVides(): int
+         + setVides(int)
+     }
+     @enduml
+
+
+
+Considera aquesta nova versió de ``GatRenat``:
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 2, 3, 6
+
+    public class GatRenat {
+        private int vides = 7;
+        public int getVides() {  //  retorna el nombre de vides
+            return vides;
+        }
+        public void setVides(int novesVides) {   // modifica el nombre de vides si ens donen un de vàlid
+            if (novesVides >= 0) {
+                vides = novesVides;
+            }
+        }
+    }
+
+Contesta les següents preguntes:
+
+1. Què passa si intentes executar el següent codi? Perquè creus?
+
+   .. code-block:: java
+       :linenos:
+
+       public class UsaGatRenat {
+           public static void main(String[] args) {
+               GatRenat renat = new GatRenat();
+               System.out.println("El gat Renat té " + renat.vides + " vides");
+           }
+       }
+
+2. Què tal si modifiquem lleugerament el codi anterior per aquest?
+
+   .. code-block:: java
+        :linenos:
+        :emphasize-lines: 4
+
+         public class UsaGatRenat {
+             public static void main(String[] args) {
+                 GatRenat renat = new GatRenat();
+                 System.out.println("El gat Renat té " + renat.getVides() + " vides");
+             }
+         }
+
+   Fixa't que ara estem fent servir ``renat.getVides()`` en comptes de
+   directament ``renat.vides()``. Funciona ara?
+
+3. Com es pot determinar a ``UsaGatRenat`` que ``renat`` té 5 vides?
+
+   Inclou el codi a la resposta i la sortida que et genera.
+
+
+4. Què passa si intentem assignar-li -12 en comptes de 5 vides?
+
+   Inclou el codi, la sortida i la teva explicació.
+
+5. Un cop hem vist què passa des de ``UsaGatRenat`` toca experimentar com
+   es comporta aquest ``private`` des del ``main()`` del propi
+   ``GatRenat``.
+
+   Experimenta afegint a la darrera versió de ``GatRenat`` la mateixa
+   declaració de ``main()`` que apareixia a la primera versió de
+   ``UsaGatRenat`` d'aquesta pàgina. És  a dir:
+
+   .. code-block:: java
+       :linenos:
+       :emphasize-lines: 11-15
+
+       public class GatRenat {
+           private int vides = 7;
+           public int getVides() {  //  retorna el nombre de vides
+               return vides;
+           }
+           public void setVides(int novesVides) {   // modifica el nombre de vides si ens donen un de vàlid
+               if (novesVides >= 0) {
+                   vides = novesVides;
+               }
+           }
+           public static void main(String[] args) {
+               GatRenat renat = new GatRenat();
+               renat.vides = -12;
+               System.out.println("El gat Renat té " + renat.vides + " vides");
+           }
+       }
+
+   Què passa en intentar compilar i executar aquesta versió? Perquè creus?
+   Ho veus coherent?
+
+6. Considerant aquesta darrera versió de ``GatRenat``, és possible
+   aconseguir assignar un nombre de vides negatiu a una instància de
+   ``GatRenat`` sense modificar el codi de la classe ``GatRenat``?  Perquè
+   o Com?
+
+7. Com descriuries el paper de ``public`` i ``private`` a les propietats
+   d'una classe?
+
+8. Per cert, t'has fixat que els mòduls ``getVides()`` i ``setVides()``
+   tenen una definició lleugerament diferent als mòduls que hem declarat
+   fins ara en aquest curs? En concret, no els falta alguna cosa?
+
+   Si no se t'acut, considera revisar quan varem veure :doc:`per primer
+   cop <moduls_abandonem_plantilla>` un mòdul que no fos el ``main()``.
+
+   De moment només cal que identifiquis la petita diferència en la
+   declaració, però si tens molta curiositat, experimenta què passa si
+   declares ``getVides()`` de la mateixa manera que ``dibuixaQuadrat()``.

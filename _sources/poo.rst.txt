@@ -1,0 +1,118 @@
+################################
+Programació Orientada a Objectes
+################################
+
+Ens endinsem ara al descobriment d'un nou paradigma de programació: la
+programació orientada a objectes
+
+Darrera de la paraulota *paradigma* s'amaga la idea de "manera d'entendre
+quelcom". Així, un paradigma de programació seria una manera d'entendre la
+programació.
+
+Fins ara, hem aprés a desenvolupar amb el paradigma de la programació
+estructurada i modular. Així, hem aprés que estructurem el nostre codi a partir
+de:
+
+* dades: instruccions d'assignació, entrada/sortida, tipus, estructures
+
+* estructures de control de flux: condicionals (``if``, ``switch``) i de
+  repetició (``while``, ``for``)
+
+* mòduls: procediments, funcions, crides
+
+El paradigma de la programació orientada a objectes també inclou els elements
+anteriors, però presenta una particularitat: les dades i els mòduls apareixeran
+junts en una mateixa entitat que coneixerem com *objectes*.
+
+Aquest tema es desglossa en les següents entrades:
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    classes_i_objectes.rst
+    poo_exercicis.rst
+
+..
+    constructors_i.rst
+    membres_instancia_classe.rst
+    relacions.rst
+    herencia.rst
+    polimorfisme.rst
+    abstractes.rst
+    interfaces.rst
+    poo_eleccio.rst
+    excepcions.rst
+
+.. XXX
+
+    Durada: 35 hores
+    Resultats d’aprenentatge i criteris d’avaluació
+    1. Escriu i prova programes senzills, reconeixent i aplicant els fonaments de la programació orientada a
+    objectes.
+    Criteris d’avaluació
+    1.1 Instancia objectes a partir de classes predefinides.
+    1.2 Utilitza mètodes i propietats dels objectes.
+    1.3 Escriu crides a mètodes estàtics.
+    1.4 Utilitza paràmetres en la crida a mètodes.
+    1.5 Incorpora i utilitza llibreries d’objectes.
+    1.6 Utilitza constructors.
+    1.7 Distingeix dades estàtiques de dades dinàmiques.
+    1.8 Reconeix els mecanismes de destrucció i/o finalització d’objectes.
+    1.9 Reconeix els mecanismes d’alliberament de memòria.
+    1.10 Utilitza l’entorn integrat de desenvolupament en la creació i compilació de programes simples.
+    2. Desenvolupa programes organitzats en classes analitzant i aplicant els principis de la programació orientada
+    a objectes.
+    Criteris d’avaluació
+    2.1 Reconeix la sintaxi, l’estructura i els components típics d’una classe.
+    2.2 Defineix classes.
+    2.3 Defineix propietats i mètodes.
+    2.4 Crea constructors.
+    2.5 Crea destructors i/o mètodes de finalització.
+    2.6 Desenvolupa programes que instancien i utilitzen objectes de les classes creades anteriorment.
+    2.7 Utilitza mecanismes per controlar la visibilitat de les classes i dels seus membres.
+    2.8 Defineix i utilitza classes heretades.
+    2.9 Crea i utilitza mètodes estàtics.
+    2.10 Crea i utilitza conjunts i llibreries de classes.
+    3. Desenvolupa programes aplicant característiques avançades dels llenguatges orientats a objectes i de
+    l’entorn de programació.
+    C3.1 Identifica els conceptes d’herència, superclasse i subclasse.
+    3.2 Utilitza modificadors per bloquejar i forçar l’herència de classes i mètodes.
+    3.3 Reconeix la incidència dels constructors en l’herència.
+    3.4 Reconeix la incidència dels destructors i/o mètodes de finalització en l’herència.
+    3.5 Crea classes heretades que sobreescriguin la implementació de mètodes de la superclasse.
+    3.6 Coneix l’existència de l’herència múltiple i els problemes derivats.
+    3.7 Dissenya i aplica jerarquies de classes.
+    3.8 Prova i depura les jerarquies de classes.
+    3.9 Realitza programes que implementin i utilitzin jerarquies de classes.
+    3.10 Comenta i documenta el codi.
+    3.11 Entén, defineix i implementa interfícies.
+    Continguts
+    1. Introducció a la programació orientada a objectes:
+    1.1 Tipus primitius de dades.
+    1.2 Característiques dels objectes.
+    1.3 Definició d’objectes.
+    1.4 Taules de tipus primitius davant de taules d’objectes.
+    1.5 Utilització de mètodes.
+    1.6 Utilització de propietats.
+    1.7 Utilització de mètodes estàtics.
+    1.8 Constructors.
+    1.9 Memòria: gestió dinàmica enfront de gestió estàtica; possibilitats del llenguatge.
+    1.10 Destrucció i/o finalització d’objectes i alliberament de memòria.
+    2. Desenvolupament de programes organitzats en classes:
+    2.1 Concepte de classe. Estructura i membres.
+    2.2 Creació d’atributs.
+    2.3 Creació de mètodes.
+    2.4 Sobrecàrrega de mètodes.
+    2.5 Creació de constructors.
+    2.6 Creació de destructors i/o mètodes de finalització.
+    2.7 Utilització de classes i objectes. Visibilitat.
+    2.8 Conjunts i llibreries de classes.
+    3. Utilització avançada de classes en el disseny d’aplicacions:
+    3.1 Composició de classes.riteris d’avaluació
+    3.2 Herència.
+    3.3 Jerarquia de classes: superclasses i subclasses.
+    3.4 Classes i mètodes abstractes i finals.
+    3.5 Sobreescriptura de mètodes.
+    3.6 Herència i constructors/destructors/mètodes de finalització.
+    3.7 Interfícies.

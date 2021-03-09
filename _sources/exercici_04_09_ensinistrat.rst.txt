@@ -1,0 +1,85 @@
+############################################################
+|exerciseicon__T| Exercici 04_09. En Renat està ensinistrat!
+############################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``04_09_ensinistrat/``
+
+* Continguts relacionats: :doc:`classes_i_objectes`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+
+Una de les gràcies de la POO és que podem tractar peces de codi com si
+tinguessin una mena de personalitat pròpia. És el que es coneix com
+*la metàfora de la POO*. Així, podem imaginar que els objectes ens
+realitzen serveis o que els podem donar ordres. Ho visualitzarem amb
+el nostre pacient amic Renat.
+
+Què haig de fer?
+================
+
+.. uml::
+    :align: center
+
+     @startuml
+     hide circle
+     skinparam monochrome true
+     skinparam classAttributeIconSize 0
+
+
+     class GatRenat {
+         + aixecat(): String
+         + seu(): String
+         + estirat(): String
+     }
+     @enduml
+
+
+Afegeix tres nous mètodes: ``String aixecat()``, ``String seu()``, i
+``String estirat()`` de manera que quan vulguem, per exemple, que en Renat
+s'aixequi simplement li diguem  ``renat.aixecat();``.
+
+En cas que el Renat ja estigués en l'estat que se li demana, no fa cap canvi d'estat.
+
+Aquestes funcions retornaran un missatge indicant el que ha fet el Renat.
+Així, els missatges que ens retornarà seran:
+``"m'estiro"``,
+``"m'assec"``,
+``"m'aixeco"``, i
+``"no faig res"``.
+
+**Atenció**: els nous mètodes **no** han d'escriure res per sortida estàndard.
+
+Des servir el ``main()`` a ``UsaGatRenat`` per demostrar el funcionament d'aquests nous
+mètodes.
+
+.. code-block:: java
+    :linenos:
+
+    public static void main(String[] args) {
+        GatRenat renat = new GatRenat();
+        System.out.println("El Renat diu: "+ renat.aixecat());
+        System.out.println("El Renat diu: "+ renat.seu());
+        System.out.println("El Renat diu: "+ renat.estirat());
+        System.out.println("El Renat diu: "+ renat.estirat());
+    }
+
+
+La sortida haurà de ser:
+
+.. code-block:: console
+    :emphasize-lines: 2-
+
+    $ java UsaGatRenat 
+    El Renat diu: m'aixeco
+    El Renat diu: m'assec
+    El Renat diu: m'estiro
+    El Renat diu: no faig res
+
+

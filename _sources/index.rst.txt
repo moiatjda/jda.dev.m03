@@ -22,10 +22,9 @@ Els continguts d'aquest curs estan organitzats en els següents temes:
     basics.rst
     moduls.rst
     fitxers.rst
+    poo.rst
     apendix.rst
 
-..  fitxers.rst
-..  poo.rst
 ..  llibreries.rst
 ..  bd.rst
 

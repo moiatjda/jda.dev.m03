@@ -1,0 +1,37 @@
+##################
+Classes i objectes
+##################
+
+En aquests continguts, tindràs una primera visió dels conceptes *classe* i
+*objecte*.
+
+Aquesta introducció es realitza de manera pràctica, guiada amb
+exercicis que progressivament incorporen diferents perspectives dels
+conceptes a tractar.
+
+Coneixerem ara a un nou amic que ens acompanyarà en aquest viatge de
+descobriment de la programació orientada a objectes: el gat Renat.
+
+Som-hi doncs!
+
+|exerciseicon___| :doc:`exercici_04_01_vides`
+
+|exerciseicon___| :doc:`exercici_04_02_accident`
+
+|exerciseicon___| :doc:`exercici_04_03_dos_gats`
+
+|exerciseicon___| :doc:`exercici_04_04_desde_fora`
+
+|exerciseicon__T| :doc:`exercici_04_05_posicio`
+
+|exerciseicon___| :doc:`exercici_04_06_vides_correctes`
+
+|exerciseicon__T| :doc:`exercici_04_07_posicio_correcta`
+
+|exerciseicon__T| :doc:`exercici_04_08_com_esta`
+
+|exerciseicon__T| :doc:`exercici_04_09_ensinistrat`
+
+|exerciseicon__T| :doc:`exercici_04_10_assessinable`
+
+|exerciseicon___| :doc:`exercici_04_11_classes_i_objectes`

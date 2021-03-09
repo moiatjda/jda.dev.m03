@@ -1,0 +1,68 @@
+#########################################################
+|exerciseicon___| Exercici 04_04. Renat també des de fora
+#########################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``04_04_desde_fora/``
+
+* Continguts relacionats: :doc:`classes_i_objectes`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+.. rubric:: Enunciat
+
+.. uml::
+    :align: center
+
+     @startuml
+     hide circle
+     skinparam monochrome true
+     skinparam classAttributeIconSize 0
+
+
+     class GatRenat {
+         + vides: int
+     }
+
+     class UsaGatRenat {
+         + {static} main(String[])
+     }
+
+     UsaGatRenat -left-> GatRenat
+
+     @enduml
+
+
+Considera ara el següent codi que apareix a un altre fitxer:
+
+.. code-block:: java
+    :linenos:
+
+    public class UsaGatRenat {
+        public static void main(String[] args) {
+            GatRenat renat = new GatRenat();
+            System.out.println("Al gat Renat li queden " + renat.vides + " vides");
+        }
+    }
+
+Copia el codi en un fitxer al mateix directori que el de l'exercici
+anterior i executa'l.
+
+Respon a les següents preguntes:
+
+1. Quin és el nom del fitxer on està definit el punt d'entrada ``main()`` d'aquest programa?
+
+2. Ara tenim dos fitxers amb ``main()``. Com pot saber Java quin és el
+   ``main()`` a executar?
+
+3. A quin fitxer està definida la classe del gat Renat?
+
+4. Quants programes es podrien construir fent ús de la definició del gat Renat?
+
+5. Què passaria si el fitxer amb el codi anterior i el que conté la
+   definició de la classe del Renat estiguessin en directoris
+   diferents?
+
+6. Elimina el ``main()`` de ``GatRenat``. Continua funcionant ``UsaGatRenat``?
+   Què ha deixat de poder-se executar?

@@ -1,0 +1,103 @@
+###################################################################
+|exerciseicon___| Exercici 04_03. Exercici 3. Hi ha dos gats Renat?
+###################################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``04_03_dos_gats/``
+
+* Continguts relacionats: :doc:`classes_i_objectes`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+.. rubric:: Enunciat
+
+
+
+
+    
+
+Als exercicis anteriors hem definit una classe anomenada ``GatRenat``, i n'hem creat una instància a
+la que ens hem referit amb la variable *renat*. Tot plegat, ens pot portar a creure que la classe
+``GatRenat`` representa a un únic exemplar de gat Renat. Però no és el cas. En podem fer més de Renats.
+
+Per simplicitat, és preferible entendre que la classe engloba a un *tipus* o
+*classe* de gat molt particular, que coneixem de manera genèrica com a *GatRenat*.
+
+.. uml::
+    :align: center
+
+     @startuml
+     hide circle
+     skinparam monochrome true
+     skinparam classAttributeIconSize 0
+
+
+     object renat_I
+     renat_I : vides = 7
+
+     object renat_II
+     renat_II : vides = 7
+
+     @enduml
+
+
+Considera el següent codi en el que tindrem més d'un gat Renat:
+
+.. code-block:: java
+    :linenos:
+
+    public class GatRenat {
+        public int vides = 7;   // vides disponibles del gat Renat
+
+        public static void main(String[] args) {
+            GatRenat renat_I;
+            renat_I = new GatRenat();               // crea un primer gat Renat
+            System.out.println("El gat Renat I té  " + renat_I.vides + " vides");
+
+            GatRenat renat_II = new GatRenat();     // crea un segon gat Renat!
+            System.out.println("El gat Renat II té " + renat_II.vides + " vides");
+
+            renat_I.vides++;
+            System.out.println("El gat Renat I té  " + renat_I.vides + " vides");
+            System.out.println("El gat Renat II té " + renat_II.vides + " vides");
+
+            renat_II = renat_I; // atenció: la instància de Renat II es perd!
+            System.out.println("El gat Renat I té  " + renat_I.vides + " vides");
+            System.out.println("El gat Renat II té " + renat_II.vides + " vides");
+
+            renat_I.vides++;
+            System.out.println("El gat Renat I té  " + renat_I.vides + " vides");
+            System.out.println("El gat Renat II té " + renat_II.vides + " vides");
+        }
+    }
+
+
+Copia i executa el codi i contesta les següents preguntes:
+
+1. Quanta memòria ocupa, com a mínim, una instància de ``GatRenat``?
+
+   Si tens dubtes, revisa :doc:`aquest exercici <exercici_01_56_tipus_primitius>`.
+
+2. Quantes instàncies hi ha de ``GatRenat`` tot just executat el codi fins la línia 5 (inclosa)?
+
+3. I fins la línia 6?
+
+4. I fins la línia 9?
+
+5. Perquè les línies 7 i 10 mostren les mateixes vides pels gats Renat
+   I i Renat II?
+
+6. Perquè les línies 13 i 14 mostren diferent nombre de vides pels
+   gats Renat I i Renat II?
+
+7. Què creus que vol dir el comentari de la línia 16?
+
+8. Perquè les línies 17 i 18 mostren les mateixes vides pels gats
+   Renat I i Renat II?
+
+9. Perquè les línies 21 i 22 mostren les mateixes vides pels gats
+   Renat I i Renat II malgrat la instrucció de la línia 20?
+
+10. Quantes instàncies hi ha quan s'executa la línia 20? Perquè?
+

@@ -1,0 +1,90 @@
+#########################################################
+|exerciseicon__T| Exercici 04_07. Posició sempre correcta
+#########################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``04_07_posicio_correcta/``
+
+* Continguts relacionats: :doc:`classes_i_objectes`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Considera la versió del ``GatRenat`` amb vides sempre correctes:
+
+.. code-block:: java
+    :linenos:
+
+    public class GatRenat {
+        private int vides = 7;
+        public int getVides() {  //  retorna el nombre de vides
+            return vides;
+        }
+        public void setVides(int novesVides) {   // modifica el nombre de vides si ens donen un de vàlid
+            if (novesVides >= 0) {
+                vides = novesVides;
+            }
+        }
+    }
+
+Una mica de *culturilla* POO
+============================
+
+Als mòduls ``getVides()`` i ``setVides()`` en orientació a objectes els
+anomenem *accessors* doncs ens permeten accedir a propietats privades, en
+aquest cas ``vides``. De fet, aquesta manera d'anomenar els accessors és
+tan típica que sovint parlem de *getters* i *setters*.
+
+
+Què haig de fer?
+================
+
+En aquest exercici, torna a afegir la propietat ``posicio`` que vas
+incorporar a l'exercici :doc:`Renat té posició <exercici_04_05_posicio>`.
+En aquesta ocasió, fes la propietat privada i implementa els accessors de
+manera que garanteixis que la posició del Renat sigui sempre correcta, a
+l'hora que pugui ser canviada.
+
+.. uml::
+    :align: center
+
+     @startuml
+     hide circle
+     skinparam monochrome true
+     skinparam classAttributeIconSize 0
+
+
+     class GatRenat {
+         - vides: int
+         - posicio: String
+         + getVides(): int
+         + setVides(int)
+         + getPosicio(): String
+         + setPosicio(String)
+     }
+     @enduml
+
+
+Record que les posicions vàlides del gat Renat són **exactament**: ``"dret"``,
+``"assegut"`` i ``"estirat"``.
+
+En cas que el *setter* de ``posicio`` rebi un valor no vàlid, mantindrà el
+valor de la propietat sense modificar. És a dir, es comportarà igual que
+``setVides()``.
+
+Crea un programa que demostri el funcionament dels nous accessors de
+manera que la seva execució sigui:
+
+.. code-block:: console
+    :emphasize-lines: 2-4, 6
+
+    $ java UsaGatRenat 
+    Vides inicials: 7
+    Posició inicial: estirat
+    Introdueix nova posició:
+    assegut
+    Posició final: assegut

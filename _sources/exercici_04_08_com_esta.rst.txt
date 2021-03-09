@@ -1,0 +1,117 @@
+#################################################
+|exerciseicon__T| Exercici 04_08. Com està Renat?
+#################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``04_08_com_esta/``
+
+* Continguts relacionats: :doc:`classes_i_objectes`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+
+A l'exercici :doc:`Posició sempre correcta
+<exercici_04_07_posicio_correcta>` hem conegut el concepte d'accessor (i
+les seves variants típiques *getters* i *setters*)
+
+Aquests mòduls permeten accedir per consultar i modificar el valor de
+propietats d'una manera controlada. És a dir, evitant que les propietats
+no puguin arribar a tenir un valor no adequat.
+
+Tot i sent una bona protecció, de vegades els accessors ens obliguen a
+crear un codi no gaire llegible.
+
+Per exemple, si volem saber si el gat Renat està estirat, ens toca fer la
+següent condició: ``renat.getPosicio().equals("estirat")``.
+
+.. code-block:: java
+
+    if (renat.getPosicio().equals("estirat")) {
+        System.out.println("El gat Renat està estirat");
+    }
+
+Imagina't si poguessim expressar-ho de la següent manera:
+
+.. code-block:: java
+
+    if (renat.estaEstirat()) {
+        System.out.println("El gat Renat està estirat");
+    }
+
+No em negaràs que això no queda més fàcil de llegir, oi?
+
+Una mica de *culturilla* POO
+============================
+
+Si bé un mòdul com ara ``estaEstirat()`` també ens permet accedir al valor
+d'una propietat privada de la instància, en el món POO, no se'l coneix com
+a accessor.
+
+En tot cas, ja va sent hora de que et presenti el nom amb el que
+normalment ens referim als mòduls definits a una classe: en diem
+*mètodes* o també *serveis*.
+
+Pots imaginar-los com els *mètodes* amb els que ens podem comunicar amb la
+instància o, també, els *serveis* que ens ofereix la instància, com ara
+saber si el gat està estirat.
+
+Per cert, els accessors són també un tipus de mètode.
+
+Això de definir mètodes amb noms que faciliten la lectura és quelcom molt
+valorat en POO.
+
+Què haig de fer?
+================
+
+.. uml::
+    :align: center
+
+     @startuml
+     hide circle
+     skinparam monochrome true
+     skinparam classAttributeIconSize 0
+
+
+     class GatRenat {
+         + estaViu(): boolean
+         + estaDret(): boolean
+         + estaAssegut(): boolean
+         + estaEstirat(): boolean
+     }
+     @enduml
+
+
+Afegeix al repertori de mètodes del Renat els següents:
+
+1. ``boolean estaViu()`` // cert si encara li queda alguna vida
+
+2. ``boolean estaDret()``, ``boolean estaAssegut()``, ``boolean estaEstirat()``
+
+Defineix la classe ``UsaGatRenat`` que respongui a la següent simulació:
+
+.. code-block:: console
+    :emphasize-lines: 2-6, 8, 10-
+
+    $ java UsaGatRenat 
+    Inicialment renat.estaViu(): true
+    Inicialment renat.estaDret(): false
+    Inicialment renat.estaAssegut(): false
+    Inicialment renat.estaEstirat(): true
+    Introdueix quantes vides:
+    0
+    Introdueix nova posició:
+    dret
+    Finalment renat.estaViu(): false
+    Finalment renat.estaDret(): true
+    Finalment renat.estaAssegut(): false
+    Finalment renat.estaEstirat(): falso
+
+Nota: D'acord, no és massa creïble que el Renat pugui estar a l'hora dret
+i mort. Ho deixarem així de moment en favor de la simplicitat. Se t'acut,
+però, com podríem arreglar aquesta situació?
+

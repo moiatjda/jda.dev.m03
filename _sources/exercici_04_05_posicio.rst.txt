@@ -1,0 +1,83 @@
+##################################################
+|exerciseicon__T| Exercici 04_05. Renat té posició
+##################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``04_05_posicio/``
+
+* Continguts relacionats: :doc:`classes_i_objectes`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Disposem de la classe ``GatRenat`` amb la següent definició:
+
+.. code-block:: java
+    :linenos:
+
+    public class GatRenat {
+        public int vides = 7;         // vides disponibles del gat Renat
+    }
+
+Una mica de *culturilla* POO
+============================
+
+Tot i que ``vides`` és una variable, en el món de la POO aquest tipus de
+*bestioles* se les coneix com *propietats* o *camps*.
+
+Una classe pot definir tantes propietats com li calguin.
+
+Als valors que tenen les propietats d'una instància en un determinat
+moment se li anomena *estat* de la instància.
+
+Què haig de fer?
+================
+
+.. uml::
+    :align: center
+
+     @startuml
+     hide circle
+     skinparam monochrome true
+     skinparam classAttributeIconSize 0
+
+
+     class GatRenat {
+         + vides: int
+         + posicio: String
+     }
+     @enduml
+
+En aquesta ocasió afegirem al nostre gat Renat la possibilitat d'indicar
+en quina posició es troba. En concret, podrà estar dret, assegut o estirat.
+
+Modifica la definició de la seva classe perquè pugui guardar aquesta
+informació, fent que inicialment el gat estigui estirat.
+
+La informació de l'estat la guardarem en una propietat amb el nom
+``posicio`` que serà de tipus String.
+
+Crea una classe anomenada ``UsaGatRenat`` que disposi d'un ``main()`` en el que:
+
+* s'instanciï una variable de tipus ``GatRenat``
+
+* es mostri el seu estat inicial, és a dir, la informació del nombre de
+  vides i la posició inicial)
+
+* es modifiqui a *assegut*, i
+
+* es torni a mostrar la nova posició.
+
+L'execució hauria de ser:
+
+.. code-block:: console
+    :emphasize-lines: 2-
+
+    $ java UsaGatRenat
+    Vides inicials: 7
+    Posició inicial: estirat
+    Posició final: assegut

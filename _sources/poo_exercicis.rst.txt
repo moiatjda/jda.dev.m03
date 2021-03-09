@@ -1,0 +1,19 @@
+#########
+Exercicis
+#########
+
+.. toctree::
+    :maxdepth: 1
+    :titlesonly:
+
+    exercici_04_01_vides.rst
+    exercici_04_02_accident.rst
+    exercici_04_03_dos_gats.rst
+    exercici_04_04_desde_fora.rst
+    exercici_04_05_posicio.rst
+    exercici_04_06_vides_correctes.rst
+    exercici_04_07_posicio_correcta.rst
+    exercici_04_08_com_esta.rst
+    exercici_04_09_ensinistrat.rst
+    exercici_04_10_assessinable.rst
+    exercici_04_11_classes_i_objectes.rst

@@ -1,0 +1,431 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ca" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Exercici 04_01. En Renat té set vides &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Exercici 04_02. En Renat té un accident" href="exercici_04_02_accident.html" />
+    <link rel="prev" title="Exercicis" href="poo_exercicis.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació amb Java
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-21
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moduls.html">Mòduls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fitxers.html">Fitxers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="poo.html">Programació Orientada a Objectes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="classes_i_objectes.html">Classes i objectes</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="poo_exercicis.html">Exercicis</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#"> Exercici 04_01. En Renat té set vides</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_04_02_accident.html"> Exercici 04_02. En Renat té un accident</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_04_03_dos_gats.html"> Exercici 04_03. Exercici 3. Hi ha dos gats Renat?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_04_04_desde_fora.html"> Exercici 04_04. Renat també des de fora</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_04_05_posicio.html"> Exercici 04_05. Renat té posició</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_04_06_vides_correctes.html"> Exercici 04_06. Vides sempre correctes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_04_07_posicio_correcta.html"> Exercici 04_07. Posició sempre correcta</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_04_08_com_esta.html"> Exercici 04_08. Com està Renat?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_04_09_ensinistrat.html"> Exercici 04_09. En Renat està ensinistrat!</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_04_10_assessinable.html"> Exercici 04_10. En Renat és assessinable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_04_11_classes_i_objectes.html"> Exercici 04_11. Què he aprés de les classes i objectes?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="apendix.html">Apèndix</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació amb Java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="poo.html">Programació Orientada a Objectes</a> &raquo;</li>
+        
+          <li><a href="poo_exercicis.html">Exercicis</a> &raquo;</li>
+        
+      <li> Exercici 04_01. En Renat té set vides</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="exerciseicon-exercici-04-01-en-renat-te-set-vides">
+<h1><img alt="exerciseicon___" src="_images/exerciseicon___.png" /> Exercici 04_01. En Renat té set vides<a class="headerlink" href="#exerciseicon-exercici-04-01-en-renat-te-set-vides" title="Link permanent a aquest títol">¶</a></h1>
+<p class="rubric">Context</p>
+<ul class="simple">
+<li><p>Carpeta de lliurament: <code class="docutils literal notranslate"><span class="pre">04_01_vides/</span></code></p></li>
+<li><p>Continguts relacionats: <a class="reference internal" href="classes_i_objectes.html"><span class="doc">Classes i objectes</span></a></p></li>
+<li><p>Com lliurar-lo: <a class="reference internal" href="holagit.html#instruccions-git"><span class="std std-ref">instruccions</span></a></p></li>
+</ul>
+<p class="rubric">Enunciat</p>
+<p>Avui coneixeràs el gat Renat.  Et presento la seva foto:</p>
+<div class="figure align-center">
+<p class="plantuml">
+<img src="_images/plantuml-dc767f4ac0f155cfa0513ae94294faba6e62b09f.png" alt=" &#64;startuml
+ hide circle
+ skinparam monochrome true
+ skinparam classAttributeIconSize 0
+
+
+ class GatRenat {
+     + vides: int
+     + {static} main(String[])
+ }
+ &#64;enduml"/>
+</p>
+</div>
+<p>Segurament no era com te l’imaginaves, oi? Bé, es tracta d’un esquema
+gràfic que segueix la notació <strong>UML</strong> (<em>Unified Modeling Languaje</em> o
+<em>Llenguatge de Modelització Unificat</em>)</p>
+<p>Al final d’aquesta pàgina et faig cinc cèntims més sobre aquesta notació,
+però ara la oblidarem per un moment, doncs estem apunt de conèixer el
+<em>veritable</em> gat Renat:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GatRenat</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="n">vides</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>         <span class="c1">// vides disponibles del gat Renat</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">GatRenat</span> <span class="n">renat</span><span class="p">;</span>           <span class="c1">// declarem la referència al gat</span>
+        <span class="n">renat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">();</span>   <span class="c1">// creem la instància del gat Renat.</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Al gat Renat li queden &quot;</span> <span class="o">+</span> <span class="n">renat</span><span class="p">.</span><span class="na">vides</span> <span class="o">+</span> <span class="s">&quot; vides&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Val, potser tampoc no te l’imaginaves així. Però, què esperaves? Estem a
+un curs de programació!</p>
+<div class="section" id="que-haig-de-fer">
+<h2>Què haig de fer?<a class="headerlink" href="#que-haig-de-fer" title="Link permanent a aquest títol">¶</a></h2>
+<p>Copia i executa el codi i contesta les següents preguntes:</p>
+<ol class="arabic">
+<li><p>Quin ha de ser el nom del fitxer que contingui aquest codi perquè
+funcioni?</p></li>
+<li><p>A quina línia està declarada la variable <code class="docutils literal notranslate"><span class="pre">renat</span></code> que apareix a la
+línia 6?</p></li>
+<li><p>A quina línia s’assigna el valor que es mostra per pantalla?</p></li>
+<li><p>Quin valor apareix si a aquesta línia no s’assigna cap valor?</p></li>
+<li><p>Què passaria sí la línia 5 no hi fos? Perquè creus?</p></li>
+<li><p>Perquè creus que el comentari de la línia 4 parla de <em>referència</em>?
+Quina relació té amb el concepte de <em>variable</em>?</p></li>
+<li><p>La línia 5 parla d”<em>instància</em>. En aquest context, una instància es
+pot entendre com el contingut real al que fa referència la variable
+<code class="docutils literal notranslate"><span class="pre">renat</span></code>. Es diu que la instància es <em>construeix</em> amb l’operador
+<code class="docutils literal notranslate"><span class="pre">new</span></code> i això implica bàsicament que es reserva espai de memòria
+per a allotjar tota la informació relativa a la instància.</p>
+<p>Descriu, respecte aquesta línia quina és la instància, quina la variable,
+quina la referència, quin el valor i quina la classe.</p>
+</li>
+<li><p>Pel que hem estudiat fins ara, <code class="docutils literal notranslate"><span class="pre">vides</span></code> podria ser considerat una
+variable global dins de la classe <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code> però hi ha dues
+diferències respecte a les variables globals que varem veure a
+<a class="reference internal" href="moduls_variables.html"><span class="doc">Variables i mòduls</span></a>. Sabries indicar quines?</p>
+<p>Ah, i no té a veure amb el <code class="docutils literal notranslate"><span class="pre">public</span></code>. D’això ja en parlarem més tard.</p>
+<p>Vinga, t’ajudo amb una d’elles amb una pregunta: pots accedir a
+<code class="docutils literal notranslate"><span class="pre">vides</span></code> directament des de <code class="docutils literal notranslate"><span class="pre">main()</span></code> sense posat-hi davant
+<code class="docutils literal notranslate"><span class="pre">renat.</span></code>?</p>
+</li>
+</ol>
+<p>El resultat de l’exercici consistirà en el fitxer <strong>en text pla</strong>, amb el codi
+i, al final d’aquest, en forma de comentaris, cada pregunta amb la seva
+resposta.</p>
+<p>No oblidis afegir una petita capçalera en la que indiquis el teu nom, la data
+i una petita descripció del contingut.</p>
+<p>Considera fer servir la següent plantilla escrita en format
+<a class="reference internal" href="rst_intro.html"><span class="doc">ReStructuredText</span></a>:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">#####################################</span>
+<span class="gh">Exercici 04_01. En Renat té set vides</span>
+<span class="gh">#####################################</span>
+
+<span class="m">*</span> autor/a: «…»
+
+<span class="m">*</span> data: «…»
+
+<span class="gh">Introducció</span>
+<span class="gh">===========</span>
+
+En aquest exercici «…»
+
+<span class="gh">Codi</span>
+<span class="gh">====</span>
+
+El codi a analitzar és el següent:
+
+<span class="se">::</span>
+
+<span class="s">    public class GatRenat {</span>
+<span class="s">        public int vides = 7;         // vides disponibles del gat Renat</span>
+<span class="s">        public static void main(String[] args) {</span>
+<span class="s">            GatRenat renat;           // declarem la referència al gat</span>
+<span class="s">            renat = new GatRenat();   // creem la instància del gat Renat.</span>
+<span class="s">            System.out.println(&quot;Al gat Renat li queden &quot; + renat.vides + &quot; vides&quot;);</span>
+<span class="s">        }</span>
+<span class="s">    }</span>
+
+<span class="gh">Pregunta 1</span>
+<span class="gh">==========</span>
+
+Quin ha de ser el nom del fitxer que contingui aquest codi perquè
+funcioni?
+
+
+«…»
+
+<span class="gh">Pregunta 2</span>
+<span class="gh">==========</span>
+
+A quina línia està declarada la variable <span class="s">``renat``</span> que apareix a la
+línia 6?
+
+«…»
+</pre></div>
+</div>
+</div>
+<div class="section" id="mes-sobre-el-diagrama-uml">
+<h2>Més sobre el diagrama UML<a class="headerlink" href="#mes-sobre-el-diagrama-uml" title="Link permanent a aquest títol">¶</a></h2>
+<p>El diagrama UML és una mena d’esquema que representa els punts més
+significatius d’un codi.</p>
+<p>Hi ha molts tipus de diagrama UML. Aquest en concret es diu <em>diagrama de
+classes</em> perquè representa les classes del nostre programa. En aquest cas
+només en tenim una (<code class="docutils literal notranslate"><span class="pre">GatRenat</span></code>) però hi podrien haver més.</p>
+<p>En els diagrames de classes, les classes apareixen dins d’una caixa,
+normalment amb tres compartiments. El primer conté el nom de la classe, el
+segon conté les «variables» i el tercer conté els mòduls.</p>
+<p>És important entendre que si apareix al diagrama, llavors tindrà
+representació al codi. En canvi, si no apareix al diagrama, simplement vol
+dir que qui ha fet el diagrama no ha considerat significatiu en aquest
+context.</p>
+<p>Per exemple, el mètode <code class="docutils literal notranslate"><span class="pre">main()</span></code> sovint s’obvia, quedant el diagrama
+així:</p>
+<div class="figure align-center">
+<p class="plantuml">
+<img src="_images/plantuml-6ced962ad468a6e7555f27a2a3b2f7c19d06bb00.png" alt=" &#64;startuml
+ hide circle
+ skinparam monochrome true
+ skinparam classAttributeIconSize 0
+
+
+ class GatRenat {
+     + vides: int
+ }
+ &#64;enduml"/>
+</p>
+</div>
+<p>No et preocupis si no coneixes aquesta notació. Aquest no és un curs
+d’UML! Sovint apareixerà notació que ni apareixerà explicada.</p>
+<p>La farem servir únicament de suport i perquè ens resultarà molt senzilla
+per entendre d’una ullada de què estem parlant. De fet, probablement és el
+seu us principal.</p>
+<p>Si en vols saber més, però, sempre pots consultar la seva <a class="reference external" href="http://uml.org/">web oficial</a> o algun dels innumerables recursos que hi ha publicats
+per la Web i en forma de llibres.  Sí, es tracta d’una notació amb força
+història.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="exercici_04_02_accident.html" class="btn btn-neutral float-right" title="Exercici 04_02. En Renat té un accident" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="poo_exercicis.html" class="btn btn-neutral float-left" title="Exercicis" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2021 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
