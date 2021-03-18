@@ -41,8 +41,7 @@ desenvolupament dirigit per la prova amb l'exercici del *Puzle*.
 
 A més a més, hem descobert noves utilitats de la API de Java, com ara les
 funcions ``split()`` i ``replace()`` amb Strings i ``sort()`` d'Arrays.
-També que amb ``import`` podem estalviar-nos d'escriure el nom sencer  i,
-fins i tot, hem conegut un nou tipus de bucle. El *for millorat* o
+Fins i tot, hem conegut un nou tipus de bucle: el *for millorat* o
 *enhanced for*.
 
 No ha estat malament, oi?

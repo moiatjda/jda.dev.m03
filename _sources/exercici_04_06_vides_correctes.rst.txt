@@ -159,7 +159,11 @@ Contesta les següents preguntes:
 7. Com descriuries el paper de ``public`` i ``private`` a les propietats
    d'una classe?
 
-8. Per cert, t'has fixat que els mòduls ``getVides()`` i ``setVides()``
+8. Aquesta implementació de ``GatRenat`` disposa de *getter* i de
+   *setter*. T'has plantejat què passaria si només en tingués *getter*? i
+   si només en tingués *setter*? i si no en tingués cap dels dos?
+
+9. Per cert, t'has fixat que els mòduls ``getVides()`` i ``setVides()``
    tenen una definició lleugerament diferent als mòduls que hem declarat
    fins ara en aquest curs? En concret, no els falta alguna cosa?
 
