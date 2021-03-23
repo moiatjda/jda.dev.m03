@@ -256,16 +256,14 @@ fer referència. Passem a la següent línia:</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td rowspan="4"><p>renat = new GatRenat()</p></td>
-<td colspan="2" rowspan="4"><p>renat → &#64;100</p></td>
+<tr class="row-even"><td rowspan="3"><p>renat = new GatRenat()</p></td>
+<td colspan="2" rowspan="3"><p>renat → &#64;100</p></td>
 <td rowspan="3"><p>[&#64;100]</p>
 <p>«GatRenat.vides» → 7</p>
 </td>
 </tr>
 <tr class="row-odd"></tr>
 <tr class="row-even"></tr>
-<tr class="row-odd"><td><p>[&#64;200] «estirat»</p></td>
-</tr>
 </tbody>
 </table>
 <p>A la nostra simplificació, l’estat del gat Renat està accessible d’alguna
@@ -284,17 +282,15 @@ manera a partir de la posició <code class="docutils literal notranslate"><span 
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td rowspan="4"><p>int vides = renat.getVides()</p></td>
+<tr class="row-even"><td rowspan="3"><p>int vides = renat.getVides()</p></td>
 <td colspan="2"><p>renat → &#64;100</p></td>
 <td rowspan="3"><p>[&#64;100]</p>
 <p>«GatRenat.vides» → 7</p>
 </td>
 </tr>
-<tr class="row-odd"><td colspan="2" rowspan="3"><p>vides → 7</p></td>
+<tr class="row-odd"><td colspan="2" rowspan="2"><p>vides → 7</p></td>
 </tr>
 <tr class="row-even"></tr>
-<tr class="row-odd"><td><p>[&#64;200] «estirat»</p></td>
-</tr>
 </tbody>
 </table>
 <p>En fer <code class="docutils literal notranslate"><span class="pre">renat.getVides()</span></code> la funció <em>sap</em> que <code class="docutils literal notranslate"><span class="pre">renat</span></code> apunta a la posició

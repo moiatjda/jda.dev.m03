@@ -56,9 +56,6 @@ modificar una mica el que ja tenim.
 
      @enduml
 
-Fixa't que alguns mètodes apareixen subratllats. A un diagrama de classes
-en UML, els mètodes estàtics són diferenciats d'aquesta manera.
-
 La classe ``Escacs`` ofereix la mateixa funcionalitat que la antiga, però
 ara per instàncies. Per aquesta raó, totes les funcionalitats que tenen a
 veure amb el taulell, han perdut la seva marca de ``static``.  Una

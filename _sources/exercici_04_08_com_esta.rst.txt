@@ -112,7 +112,7 @@ Defineix la classe ``UsaGatRenat`` que respongui a la següent simulació:
     Finalment renat.estaViu(): false
     Finalment renat.estaDret(): true
     Finalment renat.estaAssegut(): false
-    Finalment renat.estaEstirat(): falso
+    Finalment renat.estaEstirat(): false
 
 Nota: D'acord, no és massa creïble que el Renat pugui estar a l'hora dret
 i mort. Ho deixarem així de moment en favor de la simplicitat. Se t'acut,
