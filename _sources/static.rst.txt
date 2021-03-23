@@ -141,6 +141,24 @@ trobem implementacions que fan privat el constructor i només pots crear
 instàncies a partir d'un mètode estàtic des del que podem controlar
 coses com ara quantes instàncies es creen!
 
+En UML els mètodes estàtics apareixen subratllats
+
+.. uml::
+    :align: center
+
+     @startuml
+     hide circle
+     skinparam monochrome true
+     skinparam classAttributeIconSize 0
+
+     class GatRenat {
+        +{static} esValidPerVides(int): boolean
+        +setVides(int):
+     }
+     @enduml
+
+
+
 |exerciseicon__T| :doc:`exercici_04_19_hora_static`
 
 En quant les propietats

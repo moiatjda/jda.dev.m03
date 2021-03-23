@@ -281,6 +281,21 @@ validació de valors, duplicació i comparació d’instàncies. Fins i tot
 trobem implementacions que fan privat el constructor i només pots crear
 instàncies a partir d’un mètode estàtic des del que podem controlar
 coses com ara quantes instàncies es creen!</p>
+<p>En UML els mètodes estàtics apareixen subratllats</p>
+<div class="figure align-center">
+<p class="plantuml">
+<img src="_images/plantuml-f5db8dd5637ffcefcfcf02797332b5c043d8f54a.png" alt=" &#64;startuml
+ hide circle
+ skinparam monochrome true
+ skinparam classAttributeIconSize 0
+
+ class GatRenat {
+    +{static} esValidPerVides(int): boolean
+    +setVides(int):
+ }
+ &#64;enduml"/>
+</p>
+</div>
 <p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_04_19_hora_static.html"><span class="doc"> Exercici 04_19. Mètodes de classe en Hora</span></a></p>
 </div>
 <div class="section" id="en-quant-les-propietats">
