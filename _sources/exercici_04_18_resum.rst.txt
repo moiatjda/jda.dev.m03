@@ -1,0 +1,28 @@
+#################################################################
+|exerciseicon___| Exercici 04_18. Què he aprés dels constructors?
+#################################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``04_18_resum/``
+
+* Continguts relacionats: :doc:`constructors`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+.. rubric:: Enunciat
+
+Fes un repàs dels continguts d'aquest tema incloent els exercicis anteriors.
+Indica exercici a exercici què has aprés de nou en fer-lo, o bé quins són els
+conceptes que introdueix l'exercici, si ja els coneixies anteriorment. Procura
+ser molt concret. Si et cal, ajuda't de (nous) exemples.
+
+En el cas que no hagis entès algun dels exercicis… bé, aquest cas no es pot
+donar ja que, abans de fer aquest exercici t'ajudaràs de les diferents fonts de
+suport que tens al teu abast (incloent, és clar, consultes al teu docent) per
+arribar a entendre'l. És a dir, **no val** dir, que un exercici no l'has entès!
+Entesos?
+
+Nota: és possible que vulguis fer aquest exercici com una ampliació del
+que vas fer a :doc:`exercici_04_11_classes_i_objectes`.
+

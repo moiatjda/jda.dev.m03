@@ -33,11 +33,11 @@ Per simplicitat, és preferible entendre que la classe engloba a un *tipus* o
      skinparam classAttributeIconSize 0
 
 
-     object renat_I
-     renat_I : vides = 7
+     object renatI
+     renatI : vides = 7
 
-     object renat_II
-     renat_II : vides = 7
+     object renatII
+     renatII : vides = 7
 
      @enduml
 
@@ -51,27 +51,26 @@ Considera el següent codi en el que tindrem més d'un gat Renat:
         public int vides = 7;   // vides disponibles del gat Renat
 
         public static void main(String[] args) {
-            GatRenat renat_I;
-            renat_I = new GatRenat();               // crea un primer gat Renat
-            System.out.println("El gat Renat I té  " + renat_I.vides + " vides");
+            GatRenat renatI;
+            renatI = new GatRenat();               // crea un primer gat Renat
+            System.out.println("El gat Renat I té  " + renatI.vides + " vides");
 
-            GatRenat renat_II = new GatRenat();     // crea un segon gat Renat!
-            System.out.println("El gat Renat II té " + renat_II.vides + " vides");
+            GatRenat renatII = new GatRenat();     // crea un segon gat Renat!
+            System.out.println("El gat Renat II té " + renatII.vides + " vides");
 
-            renat_I.vides++;
-            System.out.println("El gat Renat I té  " + renat_I.vides + " vides");
-            System.out.println("El gat Renat II té " + renat_II.vides + " vides");
+            renatI.vides++;
+            System.out.println("El gat Renat I té  " + renatI.vides + " vides");
+            System.out.println("El gat Renat II té " + renatII.vides + " vides");
 
-            renat_II = renat_I; // atenció: la instància de Renat II es perd!
-            System.out.println("El gat Renat I té  " + renat_I.vides + " vides");
-            System.out.println("El gat Renat II té " + renat_II.vides + " vides");
+            renatII = renatI; // atenció: la instància de Renat II es perd!
+            System.out.println("El gat Renat I té  " + renatI.vides + " vides");
+            System.out.println("El gat Renat II té " + renatII.vides + " vides");
 
-            renat_I.vides++;
-            System.out.println("El gat Renat I té  " + renat_I.vides + " vides");
-            System.out.println("El gat Renat II té " + renat_II.vides + " vides");
+            renatI.vides++;
+            System.out.println("El gat Renat I té  " + renatI.vides + " vides");
+            System.out.println("El gat Renat II té " + renatII.vides + " vides");
         }
     }
-
 
 Copia i executa el codi i contesta les següents preguntes:
 

@@ -1,0 +1,68 @@
+####################################################
+|exerciseicon__T| Exercici 04_16. Molts constructors
+####################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``04_16_molts_constructors/``
+
+* Continguts relacionats: :doc:`constructors`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Posem en pràctica la possibilitat d'afegir més d'un constructor al nostre
+amic Renat. En concret, ens interessarà permetre crear instàncies de les
+següents maneres:
+
+.. uml::
+    :align: center
+
+     @startuml
+     hide circle
+     skinparam monochrome true
+     skinparam classAttributeIconSize 0
+
+     class GatRenat {
+        -posicio
+        +GatRenat()
+        +GatRenat(int)
+        +GatRenat(String)
+        +GatRenat(int, String)
+        +getPosicio()
+        +setPosicio()
+     }
+     @enduml
+
+.. code-block:: java
+    :linenos:
+
+        public static void main(String[] args) {
+            GatRenat[] renats = {
+                new GatRenat(),         // tot per defecte
+                new GatRenat(8),        // 8 vides i posició per defecte
+                new GatRenat("dret"),   // posició dret i vides per defecte
+                new GatRenat(8, "dret") // 8 vides i posició dret
+
+            };
+            for (GatRenat renat: renats) {
+                System.out.println(renat);
+            }
+        }
+
+Executant el codi resultant ens trobarem:
+
+.. code-block:: console
+
+    $ java GatRenat
+    Vides: 7. Posició: estirat
+    Vides: 8. Posició: estirat
+    Vides: 7. Posició: dret
+    Vides: 8. Posició: dret
+
+Vols fer-ho molt modulat?
+Implementa-ho de manera que tots els constructors excepte un facin ús de
+``this()``, i que el que no fa ús de ``this()``, fa us dels *setters*.

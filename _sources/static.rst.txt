@@ -1,0 +1,207 @@
+###############################
+Membres d'instància i de classe
+###############################
+
+Tot i que habitualment els membres que definim a les nostres classes,
+estan orientats a cada instància concreta de la classe, hi ha ocasions en
+que ens cal disposar de mètodes o/i propietats que facin referència a tota
+la classe i no a una instància concreta d'aquesta.
+
+En quant els mètodes
+====================
+
+Ja ens hem adonat que hi ha diferència depenent de si els mètodes són
+marcats o no amb ``static``. Ja va tocant presentar aquest punt una mica
+més formalment.
+
+Quan un mètode no és marcat amb ``static``, es diu que el mètode és
+d'instància o també dinàmic. Els mètodes d'instància reben sempre un
+paràmetre implícit anomenat ``this`` que fa referència a la instància en
+la que s'executaran.
+
+En tenim molts exemples de mètodes d'instància, per exemple:
+
+.. code-block:: java
+    :emphasize-lines: 3
+
+    public void setVides(int vides) {
+        if (vides >= 0) {
+            this.vides = vides;
+        }
+    }
+
+De vegades però, ens trobem que hi ha mètodes que no tenen sentit per una
+instància concreta sinó que són més generals per la classe.
+
+Deixa'm que et posi un exemple. El mètode ``setVides()`` comprova si les
+vides són vàlides. En la situació actual, les vides són vàlides quan són
+com a mínim 0. Què passaria, però si les comprovacions fossin més
+sofisticades pel nostre amic Renat? Imagina't, potser no pot tenir més de
+7 vides o, només un nombre senar de vides o zero, o només un nombre de
+vides primer… Pots esperar qualsevol cosa d'un gat tan especial.
+
+En comptes d'implementar aquestes condicions dins del *setter*, que, com
+veus, podrien arribar a ser complexes, potser ens interessarà crear un nou
+mètode que rebi un nombre de vides i ens digui si és vàlid o no.
+
+.. code-block:: java
+
+    public boolean esValidPerVides(int valor) {
+        return valor >= 0;
+    }
+
+    public void setVides(int vides) {
+        if (esValidPerVides(vides)) {
+            this.vides = vides;
+        }
+    }
+
+Podríem considerar fer privat ``esValidPerVides()`` però pot ser
+interessant pels usuaris de ``GatRenat`` saber si les vides són o no
+vàlides abans d'intentar asignar-li un nombre de vides determinat.
+
+Per exemple,
+
+.. code-block:: java
+
+    if (renat.esValidPerVides(videsLlegides)) {
+        renat.setVides(videsLlegides);
+    } else {
+        System.out.println("ERROR: valor no vàlid per vides");
+    }
+
+Fixa't que el mateix podríem voler fer abans de crear el gat amb un nombre
+determinat de vides:
+
+.. code-block:: java
+
+    GatRenat unaInstanciaQueNoFareServirGaire = new GatRenat();
+    if (unaInstanciaQueNoFareServirGaire.esValidPerVides(videsLlegides)) {
+        renat = new GatRenat(videsLlegides);
+    } else {
+        System.out.println("ERROR: valor no vàlid per vides");
+    }
+
+Quin nom més llarg, oi? Ens està dient que estem creant una instància
+*només* per saber si les vides són vàlides o no! Per molt que ho intentem
+amagar amb la següent versió de codi, no deixa de ser absurd:
+
+.. code-block:: java
+
+    if (new GatRenat().esValidPerVides(videsLlegides)) {    // instància perduda
+        renat = new GatRenat(videsLlegides);
+    } else {
+        System.out.println("ERROR: valor no vàlid per vides");
+    }
+
+El problema aquí és que comprovar si ``videsLlegides`` és o no un valor
+vàlid per les vides d'un gat Renat, és quelcom *independent* d'una
+instància concreta. És a dir, per qualsevol instància, el resultat de
+``esValidPerVides()`` ha de ser el mateix. És un resultat que depen de la
+classe i no de la instància.
+
+El que voldríem fer és:
+
+.. code-block:: java
+
+    if (GatRenat.esValidPerVides(videsLlegides)) {    // no creem cap instància
+        renat = new GatRenat(videsLlegides);
+    } else {
+        System.out.println("ERROR: valor no vàlid per vides");
+    }
+
+Però això ja ho hem fet abans! Declarant el mètode com ``static``
+
+.. code-block:: java
+
+    public static boolean esValidPerVides(int valor) {
+        return valor >= 0;
+    }
+
+    public void setVides(int vides) {
+        if (esValidPerVides(vides)) {
+            this.vides = vides;
+        }
+    }
+
+Als mètodes estàtics els anomenarem també mètodes de classe.
+
+Una particularitat dels mètodes de classe és que **no** disposen de la
+referència ``this``. És clar, ``this`` fa referència a una instància i els
+mètodes de classe no en tenen cap d'instància!
+
+Fixa't que, des del codi del mètode d'instància ``setVides()``, podem
+accedir sense problemes al mètode de classe ``esValidPerVides()`` però a
+l'inrevés no. Des d'un mètode de classe ens caldrà crear una instància per
+poder accedir a un mètode d'instància.
+
+És molt típic fer servir mètodes de classe per oferir funcionalitats de
+validació de valors, duplicació i comparació d'instàncies. Fins i tot
+trobem implementacions que fan privat el constructor i només pots crear
+instàncies a partir d'un mètode estàtic des del que podem controlar
+coses com ara quantes instàncies es creen!
+
+|exerciseicon__T| :doc:`exercici_04_19_hora_static`
+
+En quant les propietats
+=======================
+
+Les propietats també poden ser de classe.
+
+Un dels exemples més típics és el de portar el comptador de quantes
+instàncies d'una classe s'han creat.
+
+Considera el següent codi, executa'l i intenta entendre el perquè de la sortida 
+
+.. code-block:: java
+    :linenos:
+
+    /* Demostració d'ús de membres de classe */
+    public class GatRenat {
+        private static int numInstancies = 0;
+        private int vides = 7;
+        public GatRenat() {
+            // constructor per defecte incrementa el nombre d'instàncies
+            GatRenat.numInstancies++;
+            System.out.println("Creat un nou gat Renat. Ja van " + numInstancies);
+        }
+        public static int getNumInstancies() {
+            // retorna el nombre d'instàncies creades fins el moment
+            return numInstancies;
+        }
+        public int getVides() { return vides; }
+        public void setVides(int vides) { if (vides>=0) this.vides = vides; }
+        public String toString() { return "Gat Renat amb " + vides + " vides"; }
+        public static void main(String[] args) {
+            System.out.println("Inicialment el nombre d'instàncies és: " +
+                GatRenat.getNumInstancies());
+            // crea uns quants GatRenat per demostrar l'ús de membres estàtics
+            GatRenat[] gats = new GatRenat[10];
+            for (int i=0; i < gats.length; i++) {
+                gats[i] = new GatRenat();
+                gats[i].setVides(i);    // canviem les vides només per distingir-los
+                System.out.println("Tenim: " + gats[i] + " amb " +
+                    gats[i].getNumInstancies() + " germanets");
+            }
+            // tornem a demanar a cadascun quants germans té
+            System.out.println("I si tornem a demanar-los quants germans tenen, ens diuen:");
+            for (int i=0; i < gats.length; i++) {
+                System.out.println(gats[i] + " amb " +
+                    gats[i].getNumInstancies() + " germanets");
+            }
+        }
+    }
+
+Hi ha diferents usos per les propietats estàtiques. Normalment les fem
+finals per definir constants de la classe. De vegades, però, ens poden
+interessar per guardar resultats que vulguem compartir entre les
+instàncies, com ara el nom del fitxer en el que s'han d'emmagatzemar.
+
+De moment, no t'ofereixo cap exercici per practicar-ho. Només tingues
+present aquesta possibilitat per si surt la necessitat.
+
+
+En canvi, et proposo aquest exercici per acabar d'arrodonir tot el que
+portem treballat fins ara sobre la programació orientada a objectes:
+
+|exerciseicon__T| :doc:`exercici_04_20_puzles`

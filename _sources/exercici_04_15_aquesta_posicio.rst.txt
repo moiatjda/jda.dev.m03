@@ -1,0 +1,27 @@
+#################################################
+|exerciseicon__T| Exercici 04_15. Aquesta posició
+#################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``04_15_aquesta_posicio/``
+
+* Continguts relacionats: :doc:`constructors`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Crea una nova versió de :doc:`l'exercici anterior
+<exercici_04_14_constructor_posicio>`, de manera que el constructor
+i el setter de posició
+defineixin el mateix nom pel paràmetre que especifica la posició que
+per la propietat. És a dir, les signatures seran:
+
+.. code-block:: java
+
+    public GatRenat(int vides, String posicio)
+    public void setPosicio(String posicio)
+

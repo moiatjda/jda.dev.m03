@@ -1,0 +1,149 @@
+################################################
+|exerciseicon__T| Exercici 04_17. La classe Hora
+################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``04_17_hora/``
+
+* Continguts relacionats: :doc:`constructors`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Implementa la classe Hora amb les propietats (privades) hora, minut i
+segon de tipus enter, i els accessors (públics) que assegurin que
+l'hora és sempre vàlida.
+
+.. uml::
+    :align: center
+
+     @startuml
+     hide circle
+     skinparam monochrome true
+     skinparam classAttributeIconSize 0
+
+     class Hora {
+        -hores
+        -minuts
+        -segons
+        +Hora()
+        +Hora(int, int, int)
+        +getHores(): int
+        +getMinuts(): int
+        +getSegons(): int
+        +setHores(int)
+        +setMinuts(int)
+        +setSegons(int)
+        +incrementa()
+        +decrementa()
+        +incremnta(int)
+        +decrementa(int)
+        +compareTo(Hora)
+        +toString(): String
+     }
+     @enduml
+
+
+Per defecte, l'hora correspondrà a ``0:00:00``, però la classe oferirà els mecanismes necessaris per
+a inicialitzar una hora amb algun altre valor *vàlid*. És a dir, oferirà un constructor específic
+amb la signatura ``Hora(int hores, int minuts, int segons)`` que, en cas de que els valors rebuts no
+corresponguin amb una hora vàlida, inicialitzarà l'hora amb el valor per defecte.
+
+Afegeix els següents mètodes:
+
+* ``void incrementa()``: fa que l'hora tingui un segon més
+
+* ``void incrementa(int)``: fa que l'hora s'incrementi en el nombre de segons indicats
+
+* ``void decrementa()``: fa que l'hora tingui un segon menys
+
+* ``void decrementa(int)``: fa que l'hora es decrementi en el nombre de segons indicats
+
+* ``int compareTo(Hora)``: compara amb l'hora indicada i retorna <0 si és menor que la indicada, 0 si són iguals i >0 si és més gran que la indicada.
+
+* ``String toString()``: retorna un String amb l'hora en format h:mm:ss.
+
+
+Inclou a ``Hora.java`` el següent `main()`` per fer una prova senzilla:
+
+.. code-block:: java
+    :linenos:
+
+    /**
+     * Compara dues hores i retorna l'operador corresponent
+     * Per exemple, si hora1 és menor que hora2, l'operador serà "<". Els
+     * altres dos valors possibles són ">" i "=="
+     * @param hora1: primera hora a comparar
+     * @param hora2: segona hora a comparar
+     * @return operador resultant
+     */
+    private static String composaOperadorComparacio(Hora hora1, Hora hora2) {
+        int comparacio = hora1.compareTo(hora2);
+        if (comparacio < 0) {
+            return "<";
+        } else if (comparacio > 0) {
+            return ">";
+        } else {
+            return "==";
+        }
+    }
+
+    public static void main(String[] args) {
+        Hora hora1 = new Hora();
+        Hora hora2 = new Hora(0, 0, 2);
+        System.out.printf("Inicialment hora1: %s %s hora2: %s%n",
+                hora1,
+                composaOperadorComparacio(hora1, hora2),
+                hora2);
+        System.out.println("Incrementem 1 segon a la primera i decrementem 1 segon a la segona");
+        hora1.incrementa();
+        hora2.decrementa();
+        System.out.printf("Finalment hora1: %s %s hora2: %s%n",
+                hora1,
+                composaOperadorComparacio(hora1, hora2),
+                hora2);
+
+    }
+
+Amb aquest ``main()`` l'execució de ``Hora`` generarà:
+
+.. code-block:: console
+
+    $ javac Hora.java && java Hora 
+    Inicialment hora1: 0:00:00 < hora2: 0:00:02
+    Incrementem 1 segon a la primera i decrementem 1 segon a la segona
+    Finalment hora1: 0:00:01 == hora2: 0:00:01
+
+
+**Notes / pistes**
+
+#. En cas que un constructor específic es trobi amb un o més
+   paràmetres no vàlids, inicialitzarà la instància amb els valors per
+   defecte: 0:00:00.
+
+#. Per escriure el 0 inicial als minuts i segons quan el valor és
+   menor de 10, es pot fer servir el mètode `System.out.format()
+   <https://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html>`_
+
+   Per si vas amb el temps molt just:
+
+   .. code-block:: java
+
+        System.out.printf("'%d %02d %05d%n'", 4, 4, 4);     // 4:04:04
+
+#. Quan hi ha tants jocs de prova com en aquest exercici, si no estàs fent
+   servir un IDE és possible que et costi trobar els errors. De vegades
+   pot ser útil redireccionar la sortida de ``prgtest.sh``. Per exemple:
+
+   .. code-block:: console
+
+        $ prgtest.sh | less
+
+        $ prgtest.sh &> /tmp/resultat ; less /tmp/resultat
+
+   Et permetrà navegar per la sortida de ``prgtest.sh``. Pots sortir
+   prement ``q``.

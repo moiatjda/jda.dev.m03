@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Exercici 04_11. Què he aprés de les classes i objectes? &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  <title>Exercici 04_20. El Taulell d’escacs &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
   
 
   
@@ -39,8 +39,8 @@
     <link rel="author" title="Quant a aquests documents" href="about.html" />
     <link rel="index" title="Índex" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
-    <link rel="next" title="Exercici 04_12. Posicionant des del constructor" href="exercici_04_12_constructor_posicio.html" />
-    <link rel="prev" title="Exercici 04_10. En Renat és assessinable" href="exercici_04_10_assessinable.html" />
+    <link rel="next" title="Apèndix" href="apendix.html" />
+    <link rel="prev" title="Exercici 04_19. Mètodes de classe en Hora" href="exercici_04_19_hora_static.html" />
      
     <script class="googleanalytics" src="_static/moiscripts.js"></script>
 
@@ -108,7 +108,7 @@
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_08_com_esta.html"> Exercici 04_08. Com està Renat?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_09_ensinistrat.html"> Exercici 04_09. En Renat està ensinistrat!</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_10_assessinable.html"> Exercici 04_10. En Renat és assessinable</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#"> Exercici 04_11. Què he aprés de les classes i objectes?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_04_11_classes_i_objectes.html"> Exercici 04_11. Què he aprés de les classes i objectes?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_12_constructor_posicio.html"> Exercici 04_12. Posicionant des del constructor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_13_constructor_parametritzat.html"> Exercici 04_13. Posicio parametritzada</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_14_constructor_posicio.html"> Exercici 04_14. Posició protegida en néixer</a></li>
@@ -117,7 +117,7 @@
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_17_hora.html"> Exercici 04_17. La classe Hora</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_18_resum.html"> Exercici 04_18. Què he aprés dels constructors?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_19_hora_static.html"> Exercici 04_19. Mètodes de classe en Hora</a></li>
-<li class="toctree-l3"><a class="reference internal" href="exercici_04_20_puzles.html"> Exercici 04_20. El Taulell d’escacs</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#"> Exercici 04_20. El Taulell d’escacs</a></li>
 </ul>
 </li>
 </ul>
@@ -173,7 +173,7 @@
         
           <li><a href="poo_exercicis.html">Exercicis</a> &raquo;</li>
         
-      <li> Exercici 04_11. Què he aprés de les classes i objectes?</li>
+      <li> Exercici 04_20. El Taulell d’escacs</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -191,26 +191,89 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="exerciseicon-exercici-04-11-que-he-apres-de-les-classes-i-objectes">
-<h1><img alt="exerciseicon___" src="_images/exerciseicon___.png" /> Exercici 04_11. Què he aprés de les classes i objectes?<a class="headerlink" href="#exerciseicon-exercici-04-11-que-he-apres-de-les-classes-i-objectes" title="Link permanent a aquest títol">¶</a></h1>
+  <div class="section" id="exerciseicon-t-exercici-04-20-el-taulell-d-escacs">
+<h1><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> Exercici 04_20. El Taulell d’escacs<a class="headerlink" href="#exerciseicon-t-exercici-04-20-el-taulell-d-escacs" title="Link permanent a aquest títol">¶</a></h1>
 <p class="rubric">Context</p>
 <ul class="simple">
-<li><p>Carpeta de lliurament: <code class="docutils literal notranslate"><span class="pre">04_11_classes_i_objectes/</span></code></p></li>
-<li><p>Continguts relacionats: <a class="reference internal" href="classes_i_objectes.html"><span class="doc">Classes i objectes</span></a></p></li>
+<li><p>Carpeta de lliurament: <code class="docutils literal notranslate"><span class="pre">04_20_puzles/</span></code></p></li>
+<li><p>Continguts relacionats: <a class="reference internal" href="static.html"><span class="doc">Membres d’instància i de classe</span></a></p></li>
 <li><p>Com lliurar-lo: <a class="reference internal" href="holagit.html#instruccions-git"><span class="std std-ref">instruccions</span></a></p></li>
+<li><p>[✓] Exercici amb <a class="reference internal" href="sobre_exercicis.html#descripcio-exercicis-autoavaluacio"><span class="std std-ref">autoavaluació</span></a></p></li>
 </ul>
 <p class="rubric">Enunciat</p>
-<p>Fes un repàs dels continguts d’aquest tema incloent els exercicis anteriors.
-Indica exercici a exercici què has aprés de nou en fer-lo, o bé quins són els
-conceptes que introdueix l’exercici, si ja els coneixies anteriorment. Procura
-ser molt concret. Si et cal, ajuda’t de (nous) exemples.</p>
-<p>En el cas que no hagis entès algun dels exercicis… bé, aquest cas no es pot donar ja que, abans de
-fer aquest exercici t’ajudaràs de les diferents fonts de suport que tens al teu abast (incloent, és
-clar, consultes al teu docent) per arribar a entendre’l. És a dir, <strong>no val</strong> dir, que un exercici
-no l’has entès! Entesos?</p>
-<p>Redacta aquest exercici en un document de text pla. Et recomano que facis servir
-algun format de text de marques com ara <a class="reference internal" href="rst_intro.html"><span class="doc">reStructuredText</span></a>
-o <a class="reference external" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">markdown</a>.</p>
+<p>Tornem a considerar l’exercici del <a class="reference internal" href="exercici_03_08_puzles.html"><span class="doc">Puzle d’escacs</span></a></p>
+<p>De vegades disposem d’un codi que funciona però que no presenta l’aspecte
+que ens agradaria. Per exemple, el nostre programa <code class="docutils literal notranslate"><span class="pre">Puzle</span></code> està fent
+servir el taulell d’una manera poc orientada a objectes.</p>
+<p>En aquesta ocasió ho modificarem per fer el codi més orientat a objectes.
+No li afegirem més funcionalitats, així que majoritariament serà copiar i
+modificar una mica el que ja tenim.</p>
+<div class="figure align-center">
+<p class="plantuml">
+<img src="_images/plantuml-644bd52913c82bf4ded3c3d1223bfca2b9503276.png" alt=" &#64;startuml
+ hide circle
+ skinparam monochrome true
+ skinparam classAttributeIconSize 0
+
+ class Escacs {
+    -taulell: char[][]
+    +Escacs()
+    +Escacs(char[][])
+    +getTaulell(): char[][]
+    +mostraTaulell()
+    +posicionaFigura(int, int, char): boolean
+    +mouFigura(int, int, int, int): boolean
+    +eliminaFigura(int, int): boolean
+    -{static} clonaTaulell(char[][]): char[][]
+    +{static} esFiguraValida(char): boolean
+ }
+
+ class Puzles {
+    {static} llegeixPuzle(String): Escacs
+    {static} escriuPuzle(String, Escacs)
+
+ }
+
+ Puzles -left-&gt; Escacs
+
+ &#64;enduml"/>
+</p>
+</div>
+<p>Fixa’t que alguns mètodes apareixen subratllats. A un diagrama de classes
+en UML, els mètodes estàtics són diferenciats d’aquesta manera.</p>
+<p>La classe <code class="docutils literal notranslate"><span class="pre">Escacs</span></code> ofereix la mateixa funcionalitat que la antiga, però
+ara per instàncies. Per aquesta raó, totes les funcionalitats que tenen a
+veure amb el taulell, han perdut la seva marca de <code class="docutils literal notranslate"><span class="pre">static</span></code>.  Una
+excepció és <code class="docutils literal notranslate"><span class="pre">esFiguraValida()</span></code>, que manté la marca <code class="docutils literal notranslate"><span class="pre">static</span></code> donat que
+no depenen d’una instància concreta de <code class="docutils literal notranslate"><span class="pre">Escacs</span></code>. El mètode
+<code class="docutils literal notranslate"><span class="pre">creaTaulellBuit()</span></code> han desaparegut doncs la seva feina la fa el
+constructor per defecte. També n’apareix un nou mètode, el <em>getter</em> de
+taulell, que permetrà a <code class="docutils literal notranslate"><span class="pre">Puzles</span></code> escriure el contingut al fitxer.</p>
+<p>El constructor específic crearà el taulell buit en cas que les dimensions
+del taulell rebut no siguin 8x8 o bé que alguna de les cel·les no sigui
+buida o figura vàlida.</p>
+<p>Quan estem creant una instància i li passem dades mutables, com ara el
+taulell al constructor de <code class="docutils literal notranslate"><span class="pre">Escacs</span></code>, s’obre un problema de seguretat
+doncs les dades podrien ser modificades fora de <code class="docutils literal notranslate"><span class="pre">Escacs</span></code> tot afegint una
+figura no vàlida. Cosa que deixaria un estat incorrecte.
+Per evitar-ho, <code class="docutils literal notranslate"><span class="pre">Escacs</span></code> disposa del mètode estàtic <code class="docutils literal notranslate"><span class="pre">clonaTaulell()</span></code>
+que, donat un taulell, en retorna una còpia. <code class="docutils literal notranslate"><span class="pre">Escacs</span></code> farà servir aquest
+per clonar el taulell rebut al  constructor específic, i per retornar una
+còpia amb el <code class="docutils literal notranslate"><span class="pre">getTaulell()</span></code>.</p>
+<div class="section" id="algunes-pistes">
+<h2>Algunes pistes<a class="headerlink" href="#algunes-pistes" title="Link permanent a aquest títol">¶</a></h2>
+<p>És molt possible que et faciliti el desenvolupament el disposar de
+mètodes com ara <code class="docutils literal notranslate"><span class="pre">esTaulellValid()</span></code> que donat un taulell retorni cert
+quan les mides i el contingut és vàlid. Considera definir tots els que et
+calguin. Considera si cal que siguin estàtics o d’instància.</p>
+</div>
+<div class="section" id="mes-culturilla-poo">
+<h2>Més <em>culturilla</em> POO<a class="headerlink" href="#mes-culturilla-poo" title="Link permanent a aquest títol">¶</a></h2>
+<p>A aquest tipus de transformacions en les que modifiquem el codi sense
+afegir-li cap funcionalitat, se la coneix com <em>refactoring</em> o <em>refacció</em>.
+Es tracta d’un procés que es recolza molt en el fet que disposem de proves
+automàtiques que ens avisaran si ens hem carregat alguna cosa.</p>
+</div>
 </div>
 
 
@@ -244,10 +307,10 @@ o <a class="reference external" href="https://github.com/adam-p/markdown-here/wi
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="exercici_04_12_constructor_posicio.html" class="btn btn-neutral float-right" title="Exercici 04_12. Posicionant des del constructor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="apendix.html" class="btn btn-neutral float-right" title="Apèndix" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="exercici_04_10_assessinable.html" class="btn btn-neutral float-left" title="Exercici 04_10. En Renat és assessinable" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="exercici_04_19_hora_static.html" class="btn btn-neutral float-left" title="Exercici 04_19. Mètodes de classe en Hora" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

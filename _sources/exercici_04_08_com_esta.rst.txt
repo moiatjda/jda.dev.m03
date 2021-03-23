@@ -65,6 +65,9 @@ Per cert, els accessors són també un tipus de mètode.
 Això de definir mètodes amb noms que faciliten la lectura és quelcom molt
 valorat en POO.
 
+Un altre terme habitual en la programació orientada a objecte és el de
+*membre*. Un membre d'una classe pot ser tan una propietat com un mètode.
+
 Què haig de fer?
 ================
 

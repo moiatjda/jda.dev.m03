@@ -1,0 +1,99 @@
+#####################################################
+|exerciseicon__T| Exercici 04_20. El Taulell d'escacs
+#####################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``04_20_puzles/``
+
+* Continguts relacionats: :doc:`static`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Tornem a considerar l'exercici del :doc:`Puzle d'escacs
+<exercici_03_08_puzles>`
+
+De vegades disposem d'un codi que funciona però que no presenta l'aspecte
+que ens agradaria. Per exemple, el nostre programa ``Puzle`` està fent
+servir el taulell d'una manera poc orientada a objectes.
+
+En aquesta ocasió ho modificarem per fer el codi més orientat a objectes.
+No li afegirem més funcionalitats, així que majoritariament serà copiar i
+modificar una mica el que ja tenim.
+
+.. uml::
+    :align: center
+
+     @startuml
+     hide circle
+     skinparam monochrome true
+     skinparam classAttributeIconSize 0
+
+     class Escacs {
+        -taulell: char[][]
+        +Escacs()
+        +Escacs(char[][])
+        +getTaulell(): char[][]
+        +mostraTaulell()
+        +posicionaFigura(int, int, char): boolean
+        +mouFigura(int, int, int, int): boolean
+        +eliminaFigura(int, int): boolean
+        -{static} clonaTaulell(char[][]): char[][]
+        +{static} esFiguraValida(char): boolean
+     }
+
+     class Puzles {
+        {static} llegeixPuzle(String): Escacs
+        {static} escriuPuzle(String, Escacs)
+
+     }
+
+     Puzles -left-> Escacs
+
+     @enduml
+
+Fixa't que alguns mètodes apareixen subratllats. A un diagrama de classes
+en UML, els mètodes estàtics són diferenciats d'aquesta manera.
+
+La classe ``Escacs`` ofereix la mateixa funcionalitat que la antiga, però
+ara per instàncies. Per aquesta raó, totes les funcionalitats que tenen a
+veure amb el taulell, han perdut la seva marca de ``static``.  Una
+excepció és ``esFiguraValida()``, que manté la marca ``static`` donat que
+no depenen d'una instància concreta de ``Escacs``. El mètode 
+``creaTaulellBuit()`` han desaparegut doncs la seva feina la fa el
+constructor per defecte. També n'apareix un nou mètode, el *getter* de
+taulell, que permetrà a ``Puzles`` escriure el contingut al fitxer.
+
+El constructor específic crearà el taulell buit en cas que les dimensions
+del taulell rebut no siguin 8x8 o bé que alguna de les cel·les no sigui
+buida o figura vàlida.
+
+Quan estem creant una instància i li passem dades mutables, com ara el
+taulell al constructor de ``Escacs``, s'obre un problema de seguretat
+doncs les dades podrien ser modificades fora de ``Escacs`` tot afegint una
+figura no vàlida. Cosa que deixaria un estat incorrecte.
+Per evitar-ho, ``Escacs`` disposa del mètode estàtic ``clonaTaulell()``
+que, donat un taulell, en retorna una còpia. ``Escacs`` farà servir aquest
+per clonar el taulell rebut al  constructor específic, i per retornar una
+còpia amb el ``getTaulell()``.
+
+Algunes pistes
+==============
+
+És molt possible que et faciliti el desenvolupament el disposar de
+mètodes com ara ``esTaulellValid()`` que donat un taulell retorni cert
+quan les mides i el contingut és vàlid. Considera definir tots els que et
+calguin. Considera si cal que siguin estàtics o d'instància.
+
+
+Més *culturilla* POO
+====================
+
+A aquest tipus de transformacions en les que modifiquem el codi sense
+afegir-li cap funcionalitat, se la coneix com *refactoring* o *refacció*.
+Es tracta d'un procés que es recolza molt en el fet que disposem de proves
+automàtiques que ens avisaran si ens hem carregat alguna cosa.

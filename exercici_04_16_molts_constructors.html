@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Exercici 04_11. Què he aprés de les classes i objectes? &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  <title>Exercici 04_16. Molts constructors &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
   
 
   
@@ -39,8 +39,8 @@
     <link rel="author" title="Quant a aquests documents" href="about.html" />
     <link rel="index" title="Índex" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
-    <link rel="next" title="Exercici 04_12. Posicionant des del constructor" href="exercici_04_12_constructor_posicio.html" />
-    <link rel="prev" title="Exercici 04_10. En Renat és assessinable" href="exercici_04_10_assessinable.html" />
+    <link rel="next" title="Exercici 04_17. La classe Hora" href="exercici_04_17_hora.html" />
+    <link rel="prev" title="Exercici 04_15. Aquesta posició" href="exercici_04_15_aquesta_posicio.html" />
      
     <script class="googleanalytics" src="_static/moiscripts.js"></script>
 
@@ -108,12 +108,12 @@
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_08_com_esta.html"> Exercici 04_08. Com està Renat?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_09_ensinistrat.html"> Exercici 04_09. En Renat està ensinistrat!</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_10_assessinable.html"> Exercici 04_10. En Renat és assessinable</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#"> Exercici 04_11. Què he aprés de les classes i objectes?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_04_11_classes_i_objectes.html"> Exercici 04_11. Què he aprés de les classes i objectes?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_12_constructor_posicio.html"> Exercici 04_12. Posicionant des del constructor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_13_constructor_parametritzat.html"> Exercici 04_13. Posicio parametritzada</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_14_constructor_posicio.html"> Exercici 04_14. Posició protegida en néixer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_15_aquesta_posicio.html"> Exercici 04_15. Aquesta posició</a></li>
-<li class="toctree-l3"><a class="reference internal" href="exercici_04_16_molts_constructors.html"> Exercici 04_16. Molts constructors</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#"> Exercici 04_16. Molts constructors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_17_hora.html"> Exercici 04_17. La classe Hora</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_18_resum.html"> Exercici 04_18. Què he aprés dels constructors?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_19_hora_static.html"> Exercici 04_19. Mètodes de classe en Hora</a></li>
@@ -173,7 +173,7 @@
         
           <li><a href="poo_exercicis.html">Exercicis</a> &raquo;</li>
         
-      <li> Exercici 04_11. Què he aprés de les classes i objectes?</li>
+      <li> Exercici 04_16. Molts constructors</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -191,26 +191,74 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="exerciseicon-exercici-04-11-que-he-apres-de-les-classes-i-objectes">
-<h1><img alt="exerciseicon___" src="_images/exerciseicon___.png" /> Exercici 04_11. Què he aprés de les classes i objectes?<a class="headerlink" href="#exerciseicon-exercici-04-11-que-he-apres-de-les-classes-i-objectes" title="Link permanent a aquest títol">¶</a></h1>
+  <div class="section" id="exerciseicon-t-exercici-04-16-molts-constructors">
+<h1><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> Exercici 04_16. Molts constructors<a class="headerlink" href="#exerciseicon-t-exercici-04-16-molts-constructors" title="Link permanent a aquest títol">¶</a></h1>
 <p class="rubric">Context</p>
 <ul class="simple">
-<li><p>Carpeta de lliurament: <code class="docutils literal notranslate"><span class="pre">04_11_classes_i_objectes/</span></code></p></li>
-<li><p>Continguts relacionats: <a class="reference internal" href="classes_i_objectes.html"><span class="doc">Classes i objectes</span></a></p></li>
+<li><p>Carpeta de lliurament: <code class="docutils literal notranslate"><span class="pre">04_16_molts_constructors/</span></code></p></li>
+<li><p>Continguts relacionats: <a class="reference internal" href="constructors.html"><span class="doc">Constructors</span></a></p></li>
 <li><p>Com lliurar-lo: <a class="reference internal" href="holagit.html#instruccions-git"><span class="std std-ref">instruccions</span></a></p></li>
+<li><p>[✓] Exercici amb <a class="reference internal" href="sobre_exercicis.html#descripcio-exercicis-autoavaluacio"><span class="std std-ref">autoavaluació</span></a></p></li>
 </ul>
 <p class="rubric">Enunciat</p>
-<p>Fes un repàs dels continguts d’aquest tema incloent els exercicis anteriors.
-Indica exercici a exercici què has aprés de nou en fer-lo, o bé quins són els
-conceptes que introdueix l’exercici, si ja els coneixies anteriorment. Procura
-ser molt concret. Si et cal, ajuda’t de (nous) exemples.</p>
-<p>En el cas que no hagis entès algun dels exercicis… bé, aquest cas no es pot donar ja que, abans de
-fer aquest exercici t’ajudaràs de les diferents fonts de suport que tens al teu abast (incloent, és
-clar, consultes al teu docent) per arribar a entendre’l. És a dir, <strong>no val</strong> dir, que un exercici
-no l’has entès! Entesos?</p>
-<p>Redacta aquest exercici en un document de text pla. Et recomano que facis servir
-algun format de text de marques com ara <a class="reference internal" href="rst_intro.html"><span class="doc">reStructuredText</span></a>
-o <a class="reference external" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">markdown</a>.</p>
+<p>Posem en pràctica la possibilitat d’afegir més d’un constructor al nostre
+amic Renat. En concret, ens interessarà permetre crear instàncies de les
+següents maneres:</p>
+<div class="figure align-center">
+<p class="plantuml">
+<img src="_images/plantuml-8b7d68ae88815d0e3ca4442727fa02fc7e994834.png" alt=" &#64;startuml
+ hide circle
+ skinparam monochrome true
+ skinparam classAttributeIconSize 0
+
+ class GatRenat {
+    -posicio
+    +GatRenat()
+    +GatRenat(int)
+    +GatRenat(String)
+    +GatRenat(int, String)
+    +getPosicio()
+    +setPosicio()
+ }
+ &#64;enduml"/>
+</p>
+</div>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">GatRenat</span><span class="o">[]</span> <span class="n">renats</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="k">new</span> <span class="n">GatRenat</span><span class="p">(),</span>         <span class="c1">// tot per defecte</span>
+            <span class="k">new</span> <span class="n">GatRenat</span><span class="p">(</span><span class="mi">8</span><span class="p">),</span>        <span class="c1">// 8 vides i posició per defecte</span>
+            <span class="k">new</span> <span class="n">GatRenat</span><span class="p">(</span><span class="s">&quot;dret&quot;</span><span class="p">),</span>   <span class="c1">// posició dret i vides per defecte</span>
+            <span class="k">new</span> <span class="n">GatRenat</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="s">&quot;dret&quot;</span><span class="p">)</span> <span class="c1">// 8 vides i posició dret</span>
+
+        <span class="p">};</span>
+        <span class="k">for</span> <span class="p">(</span><span class="n">GatRenat</span> <span class="n">renat</span><span class="p">:</span> <span class="n">renats</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">renat</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Executant el codi resultant ens trobarem:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java GatRenat
+<span class="go">Vides: 7. Posició: estirat</span>
+<span class="go">Vides: 8. Posició: estirat</span>
+<span class="go">Vides: 7. Posició: dret</span>
+<span class="go">Vides: 8. Posició: dret</span>
+</pre></div>
+</div>
+<p>Vols fer-ho molt modulat?
+Implementa-ho de manera que tots els constructors excepte un facin ús de
+<code class="docutils literal notranslate"><span class="pre">this()</span></code>, i que el que no fa ús de <code class="docutils literal notranslate"><span class="pre">this()</span></code>, fa us dels <em>setters</em>.</p>
 </div>
 
 
@@ -244,10 +292,10 @@ o <a class="reference external" href="https://github.com/adam-p/markdown-here/wi
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="exercici_04_12_constructor_posicio.html" class="btn btn-neutral float-right" title="Exercici 04_12. Posicionant des del constructor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="exercici_04_17_hora.html" class="btn btn-neutral float-right" title="Exercici 04_17. La classe Hora" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="exercici_04_10_assessinable.html" class="btn btn-neutral float-left" title="Exercici 04_10. En Renat és assessinable" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="exercici_04_15_aquesta_posicio.html" class="btn btn-neutral float-left" title="Exercici 04_15. Aquesta posició" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

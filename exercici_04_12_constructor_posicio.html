@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Exercici 04_11. Què he aprés de les classes i objectes? &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  <title>Exercici 04_12. Posicionant des del constructor &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
   
 
   
@@ -39,8 +39,8 @@
     <link rel="author" title="Quant a aquests documents" href="about.html" />
     <link rel="index" title="Índex" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
-    <link rel="next" title="Exercici 04_12. Posicionant des del constructor" href="exercici_04_12_constructor_posicio.html" />
-    <link rel="prev" title="Exercici 04_10. En Renat és assessinable" href="exercici_04_10_assessinable.html" />
+    <link rel="next" title="Exercici 04_13. Posicio parametritzada" href="exercici_04_13_constructor_parametritzat.html" />
+    <link rel="prev" title="Exercici 04_11. Què he aprés de les classes i objectes?" href="exercici_04_11_classes_i_objectes.html" />
      
     <script class="googleanalytics" src="_static/moiscripts.js"></script>
 
@@ -108,8 +108,8 @@
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_08_com_esta.html"> Exercici 04_08. Com està Renat?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_09_ensinistrat.html"> Exercici 04_09. En Renat està ensinistrat!</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_10_assessinable.html"> Exercici 04_10. En Renat és assessinable</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#"> Exercici 04_11. Què he aprés de les classes i objectes?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="exercici_04_12_constructor_posicio.html"> Exercici 04_12. Posicionant des del constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_04_11_classes_i_objectes.html"> Exercici 04_11. Què he aprés de les classes i objectes?</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#"> Exercici 04_12. Posicionant des del constructor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_13_constructor_parametritzat.html"> Exercici 04_13. Posicio parametritzada</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_14_constructor_posicio.html"> Exercici 04_14. Posició protegida en néixer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_15_aquesta_posicio.html"> Exercici 04_15. Aquesta posició</a></li>
@@ -173,7 +173,7 @@
         
           <li><a href="poo_exercicis.html">Exercicis</a> &raquo;</li>
         
-      <li> Exercici 04_11. Què he aprés de les classes i objectes?</li>
+      <li> Exercici 04_12. Posicionant des del constructor</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -191,26 +191,87 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="exerciseicon-exercici-04-11-que-he-apres-de-les-classes-i-objectes">
-<h1><img alt="exerciseicon___" src="_images/exerciseicon___.png" /> Exercici 04_11. Què he aprés de les classes i objectes?<a class="headerlink" href="#exerciseicon-exercici-04-11-que-he-apres-de-les-classes-i-objectes" title="Link permanent a aquest títol">¶</a></h1>
+  <div class="section" id="exerciseicon-t-exercici-04-12-posicionant-des-del-constructor">
+<h1><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> Exercici 04_12. Posicionant des del constructor<a class="headerlink" href="#exerciseicon-t-exercici-04-12-posicionant-des-del-constructor" title="Link permanent a aquest títol">¶</a></h1>
 <p class="rubric">Context</p>
 <ul class="simple">
-<li><p>Carpeta de lliurament: <code class="docutils literal notranslate"><span class="pre">04_11_classes_i_objectes/</span></code></p></li>
-<li><p>Continguts relacionats: <a class="reference internal" href="classes_i_objectes.html"><span class="doc">Classes i objectes</span></a></p></li>
+<li><p>Carpeta de lliurament: <code class="docutils literal notranslate"><span class="pre">04_12_constructor_posicio/</span></code></p></li>
+<li><p>Continguts relacionats: <a class="reference internal" href="constructors.html"><span class="doc">Constructors</span></a></p></li>
 <li><p>Com lliurar-lo: <a class="reference internal" href="holagit.html#instruccions-git"><span class="std std-ref">instruccions</span></a></p></li>
+<li><p>[✓] Exercici amb <a class="reference internal" href="sobre_exercicis.html#descripcio-exercicis-autoavaluacio"><span class="std std-ref">autoavaluació</span></a></p></li>
 </ul>
 <p class="rubric">Enunciat</p>
-<p>Fes un repàs dels continguts d’aquest tema incloent els exercicis anteriors.
-Indica exercici a exercici què has aprés de nou en fer-lo, o bé quins són els
-conceptes que introdueix l’exercici, si ja els coneixies anteriorment. Procura
-ser molt concret. Si et cal, ajuda’t de (nous) exemples.</p>
-<p>En el cas que no hagis entès algun dels exercicis… bé, aquest cas no es pot donar ja que, abans de
-fer aquest exercici t’ajudaràs de les diferents fonts de suport que tens al teu abast (incloent, és
-clar, consultes al teu docent) per arribar a entendre’l. És a dir, <strong>no val</strong> dir, que un exercici
-no l’has entès! Entesos?</p>
-<p>Redacta aquest exercici en un document de text pla. Et recomano que facis servir
-algun format de text de marques com ara <a class="reference internal" href="rst_intro.html"><span class="doc">reStructuredText</span></a>
-o <a class="reference external" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">markdown</a>.</p>
+<p>Considera aquesta versió de <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code>:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GatRenat</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">vides</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="nf">GatRenat</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">vides</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="hll">    <span class="nd">@Override</span>
+</span><span class="hll">    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span>
+</span><span class="hll">        <span class="k">return</span> <span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;Vides: %d&quot;</span><span class="p">,</span> <span class="n">vides</span><span class="p">);</span>
+</span><span class="hll">    <span class="p">}</span>
+</span>    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getVides</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">vides</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">GatRenat</span> <span class="n">renat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">();</span>
+<span class="hll">        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">renat</span><span class="p">);</span>
+</span>    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>T’has fixat que <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code> en aquesta versió només disposa
+de <em>getter</em>, oi? Això vol dir que un cop creada una instància, aquesta mai
+no podrà canviar de nombre de vides (de fet, de res!)</p>
+<p>Potser ens podem plantejar la seva utilitat com a classe, però recordem
+que els nostres tan utilitzats Strings tampoc no ofereixen mecanismes per
+a modificar-los un cop creats. És a dir, ara mateix el nostre Gat Renat és
+<em>immutable</em>!</p>
+<p>Ja sabem que la immutabilitat és una propietat desitjable en algunes
+ocasions, així que, en aquest exercici la mantindrem una mica més.</p>
+<p>Encara hi ha una altra cosa que et pot sorprendre d’aquest codi: defineix
+el mètode <code class="docutils literal notranslate"><span class="pre">toString()</span></code>. El mètode <code class="docutils literal notranslate"><span class="pre">toString()</span></code> permet definir quina
+representació té la instància quan calgui convertir-la a String. Per
+exemple, <code class="docutils literal notranslate"><span class="pre">System.out.println(renat.toString())</span></code> és equivalent a
+simplement fer <code class="docutils literal notranslate"><span class="pre">System.out.println(renat)</span></code>. Una <em>sorpreseta</em> més de les
+que ens té preparades aquest meravellós llenguatge!</p>
+<p>Per que això funcioni, és necessari escriure exactament <code class="docutils literal notranslate"><span class="pre">toString()</span></code> i
+no alguna altra cosa similar com ara <code class="docutils literal notranslate"><span class="pre">tostring()</span></code> o <code class="docutils literal notranslate"><span class="pre">aString()</span></code>. Per
+assegurar-nos que ho hem escrit bé, afegim <code class="docutils literal notranslate"><span class="pre">&#64;Override</span></code> davant de la
+definició. Es tracta del que es coneix com una <em>anotació</em> i, en posar-ho,
+el compilador es queixarà si escrivim malament el nom del mètode.</p>
+<div class="section" id="que-haig-de-fer">
+<h2>Què haig de fer<a class="headerlink" href="#que-haig-de-fer" title="Link permanent a aquest títol">¶</a></h2>
+<p>Afegeix la propietat <code class="docutils literal notranslate"><span class="pre">posicio</span></code> de tipus String a la definició de
+<code class="docutils literal notranslate"><span class="pre">GatRenat</span></code>. Aquesta nova propietat serà inicialitzada des del
+constructor amb el valor <code class="docutils literal notranslate"><span class="pre">&quot;estirat&quot;</span></code> de la mateixa manera que ho fa ara
+amb <code class="docutils literal notranslate"><span class="pre">vides</span></code>.</p>
+<p>El <code class="docutils literal notranslate"><span class="pre">main()</span></code> que ha de fer anar aquesta nova versió és:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">GatRenat</span> <span class="n">renat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">();</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">renat</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>I, per descomptat, el resultat de l’execució serà:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java GatRenat
+<span class="go">Vides: 7. Posició: estirat</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -244,10 +305,10 @@ o <a class="reference external" href="https://github.com/adam-p/markdown-here/wi
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="exercici_04_12_constructor_posicio.html" class="btn btn-neutral float-right" title="Exercici 04_12. Posicionant des del constructor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="exercici_04_13_constructor_parametritzat.html" class="btn btn-neutral float-right" title="Exercici 04_13. Posicio parametritzada" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="exercici_04_10_assessinable.html" class="btn btn-neutral float-left" title="Exercici 04_10. En Renat és assessinable" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="exercici_04_11_classes_i_objectes.html" class="btn btn-neutral float-left" title="Exercici 04_11. Què he aprés de les classes i objectes?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

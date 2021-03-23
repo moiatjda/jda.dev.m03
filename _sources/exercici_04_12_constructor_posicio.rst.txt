@@ -1,0 +1,88 @@
+#################################################################
+|exerciseicon__T| Exercici 04_12. Posicionant des del constructor
+#################################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``04_12_constructor_posicio/``
+
+* Continguts relacionats: :doc:`constructors`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Considera aquesta versió de ``GatRenat``:
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 6-9, 13
+
+    public class GatRenat {
+        private int vides;
+        public GatRenat() {
+            vides = 7;
+        }
+        @Override
+        public String toString() {
+            return String.format("Vides: %d", vides);
+        }
+        public int getVides() { return vides; }
+        public static void main(String[] args) {
+            GatRenat renat = new GatRenat();
+            System.out.println(renat);
+        }
+    }
+
+T'has fixat que ``GatRenat`` en aquesta versió només disposa
+de *getter*, oi? Això vol dir que un cop creada una instància, aquesta mai
+no podrà canviar de nombre de vides (de fet, de res!)
+
+Potser ens podem plantejar la seva utilitat com a classe, però recordem
+que els nostres tan utilitzats Strings tampoc no ofereixen mecanismes per
+a modificar-los un cop creats. És a dir, ara mateix el nostre Gat Renat és
+*immutable*!
+
+Ja sabem que la immutabilitat és una propietat desitjable en algunes
+ocasions, així que, en aquest exercici la mantindrem una mica més.
+
+Encara hi ha una altra cosa que et pot sorprendre d'aquest codi: defineix
+el mètode ``toString()``. El mètode ``toString()`` permet definir quina
+representació té la instància quan calgui convertir-la a String. Per
+exemple, ``System.out.println(renat.toString())`` és equivalent a
+simplement fer ``System.out.println(renat)``. Una *sorpreseta* més de les
+que ens té preparades aquest meravellós llenguatge!
+
+Per que això funcioni, és necessari escriure exactament ``toString()`` i
+no alguna altra cosa similar com ara ``tostring()`` o ``aString()``. Per
+assegurar-nos que ho hem escrit bé, afegim ``@Override`` davant de la
+definició. Es tracta del que es coneix com una *anotació* i, en posar-ho,
+el compilador es queixarà si escrivim malament el nom del mètode.
+
+
+Què haig de fer
+===============
+
+Afegeix la propietat ``posicio`` de tipus String a la definició de
+``GatRenat``. Aquesta nova propietat serà inicialitzada des del
+constructor amb el valor ``"estirat"`` de la mateixa manera que ho fa ara
+amb ``vides``.
+
+El ``main()`` que ha de fer anar aquesta nova versió és:
+
+.. code-block:: java
+
+        public static void main(String[] args) {
+            GatRenat renat = new GatRenat();
+            System.out.println(renat);
+        }
+
+I, per descomptat, el resultat de l'execució serà:
+
+.. code-block:: console
+
+    $ java GatRenat
+    Vides: 7. Posició: estirat
+

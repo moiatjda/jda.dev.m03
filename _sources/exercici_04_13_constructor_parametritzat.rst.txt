@@ -1,0 +1,57 @@
+########################################################
+|exerciseicon__T| Exercici 04_13. Posicio parametritzada
+########################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``04_13_constructor_parametritzat/``
+
+* Continguts relacionats: :doc:`constructors`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Ara ja sabem afegir paràmetres als constructors. Per exemple:
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 3, 12
+
+    public class GatRenat {
+        private int vides;
+        public GatRenat(int novesVides) {
+            vides = novesVides;
+        }
+        public int getVides() { return vides; }
+        @Override
+        public String toString() {
+            return String.format("Vides: %d", vides);
+        }
+        public static void main(String[] args) {
+            GatRenat renat = new GatRenat(7);
+            int vides = renat.getVides();
+            System.out.println(renat);
+        }
+    }
+
+Fes una nova versió de ``GatRenat`` de manera que funcioni el següent
+``main()``:
+
+.. code-block:: java
+
+        public static void main(String[] args) {
+            System.out.println(new GatRenat(7, "estirat"));
+        }
+
+Fixa't que, com que no en fem res de la instància, a banda de mostrar-la,
+no cal ni que la assignem a una variable!
+
+El resultat de l'execució serà:
+
+.. code-block:: console
+
+    $ java GatRenat
+    Vides: 7, Posició: estirat

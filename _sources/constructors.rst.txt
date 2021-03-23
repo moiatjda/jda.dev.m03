@@ -1,0 +1,572 @@
+############
+Constructors
+############
+
+Coneixerem ara els *constructors*, un tipus especial de bloc de codi
+(*mòdul*) que en programació orientada a objectes és cridat per realitzar
+la creació d'una nova instància d'una classe, i que té la funció de
+preparar la instància per a ser utilitzada.
+
+Aquesta introducció comença amb una secció *teòrica* que descriu els
+constructors (i destructors), per després continuar amb l'anàlisi
+d'exercicis en Java.
+
+Però si ja els coneixem!
+========================
+
+En realitat ja hem fet servir els constructors. En el tema
+:doc:`classes_i_objectes` hem vist codi que fa:
+
+.. uml::
+    :align: center
+
+     @startuml
+     hide circle
+     skinparam monochrome true
+     skinparam classAttributeIconSize 0
+
+     class GatRenat {
+        -vides
+        +getVides(): int
+     }
+     @enduml
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 6
+
+    public class GatRenat {
+        private int vides = 7;
+        public int getVides() { return vides; }
+        public static void main(String[] args) {
+            GatRenat renat;
+            renat = new GatRenat();
+            int vides = renat.getVides();
+            System.out.printf("Vides: %d%n", vides);
+        }
+    }
+
+
+A la línia 6 estem creant o *construint* una instància de ``GatRenat``. Un
+cop executada, sabem que la referència ``renat`` queda inicialitzada a un
+valor de tipus ``GatRenat``.
+
+Veiem-ho pas a pas, com sempre, de manera simplificada.
+
+A la línia 5, al ``main()`` 
+
++----------------------------+------------------+------------------------+
+|   instrucció               | noms             |  Memòria               |
++============================+=========+========+========================+
+| GatRenat renat             | renat → ?        |                        |
++----------------------------+------------------+------------------------+
+
+De moment no tenim cap gat instanciat. Només un nom (``renat``) que en pot
+fer referència. Passem a la següent línia:
+
++----------------------------+------------------+-----------------------------------------------+
+|   instrucció               | noms             |  Memòria                                      |
++============================+=========+========+===============================================+
+| renat = new GatRenat()     | renat → @100     | [@100]                                        |
+|                            |                  +                                               +
+|                            |                  | «GatRenat.vides» → 7                          |
+|                            |                  +                                               +
+|                            |                  +-----------------------------------------------+
+|                            |                  | [@200] "estirat"                              |
++----------------------------+------------------+-----------------------------------------------+
+
+A la nostra simplificació, l'estat del gat Renat està accessible d'alguna
+manera a partir de la posició ``@100``.
+
++---------------------------------+------------------+-----------------------------------------------+
+|   instrucció                    | noms             |  Memòria                                      |
++=================================+=========+========+===============================================+
+| int vides = renat.getVides()    | renat → @100     | [@100]                                        |
+|                                 +------------------+                                               +
+|                                 | vides → 7        | «GatRenat.vides» → 7                          |
+|                                 |                  +                                               +
+|                                 |                  +-----------------------------------------------+
+|                                 |                  | [@200] "estirat"                              |
++---------------------------------+------------------+-----------------------------------------------+
+
+
+En fer ``renat.getVides()`` la funció *sap* que ``renat`` apunta a la posició
+``@100`` i per tant, és capaç de localitzar el seu camp ``vides``, i retornar
+el seu valor: ``7``.
+
+
+Un *lleuger* canvi
+==================
+
+Considera ara aquesta nova versió de ``GatRenat`` que té exactament el mateix
+resultat que l'anterior:
+
+.. uml::
+    :align: center
+
+     @startuml
+     hide circle
+     skinparam monochrome true
+     skinparam classAttributeIconSize 0
+
+     class GatRenat {
+        -vides
+        +GatRenat()
+        +getVides(): int
+     }
+     @enduml
+
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 2-6
+
+    public class GatRenat {
+        private int vides;
+        public GatRenat() {
+            // aquí passen coses que no es veuen al codi!
+            vides = 7;
+        }
+        public int getVides() { return vides; }
+        public static void main(String[] args) {
+            GatRenat renat;
+            renat = new GatRenat();
+            int vides = renat.getVides();
+            System.out.printf("Vides: %d%n", vides);
+        }
+    }
+
+Aquesta nova versió no defineix valor al camp ``vides`` de ``GatRenat``. A
+canvi, declara una mena de *mòdul* anomenat igual que la classe, que sí sembla
+inicialitzar aquest camp!
+
+Tornem a veure-ho pas a pas
+
++----------------------------+------------------+------------------------+
+|   instrucció               | noms             |  Memòria               |
++============================+=========+========+========================+
+| GatRenat renat             | renat → ?        |                        |
++----------------------------+------------------+------------------------+
+
+Ara ve quelcom interessant quan cridem a ``new GatRenat()``. Centrem-nos en el
+que passa un cop hem arribat a la línia 4 on només tenim aquest misteriós comentari.
+
++----------------------------+------------------+-----------------------------------------------+
+|   instrucció               | noms             |  Memòria                                      |
++============================+=========+========+===============================================+
+| // comentari línia 4       | renat → ?        | [@100]                                        |
+|                            |                  +                                               +
+|                            |                  | «GatRenat.vides» → 0                          |
+|                            |                  +                                               +
++----------------------------+------------------+-----------------------------------------------+
+
+Fixa't. En el moment en que comencem el codi d'aquesta mena de mòdul definida a
+partir de la línia 3, ja tenim un espai de memòria per la instància de
+``GatRenat``. El camp apareix inicialitzat amb el valor base segons el tipus (0
+per enters)
+
+De reservar aquest espai se n'ha encarregat l'operador ``new`` i el misteriós
+comentari ens està avisant que se'ns estan escapant coses que Java fa sense que
+li diguem. Entre d'altres, la inicialització del camp ``vides`` al valor base.
+
+De moment, haurem d'acceptar aquest inquietant comentari i continuar endavant.
+
+Un cop executem la línia 5, el camp ``vides`` rep el seu valor.
+
++----------------------------+------------------+-----------------------------------------------+
+|   instrucció               | noms             |  Memòria                                      |
++============================+=========+========+===============================================+
+| «GatRenat()» vides = 7     | renat → ?        | [@100]                                        |
+|                            |                  +                                               +
+|                            |                  | «GatRenat.vides» → 7                          |
+|                            |                  +                                               +
++----------------------------+------------------+-----------------------------------------------+
+
+A partir d'aquí, l'execució torna a la línia 14 on ``main()`` continuarà la
+seva tasca com abans.
+
+En resum: podem inicialitzar els valors dels camps de les instàncies de
+``GatRenat`` tant directament a la línia de la declaració, com dins d'aquesta
+mena de *mòdul* que es diu ``GatRenat()``.
+
+Ja va sent hora de que el deixem d'anomenar *mena de mòdul* i li posem el nom
+que li correspon: *constructor*.
+
+Els *constructors* en Java tenen la forma d'un *mòdul* amb les següents
+particularitats:
+
+* el seu nom coincideix amb el de la classe
+
+* no té valor de retorn, ni tant sols ``void``.
+
+Potser t'estaràs preguntant: com és possible que fins ara hagi estat
+instanciant gats Renats sense definir constructor? La resposta és: si no
+explicitem un constructor, Java ens n'afegeix un automàticament. És a dir,
+les següents dues classes són equivalents:
+
+.. code-block:: java
+    :linenos:
+
+    public class Garfield {
+        // no cal indicar el constructor si no ha de fer res especial
+    }
+    
+    public class Garfield {
+        public Garfield() {
+            // no cal posar res aquí si no ha de fer res especial
+        }
+    }
+
+|exerciseicon__T| :doc:`exercici_04_12_constructor_posicio`
+
+
+Els constructors poden tenir paràmetres
+=======================================
+
+Una nova versió del codi anterior:
+
+.. uml::
+    :align: center
+
+     @startuml
+     hide circle
+     skinparam monochrome true
+     skinparam classAttributeIconSize 0
+
+     class GatRenat {
+        -vides
+        +GatRenat(int)
+        +getVides(): int
+     }
+     @enduml
+
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 3, 9
+
+    public class GatRenat {
+        private int vides;
+        public GatRenat(int novesVides) {
+            vides = novesVides;
+        }
+        public int getVides() { return vides; }
+        public static void main(String[] args) {
+            GatRenat renat;
+            renat = new GatRenat(7);
+            int vides = renat.getVides();
+            System.out.printf("Vides: %d%n", vides);
+        }
+    }
+
+Aquesta nova versió presenta una novetat respecte l'anterior: El constructor
+*rep* el valor amb el que ha d'inicialitzar les vides.
+
+Fins ara, el constructor del nostre Renat no tenia cap paràmetre, però no
+hi ha cap raó per que no els pugui tenir.
+
+Que aquest nou constructor tingui un paràmetre té una implicació
+important: podem decidir el nombre de vides inicial en el moment de la
+creació!
+
+Una altra implicació és que ara, per crear una instància de ``GatRenat`` ens
+veiem en l'obligació d'indicar el valor inicial.
+
+|exerciseicon__T| :doc:`exercici_04_13_constructor_parametritzat`
+
+El constructor sense paràmetres se'l coneix com a *constructor per
+defecte* mentre que el paràmetritzat se'l coneix com a *constructor
+específic*. Java només ens afegirà automàticament el constructor per
+defecte i ho farà només en el cas que no li indiquem nosaltres un altre
+constructor, sigui per defecte o sigui específic.
+
+
+Vides desprotegides en néixer!
+==============================
+
+El constructor específic que hem creat a la versió anterior obre la porta
+a errors: ara podem fer que ``vides`` tingui un valor inadequat des del
+principi!
+
+Per aquesta raó, ens caldrà protegir-la. Per exemple:
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 4
+
+    public class GatRenat {
+        private int vides = 7;
+        public GatRenat(int novesVides) {
+            if (novesVides >= 0)  {
+                vides = novesVides;
+            }
+        }
+        public int getVides() { return vides; }
+        public static void main(String[] args) {
+            GatRenat renat;
+            renat = new GatRenat(7);
+            int vides = renat.getVides();
+            System.out.printf("Vides: %d%n", vides);
+        }
+    }
+
+Fixa't que ara tornem a inicialitzar ``vides`` al valor per defecte ``7`` en
+comptes del base ``0``. El constructor únicament posarà un valor diferent de
+``vides`` en el cas que el que se li demani sigui considerat vàlid.
+
+Encara millor, si volem que es pugui modificar ``vides`` després de la
+inicialització, podem afegir el *setter* corresponent i aprofitar-ho des del
+constructor!
+
+.. uml::
+    :align: center
+
+     @startuml
+     hide circle
+     skinparam monochrome true
+     skinparam classAttributeIconSize 0
+
+     class GatRenat {
+        -vides
+        +GatRenat(int)
+        +getVides(): int
+        +setVides(int)
+     }
+     @enduml
+
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 4, 7-11
+
+    public class GatRenat {
+        private int vides = 7;
+        public GatRenat(int vides) {
+            setVides(vides);
+        }
+        public int getVides() { return vides; }
+        public void setVides(int novesVides) {
+            if (novesVides >= 0)  {
+                vides = novesVides;
+            }
+        }
+        public static void main(String[] args) {
+            GatRenat renat;
+            renat = new GatRenat(7);
+            int vides = renat.getVides();
+            System.out.printf("Vides: %d%n", vides);
+        }
+    }
+
+Nota: en afegir el *setter* hem perdut la propietat d'immutabilitat que
+gaudíem. Si la volguéssim continuar tenint, podríem simplement declarar el
+*setter* com a privat.
+
+.. uml::
+    :align: center
+
+     @startuml
+     hide circle
+     skinparam monochrome true
+     skinparam classAttributeIconSize 0
+
+     class GatRenat {
+        -setVides(int)
+     }
+     @enduml
+
+
+.. code-block:: java
+
+        private void setVides(int novesVides) {
+            if (novesVides >= 0)  {
+                vides = novesVides;
+            }
+        }
+
+|exerciseicon__T| :doc:`exercici_04_14_constructor_posicio`
+
+En resum: hem de vigilar cada cop que oferim una nova possibilitat de
+donar valor a un camp, que no estiguem obrint una porta per què l'estat de
+la instància pugui quedar inconsistent.
+
+
+Una referència *misteriosa*: ``this``
+=====================================
+
+Atenció a aquesta nova versió:
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 9
+
+    public class GatRenat {
+        private int vides = 7;
+        public GatRenat(int vides) {
+            setVides(vides);
+        }
+        public int getVides() { return vides; }
+        public void setVides(int vides) {
+            if (vides >= 0)  {
+                this.vides = novesVides;
+            }
+        }
+        public static void main(String[] args) {
+            GatRenat renat;
+            renat = new GatRenat(7);
+            int vides = renat.getVides();
+            System.out.printf("Vides: %d%n", vides);
+        }
+    }
+
+La nova versió incorpora un nou *personatge* anomenat ``this``. El codi el fa
+servir només al *setter** per diferenciar el camp ``vides`` del paràmetre ``vides``.
+
+És clar, si no li posem, estaríem parlant de la mateixa variable: el paràmetre ``vides``.
+
+El codi també funcionaria de la següent manera:
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 4, 7
+
+    public class GatRenat {
+        private int vides;
+        public GatRenat(int vides) {
+            this.setVides(vides);
+        }
+        public int getVides() { 
+            return this.vides; 
+        }
+        public void setVides(int vides) {
+            if (vides > 0) {
+                this.vides = vides;
+            }
+        }
+        public static void main(String[] args) {
+            GatRenat renat;
+            renat = new GatRenat(7);
+            renat.setVides(6);
+            int vides = renat.getVides();
+            System.out.printf("Vides: %d%n", vides);
+        }
+    }
+
+La referència ``this`` ens ve de *regal* a tots els mòduls de la classe que no
+estiguin marcats amb la paraula ``static``. És a dir, ``main()`` no pot fer
+servir ``this``.
+
+Quí serà aquest ``this``? Et resultarà més fàcil d'entendre si consideres que
+la crida ``renat.getVides()`` es podria veure com ``GatRenat.getVides(renat)``
+amb una definició com la següent:
+
+.. code-block:: java
+
+    public static int getVides(GatRenat this) {
+        this.vides;
+    }
+
+**Atenció**: aquesta versió de ``getVides()`` no és gaire adequada i ens
+portaria problemes. Només te l'afegeixo perquè vegis d'on surt el ``this``.
+
+És a dir, hem d'entendre ``this`` com el *paràmetre* que recull la instància
+amb que cridem el mòdul. La que posem davant del punt.
+
+|exerciseicon__T| :doc:`exercici_04_15_aquesta_posicio`
+
+Més d'un constructor
+====================
+
+Ara que ja sabem que podem tenir un constructor per defecte però també un
+d'específic, ens podem plantejar si seria possible disposar dels dos.
+Per exemple, en el cas del Gat Renat, el més normal és que hagi de néixer
+amb 7 vides. No deixa de ser incòmode haver d'indicar 7 cada cop que en
+volem un!
+
+Això amb Java és possible gràcies al que es coneix com a
+*sobrecàrrega* que vam descobrir a :doc:`aquest exercici
+<exercici_04_10_assessinable>`.
+
+Considera aquesta nova versió del nostre amic:
+
+.. uml::
+    :align: center
+
+     @startuml
+     hide circle
+     skinparam monochrome true
+     skinparam classAttributeIconSize 0
+
+     class GatRenat {
+        -vides
+        +GatRenat()
+        +GatRenat(int)
+        +getVides(): int
+        +setVides(int)
+     }
+     @enduml
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 3, 6, 16, 17
+
+    public class GatRenat {
+        private int vides = 7;
+        public GatRenat() {
+            setVides(7);
+        }
+        public GatRenat(int vides) {
+            setVides(vides);
+        }
+        public int getVides() { return vides; }
+        public void setVides(int novesVides) {
+            if (novesVides >= 0)  {
+                vides = novesVides;
+            }
+        }
+        public static void main(String[] args) {
+            GatRenat renatI = new GatRenat();
+            GatRenat renatII = new GatRenat(8);
+            System.out.printf("Renat I té %d vides%n", renatI.vides);
+            System.out.printf("Renat II té %d vides%n", renatII.vides);
+        }
+    }
+
+Fixa't que els dos constructors fan servir el *setter*. Encara que sabem
+que 7 és un valor vàlid per vides, és una bona pràctica fer-ho així, doncs
+ens assegura que si mai ens calgués fer res especial amb el cas del 7,
+només ho hauríem de fer en un punt (el *setter*)
+
+Encara podem fer-ho més modular, fent servir la nostra misteriosa
+referència ``this``. Aquest cop amb un format encara més inquietant: com a
+*crida*!
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 4
+
+    public class GatRenat {
+        private int vides = 7;
+        public GatRenat() {
+            this(7);
+        }
+        public GatRenat(int vides) {
+            setVides(vides);
+        }
+        public int getVides() { return vides; }
+        public void setVides(int novesVides) {
+            if (novesVides >= 0)  {
+                vides = novesVides;
+            }
+        }
+    }
+
+La crida de la línia 7 està fent referència al constructor específic.
+Per poder fer servir ``this()`` cal tenir present que ha de ser la primera
+línia del cos del constructor, altrament ``javac`` es queixarà.
+
+|exerciseicon__T| :doc:`exercici_04_16_molts_constructors`
+
+|exerciseicon__T| :doc:`exercici_04_17_hora`
+
+|exerciseicon___| :doc:`exercici_04_18_resum`

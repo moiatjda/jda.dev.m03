@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Exercici 04_11. Què he aprés de les classes i objectes? &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  <title>Exercici 04_19. Mètodes de classe en Hora &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
   
 
   
@@ -39,8 +39,8 @@
     <link rel="author" title="Quant a aquests documents" href="about.html" />
     <link rel="index" title="Índex" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
-    <link rel="next" title="Exercici 04_12. Posicionant des del constructor" href="exercici_04_12_constructor_posicio.html" />
-    <link rel="prev" title="Exercici 04_10. En Renat és assessinable" href="exercici_04_10_assessinable.html" />
+    <link rel="next" title="Exercici 04_20. El Taulell d’escacs" href="exercici_04_20_puzles.html" />
+    <link rel="prev" title="Exercici 04_18. Què he aprés dels constructors?" href="exercici_04_18_resum.html" />
      
     <script class="googleanalytics" src="_static/moiscripts.js"></script>
 
@@ -108,7 +108,7 @@
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_08_com_esta.html"> Exercici 04_08. Com està Renat?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_09_ensinistrat.html"> Exercici 04_09. En Renat està ensinistrat!</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_10_assessinable.html"> Exercici 04_10. En Renat és assessinable</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#"> Exercici 04_11. Què he aprés de les classes i objectes?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_04_11_classes_i_objectes.html"> Exercici 04_11. Què he aprés de les classes i objectes?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_12_constructor_posicio.html"> Exercici 04_12. Posicionant des del constructor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_13_constructor_parametritzat.html"> Exercici 04_13. Posicio parametritzada</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_14_constructor_posicio.html"> Exercici 04_14. Posició protegida en néixer</a></li>
@@ -116,7 +116,7 @@
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_16_molts_constructors.html"> Exercici 04_16. Molts constructors</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_17_hora.html"> Exercici 04_17. La classe Hora</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_18_resum.html"> Exercici 04_18. Què he aprés dels constructors?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="exercici_04_19_hora_static.html"> Exercici 04_19. Mètodes de classe en Hora</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#"> Exercici 04_19. Mètodes de classe en Hora</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_20_puzles.html"> Exercici 04_20. El Taulell d’escacs</a></li>
 </ul>
 </li>
@@ -173,7 +173,7 @@
         
           <li><a href="poo_exercicis.html">Exercicis</a> &raquo;</li>
         
-      <li> Exercici 04_11. Què he aprés de les classes i objectes?</li>
+      <li> Exercici 04_19. Mètodes de classe en Hora</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -191,26 +191,46 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="exerciseicon-exercici-04-11-que-he-apres-de-les-classes-i-objectes">
-<h1><img alt="exerciseicon___" src="_images/exerciseicon___.png" /> Exercici 04_11. Què he aprés de les classes i objectes?<a class="headerlink" href="#exerciseicon-exercici-04-11-que-he-apres-de-les-classes-i-objectes" title="Link permanent a aquest títol">¶</a></h1>
+  <div class="section" id="exerciseicon-t-exercici-04-19-metodes-de-classe-en-hora">
+<h1><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> Exercici 04_19. Mètodes de classe en Hora<a class="headerlink" href="#exerciseicon-t-exercici-04-19-metodes-de-classe-en-hora" title="Link permanent a aquest títol">¶</a></h1>
 <p class="rubric">Context</p>
 <ul class="simple">
-<li><p>Carpeta de lliurament: <code class="docutils literal notranslate"><span class="pre">04_11_classes_i_objectes/</span></code></p></li>
-<li><p>Continguts relacionats: <a class="reference internal" href="classes_i_objectes.html"><span class="doc">Classes i objectes</span></a></p></li>
+<li><p>Carpeta de lliurament: <code class="docutils literal notranslate"><span class="pre">04_19_hora_static/</span></code></p></li>
+<li><p>Continguts relacionats: <a class="reference internal" href="static.html"><span class="doc">Membres d’instància i de classe</span></a></p></li>
 <li><p>Com lliurar-lo: <a class="reference internal" href="holagit.html#instruccions-git"><span class="std std-ref">instruccions</span></a></p></li>
+<li><p>[✓] Exercici amb <a class="reference internal" href="sobre_exercicis.html#descripcio-exercicis-autoavaluacio"><span class="std std-ref">autoavaluació</span></a></p></li>
 </ul>
 <p class="rubric">Enunciat</p>
-<p>Fes un repàs dels continguts d’aquest tema incloent els exercicis anteriors.
-Indica exercici a exercici què has aprés de nou en fer-lo, o bé quins són els
-conceptes que introdueix l’exercici, si ja els coneixies anteriorment. Procura
-ser molt concret. Si et cal, ajuda’t de (nous) exemples.</p>
-<p>En el cas que no hagis entès algun dels exercicis… bé, aquest cas no es pot donar ja que, abans de
-fer aquest exercici t’ajudaràs de les diferents fonts de suport que tens al teu abast (incloent, és
-clar, consultes al teu docent) per arribar a entendre’l. És a dir, <strong>no val</strong> dir, que un exercici
-no l’has entès! Entesos?</p>
-<p>Redacta aquest exercici en un document de text pla. Et recomano que facis servir
-algun format de text de marques com ara <a class="reference internal" href="rst_intro.html"><span class="doc">reStructuredText</span></a>
-o <a class="reference external" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">markdown</a>.</p>
+<p>En aquest exercici és una ampliació de la classe <code class="docutils literal notranslate"><span class="pre">Hora</span></code> que vas
+desenvolupar a <a class="reference internal" href="exercici_04_17_hora.html"><span class="doc">aquest exercici</span></a></p>
+<div class="figure align-center">
+<p class="plantuml">
+<img src="_images/plantuml-bc8571d826808bda92891c729b6b6eefd14917c1.png" alt=" &#64;startuml
+ hide circle
+ skinparam monochrome true
+ skinparam classAttributeIconSize 0
+
+ class Hora {
+    +{static} esValida(int, int, int): boolean
+    +{static} compareTo(Hora, Hora): int
+    +duplica(): Hora
+    +{static} duplica(Hora): Hora
+ }
+ &#64;enduml"/>
+</p>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">boolean</span> <span class="pre">esValida(int</span> <span class="pre">hores,</span> <span class="pre">int</span> <span class="pre">minuts,</span> <span class="pre">int</span> <span class="pre">segons)</span></code>: retorna true si i només sí les
+hores, minuts i segons indicats, en aquest ordre, pels paràmetres,
+corresponen a una combinació vàlida per una hora.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">compareTo(Hora,</span> <span class="pre">Hora)</span></code>: retorna -1 si la primera hora és
+menor que (anterior a) la segona, 0 si són iguals i 1 si la primera
+és més gran que (posterior a) la segona.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Hora</span> <span class="pre">duplica()</span></code>: retorna una nova instància de la classe Hora
+amb els mateixos valors per les propietats de l’hora corresponent.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Hora</span> <span class="pre">duplica(Hora)</span></code>: retorna una nova instància de la classe Hora
+amb els mateixos valors per les propietats de l’hora rebuda.</p></li>
+</ul>
 </div>
 
 
@@ -244,10 +264,10 @@ o <a class="reference external" href="https://github.com/adam-p/markdown-here/wi
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="exercici_04_12_constructor_posicio.html" class="btn btn-neutral float-right" title="Exercici 04_12. Posicionant des del constructor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="exercici_04_20_puzles.html" class="btn btn-neutral float-right" title="Exercici 04_20. El Taulell d’escacs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="exercici_04_10_assessinable.html" class="btn btn-neutral float-left" title="Exercici 04_10. En Renat és assessinable" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="exercici_04_18_resum.html" class="btn btn-neutral float-left" title="Exercici 04_18. Què he aprés dels constructors?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

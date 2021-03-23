@@ -1,0 +1,49 @@
+###########################################################
+|exerciseicon__T| Exercici 04_19. Mètodes de classe en Hora
+###########################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``04_19_hora_static/``
+
+* Continguts relacionats: :doc:`static`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+En aquest exercici és una ampliació de la classe ``Hora`` que vas
+desenvolupar a :doc:`aquest exercici <exercici_04_17_hora>`
+
+.. uml::
+    :align: center
+
+     @startuml
+     hide circle
+     skinparam monochrome true
+     skinparam classAttributeIconSize 0
+
+     class Hora {
+        +{static} esValida(int, int, int): boolean
+        +{static} compareTo(Hora, Hora): int
+        +duplica(): Hora
+        +{static} duplica(Hora): Hora
+     }
+     @enduml
+
+
+* ``boolean esValida(int hores, int minuts, int segons)``: retorna true si i només sí les
+  hores, minuts i segons indicats, en aquest ordre, pels paràmetres,
+  corresponen a una combinació vàlida per una hora.
+
+* ``int compareTo(Hora, Hora)``: retorna -1 si la primera hora és
+  menor que (anterior a) la segona, 0 si són iguals i 1 si la primera
+  és més gran que (posterior a) la segona.
+
+* ``Hora duplica()``: retorna una nova instància de la classe Hora
+  amb els mateixos valors per les propietats de l'hora corresponent.
+
+* ``Hora duplica(Hora)``: retorna una nova instància de la classe Hora
+  amb els mateixos valors per les propietats de l'hora rebuda.

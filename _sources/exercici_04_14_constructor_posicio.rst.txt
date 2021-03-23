@@ -1,0 +1,69 @@
+#############################################################
+|exerciseicon__T| Exercici 04_14. Posició protegida en néixer
+#############################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``04_14_constructor_posicio/``
+
+* Continguts relacionats: :doc:`constructors`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Pren com a referència la següent versió del Gat Renat i l'exercici
+:doc:`anterior <exercici_04_14_constructor_posicio>`:
+
+.. code-block:: java
+    :linenos:
+
+    public class GatRenat {
+        private int vides = 7;
+        public GatRenat(int vides) {
+            setVides(vides);
+        }
+        public int getVides() { return vides; }
+        public void setVides(int novesVides) {
+            if (novesVides >= 0)  {
+                vides = novesVides;
+            }
+        }
+        @Override
+        public String toString() { return String.format("Vides: %d", vides); }
+        public static void main(String[] args) {
+            System.out.printf(new GatRenat(7));
+        }
+    }
+
+Implementa una nova versió que ofereixi la inicialització del gat Renat
+amb la posició indicada. En cas que la posició que rebi el constructor no
+sigui vàlida, el gat Renat resultant estarà en la seva posició favorita: estirat.
+
+.. uml::
+    :align: center
+
+     @startuml
+     hide circle
+     skinparam monochrome true
+     skinparam classAttributeIconSize 0
+
+     class GatRenat {
+        -posicio
+        +GatRenat(int, String)
+        +getPosicio()
+        +setPosicio()
+     }
+     @enduml
+
+Afegeix el següent ``main()`` per comprovar que funciona correctament
+
+.. code-block:: java
+    :linenos:
+
+        public static void main(String[] args) {
+            System.out.printf(new GatRenat(7, "dret"));
+        }
+

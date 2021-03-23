@@ -95,6 +95,8 @@
 <li class="toctree-l1"><a class="reference internal" href="fitxers.html">Fitxers</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="poo.html">Programació Orientada a Objectes</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="classes_i_objectes.html">Classes i objectes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="constructors.html">Constructors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="static.html">Membres d’instància i de classe</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="poo_exercicis.html">Exercicis</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_01_vides.html"> Exercici 04_01. En Renat té set vides</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_02_accident.html"> Exercici 04_02. En Renat té un accident</a></li>
@@ -107,6 +109,15 @@
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_09_ensinistrat.html"> Exercici 04_09. En Renat està ensinistrat!</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_10_assessinable.html"> Exercici 04_10. En Renat és assessinable</a></li>
 <li class="toctree-l3"><a class="reference internal" href="exercici_04_11_classes_i_objectes.html"> Exercici 04_11. Què he aprés de les classes i objectes?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_04_12_constructor_posicio.html"> Exercici 04_12. Posicionant des del constructor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_04_13_constructor_parametritzat.html"> Exercici 04_13. Posicio parametritzada</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_04_14_constructor_posicio.html"> Exercici 04_14. Posició protegida en néixer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_04_15_aquesta_posicio.html"> Exercici 04_15. Aquesta posició</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_04_16_molts_constructors.html"> Exercici 04_16. Molts constructors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_04_17_hora.html"> Exercici 04_17. La classe Hora</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_04_18_resum.html"> Exercici 04_18. Què he aprés dels constructors?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_04_19_hora_static.html"> Exercici 04_19. Mètodes de classe en Hora</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_04_20_puzles.html"> Exercici 04_20. El Taulell d’escacs</a></li>
 </ul>
 </li>
 </ul>
@@ -196,17 +207,17 @@ la que ens hem referit amb la variable <em>renat</em>. Tot plegat, ens pot porta
 <em>classe</em> de gat molt particular, que coneixem de manera genèrica com a <em>GatRenat</em>.</p>
 <div class="figure align-center">
 <p class="plantuml">
-<img src="_images/plantuml-6b26a96d1da18e2fe4393faa27d86d6a904fea35.png" alt=" &#64;startuml
+<img src="_images/plantuml-12b4f77773cc5787e6b3ee8164ba2c01ced0c806.png" alt=" &#64;startuml
  hide circle
  skinparam monochrome true
  skinparam classAttributeIconSize 0
 
 
- object renat_I
- renat_I : vides = 7
+ object renatI
+ renatI : vides = 7
 
- object renat_II
- renat_II : vides = 7
+ object renatII
+ renatII : vides = 7
 
  &#64;enduml"/>
 </p>
@@ -239,24 +250,24 @@ la que ens hem referit amb la variable <em>renat</em>. Tot plegat, ens pot porta
     <span class="kd">public</span> <span class="kt">int</span> <span class="n">vides</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>   <span class="c1">// vides disponibles del gat Renat</span>
 
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">GatRenat</span> <span class="n">renat_I</span><span class="p">;</span>
-        <span class="n">renat_I</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">();</span>               <span class="c1">// crea un primer gat Renat</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El gat Renat I té  &quot;</span> <span class="o">+</span> <span class="n">renat_I</span><span class="p">.</span><span class="na">vides</span> <span class="o">+</span> <span class="s">&quot; vides&quot;</span><span class="p">);</span>
+        <span class="n">GatRenat</span> <span class="n">renatI</span><span class="p">;</span>
+        <span class="n">renatI</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">();</span>               <span class="c1">// crea un primer gat Renat</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El gat Renat I té  &quot;</span> <span class="o">+</span> <span class="n">renatI</span><span class="p">.</span><span class="na">vides</span> <span class="o">+</span> <span class="s">&quot; vides&quot;</span><span class="p">);</span>
 
-        <span class="n">GatRenat</span> <span class="n">renat_II</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">();</span>     <span class="c1">// crea un segon gat Renat!</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El gat Renat II té &quot;</span> <span class="o">+</span> <span class="n">renat_II</span><span class="p">.</span><span class="na">vides</span> <span class="o">+</span> <span class="s">&quot; vides&quot;</span><span class="p">);</span>
+        <span class="n">GatRenat</span> <span class="n">renatII</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">();</span>     <span class="c1">// crea un segon gat Renat!</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El gat Renat II té &quot;</span> <span class="o">+</span> <span class="n">renatII</span><span class="p">.</span><span class="na">vides</span> <span class="o">+</span> <span class="s">&quot; vides&quot;</span><span class="p">);</span>
 
-        <span class="n">renat_I</span><span class="p">.</span><span class="na">vides</span><span class="o">++</span><span class="p">;</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El gat Renat I té  &quot;</span> <span class="o">+</span> <span class="n">renat_I</span><span class="p">.</span><span class="na">vides</span> <span class="o">+</span> <span class="s">&quot; vides&quot;</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El gat Renat II té &quot;</span> <span class="o">+</span> <span class="n">renat_II</span><span class="p">.</span><span class="na">vides</span> <span class="o">+</span> <span class="s">&quot; vides&quot;</span><span class="p">);</span>
+        <span class="n">renatI</span><span class="p">.</span><span class="na">vides</span><span class="o">++</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El gat Renat I té  &quot;</span> <span class="o">+</span> <span class="n">renatI</span><span class="p">.</span><span class="na">vides</span> <span class="o">+</span> <span class="s">&quot; vides&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El gat Renat II té &quot;</span> <span class="o">+</span> <span class="n">renatII</span><span class="p">.</span><span class="na">vides</span> <span class="o">+</span> <span class="s">&quot; vides&quot;</span><span class="p">);</span>
 
-        <span class="n">renat_II</span> <span class="o">=</span> <span class="n">renat_I</span><span class="p">;</span> <span class="c1">// atenció: la instància de Renat II es perd!</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El gat Renat I té  &quot;</span> <span class="o">+</span> <span class="n">renat_I</span><span class="p">.</span><span class="na">vides</span> <span class="o">+</span> <span class="s">&quot; vides&quot;</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El gat Renat II té &quot;</span> <span class="o">+</span> <span class="n">renat_II</span><span class="p">.</span><span class="na">vides</span> <span class="o">+</span> <span class="s">&quot; vides&quot;</span><span class="p">);</span>
+        <span class="n">renatII</span> <span class="o">=</span> <span class="n">renatI</span><span class="p">;</span> <span class="c1">// atenció: la instància de Renat II es perd!</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El gat Renat I té  &quot;</span> <span class="o">+</span> <span class="n">renatI</span><span class="p">.</span><span class="na">vides</span> <span class="o">+</span> <span class="s">&quot; vides&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El gat Renat II té &quot;</span> <span class="o">+</span> <span class="n">renatII</span><span class="p">.</span><span class="na">vides</span> <span class="o">+</span> <span class="s">&quot; vides&quot;</span><span class="p">);</span>
 
-        <span class="n">renat_I</span><span class="p">.</span><span class="na">vides</span><span class="o">++</span><span class="p">;</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El gat Renat I té  &quot;</span> <span class="o">+</span> <span class="n">renat_I</span><span class="p">.</span><span class="na">vides</span> <span class="o">+</span> <span class="s">&quot; vides&quot;</span><span class="p">);</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El gat Renat II té &quot;</span> <span class="o">+</span> <span class="n">renat_II</span><span class="p">.</span><span class="na">vides</span> <span class="o">+</span> <span class="s">&quot; vides&quot;</span><span class="p">);</span>
+        <span class="n">renatI</span><span class="p">.</span><span class="na">vides</span><span class="o">++</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El gat Renat I té  &quot;</span> <span class="o">+</span> <span class="n">renatI</span><span class="p">.</span><span class="na">vides</span> <span class="o">+</span> <span class="s">&quot; vides&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El gat Renat II té &quot;</span> <span class="o">+</span> <span class="n">renatII</span><span class="p">.</span><span class="na">vides</span> <span class="o">+</span> <span class="s">&quot; vides&quot;</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>

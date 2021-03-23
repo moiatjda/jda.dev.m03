@@ -1,0 +1,446 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ca" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Membres d’instància i de classe &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Exercicis" href="poo_exercicis.html" />
+    <link rel="prev" title="Constructors" href="constructors.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació amb Java
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-21
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moduls.html">Mòduls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fitxers.html">Fitxers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="poo.html">Programació Orientada a Objectes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="classes_i_objectes.html">Classes i objectes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="constructors.html">Constructors</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Membres d’instància i de classe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="poo_exercicis.html">Exercicis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="apendix.html">Apèndix</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació amb Java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="poo.html">Programació Orientada a Objectes</a> &raquo;</li>
+        
+      <li>Membres d’instància i de classe</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="membres-d-instancia-i-de-classe">
+<h1>Membres d’instància i de classe<a class="headerlink" href="#membres-d-instancia-i-de-classe" title="Link permanent a aquest títol">¶</a></h1>
+<p>Tot i que habitualment els membres que definim a les nostres classes,
+estan orientats a cada instància concreta de la classe, hi ha ocasions en
+que ens cal disposar de mètodes o/i propietats que facin referència a tota
+la classe i no a una instància concreta d’aquesta.</p>
+<div class="section" id="en-quant-els-metodes">
+<h2>En quant els mètodes<a class="headerlink" href="#en-quant-els-metodes" title="Link permanent a aquest títol">¶</a></h2>
+<p>Ja ens hem adonat que hi ha diferència depenent de si els mètodes són
+marcats o no amb <code class="docutils literal notranslate"><span class="pre">static</span></code>. Ja va tocant presentar aquest punt una mica
+més formalment.</p>
+<p>Quan un mètode no és marcat amb <code class="docutils literal notranslate"><span class="pre">static</span></code>, es diu que el mètode és
+d’instància o també dinàmic. Els mètodes d’instància reben sempre un
+paràmetre implícit anomenat <code class="docutils literal notranslate"><span class="pre">this</span></code> que fa referència a la instància en
+la que s’executaran.</p>
+<p>En tenim molts exemples de mètodes d’instància, per exemple:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">setVides</span><span class="p">(</span><span class="kt">int</span> <span class="n">vides</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">vides</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+<span class="hll">        <span class="k">this</span><span class="p">.</span><span class="na">vides</span> <span class="o">=</span> <span class="n">vides</span><span class="p">;</span>
+</span>    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>De vegades però, ens trobem que hi ha mètodes que no tenen sentit per una
+instància concreta sinó que són més generals per la classe.</p>
+<p>Deixa’m que et posi un exemple. El mètode <code class="docutils literal notranslate"><span class="pre">setVides()</span></code> comprova si les
+vides són vàlides. En la situació actual, les vides són vàlides quan són
+com a mínim 0. Què passaria, però si les comprovacions fossin més
+sofisticades pel nostre amic Renat? Imagina’t, potser no pot tenir més de
+7 vides o, només un nombre senar de vides o zero, o només un nombre de
+vides primer… Pots esperar qualsevol cosa d’un gat tan especial.</p>
+<p>En comptes d’implementar aquestes condicions dins del <em>setter</em>, que, com
+veus, podrien arribar a ser complexes, potser ens interessarà crear un nou
+mètode que rebi un nombre de vides i ens digui si és vàlid o no.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">esValidPerVides</span><span class="p">(</span><span class="kt">int</span> <span class="n">valor</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">valor</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setVides</span><span class="p">(</span><span class="kt">int</span> <span class="n">vides</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">esValidPerVides</span><span class="p">(</span><span class="n">vides</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">vides</span> <span class="o">=</span> <span class="n">vides</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Podríem considerar fer privat <code class="docutils literal notranslate"><span class="pre">esValidPerVides()</span></code> però pot ser
+interessant pels usuaris de <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code> saber si les vides són o no
+vàlides abans d’intentar asignar-li un nombre de vides determinat.</p>
+<p>Per exemple,</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">renat</span><span class="p">.</span><span class="na">esValidPerVides</span><span class="p">(</span><span class="n">videsLlegides</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">renat</span><span class="p">.</span><span class="na">setVides</span><span class="p">(</span><span class="n">videsLlegides</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;ERROR: valor no vàlid per vides&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Fixa’t que el mateix podríem voler fer abans de crear el gat amb un nombre
+determinat de vides:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">GatRenat</span> <span class="n">unaInstanciaQueNoFareServirGaire</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">();</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">unaInstanciaQueNoFareServirGaire</span><span class="p">.</span><span class="na">esValidPerVides</span><span class="p">(</span><span class="n">videsLlegides</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">renat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">(</span><span class="n">videsLlegides</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;ERROR: valor no vàlid per vides&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Quin nom més llarg, oi? Ens està dient que estem creant una instància
+<em>només</em> per saber si les vides són vàlides o no! Per molt que ho intentem
+amagar amb la següent versió de codi, no deixa de ser absurd:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="k">new</span> <span class="n">GatRenat</span><span class="p">().</span><span class="na">esValidPerVides</span><span class="p">(</span><span class="n">videsLlegides</span><span class="p">))</span> <span class="p">{</span>    <span class="c1">// instància perduda</span>
+    <span class="n">renat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">(</span><span class="n">videsLlegides</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;ERROR: valor no vàlid per vides&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>El problema aquí és que comprovar si <code class="docutils literal notranslate"><span class="pre">videsLlegides</span></code> és o no un valor
+vàlid per les vides d’un gat Renat, és quelcom <em>independent</em> d’una
+instància concreta. És a dir, per qualsevol instància, el resultat de
+<code class="docutils literal notranslate"><span class="pre">esValidPerVides()</span></code> ha de ser el mateix. És un resultat que depen de la
+classe i no de la instància.</p>
+<p>El que voldríem fer és:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">GatRenat</span><span class="p">.</span><span class="na">esValidPerVides</span><span class="p">(</span><span class="n">videsLlegides</span><span class="p">))</span> <span class="p">{</span>    <span class="c1">// no creem cap instància</span>
+    <span class="n">renat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">(</span><span class="n">videsLlegides</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;ERROR: valor no vàlid per vides&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Però això ja ho hem fet abans! Declarant el mètode com <code class="docutils literal notranslate"><span class="pre">static</span></code></p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">boolean</span> <span class="nf">esValidPerVides</span><span class="p">(</span><span class="kt">int</span> <span class="n">valor</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">valor</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">setVides</span><span class="p">(</span><span class="kt">int</span> <span class="n">vides</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">esValidPerVides</span><span class="p">(</span><span class="n">vides</span><span class="p">))</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">vides</span> <span class="o">=</span> <span class="n">vides</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Als mètodes estàtics els anomenarem també mètodes de classe.</p>
+<p>Una particularitat dels mètodes de classe és que <strong>no</strong> disposen de la
+referència <code class="docutils literal notranslate"><span class="pre">this</span></code>. És clar, <code class="docutils literal notranslate"><span class="pre">this</span></code> fa referència a una instància i els
+mètodes de classe no en tenen cap d’instància!</p>
+<p>Fixa’t que, des del codi del mètode d’instància <code class="docutils literal notranslate"><span class="pre">setVides()</span></code>, podem
+accedir sense problemes al mètode de classe <code class="docutils literal notranslate"><span class="pre">esValidPerVides()</span></code> però a
+l’inrevés no. Des d’un mètode de classe ens caldrà crear una instància per
+poder accedir a un mètode d’instància.</p>
+<p>És molt típic fer servir mètodes de classe per oferir funcionalitats de
+validació de valors, duplicació i comparació d’instàncies. Fins i tot
+trobem implementacions que fan privat el constructor i només pots crear
+instàncies a partir d’un mètode estàtic des del que podem controlar
+coses com ara quantes instàncies es creen!</p>
+<p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_04_19_hora_static.html"><span class="doc"> Exercici 04_19. Mètodes de classe en Hora</span></a></p>
+</div>
+<div class="section" id="en-quant-les-propietats">
+<h2>En quant les propietats<a class="headerlink" href="#en-quant-les-propietats" title="Link permanent a aquest títol">¶</a></h2>
+<p>Les propietats també poden ser de classe.</p>
+<p>Un dels exemples més típics és el de portar el comptador de quantes
+instàncies d’una classe s’han creat.</p>
+<p>Considera el següent codi, executa’l i intenta entendre el perquè de la sortida</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/* Demostració d&#39;ús de membres de classe */</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">GatRenat</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">numInstancies</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">vides</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="nf">GatRenat</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// constructor per defecte incrementa el nombre d&#39;instàncies</span>
+        <span class="n">GatRenat</span><span class="p">.</span><span class="na">numInstancies</span><span class="o">++</span><span class="p">;</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Creat un nou gat Renat. Ja van &quot;</span> <span class="o">+</span> <span class="n">numInstancies</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getNumInstancies</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// retorna el nombre d&#39;instàncies creades fins el moment</span>
+        <span class="k">return</span> <span class="n">numInstancies</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getVides</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">vides</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setVides</span><span class="p">(</span><span class="kt">int</span> <span class="n">vides</span><span class="p">)</span> <span class="p">{</span> <span class="k">if</span> <span class="p">(</span><span class="n">vides</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)</span> <span class="k">this</span><span class="p">.</span><span class="na">vides</span> <span class="o">=</span> <span class="n">vides</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="s">&quot;Gat Renat amb &quot;</span> <span class="o">+</span> <span class="n">vides</span> <span class="o">+</span> <span class="s">&quot; vides&quot;</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Inicialment el nombre d&#39;instàncies és: &quot;</span> <span class="o">+</span>
+            <span class="n">GatRenat</span><span class="p">.</span><span class="na">getNumInstancies</span><span class="p">());</span>
+        <span class="c1">// crea uns quants GatRenat per demostrar l&#39;ús de membres estàtics</span>
+        <span class="n">GatRenat</span><span class="o">[]</span> <span class="n">gats</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="o">[</span><span class="mi">10</span><span class="o">]</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">gats</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">();</span>
+            <span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">setVides</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>    <span class="c1">// canviem les vides només per distingir-los</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Tenim: &quot;</span> <span class="o">+</span> <span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot; amb &quot;</span> <span class="o">+</span>
+                <span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">getNumInstancies</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; germanets&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="c1">// tornem a demanar a cadascun quants germans té</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;I si tornem a demanar-los quants germans tenen, ens diuen:&quot;</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">gats</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="s">&quot; amb &quot;</span> <span class="o">+</span>
+                <span class="n">gats</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="na">getNumInstancies</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; germanets&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Hi ha diferents usos per les propietats estàtiques. Normalment les fem
+finals per definir constants de la classe. De vegades, però, ens poden
+interessar per guardar resultats que vulguem compartir entre les
+instàncies, com ara el nom del fitxer en el que s’han d’emmagatzemar.</p>
+<p>De moment, no t’ofereixo cap exercici per practicar-ho. Només tingues
+present aquesta possibilitat per si surt la necessitat.</p>
+<p>En canvi, et proposo aquest exercici per acabar d’arrodonir tot el que
+portem treballat fins ara sobre la programació orientada a objectes:</p>
+<p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_04_20_puzles.html"><span class="doc"> Exercici 04_20. El Taulell d’escacs</span></a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="poo_exercicis.html" class="btn btn-neutral float-right" title="Exercicis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="constructors.html" class="btn btn-neutral float-left" title="Constructors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2021 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

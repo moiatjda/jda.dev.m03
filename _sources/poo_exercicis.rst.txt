@@ -17,3 +17,12 @@ Exercicis
     exercici_04_09_ensinistrat.rst
     exercici_04_10_assessinable.rst
     exercici_04_11_classes_i_objectes.rst
+    exercici_04_12_constructor_posicio.rst
+    exercici_04_13_constructor_parametritzat.rst
+    exercici_04_14_constructor_posicio.rst
+    exercici_04_15_aquesta_posicio.rst
+    exercici_04_16_molts_constructors.rst
+    exercici_04_17_hora.rst
+    exercici_04_18_resum.rst
+    exercici_04_19_hora_static.rst
+    exercici_04_20_puzles.rst

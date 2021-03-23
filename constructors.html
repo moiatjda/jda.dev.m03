@@ -1,0 +1,950 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ca" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Constructors &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Membres d’instància i de classe" href="static.html" />
+    <link rel="prev" title="Classes i objectes" href="classes_i_objectes.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació amb Java
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-21
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moduls.html">Mòduls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fitxers.html">Fitxers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="poo.html">Programació Orientada a Objectes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="classes_i_objectes.html">Classes i objectes</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Constructors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="static.html">Membres d’instància i de classe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="poo_exercicis.html">Exercicis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="apendix.html">Apèndix</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació amb Java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="poo.html">Programació Orientada a Objectes</a> &raquo;</li>
+        
+      <li>Constructors</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="constructors">
+<h1>Constructors<a class="headerlink" href="#constructors" title="Link permanent a aquest títol">¶</a></h1>
+<p>Coneixerem ara els <em>constructors</em>, un tipus especial de bloc de codi
+(<em>mòdul</em>) que en programació orientada a objectes és cridat per realitzar
+la creació d’una nova instància d’una classe, i que té la funció de
+preparar la instància per a ser utilitzada.</p>
+<p>Aquesta introducció comença amb una secció <em>teòrica</em> que descriu els
+constructors (i destructors), per després continuar amb l’anàlisi
+d’exercicis en Java.</p>
+<div class="section" id="pero-si-ja-els-coneixem">
+<h2>Però si ja els coneixem!<a class="headerlink" href="#pero-si-ja-els-coneixem" title="Link permanent a aquest títol">¶</a></h2>
+<p>En realitat ja hem fet servir els constructors. En el tema
+<a class="reference internal" href="classes_i_objectes.html"><span class="doc">Classes i objectes</span></a> hem vist codi que fa:</p>
+<div class="figure align-center">
+<p class="plantuml">
+<img src="_images/plantuml-396d5171a7ec6fce1484cd2120a89654a40976a4.png" alt=" &#64;startuml
+ hide circle
+ skinparam monochrome true
+ skinparam classAttributeIconSize 0
+
+ class GatRenat {
+    -vides
+    +getVides(): int
+ }
+ &#64;enduml"/>
+</p>
+</div>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GatRenat</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">vides</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getVides</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">vides</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">GatRenat</span> <span class="n">renat</span><span class="p">;</span>
+<span class="hll">        <span class="n">renat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">();</span>
+</span>        <span class="kt">int</span> <span class="n">vides</span> <span class="o">=</span> <span class="n">renat</span><span class="p">.</span><span class="na">getVides</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;Vides: %d%n&quot;</span><span class="p">,</span> <span class="n">vides</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>A la línia 6 estem creant o <em>construint</em> una instància de <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code>. Un
+cop executada, sabem que la referència <code class="docutils literal notranslate"><span class="pre">renat</span></code> queda inicialitzada a un
+valor de tipus <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code>.</p>
+<p>Veiem-ho pas a pas, com sempre, de manera simplificada.</p>
+<p>A la línia 5, al <code class="docutils literal notranslate"><span class="pre">main()</span></code></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 41%" />
+<col style="width: 13%" />
+<col style="width: 12%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>instrucció</p></th>
+<th class="head" colspan="2"><p>noms</p></th>
+<th class="head"><p>Memòria</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>GatRenat renat</p></td>
+<td colspan="2"><p>renat → ?</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>De moment no tenim cap gat instanciat. Només un nom (<code class="docutils literal notranslate"><span class="pre">renat</span></code>) que en pot
+fer referència. Passem a la següent línia:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 10%" />
+<col style="width: 9%" />
+<col style="width: 51%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>instrucció</p></th>
+<th class="head" colspan="2"><p>noms</p></th>
+<th class="head"><p>Memòria</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td rowspan="4"><p>renat = new GatRenat()</p></td>
+<td colspan="2" rowspan="4"><p>renat → &#64;100</p></td>
+<td rowspan="3"><p>[&#64;100]</p>
+<p>«GatRenat.vides» → 7</p>
+</td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"></tr>
+<tr class="row-odd"><td><p>[&#64;200] «estirat»</p></td>
+</tr>
+</tbody>
+</table>
+<p>A la nostra simplificació, l’estat del gat Renat està accessible d’alguna
+manera a partir de la posició <code class="docutils literal notranslate"><span class="pre">&#64;100</span></code>.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34%" />
+<col style="width: 9%" />
+<col style="width: 8%" />
+<col style="width: 48%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>instrucció</p></th>
+<th class="head" colspan="2"><p>noms</p></th>
+<th class="head"><p>Memòria</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td rowspan="4"><p>int vides = renat.getVides()</p></td>
+<td colspan="2"><p>renat → &#64;100</p></td>
+<td rowspan="3"><p>[&#64;100]</p>
+<p>«GatRenat.vides» → 7</p>
+</td>
+</tr>
+<tr class="row-odd"><td colspan="2" rowspan="3"><p>vides → 7</p></td>
+</tr>
+<tr class="row-even"></tr>
+<tr class="row-odd"><td><p>[&#64;200] «estirat»</p></td>
+</tr>
+</tbody>
+</table>
+<p>En fer <code class="docutils literal notranslate"><span class="pre">renat.getVides()</span></code> la funció <em>sap</em> que <code class="docutils literal notranslate"><span class="pre">renat</span></code> apunta a la posició
+<code class="docutils literal notranslate"><span class="pre">&#64;100</span></code> i per tant, és capaç de localitzar el seu camp <code class="docutils literal notranslate"><span class="pre">vides</span></code>, i retornar
+el seu valor: <code class="docutils literal notranslate"><span class="pre">7</span></code>.</p>
+</div>
+<div class="section" id="un-lleuger-canvi">
+<h2>Un <em>lleuger</em> canvi<a class="headerlink" href="#un-lleuger-canvi" title="Link permanent a aquest títol">¶</a></h2>
+<p>Considera ara aquesta nova versió de <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code> que té exactament el mateix
+resultat que l’anterior:</p>
+<div class="figure align-center">
+<p class="plantuml">
+<img src="_images/plantuml-b2cf130214b095e90d4436a5f400a1aaee4be5c9.png" alt=" &#64;startuml
+ hide circle
+ skinparam monochrome true
+ skinparam classAttributeIconSize 0
+
+ class GatRenat {
+    -vides
+    +GatRenat()
+    +getVides(): int
+ }
+ &#64;enduml"/>
+</p>
+</div>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GatRenat</span> <span class="p">{</span>
+<span class="hll">    <span class="kd">private</span> <span class="kt">int</span> <span class="n">vides</span><span class="p">;</span>
+</span><span class="hll">    <span class="kd">public</span> <span class="nf">GatRenat</span><span class="p">()</span> <span class="p">{</span>
+</span><span class="hll">        <span class="c1">// aquí passen coses que no es veuen al codi!</span>
+</span><span class="hll">        <span class="n">vides</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+</span><span class="hll">    <span class="p">}</span>
+</span>    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getVides</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">vides</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">GatRenat</span> <span class="n">renat</span><span class="p">;</span>
+        <span class="n">renat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">();</span>
+        <span class="kt">int</span> <span class="n">vides</span> <span class="o">=</span> <span class="n">renat</span><span class="p">.</span><span class="na">getVides</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;Vides: %d%n&quot;</span><span class="p">,</span> <span class="n">vides</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Aquesta nova versió no defineix valor al camp <code class="docutils literal notranslate"><span class="pre">vides</span></code> de <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code>. A
+canvi, declara una mena de <em>mòdul</em> anomenat igual que la classe, que sí sembla
+inicialitzar aquest camp!</p>
+<p>Tornem a veure-ho pas a pas</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 41%" />
+<col style="width: 13%" />
+<col style="width: 12%" />
+<col style="width: 35%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>instrucció</p></th>
+<th class="head" colspan="2"><p>noms</p></th>
+<th class="head"><p>Memòria</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>GatRenat renat</p></td>
+<td colspan="2"><p>renat → ?</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Ara ve quelcom interessant quan cridem a <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">GatRenat()</span></code>. Centrem-nos en el
+que passa un cop hem arribat a la línia 4 on només tenim aquest misteriós comentari.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 10%" />
+<col style="width: 9%" />
+<col style="width: 51%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>instrucció</p></th>
+<th class="head" colspan="2"><p>noms</p></th>
+<th class="head"><p>Memòria</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td rowspan="3"><p>// comentari línia 4</p></td>
+<td colspan="2" rowspan="3"><p>renat → ?</p></td>
+<td rowspan="3"><p>[&#64;100]</p>
+<p>«GatRenat.vides» → 0</p>
+</td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"></tr>
+</tbody>
+</table>
+<p>Fixa’t. En el moment en que comencem el codi d’aquesta mena de mòdul definida a
+partir de la línia 3, ja tenim un espai de memòria per la instància de
+<code class="docutils literal notranslate"><span class="pre">GatRenat</span></code>. El camp apareix inicialitzat amb el valor base segons el tipus (0
+per enters)</p>
+<p>De reservar aquest espai se n’ha encarregat l’operador <code class="docutils literal notranslate"><span class="pre">new</span></code> i el misteriós
+comentari ens està avisant que se’ns estan escapant coses que Java fa sense que
+li diguem. Entre d’altres, la inicialització del camp <code class="docutils literal notranslate"><span class="pre">vides</span></code> al valor base.</p>
+<p>De moment, haurem d’acceptar aquest inquietant comentari i continuar endavant.</p>
+<p>Un cop executem la línia 5, el camp <code class="docutils literal notranslate"><span class="pre">vides</span></code> rep el seu valor.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 30%" />
+<col style="width: 10%" />
+<col style="width: 9%" />
+<col style="width: 51%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>instrucció</p></th>
+<th class="head" colspan="2"><p>noms</p></th>
+<th class="head"><p>Memòria</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td rowspan="3"><p>«GatRenat()» vides = 7</p></td>
+<td colspan="2" rowspan="3"><p>renat → ?</p></td>
+<td rowspan="3"><p>[&#64;100]</p>
+<p>«GatRenat.vides» → 7</p>
+</td>
+</tr>
+<tr class="row-odd"></tr>
+<tr class="row-even"></tr>
+</tbody>
+</table>
+<p>A partir d’aquí, l’execució torna a la línia 14 on <code class="docutils literal notranslate"><span class="pre">main()</span></code> continuarà la
+seva tasca com abans.</p>
+<p>En resum: podem inicialitzar els valors dels camps de les instàncies de
+<code class="docutils literal notranslate"><span class="pre">GatRenat</span></code> tant directament a la línia de la declaració, com dins d’aquesta
+mena de <em>mòdul</em> que es diu <code class="docutils literal notranslate"><span class="pre">GatRenat()</span></code>.</p>
+<p>Ja va sent hora de que el deixem d’anomenar <em>mena de mòdul</em> i li posem el nom
+que li correspon: <em>constructor</em>.</p>
+<p>Els <em>constructors</em> en Java tenen la forma d’un <em>mòdul</em> amb les següents
+particularitats:</p>
+<ul class="simple">
+<li><p>el seu nom coincideix amb el de la classe</p></li>
+<li><p>no té valor de retorn, ni tant sols <code class="docutils literal notranslate"><span class="pre">void</span></code>.</p></li>
+</ul>
+<p>Potser t’estaràs preguntant: com és possible que fins ara hagi estat
+instanciant gats Renats sense definir constructor? La resposta és: si no
+explicitem un constructor, Java ens n’afegeix un automàticament. És a dir,
+les següents dues classes són equivalents:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Garfield</span> <span class="p">{</span>
+    <span class="c1">// no cal indicar el constructor si no ha de fer res especial</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Garfield</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">Garfield</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// no cal posar res aquí si no ha de fer res especial</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_04_12_constructor_posicio.html"><span class="doc"> Exercici 04_12. Posicionant des del constructor</span></a></p>
+</div>
+<div class="section" id="els-constructors-poden-tenir-parametres">
+<h2>Els constructors poden tenir paràmetres<a class="headerlink" href="#els-constructors-poden-tenir-parametres" title="Link permanent a aquest títol">¶</a></h2>
+<p>Una nova versió del codi anterior:</p>
+<div class="figure align-center">
+<p class="plantuml">
+<img src="_images/plantuml-ad5ced7b465a270a76e5b23302a355f76d40db35.png" alt=" &#64;startuml
+ hide circle
+ skinparam monochrome true
+ skinparam classAttributeIconSize 0
+
+ class GatRenat {
+    -vides
+    +GatRenat(int)
+    +getVides(): int
+ }
+ &#64;enduml"/>
+</p>
+</div>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GatRenat</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">vides</span><span class="p">;</span>
+<span class="hll">    <span class="kd">public</span> <span class="nf">GatRenat</span><span class="p">(</span><span class="kt">int</span> <span class="n">novesVides</span><span class="p">)</span> <span class="p">{</span>
+</span>        <span class="n">vides</span> <span class="o">=</span> <span class="n">novesVides</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getVides</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">vides</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">GatRenat</span> <span class="n">renat</span><span class="p">;</span>
+<span class="hll">        <span class="n">renat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+</span>        <span class="kt">int</span> <span class="n">vides</span> <span class="o">=</span> <span class="n">renat</span><span class="p">.</span><span class="na">getVides</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;Vides: %d%n&quot;</span><span class="p">,</span> <span class="n">vides</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Aquesta nova versió presenta una novetat respecte l’anterior: El constructor
+<em>rep</em> el valor amb el que ha d’inicialitzar les vides.</p>
+<p>Fins ara, el constructor del nostre Renat no tenia cap paràmetre, però no
+hi ha cap raó per que no els pugui tenir.</p>
+<p>Que aquest nou constructor tingui un paràmetre té una implicació
+important: podem decidir el nombre de vides inicial en el moment de la
+creació!</p>
+<p>Una altra implicació és que ara, per crear una instància de <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code> ens
+veiem en l’obligació d’indicar el valor inicial.</p>
+<p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_04_13_constructor_parametritzat.html"><span class="doc"> Exercici 04_13. Posicio parametritzada</span></a></p>
+<p>El constructor sense paràmetres se’l coneix com a <em>constructor per
+defecte</em> mentre que el paràmetritzat se’l coneix com a <em>constructor
+específic</em>. Java només ens afegirà automàticament el constructor per
+defecte i ho farà només en el cas que no li indiquem nosaltres un altre
+constructor, sigui per defecte o sigui específic.</p>
+</div>
+<div class="section" id="vides-desprotegides-en-neixer">
+<h2>Vides desprotegides en néixer!<a class="headerlink" href="#vides-desprotegides-en-neixer" title="Link permanent a aquest títol">¶</a></h2>
+<p>El constructor específic que hem creat a la versió anterior obre la porta
+a errors: ara podem fer que <code class="docutils literal notranslate"><span class="pre">vides</span></code> tingui un valor inadequat des del
+principi!</p>
+<p>Per aquesta raó, ens caldrà protegir-la. Per exemple:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GatRenat</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">vides</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="nf">GatRenat</span><span class="p">(</span><span class="kt">int</span> <span class="n">novesVides</span><span class="p">)</span> <span class="p">{</span>
+<span class="hll">        <span class="k">if</span> <span class="p">(</span><span class="n">novesVides</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>  <span class="p">{</span>
+</span>            <span class="n">vides</span> <span class="o">=</span> <span class="n">novesVides</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getVides</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">vides</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">GatRenat</span> <span class="n">renat</span><span class="p">;</span>
+        <span class="n">renat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">vides</span> <span class="o">=</span> <span class="n">renat</span><span class="p">.</span><span class="na">getVides</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;Vides: %d%n&quot;</span><span class="p">,</span> <span class="n">vides</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Fixa’t que ara tornem a inicialitzar <code class="docutils literal notranslate"><span class="pre">vides</span></code> al valor per defecte <code class="docutils literal notranslate"><span class="pre">7</span></code> en
+comptes del base <code class="docutils literal notranslate"><span class="pre">0</span></code>. El constructor únicament posarà un valor diferent de
+<code class="docutils literal notranslate"><span class="pre">vides</span></code> en el cas que el que se li demani sigui considerat vàlid.</p>
+<p>Encara millor, si volem que es pugui modificar <code class="docutils literal notranslate"><span class="pre">vides</span></code> després de la
+inicialització, podem afegir el <em>setter</em> corresponent i aprofitar-ho des del
+constructor!</p>
+<div class="figure align-center">
+<p class="plantuml">
+<img src="_images/plantuml-7c41367a13f524864d6251d9d25f19dfba118a55.png" alt=" &#64;startuml
+ hide circle
+ skinparam monochrome true
+ skinparam classAttributeIconSize 0
+
+ class GatRenat {
+    -vides
+    +GatRenat(int)
+    +getVides(): int
+    +setVides(int)
+ }
+ &#64;enduml"/>
+</p>
+</div>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GatRenat</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">vides</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="nf">GatRenat</span><span class="p">(</span><span class="kt">int</span> <span class="n">vides</span><span class="p">)</span> <span class="p">{</span>
+<span class="hll">        <span class="n">setVides</span><span class="p">(</span><span class="n">vides</span><span class="p">);</span>
+</span>    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getVides</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">vides</span><span class="p">;</span> <span class="p">}</span>
+<span class="hll">    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setVides</span><span class="p">(</span><span class="kt">int</span> <span class="n">novesVides</span><span class="p">)</span> <span class="p">{</span>
+</span><span class="hll">        <span class="k">if</span> <span class="p">(</span><span class="n">novesVides</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>  <span class="p">{</span>
+</span><span class="hll">            <span class="n">vides</span> <span class="o">=</span> <span class="n">novesVides</span><span class="p">;</span>
+</span><span class="hll">        <span class="p">}</span>
+</span><span class="hll">    <span class="p">}</span>
+</span>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">GatRenat</span> <span class="n">renat</span><span class="p">;</span>
+        <span class="n">renat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">vides</span> <span class="o">=</span> <span class="n">renat</span><span class="p">.</span><span class="na">getVides</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;Vides: %d%n&quot;</span><span class="p">,</span> <span class="n">vides</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Nota: en afegir el <em>setter</em> hem perdut la propietat d’immutabilitat que
+gaudíem. Si la volguéssim continuar tenint, podríem simplement declarar el
+<em>setter</em> com a privat.</p>
+<div class="figure align-center">
+<p class="plantuml">
+<img src="_images/plantuml-4894d89e189510ffb0334199a139a6d63f29205f.png" alt=" &#64;startuml
+ hide circle
+ skinparam monochrome true
+ skinparam classAttributeIconSize 0
+
+ class GatRenat {
+    -setVides(int)
+ }
+ &#64;enduml"/>
+</p>
+</div>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span> <span class="kt">void</span> <span class="nf">setVides</span><span class="p">(</span><span class="kt">int</span> <span class="n">novesVides</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">novesVides</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>  <span class="p">{</span>
+        <span class="n">vides</span> <span class="o">=</span> <span class="n">novesVides</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_04_14_constructor_posicio.html"><span class="doc"> Exercici 04_14. Posició protegida en néixer</span></a></p>
+<p>En resum: hem de vigilar cada cop que oferim una nova possibilitat de
+donar valor a un camp, que no estiguem obrint una porta per què l’estat de
+la instància pugui quedar inconsistent.</p>
+</div>
+<div class="section" id="una-referencia-misteriosa-this">
+<h2>Una referència <em>misteriosa</em>: <code class="docutils literal notranslate"><span class="pre">this</span></code><a class="headerlink" href="#una-referencia-misteriosa-this" title="Link permanent a aquest títol">¶</a></h2>
+<p>Atenció a aquesta nova versió:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GatRenat</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">vides</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="nf">GatRenat</span><span class="p">(</span><span class="kt">int</span> <span class="n">vides</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">setVides</span><span class="p">(</span><span class="n">vides</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getVides</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">vides</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setVides</span><span class="p">(</span><span class="kt">int</span> <span class="n">vides</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">vides</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>  <span class="p">{</span>
+<span class="hll">            <span class="k">this</span><span class="p">.</span><span class="na">vides</span> <span class="o">=</span> <span class="n">novesVides</span><span class="p">;</span>
+</span>        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">GatRenat</span> <span class="n">renat</span><span class="p">;</span>
+        <span class="n">renat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">vides</span> <span class="o">=</span> <span class="n">renat</span><span class="p">.</span><span class="na">getVides</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;Vides: %d%n&quot;</span><span class="p">,</span> <span class="n">vides</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>La nova versió incorpora un nou <em>personatge</em> anomenat <code class="docutils literal notranslate"><span class="pre">this</span></code>. El codi el fa
+servir només al <em>setter*</em> per diferenciar el camp <code class="docutils literal notranslate"><span class="pre">vides</span></code> del paràmetre <code class="docutils literal notranslate"><span class="pre">vides</span></code>.</p>
+<p>És clar, si no li posem, estaríem parlant de la mateixa variable: el paràmetre <code class="docutils literal notranslate"><span class="pre">vides</span></code>.</p>
+<p>El codi també funcionaria de la següent manera:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GatRenat</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">vides</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="nf">GatRenat</span><span class="p">(</span><span class="kt">int</span> <span class="n">vides</span><span class="p">)</span> <span class="p">{</span>
+<span class="hll">        <span class="k">this</span><span class="p">.</span><span class="na">setVides</span><span class="p">(</span><span class="n">vides</span><span class="p">);</span>
+</span>    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getVides</span><span class="p">()</span> <span class="p">{</span>
+<span class="hll">        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="na">vides</span><span class="p">;</span>
+</span>    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setVides</span><span class="p">(</span><span class="kt">int</span> <span class="n">vides</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">vides</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="na">vides</span> <span class="o">=</span> <span class="n">vides</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">GatRenat</span> <span class="n">renat</span><span class="p">;</span>
+        <span class="n">renat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+        <span class="n">renat</span><span class="p">.</span><span class="na">setVides</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
+        <span class="kt">int</span> <span class="n">vides</span> <span class="o">=</span> <span class="n">renat</span><span class="p">.</span><span class="na">getVides</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;Vides: %d%n&quot;</span><span class="p">,</span> <span class="n">vides</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>La referència <code class="docutils literal notranslate"><span class="pre">this</span></code> ens ve de <em>regal</em> a tots els mòduls de la classe que no
+estiguin marcats amb la paraula <code class="docutils literal notranslate"><span class="pre">static</span></code>. És a dir, <code class="docutils literal notranslate"><span class="pre">main()</span></code> no pot fer
+servir <code class="docutils literal notranslate"><span class="pre">this</span></code>.</p>
+<p>Quí serà aquest <code class="docutils literal notranslate"><span class="pre">this</span></code>? Et resultarà més fàcil d’entendre si consideres que
+la crida <code class="docutils literal notranslate"><span class="pre">renat.getVides()</span></code> es podria veure com <code class="docutils literal notranslate"><span class="pre">GatRenat.getVides(renat)</span></code>
+amb una definició com la següent:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getVides</span><span class="p">(</span><span class="n">GatRenat</span> <span class="k">this</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="na">vides</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Atenció</strong>: aquesta versió de <code class="docutils literal notranslate"><span class="pre">getVides()</span></code> no és gaire adequada i ens
+portaria problemes. Només te l’afegeixo perquè vegis d’on surt el <code class="docutils literal notranslate"><span class="pre">this</span></code>.</p>
+<p>És a dir, hem d’entendre <code class="docutils literal notranslate"><span class="pre">this</span></code> com el <em>paràmetre</em> que recull la instància
+amb que cridem el mòdul. La que posem davant del punt.</p>
+<p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_04_15_aquesta_posicio.html"><span class="doc"> Exercici 04_15. Aquesta posició</span></a></p>
+</div>
+<div class="section" id="mes-d-un-constructor">
+<h2>Més d’un constructor<a class="headerlink" href="#mes-d-un-constructor" title="Link permanent a aquest títol">¶</a></h2>
+<p>Ara que ja sabem que podem tenir un constructor per defecte però també un
+d’específic, ens podem plantejar si seria possible disposar dels dos.
+Per exemple, en el cas del Gat Renat, el més normal és que hagi de néixer
+amb 7 vides. No deixa de ser incòmode haver d’indicar 7 cada cop que en
+volem un!</p>
+<p>Això amb Java és possible gràcies al que es coneix com a
+<em>sobrecàrrega</em> que vam descobrir a <a class="reference internal" href="exercici_04_10_assessinable.html"><span class="doc">aquest exercici</span></a>.</p>
+<p>Considera aquesta nova versió del nostre amic:</p>
+<div class="figure align-center">
+<p class="plantuml">
+<img src="_images/plantuml-cb3ecd36fb6e35edac4ecd7b0b275a99cb0f39c5.png" alt=" &#64;startuml
+ hide circle
+ skinparam monochrome true
+ skinparam classAttributeIconSize 0
+
+ class GatRenat {
+    -vides
+    +GatRenat()
+    +GatRenat(int)
+    +getVides(): int
+    +setVides(int)
+ }
+ &#64;enduml"/>
+</p>
+</div>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GatRenat</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">vides</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+<span class="hll">    <span class="kd">public</span> <span class="nf">GatRenat</span><span class="p">()</span> <span class="p">{</span>
+</span>        <span class="n">setVides</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="hll">    <span class="kd">public</span> <span class="nf">GatRenat</span><span class="p">(</span><span class="kt">int</span> <span class="n">vides</span><span class="p">)</span> <span class="p">{</span>
+</span>        <span class="n">setVides</span><span class="p">(</span><span class="n">vides</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getVides</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">vides</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setVides</span><span class="p">(</span><span class="kt">int</span> <span class="n">novesVides</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">novesVides</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>  <span class="p">{</span>
+            <span class="n">vides</span> <span class="o">=</span> <span class="n">novesVides</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+<span class="hll">        <span class="n">GatRenat</span> <span class="n">renatI</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">();</span>
+</span><span class="hll">        <span class="n">GatRenat</span> <span class="n">renatII</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">(</span><span class="mi">8</span><span class="p">);</span>
+</span>        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;Renat I té %d vides%n&quot;</span><span class="p">,</span> <span class="n">renatI</span><span class="p">.</span><span class="na">vides</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;Renat II té %d vides%n&quot;</span><span class="p">,</span> <span class="n">renatII</span><span class="p">.</span><span class="na">vides</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Fixa’t que els dos constructors fan servir el <em>setter</em>. Encara que sabem
+que 7 és un valor vàlid per vides, és una bona pràctica fer-ho així, doncs
+ens assegura que si mai ens calgués fer res especial amb el cas del 7,
+només ho hauríem de fer en un punt (el <em>setter</em>)</p>
+<p>Encara podem fer-ho més modular, fent servir la nostra misteriosa
+referència <code class="docutils literal notranslate"><span class="pre">this</span></code>. Aquest cop amb un format encara més inquietant: com a
+<em>crida</em>!</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GatRenat</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">vides</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="nf">GatRenat</span><span class="p">()</span> <span class="p">{</span>
+<span class="hll">        <span class="k">this</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+</span>    <span class="p">}</span>
+    <span class="kd">public</span> <span class="nf">GatRenat</span><span class="p">(</span><span class="kt">int</span> <span class="n">vides</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">setVides</span><span class="p">(</span><span class="n">vides</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getVides</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">vides</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setVides</span><span class="p">(</span><span class="kt">int</span> <span class="n">novesVides</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">novesVides</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span>  <span class="p">{</span>
+            <span class="n">vides</span> <span class="o">=</span> <span class="n">novesVides</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>La crida de la línia 7 està fent referència al constructor específic.
+Per poder fer servir <code class="docutils literal notranslate"><span class="pre">this()</span></code> cal tenir present que ha de ser la primera
+línia del cos del constructor, altrament <code class="docutils literal notranslate"><span class="pre">javac</span></code> es queixarà.</p>
+<p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_04_16_molts_constructors.html"><span class="doc"> Exercici 04_16. Molts constructors</span></a></p>
+<p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_04_17_hora.html"><span class="doc"> Exercici 04_17. La classe Hora</span></a></p>
+<p><img alt="exerciseicon___" src="_images/exerciseicon___.png" /> <a class="reference internal" href="exercici_04_18_resum.html"><span class="doc"> Exercici 04_18. Què he aprés dels constructors?</span></a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="static.html" class="btn btn-neutral float-right" title="Membres d’instància i de classe" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="classes_i_objectes.html" class="btn btn-neutral float-left" title="Classes i objectes" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2021 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
