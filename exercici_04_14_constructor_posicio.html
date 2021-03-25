@@ -233,14 +233,15 @@
     <span class="nd">@Override</span>
     <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;Vides: %d&quot;</span><span class="p">,</span> <span class="n">vides</span><span class="p">);</span> <span class="p">}</span>
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="k">new</span> <span class="n">GatRenat</span><span class="p">(</span><span class="mi">7</span><span class="p">));</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="k">new</span> <span class="n">GatRenat</span><span class="p">(</span><span class="mi">7</span><span class="p">));</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
 <p>Implementa una nova versió que ofereixi la inicialització del gat Renat
 amb la posició indicada. En cas que la posició que rebi el constructor no
-sigui vàlida, el gat Renat resultant estarà en la seva posició favorita: estirat.</p>
+sigui vàlida, el gat Renat resultant estarà en la seva posició favorita,
+<em>estirat</em>.</p>
 <div class="figure align-center">
 <p class="plantuml">
 <img src="_images/plantuml-22704630ec86e079f9e72d41b55d1f1772466370.png" alt=" &#64;startuml
@@ -261,7 +262,7 @@ sigui vàlida, el gat Renat resultant estarà en la seva posició favorita: esti
 <div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="k">new</span> <span class="n">GatRenat</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="s">&quot;dret&quot;</span><span class="p">));</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="k">new</span> <span class="n">GatRenat</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="s">&quot;dret&quot;</span><span class="p">));</span>
     <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>

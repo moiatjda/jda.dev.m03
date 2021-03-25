@@ -34,13 +34,14 @@ Pren com a referència la següent versió del Gat Renat i l'exercici
         @Override
         public String toString() { return String.format("Vides: %d", vides); }
         public static void main(String[] args) {
-            System.out.printf(new GatRenat(7));
+            System.out.println(new GatRenat(7));
         }
     }
 
 Implementa una nova versió que ofereixi la inicialització del gat Renat
 amb la posició indicada. En cas que la posició que rebi el constructor no
-sigui vàlida, el gat Renat resultant estarà en la seva posició favorita: estirat.
+sigui vàlida, el gat Renat resultant estarà en la seva posició favorita,
+*estirat*.
 
 .. uml::
     :align: center
@@ -64,6 +65,6 @@ Afegeix el següent ``main()`` per comprovar que funciona correctament
     :linenos:
 
         public static void main(String[] args) {
-            System.out.printf(new GatRenat(7, "dret"));
+            System.out.println(new GatRenat(7, "dret"));
         }
 
