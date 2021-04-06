@@ -301,75 +301,7 @@ no hem de fer sonar cap picarol.</p>
 <p>Espera un moment. No estaràs pensant que és una llàstima no poder fer
 sonar realment el picarol, oi? Si és així, no et quedis amb les ganes!</p>
 <p>Considera el següent codi:</p>
-<div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text"><a class="reference download internal" download="" href="_downloads/3c20b91607f1dcb01a64d7c6910fa182/DemoPicarol.java"><code class="xref download docutils literal notranslate"><span class="pre">DemoPicarol.java</span></code></a></span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
-<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.File</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">javax.sound.sampled.Clip</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">javax.sound.sampled.AudioSystem</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">javax.sound.sampled.AudioInputStream</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">javax.sound.sampled.UnsupportedAudioFileException</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">javax.sound.sampled.LineUnavailableException</span><span class="p">;</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DemoPicarol</span> <span class="p">{</span>
-
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="p">{</span>
-        <span class="n">sona</span><span class="p">();</span>
-    <span class="p">}</span>
-
-    <span class="cm">/** Fa sonar el picarol.</span>
-<span class="cm">     * En cas que no sigui possible per qualsevol</span>
-<span class="cm">     * motiu (ex. el fitxer no estigui disponible, o no contingui un</span>
-<span class="cm">     * format reconegut), el procediment falla silenciosament.</span>
-<span class="cm">     */</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">sona</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">try</span> <span class="p">{</span>
-            <span class="n">File</span> <span class="n">fitxer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="p">(</span><span class="s">&quot;picarol.wav&quot;</span><span class="p">);</span>
-            <span class="n">AudioInputStream</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">AudioSystem</span><span class="p">.</span><span class="na">getAudioInputStream</span><span class="p">(</span><span class="n">fitxer</span><span class="p">);</span>
-            <span class="n">Clip</span> <span class="n">clip</span> <span class="o">=</span> <span class="n">AudioSystem</span><span class="p">.</span><span class="na">getClip</span><span class="p">();</span>
-            <span class="n">clip</span><span class="p">.</span><span class="na">open</span><span class="p">(</span><span class="n">stream</span><span class="p">);</span>
-            <span class="n">clip</span><span class="p">.</span><span class="na">start</span><span class="p">();</span>
-            <span class="n">Thread</span><span class="p">.</span><span class="na">sleep</span><span class="p">(</span><span class="mi">600</span><span class="p">);</span>
-        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">IOException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
-        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
-        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">UnsupportedAudioFileException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
-        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">LineUnavailableException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</td></tr></table></div>
-</div>
-<p>Descarregat el fitxer <a class="reference download internal" download="" href="_downloads/8143e8af748b7df03536cfad026a2fbb/picarol.wav"><code class="xref download docutils literal notranslate"><span class="pre">picarol.wav</span></code></a> i
+<p>Descarregat el fitxer <code class="xref download docutils literal notranslate"><span class="pre">picarol.wav</span></code> i
 col·loca’l a la carpeta on tinguis la demostració del Picarol. Compila
 la demo, executa-la i assegura’t que els altaveus (o auriculars) estan
 en funcionament i a un <strong>volum segur</strong>.</p>

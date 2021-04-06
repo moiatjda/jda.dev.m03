@@ -56,7 +56,7 @@ Així, els missatges que ens retornarà seran:
 
 **Atenció**: els nous mètodes **no** han d'escriure res per sortida estàndard.
 
-Des servir el ``main()`` a ``UsaGatRenat`` per demostrar el funcionament d'aquests nous
+Fes servir el ``main()`` a ``UsaGatRenat`` per demostrar el funcionament d'aquests nous
 mètodes.
 
 .. code-block:: java
