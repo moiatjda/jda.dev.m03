@@ -31,7 +31,7 @@ En aquest exercici implementarem la classe ``UllDeGat``.
      }
 
      class GatRenat {
-        +GatRenat(estat: String)
+        +GatRenat(posicio: String)
         +getUllDret(): UllDeGat
         +getUllEsquerre(): UllDeGat
         +aixecat(): String
@@ -53,7 +53,7 @@ Un ``UllDeGat`` pot estar obert o tancat i ofereix els mètodes:
 
 Implementa la classe ``GatRenat`` de manera que ara tingui **dos** ulls. 
 
-Els ulls estaran oberts o tancats depenent de l'estat del gat. Si el gat
+Els ulls estaran oberts o tancats depenent de la posició del gat. Si el gat
 està dret, tots dos ulls estaran oberts. Si està assegut, l'ull dret
 estarà obert i l'esquerre estarà tancat. Quan està estirat, tots dos ulls
 estaran tancats.

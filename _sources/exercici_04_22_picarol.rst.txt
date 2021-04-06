@@ -67,7 +67,7 @@ Per la seva banda, ``GatRenat`` incorpora els següents mètodes:
 
 Quan el Renat té un picarol penjat, cada cop que es mou (s'aixeca, seu o
 s'estira), fa sonar el picarol. Atenció: no es considera que es mou quan
-es construeix la instància ni quan es fa servir el mètode ``setEstat()``.
+es construeix la instància ni quan es fa servir el mètode ``setPosicio()``.
 
 Fes servir el següent ``main()`` a ``GatRenat`` per poder provar aquesta
 nova funcionalitat:
