@@ -1,0 +1,99 @@
+########################################################
+|exerciseicon__T| Exercici 04_21. Els ulls del gat Renat
+########################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``04_21_ulls/``
+
+* Continguts relacionats: :doc:`composicio`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+En aquest exercici implementarem la classe ``UllDeGat``.
+
+.. uml::
+    :align: center
+
+     @startuml
+     hide circle
+     skinparam monochrome true
+     skinparam classAttributeIconSize 0
+
+     class UllDeGat {
+        +obret()
+        +tancat()
+        +estaObert(): boolean
+     }
+
+     class GatRenat {
+        +GatRenat(estat: String)
+        +getUllDret(): UllDeGat
+        +getUllEsquerre(): UllDeGat
+        +aixecat(): String
+        +seu(): String
+        +estirat(): String
+     }
+
+     GatRenat *- UllDeGat
+
+     @enduml
+
+.. /* syntax hightlighting issues in vim
+
+Un ``UllDeGat`` pot estar obert o tancat i ofereix els mètodes:
+
+* ``obret()``
+* ``tancat()``
+* ``boolean estaObert()``
+
+Implementa la classe ``GatRenat`` de manera que ara tingui **dos** ulls. 
+
+Els ulls estaran oberts o tancats depenent de l'estat del gat. Si el gat
+està dret, tots dos ulls estaran oberts. Si està assegut, l'ull dret
+estarà obert i l'esquerre estarà tancat. Quan està estirat, tots dos ulls
+estaran tancats.
+
+La nova versió de GatRenat oferirà els següents nous mètodes:
+
+* ``UllDeGat getUllDret()``: retorna una còpia de l'ull dret
+* ``UllDeGat getUllEsquerre()``: retorna una còpia de l'ull esquerre
+
+Inclou aquest ``main()`` a ``GatRenat`` per provar el seu funcionament:
+
+.. code-block:: java
+    :linenos:
+
+    public static void main(String[] args) {
+        GatRenat renat = new GatRenat();
+        UllDeGat ullDret = renat.getUllDret();
+        UllDeGat ullEsquerre = renat.getUllEsquerre();
+        System.out.printf("Quan està %s: %b + %b%n",
+                renat.getPosicio(),
+                renat.getUllDret().estaObert(),
+                renat.getUllEsquerre().estaObert());
+        renat.seu();
+        System.out.printf("Quan està %s: %b + %b%n",
+                renat.getPosicio(),
+                renat.getUllDret().estaObert(),
+                renat.getUllEsquerre().estaObert());
+        renat.aixecat();
+        System.out.printf("Quan està %s: %b + %b%n",
+                renat.getPosicio(),
+                renat.getUllDret().estaObert(),
+                renat.getUllEsquerre().estaObert());
+    }
+
+La sortida serà:
+
+.. code-block:: console
+
+    $ java GatRenat
+    Quan està estirat: false + false
+    Quan està assegut: true + false
+    Quan està dret: true + true
+

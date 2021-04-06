@@ -1,0 +1,146 @@
+#################################################
+|exerciseicon__T| Exercici 04_26. El gat Garfield
+#################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``04_26_garfield/``
+
+* Continguts relacionats: :doc:`herencia`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+
+En aquest exercici implementarem un nou gat, l'amic ``Garfield``.
+
+Per poder-ho encabir en el nostre ecosistema de gats, ens tocarà fer
+alguns canvis.
+
+Un dels primers canvis és els gats hauran de disposar d'un nom.  El nom es
+guardarà en la propietat ``nom`` i definirem ``Gat`` de manera que no
+pugui instanciar-se sense nom.
+
+Donat que el nom, un cop nascut el gat, no canviarà:
+
+* caldrà què sigui un requeriment de tots els constructors
+
+* no s'oferirà cap *setter*
+
+* la propietat que contindrà el nom podria ser declarada com a ``final``
+
+El nom d'un gat cal que sigui no null, ni buit ni blanc. 
+En cas que el nom que se li assigna al gat no sigui vàlid, el gat passarà
+a dir-se ``"anònim"``.
+
+Els gats podran especificar en el seu naixement, a banda del requerit nom,
+les vides o/i la posició inicial.
+
+Per altra banda, tenim que el ``GatRenat`` continuarà sent un ``Gat``. En
+aquest cas, però, ja sabem el nom de tots els gats Renat, oi? Per tant,
+els seus constructors **no** demanaran nom.
+
+En Garfield és, per descomptat, un ``Gat`` i en totes les seves instàncies
+es diu ``"Garfield"``. Es tracta d'un gat també molt especial. En
+Garfield, a diferència del Renat, i de fet, de la majoria dels gats, neix
+sempre amb 9 vides i mai no pot tenir més de 9 vides ni el seu nombre de
+vides no ser vàlid per qualsevol altre gat. Tampoc no pot néixer d'una
+altra manera que no sigui estirat. Per altra banda, les ordres
+d'ensinistrament no són tan flexibles com les de la resta dels gats. Així,
+només pot aixecar-se o estirar-se si estava assegut, mentre que pot seure
+sempre i quant no estigués ja assegut. Quan se li demana que s'aixequi o
+s'estiri sense estar assegut ni en la nova posició requerida, et respon
+``"Bai Maitea, bai"`` i no canvia la posició. El mètode heretat
+``setPosicio()`` però, podrà canviar la posició sense restriccions.
+
+Com que ens hem adonat que els serveis que antigament oferien el Gat Renat
+(aixecar-se, seure, etc), ara són requerits pel Garfield com, de fet, per
+tots els gats, mourem la responsabilitat d'aquest comportament  a la
+superclasse comuna, ``Gat``.
+
+.. uml::
+    :align: center
+
+     @startuml
+     hide circle
+     skinparam monochrome true
+     skinparam classAttributeIconSize 0
+
+     class Gat {
+         - nom: String
+         + Gat(nom:String)
+         + Gat(nom:String, vides: int)
+         + Gat(nom:String, posicio: String)
+         + Gat(nom:String, vides: int, posicio: String)
+         + getNom(): String
+         + getVides(): int
+         + setVides(int)
+         + getPosicio(): String
+         + setPosicio(String)
+         + estaViu(): boolean
+         + estaDret(): boolean
+         + estaAssegut(): boolean
+         + estaEstirat(): boolean
+         + aixecat(): String
+         + seu(): String
+         + estirat(): String
+     }
+
+     class GatRenat extends Gat {
+         + GatRenat(vides: int)
+         + GatRenat(posicio: String)
+         + GatRenat(vides: int, posicio: String)
+     }
+
+     class Garfield extends Gat
+
+     @enduml
+
+Per provar aquest codi, farem servir la classe ``UsaGats`` amb el següent
+``main()``:
+
+.. code-block:: java
+    :linenos:
+
+    public static void main(String[] args) {
+        Gat[] gats = new Gat[] {
+            new Gat("Misifú"),
+            new GatRenat(),
+            new Garfield()
+        };
+        for (Gat gat: gats) {
+            System.out.println("Entrenant el gat " + gat.getNom());
+            System.out.println(gat.getNom() + " diu: "+ gat.seu());
+            System.out.println(gat.getNom() + " diu: "+ gat.aixecat());
+            System.out.println(gat.getNom() + " diu: "+ gat.aixecat());
+            System.out.println(gat.getNom() + " diu: "+ gat.estirat());
+            System.out.println();
+        }
+    }
+
+La sortida esperada és:
+
+.. code-block:: console
+    :emphasize-lines: 2-
+
+    $ java UsaGats 
+    Entrenant el gat Misifú
+    Misifú diu: m'assec
+    Misifú diu: m'aixeco
+    Misifú diu: no faig res
+    Misifú diu: m'estiro
+
+    Entrenant el gat Renat
+    Renat diu: m'assec
+    Renat diu: m'aixeco
+    Renat diu: no faig res
+    Renat diu: m'estiro
+
+    Entrenant el gat Garfield
+    Garfield diu: m'assec
+    Garfield diu: m'aixeco
+    Garfield diu: no faig res
+    Garfield diu: Bai Maitea, bai

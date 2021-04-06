@@ -26,3 +26,9 @@ Exercicis
     exercici_04_18_resum.rst
     exercici_04_19_hora_static.rst
     exercici_04_20_puzles.rst
+    exercici_04_21_ulls.rst
+    exercici_04_22_picarol.rst
+    exercici_04_23_exemple_herencia.rst
+    exercici_04_24_renat_es_gat.rst
+    exercici_04_25_metodes_cridats.rst
+    exercici_04_26_garfield.rst

@@ -1,0 +1,31 @@
+###########################################################
+|exerciseicon___| Exercici 04_23. El meu exemple d'herència
+###########################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``04_23_exemple_herencia/``
+
+* Continguts relacionats: :doc:`herencia`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+.. rubric:: Enunciat
+
+Imagina tres classes de manera que una d'elles estengui les altres dues
+i aquestes no estiguin relacionades entre si per herència. 
+
+Idealment les classes que proposis seran conceptes que tothom coneguem,
+com ho eren Gat i Felí d'exemples anteriors.
+
+Construeix un esquelet de la implementació de les tres classes en Java.
+Amb alguna propietat i accessors per cada classe serà suficient, però pots
+anar tant lluny com et vulgui portar la teva imaginació.
+
+Inclou un ``main()`` que demostri exemples d'instanciació de les tres
+classes i com es criden des de les subclasses membres de la superclasse.
+
+Finalment explica el concepte d'herència fent servir les teves classes
+com a exemples.
+
+

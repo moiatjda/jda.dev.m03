@@ -33,14 +33,6 @@ Aquest tema es desglossa en les següents entrades:
     classes_i_objectes.rst
     constructors.rst
     static.rst
-    poo_exercicis.rst
-
-..
-    relacions.rst
+    composicio.rst
     herencia.rst
-    polimorfisme.rst
-    abstractes.rst
-    interfaces.rst
-    poo_eleccio.rst
-    excepcions.rst
-
+    poo_exercicis.rst

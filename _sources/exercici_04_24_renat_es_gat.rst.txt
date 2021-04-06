@@ -1,0 +1,83 @@
+#################################################
+|exerciseicon__T| Exercici 04_24. Renat és un Gat
+#################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``04_24_renat_es_gat/``
+
+* Continguts relacionats: :doc:`herencia`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Implementa una nova versió del gat Renat, que disposarà de funcionalitats
+com les implementades a exercicis previs com ara el del :doc:`Renat
+ensinistrat <exercici_04_09_ensinistrat>`.
+
+En aquesta ocasió, però, faràs que ``GatRenat`` sigui una subclasse de
+``Gat``.
+
+.. uml::
+    :align: center
+
+     @startuml
+     hide circle
+     skinparam monochrome true
+     skinparam classAttributeIconSize 0
+
+     class Gat {
+         +getVides(): int
+         +setVides(int)
+         +getPosicio(): String
+         +setPosicio(String)
+     }
+
+     class GatRenat extends Gat {
+         + estaViu(): boolean
+         + estaDret(): boolean
+         + estaAssegut(): boolean
+         + estaEstirat(): boolean
+         + aixecat(): String
+         + seu(): String
+         + estirat(): String
+     }
+     @enduml
+
+A l'hora de codificar les dues classes, tingues present que:
+
+* ``Gat`` **només** definirà els accessors de ``vides`` i ``posició``.
+
+* ``GatRenat`` ja **no** definirà els accessors de ``vides`` ni de
+  ``posició``. Tampoc no definirà cap atribut. Per tant, aquells
+  mètodes que requereixin accés a les propietats hauran de utilitzar els
+  accessors heredats de ``Gat``.
+
+Fes servir el ``main()`` a ``UsaGatRenat`` per comprovar que aquesta
+redistribució de membres funciona com abans:
+
+.. code-block:: java
+    :linenos:
+
+    public static void main(String[] args) {
+        GatRenat renat = new GatRenat();
+        System.out.println("El Renat diu: "+ renat.aixecat());
+        System.out.println("El Renat diu: "+ renat.seu());
+        System.out.println("El Renat diu: "+ renat.estirat());
+        System.out.println("El Renat diu: "+ renat.estirat());
+    }
+
+
+La sortida haurà de ser:
+
+.. code-block:: console
+    :emphasize-lines: 2-
+
+    $ java UsaGatRenat 
+    El Renat diu: m'aixeco
+    El Renat diu: m'assec
+    El Renat diu: m'estiro
+    El Renat diu: no faig res

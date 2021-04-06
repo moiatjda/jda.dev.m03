@@ -1,0 +1,1271 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ca" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Herència &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Exercicis" href="poo_exercicis.html" />
+    <link rel="prev" title="Composició" href="composicio.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació amb Java
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-21
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moduls.html">Mòduls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fitxers.html">Fitxers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="poo.html">Programació Orientada a Objectes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="classes_i_objectes.html">Classes i objectes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="constructors.html">Constructors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="static.html">Membres d’instància i de classe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composicio.html">Composició</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Herència</a></li>
+<li class="toctree-l2"><a class="reference internal" href="poo_exercicis.html">Exercicis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="apendix.html">Apèndix</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació amb Java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="poo.html">Programació Orientada a Objectes</a> &raquo;</li>
+        
+      <li>Herència</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="herencia">
+<h1>Herència<a class="headerlink" href="#herencia" title="Link permanent a aquest títol">¶</a></h1>
+<p>Si es pregunta pel concepte més <em>representatiu</em> de la programació
+orientada a objectes, amb pocs dubtes sortiria el d”<strong>herència</strong>.</p>
+<p>L’herència és, com la <a class="reference internal" href="composicio.html"><span class="doc">Composició</span></a>, una altra relació de dependència
+entre dues classes.</p>
+<div class="section" id="el-concepte-d-herencia">
+<h2>El concepte d’herència<a class="headerlink" href="#el-concepte-d-herencia" title="Link permanent a aquest títol">¶</a></h2>
+<p>Què tenen en comú en Renat, el Garfield, el Misifú, i en Tom (company
+del Jerry)? Doncs tots ells tenen quatre potes amb urpes i ullals,
+miolen, respiren, mengen sardines, empaiten ratolins… en definitiva:
+són gats.</p>
+<p>I, què tenen en comú els gats, els gossos i els ratolins? Doncs que
+respiren, mengen… en definitiva: són animals. Però també són éssers
+vius, mamífers terrestres, de sang calenta, amb endoesquelet…</p>
+<p>Cadascuna de les diferents categories (classes) a les que pertany en
+Renat, li ofereix un conjunt de característiques. En Renat <em>hereta</em> la
+necessitat de menjar per ser ésser viu, de respirar per ser animal, un
+esquelet intern per ser un animal amb endoesquelet, urpes i ullals per
+ser felí, etc.</p>
+<p>Diem que Renat és un gat (<em>is-a</em>). I com que els gats són felins, en
+Renat és un felí. I com que els felins són animals, en Renat és un
+animal. És a dir, la relació <em>is-a</em> és transitiva:</p>
+<blockquote>
+<div><p>Si A és subclasse de B, i B és subclasse de C, llavors A és subclasse de C</p>
+</div></blockquote>
+<p>O amb un exemple més proper:</p>
+<blockquote>
+<div><p>Si GatRenat és Gat, i Gat és Felí, llavors GatRenat és Felí</p>
+</div></blockquote>
+<p>El següent diagrama mostra una jerarquia <em>parcial</em> dels animals.</p>
+<div class="figure align-center">
+<img alt="Jerarquia d'animals" src="_images/jerarquia_animals.png" />
+</div>
+<p>Quan una classe A hereta d’una classe B, es diu que:</p>
+<ul class="simple">
+<li><p>A és un B</p></li>
+<li><p>A estén B</p></li>
+<li><p>A especialitza a B</p></li>
+<li><p>A concreta B</p></li>
+<li><p>B generalitza a A</p></li>
+<li><p>A és subclasse de B</p></li>
+<li><p>B és superclasse d’A</p></li>
+</ul>
+<p>Al diagrama veiem també casos en que una classe estén més d’una
+superclasse. Per exemple, els felins són a l’hora carnívors i
+mamífers.  Això permet que un felí tingui a l’hora característiques de
+Carnívor (ex. menja carn), i a l’hora les de mamífer (ex. alleta les
+seves cries).</p>
+<p>D’aquesta possibilitat de disposar de més d’una superclasse pertanyent
+a jerarquies diferents, se’n diu <em>herència múltiple</em> i es produeix
+quan:</p>
+<blockquote>
+<div><p>A estén B i A estén C però B no estén C ni C estén B</p>
+</div></blockquote>
+<p>Així, tenim que els gats són a l’hora mamífers i carnívors (per ser
+felins). El diagrama ens mostra que els gossos són també mamífers i
+carnívors, però no són felins. Això explica que, com els gats, mengin
+carn (per ser carnívors) i alletin les seves cries (per ser mamífers)
+però, a diferència dels gats, no tinguin urpes (per no ser felins).
+Això exemplifica el fet que cada classe dins la jerarquia afegeix
+característiques particulars a les seves subclasses.</p>
+<p><img alt="exerciseicon___" src="_images/exerciseicon___.png" /> <a class="reference internal" href="exercici_04_23_exemple_herencia.html"><span class="doc"> Exercici 04_23. El meu exemple d’herència</span></a></p>
+</div>
+<div class="section" id="l-herencia-en-java">
+<h2>L’herència en Java<a class="headerlink" href="#l-herencia-en-java" title="Link permanent a aquest títol">¶</a></h2>
+<p>Java, com a llenguatge orientat a objectes, implementa el concepte
+d’herència.</p>
+<div class="figure align-center">
+<p class="plantuml">
+<img src="_images/plantuml-044268bc4cb3c3325753e5d55d8842cdbff4c0fc.png" alt=" &#64;startuml
+ hide circle
+ skinparam monochrome true
+ skinparam classAttributeIconSize 0
+
+ class GatRenat extends Gat
+
+ &#64;enduml"/>
+</p>
+</div>
+<p>L’herència en Java s’especifica amb la paraula clau <code class="docutils literal notranslate"><span class="pre">extends</span></code>, de la
+següent manera:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GatRenat</span> <span class="kd">extends</span> <span class="n">Gat</span> <span class="p">{</span>
+   <span class="cm">/* … */</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Java no admet herència múltiple. Cada classe pot ser (i de fet és) només
+subclasse d’una única classe.</p>
+<p>A dalt de tot de la jerarquia de classes es troba la classe <code class="docutils literal notranslate"><span class="pre">Object</span></code> (la
+classe més general)</p>
+<p>Per exemple, les següents dues declaracions són equivalents:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Gat</span> <span class="p">{}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Gat</span> <span class="kd">extends</span> <span class="n">Object</span> <span class="p">{}</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Object</span></code> aporta una sèrie de característiques a totes les classes de
+Java, per exemple, el mètode <code class="docutils literal notranslate"><span class="pre">String</span> <span class="pre">toString()</span></code>. Si consultes la
+documentació de la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html">Object</a>
+hi trobaràs un bon grapat de mètodes, molts d’ells força allunyats del que
+hem vist fins ara a aquest curs. No pateixis. Quedat amb que hi són i on
+pots trobar la seva descripció.</p>
+<p>Però veiem en funcionament l’herència:</p>
+<div class="figure align-center">
+<p class="plantuml">
+<img src="_images/plantuml-2f022ba651e5ecb7e4b04ca65ac85c8a4afde9fb.png" alt=" &#64;startuml
+ hide circle
+ skinparam monochrome true
+ skinparam classAttributeIconSize 0
+
+
+ class Gat {
+     -vides: int
+     +getVides(): int
+     +setVides(int)
+ }
+
+ class GatRenat extends Gat
+
+ class UsaGatRenat {
+     + {static} main(String[])
+ }
+
+ UsaGatRenat -left-&gt; GatRenat
+
+ &#64;enduml"/>
+</p>
+</div>
+<p>En primer lloc, veiem la classe <code class="docutils literal notranslate"><span class="pre">Gat</span></code>:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Gat</span> <span class="p">{</span>
+     <span class="kd">private</span> <span class="kt">int</span> <span class="n">vides</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+     <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getVides</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">vides</span><span class="p">;</span> <span class="p">}</span>
+     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setVides</span><span class="p">(</span><span class="kt">int</span> <span class="n">vides</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">if</span> <span class="p">(</span><span class="n">vides</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+         <span class="k">this</span><span class="p">.</span><span class="na">vides</span> <span class="o">=</span> <span class="n">vides</span><span class="p">;</span>
+     <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Ara la classe <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code> aquest cop relacionant-la amb <code class="docutils literal notranslate"><span class="pre">Gat</span></code>:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GatRenat</span> <span class="kd">extends</span> <span class="n">Gat</span> <span class="p">{}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Ha estat breu, oi?</p>
+<p>Finalment, veiem com podem usar aquesta <em>nova</em> versió de <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code>:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">UsaGatRenat</span> <span class="p">{</span>
+     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
+          <span class="n">GatRenat</span> <span class="n">renat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">();</span>
+          <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;El gat Renat té %d vides%n&quot;</span><span class="p">,</span> <span class="n">renat</span><span class="p">.</span><span class="na">getVides</span><span class="p">());</span>
+     <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>En executar <code class="docutils literal notranslate"><span class="pre">UsaGatRenat</span></code> ens trobem amb l’habitual:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java UsaGatRenat
+<span class="go">El gat Renat té 7 vides</span>
+</pre></div>
+</div>
+<p>Tot i sent habitual, és important que notem que <code class="docutils literal notranslate"><span class="pre">getVides()</span></code> no ha estat
+definit a <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code> sinó a <code class="docutils literal notranslate"><span class="pre">Gat</span></code>.</p>
+<p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_04_24_renat_es_gat.html"><span class="doc"> Exercici 04_24. Renat és un Gat</span></a></p>
+</div>
+<div class="section" id="una-simplificacio-pels-exemples">
+<h2>Una simplificació pels exemples<a class="headerlink" href="#una-simplificacio-pels-exemples" title="Link permanent a aquest títol">¶</a></h2>
+<p>Com sabem, les tres classes de l’exemple anterior han de ser definides en
+tres fitxers separats que han de tenir com a nom el de la classe. Si bé
+aquesta és una manera força recomanable de fer, el cert és que no resulta
+massa pràctic per a presentar-te exemples. Per aquesta raó, et presento
+una funcionalitat de Java que fins ara no t’havia mostrat: podem posar més
+d’una classe a un mateix fitxer sempre i quant hi hagi com a molt una de
+pública.</p>
+<p>Considera el següent codi que es troba en un únic fitxer anomenat
+<code class="docutils literal notranslate"><span class="pre">UsaGatRenat.java</span></code>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Gat</span> <span class="p">{</span>
+     <span class="kd">private</span> <span class="kt">int</span> <span class="n">vides</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+     <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getVides</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">vides</span><span class="p">;</span> <span class="p">}</span>
+     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setVides</span><span class="p">(</span><span class="kt">int</span> <span class="n">vides</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">if</span> <span class="p">(</span><span class="n">vides</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+         <span class="k">this</span><span class="p">.</span><span class="na">vides</span> <span class="o">=</span> <span class="n">vides</span><span class="p">;</span>
+     <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">GatRenat</span> <span class="kd">extends</span> <span class="n">Gat</span> <span class="p">{}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">UsaGatRenat</span> <span class="p">{</span>
+     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
+          <span class="n">GatRenat</span> <span class="n">renat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">();</span>
+          <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;El gat Renat té %d vides%n&quot;</span><span class="p">,</span> <span class="n">renat</span><span class="p">.</span><span class="na">getVides</span><span class="p">());</span>
+     <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Com pots veure, el fitxer conté <strong>tres</strong> declaracions de variables, amb
+una sola de pública.</p>
+<p>Considera la següent interacció:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> ls
+<span class="hll"><span class="go">UsaGatRenat.java</span>
+</span><span class="gp">$</span> javac UsaGatRenat.java
+<span class="gp">$</span> ls
+<span class="hll"><span class="go">Gat.class  GatRenat.class  UsaGatRenat.class  UsaGatRenat.java</span>
+</span><span class="gp">$</span> java UsaGatRenat
+<span class="hll"><span class="go">Abans de crear un Gat Renat</span>
+</span><span class="hll"><span class="go">Neix un Gat</span>
+</span><span class="hll"><span class="go">Neix un Gat Renat</span>
+</span><span class="hll"><span class="go">Un cop creat un Gat Renat</span>
+</span></pre></div>
+</div>
+<p>Fixa’t que, malgrat només hi ha un <code class="docutils literal notranslate"><span class="pre">.java</span></code>, en compilar-lo, Java en
+genera <em>tres</em> fitxers <code class="docutils literal notranslate"><span class="pre">.class</span></code>, un per cada classe definida a
+<code class="docutils literal notranslate"><span class="pre">UsaGatRenat.java</span></code>.</p>
+<p>També pots veure que el resultat de l’execució és el mateix que quan cada
+classe tenia el seu propi fitxer.</p>
+<p>Donat que encara no coneixem massa bé quines repercusions té el fet que
+dues de les classes no siguin marcades com a públiques, de moment la
+versió d’un sol fitxer i la de tres ens resulten equivalents.</p>
+</div>
+<div class="section" id="interficie-d-una-classe">
+<h2>Interfície d’una classe<a class="headerlink" href="#interficie-d-una-classe" title="Link permanent a aquest títol">¶</a></h2>
+<p>La <em>interfície</em> d’una classe està formada per tots els membres no privats
+que defineix la classe, més tots els membres no privats que hereta.</p>
+<p>Considera el següent diagrama:</p>
+<div class="figure align-center">
+<img alt="herència" src="_images/herencia.png" />
+</div>
+<p>En UML, suposant que els membres són <em>atributs</em>, vindria a ser:</p>
+<div class="figure align-center">
+<p class="plantuml">
+<img src="_images/plantuml-4ef5adfb828152501b0ae16ffacd46521b39327d.png" alt=" &#64;startuml
+ hide circle
+ skinparam monochrome true
+ skinparam classAttributeIconSize 0
+
+ class Renat extends Gat {
+    +mr1
+    +mr2
+ }
+ class Gat extends Felí {
+    +mg1
+    +mg2
+ }
+ class Pantera extends Felí {
+    +mp1
+    +mp2
+ }
+ class Felí {
+    +mf1
+    +mf2
+ }
+ &#64;enduml"/>
+</p>
+</div>
+<p>Veiem que la classe Felí defineix els membres <em>mf1</em> i <em>mf2</em>.  Aquests
+membres, en virtut de la relació d’herència, queden inclosos entre els
+membres de Gat i de Pantera. Així Gat disposa dels membres que defineix
+<em>mg1</em> i <em>mg2</em>, més els heretats <em>mf1</em> i <em>mf2</em>. És clar, Gat no disposa
+dels membres definits per altes subclasses de Felí, com ara el <em>mp1</em> que
+defineix Pantera, tot i que comparteix amb aquesta els membres de Felí.</p>
+<p>Finalment, Renat, en ser un Gat disposa dels membres <em>mr1</em>, <em>mr2</em>
+(propis), més <strong>tots</strong> els de Gat (<em>mg1</em>, <em>mg2</em>, <em>mf1</em> i <em>mf2</em>).</p>
+<p>Com podem veure, <code class="docutils literal notranslate"><span class="pre">Gat</span></code> estén els membres de <code class="docutils literal notranslate"><span class="pre">Felí</span></code> amb els membres
+propis. És a dir, <code class="docutils literal notranslate"><span class="pre">Gat</span></code> inclou <em>tota</em> la definició de <code class="docutils literal notranslate"><span class="pre">Felí</span></code>, i a més
+a més, l’amplia amb nous continguts.</p>
+<p>Concretem una mica. Suposem que disposem de les següents definicions de
+classe:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Felí</span> <span class="p">{</span>
+    <span class="cm">/* … */</span>
+    <span class="kt">void</span> <span class="nf">menja</span><span class="p">(</span><span class="n">Menjar</span> <span class="n">m</span><span class="p">)</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Nyam Nyam &quot;</span> <span class="o">+</span> <span class="n">m</span><span class="p">);</span> <span class="p">}</span>
+    <span class="cm">/* … */</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Gat</span> <span class="kd">extends</span> <span class="n">Felí</span> <span class="p">{</span>
+    <span class="kt">void</span> <span class="nf">miola</span><span class="p">()</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;MEEEEEEU&quot;</span><span class="p">);</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">UsaGat</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Gat</span> <span class="n">gat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Gat</span><span class="p">();</span>
+        <span class="n">gat</span><span class="p">.</span><span class="na">miola</span><span class="p">();</span>
+        <span class="n">gat</span><span class="p">.</span><span class="na">menja</span><span class="p">(</span><span class="k">new</span> <span class="n">Menjar</span><span class="p">());</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>En aquest exemple podem observar com, des de la classe <code class="docutils literal notranslate"><span class="pre">UsaGat</span></code> podem
+accedir a un membre de <code class="docutils literal notranslate"><span class="pre">Gat</span></code> (el mètode <code class="docutils literal notranslate"><span class="pre">menja()</span></code>) que no ha estat
+definit a <code class="docutils literal notranslate"><span class="pre">Gat</span></code> sinó a la seva superclasse <code class="docutils literal notranslate"><span class="pre">Felí</span></code>. Fixem-nos en que
+l’accés a un mètode heretat de <code class="docutils literal notranslate"><span class="pre">Gat</span></code> des de <code class="docutils literal notranslate"><span class="pre">UsaGat</span></code> és idèntic a
+l’accés a un mètode definit per <code class="docutils literal notranslate"><span class="pre">Gat</span></code>.</p>
+</div>
+<div class="section" id="comportaments-especifics">
+<h2>Comportaments específics<a class="headerlink" href="#comportaments-especifics" title="Link permanent a aquest títol">¶</a></h2>
+<p>El fet que una subclasse hereti tots els membres no privats de la superclasse
+no vol dir que la subclasse s’hagi de comportar exactament igual que la
+superclasse, a l’hora d’oferir els serveis que hereta.</p>
+<p>Considerem el cas del nostre amic Renat. En Renat és un gat, sí, però un
+de molt especial.  Només menja després de netejar-se les urpes. Suposem
+que Renat hereta els mètodes <code class="docutils literal notranslate"><span class="pre">void</span> <span class="pre">menja(Menjar)</span></code> i <code class="docutils literal notranslate"><span class="pre">void</span>
+<span class="pre">netejaUrpes()</span></code>.</p>
+<p>El codi tindria el següent aspecte:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Gat</span> <span class="p">{</span>
+    <span class="kt">void</span> <span class="nf">menja</span><span class="p">(</span><span class="n">Menjar</span> <span class="n">menjar</span><span class="p">)</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Gat menja &quot;</span> <span class="o">+</span> <span class="n">menjar</span><span class="p">);</span> <span class="p">}</span>
+    <span class="kt">void</span> <span class="nf">miola</span><span class="p">()</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Gat miola&quot;</span><span class="p">);</span> <span class="p">}</span>
+    <span class="kt">void</span> <span class="nf">netejaUrpes</span><span class="p">()</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Gat netejaUrpes&quot;</span><span class="p">);</span> <span class="p">}</span>
+    <span class="cm">/* … */</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">GatRenat</span> <span class="kd">extends</span> <span class="n">Gat</span> <span class="p">{</span>
+    <span class="nd">@Override</span>
+    <span class="kt">void</span> <span class="nf">miola</span><span class="p">()</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;GatRenat miola&quot;</span><span class="p">);</span> <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kt">void</span> <span class="nf">menja</span><span class="p">(</span><span class="n">Menjar</span> <span class="n">menjar</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">netejaUrpes</span><span class="p">();</span>
+        <span class="kd">super</span><span class="p">.</span><span class="na">menja</span><span class="p">(</span><span class="n">menjar</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="cm">/* … */</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Com que <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code> no fa res diferent amb el mètode <code class="docutils literal notranslate"><span class="pre">netejaUrpes()</span></code> del que
+fa <code class="docutils literal notranslate"><span class="pre">Gat</span></code>, no cal que el declari. Quan es cridi el mètode <code class="docutils literal notranslate"><span class="pre">netejaUrpes()</span></code> a
+una instància de <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code>, directament s’executarà el mètode declarat a la
+classe <code class="docutils literal notranslate"><span class="pre">Gat</span></code>.</p>
+<p>El Renat miola de manera diferent a un gat <em>general</em>. Per aquesta raó,
+<code class="docutils literal notranslate"><span class="pre">GatRenat</span></code> <em>torna a definir</em> el mètode <code class="docutils literal notranslate"><span class="pre">miola()</span></code>. Aquesta redefinició
+es coneix també com <em>overriding</em>.</p>
+<p>Si es realitza la crida al mètode <code class="docutils literal notranslate"><span class="pre">miola()</span></code> des d’una instància de
+<code class="docutils literal notranslate"><span class="pre">GatRenat</span></code>, s’executarà el mètode d’aquesta classe i no de la seva
+superclasse.</p>
+<p>El mètode <code class="docutils literal notranslate"><span class="pre">menja()</span></code> de <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code> també està redefinit, però en aquest
+cas presenta una particularitat diferent de <code class="docutils literal notranslate"><span class="pre">miola()</span></code>. Un cop s’ha
+netejat les urpes, en Renat es posa a menjar com ho faria un gat
+qualsevol. De fet, la única particularitat és que el Renat, abans de
+menjar, sempre es renta les urpes.</p>
+<p>Analitzem el codi de <code class="docutils literal notranslate"><span class="pre">GatRenat.menja(Menjar)</span></code>. La primera instrucció és
+una crida al mètode <code class="docutils literal notranslate"><span class="pre">netejaUrpes()</span></code>. Aquest mètode no apareix definit a
+la classe <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code> sinó que és heretat de <code class="docutils literal notranslate"><span class="pre">Gat</span></code>.  Cap problema. Ja
+sabem que és un mètode heretat i, per tant, <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code> el pot considerar
+com seu.</p>
+<p>Per <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code>, el mètode <code class="docutils literal notranslate"><span class="pre">netejaUrpes()</span></code> és tan seu que fins i tot el
+podria cridar com <code class="docutils literal notranslate"><span class="pre">this.netejaUrpes()</span></code>.</p>
+<p>La segona instrucció és més críptica. El que perseguim és que executi el
+codi del mètode <code class="docutils literal notranslate"><span class="pre">menja(Menjar)</span></code> de la classe <code class="docutils literal notranslate"><span class="pre">Gat</span></code> però si fem
+simplement <code class="docutils literal notranslate"><span class="pre">menja(menjar)</span></code> estaríem cridant al mateix mètode <code class="docutils literal notranslate"><span class="pre">menja()</span></code>
+que estem definit a <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code> de manera recursiva que acabaria d’una
+manera poc dessitjable: amb la pila d’execució plena i la panxa del gat
+buida!</p>
+<p>El problema és que el mètode <code class="docutils literal notranslate"><span class="pre">menja(Menjar)</span></code> heretat pel GatRenat, ha
+quedat <em>ocultat</em> per la nova definició del mètode a dins de GatRenat.</p>
+<p>Aquest és un fenomen que ja ens resulta familiar, oi? Recordem la situació
+típica:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Gat</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">vides</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setVides</span><span class="p">(</span><span class="kt">int</span> <span class="n">vides</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">vides</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="na">vides</span> <span class="o">=</span> <span class="n">vides</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="cm">/* … */</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>En aquesta situació, el paràmetre <code class="docutils literal notranslate"><span class="pre">vides</span></code> <em>oculta</em> l’atribut <code class="docutils literal notranslate"><span class="pre">vides</span></code>.
+Per poder-nos saltar l’ocultació, fèiem servir <code class="docutils literal notranslate"><span class="pre">this.vides</span></code> de manera
+que Java sapigués que ens referíem a <code class="docutils literal notranslate"><span class="pre">vides</span></code> de la instància i no a
+<code class="docutils literal notranslate"><span class="pre">vides</span></code> paràmetre.</p>
+<p>Ara el que se’ns està ocultant, però, és un mètode que va ser declarat a
+la superclasse. Intentar fer <code class="docutils literal notranslate"><span class="pre">this.menja(menjar)</span></code> tindrà exactament el
+mateix resultat que si no fem servir <code class="docutils literal notranslate"><span class="pre">this</span></code> doncs <code class="docutils literal notranslate"><span class="pre">menja()</span></code> pertany a
+la instància i no al mètode.</p>
+<p>Per indicar a Java que volem referir-nos a un mètode definit per la
+superclasse, en comptes de per la subclasse, el llenguatge ens ofereix la
+referència <code class="docutils literal notranslate"><span class="pre">super</span></code>, que al igual que <code class="docutils literal notranslate"><span class="pre">this</span></code> ens arriba per defecte, i
+que apunta a la part de la instància que és heretada.</p>
+<p>D’aquesta manera, en trobar-se <code class="docutils literal notranslate"><span class="pre">super.menja(menjar)</span></code>, Java sap que ens
+referim a la definició de <code class="docutils literal notranslate"><span class="pre">Gat</span></code> i no a la de <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code> i, finalment,
+el nostre amic pot acabar de menjar amb les seves urpes ben netes.</p>
+<p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_04_25_metodes_cridats.html"><span class="doc"> Exercici 04_25. Els mètodes que realment es criden</span></a></p>
+</div>
+<div class="section" id="herencia-i-constructors">
+<h2>Herència i constructors<a class="headerlink" href="#herencia-i-constructors" title="Link permanent a aquest títol">¶</a></h2>
+<p>T’has plantejat què passa amb els constructors en el cas de l’herència?</p>
+<p>Considera aquest codi:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Gat</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">Gat</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Neix un Gat&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">GatRenat</span> <span class="kd">extends</span> <span class="n">Gat</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">GatRenat</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Neix un Gat Renat&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">UsaGatRenat</span> <span class="p">{</span>
+     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
+         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Abans de crear un Gat Renat&quot;</span><span class="p">);</span>
+         <span class="n">GatRenat</span> <span class="n">renat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">();</span>
+         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Un cop creat un Gat Renat&quot;</span><span class="p">);</span>
+     <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>La seva execució seria:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java UsaGatRenat
+<span class="hll"><span class="go">Abans de crear un Gat Renat</span>
+</span><span class="hll"><span class="go">Neix un Gat</span>
+</span><span class="hll"><span class="go">Neix un Gat Renat</span>
+</span><span class="hll"><span class="go">Un cop creat un Gat Renat</span>
+</span></pre></div>
+</div>
+<p>Com pots veure, a la línia 16 creem una instància de <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code> tot
+cridant el constructor de <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code>. La sortida, però, ens mostra que
+primer passa pel constructor de <code class="docutils literal notranslate"><span class="pre">Gat</span></code> i després pel de <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code>.</p>
+<p>Com és possible si no hem fet cap <code class="docutils literal notranslate"><span class="pre">new</span> <span class="pre">Gat()</span></code> enlloc?</p>
+<p>Ja imaginaràs que Java deu d’estar fent la crida pel seu compte de manera
+amagada com tantes altres coses.</p>
+<p>Fem-ho explícit. El que Java ens està col·locant és el següent:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">GatRenat</span> <span class="kd">extends</span> <span class="n">Gat</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">GatRenat</span><span class="p">()</span> <span class="p">{</span>
+<span class="hll">        <span class="kd">super</span><span class="p">();</span>
+</span>        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Neix un Gat Renat&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>És molt similar al <code class="docutils literal notranslate"><span class="pre">this()</span></code>, però en comptes de <em>cridar</em> un constructor
+de la mateixa classe, ho fa a un de la superclasse.</p>
+<p>Ara que ja tenim descobert els moviments <em>amagats</em> de Java, entendrem que
+les següents dues definicions són equivalents:</p>
+<p>La primera, amb tot implícit:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Gat</span> <span class="p">{}</span>
+</pre></div>
+</div>
+<p>La segona, amb tot explícit:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Gat</span> <span class="kd">extends</span> <span class="n">Object</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">Gat</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>De la mateixa manera que <code class="docutils literal notranslate"><span class="pre">this()</span></code>, la crida <code class="docutils literal notranslate"><span class="pre">super()</span></code> només pot
+aparèixer com a primera línia d’un constructor i, en cas que no hi sigui,
+Java l’afegirà per defecte.</p>
+<p>Això ens porta a una situació que pot esdevenir problemàtica. Considera
+la següent definició de <code class="docutils literal notranslate"><span class="pre">Gat</span></code>:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Gat</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">vides</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="nf">Gat</span><span class="p">(</span><span class="kt">int</span> <span class="n">vides</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">vides</span> <span class="o">=</span> <span class="n">vides</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getVides</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">vides</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>És a dir, <code class="docutils literal notranslate"><span class="pre">Gat</span></code> no té constructor per defecte.</p>
+<p>Sabem que en aquesta situació no podem fer una instància de <code class="docutils literal notranslate"><span class="pre">Gat</span></code> així:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Gat</span> <span class="n">gat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Gat</span><span class="p">();</span>    <span class="c1">// no troba el constructor per defecte</span>
+</pre></div>
+</div>
+<p>Què passarà amb la subclasse?</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">GatRenat</span> <span class="kd">extends</span> <span class="n">Gat</span> <span class="p">{}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Un codi aparentment tan innocent com l’anterior, de sobte no compila!</p>
+<p>És clar, Java està posant-nos la crida al constructor per defecte de la
+superclasse:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">GatRenat</span> <span class="kd">extends</span> <span class="n">Gat</span> <span class="p">{</span>
+    <span class="n">GatRenat</span><span class="p">()</span> <span class="p">{</span>
+<span class="hll">        <span class="kd">super</span><span class="p">();</span>
+</span>    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>D’aquesta manera, <code class="docutils literal notranslate"><span class="pre">super()</span></code> es tradueix pel constructor <code class="docutils literal notranslate"><span class="pre">Gat()</span></code> que
+<em>no</em> està disponible!</p>
+<p>Quan una classe no ofereix constructor per defecte, les seves subclasses
+estan forçades a definir explícitament constructor.</p>
+<p>Per exemple, una manera de resoldre-ho podria ser:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">GatRenat</span> <span class="kd">extends</span> <span class="n">Gat</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">GatRenat</span><span class="p">(</span><span class="kt">int</span> <span class="n">vides</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">vides</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>O mantenint el constructor per defecte a <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code>:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">GatRenat</span> <span class="kd">extends</span> <span class="n">Gat</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">GatRenat</span><span class="p">()</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="mi">7</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="polimorfisme">
+<h2>Polimorfisme<a class="headerlink" href="#polimorfisme" title="Link permanent a aquest títol">¶</a></h2>
+<p>Considera el següent codi:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Gat</span> <span class="p">{</span>
+    <span class="kt">void</span> <span class="nf">menja</span><span class="p">(</span><span class="n">Menjar</span> <span class="n">menjar</span><span class="p">)</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Gat menja &quot;</span> <span class="o">+</span> <span class="n">menjar</span><span class="p">);</span> <span class="p">}</span>
+    <span class="kt">void</span> <span class="nf">miola</span><span class="p">()</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Gat miola&quot;</span><span class="p">);</span> <span class="p">}</span>
+    <span class="kt">void</span> <span class="nf">netejaUrpes</span><span class="p">()</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Gat netejaUrpes&quot;</span><span class="p">);</span> <span class="p">}</span>
+    <span class="cm">/* … */</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">GatRenat</span> <span class="kd">extends</span> <span class="n">Gat</span> <span class="p">{</span>
+    <span class="nd">@Override</span>
+    <span class="kt">void</span> <span class="nf">miola</span><span class="p">()</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;GatRenat miola&quot;</span><span class="p">);</span> <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kt">void</span> <span class="nf">menja</span><span class="p">(</span><span class="n">Menjar</span> <span class="n">menjar</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">netejaUrpes</span><span class="p">();</span>
+        <span class="kd">super</span><span class="p">.</span><span class="na">menja</span><span class="p">(</span><span class="n">menjar</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="kt">void</span> <span class="nf">fesDeRenat</span><span class="p">()</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;GatRenat fa de Renat&quot;</span><span class="p">);</span> <span class="p">}</span>
+    <span class="cm">/* … */</span>
+<span class="p">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">UsaGats</span> <span class="p">{</span>
+    <span class="cm">/* prepara un menjar pel gat, li ho fa menjar i finalment fa que mioli */</span>
+<span class="hll">    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">alimentaGat</span><span class="p">(</span><span class="n">Gat</span> <span class="n">gat</span><span class="p">)</span> <span class="p">{</span>
+</span>        <span class="n">Menjar</span> <span class="n">menjar</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Menjar</span><span class="p">(</span><span class="s">&quot;sardines&quot;</span><span class="p">);</span>
+        <span class="n">gat</span><span class="p">.</span><span class="na">menja</span><span class="p">(</span><span class="n">menjar</span><span class="p">);</span>
+        <span class="n">gat</span><span class="p">.</span><span class="na">miola</span><span class="p">();</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
+         <span class="n">Gat</span> <span class="n">gat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Gat</span><span class="p">();</span>
+         <span class="n">GatRenat</span> <span class="n">renatI</span>  <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">();</span>
+<span class="hll">         <span class="n">Gat</span> <span class="n">renatII</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">();</span>
+</span>
+         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;Alimentant el gat%n&quot;</span><span class="p">);</span>
+         <span class="n">alimentaGat</span><span class="p">(</span><span class="n">gat</span><span class="p">);</span>
+         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n%nAlimentant el gat Renat I%n&quot;</span><span class="p">);</span>
+<span class="hll">         <span class="n">alimentaGat</span><span class="p">(</span><span class="n">renatI</span><span class="p">);</span>
+</span>         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;%n%nAlimentant el gat Renat II%n&quot;</span><span class="p">);</span>
+<span class="hll">         <span class="n">alimentaGat</span><span class="p">(</span><span class="n">renatII</span><span class="p">);</span>
+</span>    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Analitzant aquest codi ens trobem amb quelcom molt peculiar. Fixa’t en la
+línia 33.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>33</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="n">Gat</span> <span class="n">renatII</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">();</span>
+</pre></div>
+</td></tr></table></div>
+<p><code class="docutils literal notranslate"><span class="pre">renatII</span></code> és declarat com una referència a instàncies de tipus <code class="docutils literal notranslate"><span class="pre">Gat</span></code>
+però el que se li assigna és una instancia de tipus <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code>!</p>
+<p>Aquest codi compila i s’executa.  En fer-ho, el resultat és:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java UsaGats
+<span class="hll"><span class="go">Alimentant el gat</span>
+</span><span class="hll"><span class="go">Gat menja sardines</span>
+</span><span class="hll"><span class="go">Gat miola</span>
+</span><span class="hll">
+</span><span class="hll">
+</span><span class="hll"><span class="go">Alimentant el gat Renat I</span>
+</span><span class="hll"><span class="go">Gat netejaUrpes</span>
+</span><span class="hll"><span class="go">Gat menja sardines</span>
+</span><span class="hll"><span class="go">GatRenat miola</span>
+</span><span class="hll">
+</span><span class="hll">
+</span><span class="hll"><span class="go">Alimentant el gat Renat II</span>
+</span><span class="hll"><span class="go">Gat netejaUrpes</span>
+</span><span class="hll"><span class="go">Gat menja sardines</span>
+</span><span class="hll"><span class="go">GatRenat miola</span>
+</span></pre></div>
+</div>
+<p>Per primer cop en aquest curs Java sembla acceptar que una
+referència d’un tipus accepti una instància d’un altre tipus.</p>
+<p>La pregunta és, realment es tracta d’un <em>altre</em> tipus? I la resposta és
+<em>no ben bé</em>. Per la definició de <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code> com a subclasse de <code class="docutils literal notranslate"><span class="pre">Gat</span></code>
+el que estem dient és que un gat Renat <strong>és</strong> un gat. Això Java s’ho pren
+tant seriosament que accepta instàncies de <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code> a <strong>tot arreu</strong>
+que accepti instàncies de <code class="docutils literal notranslate"><span class="pre">Gat</span></code>.</p>
+<p>A aquesta possibilitat de que una variable pugui fer referència a
+instàncies del seu tipus o de les subclasses d’aquest li direm
+<em>polimorfisme</em>.</p>
+<p>Si ens fixem més en el codi, veurem que el procediment <code class="docutils literal notranslate"><span class="pre">alimentaGat()</span></code>
+accepta un paràmetre de tipus <code class="docutils literal notranslate"><span class="pre">Gat</span></code> i està prou content quan se li passa
+<code class="docutils literal notranslate"><span class="pre">renatI</span></code> i <code class="docutils literal notranslate"><span class="pre">renatII</span></code> que fan referència a instàncies de <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code>
+tant si ha estat declarat com a <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code> com si ho ha estat com a
+<code class="docutils literal notranslate"><span class="pre">Gat</span></code>.</p>
+<p>De fixar-nos encara més, trobarem que <code class="docutils literal notranslate"><span class="pre">alimentaGat()</span></code>, tot i només saber
+de gats, està fent que finalment s’executi els mètodes <code class="docutils literal notranslate"><span class="pre">miola()</span></code> i
+<code class="docutils literal notranslate"><span class="pre">menja()</span></code> corresponents a <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code> quan el que rep és una instància
+de <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code>. Fixa’t que a la sortida tots dos es netegen les urpes
+abans de menjar i miolen com a <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code>.</p>
+</div>
+<div class="section" id="tots-els-gats-renat-son-gats-pero-no-tots-els-gats-son-gats-renat">
+<h2>Tots els gats Renat són gats però no tots els gats són gats Renat.<a class="headerlink" href="#tots-els-gats-renat-son-gats-pero-no-tots-els-gats-son-gats-renat" title="Link permanent a aquest títol">¶</a></h2>
+<p>Hem vist que pel polimorfisme, una variable pot fer referència a una
+instància de la seva classe o de qualsevol de les subclasses. També hem
+vist que, en cridar un mètode sobreescrit de la instància, acaba sent
+executat el corresponent a la classe <em>real</em> de la instància i no a la
+superclasse.</p>
+<p>Què passaria si intentem cridar un mètode vàlid per un <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code> des
+d’una referència  de tipus <code class="docutils literal notranslate"><span class="pre">Gat</span></code>?</p>
+<p>Considera el següent fragment de codi:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    <span class="n">GatRenat</span> <span class="n">renat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">();</span>
+    <span class="n">renat</span><span class="p">.</span><span class="na">fesDeRenat</span><span class="p">();</span>              <span class="c1">// cap problema</span>
+
+    <span class="n">Gat</span> <span class="n">gat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">();</span>
+    <span class="n">gat</span><span class="p">.</span><span class="na">fesDeRenat</span><span class="p">();</span>                <span class="c1">// no compila!</span>
+</pre></div>
+</td></tr></table></div>
+<p>El fragment de codi anterior <strong>no</strong> compila. A la línia 5, Java intenta
+trobar el mètode <code class="docutils literal notranslate"><span class="pre">fesDeRenat()</span></code> a la definició de <code class="docutils literal notranslate"><span class="pre">Gat</span></code> però no la
+troba. De fet, el problema el detecta el compilador.</p>
+<p>Donat que sabem que <code class="docutils literal notranslate"><span class="pre">gat</span></code> està fent referència realment a un
+<code class="docutils literal notranslate"><span class="pre">GatRenat</span></code>, podríem saltar-nos aquesta <em>protecció</em> del compilador de la
+següent manera:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>5</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    <span class="p">((</span><span class="n">GatRenat</span><span class="p">)</span><span class="n">gat</span><span class="p">).</span><span class="na">fesDeRenat</span><span class="p">();</span>    <span class="c1">// ara sí compila i s&#39;executa bé</span>
+</pre></div>
+</td></tr></table></div>
+<p>En prefixant la referència amb <code class="docutils literal notranslate"><span class="pre">(GatRenat)</span></code> estem avisant al compilador
+de Java que tracti la referència com a <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code> i no com a <code class="docutils literal notranslate"><span class="pre">Gat</span></code>. El
+compilador passa a cercar el mètode a la definició de <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code> i, com
+la troba, compila sense més queixa.</p>
+<p>Però… i si realment no fos un <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code> sinó un <code class="docutils literal notranslate"><span class="pre">Gat</span></code> i li féssim
+creure a Java que és el primer?</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    <span class="n">Gat</span> <span class="n">gat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Gat</span><span class="p">();</span>
+    <span class="p">((</span><span class="n">GatRenat</span><span class="p">)</span><span class="n">gat</span><span class="p">).</span><span class="na">fesDeRenat</span><span class="p">();</span>    <span class="c1">// sí compila!</span>
+</pre></div>
+</td></tr></table></div>
+<p>Doncs resulta que el compilador de Java s’ho empassa i genera el
+<code class="docutils literal notranslate"><span class="pre">.class</span></code>. Quan ho intentem executar, però, la mentida surt a la llum amb
+un missatge similar a:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java UsaGats
+<span class="go">Exception in thread &quot;main&quot; java.lang.ClassCastException: class Gat cannot be cast to class GatRenat (Gat and GatRenat are in unnamed module of loader &#39;app&#39;)</span>
+<span class="go">    at UsaGats.main(UsaGats.java:55)</span>
+</pre></div>
+</div>
+<p>És clar, un gat qualsevol per molt que ens hi posem, no pot fer de gat
+Renat.</p>
+<p>El següent dibuix intenta mostrar-ho gràficament.</p>
+<div class="figure align-center">
+<img alt="Metàfora dels cucurutxos" src="_images/cucurutxos.png" />
+</div>
+<p>A la imatge veiem com un suport (<em>variable</em>) per cucurutxos de tipus
+(<em>classe</em>) <code class="docutils literal notranslate"><span class="pre">A</span></code>, pot subjectar (<em>referenciar</em>) cucurutxos (<em>instàncies</em>) de
+tipus <code class="docutils literal notranslate"><span class="pre">A</span></code>. Aquest mateix suport, és capaç de subjectar cucurutxos que
+estenen el tipus <code class="docutils literal notranslate"><span class="pre">A</span></code>. En canvi, amb el suport pels cucurutxos de tipus
+<code class="docutils literal notranslate"><span class="pre">B</span></code>, els de tipus <code class="docutils literal notranslate"><span class="pre">A</span></code> ens <strong>caurien</strong> a terra!</p>
+<p>Si et costa l’abstracció, substitueix A per <code class="docutils literal notranslate"><span class="pre">Gat</span></code> i <code class="docutils literal notranslate"><span class="pre">B</span></code> per
+<code class="docutils literal notranslate"><span class="pre">GatRenat</span></code></p>
+<p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_04_26_garfield.html"><span class="doc"> Exercici 04_26. El gat Garfield</span></a></p>
+</div>
+<div class="section" id="classes-abstractes">
+<h2>Classes abstractes<a class="headerlink" href="#classes-abstractes" title="Link permanent a aquest títol">¶</a></h2>
+<p>A una jerarquia de classes, es pressuposa que la superclasse és més
+<em>abstracta</em> que la subclasse. Sovint recollim els elements comuns
+d’unes classes i els agrupem en una superclasse.</p>
+<p>Considera el següent exemple:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Animal</span> <span class="p">{</span>
+    <span class="cm">/* … */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">menja</span><span class="p">(</span><span class="n">Menjar</span> <span class="n">menjar</span><span class="p">){</span> <span class="cm">/* … */</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fesSoroll</span><span class="p">(){</span> <span class="cm">/* … */</span> <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Gat</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="p">{</span>
+    <span class="cm">/* … */</span>
+    <span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fesSoroll</span><span class="p">()</span> <span class="p">{</span> <span class="cm">/* … */</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">miola</span><span class="p">()</span> <span class="p">{</span> <span class="cm">/* … */</span> <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">class</span> <span class="nc">Gos</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="p">{</span>
+    <span class="cm">/* … */</span>
+    <span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fesSoroll</span><span class="p">(){</span> <span class="cm">/* … */</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">borda</span><span class="p">(){</span> <span class="cm">/* … */</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>La classe <code class="docutils literal notranslate"><span class="pre">Animal</span></code> agrupa els elements comuns dels gats i dels gossos. A
+l’exemple, tots els animals, tant gats com gossos, ens permeten
+demanar-los que es posin drets i que mengin un determinat menjar.</p>
+<p>Fixa’t que d’aquesta manera ens estalviem de definir tots aquests mètodes a les diferents
+subclasses d’animal. Únicament ens caldrà definir els elements particulars. Per exemple,
+la classe <code class="docutils literal notranslate"><span class="pre">Gat</span></code> podria definir el mètode <code class="docutils literal notranslate"><span class="pre">fesSoroll()</span></code> de la següent manera:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">fesSoroll</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">miola</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>A l’exemple dels animals, té sentit instanciar un Gat o un Gos. En podem
+fer coses amb ells com, demanar-los que mengin, que miolin, bordin (o més
+general, que facin soroll).</p>
+<p>Ens podem imaginar quin serà el soroll d’un gat o d’un gos, però, com serà
+el soroll d’una instància de <code class="docutils literal notranslate"><span class="pre">Animal</span></code>?</p>
+<p>Quan la raó principal de crear una classe és per actuar com a <em>agrupador</em>
+d’elements comuns de les seves subclasses, però no es pretén que
+existeixin instàncies d’aquesta classe, aquesta classe li diem <em>classe
+abstracta</em>.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Animal</span> <span class="p">{</span>
+    <span class="cm">/* … */</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">menja</span><span class="p">(</span><span class="n">Menjar</span> <span class="n">menjar</span><span class="p">){</span> <span class="cm">/* … */</span> <span class="p">}</span>
+<span class="hll">    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">fesSoroll</span><span class="p">();</span>
+</span><span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">Gat</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="p">{</span>
+    <span class="cm">/* … */</span>
+<span class="hll">    <span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fesSoroll</span><span class="p">()</span> <span class="p">{</span> <span class="cm">/* … */</span> <span class="p">}</span>
+</span>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">miola</span><span class="p">()</span> <span class="p">{</span> <span class="cm">/* … */</span> <span class="p">}</span>
+<span class="p">}</span>
+<span class="kd">class</span> <span class="nc">Gos</span> <span class="kd">extends</span> <span class="n">Animal</span> <span class="p">{</span>
+    <span class="cm">/* … */</span>
+<span class="hll">    <span class="nd">@Override</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fesSoroll</span><span class="p">(){</span> <span class="cm">/* … */</span> <span class="p">}</span>
+</span>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">borda</span><span class="p">(){</span> <span class="cm">/* … */</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Al codi anterior veiem que n’hi ha prou amb afegir el modificador
+<code class="docutils literal notranslate"><span class="pre">abstract</span></code> davant la definició de la classe i del mètode abstracte per
+declarar l’abstracció.</p>
+<p>El mètode abstracte <code class="docutils literal notranslate"><span class="pre">fesSoroll()</span></code>, a banda del modificador <code class="docutils literal notranslate"><span class="pre">abstract</span></code>,
+presenta la particularitat que no té cos del mètode. És a dir, després de
+definir la signatura, no apareix l’habitual bloc d’instruccions que
+defineixen què ha de fer el mòdul. La signatura acaba en un senzill punt i
+coma.</p>
+<p>Hi poden haver tants mètodes abstractes com ens calguin. El que és
+important és que totes les subclasses de <code class="docutils literal notranslate"><span class="pre">Animal</span></code> hauran de <em>concretar</em>
+el cos dels mètodes abstractes que hereten o bé hauran de ser també
+classes abstractes.</p>
+<p>La manera d’indicar que una classe és subclasse d’una classe abstracta no
+es distingeix de si la superclasse hagués estat concreta. És a dir,
+s’indica amb l’habitual <code class="docutils literal notranslate"><span class="pre">extends</span></code> .</p>
+<p>Una subclasse d’una classe abstracta pot ser també abstracta.  Simplement cal no
+implementar algun dels mètodes abstractes de la superclasse o afegirn-ne
+de nous.</p>
+<p>D’una classe abstracta no podem crear instàncies.
+La següent línia de codi no compilarà:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="n">Animal</span> <span class="n">animal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Animal</span><span class="p">();</span> <span class="c1">// ERROR: Animal és abstracte i no</span>
+                               <span class="c1">// pot ser instanciat</span>
+</pre></div>
+</td></tr></table></div>
+<p>El que sí podem fer és declarar referències a animals i inicialitzar-les
+amb instàncies d’alguna de les seves subclasses, gràcies al polimorfisme.</p>
+</div>
+<div class="section" id="perill-d-abus-d-herencia">
+<h2>Perill d’abús d’herència<a class="headerlink" href="#perill-d-abus-d-herencia" title="Link permanent a aquest títol">¶</a></h2>
+<p>És típic quan descobreixes l’herència (com d’altres tècniques/utilitats/…)
+que la vulguis fer servir per tot arreu.</p>
+<p>Abans que ens emocionem amb l’herència, cal que tinguem clar què té sentit
+i què no.</p>
+<p>Per exemple, imagina’t que has d’implementar la classe <code class="docutils literal notranslate"><span class="pre">TargetaMetro</span></code>
+que té un cert nombre de viatges que es van gastant a mida que es fa
+servir la targeta. En crear la targeta, queda pre-carregada amb un nombre
+de viatges. El nombre de viatges mai no ha de ser negatiu i s’ha de poder
+anar eliminant d’un en un per cada ús. Un cop exhaurits tots els viatges,
+la targeta no és usable a menys que es torni a recarregar.</p>
+<p>Potser se’ns podria ocórrer la <em>brillant</em> idea de comparar els viatges amb
+les vides d’un <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code> i així estalviar-nos un munt de codi:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TargetaMetro</span> <span class="kd">extends</span> <span class="n">GatRenat</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="nf">TargetaMetro</span><span class="p">(</span><span class="kt">int</span> <span class="n">viatgesInicials</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">super</span><span class="p">(</span><span class="n">viatgesInicials</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Ara, l’ús de la targeta (la pèrdua d’un viatge) la podem executar amb el
+mètode <code class="docutils literal notranslate"><span class="pre">mor()</span></code> que treu una vida/viatge fins que ja no en queden més.
+Saber si encara queden viatges ho podem resoldre amb el mètode
+<code class="docutils literal notranslate"><span class="pre">estaViu()</span></code> i la recàrrega amb <code class="docutils literal notranslate"><span class="pre">resuscita()</span></code>.`</p>
+<p>És cert que ens estalviem tot de codificació, però… tenim una targeta de
+viatges que miola.</p>
+<p>Per poder saber quines herències tenen sentit i quines no, hem de fer ús
+del principi de substitució de <a class="reference external" href="http://en.wikipedia.org/wiki/Barbara_Jane_Liskov">Liskov</a>:</p>
+<blockquote>
+<div><p>una herència entre dues classes està correctament definida si
+<strong>sempre</strong> es pot fer servir una instància de la subclasse allà on
+el programa espera una instància de la superclasse.</p>
+</div></blockquote>
+<p>Un exemple típic d’herència incorrecta és entre Quadrat i Rectangle (o
+també Cercle i Oval). Suposa que tens les següents classes:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="kd">class</span> <span class="nc">Rectangle</span> <span class="p">{</span>
+     <span class="kd">private</span> <span class="kt">int</span> <span class="n">base</span><span class="p">,</span> <span class="n">altura</span><span class="p">;</span>
+     <span class="kd">public</span> <span class="nf">Rectangle</span><span class="p">(</span><span class="kt">int</span> <span class="n">base</span><span class="p">,</span> <span class="kt">int</span> <span class="n">altura</span><span class="p">)</span> <span class="p">{</span>
+         <span class="k">this</span><span class="p">.</span><span class="na">base</span> <span class="o">=</span> <span class="n">base</span><span class="p">;</span> <span class="k">this</span><span class="p">.</span><span class="na">altura</span> <span class="o">=</span> <span class="n">altura</span><span class="p">;</span>
+     <span class="p">}</span>
+     <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getBase</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">base</span><span class="p">;</span> <span class="p">}</span>
+     <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getAltura</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">altura</span><span class="p">;</span> <span class="p">}</span>
+     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setBase</span><span class="p">(</span><span class="kt">int</span> <span class="n">base</span><span class="p">)</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="na">base</span><span class="o">=</span><span class="n">base</span><span class="p">;</span> <span class="p">}</span>
+     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setAltura</span><span class="p">(</span><span class="kt">int</span> <span class="n">altura</span><span class="p">)</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="na">alaura</span><span class="o">=</span><span class="n">altura</span><span class="p">;</span> <span class="p">}</span>
+     <span class="cm">/* … */</span>
+ <span class="p">}</span>
+
+ <span class="kd">class</span> <span class="nc">Quadrat</span> <span class="kd">extends</span> <span class="n">Rectangle</span> <span class="p">{</span>
+     <span class="kd">public</span> <span class="nf">Quadrat</span><span class="p">(</span><span class="kt">int</span> <span class="n">costat</span><span class="p">)</span> <span class="p">{</span>
+         <span class="kd">super</span><span class="p">(</span><span class="n">costat</span><span class="p">,</span> <span class="n">costat</span><span class="p">);</span>
+     <span class="p">}</span>
+     <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getCostat</span><span class="p">()</span> <span class="p">{</span> <span class="n">getBase</span><span class="p">();</span> <span class="p">}</span>
+     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setCostat</span><span class="p">(</span><span class="kt">int</span> <span class="n">costat</span><span class="p">)</span> <span class="p">{</span>
+         <span class="n">setBase</span><span class="p">(</span><span class="n">costat</span><span class="p">);</span>
+         <span class="n">setAltura</span><span class="p">(</span><span class="n">costat</span><span class="p">);</span>
+     <span class="p">}</span>
+     <span class="cm">/* … */</span>
+ <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Malgrat que, en principi, una herència com aquesta pot semblar una
+bona idea (especialment si els «…» inclouen molt de codi, en
+realitat amaga una desagradable sorpresa. Considera el següent codi:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="kd">class</span> <span class="nc">UsaRectangles</span> <span class="p">{</span>
+ <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+         <span class="n">Rectangle</span><span class="o">[]</span> <span class="n">rectangles</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="p">;</span>
+         <span class="n">rectangles</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Rectangle</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">);</span>
+         <span class="n">rectangles</span><span class="o">[</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Quadrat</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span>
+         <span class="k">for</span> <span class="p">(</span><span class="n">Rectangle</span> <span class="n">r</span><span class="p">:</span> <span class="n">rectangles</span><span class="p">)</span> <span class="p">{</span>
+             <span class="n">r</span><span class="p">.</span><span class="na">setBase</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="na">getBase</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// encongeix la base</span>
+         <span class="p">}</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>En <code class="docutils literal notranslate"><span class="pre">UsaRectangles</span></code> aconseguim que la instància de Quadrat
+referenciada per <code class="docutils literal notranslate"><span class="pre">rectangles[1]</span></code> acabi tenint un quadrat de costat 3
+i 4!. És a dir, hem aconseguit <em>petar</em> la coherència de la classe i
+tot fent-la servir «legalment».</p>
+<p>El problema de l’exemple és que un quadrat <strong>no</strong> es pot considerar un
+rectangle en tots els contexts on s’espera que es comporti
+correctament un rectangle (ex. quan encongim un dels seus costats)</p>
+<p>En resum, abans de crear una subclasse <code class="docutils literal notranslate"><span class="pre">B</span></code> d’una classe <code class="docutils literal notranslate"><span class="pre">A</span></code>,
+assegurem-nos que podem dir que tot <code class="docutils literal notranslate"><span class="pre">B</span></code> <strong>és un</strong> <code class="docutils literal notranslate"><span class="pre">A</span></code>. No n’hi ha prou
+amb que <em>algun</em> <code class="docutils literal notranslate"><span class="pre">B</span></code> és un <code class="docutils literal notranslate"><span class="pre">A</span></code>, o tot <code class="docutils literal notranslate"><span class="pre">B</span></code> s”<em>assembla</em> a <code class="docutils literal notranslate"><span class="pre">A</span></code>, o <em>és
+pràcticament un</em> <code class="docutils literal notranslate"><span class="pre">A</span></code> excepte per algun detall, etc.</p>
+<p>Una altra cosa que hem de tenir sempre present en llenguatges com Java, és
+que l’herència és <em>d’un sol tret</em> en el sentit que només podem estendre
+una classe. Per sort, disposem d’altres mecanismes que ens permetran
+salvar aquesta aparent limitació. No et perdis el següent episodi…</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="poo_exercicis.html" class="btn btn-neutral float-right" title="Exercicis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="composicio.html" class="btn btn-neutral float-left" title="Composició" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2021 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

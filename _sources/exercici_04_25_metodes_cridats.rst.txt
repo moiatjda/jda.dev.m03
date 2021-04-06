@@ -1,0 +1,136 @@
+####################################################################
+|exerciseicon__T| Exercici 04_25. Els mètodes que realment es criden
+####################################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``04_25_metodes_cridats/``
+
+* Continguts relacionats: :doc:`herencia`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+En aquest exercici analitzaràs quins són els mètodes que es criden
+realment quan hi ha pel mig l'herència.
+
+.. uml::
+    :align: center
+
+     @startuml
+     hide circle
+     skinparam monochrome true
+     skinparam classAttributeIconSize 0
+
+     class GatRenat extends Gat
+     class Gat extends Feli {
+        miola()
+     }
+     class Feli {
+        netejaUrpes()
+        menja(Menjar)
+     }
+
+     Feli <- Menjar
+
+     @enduml
+
+
+Per fer-ho, considera la definició de les següents classes:
+
+.. code-block:: java
+    :linenos:
+
+    class Feli {
+        public Feli() {
+            System.out.println("Neix Felí");
+        }
+        public void netejaUrpes() {
+            System.out.println("Felí neteja urpes des de " + this.getClass());
+        }
+        public void menja(Menjar menjar) {
+            System.out.println("Felí menja " + menjar + " des de " + this.getClass());
+        }
+    }
+
+    class Gat extends Feli {
+        public Gat() {
+            System.out.println("Neix Gat");
+        }
+        public void miola() {
+            System.out.println("Gat miola des de " + this.getClass());
+        }
+        public void menja(Menjar menjar) {
+            System.out.println("Gat menja " + menjar + " des de " + this.getClass());
+            super.menja(menjar);
+        }
+    }
+
+    class GatRenat extends Gat {
+        public GatRenat() {
+            System.out.println("Neix Renat");
+        }
+        @Override
+        public void miola() {
+            System.out.println("Renat miola des de " + this.getClass());
+        }
+
+        @Override
+        public void menja(Menjar menjar) {
+            System.out.println("Renat menja " + menjar + " des de " + this.getClass());
+            netejaUrpes();
+            super.menja(menjar);
+        }
+    }
+
+    class Menjar {
+        private static final String MENJAR_PER_DEFECTE = "sardines";
+        private final String nom;
+        public Menjar(String nom) { 
+            if (nom != null && !nom.isEmpty()) {
+                this.nom = nom; 
+            } else {
+                this.nom = MENJAR_PER_DEFECTE;
+            }
+            System.out.println("Neix Menjar(\"" + this.nom + "\")");
+        }
+        public String toString() { return nom; }
+    }
+
+.. important:: Aquest exercici el pots fer a base de *prova-i-error* i
+    pots amagar-t'ho com un secret que ningú no ha de saber mai. Amb tot,
+    et recomano que, si li vols treure el màxim a aquest exercici, abans
+    d'executar una sola vegada la prova, intentis codificar **totes** les
+    instruccions deduint la sortida. Quan comencis a executar la prova, si
+    no has encertat a la primera, intenta descobrir perquè i refer el teu
+    codi de manera que abans de provar-ho de nou pensis que està corregit.
+
+Què haig de fer?
+================
+
+Crea una classe anomenada ``DemoCrides`` que, disposi d'un ``main()`` que
+en ser executat generi exactament el següent per sortida estàndard:
+
+.. code-block:: console
+    :emphasize-lines: 2-
+
+    $ java DemoCrides
+    Neix Felí
+    Neix Felí
+    Neix Gat
+    Neix Felí
+    Neix Gat
+    Neix Renat
+    Felí neteja urpes des de class Feli
+    Felí neteja urpes des de class Gat
+    Felí neteja urpes des de class GatRenat
+    Gat miola des de class Gat
+    Renat miola des de class GatRenat
+    Neix Menjar("bacallà")
+    Renat menja bacallà des de class GatRenat
+    Felí neteja urpes des de class GatRenat
+    Gat menja bacallà des de class GatRenat
+    Felí menja bacallà des de class GatRenat

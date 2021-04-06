@@ -1,0 +1,131 @@
+############################################
+|exerciseicon__T| Exercici 04_22. El Picarol
+############################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``04_22_picarol/``
+
+* Continguts relacionats: :doc:`composicio`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Posem-li un picarol al gat Renat!
+
+En aquest exercici desenvoluparem una nova versió del nostre estimat Gat
+Renat. En aquesta ocasió, en Renat acceptarà que li pengem un picarol.
+
+.. uml::
+    :align: center
+
+     @startuml
+     hide circle
+     skinparam monochrome true
+     skinparam classAttributeIconSize 0
+
+     class Picarol {
+        -cops: int
+        +sona()
+        +quantsCops(): int
+     }
+     class GatRenat {
+        +posaPicarol(Picarol): Picarol
+        +treuPicarol(): Picarol
+        +tePicarol(): boolean
+     }
+
+     GatRenat o- Picarol
+
+     @enduml
+
+
+Un ``Picarol`` ens permet fer dues coses:
+
+* ``sona()``: fa sonar el picarol
+
+  Per simular el so del picarol, el mètode ``sona()`` escriurà per
+  pantalla el missatge ``"clink-clink"``.
+
+* ``int quantsCops()``: retornarà el nombre de cops que ha sonat el picarol
+  des de que va ser creat.
+
+Per la seva banda, ``GatRenat`` incorpora els següents mètodes:
+
+* ``boolean tePicarol()``: cert si té un picarol assignat. En néixer, el
+  gat Renat no en té.
+
+* ``Picarol posaPicarol(Picarol)``: assigna un picarol. Si en tenia un, el
+  substitueix pel nou i retorna l'anterior. Si no en tenia cap, retorna
+  el valor ``null``.
+
+* ``Picarol treuPicarol()``: retorna el picarol i a partir d'aquest moment
+  deixa de tenir picarol.  Si no en tenia cap, retorna ``null``.
+
+Quan el Renat té un picarol penjat, cada cop que es mou (s'aixeca, seu o
+s'estira), fa sonar el picarol. Atenció: no es considera que es mou quan
+es construeix la instància ni quan es fa servir el mètode ``setEstat()``.
+
+Fes servir el següent ``main()`` a ``GatRenat`` per poder provar aquesta
+nova funcionalitat:
+
+.. code-block:: java
+    :linenos:
+
+    public static void main(String[] args) {
+        Picarol picarol = new Picarol();
+        picarol.sona();   // el picarol funciona fins i tot sense gat!
+        GatRenat renat = new GatRenat();
+        renat.aixecat();
+        renat.posaPicarol(picarol);
+        renat.seu();      // ha de sonar el picarol
+        renat.seu();      // no sona el picarol doncs no es mou!
+        renat.treuPicarol();
+        renat.estirat();  // no sona el picarol doncs ja no el té
+        System.out.println("Nombre de cops que sona el picarol: " + picarol.quantsCops());
+    }
+
+Que generarà la següent sortida:
+
+.. code-block:: console
+
+    $ java GatRenat
+    clink-clink
+    clink-clink
+    Nombre de cops que sona el picarol: 2
+
+
+Una sorollosa proposta d'ampliació
+==================================
+
+Normalment no és una bona idea escriure per sortida estàndard des dels
+mètodes de les nostres classes. Entre d'altres raons està que no sempre
+les executarem des de consola.
+
+En aquest cas fem una excepció doncs ens simplifica molt l'exercici ja que
+no hem de fer sonar cap picarol.
+
+Espera un moment. No estaràs pensant que és una llàstima no poder fer
+sonar realment el picarol, oi? Si és així, no et quedis amb les ganes!
+
+Considera el següent codi:
+
+.. literalinclude:: _recursos/DemoPicarol.java
+   :language: java
+   :caption: :download:`DemoPicarol.java <_recursos/DemoPicarol.java>`
+   :linenos:
+   :lines: 5-
+
+Descarregat el fitxer :download:`picarol.wav <_recursos/picarol.wav>` i
+col·loca'l a la carpeta on tinguis la demostració del Picarol. Compila
+la demo, executa-la i assegura't que els altaveus (o auriculars) estan
+en funcionament i a un **volum segur**.
+
+Adapta aquest codi a la teva resposta a aquest exercici i gaudeix de
+fer sonar el teu picarol.
+
+Les proves no tindran en compte si el picarol realment sona o no, per la
+qual cosa, el sorollet quedarà com un secret entre tu i el gat Renat.
