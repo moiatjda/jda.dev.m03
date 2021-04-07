@@ -341,7 +341,7 @@ defecte: 0:00:00.</p></li>
 <li><p>Per escriure el 0 inicial als minuts i segons quan el valor és
 menor de 10, es pot fer servir el mètode <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html">System.out.format()</a></p>
 <p>Per si vas amb el temps molt just:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;%d %02d %25d&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>     <span class="c1">// 4:04:04</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">String</span><span class="p">.</span><span class="na">format</span><span class="p">(</span><span class="s">&quot;%d %02d %02d&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>     <span class="c1">// 4:04:04</span>
 </pre></div>
 </div>
 </li>

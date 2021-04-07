@@ -133,7 +133,7 @@ Amb aquest ``main()`` l'execució de ``Hora`` generarà:
 
    .. code-block:: java
 
-        String.format("%d %02d %25d", 4, 4, 4)     // 4:04:04
+        String.format("%d %02d %02d", 4, 4, 4)     // 4:04:04
 
 #. Quan hi ha tants jocs de prova com en aquest exercici, si no estàs fent
    servir un IDE és possible que et costi trobar els errors. De vegades
