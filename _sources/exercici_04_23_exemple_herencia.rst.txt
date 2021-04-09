@@ -15,17 +15,43 @@
 Imagina tres classes de manera que una d'elles estengui les altres dues
 i aquestes no estiguin relacionades entre si per herència. 
 
+Un dels possibles exemples de la jerarquia d'animals seria:
+
+.. uml::
+    :align: center
+
+     @startuml
+     hide circle
+     skinparam monochrome true
+     skinparam classAttributeIconSize 0
+
+     class Gat extends Felí
+     class Pantera extends Felí
+
+     @enduml
+
+
 Idealment les classes que proposis seran conceptes que tothom coneguem,
 com ho eren Gat i Felí d'exemples anteriors.
 
-Construeix un esquelet de la implementació de les tres classes en Java.
+Construeix un *esquelet* de la implementació de les tres classes en Java.
 Amb alguna propietat i accessors per cada classe serà suficient, però pots
 anar tant lluny com et vulgui portar la teva imaginació.
+
+L'esquelet de la classe ``Felí`` podria tenir l'aspecte:
+
+.. code-block:: java
+
+    public class Felí extends Carnívor {
+        private UrpaRetractil[] urpes;
+        public void caça(Animal presa) { /* … */ }
+    }
+
+És a dir, a l'esquelet de les tres classes que se't demanen, hauries
+d'explicitar l'herència, algun atribut i mètode (sense especificar el cos)
 
 Inclou un ``main()`` que demostri exemples d'instanciació de les tres
 classes i com es criden des de les subclasses membres de la superclasse.
 
 Finalment explica el concepte d'herència fent servir les teves classes
 com a exemples.
-
-

@@ -210,11 +210,34 @@
 <p class="rubric">Enunciat</p>
 <p>Imagina tres classes de manera que una d’elles estengui les altres dues
 i aquestes no estiguin relacionades entre si per herència.</p>
+<p>Un dels possibles exemples de la jerarquia d’animals seria:</p>
+<div class="figure align-center">
+<p class="plantuml">
+<img src="_images/plantuml-4d9f55727d3c69c76eb87f02ce35f7f1af9bd7f1.png" alt=" &#64;startuml
+ hide circle
+ skinparam monochrome true
+ skinparam classAttributeIconSize 0
+
+ class Gat extends Felí
+ class Pantera extends Felí
+
+ &#64;enduml"/>
+</p>
+</div>
 <p>Idealment les classes que proposis seran conceptes que tothom coneguem,
 com ho eren Gat i Felí d’exemples anteriors.</p>
-<p>Construeix un esquelet de la implementació de les tres classes en Java.
+<p>Construeix un <em>esquelet</em> de la implementació de les tres classes en Java.
 Amb alguna propietat i accessors per cada classe serà suficient, però pots
 anar tant lluny com et vulgui portar la teva imaginació.</p>
+<p>L’esquelet de la classe <code class="docutils literal notranslate"><span class="pre">Felí</span></code> podria tenir l’aspecte:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Felí</span> <span class="kd">extends</span> <span class="n">Carnívor</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="n">UrpaRetractil</span><span class="o">[]</span> <span class="n">urpes</span><span class="p">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">caça</span><span class="p">(</span><span class="n">Animal</span> <span class="n">presa</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* … */</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>És a dir, a l’esquelet de les tres classes que se’t demanen, hauries
+d’explicitar l’herència, algun atribut i mètode (sense especificar el cos)</p>
 <p>Inclou un <code class="docutils literal notranslate"><span class="pre">main()</span></code> que demostri exemples d’instanciació de les tres
 classes i com es criden des de les subclasses membres de la superclasse.</p>
 <p>Finalment explica el concepte d’herència fent servir les teves classes

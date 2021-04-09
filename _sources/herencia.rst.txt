@@ -72,8 +72,6 @@ però, a diferència dels gats, no tinguin urpes (per no ser felins).
 Això exemplifica el fet que cada classe dins la jerarquia afegeix
 característiques particulars a les seves subclasses.
 
-|exerciseicon___| :doc:`exercici_04_23_exemple_herencia`
-
 L'herència en Java
 ==================
 
@@ -198,6 +196,8 @@ En executar ``UsaGatRenat`` ens trobem amb l'habitual:
 
 Tot i sent habitual, és important que notem que ``getVides()`` no ha estat
 definit a ``GatRenat`` sinó a ``Gat``.
+
+|exerciseicon___| :doc:`exercici_04_23_exemple_herencia`
 
 |exerciseicon__T| :doc:`exercici_04_24_renat_es_gat`
 
