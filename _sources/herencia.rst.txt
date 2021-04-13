@@ -330,12 +330,12 @@ classe:
 
     class Felí {
         /* … */
-        void menja(Menjar m) { System.out.println("Nyam Nyam " + m); }
+        public void menja(Menjar m) { System.out.println("Nyam Nyam " + m); }
         /* … */
     }
 
     class Gat extends Felí {
-        void miola() { System.out.println("MEEEEEEU"); }
+        public void miola() { System.out.println("MEEEEEEU"); }
     }
 
     class UsaGat {
@@ -370,18 +370,18 @@ El codi tindria el següent aspecte:
     :linenos:
 
     class Gat {
-        void menja(Menjar menjar) { System.out.println("Gat menja " + menjar); }
-        void miola() { System.out.println("Gat miola"); }
-        void netejaUrpes() { System.out.println("Gat netejaUrpes"); }
+        public void menja(Menjar menjar) { System.out.println("Gat menja " + menjar); }
+        public void miola() { System.out.println("Gat miola"); }
+        public void netejaUrpes() { System.out.println("Gat netejaUrpes"); }
         /* … */
     }
 
     class GatRenat extends Gat {
         @Override
-        void miola() { System.out.println("GatRenat miola"); }
+        public void miola() { System.out.println("GatRenat miola"); }
 
         @Override
-        void menja(Menjar menjar) {
+        public void menja(Menjar menjar) {
             netejaUrpes();
             super.menja(menjar);
         }
@@ -633,23 +633,23 @@ Considera el següent codi:
     :emphasize-lines: 24, 33, 38, 40
 
     class Gat {
-        void menja(Menjar menjar) { System.out.println("Gat menja " + menjar); }
-        void miola() { System.out.println("Gat miola"); }
-        void netejaUrpes() { System.out.println("Gat netejaUrpes"); }
+        public void menja(Menjar menjar) { System.out.println("Gat menja " + menjar); }
+        public void miola() { System.out.println("Gat miola"); }
+        public void netejaUrpes() { System.out.println("Gat netejaUrpes"); }
         /* … */
     }
 
     class GatRenat extends Gat {
         @Override
-        void miola() { System.out.println("GatRenat miola"); }
+        public void miola() { System.out.println("GatRenat miola"); }
 
         @Override
-        void menja(Menjar menjar) {
+        public void menja(Menjar menjar) {
             netejaUrpes();
             super.menja(menjar);
         }
 
-        void fesDeRenat() { System.out.println("GatRenat fa de Renat"); }
+        public void fesDeRenat() { System.out.println("GatRenat fa de Renat"); }
         /* … */
     }
 

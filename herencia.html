@@ -465,12 +465,12 @@ classe:</p>
 16
 17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Felí</span> <span class="p">{</span>
     <span class="cm">/* … */</span>
-    <span class="kt">void</span> <span class="nf">menja</span><span class="p">(</span><span class="n">Menjar</span> <span class="n">m</span><span class="p">)</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Nyam Nyam &quot;</span> <span class="o">+</span> <span class="n">m</span><span class="p">);</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">menja</span><span class="p">(</span><span class="n">Menjar</span> <span class="n">m</span><span class="p">)</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Nyam Nyam &quot;</span> <span class="o">+</span> <span class="n">m</span><span class="p">);</span> <span class="p">}</span>
     <span class="cm">/* … */</span>
 <span class="p">}</span>
 
 <span class="kd">class</span> <span class="nc">Gat</span> <span class="kd">extends</span> <span class="n">Felí</span> <span class="p">{</span>
-    <span class="kt">void</span> <span class="nf">miola</span><span class="p">()</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;MEEEEEEU&quot;</span><span class="p">);</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">miola</span><span class="p">()</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;MEEEEEEU&quot;</span><span class="p">);</span> <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="kd">class</span> <span class="nc">UsaGat</span> <span class="p">{</span>
@@ -516,18 +516,18 @@ que Renat hereta els mètodes <code class="docutils literal notranslate"><span c
 16
 17
 18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Gat</span> <span class="p">{</span>
-    <span class="kt">void</span> <span class="nf">menja</span><span class="p">(</span><span class="n">Menjar</span> <span class="n">menjar</span><span class="p">)</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Gat menja &quot;</span> <span class="o">+</span> <span class="n">menjar</span><span class="p">);</span> <span class="p">}</span>
-    <span class="kt">void</span> <span class="nf">miola</span><span class="p">()</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Gat miola&quot;</span><span class="p">);</span> <span class="p">}</span>
-    <span class="kt">void</span> <span class="nf">netejaUrpes</span><span class="p">()</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Gat netejaUrpes&quot;</span><span class="p">);</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">menja</span><span class="p">(</span><span class="n">Menjar</span> <span class="n">menjar</span><span class="p">)</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Gat menja &quot;</span> <span class="o">+</span> <span class="n">menjar</span><span class="p">);</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">miola</span><span class="p">()</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Gat miola&quot;</span><span class="p">);</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">netejaUrpes</span><span class="p">()</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Gat netejaUrpes&quot;</span><span class="p">);</span> <span class="p">}</span>
     <span class="cm">/* … */</span>
 <span class="p">}</span>
 
 <span class="kd">class</span> <span class="nc">GatRenat</span> <span class="kd">extends</span> <span class="n">Gat</span> <span class="p">{</span>
     <span class="nd">@Override</span>
-    <span class="kt">void</span> <span class="nf">miola</span><span class="p">()</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;GatRenat miola&quot;</span><span class="p">);</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">miola</span><span class="p">()</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;GatRenat miola&quot;</span><span class="p">);</span> <span class="p">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kt">void</span> <span class="nf">menja</span><span class="p">(</span><span class="n">Menjar</span> <span class="n">menjar</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">menja</span><span class="p">(</span><span class="n">Menjar</span> <span class="n">menjar</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">netejaUrpes</span><span class="p">();</span>
         <span class="kd">super</span><span class="p">.</span><span class="na">menja</span><span class="p">(</span><span class="n">menjar</span><span class="p">);</span>
     <span class="p">}</span>
@@ -799,23 +799,23 @@ estan forçades a definir explícitament constructor.</p>
 40
 41
 42</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Gat</span> <span class="p">{</span>
-    <span class="kt">void</span> <span class="nf">menja</span><span class="p">(</span><span class="n">Menjar</span> <span class="n">menjar</span><span class="p">)</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Gat menja &quot;</span> <span class="o">+</span> <span class="n">menjar</span><span class="p">);</span> <span class="p">}</span>
-    <span class="kt">void</span> <span class="nf">miola</span><span class="p">()</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Gat miola&quot;</span><span class="p">);</span> <span class="p">}</span>
-    <span class="kt">void</span> <span class="nf">netejaUrpes</span><span class="p">()</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Gat netejaUrpes&quot;</span><span class="p">);</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">menja</span><span class="p">(</span><span class="n">Menjar</span> <span class="n">menjar</span><span class="p">)</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Gat menja &quot;</span> <span class="o">+</span> <span class="n">menjar</span><span class="p">);</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">miola</span><span class="p">()</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Gat miola&quot;</span><span class="p">);</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">netejaUrpes</span><span class="p">()</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Gat netejaUrpes&quot;</span><span class="p">);</span> <span class="p">}</span>
     <span class="cm">/* … */</span>
 <span class="p">}</span>
 
 <span class="kd">class</span> <span class="nc">GatRenat</span> <span class="kd">extends</span> <span class="n">Gat</span> <span class="p">{</span>
     <span class="nd">@Override</span>
-    <span class="kt">void</span> <span class="nf">miola</span><span class="p">()</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;GatRenat miola&quot;</span><span class="p">);</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">miola</span><span class="p">()</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;GatRenat miola&quot;</span><span class="p">);</span> <span class="p">}</span>
 
     <span class="nd">@Override</span>
-    <span class="kt">void</span> <span class="nf">menja</span><span class="p">(</span><span class="n">Menjar</span> <span class="n">menjar</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">menja</span><span class="p">(</span><span class="n">Menjar</span> <span class="n">menjar</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">netejaUrpes</span><span class="p">();</span>
         <span class="kd">super</span><span class="p">.</span><span class="na">menja</span><span class="p">(</span><span class="n">menjar</span><span class="p">);</span>
     <span class="p">}</span>
 
-    <span class="kt">void</span> <span class="nf">fesDeRenat</span><span class="p">()</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;GatRenat fa de Renat&quot;</span><span class="p">);</span> <span class="p">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fesDeRenat</span><span class="p">()</span> <span class="p">{</span> <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;GatRenat fa de Renat&quot;</span><span class="p">);</span> <span class="p">}</span>
     <span class="cm">/* … */</span>
 <span class="p">}</span>
 
