@@ -114,6 +114,8 @@ Per exemple, les següents dues declaracions són equivalents:
 
     public class Gat {}
 
+.. code-block:: java
+
     public class Gat extends Object {}
 
 ``Object`` aporta una sèrie de característiques a totes les classes de

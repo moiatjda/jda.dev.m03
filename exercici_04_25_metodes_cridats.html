@@ -287,7 +287,8 @@ realment quan hi ha pel mig l’herència.</p>
 52
 53
 54
-55</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Feli</span> <span class="p">{</span>
+55
+56</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Feli</span> <span class="p">{</span>
     <span class="kd">public</span> <span class="nf">Feli</span><span class="p">()</span> <span class="p">{</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Neix Felí&quot;</span><span class="p">);</span>
     <span class="p">}</span>
@@ -306,6 +307,7 @@ realment quan hi ha pel mig l’herència.</p>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">miola</span><span class="p">()</span> <span class="p">{</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Gat miola des de &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">getClass</span><span class="p">());</span>
     <span class="p">}</span>
+    <span class="nd">@Override</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">menja</span><span class="p">(</span><span class="n">Menjar</span> <span class="n">menjar</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Gat menja &quot;</span> <span class="o">+</span> <span class="n">menjar</span> <span class="o">+</span> <span class="s">&quot; des de &quot;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="na">getClass</span><span class="p">());</span>
         <span class="kd">super</span><span class="p">.</span><span class="na">menja</span><span class="p">(</span><span class="n">menjar</span><span class="p">);</span>
