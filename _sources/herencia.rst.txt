@@ -96,9 +96,10 @@ L'herència en Java s'especifica amb la paraula clau ``extends``, de la
 següent manera:
 
 .. code-block:: java
+   :linenos:
 
    public class GatRenat extends Gat {
-      /* … */
+      /*…*/
    }
 
 
@@ -111,10 +112,12 @@ classe més general)
 Per exemple, les següents dues declaracions són equivalents:
 
 .. code-block:: java
+    :linenos:
 
     public class Gat {}
 
 .. code-block:: java
+    :linenos:
 
     public class Gat extends Object {}
 
@@ -218,6 +221,7 @@ Considera el següent codi que es troba en un únic fitxer anomenat
 ``UsaGatRenat.java``:
 
 .. code-block:: java
+    :linenos:
 
     class Gat {
          private int vides = 7;
@@ -430,6 +434,7 @@ Aquest és un fenomen que ja ens resulta familiar, oi? Recordem la situació
 típica:
 
 .. code-block:: java
+    :linenos:
 
     class Gat {
         private int vides = 7;
@@ -534,12 +539,14 @@ les següents dues definicions són equivalents:
 La primera, amb tot implícit:
 
 .. code-block:: java
+    :linenos:
 
     class Gat {}
 
 La segona, amb tot explícit:
 
 .. code-block:: java
+    :linenos:
 
     class Gat extends Object {
         public Gat() {
@@ -570,6 +577,7 @@ la següent definició de ``Gat``:
 Sabem que en aquesta situació no podem fer una instància de ``Gat`` així:
 
 .. code-block:: java
+    :linenos:
 
     Gat gat = new Gat();    // no troba el constructor per defecte
 
@@ -854,6 +862,7 @@ subclasses d'animal. Únicament ens caldrà definir els elements particulars. Pe
 la classe ``Gat`` podria definir el mètode ``fesSoroll()`` de la següent manera:
 
 .. code-block:: java
+    :linenos:
 
     public void fesSoroll() {
         miola();
@@ -947,6 +956,7 @@ Potser se'ns podria ocórrer la *brillant* idea de comparar els viatges amb
 les vides d'un ``GatRenat`` i així estalviar-nos un munt de codi:
 
 .. code-block:: java
+    :linenos:
 
     public class TargetaMetro extends GatRenat {
         public TargetaMetro(int viatgesInicials) {

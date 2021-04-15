@@ -32,7 +32,6 @@ Ara ja sabem afegir paràmetres als constructors. Per exemple:
         }
         public static void main(String[] args) {
             GatRenat renat = new GatRenat(7);
-            int vides = renat.getVides();
             System.out.println(renat);
         }
     }

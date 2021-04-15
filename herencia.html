@@ -250,22 +250,24 @@ d’herència.</p>
 </div>
 <p>L’herència en Java s’especifica amb la paraula clau <code class="docutils literal notranslate"><span class="pre">extends</span></code>, de la
 següent manera:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GatRenat</span> <span class="kd">extends</span> <span class="n">Gat</span> <span class="p">{</span>
-   <span class="cm">/* … */</span>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">GatRenat</span> <span class="kd">extends</span> <span class="n">Gat</span> <span class="p">{</span>
+   <span class="cm">/*…*/</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>Java no admet herència múltiple. Cada classe pot ser (i de fet és) només
 subclasse d’una única classe.</p>
 <p>A dalt de tot de la jerarquia de classes es troba la classe <code class="docutils literal notranslate"><span class="pre">Object</span></code> (la
 classe més general)</p>
 <p>Per exemple, les següents dues declaracions són equivalents:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Gat</span> <span class="p">{}</span>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Gat</span> <span class="p">{}</span>
 </pre></div>
-</div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Gat</span> <span class="kd">extends</span> <span class="n">Object</span> <span class="p">{}</span>
+</td></tr></table></div>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Gat</span> <span class="kd">extends</span> <span class="n">Object</span> <span class="p">{}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p><code class="docutils literal notranslate"><span class="pre">Object</span></code> aporta una sèrie de característiques a totes les classes de
 Java, per exemple, el mètode <code class="docutils literal notranslate"><span class="pre">String</span> <span class="pre">toString()</span></code>. Si consultes la
 documentació de la classe <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html">Object</a>
@@ -356,7 +358,23 @@ d’una classe a un mateix fitxer sempre i quant hi hagi com a molt una de
 pública.</p>
 <p>Considera el següent codi que es troba en un únic fitxer anomenat
 <code class="docutils literal notranslate"><span class="pre">UsaGatRenat.java</span></code>:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Gat</span> <span class="p">{</span>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Gat</span> <span class="p">{</span>
      <span class="kd">private</span> <span class="kt">int</span> <span class="n">vides</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
      <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getVides</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">vides</span><span class="p">;</span> <span class="p">}</span>
      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setVides</span><span class="p">(</span><span class="kt">int</span> <span class="n">vides</span><span class="p">)</span> <span class="p">{</span>
@@ -374,7 +392,7 @@ pública.</p>
      <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>Com pots veure, el fitxer conté <strong>tres</strong> declaracions de variables, amb
 una sola de pública.</p>
 <p>Considera la següent interacció:</p>
@@ -567,7 +585,15 @@ buida!</p>
 quedat <em>ocultat</em> per la nova definició del mètode a dins de GatRenat.</p>
 <p>Aquest és un fenomen que ja ens resulta familiar, oi? Recordem la situació
 típica:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Gat</span> <span class="p">{</span>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Gat</span> <span class="p">{</span>
     <span class="kd">private</span> <span class="kt">int</span> <span class="n">vides</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setVides</span><span class="p">(</span><span class="kt">int</span> <span class="n">vides</span><span class="p">)</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">vides</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
@@ -577,7 +603,7 @@ típica:</p>
     <span class="cm">/* … */</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>En aquesta situació, el paràmetre <code class="docutils literal notranslate"><span class="pre">vides</span></code> <em>oculta</em> l’atribut <code class="docutils literal notranslate"><span class="pre">vides</span></code>.
 Per poder-nos saltar l’ocultació, fèiem servir <code class="docutils literal notranslate"><span class="pre">this.vides</span></code> de manera
 que Java sapigués que ens referíem a <code class="docutils literal notranslate"><span class="pre">vides</span></code> de la instància i no a
@@ -671,17 +697,21 @@ de la mateixa classe, ho fa a un de la superclasse.</p>
 <p>Ara que ja tenim descobert els moviments <em>amagats</em> de Java, entendrem que
 les següents dues definicions són equivalents:</p>
 <p>La primera, amb tot implícit:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Gat</span> <span class="p">{}</span>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Gat</span> <span class="p">{}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>La segona, amb tot explícit:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Gat</span> <span class="kd">extends</span> <span class="n">Object</span> <span class="p">{</span>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Gat</span> <span class="kd">extends</span> <span class="n">Object</span> <span class="p">{</span>
     <span class="kd">public</span> <span class="nf">Gat</span><span class="p">()</span> <span class="p">{</span>
         <span class="kd">super</span><span class="p">();</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>De la mateixa manera que <code class="docutils literal notranslate"><span class="pre">this()</span></code>, la crida <code class="docutils literal notranslate"><span class="pre">super()</span></code> només pot
 aparèixer com a primera línia d’un constructor i, en cas que no hi sigui,
 Java l’afegirà per defecte.</p>
@@ -704,9 +734,9 @@ la següent definició de <code class="docutils literal notranslate"><span class
 </td></tr></table></div>
 <p>És a dir, <code class="docutils literal notranslate"><span class="pre">Gat</span></code> no té constructor per defecte.</p>
 <p>Sabem que en aquesta situació no podem fer una instància de <code class="docutils literal notranslate"><span class="pre">Gat</span></code> així:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">Gat</span> <span class="n">gat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Gat</span><span class="p">();</span>    <span class="c1">// no troba el constructor per defecte</span>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Gat</span> <span class="n">gat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Gat</span><span class="p">();</span>    <span class="c1">// no troba el constructor per defecte</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>Què passarà amb la subclasse?</p>
 <div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">GatRenat</span> <span class="kd">extends</span> <span class="n">Gat</span> <span class="p">{}</span>
 </pre></div>
@@ -998,11 +1028,13 @@ demanar-los que es posin drets i que mengin un determinat menjar.</p>
 <p>Fixa’t que d’aquesta manera ens estalviem de definir tots aquests mètodes a les diferents
 subclasses d’animal. Únicament ens caldrà definir els elements particulars. Per exemple,
 la classe <code class="docutils literal notranslate"><span class="pre">Gat</span></code> podria definir el mètode <code class="docutils literal notranslate"><span class="pre">fesSoroll()</span></code> de la següent manera:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">fesSoroll</span><span class="p">()</span> <span class="p">{</span>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">fesSoroll</span><span class="p">()</span> <span class="p">{</span>
     <span class="n">miola</span><span class="p">();</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>A l’exemple dels animals, té sentit instanciar un Gat o un Gos. En podem
 fer coses amb ells com, demanar-los que mengin, que miolin, bordin (o més
 general, que facin soroll).</p>
@@ -1087,13 +1119,17 @@ anar eliminant d’un en un per cada ús. Un cop exhaurits tots els viatges,
 la targeta no és usable a menys que es torni a recarregar.</p>
 <p>Potser se’ns podria ocórrer la <em>brillant</em> idea de comparar els viatges amb
 les vides d’un <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code> i així estalviar-nos un munt de codi:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TargetaMetro</span> <span class="kd">extends</span> <span class="n">GatRenat</span> <span class="p">{</span>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TargetaMetro</span> <span class="kd">extends</span> <span class="n">GatRenat</span> <span class="p">{</span>
     <span class="kd">public</span> <span class="nf">TargetaMetro</span><span class="p">(</span><span class="kt">int</span> <span class="n">viatgesInicials</span><span class="p">)</span> <span class="p">{</span>
         <span class="kd">super</span><span class="p">(</span><span class="n">viatgesInicials</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
-</div>
+</td></tr></table></div>
 <p>Ara, l’ús de la targeta (la pèrdua d’un viatge) la podem executar amb el
 mètode <code class="docutils literal notranslate"><span class="pre">mor()</span></code> que treu una vida/viatge fins que ja no en queden més.
 Saber si encara queden viatges ho podem resoldre amb el mètode
