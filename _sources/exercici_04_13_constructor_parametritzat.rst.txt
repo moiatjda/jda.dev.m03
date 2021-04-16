@@ -53,4 +53,4 @@ El resultat de l'execució serà:
 .. code-block:: console
 
     $ java GatRenat
-    Vides: 7, Posició: estirat
+    Vides: 7. Posició: estirat
