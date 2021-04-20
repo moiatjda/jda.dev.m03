@@ -1,0 +1,525 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ca" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Interfícies &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Exercicis" href="poo_exercicis.html" />
+    <link rel="prev" title="Herència" href="herencia.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació amb Java
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-21
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moduls.html">Mòduls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fitxers.html">Fitxers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="poo.html">Programació Orientada a Objectes</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="classes_i_objectes.html">Classes i objectes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="constructors.html">Constructors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="static.html">Membres d’instància i de classe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="composicio.html">Composició</a></li>
+<li class="toctree-l2"><a class="reference internal" href="herencia.html">Herència</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Interfícies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="poo_exercicis.html">Exercicis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="apendix.html">Apèndix</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació amb Java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="poo.html">Programació Orientada a Objectes</a> &raquo;</li>
+        
+      <li>Interfícies</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="interficies">
+<h1>Interfícies<a class="headerlink" href="#interficies" title="Link permanent a aquest títol">¶</a></h1>
+<p>Què fa que un animal pugui ser considerat de companyia. Pot ser difícil de
+dir, doncs hi ha una gran varietat d’éssers que la gent és capaç de
+considerar animals de companyia; des d’un conillet a un insecte pal,
+passant per un <em>tamagochi</em>!</p>
+<p>Suposem que el comportament o característica que fa que un animal sigui
+de companyia és que es deixa estimar. Suposem també que tant el Renat
+com el Garfield són animals de companyia mentre que el gat salvatge, per
+alguna inexplicable raó, no ho és.</p>
+<div class="figure align-center">
+<p class="plantuml">
+<img src="_images/plantuml-841417d33b6d1fec317f59cf9410b9438558b492.png" alt=" &#64;startuml
+ hide circle
+ skinparam monochrome true
+ skinparam classAttributeIconSize 0
+
+ class AnimalDeCompanyia {
+    deixatEstimar()
+ }
+ class Gat {
+    menja()
+ }
+ class GatRenat extends AnimalDeCompanyia
+ class Garfield extends AnimalDeCompanyia
+ class Tamagochi extends AnimalDeCompanyia
+ class GatRenat extends Gat
+ class Garfield extends Gat
+ class GatSalvatge extends Gat
+
+ &#64;enduml"/>
+</p>
+</div>
+<p>D’aquesta manera, el gat Renat seria subclasse de Gat i d’animal de
+companyia i, així, heretaria tant els mètodes de l’una com de l’altra
+superclasse. El problema és que, com ja sabem, Java no admet l’herència
+múltiple.</p>
+<p>Per resoldre aquest tipus de situacions es va incorporar un nou <em>tipus de
+tipus</em> anomenat <em>interfaces</em>. La traducció al nostre idioma seria
+<em>interfície</em> però mantindré el mot en anglès per deixar molt clar a què em
+refereixo.</p>
+<p>Considera el següent codi:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">AnimalDeCompanyia</span> <span class="p">{</span>
+     <span class="kt">void</span> <span class="nf">deixatEstimar</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Les <em>interfaces</em> reemplacen la paraula <code class="docutils literal notranslate"><span class="pre">classe</span></code> per <code class="docutils literal notranslate"><span class="pre">interface</span></code>. Per
+la resta, són força similars, excepte que les signatures dels mètodes no
+van seguides del cos sinó que acaben en punt i coma com en els mètodes
+abstractes, però sense la necessitat de marcar-los amb <code class="docutils literal notranslate"><span class="pre">abstract</span></code>.</p>
+<p>Com direm que el gat Renat és un animal de companyia?</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">GatRenat</span> <span class="kd">implements</span> <span class="n">AnimalDeCompanyia</span> <span class="p">{</span>
+     <span class="kd">private</span> <span class="kt">int</span> <span class="n">vides</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+     <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getVides</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">vides</span><span class="p">;</span> <span class="p">}</span>
+     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setVides</span><span class="p">(</span><span class="kt">int</span> <span class="n">vides</span><span class="p">)</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="na">vides</span> <span class="o">=</span> <span class="n">vides</span><span class="p">;</span> <span class="p">}</span>
+     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">deixatEstimar</span><span class="p">()</span> <span class="p">{</span>
+         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Renat es deixa estimar&quot;</span><span class="p">);</span>
+     <span class="p">}</span>
+     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
+          <span class="n">GatRenat</span> <span class="n">renat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">();</span>
+          <span class="n">renat</span><span class="p">.</span><span class="na">deixatEstimar</span><span class="p">();</span>
+     <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Com veus, la notació és molt similar a la que coneixem d’herència. En
+comptes de <code class="docutils literal notranslate"><span class="pre">extends</span></code>, però, aquí fem servir <code class="docutils literal notranslate"><span class="pre">implements</span></code>.</p>
+<p>Fixa’t que, per a implementar una <em>interface</em>, ho indiquem amb
+<code class="docutils literal notranslate"><span class="pre">implements</span></code>. Per altra banda, implementar un mètode de la <em>interface</em>
+implica simplement escriure el mètode incloent el cos.</p>
+<p>Malgrat <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code> no és subclasse de <code class="docutils literal notranslate"><span class="pre">AnimalDeCompanyia</span></code>, Java
+accepta la relació i permet que funcioni el polimorfisme. És a dir,
+podríem haver declarat <code class="docutils literal notranslate"><span class="pre">renat</span></code> com <code class="docutils literal notranslate"><span class="pre">AnimalDeCompanyia</span></code>:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>9</pre></div></td><td class="code"><div class="highlight"><pre><span></span>          <span class="n">AnimalDeCompanyia</span> <span class="n">renat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">();</span>
+</pre></div>
+</td></tr></table></div>
+<p>Però no dèiem que en Renat també era un gat? Cap problema:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Gat</span> <span class="p">{</span>
+     <span class="kd">private</span> <span class="kt">int</span> <span class="n">vides</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+     <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getVides</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">vides</span><span class="p">;</span> <span class="p">}</span>
+     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setVides</span><span class="p">(</span><span class="kt">int</span> <span class="n">vides</span><span class="p">)</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="na">vides</span> <span class="o">=</span> <span class="n">vides</span><span class="p">;</span> <span class="p">}</span>
+     <span class="kd">private</span> <span class="kt">void</span> <span class="nf">menja</span><span class="p">(</span><span class="n">Menjar</span> <span class="n">menjar</span><span class="p">)</span> <span class="p">{</span>
+         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;El gat menja %s%n&quot;</span><span class="p">,</span> <span class="n">menjar</span><span class="p">);</span>
+     <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">GatRenat</span> <span class="kd">extends</span> <span class="n">Gat</span> <span class="kd">implements</span> <span class="n">AnimalDeCompanyia</span> <span class="p">{</span>
+     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">deixatEstimar</span><span class="p">()</span> <span class="p">{</span>
+         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Renat es deixa estimar&quot;</span><span class="p">);</span>
+     <span class="p">}</span>
+     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
+          <span class="n">GatRenat</span> <span class="n">renat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">();</span>
+          <span class="n">renat</span><span class="p">.</span><span class="na">deixatEstimar</span><span class="p">();</span>
+          <span class="n">renat</span><span class="p">.</span><span class="na">menja</span><span class="p">();</span>
+     <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Fixa’t com <code class="docutils literal notranslate"><span class="pre">extends</span></code> apareix abans de <code class="docutils literal notranslate"><span class="pre">implements</span></code>.</p>
+<p>Una <em>interface</em> pot tenir més d’un mètode. Per exemple, un animal de
+companyia podria també jugar.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">AnimalDeCompanyia</span> <span class="p">{</span>
+     <span class="kt">void</span> <span class="nf">deixatEstimar</span><span class="p">();</span>
+     <span class="kt">void</span> <span class="nf">juga</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>La definició d’una classe que implementi una <em>interface</em> ha d’incloure la
+definició de <strong>tots</strong> els mètodes que defineix la <em>interface</em>, altrament
+el compilador no ens deixarà passar. Així, el nostre <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code> si vol
+ser un <code class="docutils literal notranslate"><span class="pre">AnimalDeCompanyia</span></code> ha d’implementar també <code class="docutils literal notranslate"><span class="pre">juga()</span></code>.</p>
+<p>Encara més. En Renat no només és un gat i un animal de companyia. Una
+altra cosa que és és un excel·lent cuiner.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Cuinetes</span> <span class="p">{</span>
+     <span class="kt">void</span> <span class="nf">cuina</span><span class="p">(</span><span class="n">String</span> <span class="n">plat</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Per indicar que en Renat també és un <code class="docutils literal notranslate"><span class="pre">Cuinetes</span></code>, simplement li afegim la
+nova <em>interface</em> a la llista de les implementacions:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="hll"><span class="kd">class</span> <span class="nc">GatRenat</span> <span class="kd">extends</span> <span class="n">Gat</span> <span class="kd">implements</span> <span class="n">AnimalDeCompanyia</span><span class="p">,</span> <span class="n">Cuinetes</span> <span class="p">{</span>
+</span>     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">deixatEstimar</span><span class="p">()</span> <span class="p">{</span>
+         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Renat es deixa estimar&quot;</span><span class="p">);</span>
+     <span class="p">}</span>
+     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">juga</span><span class="p">()</span> <span class="p">{</span>
+         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Renat juga&quot;</span><span class="p">);</span>
+     <span class="p">}</span>
+     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">cuina</span><span class="p">(</span><span class="n">String</span> <span class="n">plat</span><span class="p">)</span> <span class="p">{</span>
+         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;Renat prepara %s%n&quot;</span><span class="p">,</span> <span class="n">plat</span><span class="p">);</span>
+     <span class="p">}</span>
+     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">){</span>
+          <span class="n">GatRenat</span> <span class="n">renat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">GatRenat</span><span class="p">();</span>
+          <span class="n">renat</span><span class="p">.</span><span class="na">deixatEstimar</span><span class="p">();</span>
+          <span class="n">renat</span><span class="p">.</span><span class="na">cuina</span><span class="p">(</span><span class="s">&quot;sardines a la Rochefort&quot;</span><span class="p">);</span>
+     <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Com veus, simplement hem d’afegir la nova <em>interface</em> en forma de llista
+separada per comes, a partir de <code class="docutils literal notranslate"><span class="pre">implements</span></code>. No importa l’ordre però sí
+que <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code> defineixi el mètode <code class="docutils literal notranslate"><span class="pre">cuina()</span></code></p>
+<p>Posem encara una altra característica sobre la taula: en Renat també és un
+<em>gourmet</em> que li agrada molt menjar. Així, la <em>interface</em> seria:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">interface</span> <span class="nc">Gourmet</span> <span class="p">{</span>
+    <span class="kt">void</span> <span class="nf">menja</span><span class="p">(</span><span class="n">Menjar</span> <span class="n">menjar</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>No obstant, el Renat no canvia gaire en la seva definició. Només inclou la
+nova <em>interface</em>:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">GatRenat</span> <span class="kd">extends</span> <span class="n">Gat</span> <span class="kd">implements</span> <span class="n">AnimalDeCompanyia</span><span class="p">,</span> <span class="n">Cuinetes</span><span class="p">,</span> <span class="n">Gourmet</span> <span class="p">{</span>
+     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">deixatEstimar</span><span class="p">()</span> <span class="p">{</span>
+         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Renat es deixa estimar&quot;</span><span class="p">);</span>
+     <span class="p">}</span>
+     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">juga</span><span class="p">()</span> <span class="p">{</span>
+         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Renat juga&quot;</span><span class="p">);</span>
+     <span class="p">}</span>
+     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">cuina</span><span class="p">(</span><span class="n">String</span> <span class="n">plat</span><span class="p">)</span> <span class="p">{</span>
+         <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;Renat prepara %s%n&quot;</span><span class="p">,</span> <span class="n">plat</span><span class="p">);</span>
+     <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Com és possible que funcioni sense que calgui implementar <code class="docutils literal notranslate"><span class="pre">menja()</span></code>?
+Doncs perquè aquest mètode l’hereta de <code class="docutils literal notranslate"><span class="pre">Gat</span></code>! Això també pot passar quan
+més d’una <em>interface</em> defineix exactament el mateix mètode. Cap problema.</p>
+<p>La representació en UML vindria a ser:</p>
+<div class="figure align-center">
+<p class="plantuml">
+<img src="_images/plantuml-d1352fbec23ede4045c2889d64805ab484b6e031.png" alt=" &#64;startuml
+ hide circle
+ skinparam monochrome true
+ skinparam classAttributeIconSize 0
+
+ interface AnimalDeCompanyia {
+    deixatEstimar()
+ }
+ interface Gourmet {
+    menja(Menjar)
+ }
+ interface Cuinetes {
+     cuina(String)
+ }
+ class Gat {
+    menja()
+ }
+ class GatRenat implements AnimalDeCompanyia
+ class Garfield implements AnimalDeCompanyia
+ class Tamagochi implements AnimalDeCompanyia
+ class GatRenat extends Gat
+ class Garfield extends Gat
+ class GatSalvatge extends Gat
+ class GatRenat implements Cuinetes
+ class GatRenat implements Gourmet
+
+ &#64;enduml"/>
+</p>
+</div>
+<p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_04_27_interfagat.html"><span class="doc"> Exercici 04_27. Gat Renat amb Interfaces</span></a></p>
+<div class="section" id="recapitulant">
+<h2>Recapitulant<a class="headerlink" href="#recapitulant" title="Link permanent a aquest títol">¶</a></h2>
+<p>Les <em>interfaces</em> són un mecanisme molt flexible que permet definir el
+comportament (mètodes) de les classes, de manera que puguem arribar a
+no necessitar conèixer la classe concreta amb que estem treballant mentre
+tinguem clar que respon al comportament que esperem.</p>
+<p>Una <em>interface</em> especifica un conjunt de signatures de mètodes que hauran
+de ser definits per qualsevol classe que implementi la <em>interface</em>.</p>
+<p>Un dels avantatges de les <em>interfaces</em> és, gràcies al polimorfisme, la
+possibilitat de desenvolupar independentment peces de codi que només es
+comprometen a respectar <em>un contracte</em>: la implementació de la
+<em>interface</em>.</p>
+<p>Donat que una classe pot implementar un nombre indefinit d”<em>interfaces</em>,
+aquest mecanisme resol parcialment l’aparent limitació del Java amb
+l’herència múltiple.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="poo_exercicis.html" class="btn btn-neutral float-right" title="Exercicis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="herencia.html" class="btn btn-neutral float-left" title="Herència" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2021 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

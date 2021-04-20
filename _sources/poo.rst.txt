@@ -35,4 +35,5 @@ Aquest tema es desglossa en les següents entrades:
     static.rst
     composicio.rst
     herencia.rst
+    interfaces.rst
     poo_exercicis.rst

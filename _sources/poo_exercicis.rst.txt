@@ -32,3 +32,4 @@ Exercicis
     exercici_04_24_renat_es_gat.rst
     exercici_04_25_metodes_cridats.rst
     exercici_04_26_garfield.rst
+    exercici_04_27_interfagat.rst

@@ -1,0 +1,215 @@
+##########################################################
+|exerciseicon__T| Exercici 04_27. Gat Renat amb Interfaces
+##########################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``04_27_interfagat/``
+
+* Continguts relacionats: :doc:`interfaces`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+
+Considera aquesta nova jerarquia de classes:
+
+.. uml::
+    :align: center
+
+     @startuml
+     hide circle
+     skinparam monochrome true
+     skinparam classAttributeIconSize 0
+
+     interface EsserViu {
+        + estaViu(): boolean
+        + mor(): String
+        + ressulscita(): String
+     }
+     interface Ensinistrable {
+         + estaDret(): boolean
+         + estaAssegut(): boolean
+         + estaEstirat(): boolean
+         + aixecat(): String
+         + seu(): String
+         + estirat(): String
+     }
+     interface AnimalDeCompanyia {
+        deixatEstimar(): String
+     }
+     class Gat {
+         - vides: int = 7
+         - nom: String = "anònim"
+         + Gat(nom:String)
+         + Gat(nom:String, vides: int)
+         + getNom(): String
+         + getVides(): int
+         + setVides(int)
+     }
+     class GatRenat {
+        - posicio: String = "estirat"
+        - GatRenat(posicio: String)
+        - getPosicio(String)
+     }
+     class Gat implements EsserViu
+
+     class GatRenat extends Gat
+     class Garfield extends Gat
+     class GatSalvatge extends Gat
+     class Garfield implements AnimalDeCompanyia
+     class GatRenat implements AnimalDeCompanyia, Ensinistrable
+
+     @enduml
+
+A aquesta jerarquia, els gats són éssers vius i, per tant, tenen vides,
+poden morir i (recorda que és un exercici) ressuscitar.
+
+Tota instància de gat ha de tenir un nom i no es pot canviar. En cas que
+el nom que reben els constructors no sigui vàlid (``null`` o buit o tot
+d'espais blancs) es posarà com a nom per defecte ``"anònim"``.
+
+Els gat Renat i els gats Garfield són gats i animals de companyia. Els
+gats salvatges són també gats però no animals de companyia. A banda, els
+Renats són també ensinistrables.
+
+Els mètodes a implementar presenten les següents sortides:
+
+=============== ================ ===================================================================
+Classe          mètode           Sortida
+--------------- ---------------- -------------------------------------------------------------------
+GatRenat        aixecat()        ``"m'aixeco"`` si està dret, ``"no faig res"`` altrament
+GatRenat        seu()            ``"m'assec"`` si està dret, ``"no faig res"`` altrament
+GatRenat        estirat()        ``"m'estiro"`` si està dret, ``"no faig res"`` altrament
+GatRenat        deixatEstimar()  ``"em deixo estimar"``
+Garfield        deixatEstimar()  ``"em deixo estimar una mica"``
+Gat             mor()            ``"adéu món cruel"`` si està viu, ``"ja l'he palmada"`` altrament
+Gat             ressuscita()     ``"encara visc"`` si està viu, ``"guai!"`` altrament
+=============== ================ ===================================================================
+
+Per provar el funcionament de tot el conjunt, hauràs de poder executar el següent codi:
+
+Els noms dels tres gats concretats són:
+
+* ``GatRenat``:  ``"Renat"``
+
+* ``Gatfield``:  ``"Gatfield"``
+
+* ``GatSalvatge``:  ``"Gat Salvatge"``
+
+T'he preparat el següent codi perquè puguis comprovar que tot el conjunt disposa dels mínims:
+
+.. code-block:: java
+    :linenos:
+
+    /*
+     * Aquest programa serveix de comprovació de que es disposa de tots els
+     * requeriments bàsics de l'exercici del Gat Renat amb Interfaces
+     */
+    public class InterfaGats {
+        public static void main(String[] args) {
+            GatRenat renat = new GatRenat();
+            Garfield garfield = new Garfield();
+            GatSalvatge gatSalvatge = new GatSalvatge();
+            Gat gargamel = new Gat("Gargamel"); 
+            Gat[] gats = { renat, garfield, gatSalvatge, gargamel };
+            AnimalDeCompanyia[] animalsDeCompanyia = { renat, garfield };
+            Ensinistrable[] ensinistrables = { renat };
+            EsserViu[] essersVius = {renat, garfield, gatSalvatge, gargamel };
+                
+            System.out.println("Comprovem els mètodes de ensinistrable");
+            System.out.println("======================================");
+            for (Ensinistrable ensinistrable: ensinistrables) {
+                System.out.println(ensinistrable.aixecat());
+                System.out.println(ensinistrable.estaDret());
+                System.out.println(ensinistrable.seu());
+                System.out.println(ensinistrable.estaAssegut());
+                System.out.println(ensinistrable.estirat());
+                System.out.println(ensinistrable.estaEstirat());
+            }
+
+            System.out.println("Comprovem els mètodes d'AnimalDeCompanyia");
+            System.out.println("=========================================");
+            for (AnimalDeCompanyia pet: animalsDeCompanyia) {
+                System.out.println(pet.deixatEstimar());
+            }
+
+            System.out.println("Comprovem els mètodes d'Esser viu");
+            System.out.println("=================================");
+            for (EsserViu esser: essersVius) {
+                System.out.println(esser.estaViu());
+                System.out.println(esser.mor());
+                System.out.println(esser.ressuscita());
+            }
+
+            System.out.println("Comprovem els mètodes de Gat");
+            System.out.println("============================");
+            for (Gat gat: gats) {
+                System.out.println(gat.getNom());
+                gat.setVides(1);
+                System.out.println(gat.mor());
+                System.out.println(gat.estaViu());
+                System.out.println(gat.ressuscita());
+                System.out.println(gat.getVides());
+            }
+        }
+    }
+
+La sortida esperada és: 
+
+.. code-block:: console
+    :emphasize-lines: 2-
+
+
+    $ java InterfaGats 
+    Comprovem els mètodes de ensinistrable
+    ======================================
+    m'aixeco
+    true
+    m'assec
+    true
+    m'estiro
+    true
+    Comprovem els mètodes d'AnimalDeCompanyia
+    =========================================
+    em deixo estimar
+    em deixo estimar una mica
+    Comprovem els mètodes d'Esser viu
+    =================================
+    true
+    adéu món cruel
+    encara visc
+    true
+    adéu món cruel
+    encara visc
+    true
+    adéu món cruel
+    encara visc
+    true
+    adéu món cruel
+    encara visc
+    Comprovem els mètodes de Gat
+    ============================
+    Renat
+    adéu món cruel
+    false
+    guai!
+    1
+    Garfield
+    adéu món cruel
+    false
+    guai!
+    1
+    Gat Salvatge
+    adéu món cruel
+    false
+    guai!
+    1
+    Gargamel
+    adéu món cruel
+    false
+    guai!
+    1
