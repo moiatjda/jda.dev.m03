@@ -96,7 +96,7 @@ Els noms dels tres gats concretats són:
 
 * ``GatRenat``:  ``"Renat"``
 
-* ``Gatfield``:  ``"Gatfield"``
+* ``Garfield``:  ``"Garfield"``
 
 * ``GatSalvatge``:  ``"Gat Salvatge"``
 

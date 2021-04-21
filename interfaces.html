@@ -302,20 +302,20 @@ podríem haver declarat <code class="docutils literal notranslate"><span class="
 </td></tr></table></div>
 <p>Fixa’t com <code class="docutils literal notranslate"><span class="pre">extends</span></code> apareix abans de <code class="docutils literal notranslate"><span class="pre">implements</span></code>.</p>
 <p>Una <em>interface</em> pot tenir més d’un mètode. Per exemple, un animal de
-companyia podria també jugar.</p>
+companyia podria també deixar-se quidar.</p>
 <div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">AnimalDeCompanyia</span> <span class="p">{</span>
      <span class="kt">void</span> <span class="nf">deixatEstimar</span><span class="p">();</span>
-     <span class="kt">void</span> <span class="nf">juga</span><span class="p">();</span>
+     <span class="kt">void</span> <span class="nf">deixatCuidar</span><span class="p">();</span>
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>
 <p>La definició d’una classe que implementi una <em>interface</em> ha d’incloure la
 definició de <strong>tots</strong> els mètodes que defineix la <em>interface</em>, altrament
 el compilador no ens deixarà passar. Així, el nostre <code class="docutils literal notranslate"><span class="pre">GatRenat</span></code> si vol
-ser un <code class="docutils literal notranslate"><span class="pre">AnimalDeCompanyia</span></code> ha d’implementar també <code class="docutils literal notranslate"><span class="pre">juga()</span></code>.</p>
+ser un <code class="docutils literal notranslate"><span class="pre">AnimalDeCompanyia</span></code> ha d’implementar també <code class="docutils literal notranslate"><span class="pre">deixatCuidar()</span></code>.</p>
 <p>Encara més. En Renat no només és un gat i un animal de companyia. Una
 altra cosa que és és un excel·lent cuiner.</p>
 <div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -346,7 +346,7 @@ nova <em>interface</em> a la llista de les implementacions:</p>
 </span>     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">deixatEstimar</span><span class="p">()</span> <span class="p">{</span>
          <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Renat es deixa estimar&quot;</span><span class="p">);</span>
      <span class="p">}</span>
-     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">juga</span><span class="p">()</span> <span class="p">{</span>
+     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">deixatCuidar</span><span class="p">()</span> <span class="p">{</span>
          <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Renat juga&quot;</span><span class="p">);</span>
      <span class="p">}</span>
      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">cuina</span><span class="p">(</span><span class="n">String</span> <span class="n">plat</span><span class="p">)</span> <span class="p">{</span>
@@ -388,7 +388,7 @@ nova <em>interface</em>:</p>
      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">deixatEstimar</span><span class="p">()</span> <span class="p">{</span>
          <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Renat es deixa estimar&quot;</span><span class="p">);</span>
      <span class="p">}</span>
-     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">juga</span><span class="p">()</span> <span class="p">{</span>
+     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">deixatCuidar</span><span class="p">()</span> <span class="p">{</span>
          <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Renat juga&quot;</span><span class="p">);</span>
      <span class="p">}</span>
      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">cuina</span><span class="p">(</span><span class="n">String</span> <span class="n">plat</span><span class="p">)</span> <span class="p">{</span>
@@ -403,13 +403,14 @@ més d’una <em>interface</em> defineix exactament el mateix mètode. Cap probl
 <p>La representació en UML vindria a ser:</p>
 <div class="figure align-center">
 <p class="plantuml">
-<img src="_images/plantuml-d1352fbec23ede4045c2889d64805ab484b6e031.png" alt=" &#64;startuml
+<img src="_images/plantuml-1ac9919ebe3b8659b0a2f7b6bd279c733c95427c.png" alt=" &#64;startuml
  hide circle
  skinparam monochrome true
  skinparam classAttributeIconSize 0
 
  interface AnimalDeCompanyia {
     deixatEstimar()
+    deixatCuidar()
  }
  interface Gourmet {
     menja(Menjar)

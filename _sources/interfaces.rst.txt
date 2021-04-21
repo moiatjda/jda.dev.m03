@@ -122,21 +122,21 @@ Però no dèiem que en Renat també era un gat? Cap problema:
 Fixa't com ``extends`` apareix abans de ``implements``.
 
 Una *interface* pot tenir més d'un mètode. Per exemple, un animal de
-companyia podria també jugar.
+companyia podria també deixar-se quidar.
 
 .. code-block:: java
     :linenos:
 
     public interface AnimalDeCompanyia {
          void deixatEstimar();
-         void juga();
+         void deixatCuidar();
     }
 
 
 La definició d'una classe que implementi una *interface* ha d'incloure la
 definició de **tots** els mètodes que defineix la *interface*, altrament
 el compilador no ens deixarà passar. Així, el nostre ``GatRenat`` si vol
-ser un ``AnimalDeCompanyia`` ha d'implementar també ``juga()``.
+ser un ``AnimalDeCompanyia`` ha d'implementar també ``deixatCuidar()``.
 
 Encara més. En Renat no només és un gat i un animal de companyia. Una
 altra cosa que és és un excel·lent cuiner.
@@ -159,7 +159,7 @@ nova *interface* a la llista de les implementacions:
          public void deixatEstimar() {
              System.out.println("Renat es deixa estimar");
          }
-         public void juga() {
+         public void deixatCuidar() {
              System.out.println("Renat juga");
          }
          public void cuina(String plat) {
@@ -196,7 +196,7 @@ nova *interface*:
          public void deixatEstimar() {
              System.out.println("Renat es deixa estimar");
          }
-         public void juga() {
+         public void deixatCuidar() {
              System.out.println("Renat juga");
          }
          public void cuina(String plat) {
@@ -220,6 +220,7 @@ La representació en UML vindria a ser:
 
      interface AnimalDeCompanyia {
         deixatEstimar()
+        deixatCuidar()
      }
      interface Gourmet {
         menja(Menjar)
