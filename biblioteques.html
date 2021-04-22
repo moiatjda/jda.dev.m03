@@ -1,0 +1,302 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ca" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Biblioteques &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="El celler de la Bona Estrella" href="botigavins.html" />
+    <link rel="prev" title="Exercici 04_27. Gat Renat amb Interfaces" href="exercici_04_27_interfagat.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació amb Java
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-21
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moduls.html">Mòduls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fitxers.html">Fitxers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poo.html">Programació Orientada a Objectes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Biblioteques</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="botigavins.html">El celler de la Bona Estrella</a></li>
+<li class="toctree-l2"><a class="reference internal" href="biblioteques_exercicis.html">Exercicis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="apendix.html">Apèndix</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació amb Java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Biblioteques</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="biblioteques">
+<h1>Biblioteques<a class="headerlink" href="#biblioteques" title="Link permanent a aquest títol">¶</a></h1>
+<p>Arribats a aquest punt del curs, tenim una gran quantitat d’eines per
+poder afrontar els reptes de programació que se’ns presentin.</p>
+<p>Les estructures bàsiques de programació (dades, condicionals, bucles,
+mòduls) s’han vist agrupades en classes i objectes, que aporten una nova
+manera d’entendre la programació. Aquesta nova manera ens permet treballar
+amb conceptes de complexitat incrementable de manera abstracta i la tasca
+de programar passa cada cop per ser capaços de combinar aquests elements
+i fer-los interaccionar entre si.</p>
+<p>Ara és un bon moment per que descobrim una altra gran veritat dels
+llenguatges de programació: el que en la pràctica podem programar, és a
+dir, el que podem aconseguir que funcioni amb restriccions reals com ara
+el temps, ve més determinat pel codi que ja està fet que pel que hem de
+fer! Per aquesta raó, els llenguatges de programació que pretenen
+aconseguir una acceptació massiva, s’esforcen per a oferir una basta
+biblioteca de codi ja desenvolupat que estigui a l’abast nostre. En el cas
+de Java, aquesta biblioteca és descomunal i continua creixent sense
+aturar-se. Com es tracta d’un llenguatge orientat a objectes, aquesta
+biblioteca està formada per classes reutilitzables que incorporem als
+nostres programes.</p>
+<p>La regla bàsica és: <em>si ja està fet i funciona com vols, no ho tornis a
+desenvolupar</em>.</p>
+<p>El problema bàsic és: <em>com saps si el que necessites ja està
+desenvolupat?</em></p>
+<p>La resposta: estudi, cerca i experiència.</p>
+<p>A aquesta part del curs descobrirem alguna de les classes fonamentals que
+tot llenguatge de programació amb intenció de ser pràctic, hauria
+d’evitar que haguessim de recodificar pel nostre compte. Potser entre les més
+importants trobem les <em>col·leccions</em> o agrupacions d’objectes.</p>
+<p>Per presentar-te aquests conceptes, t’he preparat una activitat
+continuada: el desenvolupament d’una aplicació de gestió d’un celler de
+vins que farem evolucionar mica en mica.</p>
+<p>Donat que és un desenvolupament continu, la majoria dels exercicis
+requeriran el codi dels exercicis previs. A banda, és probable que puguis
+utilitzar codis desenvolupats en exercicis d’altres seccions, com per
+exemple utilitats de Strings com <a class="reference internal" href="exercici_02_23_es_enter.html"><span class="doc">UtilString.esEnter()</span></a>. Si no els vas fer, l’únic problema és que et
+tocarà implementar-ho ara.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Un <em>disclaimer</em></p>
+<p>Vull deixar clar des de bon començament
+que amb l’aparició de begudes alcohòliques en els següents exercicis
+de cap manera pretenc incitar el seu consum. De fet, personalment ni
+tant sols sóc consumidor d’aquestes begudes més que de manera
+extremadament ocasional.</p>
+<p>La raó per la que he escollit aquest tema és perquè ofereix una gran
+riquesa de característiques, cosa que el fa idoni per aquesta secció.
+He tingut molt en compte, però, que aquest curs està dirigit a adults.</p>
+</div>
+<p>La manera de presentar aquests continguts està inspirada en un dels casos que
+apareixen a l’excel·lent llibre <a class="reference external" href="http://www.headfirstlabs.com/books/hfooad/">Head First Object Oriented Analysis and Design</a> de l’editorial O’Reilly de
+novembre de 2006. Es tracta d’un llibre de seguiment agradable, molt recomanable
+per qui tingui interès en conèixer una mica més del desenvolupament orientat a
+objectes, malgrat fa referència a una versió poc actual de Java.</p>
+<p>Trobaràs els continguts d’aquesta secció en els següents documents:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="botigavins.html">El celler de la Bona Estrella</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biblioteques_exercicis.html">Exercicis</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="botigavins.html" class="btn btn-neutral float-right" title="El celler de la Bona Estrella" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="exercici_04_27_interfagat.html" class="btn btn-neutral float-left" title="Exercici 04_27. Gat Renat amb Interfaces" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2021 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,503 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ca" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Exercici 05_03. La classe Entorn &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Apèndix" href="apendix.html" />
+    <link rel="prev" title="Exercici 05_02. La classe botiga" href="exercici_05_02_botiga.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació amb Java
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-21
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moduls.html">Mòduls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fitxers.html">Fitxers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poo.html">Programació Orientada a Objectes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="biblioteques.html">Biblioteques</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="botigavins.html">El celler de la Bona Estrella</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="biblioteques_exercicis.html">Exercicis</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="exercici_05_01_vi.html"> Exercici 05_01. La classe <code class="docutils literal notranslate"><span class="pre">vi</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_05_02_botiga.html"> Exercici 05_02. La classe <code class="docutils literal notranslate"><span class="pre">botiga</span></code></a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#"> Exercici 05_03. La classe <code class="docutils literal notranslate"><span class="pre">Entorn</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="apendix.html">Apèndix</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació amb Java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="biblioteques.html">Biblioteques</a> &raquo;</li>
+        
+          <li><a href="biblioteques_exercicis.html">Exercicis</a> &raquo;</li>
+        
+      <li> Exercici 05_03. La classe <code class="docutils literal notranslate"><span class="pre">Entorn</span></code></li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="exerciseicon-t-exercici-05-03-la-classe-entorn">
+<h1><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> Exercici 05_03. La classe <code class="docutils literal notranslate"><span class="pre">Entorn</span></code><a class="headerlink" href="#exerciseicon-t-exercici-05-03-la-classe-entorn" title="Link permanent a aquest títol">¶</a></h1>
+<p class="rubric">Context</p>
+<ul class="simple">
+<li><p>Carpeta de lliurament: <code class="docutils literal notranslate"><span class="pre">05_03_entorn/</span></code></p></li>
+<li><p>Continguts relacionats: <a class="reference internal" href="botigavins.html"><span class="doc">El celler de la Bona Estrella</span></a></p></li>
+<li><p>Com lliurar-lo: <a class="reference internal" href="holagit.html#instruccions-git"><span class="std std-ref">instruccions</span></a></p></li>
+<li><p>[✓] Exercici amb <a class="reference internal" href="sobre_exercicis.html#descripcio-exercicis-autoavaluacio"><span class="std std-ref">autoavaluació</span></a></p></li>
+</ul>
+<p class="rubric">Enunciat</p>
+<p>Ara que ja tenim les classes principals de la nostra aplicació, passem a
+codificar el programa per que la Sra. Estrella pugui interaccionar amb la
+botiga.</p>
+<p>Ens hem decidit per una opció molt senzilla, usable des de consola. La
+Sra. Estrella, quan era jove havia fet servir una de les primeres versions
+de l’editor <a class="reference external" href="https://ca.wikipedia.org/wiki/Ed_(editor_de_text)">ed</a>. Sí,
+la nostra clienta té <em>un passat</em>. Per ella, les coses amb moltes
+coloraines i animacions que es fan ara, li semblen poc serioses, així que
+pensem que una aplicació en consola li estarà bé.</p>
+<p>Així, implementarem la classe <code class="docutils literal notranslate"><span class="pre">Entorn</span></code> que disposa d’un <code class="docutils literal notranslate"><span class="pre">main()</span></code> que,
+en ser executat, ofereix un <em>prompt</em> on poder anar escrivint les
+comandes.</p>
+<div class="figure align-center">
+<p class="plantuml">
+<img src="_images/plantuml-043426034ce38e38da4385ce625578d5d750fccc.png" alt="Diagrama de classes de la botiga de vins"/>
+</p>
+</div>
+<p>El <em>prompt</em> serà <code class="docutils literal notranslate"><span class="pre">botiga&gt;</span></code> i les comandes que acceptarà són:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;ajuda&quot;</span></code>: ofereix un text d’ajuda amb la informació de les comandes
+disponibles</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;afegeix&quot;</span></code>: permet afegir un nou vi a la botiga. En executar-ho, el
+programa demanarà interactivament pels diferents valors que composen un
+vi: nom, preu i estoc.</p>
+<p>La interacció tindrà el següent aspecte:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">botiga&gt; nou</span>
+<span class="go">nom (enter cancel·la)&gt; Roura blanc</span>
+<span class="go">preu (en cèntims)&gt; 1223</span>
+<span class="go">estoc (enter sense estoc)&gt;</span>
+<span class="go">Introduït:</span>
+<span class="go">   Vi: Roura blanc</span>
+<span class="go">   Preu: 1223</span>
+<span class="go">   Estoc: 0</span>
+
+<span class="go">botiga&gt;</span>
+</pre></div>
+</div>
+<p>Fixa’t que les dades del vi apareixen tabulades per facilitar la
+lectura, i acaben amb un salt de línia extra. Curiosament s’assembla
+molt a la sortida de <code class="docutils literal notranslate"><span class="pre">Vi.toString()</span></code>. Bé, de fet són iguales!</p>
+<p>En cas que no ens introdueixin nom, suposarem que no vol continuar
+afegint el vi, i tornarem al <em>prompt</em>.</p>
+<p>El preu és llegit i mostrat en cèntims, tal i com es guarda a <code class="docutils literal notranslate"><span class="pre">Vi</span></code>. No
+és la manera més còmoda ni la més llegible, i en un futur haurem de fer
+alguna cosa per millorar-ho. De moment, ens està bé així.</p>
+<p>Si pel preu o per l’estoc ens introdueixen una cadena buida,
+considerarem que volen indicar <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p>Si no és una cadena buida, el valor ha de correspondre a un enter
+positiu. Si no és el cas, mostrarem el missatge <code class="docutils literal notranslate"><span class="pre">&quot;ERROR:</span> <span class="pre">el</span> <span class="pre">valor</span> <span class="pre">ha</span>
+<span class="pre">de</span> <span class="pre">ser</span> <span class="pre">un</span> <span class="pre">enter</span> <span class="pre">positiu&quot;</span></code> i donarem per cancel·lada l’operació.</p>
+<p>En cas que finalment no s’hagi pogut introduir el vi (el mètode
+<code class="docutils literal notranslate"><span class="pre">Botiga.afegeix()</span></code> ens retorna <code class="docutils literal notranslate"><span class="pre">null</span></code>, es mostrarà el missatge
+<code class="docutils literal notranslate"><span class="pre">&quot;ERROR:</span> <span class="pre">no</span> <span class="pre">s'ha</span> <span class="pre">pogut</span> <span class="pre">afegir&quot;</span></code>. Recordem que això pot passar
+perquè ens hem quedat sense espai o bé perquè ja existia un vi amb
+aquest nom. De moment la Sra. Estrella haurà d’acceptar aquesta pobre
+informació.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;cerca&quot;</span></code>: permet cercar un vi a la botiga. En executar-ho, el
+programa demanarà interactivament el nom.</p>
+<p>La interacció tindrà el següent aspecte:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">botiga&gt; cerca</span>
+<span class="go">nom (enter cancel·la)&gt; Roura blanc</span>
+<span class="go">Trobat:</span>
+<span class="go">   Vi: Roura blanc</span>
+<span class="go">   Preu: 1223</span>
+<span class="go">   Estoc: 0</span>
+
+<span class="go">botiga&gt;</span>
+</pre></div>
+</div>
+<p>En cas que no s’introdueixi nom, es considerarà que no vol continuar
+amb la cerca i es tornarà al <em>prompt</em>.</p>
+<p>Si no es troba cap vi amb aquest nom, es mostrarà el missatge: <code class="docutils literal notranslate"><span class="pre">&quot;No</span>
+<span class="pre">trobat&quot;</span></code></p>
+<p>Finalment, si es troba un vi, es mostren els seus detalls exactament
+igual que en el cas de l’opció <code class="docutils literal notranslate"><span class="pre">&quot;afegeix&quot;</span></code>.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;modifica&quot;</span></code>: permet modificar les dades d’un vi. En executar-ho, el
+programa demanarà interactivament el nom i la resta de dades del vi.</p>
+<p>La interacció tindrà el següent aspecte:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">botiga&gt; modifica</span>
+<span class="go">nom (enter cancel·la)&gt; Roura blanc</span>
+<span class="go">preu (enter 1223)&gt; 1300</span>
+<span class="go">estoc (enter 0)&gt; 24</span>
+<span class="go">Modificat:</span>
+<span class="go">   Vi: Roura blanc</span>
+<span class="go">   Preu: 1300</span>
+<span class="go">   Estoc: 24</span>
+
+<span class="go">botiga&gt;</span>
+</pre></div>
+</div>
+<p>Si no es troba cap vi amb aquest nom, es mostrarà el missatge: <code class="docutils literal notranslate"><span class="pre">&quot;No</span>
+<span class="pre">trobat&quot;</span></code></p>
+<p>Si pel preu o per l’estoc ens introdueixen una cadena buida,
+considerarem que volen indicar mantenir el valor antic.</p>
+<p>Si no és una cadena buida, el valor ha de correspondre a un enter
+positiu. Si no és el cas, mostrarem el missatge <code class="docutils literal notranslate"><span class="pre">&quot;ERROR:</span> <span class="pre">el</span> <span class="pre">valor</span> <span class="pre">ha</span>
+<span class="pre">de</span> <span class="pre">ser</span> <span class="pre">un</span> <span class="pre">enter</span> <span class="pre">positiu&quot;</span></code> i donarem per cancel·lada l’operació sense
+fer cap modificació.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;elimina:</span></code>: permet eliminar un vi de la botiga. Funciona molt similar
+a <code class="docutils literal notranslate"><span class="pre">&quot;modifica&quot;</span></code>. En aquest cas, però, mostrarà els atributs del vi a
+eliminar i demanarà confirmació:</p>
+<p>La interacció tindrà el següent aspecte:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">botiga&gt; elimina</span>
+<span class="go">nom (enter cancel·la)&gt; Roura blanc</span>
+<span class="go">A eliminar:</span>
+<span class="go">   Vi: Roura blanc</span>
+<span class="go">   Preu: 1300</span>
+<span class="go">   Estoc: 24</span>
+
+<span class="go">Segur?&gt; Sí</span>
+<span class="go">Error: no s&#39;ha pogut eliminar</span>
+<span class="go">botiga&gt;</span>
+</pre></div>
+</div>
+<p>En cas que finalment no s’hagi pogut eliminar el vi (el mètode
+<code class="docutils literal notranslate"><span class="pre">Botiga.elimina()</span></code> ens retorna <code class="docutils literal notranslate"><span class="pre">null</span></code>, es mostrarà el missatge
+<code class="docutils literal notranslate"><span class="pre">&quot;ERROR:</span> <span class="pre">no</span> <span class="pre">s'ha</span> <span class="pre">pogut</span> <span class="pre">eliminar&quot;</span></code>. Recordem que això pot passar perquè
+estem intentant eliminar un vi que encara té estoc. De moment la Sra.
+Estrella haurà d’acceptar aquesta pobre informació.</p>
+<p>Si, per contra, s’ha pogut eliminar el vi, el missatge serà
+<code class="docutils literal notranslate"><span class="pre">&quot;Eliminat&quot;</span></code>.</p>
+<p>Si ens diuen que no a la petició de confirmació, mostrarem el missatge
+<code class="docutils literal notranslate"><span class="pre">&quot;No</span> <span class="pre">eliminat&quot;</span></code>.</p>
+<p><strong>Nota</strong>: cal vèncer la temptació de controlar aquí si es pot o no
+eliminar un vi que té estoc. Això és quelcom que ha de decidir
+<code class="docutils literal notranslate"><span class="pre">Botiga</span></code>. Malauradament, amb el disseny actual haurem de dir que no
+s’ha pogut eliminar sense especificar perquè. Ja ho arreglarem.</p>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&quot;surt&quot;</span></code>: finalitza l’execució del programa.</p>
+<p>El programa s’acomiada dient <code class="docutils literal notranslate"><span class="pre">&quot;adéu&quot;</span></code>.</p>
+</li>
+</ul>
+<p>En cas que la comanda introduïda no sigui una de les esperades, mostrarà el
+missatge <code class="docutils literal notranslate"><span class="pre">&quot;ERROR:</span> <span class="pre">comanda</span> <span class="pre">no</span> <span class="pre">reconeguda.</span> <span class="pre">Escriviu</span> <span class="pre">help</span> <span class="pre">per</span> <span class="pre">ajuda&quot;</span></code>.</p>
+<p>En iniciar l’execució, el programa mostra un missatge de benvinguda:
+<code class="docutils literal notranslate"><span class="pre">&quot;Celler</span> <span class="pre">La</span> <span class="pre">Bona</span> <span class="pre">Estrella.</span> <span class="pre">Escriviu</span> <span class="pre">ajuda</span> <span class="pre">per</span> <span class="pre">veure</span> <span class="pre">opcions.&quot;</span></code> i tot
+seguit mostra el <em>prompt</em>.</p>
+<div class="section" id="que-haig-de-fer">
+<h2>Què haig de fer?<a class="headerlink" href="#que-haig-de-fer" title="Link permanent a aquest títol">¶</a></h2>
+<p>Implementa la classe <code class="docutils literal notranslate"><span class="pre">Entorn</span></code>.</p>
+<p>Una simulació d’execució del programa seria:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java <span class="o">&amp;&amp;</span> java Entorn
+<span class="hll"><span class="go">Celler La Bona Estrella. Escriviu ajuda per veure opcions.</span>
+</span><span class="go">botiga&gt; afegeix</span>
+<span class="go">nom (enter cancel·la)&gt; Roura blanc</span>
+<span class="go">preu (en cèntims)&gt; 2134</span>
+<span class="go">estoc (enter sense estoc)&gt;</span>
+<span class="hll"><span class="go">Introduït:</span>
+</span><span class="hll"><span class="go">    Vi: Roura blanc</span>
+</span><span class="hll"><span class="go">    Preu: 2134</span>
+</span><span class="hll"><span class="go">    Estoc: 0</span>
+</span><span class="hll">
+</span><span class="go">botiga&gt; afegeix</span>
+<span class="go">nom (enter cancel·la)&gt; El Quinta 2018</span>
+<span class="go">preu (en cèntims)&gt; 1485</span>
+<span class="go">estoc (enter sense estoc)&gt; 24</span>
+<span class="hll"><span class="go">Introduït:</span>
+</span><span class="hll"><span class="go">    Vi: El Quinta 2018</span>
+</span><span class="hll"><span class="go">    Preu: 1485</span>
+</span><span class="hll"><span class="go">    Estoc: 24</span>
+</span><span class="hll">
+</span><span class="go">botiga&gt; cerca</span>
+<span class="go">nom (enter cancel·la)&gt; Roura blanc</span>
+<span class="hll"><span class="go">Trobat:</span>
+</span><span class="hll"><span class="go">    Vi: Roura blanc</span>
+</span><span class="hll"><span class="go">    Preu: 2134</span>
+</span><span class="hll"><span class="go">    Estoc: 0</span>
+</span><span class="hll">
+</span><span class="go">botiga&gt; surt</span>
+<span class="hll"><span class="go">adéu</span>
+</span></pre></div>
+</div>
+</div>
+<div class="section" id="pista">
+<h2>Pista<a class="headerlink" href="#pista" title="Link permanent a aquest títol">¶</a></h2>
+<p>Llegeix això només si trobes problemes per pensar com començar a
+implementar <code class="docutils literal notranslate"><span class="pre">Entorn</span></code>.</p>
+<p>Una possible implementació (parcial és clar) seria la següent:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Entorn</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">Botiga</span> <span class="n">botiga</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Botiga</span><span class="p">();</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Entorn</span> <span class="n">entorn</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Entorn</span><span class="p">();</span>
+        <span class="n">mostraBenvinguda</span><span class="p">();</span>
+        <span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">mostraPrompt</span><span class="p">();</span>
+            <span class="n">String</span> <span class="n">comanda</span> <span class="o">=</span> <span class="n">Entrada</span><span class="p">.</span><span class="na">readLine</span><span class="p">().</span><span class="na">strip</span><span class="p">();</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">comanda</span><span class="p">.</span><span class="na">isEmpty</span><span class="p">())</span> <span class="k">continue</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">comanda</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="s">&quot;surt&quot;</span><span class="p">))</span> <span class="k">break</span><span class="p">;</span>
+            <span class="k">switch</span> <span class="p">(</span><span class="n">comanda</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">case</span> <span class="s">&quot;ajuda&quot;</span><span class="p">:</span> <span class="n">mostraAjuda</span><span class="p">();</span>
+                             <span class="k">break</span><span class="p">;</span>
+                <span class="k">case</span> <span class="s">&quot;afegeix&quot;</span><span class="p">:</span> <span class="n">entorn</span><span class="p">.</span><span class="na">processaAfegeix</span><span class="p">();</span>
+                           <span class="k">break</span><span class="p">;</span>
+                <span class="k">case</span> <span class="s">&quot;cerca&quot;</span><span class="p">:</span> <span class="n">entorn</span><span class="p">.</span><span class="na">processaCerca</span><span class="p">();</span>
+                             <span class="k">break</span><span class="p">;</span>
+                <span class="k">case</span> <span class="s">&quot;modifica&quot;</span><span class="p">:</span> <span class="n">entorn</span><span class="p">.</span><span class="na">processaModifica</span><span class="p">();</span>
+                            <span class="k">break</span><span class="p">;</span>
+                <span class="k">case</span> <span class="s">&quot;elimina&quot;</span><span class="p">:</span> <span class="n">entorn</span><span class="p">.</span><span class="na">processaElimina</span><span class="p">();</span>
+                           <span class="k">break</span><span class="p">;</span>
+                <span class="k">default</span><span class="p">:</span> <span class="n">mostraErrorComandaDesconeguda</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">mostraComiat</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="cm">/* … */</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>En aquesta implementació he optat per fer dinàmics els mètodes
+d”<code class="docutils literal notranslate"><span class="pre">Entorn</span></code> que han de tractar la botiga, i estàtics els altres, com ara
+els que mostren missatges. Podries decidir fer-ho tot estàtic i, amb el
+que sabem de moment del futur de l’aplicació que estem desenvolupant,
+probablement és una decisió acceptable.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="apendix.html" class="btn btn-neutral float-right" title="Apèndix" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="exercici_05_02_botiga.html" class="btn btn-neutral float-left" title="Exercici 05_02. La classe botiga" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2021 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

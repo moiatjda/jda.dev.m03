@@ -90,7 +90,7 @@ Copia i executa el codi i contesta les següents preguntes:
    Ah, i no té a veure amb el ``public``. D'això ja en parlarem més tard.
 
    Vinga, t'ajudo amb una d'elles amb una pregunta: pots accedir a
-   ``vides`` directament des de ``main()`` sense posat-hi davant
+   ``vides`` directament des de ``main()`` sense posar-hi davant
    ``renat``?
 
 El resultat de l'exercici consistirà en el fitxer **en text pla**, amb el codi

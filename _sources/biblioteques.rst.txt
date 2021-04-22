@@ -1,0 +1,80 @@
+############
+Biblioteques
+############
+
+Arribats a aquest punt del curs, tenim una gran quantitat d'eines per
+poder afrontar els reptes de programació que se'ns presentin.
+
+Les estructures bàsiques de programació (dades, condicionals, bucles,
+mòduls) s'han vist agrupades en classes i objectes, que aporten una nova
+manera d'entendre la programació. Aquesta nova manera ens permet treballar
+amb conceptes de complexitat incrementable de manera abstracta i la tasca
+de programar passa cada cop per ser capaços de combinar aquests elements
+i fer-los interaccionar entre si.
+
+Ara és un bon moment per que descobrim una altra gran veritat dels
+llenguatges de programació: el que en la pràctica podem programar, és a
+dir, el que podem aconseguir que funcioni amb restriccions reals com ara
+el temps, ve més determinat pel codi que ja està fet que pel que hem de
+fer! Per aquesta raó, els llenguatges de programació que pretenen
+aconseguir una acceptació massiva, s'esforcen per a oferir una basta
+biblioteca de codi ja desenvolupat que estigui a l'abast nostre. En el cas
+de Java, aquesta biblioteca és descomunal i continua creixent sense
+aturar-se. Com es tracta d'un llenguatge orientat a objectes, aquesta
+biblioteca està formada per classes reutilitzables que incorporem als
+nostres programes.
+
+La regla bàsica és: *si ja està fet i funciona com vols, no ho tornis a
+desenvolupar*.
+
+El problema bàsic és: *com saps si el que necessites ja està
+desenvolupat?*
+
+La resposta: estudi, cerca i experiència.
+
+A aquesta part del curs descobrirem alguna de les classes fonamentals que
+tot llenguatge de programació amb intenció de ser pràctic, hauria
+d'evitar que haguessim de recodificar pel nostre compte. Potser entre les més
+importants trobem les *col·leccions* o agrupacions d'objectes.
+
+Per presentar-te aquests conceptes, t'he preparat una activitat
+continuada: el desenvolupament d'una aplicació de gestió d'un celler de
+vins que farem evolucionar mica en mica.
+
+Donat que és un desenvolupament continu, la majoria dels exercicis
+requeriran el codi dels exercicis previs. A banda, és probable que puguis
+utilitzar codis desenvolupats en exercicis d'altres seccions, com per
+exemple utilitats de Strings com :doc:`UtilString.esEnter()
+<exercici_02_23_es_enter>`. Si no els vas fer, l'únic problema és que et
+tocarà implementar-ho ara.
+
+.. important:: Un *disclaimer*
+
+   Vull deixar clar des de bon començament
+   que amb l'aparició de begudes alcohòliques en els següents exercicis
+   de cap manera pretenc incitar el seu consum. De fet, personalment ni
+   tant sols sóc consumidor d'aquestes begudes més que de manera
+   extremadament ocasional.
+
+   La raó per la que he escollit aquest tema és perquè ofereix una gran
+   riquesa de característiques, cosa que el fa idoni per aquesta secció.
+   He tingut molt en compte, però, que aquest curs està dirigit a adults.
+
+
+
+La manera de presentar aquests continguts està inspirada en un dels casos que
+apareixen a l'excel·lent llibre `Head First Object Oriented Analysis and Design
+<http://www.headfirstlabs.com/books/hfooad/>`_ de l'editorial O'Reilly de
+novembre de 2006. Es tracta d'un llibre de seguiment agradable, molt recomanable
+per qui tingui interès en conèixer una mica més del desenvolupament orientat a
+objectes, malgrat fa referència a una versió poc actual de Java.
+
+Trobaràs els continguts d'aquesta secció en els següents documents:
+
+.. toctree::
+    :titlesonly:
+    :maxdepth: 1
+
+    botigavins.rst
+
+    biblioteques_exercicis.rst
