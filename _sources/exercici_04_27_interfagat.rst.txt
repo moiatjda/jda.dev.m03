@@ -109,7 +109,7 @@ T'he preparat el següent codi perquè puguis comprovar que tot el conjunt dispo
      * Aquest programa serveix de comprovació de que es disposa de tots els
      * requeriments bàsics de l'exercici del Gat Renat amb Interfaces
      */
-    public class InterfaGats {
+    public class UsaInterfagats {
         public static void main(String[] args) {
             GatRenat renat = new GatRenat();
             Garfield garfield = new Garfield();
@@ -164,7 +164,7 @@ La sortida esperada és:
     :emphasize-lines: 2-
 
 
-    $ java InterfaGats 
+    $ java UsaInterfagats 
     Comprovem els mètodes de ensinistrable
     ======================================
     m'aixeco

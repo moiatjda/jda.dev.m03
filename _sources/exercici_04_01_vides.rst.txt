@@ -84,14 +84,14 @@ Copia i executa el codi i contesta les següents preguntes:
 
 8. Pel que hem estudiat fins ara, ``vides`` podria ser considerat una
    variable global dins de la classe ``GatRenat`` però hi ha dues
-   diferències respecte a les variables globals que varem veure a
+   diferències respecte les variables globals que varem veure a
    :doc:`moduls_variables`. Sabries indicar quines?
 
    Ah, i no té a veure amb el ``public``. D'això ja en parlarem més tard.
 
    Vinga, t'ajudo amb una d'elles amb una pregunta: pots accedir a
    ``vides`` directament des de ``main()`` sense posat-hi davant
-   ``renat.``?
+   ``renat``?
 
 El resultat de l'exercici consistirà en el fitxer **en text pla**, amb el codi
 i, al final d'aquest, en forma de comentaris, cada pregunta amb la seva
