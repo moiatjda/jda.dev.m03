@@ -65,7 +65,7 @@ El *prompt* serà ``botiga>`` i les comandes que acceptarà són:
 
   .. code-block:: console
 
-     botiga> nou
+     botiga> afegeix
      nom (enter cancel·la)> Roura blanc
      preu (en cèntims)> 1223
      estoc (enter sense estoc)>

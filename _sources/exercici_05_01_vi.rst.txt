@@ -34,7 +34,7 @@ aquesta classe tant important.
         + getPreu(): int
         + setPreu(int)
         + getEstoc(): int
-        * setEstoc(int)
+        + setEstoc(int)
         + {static} normalitzaNom(String): String
     }
 
@@ -55,7 +55,7 @@ aquesta classe tant important.
 De moment no hem fet un anàlisi gaire exhaustiu de les propietats que ens
 interessarà tenir en compte sobre els vins. Ens estimem més oferir-li a la
 Sra. Estrella una primera versió en funcionament.
-t 
+
 * nom: el nom oficial del producte. Ex. ``Roura blanc``
 
   Es codifica amb un ``String`` i no pot ser buit ni contenir només espais.

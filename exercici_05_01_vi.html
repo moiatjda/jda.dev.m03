@@ -187,16 +187,15 @@
 aquesta classe tant important.</p>
 <div class="figure align-center">
 <p class="plantuml">
-<img src="_images/plantuml-af1fe19d8ad10585c83082e761d640a7783935f1.png" alt="Diagrama de classes de la botiga de vins"/>
+<img src="_images/plantuml-26cafd61bfe14b7a3e33cff26376bbab101c0b14.png" alt="Diagrama de classes de la botiga de vins"/>
 </p>
 </div>
 <p>De moment no hem fet un anàlisi gaire exhaustiu de les propietats que ens
 interessarà tenir en compte sobre els vins. Ens estimem més oferir-li a la
-Sra. Estrella una primera versió en funcionament.
-t
-* nom: el nom oficial del producte. Ex. <code class="docutils literal notranslate"><span class="pre">Roura</span> <span class="pre">blanc</span></code></p>
-<blockquote>
-<div><p>Es codifica amb un <code class="docutils literal notranslate"><span class="pre">String</span></code> i no pot ser buit ni contenir només espais.</p>
+Sra. Estrella una primera versió en funcionament.</p>
+<ul>
+<li><p>nom: el nom oficial del producte. Ex. <code class="docutils literal notranslate"><span class="pre">Roura</span> <span class="pre">blanc</span></code></p>
+<p>Es codifica amb un <code class="docutils literal notranslate"><span class="pre">String</span></code> i no pot ser buit ni contenir només espais.</p>
 <p>Es guarda sense espais a l’inici, ni al final, ni més d’un espai seguit
 entre mig. És a dir, si rebem »   Roura    blanc   «, el guardarem com a
 «Roura blanc». Tot el que no sigui espais, quedarà guardat tal i com es
@@ -208,8 +207,7 @@ En cas que <code class="docutils literal notranslate"><span class="pre">normalit
 <p>Tota instància de <code class="docutils literal notranslate"><span class="pre">Vi</span></code> ha de tenir un nom i, per tant, ha d’aparèixer
 especificat als constructor.</p>
 <p>Com que no ha de ser modificat mai, pot ser declarat <code class="docutils literal notranslate"><span class="pre">final</span></code>.</p>
-</div></blockquote>
-<ul>
+</li>
 <li><p>preu: l’import a la venda (en cèntims d’euro i sense iva)</p>
 <p>Es codifica amb un enter, de manera que 12,5€ es guardaran com <code class="docutils literal notranslate"><span class="pre">1250</span></code>.  El preu mai no pot ser negatiu.</p>
 <p>El valor inicial pot ser modificat amb el mètode <code class="docutils literal notranslate"><span class="pre">setPreu()</span></code>.</p>
