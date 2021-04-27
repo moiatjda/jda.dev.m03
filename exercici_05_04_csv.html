@@ -1,0 +1,391 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ca" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Exercici 05_04. Guardem les dades &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Apèndix" href="apendix.html" />
+    <link rel="prev" title="Exercici 05_03. La classe Entorn" href="exercici_05_03_entorn.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació amb Java
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-21
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moduls.html">Mòduls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fitxers.html">Fitxers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poo.html">Programació Orientada a Objectes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="biblioteques.html">Biblioteques</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="botigavins.html">El celler de la Bona Estrella</a></li>
+<li class="toctree-l2"><a class="reference internal" href="botigavins_csv.html">Guardem les dades</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="biblioteques_exercicis.html">Exercicis</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="exercici_05_01_vi.html"> Exercici 05_01. La classe <code class="docutils literal notranslate"><span class="pre">vi</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_05_02_botiga.html"> Exercici 05_02. La classe <code class="docutils literal notranslate"><span class="pre">botiga</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_05_03_entorn.html"> Exercici 05_03. La classe <code class="docutils literal notranslate"><span class="pre">Entorn</span></code></a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#"> Exercici 05_04. Guardem les dades</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="apendix.html">Apèndix</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació amb Java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="biblioteques.html">Biblioteques</a> &raquo;</li>
+        
+          <li><a href="biblioteques_exercicis.html">Exercicis</a> &raquo;</li>
+        
+      <li> Exercici 05_04. Guardem les dades</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="exerciseicon-t-exercici-05-04-guardem-les-dades">
+<h1><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> Exercici 05_04. Guardem les dades<a class="headerlink" href="#exerciseicon-t-exercici-05-04-guardem-les-dades" title="Link permanent a aquest títol">¶</a></h1>
+<p class="rubric">Context</p>
+<ul class="simple">
+<li><p>Carpeta de lliurament: <code class="docutils literal notranslate"><span class="pre">05_04_csv/</span></code></p></li>
+<li><p>Continguts relacionats: <a class="reference internal" href="botigavins_csv.html"><span class="doc">Guardem les dades</span></a></p></li>
+<li><p>Com lliurar-lo: <a class="reference internal" href="holagit.html#instruccions-git"><span class="std std-ref">instruccions</span></a></p></li>
+<li><p>[✓] Exercici amb <a class="reference internal" href="sobre_exercicis.html#descripcio-exercicis-autoavaluacio"><span class="std std-ref">autoavaluació</span></a></p></li>
+</ul>
+<p class="rubric">Enunciat</p>
+<p>En aquesta iteració del nostre projecte, afegirem la capacitat de guardar
+i recuperar les dades dels vins en un fitxer, de manera que puguin ser
+accedides en diferents execucions de l’aplicació.</p>
+<div class="figure align-center">
+<p class="plantuml">
+<img src="_images/plantuml-2f367abe20da1145860bba72b265945a9e5bac1b.png" alt="Diagrama de classes de la botiga de vins"/>
+</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Entorn</span></code> en arrencar mirarà de llegir les dades del fitxer
+<code class="docutils literal notranslate"><span class="pre">botiga.csv</span></code>. En cas de no existir, la botiga restarà buida.  Tant si
+existeix el fitxer com si  no, <code class="docutils literal notranslate"><span class="pre">Entorn</span></code> informarà després del missatge
+de benvinguda, quants vins ha carregat del fitxer. <code class="docutils literal notranslate"><span class="pre">&quot;Referències</span>
+<span class="pre">llegides:</span> <span class="pre">432&quot;</span></code>.</p>
+<p>En sortir, el programa guardarà les dades al fitxer. Per simplicitat,
+guardarà les dades sempre, encara que no hi hagi hagut canvis. Abans del
+missatge de comiat, indicarà el nombre de vins guardats al fitxer.
+<code class="docutils literal notranslate"><span class="pre">&quot;Referències</span> <span class="pre">guardades:</span> <span class="pre">432&quot;</span></code>.</p>
+<p>Dotarem a la classe <code class="docutils literal notranslate"><span class="pre">Vi</span></code> d’un parell de mètodes nous que
+ens simplificaran la tasca de convertir de línies de csv a vi i viceversa.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">deArrayString()</span></code>: aquest mètode estàtic rep un array de Strings que
+ha de contenir els valors dels diferents atributs d’un vi en forma de
+String i ens retorna un vi inicialitzat amb aquests valors. Si algun dels
+valors rebuts no fos adequat per l’atribut corresponent de vi, retornarà
+<code class="docutils literal notranslate"><span class="pre">null</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">aArrayString()</span></code>: aquest mètode retorna un array de Strings amb els
+valors del vi.</p></li>
+</ul>
+<p>L’ordre dels atributs a l’array de Strings pot ser el que vulguem, sempre
+i quant sigui el mateix per <code class="docutils literal notranslate"><span class="pre">deArrayString()</span></code> i <code class="docutils literal notranslate"><span class="pre">aArrayString()</span></code>. Per
+exemple, podria ser <code class="docutils literal notranslate"><span class="pre">nom</span></code>, <code class="docutils literal notranslate"><span class="pre">preu</span></code>, <code class="docutils literal notranslate"><span class="pre">estoc</span></code>.</p>
+<p>Per carregar els vins del fitxer no ens cal cap modificació de <code class="docutils literal notranslate"><span class="pre">Botiga</span></code>
+doncs podem anar llegint línia a línia, convertint-lo a <code class="docutils literal notranslate"><span class="pre">Vi</span></code> amb l’ajut
+de <code class="docutils literal notranslate"><span class="pre">Vi.deArrayString()</span></code> i, si hem tingut èxit, afegir el nou vi de la
+manera habitual a la botiga.</p>
+<p>Per guardar els vins que ja hi són a la botiga, però, sí ens cal quelcom
+que encara no tenim: la possibilitat de <em>recòrrer</em> tots els vins que
+disposa la botiga. Per a aconseguir aquesta funcionalitat, afegirem dos
+nous mètodes a <code class="docutils literal notranslate"><span class="pre">Botiga</span></code>:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">iniciaRecorregut()</span></code>: comença el recorregut dels vins de la botiga.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">getSeguent()</span></code>: retorna el següent vi del recorregut. Si no hi ha més
+vins, retornarà <code class="docutils literal notranslate"><span class="pre">null</span></code>.</p></li>
+</ul>
+<p>Així, per mostrar tots els vins disponibles a la botiga, podrem fer quelcom
+similar a:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">botiga</span><span class="p">.</span><span class="na">iniciaRecorregut</span><span class="p">();</span>
+<span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">Vi</span> <span class="n">vi</span> <span class="o">=</span> <span class="n">botiga</span><span class="p">.</span><span class="na">getSeguent</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">vi</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">vi</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Considerarem que el fitxer CSV no conté capçaleres i que les files
+hauran de correspondre als valors separats per punt i coma (<code class="docutils literal notranslate"><span class="pre">;</span></code>) i no
+per una simple coma, doncs sospitem que algun vi podria tenir un nom tan
+sofisticat que requerís aquest símbol.</p>
+<p>Un exemple de contingut esperable al fitxer <code class="docutils literal notranslate"><span class="pre">botiga.csv</span></code> podria ser:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Roura blanc;1234;24
+El Quintà;1485;12
+Almodi Petit Blanc;570;32
+</pre></div>
+</div>
+<p>En cas que trobem una línia del fitxer que no contingui totes les dades
+requerides, o bé que el valor d’algun dels camps no sigui convertible al
+tipus que esperem, simplement la ignorarem. D’aquestes comprovacions se
+n’encarrega el mètode <code class="docutils literal notranslate"><span class="pre">Vi.deArrayString()</span></code>.</p>
+<div class="section" id="que-haig-de-fer">
+<h2>Què haig de fer?<a class="headerlink" href="#que-haig-de-fer" title="Link permanent a aquest títol">¶</a></h2>
+<p>Implementa els canvis necessaris perquè l’aplicació pugui mantenir la
+informació de vins d’una execució a la següent.</p>
+<p>Els canvis a realitzar són:</p>
+<ul class="simple">
+<li><p>afegir els nous mètodes a <code class="docutils literal notranslate"><span class="pre">Botiga</span></code>.</p></li>
+<li><p>afegir els nous mètodes a <code class="docutils literal notranslate"><span class="pre">Vi</span></code>.</p></li>
+<li><p>afegir la funcionalitat a l’entorn de carregar en arrencar i guardar en
+sortir.</p></li>
+</ul>
+</div>
+<div class="section" id="pistes">
+<h2>Pistes<a class="headerlink" href="#pistes" title="Link permanent a aquest títol">¶</a></h2>
+<p>Llegeix això només si trobes problemes per realitzar alguna de les parts
+d’aquesta ampliació.</p>
+<div class="section" id="ajuntar-i-separar-linies-de-csv">
+<h3>Ajuntar i separar línies de CSV<a class="headerlink" href="#ajuntar-i-separar-linies-de-csv" title="Link permanent a aquest títol">¶</a></h3>
+<p>Un dels <em>problemes</em> que has de resoldre per realitzar aquesta ampliació és
+la manipulació de línies de CSV.</p>
+<p>Per convertir les línies de CSV a un array de Strings ja saps que disposes
+del mètode <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#split(java.lang.String)">String.split()</a>
+però, com fas l’operació inversa? Per descomptat, la pots programar amb un
+bucle. A aquestes alçades segur que no et resulta difícil composar un
+String amb els elements d’un array separats per <code class="docutils literal notranslate"><span class="pre">;</span></code>. Hi ha però una
+opció més elegant: <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html#join(java.lang.CharSequence,java.lang.CharSequence...)">String.join()</a>.</p>
+<p>Considera aquest fragment de codi que converteix una entrada amb elements
+separats per <code class="docutils literal notranslate"><span class="pre">,</span></code> als mateixos elements però separats per <code class="docutils literal notranslate"><span class="pre">;</span></code>:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">String</span> <span class="n">comes</span> <span class="o">=</span> <span class="s">&quot;una,dues,tres&quot;</span><span class="p">;</span>
+<span class="n">String</span><span class="o">[]</span> <span class="n">paraules</span> <span class="o">=</span> <span class="n">comes</span><span class="p">.</span><span class="na">split</span><span class="p">(</span><span class="s">&quot;,&quot;</span><span class="p">);</span>           <span class="c1">// {&quot;una&quot;, &quot;dues&quot;, &quot;tres&quot;}</span>
+<span class="n">String</span> <span class="n">puntIComes</span> <span class="o">=</span> <span class="n">String</span><span class="p">.</span><span class="na">join</span><span class="p">(</span><span class="s">&quot;;&quot;</span><span class="p">,</span> <span class="n">paraules</span><span class="p">);</span> <span class="c1">// una;dues;tres</span>
+</pre></div>
+</td></tr></table></div>
+</div>
+<div class="section" id="recorregut-de-la-botiga">
+<h3>Recorregut de la botiga<a class="headerlink" href="#recorregut-de-la-botiga" title="Link permanent a aquest títol">¶</a></h3>
+<p>Per poder guardar els vins de la botiga, ens cal poder accedir a aquests
+de manera seqüencial. El problema és que fins ara <code class="docutils literal notranslate"><span class="pre">Botiga</span></code> només ens
+permet consultar els vins a partir del mètode <code class="docutils literal notranslate"><span class="pre">cerca()</span></code>, que no és
+adequat pel nostre objectiu actual.</p>
+<p>El que ens cal és poder <em>recorrer</em> els vins des del primer al darrer, com
+si fos un <em>array</em> de vins. Com que no volem lliurar l’array de vins amb el
+que emmagatzema <code class="docutils literal notranslate"><span class="pre">Botiga</span></code> els vins, el que farem serà implementar un
+mecanisme de recorregut <em>casolà</em>.</p>
+<p>La idea bàsica és que et cal una nova variable () que et permeti
+saber quin serà el següent vi a retornar. Aquesta variable haurà de
+posar-se a 0 quan es demana iniciar el recorregut i anar-se incrementant a
+mida que ens van demanant retornar el següent. En el moment que arriba al
+límit de l’array de vins, no ha de continuar.</p>
+<p>Un problema és que no totes les posicions de l’array de vins estan sempre
+ocupades. Amb la implementació actual, quan eliminem un vi, marquem la
+seva posició amb <code class="docutils literal notranslate"><span class="pre">null</span></code>. Això obligarà el teu <code class="docutils literal notranslate"><span class="pre">getSeguent()</span></code> a saltar
+espais buits.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="apendix.html" class="btn btn-neutral float-right" title="Apèndix" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="exercici_05_03_entorn.html" class="btn btn-neutral float-left" title="Exercici 05_03. La classe Entorn" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2021 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

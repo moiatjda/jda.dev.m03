@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Biblioteques &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  <title>Guardem les dades &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
   
 
   
@@ -39,8 +39,8 @@
     <link rel="author" title="Quant a aquests documents" href="about.html" />
     <link rel="index" title="Índex" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
-    <link rel="next" title="El celler de la Bona Estrella" href="botigavins.html" />
-    <link rel="prev" title="Exercici 04_27. Gat Renat amb Interfaces" href="exercici_04_27_interfagat.html" />
+    <link rel="next" title="Exercicis" href="biblioteques_exercicis.html" />
+    <link rel="prev" title="El celler de la Bona Estrella" href="botigavins.html" />
      
     <script class="googleanalytics" src="_static/moiscripts.js"></script>
 
@@ -94,9 +94,9 @@
 <li class="toctree-l1"><a class="reference internal" href="moduls.html">Mòduls</a></li>
 <li class="toctree-l1"><a class="reference internal" href="fitxers.html">Fitxers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="poo.html">Programació Orientada a Objectes</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Biblioteques</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="biblioteques.html">Biblioteques</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="botigavins.html">El celler de la Bona Estrella</a></li>
-<li class="toctree-l2"><a class="reference internal" href="botigavins_csv.html">Guardem les dades</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Guardem les dades</a></li>
 <li class="toctree-l2"><a class="reference internal" href="biblioteques_exercicis.html">Exercicis</a></li>
 </ul>
 </li>
@@ -147,7 +147,9 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>Biblioteques</li>
+          <li><a href="biblioteques.html">Biblioteques</a> &raquo;</li>
+        
+      <li>Guardem les dades</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -165,69 +167,17 @@
     
            <div itemprop="articleBody">
             
-  <div class="section" id="biblioteques">
-<h1>Biblioteques<a class="headerlink" href="#biblioteques" title="Link permanent a aquest títol">¶</a></h1>
-<p>Arribats a aquest punt del curs, tenim una gran quantitat d’eines per
-poder afrontar els reptes de programació que se’ns presentin.</p>
-<p>Les estructures bàsiques de programació (dades, condicionals, bucles,
-mòduls) s’han vist agrupades en classes i objectes, que aporten una nova
-manera d’entendre la programació. Aquesta nova manera ens permet treballar
-amb conceptes de complexitat incrementable de manera abstracta i la tasca
-de programar passa cada cop per ser capaços de combinar aquests elements
-i fer-los interaccionar entre si.</p>
-<p>Ara és un bon moment per que descobrim una altra gran veritat dels
-llenguatges de programació: el que en la pràctica podem programar, és a
-dir, el que podem aconseguir que funcioni amb restriccions reals com ara
-el temps, ve més determinat pel codi que ja està fet que pel que hem de
-fer! Per aquesta raó, els llenguatges de programació que pretenen
-aconseguir una acceptació massiva, s’esforcen per a oferir una basta
-biblioteca de codi ja desenvolupat que estigui a l’abast nostre. En el cas
-de Java, aquesta biblioteca és descomunal i continua creixent sense
-aturar-se. Com es tracta d’un llenguatge orientat a objectes, aquesta
-biblioteca està formada per classes reutilitzables que incorporem als
-nostres programes.</p>
-<p>La regla bàsica és: <em>si ja està fet i funciona com vols, no ho tornis a
-desenvolupar</em>.</p>
-<p>El problema bàsic és: <em>com saps si el que necessites ja està
-desenvolupat?</em></p>
-<p>La resposta: estudi, cerca i experiència.</p>
-<p>A aquesta part del curs descobrirem alguna de les classes fonamentals que
-tot llenguatge de programació amb intenció de ser pràctic, hauria
-d’evitar que haguessim de recodificar pel nostre compte. Potser entre les més
-importants trobem les <em>col·leccions</em> o agrupacions d’objectes.</p>
-<p>Per presentar-te aquests conceptes, t’he preparat una activitat
-continuada: el desenvolupament d’una aplicació de gestió d’un celler de
-vins que farem evolucionar mica en mica.</p>
-<p>Donat que és un desenvolupament continu, la majoria dels exercicis
-requeriran el codi dels exercicis previs. A banda, és probable que puguis
-utilitzar codis desenvolupats en exercicis d’altres seccions, com per
-exemple utilitats de Strings com <a class="reference internal" href="exercici_02_23_es_enter.html"><span class="doc">UtilString.esEnter()</span></a>. Si no els vas fer, l’únic problema és que et
-tocarà implementar-ho ara.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>Un <em>disclaimer</em></p>
-<p>Vull deixar clar des de bon començament
-que amb l’aparició de begudes alcohòliques en els següents exercicis
-de cap manera pretenc incitar el seu consum. De fet, personalment ni
-tant sols sóc consumidor d’aquestes begudes més que de manera
-extremadament ocasional.</p>
-<p>La raó per la que he escollit aquest tema és perquè ofereix una gran
-riquesa de característiques, cosa que el fa idoni per aquesta secció.
-He tingut molt en compte, però, que aquest curs està dirigit a adults.</p>
-</div>
-<p>La manera de presentar aquests continguts està inspirada en un dels casos que
-apareixen a l’excel·lent llibre <a class="reference external" href="http://www.headfirstlabs.com/books/hfooad/">Head First Object Oriented Analysis and Design</a> de l’editorial O’Reilly de
-novembre de 2006. Es tracta d’un llibre de seguiment agradable, molt recomanable
-per qui tingui interès en conèixer una mica més del desenvolupament orientat a
-objectes, malgrat fa referència a una versió poc actual de Java.</p>
-<p>Trobaràs els continguts d’aquesta secció en els següents documents:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="botigavins.html">El celler de la Bona Estrella</a></li>
-<li class="toctree-l1"><a class="reference internal" href="botigavins_csv.html">Guardem les dades</a></li>
-<li class="toctree-l1"><a class="reference internal" href="biblioteques_exercicis.html">Exercicis</a></li>
-</ul>
-</div>
+  <div class="section" id="guardem-les-dades">
+<h1>Guardem les dades<a class="headerlink" href="#guardem-les-dades" title="Link permanent a aquest títol">¶</a></h1>
+<p>La implementació actual de l’aplicació de gestió de la botiga de vins ens
+ha servit per mostrar-li a la Sra. Estrella el concepte. Sembla que li ha
+agradat prou però, s’ha decebut força quan li hem dit que ha d’introduir
+cada cop que arrenqui l’aplicació, tots els vins de la botiga.</p>
+<p>Lògic, oi?</p>
+<p>Ens toca fer una ampliació: oferir la possibilitat d’anar guardant els
+vins en un fitxer. Per simplicitat, farem servir el csv, doncs és
+un format que ja coneixem i que és prou fàcil de manegar.</p>
+<p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_05_04_csv.html"><span class="doc"> Exercici 05_04. Guardem les dades</span></a></p>
 </div>
 
 
@@ -261,10 +211,10 @@ objectes, malgrat fa referència a una versió poc actual de Java.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="botigavins.html" class="btn btn-neutral float-right" title="El celler de la Bona Estrella" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="biblioteques_exercicis.html" class="btn btn-neutral float-right" title="Exercicis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="exercici_04_27_interfagat.html" class="btn btn-neutral float-left" title="Exercici 04_27. Gat Renat amb Interfaces" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="botigavins.html" class="btn btn-neutral float-left" title="El celler de la Bona Estrella" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

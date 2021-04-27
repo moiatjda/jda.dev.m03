@@ -76,5 +76,6 @@ Trobaràs els continguts d'aquesta secció en els següents documents:
     :maxdepth: 1
 
     botigavins.rst
+    botigavins_csv.rst
 
     biblioteques_exercicis.rst

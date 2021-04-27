@@ -1,0 +1,16 @@
+#################
+Guardem les dades
+#################
+
+La implementació actual de l'aplicació de gestió de la botiga de vins ens
+ha servit per mostrar-li a la Sra. Estrella el concepte. Sembla que li ha
+agradat prou però, s'ha decebut força quan li hem dit que ha d'introduir
+cada cop que arrenqui l'aplicació, tots els vins de la botiga.
+
+Lògic, oi?
+
+Ens toca fer una ampliació: oferir la possibilitat d'anar guardant els
+vins en un fitxer. Per simplicitat, farem servir el csv, doncs és
+un format que ja coneixem i que és prou fàcil de manegar.
+
+|exerciseicon__T| :doc:`exercici_05_04_csv`
