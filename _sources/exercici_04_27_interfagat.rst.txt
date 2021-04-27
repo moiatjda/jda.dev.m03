@@ -52,8 +52,8 @@ Considera aquesta nova jerarquia de classes:
      }
      class GatRenat {
         - posicio: String = "estirat"
-        - GatRenat(posicio: String)
-        - getPosicio(String)
+        + GatRenat(posicio: String)
+        + getPosicio()
      }
      class Gat implements EsserViu
 
@@ -81,13 +81,13 @@ Els mètodes a implementar presenten les següents sortides:
 =============== ================ ===================================================================
 Classe          mètode           Sortida
 --------------- ---------------- -------------------------------------------------------------------
-GatRenat        aixecat()        ``"m'aixeco"`` si està dret, ``"no faig res"`` altrament
-GatRenat        seu()            ``"m'assec"`` si està dret, ``"no faig res"`` altrament
-GatRenat        estirat()        ``"m'estiro"`` si està dret, ``"no faig res"`` altrament
+GatRenat        aixecat()        ``"m'aixeco"`` si no estava dret, ``"no faig res"`` altrament
+GatRenat        seu()            ``"m'assec"`` si no estava assegut, ``"no faig res"`` altrament
+GatRenat        estirat()        ``"m'estiro"`` si estava estirat, ``"no faig res"`` altrament
 GatRenat        deixatEstimar()  ``"em deixo estimar"``
 Garfield        deixatEstimar()  ``"em deixo estimar una mica"``
-Gat             mor()            ``"adéu món cruel"`` si està viu, ``"ja l'he palmada"`` altrament
-Gat             ressuscita()     ``"encara visc"`` si està viu, ``"guai!"`` altrament
+Gat             mor()            ``"adéu món cruel"`` si estava viu, ``"ja l'he palmada"`` altrament
+Gat             ressuscita()     ``"encara visc"`` si estava viu, ``"guai!"`` altrament
 =============== ================ ===================================================================
 
 Per provar el funcionament de tot el conjunt, hauràs de poder executar el següent codi:

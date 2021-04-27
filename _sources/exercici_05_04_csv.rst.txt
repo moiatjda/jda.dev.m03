@@ -29,7 +29,7 @@ accedides en diferents execucions de l'aplicació.
     }
     class Vi {
         + {static} deArrayString(String[]): Vi
-        + aArrayString(): Stringp[]
+        + aArrayString(): String[]
     }
 
     Botiga o-- Vi

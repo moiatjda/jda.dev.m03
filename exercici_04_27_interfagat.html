@@ -215,7 +215,7 @@
 <p>Considera aquesta nova jerarquia de classes:</p>
 <div class="figure align-center">
 <p class="plantuml">
-<img src="_images/plantuml-dc2752d8d03ac45f555e3a4c38bda049daecd7f5.png" alt=" &#64;startuml
+<img src="_images/plantuml-02b6ddfb1a6d066462c6ac9c1b816279042fb3b9.png" alt=" &#64;startuml
  hide circle
  skinparam monochrome true
  skinparam classAttributeIconSize 0
@@ -247,8 +247,8 @@
  }
  class GatRenat {
     - posicio: String = &quot;estirat&quot;
-    - GatRenat(posicio: String)
-    - getPosicio(String)
+    + GatRenat(posicio: String)
+    + getPosicio()
  }
  class Gat implements EsserViu
 
@@ -283,15 +283,15 @@ Renats són també ensinistrables.</p>
 </tr>
 <tr class="row-even"><td><p>GatRenat</p></td>
 <td><p>aixecat()</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">&quot;m'aixeco&quot;</span></code> si està dret, <code class="docutils literal notranslate"><span class="pre">&quot;no</span> <span class="pre">faig</span> <span class="pre">res&quot;</span></code> altrament</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;m'aixeco&quot;</span></code> si no estava dret, <code class="docutils literal notranslate"><span class="pre">&quot;no</span> <span class="pre">faig</span> <span class="pre">res&quot;</span></code> altrament</p></td>
 </tr>
 <tr class="row-odd"><td><p>GatRenat</p></td>
 <td><p>seu()</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">&quot;m'assec&quot;</span></code> si està dret, <code class="docutils literal notranslate"><span class="pre">&quot;no</span> <span class="pre">faig</span> <span class="pre">res&quot;</span></code> altrament</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;m'assec&quot;</span></code> si no estava assegut, <code class="docutils literal notranslate"><span class="pre">&quot;no</span> <span class="pre">faig</span> <span class="pre">res&quot;</span></code> altrament</p></td>
 </tr>
 <tr class="row-even"><td><p>GatRenat</p></td>
 <td><p>estirat()</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">&quot;m'estiro&quot;</span></code> si està dret, <code class="docutils literal notranslate"><span class="pre">&quot;no</span> <span class="pre">faig</span> <span class="pre">res&quot;</span></code> altrament</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;m'estiro&quot;</span></code> si estava estirat, <code class="docutils literal notranslate"><span class="pre">&quot;no</span> <span class="pre">faig</span> <span class="pre">res&quot;</span></code> altrament</p></td>
 </tr>
 <tr class="row-odd"><td><p>GatRenat</p></td>
 <td><p>deixatEstimar()</p></td>
@@ -303,11 +303,11 @@ Renats són també ensinistrables.</p>
 </tr>
 <tr class="row-odd"><td><p>Gat</p></td>
 <td><p>mor()</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">&quot;adéu</span> <span class="pre">món</span> <span class="pre">cruel&quot;</span></code> si està viu, <code class="docutils literal notranslate"><span class="pre">&quot;ja</span> <span class="pre">l'he</span> <span class="pre">palmada&quot;</span></code> altrament</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;adéu</span> <span class="pre">món</span> <span class="pre">cruel&quot;</span></code> si estava viu, <code class="docutils literal notranslate"><span class="pre">&quot;ja</span> <span class="pre">l'he</span> <span class="pre">palmada&quot;</span></code> altrament</p></td>
 </tr>
 <tr class="row-even"><td><p>Gat</p></td>
 <td><p>ressuscita()</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">&quot;encara</span> <span class="pre">visc&quot;</span></code> si està viu, <code class="docutils literal notranslate"><span class="pre">&quot;guai!&quot;</span></code> altrament</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">&quot;encara</span> <span class="pre">visc&quot;</span></code> si estava viu, <code class="docutils literal notranslate"><span class="pre">&quot;guai!&quot;</span></code> altrament</p></td>
 </tr>
 </tbody>
 </table>
