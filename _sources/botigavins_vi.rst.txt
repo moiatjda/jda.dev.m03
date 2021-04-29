@@ -1,0 +1,43 @@
+#############
+Vins complets
+#############
+
+La nostra clienta està encantada amb la nova versió de l'aplicació i la
+vol començar a fer servir ja a la botiga!
+
+El problema és que, en el moment que ho intenta se n'adona que tal i com
+està no li serveix gaire doncs una de les raons principals per fer
+l'aplicació no apareix recollida: la localització de les ampolles!
+
+Si només fos això, rai! A sobre, ens n'adonem que poden haver-hi vins
+diferents que tinguin el mateix nom. Sense anar més lluny, poden pertànyer
+a anyades diferents! Això representa un greu conflicte amb la nostra
+implementació actual que considera el nom com clau per distingir entre
+vins!
+
+Quin desastre!
+
+Com ens hem pogut descuidar d'aquests "detalls"? Fent memòria, probablement
+la resposta tingui a veure amb el meravellós vi amb que varem regar les
+tapes que menjàvem mentre la Sra. Estrella ens explicava les seves
+necessitats.
+
+Com que no podem canviar el passat, farem el que sí que podem: canviar
+l'aplicació.
+
+En comptes de començar a modificar a tort i a dret els dos problemes que
+hem detectat, hem decidit seure'ns a analitzar amb més calma tot el tema i
+així descobrir de què hem de morir.
+
+Aquest cop demanem a la Sra. Estrella una reunió sense vi a les nostres
+copes, en la que recollirem tota la informació significativa del producte
+de la casa. La Sra. Estrella, tan amable com sempre, accedeix a la nostra
+petició i ens ofereix unes galetetes amb llet que sospitem que tenia una
+altra destinació, a jutjar per la mirada d'odi que ens va llençar el
+Renat.
+
+Els requeriments dels canvis a realitzar, apareixen en el següent
+exercici.
+
+|exerciseicon__T| :doc:`exercici_05_05_vi_ampliat`
+

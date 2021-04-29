@@ -11,3 +11,4 @@ Els exercicis de la secció :doc:`biblioteques` són:
     exercici_05_02_botiga.rst
     exercici_05_03_entorn.rst
     exercici_05_04_csv.rst
+    exercici_05_05_vi_ampliat.rst
