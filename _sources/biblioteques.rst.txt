@@ -78,5 +78,6 @@ Trobaràs els continguts d'aquesta secció en els següents documents:
     botigavins.rst
     botigavins_csv.rst
     botigavins_vi.rst
+    excepcions.rst
 
     biblioteques_exercicis.rst

@@ -1,0 +1,1246 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ca" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Excepcions &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Exercicis" href="biblioteques_exercicis.html" />
+    <link rel="prev" title="Vins complets" href="botigavins_vi.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació amb Java
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-21
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moduls.html">Mòduls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fitxers.html">Fitxers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poo.html">Programació Orientada a Objectes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="biblioteques.html">Biblioteques</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="botigavins.html">El celler de la Bona Estrella</a></li>
+<li class="toctree-l2"><a class="reference internal" href="botigavins_csv.html">Guardem les dades</a></li>
+<li class="toctree-l2"><a class="reference internal" href="botigavins_vi.html">Vins complets</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Excepcions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="biblioteques_exercicis.html">Exercicis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="apendix.html">Apèndix</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació amb Java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="biblioteques.html">Biblioteques</a> &raquo;</li>
+        
+      <li>Excepcions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="excepcions">
+<h1>Excepcions<a class="headerlink" href="#excepcions" title="Link permanent a aquest títol">¶</a></h1>
+<p>En aquesta secció coneixerem el mecanisme de control d’excepcions en el llenguatge Java.</p>
+<p>Una excepció és un esdeveniment (<em>event</em>) que representa una condició anormal
+en l’execució d’un programa i que atura el flux normal d’execució.</p>
+<p>Les excepcions permeten a les aplicacions detectar i donar resposta situacions
+d’error de manera controlada (sense penjar-se)</p>
+<p>Considerem l’exemple simplificat de la classe <code class="docutils literal notranslate"><span class="pre">Hora</span></code></p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Hora</span> <span class="p">{</span>
+  <span class="kd">private</span> <span class="kt">int</span> <span class="n">h</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">s</span><span class="p">;</span>
+  <span class="kd">public</span> <span class="nf">Hora</span><span class="p">()</span> <span class="p">{</span> <span class="n">h</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">m</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">s</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="p">}</span>
+  <span class="kd">public</span> <span class="nf">Hora</span><span class="p">(</span><span class="kt">int</span> <span class="n">h</span><span class="p">,</span><span class="kt">int</span> <span class="n">m</span><span class="p">,</span> <span class="kt">int</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="na">h</span><span class="o">=</span><span class="n">h</span><span class="p">;</span> <span class="k">this</span><span class="p">.</span><span class="na">m</span><span class="o">=</span><span class="n">m</span><span class="p">;</span> <span class="k">this</span><span class="p">.</span><span class="na">s</span><span class="o">=</span><span class="n">s</span><span class="p">;</span> <span class="p">}</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getHores</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">h</span><span class="p">;</span> <span class="p">}</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getMinuts</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">m</span><span class="p">;</span> <span class="p">}</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getSegons</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">s</span><span class="p">;</span> <span class="p">}</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setHores</span><span class="p">(</span><span class="kt">int</span> <span class="n">h</span><span class="p">)</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="na">h</span><span class="o">=</span><span class="n">h</span><span class="p">;</span> <span class="p">}</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setMinuts</span><span class="p">(</span><span class="kt">int</span> <span class="n">m</span><span class="p">)</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="na">m</span><span class="o">=</span><span class="n">m</span><span class="p">;</span> <span class="p">}</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setSegons</span><span class="p">(</span><span class="kt">int</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span> <span class="k">this</span><span class="p">.</span><span class="na">s</span><span class="o">=</span><span class="n">s</span><span class="p">;</span> <span class="p">}</span>
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">h</span><span class="o">+</span><span class="s">&quot;:&quot;</span><span class="o">+</span><span class="n">m</span><span class="o">+</span><span class="s">&quot;:&quot;</span><span class="o">+</span><span class="n">s</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Imaginem que volem controlar que els valors que ens introdueixen els
+mètodes set siguin correctes.</p>
+<p>Una manera seria la següent:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">setHores</span><span class="p">(</span><span class="kt">int</span> <span class="n">h</span><span class="p">)</span>  <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">h</span><span class="o">&gt;=</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">h</span><span class="o">&lt;</span><span class="mi">24</span><span class="p">)</span> <span class="k">this</span><span class="p">.</span><span class="na">h</span><span class="o">=</span><span class="n">h</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>D’aquesta manera només hi acceptem hores vàlides.</p>
+<p>El problema és que el programa usuari no té manera de saber que ha
+introduït un valor no vàlid!</p>
+<p>Una solució pot ser fer que el mètode cridat retorni informació sobre
+el resultat de la seva execució:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cm">/** retorna true si s&#39;ha assignat satisfactòriament */</span>
+<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">setHores</span><span class="p">(</span><span class="kt">int</span> <span class="n">h</span><span class="p">)</span>  <span class="p">{</span>
+  <span class="kt">boolean</span> <span class="n">correcte</span> <span class="o">=</span> <span class="p">(</span><span class="n">h</span><span class="o">&gt;=</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">h</span><span class="o">&lt;</span><span class="mi">24</span><span class="p">);</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">correcte</span><span class="p">)</span> <span class="k">this</span><span class="p">.</span><span class="na">h</span><span class="o">=</span><span class="n">h</span><span class="p">;</span>
+  <span class="k">return</span> <span class="n">correcte</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Que podem usar d’una manera similar a:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1">// «...»</span>
+<span class="n">Hora</span> <span class="n">h1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hora</span><span class="p">();</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">h1</span><span class="p">.</span><span class="na">setHores</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Assignada l&#39;hora correctament&quot;</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error assignant l&#39;hora&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">// «...»</span>
+</pre></div>
+</td></tr></table></div>
+<p>Però el nostre programa s’ha fet força més llarg i menys llegible.</p>
+<p>Hi haurà alguna manera més llegible i compacta de controlar aquestes situacions excepcionals?</p>
+<p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_05_06_hores_controlades.html"><span class="doc"> Exercici 05_06. La classe Hora amb control d’errors</span></a></p>
+<p>En el cas del constructor, tenim més difícil saber si s’ha construït una
+hora a partir dels paràmetres. Una tècnica habitual és evitar l’accés al
+constructor que pugui donar problemes i oferir un mètode estàtic que el
+construeixi o retorni <code class="docutils literal notranslate"><span class="pre">null</span></code> si els valors no són vàlids.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Hora</span> <span class="p">{</span>
+    <span class="c1">// …</span>
+    <span class="kd">private</span> <span class="nf">Hora</span><span class="p">(</span><span class="kt">int</span> <span class="n">hores</span><span class="p">,</span> <span class="kt">int</span> <span class="n">minuts</span><span class="p">,</span> <span class="kt">int</span> <span class="n">segons</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">hores</span> <span class="o">=</span> <span class="n">hores</span><span class="p">;</span>     <span class="c1">// no cal validar doncs el constructor és privat</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">minuts</span> <span class="o">=</span> <span class="n">minuts</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">segons</span> <span class="o">=</span> <span class="n">segons</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Hora</span> <span class="nf">construeixHora</span><span class="p">(</span><span class="kt">int</span> <span class="n">hores</span><span class="p">,</span> <span class="kt">int</span> <span class="n">minuts</span><span class="p">,</span> <span class="kt">int</span> <span class="n">segons</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="n">sonValorsValidsPerHora</span><span class="p">(</span><span class="n">hotes</span><span class="p">,</span> <span class="n">minuts</span><span class="p">,</span> <span class="n">segons</span><span class="p">))</span> <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="n">Hora</span><span class="p">(</span><span class="n">hores</span><span class="p">,</span> <span class="n">minuts</span><span class="p">,</span> <span class="n">segons</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<div class="section" id="id1">
+<h2>Excepcions<a class="headerlink" href="#id1" title="Link permanent a aquest títol">¶</a></h2>
+<p>Considera el següent codi:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="hll"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">setHores</span><span class="p">(</span><span class="kt">int</span> <span class="n">h</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="p">{</span>
+</span>    <span class="k">if</span> <span class="p">(</span><span class="n">h</span><span class="o">&gt;=</span><span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">h</span><span class="o">&lt;</span><span class="mi">24</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">h</span><span class="o">=</span><span class="n">h</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="hll">        <span class="k">throw</span> <span class="k">new</span> <span class="n">Exception</span><span class="p">(</span><span class="s">&quot;Hora.setHores(&quot;</span><span class="o">+</span><span class="n">h</span><span class="o">+</span><span class="s">&quot;) valor fora de rang&quot;</span><span class="p">);</span>
+</span>    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Un dels canvis interessants és que ara <code class="docutils literal notranslate"><span class="pre">setHores()</span></code> no retorna cap
+valor.</p>
+<p>A canvi, apareix la clàusula <code class="docutils literal notranslate"><span class="pre">throws</span></code> a la seva definició seguit
+de <code class="docutils literal notranslate"><span class="pre">Exception</span></code>. Això ho podem llegir com <em>el mètode ``setHores()`` pot
+llençar una excepció</em>.</p>
+<p>Potser la part del codi més interessant es troba a la línia 5 on, en
+comptes de retornar un valor per indicar que s’ha produït un error,
+ara apareix aquest <code class="docutils literal notranslate"><span class="pre">throw</span></code> que s’encarrega de <em>llençar</em> una excepció quan el
+valor rebut per les hores està fora de rang.</p>
+<p>Podríem intentar usar el codi anterior de la següent manera:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">UsaHora</span> <span class="p">{</span>
+<span class="hll">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+</span>        <span class="n">Hora</span> <span class="n">hora</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hora</span><span class="p">();</span>
+        <span class="n">hora</span><span class="p">.</span><span class="na">setHores</span><span class="p">(</span><span class="mi">224</span><span class="p">);</span> <span class="c1">// assignem un valor no vàlid a hora</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Aquest missatge no es mostrarà&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>En intentar compilar-lo, però, ens trobem amb un error:</p>
+<div class="highlight-console notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">$</span> javac UsaHora.java
+<span class="hll"><span class="go">UsaHora.java:4: error: unreported exception Exception; must be caught or declared to be thrown</span>
+</span><span class="hll"><span class="go">        hora.setHores(224); // assignem un valor no vàlid a hora</span>
+</span><span class="hll"><span class="go">                     ^</span>
+</span><span class="hll"><span class="go">1 error</span>
+</span></pre></div>
+</td></tr></table></div>
+<p>Bàsicament ens està dient <em>hi ha una excepció que no està sent gestionada.
+Cal que la capturis o declaris al mètode que pot llença-la</em></p>
+<p>Fem-li cas primer al segon suggeriment i declarem que el mètode (en aquest
+cas <code class="docutils literal notranslate"><span class="pre">main()</span></code>) <em>pot</em> llençar una excepció:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">UsaHora</span> <span class="p">{</span>
+<span class="hll">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="p">{</span>
+</span>        <span class="n">Hora</span> <span class="n">hora</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hora</span><span class="p">();</span>
+        <span class="n">hora</span><span class="p">.</span><span class="na">setHores</span><span class="p">(</span><span class="mi">224</span><span class="p">);</span> <span class="c1">// assignem un valor no vàlid a hora</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Aquest missatge no es mostrarà&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Ara podem compilar-la i, en executar el programa ens trobem:</p>
+<div class="highlight-console notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">$</span> java UsaHora
+<span class="hll"><span class="go">Exception in thread &quot;main&quot; java.lang.Exception: Hora.setHores(224) valor fora de rang</span>
+</span><span class="go">    at Hora.setHores(Hora.java:12)</span>
+<span class="hll"><span class="go">    at UsaHora.main(UsaHora.java:4)</span>
+</span></pre></div>
+</td></tr></table></div>
+<p>Sembla que ens ha <em>petat</em> el programa, però està fent el que esperàvem:
+ens està informant que s’ha produït una excepció, ens mostra el missatge
+que el problema és que el valor <code class="docutils literal notranslate"><span class="pre">224</span></code> està fora de rang, i fins i tot
+ens diu en quines línies s’ha produït el problema. Ara seria fàcil trobar
+l’error al codi i canviar-ho.</p>
+<p>D’acord, això és la manera habitual amb la que Java ens ha estat
+presentant errors en temps d’execució. Ens diu que hi ha una situació
+excepcional al nostre codi i ens ofereix pistes per trobar-la.</p>
+<p>Ara, <code class="docutils literal notranslate"><span class="pre">javac</span></code> no s’ha queixat perquè hem <em>declarat</em> que l’excepció pot
+ser llençada. Què voldrà dir l’altra opció: <em>must be caught</em> (ha de ser
+capturada)?</p>
+<p>Et vull fer notar també el <em>profètic</em>  missatge de la línia 5. Realment,
+mentre el valor que li passem a <code class="docutils literal notranslate"><span class="pre">setHores()</span></code> estigui fora de rang, el
+missatge no es mostrarà, doncs l’execució s’aturarà abans.</p>
+</div>
+<div class="section" id="capturar-una-excepcio">
+<h2>Capturar una excepció<a class="headerlink" href="#capturar-una-excepcio" title="Link permanent a aquest títol">¶</a></h2>
+<p>Si tornem a revisar el missatge d’error que ens genera <code class="docutils literal notranslate"><span class="pre">javac</span></code> quan
+intentem compilar aquest codi:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">UsaHora</span> <span class="p">{</span>
+<span class="hll">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+</span>        <span class="n">Hora</span> <span class="n">hora</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hora</span><span class="p">();</span>
+        <span class="n">hora</span><span class="p">.</span><span class="na">setHores</span><span class="p">(</span><span class="mi">224</span><span class="p">);</span> <span class="c1">// assignem un valor no vàlid a hora</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Aquest missatge no es mostrarà&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>És a dir:</p>
+<div class="highlight-console notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">$</span> javac UsaHora.java
+<span class="hll"><span class="go">UsaHora.java:4: error: unreported exception Exception; must be caught or declared to be thrown</span>
+</span><span class="hll"><span class="go">        hora.setHores(224); // assignem un valor no vàlid a hora</span>
+</span><span class="hll"><span class="go">                     ^</span>
+</span><span class="hll"><span class="go">1 error</span>
+</span></pre></div>
+</td></tr></table></div>
+<p>Ja hem vist que podem corregir aquest problema <em>declarant</em> que el mètode
+<code class="docutils literal notranslate"><span class="pre">main()</span></code> pot llençar una excepció, però… i l’altra alternativa? Què
+voldrà dir <em>must be caught</em> o <em>ha de ser capturada</em>?</p>
+<p>Considera aquest nou codi:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">UsaHora</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">Hora</span> <span class="n">hora</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hora</span><span class="p">();</span>
+<span class="hll">        <span class="k">try</span> <span class="p">{</span>
+</span>            <span class="n">hora</span><span class="p">.</span><span class="na">setHores</span><span class="p">(</span><span class="mi">224</span><span class="p">);</span> <span class="c1">// assignem un valor no vàlid a hora</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Aquest missatge no es mostrarà&quot;</span><span class="p">);</span>
+<span class="hll">        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+</span>            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error assignant l&#39;hora: &quot;</span> <span class="o">+</span> <span class="n">e</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Aquest missatge sí es mostra&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Podem llegir el codi anterior com:</p>
+<ul class="simple">
+<li><p>línia 3: crea una instància de la classe <code class="docutils literal notranslate"><span class="pre">Hora</span></code> i fes-ne referència
+amb la variable <code class="docutils literal notranslate"><span class="pre">hora</span></code>.</p></li>
+<li><p>línia 4:  Tot seguit <em>intenta</em></p></li>
+<li><p>línia 5: assignar el valor 224 a les hores de la instància apuntada per
+<code class="docutils literal notranslate"><span class="pre">hora</span></code> i, en cas que es produeixi una excepció,</p></li>
+<li><p>línia 7: <em>captura-la</em>, fent-ne referència amb la variable <code class="docutils literal notranslate"><span class="pre">e</span></code>, i</p></li>
+<li><p>línia 8: mostra-la per sortida estàndard.</p></li>
+<li><p>línia 9: finalment mostra un missatge</p></li>
+</ul>
+<p>Aquest codi genera la sortida:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ java UsaHora
+<span class="hll">Error assignant l&#39;hora: java.lang.Exception: Hora.setHores(224) valor fora de rang
+</span><span class="hll">Aquest missatge sí es mostra
+</span></pre></div>
+</div>
+<p>La sortida ens revela tres coses importants:</p>
+<ol class="arabic">
+<li><p>podem fer coses quan detectem que s’ha produït una excepció</p>
+<p>En aquest cas estem simplement mostrant l’excepció, però també podríem fer
+altres coses com ara alliberar algun recurs com ara tancar un fitxer
+on ja no ens deixen escriure.</p>
+</li>
+<li><p>un cop al bloc del <code class="docutils literal notranslate"><span class="pre">try</span></code> es produeix una excepció, no continua.
+Fixa’t que el missatge de la línia 6 no apareix.</p></li>
+<li><p>podem fer coses <strong>després</strong> que s’hagi produït una excepció</p>
+<p>És a dir, amb <code class="docutils literal notranslate"><span class="pre">try-catch</span></code> els nostres programes <strong>sí</strong> poden
+continuar l’execució encara que es produeixi una excepció.</p>
+</li>
+</ol>
+<p>Una consideració més: fixa’t que he posat la declaració de la instància de
+<code class="docutils literal notranslate"><span class="pre">Hora</span></code> <em>fora</em> del <code class="docutils literal notranslate"><span class="pre">try</span></code>. Podria haver-ho fet dins, però. L’únic punt
+és que el constructor de <code class="docutils literal notranslate"><span class="pre">Hora</span></code> no pot generar excepció i, per tant, és
+preferible deixar-ho fora. Com a regla general, és una bona pràctica posar dins del bloc
+<code class="docutils literal notranslate"><span class="pre">try</span></code> el mínim imprescindible.</p>
+</div>
+<div class="section" id="rellancar-excepcions">
+<h2>Rellançar excepcions<a class="headerlink" href="#rellancar-excepcions" title="Link permanent a aquest títol">¶</a></h2>
+<p>Fixa’t que ara ja no ens cal declarar al <code class="docutils literal notranslate"><span class="pre">main()</span></code> que pot llençar una excepció.
+De fet, si ho féssim, estaríem <em>enganyant</em> doncs el codi tal i com està
+<em>no pot</em> llençar l’excepció.</p>
+<p>Imaginem però que sí que volem llençar-la</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">UsaHora</span> <span class="p">{</span>
+<span class="hll">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">Exception</span>  <span class="p">{</span>
+</span>        <span class="n">Hora</span> <span class="n">hora</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hora</span><span class="p">();</span>
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="n">hora</span><span class="p">.</span><span class="na">setHores</span><span class="p">(</span><span class="mi">224</span><span class="p">);</span> <span class="c1">// assignem un valor no vàlid a hora</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error assignant l&#39;hora: &quot;</span> <span class="o">+</span> <span class="n">e</span><span class="p">);</span>
+<span class="hll">            <span class="k">throw</span> <span class="n">e</span><span class="p">;</span>
+</span>        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Aquest missatge no es mostrarà&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>En executar aquest codi ens trobem:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java UsaHora
+<span class="hll"><span class="go">Error assignant l&#39;hora: java.lang.Exception: Hora.setHores(224) valor fora de rang</span>
+</span><span class="hll"><span class="go">Exception in thread &quot;main&quot; java.lang.Exception: Hora.setHores(224) valor fora de rang</span>
+</span><span class="hll"><span class="go">    at Hora.setHores(Hora.java:12)</span>
+</span><span class="hll"><span class="go">    at UsaHora.main(UsaHora.java:5)</span>
+</span></pre></div>
+</div>
+<p>Com abans, estem mostrant el missatge d’error i, per tant, podem fer coses
+en capturar l’excepció, però després la tornem a rellançar perquè la
+capturi qui ens crida el <code class="docutils literal notranslate"><span class="pre">main()</span></code> (en aquest cas, el propi <code class="docutils literal notranslate"><span class="pre">java</span></code>)</p>
+<p>Novament el pobre missatge final no es mostra. Podríem fer que es mostrés?</p>
+</div>
+<div class="section" id="passi-el-que-passi-finalment">
+<h2>Passi el que passi, finalment…<a class="headerlink" href="#passi-el-que-passi-finalment" title="Link permanent a aquest títol">¶</a></h2>
+<p>Considera aquesta nova versió:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">UsaHora</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">Exception</span>  <span class="p">{</span>
+        <span class="n">Hora</span> <span class="n">hora</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hora</span><span class="p">();</span>
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="n">hora</span><span class="p">.</span><span class="na">setHores</span><span class="p">(</span><span class="mi">224</span><span class="p">);</span> <span class="c1">// assignem un valor no vàlid a hora</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">throw</span> <span class="n">e</span><span class="p">;</span>
+<span class="hll">        <span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
+</span>            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Aquest codi es mostrarà passi el que passi&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Aquest missatge no es mostrarà&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Aquest <code class="docutils literal notranslate"><span class="pre">finally</span></code> està dient a Java: <em>tant si es produeix una excepció
+com si no es produeix, executa el següent bloc de codi</em></p>
+<p>La sortida del codi anterior és:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java UsaHora
+<span class="hll"><span class="go">Aquest codi es mostrarà passi el que passi</span>
+</span><span class="hll"><span class="go">Exception in thread &quot;main&quot; java.lang.Exception: Hora.setHores(224) valor fora de rang</span>
+</span><span class="hll"><span class="go">    at Hora.setHores(Hora.java:12)</span>
+</span><span class="hll"><span class="go">    at UsaHora.main(UsaHora.java:5)</span>
+</span></pre></div>
+</div>
+<p>Fixat que el bloc del <code class="docutils literal notranslate"><span class="pre">finally</span></code> s’executa abans de que es mostri
+l’excepció. Això és perquè abans que l’excepció <em>pugi cap a munt</em> i el
+<code class="docutils literal notranslate"><span class="pre">main()</span></code> finalitzi, s’executa el <code class="docutils literal notranslate"><span class="pre">finally</span></code>. En canvi, el missatge de
+la línia 11 torna a ser profètic.</p>
+<p>El codi anterior, sent francs, no fa justícia a les possibilitats del
+<code class="docutils literal notranslate"><span class="pre">try</span></code> doncs sempre assignem un valor no vàlid a hores. Considerem la
+següent versió:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">UsaHora</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">Exception</span>  <span class="p">{</span>
+        <span class="n">Hora</span> <span class="n">hora</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hora</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Valor a introduir?&quot;</span><span class="p">);</span>
+<span class="hll">        <span class="kt">int</span> <span class="n">hores</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">Entrada</span><span class="p">.</span><span class="na">readLine</span><span class="p">());</span>
+</span>        <span class="k">try</span> <span class="p">{</span>
+<span class="hll">            <span class="n">hora</span><span class="p">.</span><span class="na">setHores</span><span class="p">(</span><span class="n">hores</span><span class="p">);</span>
+</span>            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El valor s&#39;ha introduït correctament&quot;</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;S&#39;ha produït l&#39;excepció &quot;</span> <span class="o">+</span> <span class="n">e</span><span class="p">);</span>
+            <span class="k">throw</span> <span class="n">e</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Aquest codi es mostrarà passi el que passi&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Si veus aquest missatge és que tot ha anat bé&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Ara el valor a assignar podria ser correcte o no.</p>
+<p>Una execució incorrecta ens generaria un resultat conegut:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java UsaHora
+<span class="hll"><span class="go">Valor a introduir?</span>
+</span><span class="hll"><span class="go">224</span>
+</span><span class="hll"><span class="go">S&#39;ha produït l&#39;excepció java.lang.Exception: Hora.setHores(224) valor fora de rang</span>
+</span><span class="hll"><span class="go">Aquest codi es mostrarà passi el que passi</span>
+</span><span class="hll"><span class="go">Exception in thread &quot;main&quot; java.lang.Exception: Hora.setHores(224) valor fora de rang</span>
+</span><span class="hll"><span class="go">    at Hora.setHores(Hora.java:12)</span>
+</span><span class="hll"><span class="go">    at UsaHora.main(UsaHora.java:7)</span>
+</span></pre></div>
+</div>
+<p>I si introduïm un de correcte?</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java UsaHora
+<span class="hll"><span class="go">Valor a introduir?</span>
+</span><span class="go">5</span>
+<span class="hll"><span class="go">El valor s&#39;ha introduït correctament</span>
+</span><span class="hll"><span class="go">Aquest codi es mostrarà passi el que passi</span>
+</span><span class="hll"><span class="go">Si veus aquest missatge és que tot ha anat bé</span>
+</span></pre></div>
+</div>
+<p>En aquest cas, veiem que s’ha mostrat el missatge de la línia 8 doncs s’ha
+acabat el bloc del <code class="docutils literal notranslate"><span class="pre">try</span></code> amb normalitat. Per descomptat, no executa el
+bloc del <code class="docutils literal notranslate"><span class="pre">catch</span></code> doncs no hi ha hagut excepció. Tot seguit executa el
+bloc del <code class="docutils literal notranslate"><span class="pre">finally</span></code> tot mostrant el missatge de la línia 13 i, per
+acabar, mostra el missatge de comiat de la línia 15.</p>
+</div>
+<div class="section" id="mes-d-una-excepcio">
+<h2>Més d’una excepció<a class="headerlink" href="#mes-d-una-excepcio" title="Link permanent a aquest títol">¶</a></h2>
+<p>Sabem que si a <code class="docutils literal notranslate"><span class="pre">Integer.parseInt(Entrada.readLine())</span></code> rep un valor que
+no pugui convertir a enter, ens <em>petarà</em> el programa, oi?</p>
+<div class="highlight-console notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="gp">$</span> java UsaHora
+<span class="hll"><span class="go">Valor a introduir?</span>
+</span><span class="go">un valor no vàlid</span>
+<span class="hll"><span class="go">Exception in thread &quot;main&quot; java.lang.NumberFormatException: For input string: &quot;un valor no vàlid&quot;</span>
+</span><span class="hll"><span class="go">    at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)</span>
+</span><span class="hll"><span class="go">    at java.base/java.lang.Integer.parseInt(Integer.java:652)</span>
+</span><span class="hll"><span class="go">    at java.base/java.lang.Integer.parseInt(Integer.java:770)</span>
+</span><span class="hll"><span class="go">    at UsaHora.main(UsaHora.java:5)</span>
+</span></pre></div>
+</td></tr></table></div>
+<p>Què passaria si haguéssim posat la conversió <em>dins</em> del <code class="docutils literal notranslate"><span class="pre">try</span></code>?</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span> <span class="kd">public</span> <span class="kd">class</span> <span class="nc">UsaHora</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">Exception</span>  <span class="p">{</span>
+        <span class="n">Hora</span> <span class="n">hora</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hora</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Valor a introduir?&quot;</span><span class="p">);</span>
+        <span class="n">String</span> <span class="n">resposta</span> <span class="o">=</span> <span class="n">Entrada</span><span class="p">.</span><span class="na">readLine</span><span class="p">();</span>
+        <span class="k">try</span> <span class="p">{</span>
+<span class="hll">            <span class="kt">int</span> <span class="n">hores</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">resposta</span><span class="p">);</span>
+</span>            <span class="n">hora</span><span class="p">.</span><span class="na">setHores</span><span class="p">(</span><span class="n">hores</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El valor s&#39;ha introduït correctament&quot;</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;S&#39;ha produït l&#39;excepció &quot;</span> <span class="o">+</span> <span class="n">e</span><span class="p">);</span>
+            <span class="k">throw</span> <span class="n">e</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Aquest codi es mostrarà passi el que passi&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Si veus aquest missatge és que tot ha anat bé&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Ara, en executar-ho ens trobem:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java UsaHora
+<span class="hll"><span class="go">Valor a introduir?</span>
+</span><span class="go">un valor no vàlid</span>
+<span class="hll"><span class="go">S&#39;ha produït l&#39;excepció java.lang.NumberFormatException: For input string: &quot;un valor no vàlid&quot;</span>
+</span><span class="hll"><span class="go">Aquest codi es mostrarà passi el que passi</span>
+</span><span class="hll"><span class="go">Exception in thread &quot;main&quot; java.lang.NumberFormatException: For input string: &quot;un valor no vàlid&quot;</span>
+</span><span class="hll"><span class="go">    at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)</span>
+</span><span class="hll"><span class="go">    at java.base/java.lang.Integer.parseInt(Integer.java:652)</span>
+</span><span class="hll"><span class="go">    at java.base/java.lang.Integer.parseInt(Integer.java:770)</span>
+</span><span class="hll"><span class="go">    at UsaHora.main(UsaHora.java:7)</span>
+</span></pre></div>
+</div>
+<p>El que ens trobem és que el <code class="docutils literal notranslate"><span class="pre">catch</span></code> ha capturat l’excepció. En aquest
+cas, el missatge ja no ens indica <code class="docutils literal notranslate"><span class="pre">Exception</span></code> sinó
+<code class="docutils literal notranslate"><span class="pre">NumberFormatException</span></code>, i ja no es veu ni rastre de l’excepció de
+<code class="docutils literal notranslate"><span class="pre">setHores()</span></code> doncs la línia 8 del <code class="docutils literal notranslate"><span class="pre">try</span></code> no arriba a executar-se.</p>
+<p>Aviat veurem que <code class="docutils literal notranslate"><span class="pre">NumberFormatException</span></code> és una <code class="docutils literal notranslate"><span class="pre">Exception</span></code> però de
+moment, quedem-nos amb que hi ha diferents tipus d’excepcions possibles.</p>
+<p>Podríem distingir quina excepció s’ha produït? és a dir, podríem fer un
+codi per tractar l’excepció produïda en intentar convertir l’entrada a
+enter, i un altre per l’excepció produïda per intentar passar-li un valor
+enter a <code class="docutils literal notranslate"><span class="pre">setHores()</span></code>?</p>
+<p>Veiem:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">UsaHora</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">Exception</span>  <span class="p">{</span>
+        <span class="n">Hora</span> <span class="n">hora</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hora</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Valor a introduir?&quot;</span><span class="p">);</span>
+        <span class="n">String</span> <span class="n">resposta</span> <span class="o">=</span> <span class="n">Entrada</span><span class="p">.</span><span class="na">readLine</span><span class="p">();</span>
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">hores</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">resposta</span><span class="p">);</span>
+            <span class="n">hora</span><span class="p">.</span><span class="na">setHores</span><span class="p">(</span><span class="n">hores</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El valor s&#39;ha introduït correctament&quot;</span><span class="p">);</span>
+<span class="hll">        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">NumberFormatException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+</span>            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El valor &#39;&quot;</span> <span class="o">+</span> <span class="n">resposta</span> <span class="o">+</span> <span class="s">&quot;&#39; no és un enter&quot;</span><span class="p">);</span>
+            <span class="k">throw</span> <span class="n">e</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El valor &#39;&quot;</span> <span class="o">+</span> <span class="n">resposta</span> <span class="o">+</span> <span class="s">&quot;&#39; no és vàlid per hores&quot;</span><span class="p">);</span>
+            <span class="k">throw</span> <span class="n">e</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Aquest codi es mostrarà passi el que passi&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Si veus aquest missatge és que tot ha anat bé&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Fixa’t que tenim dos <code class="docutils literal notranslate"><span class="pre">catch</span></code>!</p>
+<p>Aquesta nova versió ens generarà la següent sortida si li passem un valor
+no enter:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java UsaHora
+<span class="hll"><span class="go">Valor a introduir?</span>
+</span><span class="go">un valor no vàlid</span>
+<span class="hll"><span class="go">El valor &#39;un valor no vàlid&#39; no és un enter</span>
+</span><span class="hll"><span class="go">Aquest codi es mostrarà passi el que passi</span>
+</span><span class="hll"><span class="go">Exception in thread &quot;main&quot; java.lang.NumberFormatException: For input string: &quot;un valor no vàlid&quot;</span>
+</span><span class="hll"><span class="go">    at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)</span>
+</span><span class="hll"><span class="go">    at java.base/java.lang.Integer.parseInt(Integer.java:652)</span>
+</span><span class="hll"><span class="go">    at java.base/java.lang.Integer.parseInt(Integer.java:770)</span>
+</span><span class="hll"><span class="go">    at UsaHora.main(UsaHora.java:7)</span>
+</span></pre></div>
+</div>
+<p>En canvi, si el valor és enter però no vàlid per hora, n’obtindrem:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java UsaHorae
+<span class="hll"><span class="go">Valor a introduir?</span>
+</span><span class="go">224</span>
+<span class="hll"><span class="go">El valor &#39;224&#39; no és vàlid per hores</span>
+</span><span class="hll"><span class="go">Aquest codi es mostrarà passi el que passi</span>
+</span><span class="hll"><span class="go">Exception in thread &quot;main&quot; java.lang.Exception: Hora.setHores(224) valor fora de rang</span>
+</span><span class="hll"><span class="go">    at Hora.setHores(Hora.java:4)</span>
+</span><span class="hll"><span class="go">    at UsaHora.main(UsaHora.java:8)</span>
+</span></pre></div>
+</div>
+<p>Així, podem distingir tantes excepcions com ens calgui. Únicament cal
+tenir present que l’ordre dels <code class="docutils literal notranslate"><span class="pre">catch</span></code> és important.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">UsaHora</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">Exception</span>  <span class="p">{</span>
+        <span class="n">Hora</span> <span class="n">hora</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hora</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Valor a introduir?&quot;</span><span class="p">);</span>
+        <span class="n">String</span> <span class="n">resposta</span> <span class="o">=</span> <span class="n">Entrada</span><span class="p">.</span><span class="na">readLine</span><span class="p">();</span>
+        <span class="k">try</span> <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">hores</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">resposta</span><span class="p">);</span>
+            <span class="n">hora</span><span class="p">.</span><span class="na">setHores</span><span class="p">(</span><span class="n">hores</span><span class="p">);</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;El valor s&#39;ha introduït correctament&quot;</span><span class="p">);</span>
+<span class="hll">        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+</span>            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Tant si resposta no és enter com si està fora de rang&quot;</span><span class="p">);</span>
+            <span class="k">throw</span> <span class="n">e</span><span class="p">;</span>
+<span class="hll">        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">NumberFormatException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+</span>            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Aquesta excepció no es podrà capturar mai&quot;</span><span class="p">);</span>
+            <span class="k">throw</span> <span class="n">e</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">finally</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Aquest codi es mostrarà passi el que passi&quot;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Si veus aquest missatge és que tot ha anat bé&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>El missatge de la línia 11 intenta avisar que aquest <code class="docutils literal notranslate"><span class="pre">catch</span></code> captura els
+dos tipus d’excepció, mentre que el de la línia 14 ens vol fer veure que
+aquest tipus ja no pot ser capturat. En realitat, però, no podrem veure
+cap d’aquests dos missatges doncs <code class="docutils literal notranslate"><span class="pre">javac</span></code> no ens deixarà compilar aquest
+codi:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> javac UsaHora.java
+<span class="hll"><span class="go">UsaHora.java:13: error: exception NumberFormatException has already been caught</span>
+</span><span class="hll"><span class="go">        } catch (NumberFormatException e) {</span>
+</span><span class="hll"><span class="go">          ^</span>
+</span><span class="hll"><span class="go">1 error</span>
+</span></pre></div>
+</div>
+<p>El missatge d’error ens diu que l’excepció <code class="docutils literal notranslate"><span class="pre">NumberFormatException</span></code> ja ha
+estat capturada. Què està passant aquí?</p>
+</div>
+<div class="section" id="la-classe-exception">
+<h2>La classe <code class="docutils literal notranslate"><span class="pre">Exception</span></code><a class="headerlink" href="#la-classe-exception" title="Link permanent a aquest títol">¶</a></h2>
+<p>Les excepcions són classes en Java.</p>
+<p>Fem una ullada a la documentació de la <a class="reference external" href="http://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html">classe Exception</a>.</p>
+<p>La documentació ens descriu que <code class="docutils literal notranslate"><span class="pre">Exception</span></code> és una classe de quelcom que es pot
+<em>llençar</em> (<code class="docutils literal notranslate"><span class="pre">throw</span></code>) i que indica una situació que les aplicacions normalment voldran
+<em>capturar</em> (<code class="docutils literal notranslate"><span class="pre">catch</span></code>).</p>
+<p>Revisant una mica més la documentació veurem què la classe ens ofereix
+uns quants constructors, incloent el de per defecte. Un que farem servir
+sovint en aquest curs és el que construeix l’excepció amb un missatge
+<code class="docutils literal notranslate"><span class="pre">Exception(String</span> <span class="pre">message)</span></code>. La classe no ofereix més mètodes
+que els que hereta i, tot i que pots experimentar, per exemple amb
+<code class="docutils literal notranslate"><span class="pre">getMessage()</span></code>, <code class="docutils literal notranslate"><span class="pre">getStackTrace()</span></code> o <code class="docutils literal notranslate"><span class="pre">printStackTrace()</span></code>, sovint
+ens quedarem només amb <code class="docutils literal notranslate"><span class="pre">toString()</span></code> com a aquest exemple:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Hora</span> <span class="n">h1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hora</span><span class="p">();</span>
+<span class="k">try</span> <span class="p">{</span>
+    <span class="n">h1</span><span class="p">.</span><span class="na">setHores</span><span class="p">(</span><span class="mi">224</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+<span class="hll">    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Error assignant l&#39;hora: &quot;</span> <span class="o">+</span> <span class="n">e</span><span class="p">);</span>
+</span><span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Si consultem ara la documentació de la <a class="reference external" href="https://docs.oracle.com/javase/8/docs/api/java/lang/NumberFormatException.html">classe NumberFormatException</a> ens trobem la següent jerarquia de classes:</p>
+<div class="figure align-center" id="id2">
+<p class="plantuml">
+<img src="_images/plantuml-57a9371f5fe4086327afa51dbb526396e0024a96.png" alt="class Exception
+class RuntimeException extends Exception
+class IllegalArgumentException extends RuntimeException
+class NumberFormatException extends IllegalArgumentException
+
+hide circle
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam class {
+    BackgroundColor White
+    BorderColor Black
+    ArrowColor Black
+}"/>
+</p>
+<p class="caption"><span class="caption-text">La classe <code class="docutils literal notranslate"><span class="pre">NumberFormatException</span></code></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>És a dir, <code class="docutils literal notranslate"><span class="pre">NumberFormatException</span></code> és <em>descendent</em> de <code class="docutils literal notranslate"><span class="pre">Exception</span></code>, en
+podríem dir <em>besnet</em>, i, per tant, una subclasse de <code class="docutils literal notranslate"><span class="pre">Exception</span></code>.</p>
+<p>Ara podem entendre millor perquè l’ordre dels <code class="docutils literal notranslate"><span class="pre">catch</span></code> és important.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    <span class="k">try</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">hores</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">resposta</span><span class="p">);</span>
+        <span class="n">hora</span><span class="p">.</span><span class="na">setHores</span><span class="p">(</span><span class="n">hores</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>             <span class="c1">// la superclasse abans de la subclasse</span>
+        <span class="k">throw</span> <span class="n">e</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">NumberFormatException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// error!</span>
+        <span class="k">throw</span> <span class="n">e</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>El codi anterior no rutlla. L’ordre correcte és:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    <span class="k">try</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">hores</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">resposta</span><span class="p">);</span>
+        <span class="n">hora</span><span class="p">.</span><span class="na">setHores</span><span class="p">(</span><span class="n">hores</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">NumberFormatException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// la subclasse SEMPRE abans de la superclasse</span>
+        <span class="k">throw</span> <span class="n">e</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// la superclasse SEMPRE després de la subclasse</span>
+        <span class="k">throw</span> <span class="n">e</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Si volem distingir tota la <em>familia</em> podríem fer:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span>    <span class="k">try</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">hores</span> <span class="o">=</span> <span class="n">Integer</span><span class="p">.</span><span class="na">parseInt</span><span class="p">(</span><span class="n">resposta</span><span class="p">);</span>
+        <span class="n">hora</span><span class="p">.</span><span class="na">setHores</span><span class="p">(</span><span class="n">hores</span><span class="p">);</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">NumberFormatException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="n">e</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">IllegalArgumentException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="n">e</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">RuntimeException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="n">e</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="n">e</span><span class="p">;</span>
+    <span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>En resum, en el cas dels <code class="docutils literal notranslate"><span class="pre">catch</span></code> l’ordre sempre de més concret a més
+abstracte o, si vols, primer la subclasse i després la superclasse. I si
+et confons… cap problema, <code class="docutils literal notranslate"><span class="pre">javac</span></code> amablement t’avisarà.</p>
+</div>
+<div class="section" id="excepcions-al-constructor">
+<h2>Excepcions al constructor<a class="headerlink" href="#excepcions-al-constructor" title="Link permanent a aquest títol">¶</a></h2>
+<p>Hem vist com podem declarar que un mètode pot llençar excepcions, però…
+què passa amb els constructors?</p>
+<p>Bàsicament que també poden llençar excepcions.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="nf">Hora</span><span class="p">(</span><span class="kt">int</span> <span class="n">h</span><span class="p">,</span><span class="kt">int</span> <span class="n">m</span><span class="p">,</span> <span class="kt">int</span> <span class="n">s</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="p">{</span>
+    <span class="n">setHores</span><span class="p">(</span><span class="n">h</span><span class="p">);</span>
+    <span class="n">setMinuts</span><span class="p">(</span><span class="n">m</span><span class="p">);</span>
+    <span class="n">setSegons</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>I perquè t’ho presento com si fos la gran cosa? Doncs perquè sense
+excepcions, la única manera que teníem d’evitar crear instàncies amb
+valors incorrectes era definint valors per defecte, i el pitjor de tot, en
+crear la instància no teníem manera directa d’avisar que s’havia produït
+aquest error. Ara ja sí!</p>
+<p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_05_07_hores_excepcionals.html"><span class="doc"> Exercici 05_07. La classe Hora amb excepcions</span></a></p>
+</div>
+<div class="section" id="excepcions-predefinides">
+<h2>Excepcions predefinides<a class="headerlink" href="#excepcions-predefinides" title="Link permanent a aquest títol">¶</a></h2>
+<p>Totes les excepcions a Java hereten de la <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Throwable.html">classe Throwable</a>.</p>
+<div class="figure align-center" id="id3">
+<p class="plantuml">
+<img src="_images/plantuml-13abdf735a0b2ebd8af731f4a0e00c4468521054.png" alt="class Throwable extends Object
+class Error extends Throwable
+class Exception extends Throwable
+class RuntimeException extends Exception
+
+class PrinterException extends Exception
+class IOException extends Exception
+class FileNotFoundExceptioin extends IOException
+class SQLException extends Exception
+
+class IndexOutOfBoundsException extends RuntimeException
+class NullPointerException extends RuntimeException
+class UnsupportedOperationException extends RuntimeException
+
+class ThreadError extends Error
+class VirtualMachineError extends Error
+class OutOfMemoryError extends VirtualMachineError
+class UnknownError extends VirtualMachineError
+class StackOverflowError extends VirtualMachineError
+
+class IllegalArgumentException extends RuntimeException
+class NumberFormatException extends IllegalArgumentException
+
+class IndexOutOfBoundsException #lightgrey
+class PrinterException #lightgrey
+class SQLException #lightgrey
+class NullPointerException #lightgrey
+class UnsupportedOperationException #lightgrey
+class VirtualMachineError #lightgrey
+class OutOfMemoryError #lightgrey
+class UnknownError #lightgrey
+class IOException #lightgrey
+class FileNotFoundExceptioin #lightgrey
+class ThreadError #lightgrey
+class StackOverflowError #lightgrey
+class IllegalArgumentException #lightgrey
+class NumberFormatException #lightgrey
+
+hide circle
+hide empty members
+skinparam classAttributeIconSize 0
+skinparam class {
+    BackgroundColor White
+    BorderColor Black
+    ArrowColor Black
+}"/>
+</p>
+<p class="caption"><span class="caption-text">Jerarquia (parcial) de les excepcions en Java</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>La funció de la classe <code class="docutils literal notranslate"><span class="pre">Throwable</span></code> és indicar que les seves
+subclasses poden ser llençades. Ja hem vist signatures de funcions amb
+<code class="docutils literal notranslate"><span class="pre">throws</span></code>, oi?</p>
+<p>Podem classificar les excepcions de Java en dos tipus: les que requereixen
+ser gestionades explícitament i les que no requereixen d’aquesta gestió
+explícita.</p>
+<div align="center" class="align-center"><div class="graphviz"><img src="_images/graphviz-879d220b81f27d7f6ac595ef390f5c5099d0a8f0.png" alt="digraph {
+    excepcions -&gt; gestionades
+    excepcions -&gt; &quot;no gestionades&quot;
+    gestionades -&gt; Exception
+    &quot;no gestionades&quot; -&gt; Error
+    &quot;no gestionades&quot; -&gt; RuntimeException
+    Error[shape=box]
+    Exception[shape=box]
+    RuntimeException[shape=box]
+}" class="graphviz" /></div>
+</div>
+<p>Què voldrà dir que una excepció requereix de gestió explícita?
+Hi ha dues maneres de gestionar explícitament una excepció:</p>
+<ol class="arabic simple">
+<li><p>Envoltar el codi que pot generar una excepció en un bloc <code class="docutils literal notranslate"><span class="pre">try</span> <span class="pre">{}</span></code> i capturar
+l’excepció amb una clàusula <code class="docutils literal notranslate"><span class="pre">catch</span> <span class="pre">(E</span> <span class="pre">e)</span></code> on <code class="docutils literal notranslate"><span class="pre">E</span></code> ha de ser del tipus d’excepció a
+gestionar o bé una superclasse d’aquesta.</p></li>
+<li><p>Indicar al mètode que conté el codi que pot generar l’excepció, que pot llençar
+(<code class="docutils literal notranslate"><span class="pre">throws</span></code>) una excepció del tipus a gestionar o bé una superclasse d’aquesta.</p></li>
+</ol>
+<p>Com sabem, la gestió explícita de les excepcions és revisada pel
+compilador.  Aquest no deixarà passar un codi que no gestioni les
+excepcions adequadament.</p>
+<p>Quan l’excepció és no gestionada, <code class="docutils literal notranslate"><span class="pre">javac</span></code> no ens obligarà a fer cap de
+les dues coses. Per tant, el següent mètode podrà ser compilat sense
+problemes</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="hll"><span class="kd">public</span> <span class="kt">void</span> <span class="nf">metodeQuePetaSegur</span><span class="p">(</span><span class="n">String</span> <span class="n">valor</span><span class="p">)</span> <span class="p">{</span>  <span class="c1">// sense throws!</span>
+</span>    <span class="k">throw</span> <span class="k">new</span> <span class="n">NumberFormatException</span><span class="p">(</span><span class="s">&quot;Per aquest mètode cap valor té un format numèric vàlid!&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Aquí el punt a senyalar és que la definició del mètode no inclou
+<code class="docutils literal notranslate"><span class="pre">throws</span></code> malgrat és evident que llença excepcions.</p>
+<p>Les excepcions que no requereixen de gestió explícita són les classes <code class="docutils literal notranslate"><span class="pre">Error</span></code> i
+<code class="docutils literal notranslate"><span class="pre">RuntimeException</span></code> i les seves subclasses.</p>
+<p>Com es descriu a <a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Error.html">la documentació oficial</a>,
+La classe <code class="docutils literal notranslate"><span class="pre">Error</span></code> i les seves subclasses indiquen problemes greus sovint
+produïts per situacions anormals, que generalment no haurem de considerar
+a les nostres aplicacions. Per aquesta raó, normalment ens centrarem
+en les classes <code class="docutils literal notranslate"><span class="pre">Exception</span></code> i <code class="docutils literal notranslate"><span class="pre">RuntimeException</span></code>.</p>
+<p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_05_08_hores_ilegals.html"><span class="doc"> Exercici 05_08. La classe Hora amb IllegalArgumentException</span></a></p>
+</div>
+<div class="section" id="les-nostres-excepcions">
+<h2>Les nostres excepcions<a class="headerlink" href="#les-nostres-excepcions" title="Link permanent a aquest títol">¶</a></h2>
+<p>Malgrat Java ens ofereix moltes excepcions ja definides, és possible que
+necessitem quelcom més específic en el que no van pensar. Cap problema.
+Podem crear les nostres excepcions molt fàcilment gràcies a l’herència.</p>
+<div class="highlight-default notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">public</span> <span class="k">class</span> <span class="nc">HoraNoValidaException</span> <span class="n">extends</span> <span class="ne">Exception</span> <span class="p">{</span>
+  <span class="n">public</span> <span class="n">HoraNoValidaException</span><span class="p">(</span><span class="n">String</span> <span class="n">missatge</span><span class="p">){</span>
+    <span class="nb">super</span><span class="p">(</span><span class="s2">&quot;Excepció Hora no vàlida: &quot;</span> <span class="o">+</span> <span class="n">missatge</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Ara podem fer servir <code class="docutils literal notranslate"><span class="pre">HoraNoValidaException</span></code> com qualsevol altra
+excepció.</p>
+<p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_05_09_botiga_excepcional.html"><span class="doc"> Exercici 05_09. Excepcions a la botiga de vins</span></a></p>
+</div>
+<div class="section" id="consideracions-addicionals-sobre-les-excepcions">
+<h2>Consideracions addicionals sobre les excepcions<a class="headerlink" href="#consideracions-addicionals-sobre-les-excepcions" title="Link permanent a aquest títol">¶</a></h2>
+<p>Una advertència abans que comencis a pensar en usar excepcions a tort i a dret: cal tenir
+present que el mecanisme de excepcions pot representar una certa càrrega a algunes
+versions de la màquina virtual de Java. Els blocs <em>try</em>/<em>catch</em> no tenen cap problema. És
+a dir, el seu ús no afegeix cap sobrecàrrega important a l’execució dels teus programes.
+En canvi, l’expressió <code class="docutils literal notranslate"><span class="pre">throw</span></code> no resulta tan barata. La màquina virtual ha de crear un
+<em>try</em>/<em>catch</em> apropiat en temps d’execució entre altres coses.</p>
+<p>La recomanació és que, quan l’eficiència sigui important, llencis excepcions <em>només</em> en
+situacions excepcionals. Per exemple, si has de recórrer molts cops una llista d’elements,
+sovint resultarà més eficient anar comprovant a cada iteració si en queden més que aturar
+el recorregut en arribar a l’excepció. Arribar al final d’una llista <strong>no</strong> és una
+situació excepcional. És el que hom espera quan comença des d’un punt i va avançant.</p>
+<p>Per exemple, el següent codi <strong>no</strong> seria adequat:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Inici dels arguments&quot;</span><span class="p">);</span>
+    <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;\tArgument %d: %s%n&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">args</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
+            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">ArrayIndexOutOfBoundsException</span> <span class="n">e</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Final dels arguments&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>No és excepcional que recorrent un array arribem al final. Com sabem pel
+que hem treballat durant aquest curs, aquest tipus de situacions es
+gestionen millor considerant quants elements té l’array.</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Inici dels arguments&quot;</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">args</span><span class="p">.</span><span class="na">length</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;\tArgument %d: %s%n&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span> <span class="n">args</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Final dels arguments&quot;</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Si tens curiositat pots mirar discussions com aquesta de
+<a class="reference external" href="http://stackoverflow.com/questions/299068/how-slow-are-java-exceptions">stackoverflow</a>.</p>
+<p>Com amb la majoria dels temes que estem tractant en aquesta introducció a
+la programació, les restriccions de temps ens obliga a deixar-nos alguns
+temes interessants sobre les excepcions. Entre d’altres coses, ens hem
+deixat l’anomenat <a class="reference external" href="https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html">try-with-resources</a>,
+una varietat de <code class="docutils literal notranslate"><span class="pre">try</span></code> que ens permet delegar al Java l’obertura i
+tancament de recursos com ara fitxers. En fer-ho servir, el nostre codi es
+veurà més compacte i probablement serà més segur doncs evitarem
+descuidar-nos de tancar fitxers o altres recursos  en situacions d’error.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="biblioteques_exercicis.html" class="btn btn-neutral float-right" title="Exercicis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="botigavins_vi.html" class="btn btn-neutral float-left" title="Vins complets" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2021 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

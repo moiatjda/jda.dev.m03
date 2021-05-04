@@ -12,3 +12,7 @@ Els exercicis de la secció :doc:`biblioteques` són:
     exercici_05_03_entorn.rst
     exercici_05_04_csv.rst
     exercici_05_05_vi_ampliat.rst
+    exercici_05_06_hores_controlades.rst
+    exercici_05_07_hores_excepcionals.rst
+    exercici_05_08_hores_ilegals.rst
+    exercici_05_09_botiga_excepcional.rst

@@ -1,0 +1,48 @@
+#################################################################################
+|exerciseicon__T| Exercici 05_08. La classe Hora amb ``IllegalArgumentException``
+#################################################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``05_08_hores_ilegals/``
+
+* Continguts relacionats: :doc:`excepcions`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Torna a considerar la classe ``Hora``.
+
+La versió anterior estava fent servir un tipus d'excepció molt genèric. De
+fet el més genèric: ``Exception``!
+
+En aquest exercici faràs servir una excepció més concreta:
+``IllegalArgumentException``.
+
+El següent codi ha de poder funcionar:
+
+.. code-block:: java
+    :linenos:
+
+    public class UsaHora {
+        public static void main(String[] args) {
+            System.out.println("Intentarem crear una hora amb valors no vàlids");
+            try {
+                Hora hora = new Hora(-1, 1, 1);
+            } catch (IllegalArgumentException e) {
+                System.out.println("Argument il·legal!");
+            }
+        }
+    }
+
+L'execució generarà:
+
+.. code-block:: console
+    :emphasize-lines: 2-
+
+    java UsaHora 
+    Intentarem crear una hora amb valors no vàlids
+    Argument il·legal!
