@@ -61,13 +61,13 @@ Sra. Estrella una primera versió en funcionament.
   Es codifica amb un ``String`` i no pot ser buit ni contenir només espais.
 
   Es guarda sense espais a l'inici, ni al final, ni més d'un espai seguit
-  entre mig. És a dir, si rebem "   Roura    blanc   ", el guardarem com a
-  "Roura blanc". Tot el que no sigui espais, quedarà guardat tal i com es
-  rebi. És a dir, no canviarem majúscules/minúscules. A aquesta
+  entre mig. És a dir, si rebem ``"   Roura    blanc   "``, el guardarem
+  com a ``"Roura blanc"``. Tot el que no sigui espais, quedarà guardat tal
+  i com es rebi. És a dir, no canviarem majúscules/minúscules. A aquesta
   modificació del nom li direm *normalització* i el mètode estàtic
-  ``normalitzaNom()`` se n'encarregarà de realitzar-la.
-  En cas que ``normalitzaNom()`` rebi un nom no vàlid, retornarà el valor
-  ``"nom no vàlid"``.
+  ``normalitzaNom()`` se n'encarregarà de realitzar-la.  En cas que
+  ``normalitzaNom()`` rebi un nom no vàlid, retornarà el valor ``"nom no
+  vàlid"``.
 
 
   Tota instància de ``Vi`` ha de tenir un nom i, per tant, ha d'aparèixer

@@ -201,13 +201,13 @@ Sra. Estrella una primera versió en funcionament.</p>
 <li><p>nom: el nom oficial del producte. Ex. <code class="docutils literal notranslate"><span class="pre">Roura</span> <span class="pre">blanc</span></code></p>
 <p>Es codifica amb un <code class="docutils literal notranslate"><span class="pre">String</span></code> i no pot ser buit ni contenir només espais.</p>
 <p>Es guarda sense espais a l’inici, ni al final, ni més d’un espai seguit
-entre mig. És a dir, si rebem »   Roura    blanc   «, el guardarem com a
-«Roura blanc». Tot el que no sigui espais, quedarà guardat tal i com es
-rebi. És a dir, no canviarem majúscules/minúscules. A aquesta
+entre mig. És a dir, si rebem <code class="docutils literal notranslate"><span class="pre">&quot;</span>&#160;&#160; <span class="pre">Roura</span>&#160;&#160;&#160; <span class="pre">blanc</span>&#160;&#160; <span class="pre">&quot;</span></code>, el guardarem
+com a <code class="docutils literal notranslate"><span class="pre">&quot;Roura</span> <span class="pre">blanc&quot;</span></code>. Tot el que no sigui espais, quedarà guardat tal
+i com es rebi. És a dir, no canviarem majúscules/minúscules. A aquesta
 modificació del nom li direm <em>normalització</em> i el mètode estàtic
-<code class="docutils literal notranslate"><span class="pre">normalitzaNom()</span></code> se n’encarregarà de realitzar-la.
-En cas que <code class="docutils literal notranslate"><span class="pre">normalitzaNom()</span></code> rebi un nom no vàlid, retornarà el valor
-<code class="docutils literal notranslate"><span class="pre">&quot;nom</span> <span class="pre">no</span> <span class="pre">vàlid&quot;</span></code>.</p>
+<code class="docutils literal notranslate"><span class="pre">normalitzaNom()</span></code> se n’encarregarà de realitzar-la.  En cas que
+<code class="docutils literal notranslate"><span class="pre">normalitzaNom()</span></code> rebi un nom no vàlid, retornarà el valor <code class="docutils literal notranslate"><span class="pre">&quot;nom</span> <span class="pre">no</span>
+<span class="pre">vàlid&quot;</span></code>.</p>
 <p>Tota instància de <code class="docutils literal notranslate"><span class="pre">Vi</span></code> ha de tenir un nom i, per tant, ha d’aparèixer
 especificat als constructor.</p>
 <p>Com que no ha de ser modificat mai, pot ser declarat <code class="docutils literal notranslate"><span class="pre">final</span></code>.</p>
