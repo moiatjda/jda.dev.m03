@@ -1,0 +1,823 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ca" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Llistes &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Exercicis" href="biblioteques_exercicis.html" />
+    <link rel="prev" title="Excepcions" href="excepcions.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació amb Java
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-21
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moduls.html">Mòduls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fitxers.html">Fitxers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poo.html">Programació Orientada a Objectes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="biblioteques.html">Biblioteques</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="botigavins.html">El celler de la Bona Estrella</a></li>
+<li class="toctree-l2"><a class="reference internal" href="botigavins_csv.html">Guardem les dades</a></li>
+<li class="toctree-l2"><a class="reference internal" href="botigavins_vi.html">Vins complets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="excepcions.html">Excepcions</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Llistes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="biblioteques_exercicis.html">Exercicis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="apendix.html">Apèndix</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació amb Java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="biblioteques.html">Biblioteques</a> &raquo;</li>
+        
+      <li>Llistes</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="llistes">
+<h1>Llistes<a class="headerlink" href="#llistes" title="Link permanent a aquest títol">¶</a></h1>
+<p>Les llistes són seqüències de dades disposades de manera seqüencial.</p>
+<p>Ja en coneixem de seqüències en Java. En concret els Strings són una
+seqüència de caràcters i els <em>arrays</em> ens permeten fer seqüències de
+qualsevol tipus, sigui primitiu o objecte.</p>
+<p>De fet, els arrays són una manera força eficient d’implementar seqüències.
+Tenint-los disponibles potser ens preguntem per què podríem voler altres
+seqüències?</p>
+<p>Deixa’m que et presenti <em>part</em> de la «família»:</p>
+<div class="figure align-center" id="id1">
+<p class="plantuml">
+<img src="_images/plantuml-c1780d4bf9d189bc66289044adacf3c80d59a8fc.png" alt="&#64;startuml
+
+    interface Iterable {
+        iterator(): Iterator
+    }
+    Interface Collection extends Iterable {
+        add(element): boolean
+        addAll(colection): boolean
+        clear()
+        contains(element): boolean
+        get(int): element
+        isEmpty(): boolean
+        remove(element): boolean
+        size(): int
+    }
+    interface List extends Collection {
+        get(index: int): element
+        set(index: int, element)
+    }
+
+    class AbstractList implements List
+
+    abstract class AbstractCollection implements Collection
+    abstract class AbstractSequentialList
+    abstract class AbstractList extends AbstractCollection
+    class AbstractSequentialList extends AbstractList
+
+    class ArrayList extends AbstractList
+    class LinkedList extends AbstractSequentialList
+    class Vector extends AbstractList
+    class Stack extends Vector
+
+    interface List #orange
+    class ArrayList #orange
+    class LinkedList #orange
+    class Vector
+    class Stack
+
+    hide circle
+    hide empty members
+    skinparam classAttributeIconSize 0
+    skinparam class {
+        BackgroundColor White
+        BorderColor Black
+        ArrowColor Black
+    }
+&#64;enduml"/>
+</p>
+<p class="caption"><span class="caption-text">Jerarquia (parcial) de les Llistes en Java</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Com pots veure, es tracta d’una jerarquia plena d’interfaces i classes
+abstractes. No pateixis. De moment només farem cas a dues classes
+<code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> i <code class="docutils literal notranslate"><span class="pre">LinkedList</span></code>.</p>
+<p>Les diferents interfaces defineixen les operacions mínimes que han
+d’oferir les classes que les implementin, mentre que les classes
+abstractes ofereixen un codi comú pels mètodes més generals, amb la
+intenció de simplificar la implementació de noves classes de llistes.</p>
+<p>Els elements que més considerarem en aquest curs són <code class="docutils literal notranslate"><span class="pre">List</span></code>, <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> i
+<code class="docutils literal notranslate"><span class="pre">LinkedList</span></code>.
+El seu nom sencer és <code class="docutils literal notranslate"><span class="pre">java.util.List</span></code>, <code class="docutils literal notranslate"><span class="pre">java.util.ArrayList</span></code> i
+<code class="docutils literal notranslate"><span class="pre">java.util.LinkedList</span></code>, però, per descomptat, podem fer servir
+<code class="docutils literal notranslate"><span class="pre">import</span></code> per estalviar-nos <code class="docutils literal notranslate"><span class="pre">java.util.</span></code></p>
+<div class="section" id="generics">
+<h2>Genèrics<a class="headerlink" href="#generics" title="Link permanent a aquest títol">¶</a></h2>
+<p>Les classes <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> i <code class="docutils literal notranslate"><span class="pre">LinkedList</span></code> ens ofereixen mètodes per
+gestionar còmodament seqüències d’objectes d’un tipus concret.</p>
+<p>Per exemple, si ens interessa declarar una seqüència de gats Renats, ho
+podem fer, entre d’altres, de les següents maneres:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">GatRenat</span><span class="o">&gt;</span> <span class="n">renatsAmbArrayList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">GatRenat</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">GatRenat</span><span class="o">&gt;</span> <span class="n">renatsAmbLinkedList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">GatRenat</span><span class="o">&gt;</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Fixa’t que el tipus de valors que contindrà la llista s’especifica entre
+<code class="docutils literal notranslate"><span class="pre">&lt;&gt;</span></code>. Aquesta notació està relacionada amb el concepte de <em>genèrics</em> que
+permet expressar no variables de valors sinó variables de tipus!</p>
+<p>Així, si volem una llista de Strings farem <code class="docutils literal notranslate"><span class="pre">ArrayList&lt;String&gt;</span></code> i si és
+de gats farem <code class="docutils literal notranslate"><span class="pre">ArrayList&lt;GatRenat&gt;</span></code>.</p>
+<p>Un cop tenim declarat un <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> d’un tipus concret, Java se
+n’encarregarà de vigilar que no hi fiquem dades que no toquen.</p>
+<p>Considera la següent interacció al <code class="docutils literal notranslate"><span class="pre">jshell</span></code>:</p>
+<div class="highlight-console notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="go">jshell&gt; ArrayList&lt;String&gt; llistaStrings = new ArrayList&lt;String&gt;();</span>
+<span class="go">llistaStrings ==&gt; []</span>
+
+<span class="go">jshell&gt; llistaStrings.add(&quot;el primer text&quot;);</span>
+<span class="gp">$</span><span class="nv">3</span> <span class="o">==</span>&gt; <span class="nb">true</span>
+
+<span class="go">jshell&gt; llistaStrings.add(new String(&quot;el segon text&quot;));</span>
+<span class="gp">$</span><span class="nv">4</span> <span class="o">==</span>&gt; <span class="nb">true</span>
+
+<span class="go">jshell&gt; llistaStrings.add(new Gat());</span>
+<span class="go">|  Error:</span>
+<span class="go">|  incompatible types: Gat cannot be converted to java.lang.String</span>
+<span class="go">|  llistaStrings.add(new Gat());</span>
+<span class="go">|                    ^------------^</span>
+</pre></div>
+</td></tr></table></div>
+<p>A la línia 1 creem un <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> de Strings. Les línies 4 i 7 mostren
+com afegir un nou text a la llista. Sí, els <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> accepten nous
+elements amb el mètode <code class="docutils literal notranslate"><span class="pre">add()</span></code>.</p>
+<p>El segon String que mirem d’afegir a la línia 7 està creat d’una manera
+poc habitual doncs és molt més compacte fer-ho directament com a la línia
+4. En tot cas, el resultat és equivalent.</p>
+<p>Ara, quan intentem afegir un gat a la línia 10, ens trobem que rebem
+un error indicant-nos que no és possible convertir un <code class="docutils literal notranslate"><span class="pre">Gat</span></code> a un
+<code class="docutils literal notranslate"><span class="pre">String</span></code>.</p>
+<p>Per cert, el polimorfisme funciona aquí:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Gat</span><span class="o">&gt;</span> <span class="n">gats</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Gat</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="n">gats</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">new</span> <span class="n">GatRenat</span><span class="p">());</span>   <span class="c1">// class GatRenat extends Gat</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="generics-i-tipus-primitius">
+<h2>Genèrics i tipus primitius<a class="headerlink" href="#generics-i-tipus-primitius" title="Link permanent a aquest títol">¶</a></h2>
+<p>Els genèrics tenen un problema:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">jshell&gt; ArrayList&lt;int&gt; llista;</span>
+<span class="go">|  Error:</span>
+<span class="go">|  unexpected type</span>
+<span class="go">|    required: reference</span>
+<span class="go">|    found:    int</span>
+<span class="go">|  ArrayList&lt;int&gt; llista;</span>
+<span class="go">|            ^-^</span>
+</pre></div>
+</div>
+<p>El problema és que no podem fer servir tipus primitius, com ara <code class="docutils literal notranslate"><span class="pre">int</span></code>.
+Potser pensaràs que no és cap problema perquè sempre podem fer servir els
+clàssics arrays . Si se t’ha acudit és per que encara no saps tota la
+feina que t’estalviaran classes com <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code>.</p>
+<p>Per sort, altres se’n van adonar abans que nosaltres i en van trobar
+solució: les classes <em>embolcall</em> o <em>wrapper</em>.</p>
+<p>Ja les coneixem. Les que més hem usat en aquest curs serien:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 36%" />
+<col style="width: 64%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>primitiu</strong></p></td>
+<td><p><strong>embolcall</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>Integer</p></td>
+</tr>
+<tr class="row-odd"><td><p>char</p></td>
+<td><p>Character</p></td>
+</tr>
+<tr class="row-even"><td><p>boolean</p></td>
+<td><p>Boolean</p></td>
+</tr>
+<tr class="row-odd"><td><p>float</p></td>
+<td><p>Float</p></td>
+</tr>
+<tr class="row-even"><td><p>double</p></td>
+<td><p>Double</p></td>
+</tr>
+</tbody>
+</table>
+<p>Les instàncies de classes embolcall ocupen, intuïtivament, més memòria que
+els valors que embolcallen però és fàcil que Java tingui optimitzats
+alguns dels seus usos de la mateixa manera que és capaç de <em>embolcallar</em> i
+<em>desembolcallar</em> automàticament en molts contexts.</p>
+<div class="highlight-console notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="go">jshell&gt; Character ch = new Character(&#39;a&#39;);</span>
+<span class="go">ch ==&gt; &#39;a&#39;</span>
+
+<span class="go">jshell&gt; Character ch = &#39;a&#39;;     //</span>
+<span class="go">ch ==&gt; &#39;a&#39;</span>
+
+<span class="go">jshell&gt; ArrayList&lt;Character&gt; lletres = new ArrayList&lt;Character&gt;();</span>
+<span class="go">lletres ==&gt; []</span>
+
+<span class="go">jshell&gt; lletres.add(new Character(&#39;a&#39;));</span>
+<span class="gp">$</span><span class="nv">1</span> <span class="o">==</span>&gt; <span class="nb">true</span>
+
+<span class="go">jshell&gt; lletres.add(&#39;a&#39;);</span>
+<span class="gp">$</span><span class="nv">2</span> <span class="o">==</span>&gt; <span class="nb">true</span>
+</pre></div>
+</td></tr></table></div>
+<p>A aquest procés d’embolcallar/desembolcallar, en Java se’l coneix com
+<em>autoboxing</em>/<em>unboxing</em>. Si en vols saber més, et proposo que facis una
+ullada a <a class="reference external" href="https://docs.oracle.com/javase/tutorial/java/data/autoboxing.html">la documentació oficial</a></p>
+</div>
+<div class="section" id="arraylist-i-linkedlist-son-list">
+<h2><code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> i  <code class="docutils literal notranslate"><span class="pre">LinkedList</span></code> són <code class="docutils literal notranslate"><span class="pre">List</span></code><a class="headerlink" href="#arraylist-i-linkedlist-son-list" title="Link permanent a aquest títol">¶</a></h2>
+<p>Les classes <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> i <code class="docutils literal notranslate"><span class="pre">LinkedList</span></code> són totes dues <code class="docutils literal notranslate"><span class="pre">List</span></code>. Això
+vol dir que podem fer-les servir de manera polimòrfica.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">GatRenat</span><span class="o">&gt;</span> <span class="n">renatsAmbArrayList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">GatRenat</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">GatRenat</span><span class="o">&gt;</span> <span class="n">renatsAmbLinkedList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">GatRenat</span><span class="o">&gt;</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Això és molt convenient doncs, en general, ens permet fer servir les
+funcionalitats de <code class="docutils literal notranslate"><span class="pre">List</span></code> sense tenir en compte quina és la implementació
+concreta.</p>
+<p>I quines funcionalitats són aquestes?</p>
+<p>Fent una ullada ràpida a la
+<a class="reference external" href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/List.html">documentació de List</a>
+trobem que tota <code class="docutils literal notranslate"><span class="pre">List</span></code> ofereix, entre d’altres, els següents mètodes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">add()</span></code>: permet afegir un element a la llista. Disposa de dues
+versions:</p>
+<ul>
+<li><p>una que rep només l’element i el col·loca al final</p></li>
+<li><p>una altra que rep també la posició on ha d’inserir l’element</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">addAll()</span></code>: permet afegir a la llista tots els elements d’una
+col·lecció (per exemple, una altra <code class="docutils literal notranslate"><span class="pre">List</span></code>). Com amb <code class="docutils literal notranslate"><span class="pre">add()</span></code>, també
+ofereix la possibilitat d’indicar en quina posició volem inserir
+els nous elements.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">clear()</span></code>: permet buidar la llista</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">contains()</span></code>:  ens permet saber si l’element que li passem per
+paràmetre es troba a la llista.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get(int</span> <span class="pre">index)</span></code>: ens retorna l’element de la posició <code class="docutils literal notranslate"><span class="pre">index</span></code> a la
+llista. Ens generarà una <code class="docutils literal notranslate"><span class="pre">IndexOutOfBoundsException</span></code> si l’índex que rep
+està fora de rang.  Seria l’equivalent al <code class="docutils literal notranslate"><span class="pre">String.charAt()</span></code> per les
+llistes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">isEmpty()</span></code>: ens permet saber si la llista està buida</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">indexOf()</span></code> i <code class="docutils literal notranslate"><span class="pre">lastIndexOf()</span></code>: donat un element, ens diu quina és la
+primera/darrera posició en que es troba a la llista. Ens retornarà
+<code class="docutils literal notranslate"><span class="pre">-1</span></code> si l’element no es troba i, per descomptat, si només hi ha una
+ocurrència de l’element, tots dos ens retornaran el mateix valor.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">remove()</span></code>: ens permet eliminar un element de la llista. Hi ha dues
+versions segons l’argument que li passem a la crida:</p>
+<ul>
+<li><p>si li passem un <code class="docutils literal notranslate"><span class="pre">int</span></code>, intentarà eliminar l’element de la posició
+indicada  per l’argument.</p></li>
+</ul>
+</li>
+</ul>
+<p>Per recórrer una llista des de l’inici és habitual fer servir el
+<em>for-enhanced</em>, per exemple, si volem aixecar tots els gats d’una llista:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">List</span><span class="o">&lt;</span><span class="n">Gat</span><span class="o">&gt;</span> <span class="n">gats</span> <span class="o">=</span> <span class="n">carregaGats</span><span class="p">();</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">Gat</span> <span class="n">gat</span><span class="p">:</span> <span class="n">gats</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">gat</span><span class="p">.</span><span class="na">aixecat</span><span class="p">());</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p><img alt="exerciseicon__T" src="_images/exerciseicon__T.png" /> <a class="reference internal" href="exercici_05_10_list.html"><span class="doc"> Exercici 05_10. La classe UsaList</span></a></p>
+</div>
+<div class="section" id="arraylist-vs-linkedlist">
+<h2><code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> vs  <code class="docutils literal notranslate"><span class="pre">LinkedList</span></code><a class="headerlink" href="#arraylist-vs-linkedlist" title="Link permanent a aquest títol">¶</a></h2>
+<p>Hem vist que podem fer servir tant <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> com <code class="docutils literal notranslate"><span class="pre">LinkedList</span></code> per
+implementar <code class="docutils literal notranslate"><span class="pre">List</span></code>. La pregunta és, si es poden fer servir iguals, és
+que són iguals?</p>
+<p>La resposta, evidentment, és que no. El fet de que puguem fer la majoria
+de les operacions amb l’una i amb l’altra, no vol dir que les dues ho
+facin internament de la mateixa manera.</p>
+<p>De fet, algunes operacions són més eficients (tarden menys temps/ocupen
+menys espai) en una de les implementacions, i d’altres en l’altra. Això
+implica que cadascuna serà millor per un ús i no tan bona per un altre,
+tot i que totes dues poden fer la feina.</p>
+<p>És quelcom similar a si disposem d’una serra i un ganivet. Amb tots dos
+podríem tallar fusta i pa, però si podem escollir, probablement
+preferirem un a l’altra per cada tasca, oi?</p>
+<a class="reference internal image-reference" href="_images/serra.jpg"><img alt="_images/serra.jpg" class="align-center" src="_images/serra.jpg" style="width: 50%;" /></a>
+<a class="reference internal image-reference" href="_images/ganivet.jpg"><img alt="_images/ganivet.jpg" class="align-center" src="_images/ganivet.jpg" style="width: 50%;" /></a>
+<p>Internament, els <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> estan implementats amb un array. Això ens
+permet que les operacions <code class="docutils literal notranslate"><span class="pre">size()</span></code>, <code class="docutils literal notranslate"><span class="pre">isEmpty()</span></code>, <code class="docutils literal notranslate"><span class="pre">get()</span></code> i <code class="docutils literal notranslate"><span class="pre">set()</span></code>
+siguin molt ràpides, Altres operacions com ara <code class="docutils literal notranslate"><span class="pre">add()</span></code> o <code class="docutils literal notranslate"><span class="pre">remove()</span></code>
+poden no ser tan ràpides, doncs requereixen fer espai</p>
+<p>Per exemple, imagina que tenim un <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> de caràcters referenciat per <code class="docutils literal notranslate"><span class="pre">lletres</span></code>, amb els valors <code class="docutils literal notranslate"><span class="pre">'a'</span></code>,
+<code class="docutils literal notranslate"><span class="pre">'i'</span></code>, <code class="docutils literal notranslate"><span class="pre">'o'</span></code> i <code class="docutils literal notranslate"><span class="pre">'u'</span></code>, i hi volem afegir <code class="docutils literal notranslate"><span class="pre">'e'</span></code> a la posició 1.
+L’operació seria: <code class="docutils literal notranslate"><span class="pre">lletres.add(1,</span> <span class="pre">'e');</span></code></p>
+<a class="reference internal image-reference" href="_images/arraylist_aiou.svg"><img alt="_images/arraylist_aiou.svg" class="align-center" src="_images/arraylist_aiou.svg" width="75%" /></a>
+<p>Per poder afegir <code class="docutils literal notranslate"><span class="pre">'e'</span></code> en aquesta posició, <code class="docutils literal notranslate"><span class="pre">add()</span></code> ha de fer-hi lloc.
+Això ho aconsegueix copiant cada caràcter una posició cap a munt.</p>
+<a class="reference internal image-reference" href="_images/arraylist_aiiou.svg"><img alt="_images/arraylist_aiiou.svg" class="align-center" src="_images/arraylist_aiiou.svg" width="75%" /></a>
+<p>Finalment, copiarà el nou valor al <em>forat</em> que ha generat</p>
+<a class="reference internal image-reference" href="_images/arraylist_aeiou.svg"><img alt="_images/arraylist_aeiou.svg" class="align-center" src="_images/arraylist_aeiou.svg" width="75%" /></a>
+<p>Fixa’t que a <code class="docutils literal notranslate"><span class="pre">add()</span></code> li ha tocat copiar tots els valors a partir de la
+posició 1 fins el final, una posició més. En cas que no hi hagués prou
+espai, hauria hagut de crear un nou array més gran i copiar tots els
+elements!</p>
+<p>Per eliminar la <code class="docutils literal notranslate"><span class="pre">'e'</span></code>, el mètode <code class="docutils literal notranslate"><span class="pre">remove()</span></code> haurà de realitzar el camí
+invers, és a dir, copiar tots els elements des de la posició 2 una posició
+abans.</p>
+<p><code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> disposa d’un índex que apunta al primer espai lliure al
+final de l’array. Aquest índex coincideix amb el nombre d’elements que hi
+ha a l’array.</p>
+<p>La mida real de l’array, és a dir, l’espai que ocupa, sol ser més gran que
+el necessari per emmagatzemar tots els elements. Això permet que en afegir
+i eliminar no sempre calgui ampliar ni reduir l’array.</p>
+<p>Com s’ho fa <code class="docutils literal notranslate"><span class="pre">LinkedList</span></code>?</p>
+<p>La implementació de <code class="docutils literal notranslate"><span class="pre">LinkedList</span></code> és força diferent. Cada element està
+guardat en un <em>node</em>. Els nodes són classes que tenen tres referències:
+una referència al valor que guarda el node, una altra al node anterior i
+una altra al node següent.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">class</span> <span class="nc">Node</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="n">Object</span> <span class="n">valor</span><span class="p">;</span>   <span class="c1">// referència al valor</span>
+    <span class="kd">private</span> <span class="n">Node</span> <span class="n">seguent</span><span class="p">;</span>   <span class="c1">// referència al següent node</span>
+    <span class="kd">private</span> <span class="n">Node</span> <span class="n">anterior</span><span class="p">;</span>  <span class="c1">// referència al node anterior</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Gràficament ho podem veure com:</p>
+<a class="reference internal image-reference" href="_images/linkedlist_aiou.svg"><img alt="_images/linkedlist_aiou.svg" class="align-center" src="_images/linkedlist_aiou.svg" width="75%" /></a>
+<p>Fixa’t com el node amb el valor <code class="docutils literal notranslate"><span class="pre">'a'</span></code> té com a següent node el que conté
+<code class="docutils literal notranslate"><span class="pre">'i'</span></code> però, donat que és el primer, el seu anterior és <code class="docutils literal notranslate"><span class="pre">null</span></code>.  De manera molt similar, el darrer node que conté <code class="docutils literal notranslate"><span class="pre">'u'</span></code> té com a anterior <code class="docutils literal notranslate"><span class="pre">'o'</span></code> i com a següent <code class="docutils literal notranslate"><span class="pre">null</span></code>.</p>
+<p>La classe <code class="docutils literal notranslate"><span class="pre">LinkedList</span></code> disposa també d’una referència al primer element
+i una altra al darrer, de manera que per recórrer tots els elements de la
+llista, ha de fer:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Node</span> <span class="n">actual</span> <span class="o">=</span> <span class="n">primer</span><span class="p">;</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">actual</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">actual</span><span class="p">.</span><span class="na">valor</span><span class="p">);</span>
+    <span class="n">actual</span> <span class="o">=</span> <span class="n">actual</span><span class="p">.</span><span class="na">seguent</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>Per inserir un nou element a una llista així, n’hi ha prou amb crear un
+nou node i jugar amb els enllaços. Per exemple, per afegir <code class="docutils literal notranslate"><span class="pre">'e'</span></code> entre
+<code class="docutils literal notranslate"><span class="pre">'a'</span></code> i <code class="docutils literal notranslate"><span class="pre">'i'</span></code> el mètode <code class="docutils literal notranslate"><span class="pre">add()</span></code> fa quelcom similar a:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Node</span> <span class="n">nodeAnterior</span> <span class="o">=</span> <span class="n">nodeA</span><span class="p">;</span>  <span class="c1">// node de la posició anterior a on volem inserir</span>
+<span class="n">Node</span> <span class="n">nodeE</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Node</span><span class="p">(</span><span class="sc">&#39;e&#39;</span><span class="p">);</span>
+<span class="n">nodeE</span><span class="p">.</span><span class="na">anterior</span> <span class="o">=</span> <span class="n">nodeAnterior</span><span class="p">;</span>
+<span class="n">nodeE</span><span class="p">.</span><span class="na">seguent</span> <span class="o">=</span> <span class="n">nodeAnterior</span><span class="p">.</span><span class="na">seguent</span><span class="p">;</span>
+<span class="n">nodeAnterior</span><span class="p">.</span><span class="na">seguent</span> <span class="o">=</span> <span class="n">nodeE</span><span class="p">;</span>
+<span class="n">nodeE</span><span class="p">.</span><span class="na">seguent</span><span class="p">.</span><span class="na">anterior</span> <span class="o">=</span> <span class="n">nodeE</span><span class="p">;</span>
+</pre></div>
+</td></tr></table></div>
+<a class="reference internal image-reference" href="_images/linkedlist_aeiou.svg"><img alt="_images/linkedlist_aeiou.svg" class="align-center" src="_images/linkedlist_aeiou.svg" width="75%" /></a>
+<p>Fixa’t que d’aquesta manera, no ens cal desplaçar els elements per poder
+fer espai on inserir el nou. Només ens cal <em>jugar</em> amb les referències a
+<code class="docutils literal notranslate"><span class="pre">anterior</span></code> i <code class="docutils literal notranslate"><span class="pre">seguent</span></code> dels nodes afectats.</p>
+<p>En aquesta ocasió hem inserit el nou node després del primer. Si ens
+hagués calgut inserir-lo en una altra posició, simplement hauríem de
+trobar la posició anterior, per exemple, recorrent des de l’inici, i fer
+el mateix que</p>
+<p><code class="docutils literal notranslate"><span class="pre">LinkedList</span></code> ocupa més espai per cada element que <cite>ArrayList`</cite>, doncs
+per cada element, a banda de la referència a l’eement li cal disposar de
+dues referències a node pel node anterior i el node següent. A més, per
+accedir a un element concret, li caldrà recórrer la llista per cercar-lo.
+Per exemple, <code class="docutils literal notranslate"><span class="pre">get(i)</span></code> requereix recórrer els elements de la llista des
+de l’inici o des del final (el que estigui més a prop de <code class="docutils literal notranslate"><span class="pre">i</span></code>) un per un,
+comptant nodes fins arribar al cercat.</p>
+<p>Si només has de fer recorreguts seqüencials, no és problema, però. A més,
+si has de fer moltes insercions o eliminacions a l’inici de la llista i
+aquesta és llarga, o fins i tot en qualsevol part de la llista si les
+insercions i eliminacions són massives, probablement sigui una bona
+decisió usar <code class="docutils literal notranslate"><span class="pre">LinkedList</span></code> en comptes d”<code class="docutils literal notranslate"><span class="pre">ArrayList</span></code>, doncs no li caldrà
+redimensionar arrays ni desplaçar elements per fer lloc o eliminar forats.</p>
+<p>A banda, aquestes classes presenten mètodes específics, a banda dels de
+<code class="docutils literal notranslate"><span class="pre">List</span></code>.  Fes una ullada a la documentació oficial si tens interès.</p>
+<p>La decisió, per tant, dependrà de l’ús que pretenguis fer. Quan tinguis
+dubtes, potser et serà necessari fer proves d’ús per acabar-te de decidir.</p>
+</div>
+<div class="section" id="comparacio-de-velocitat">
+<h2>Comparació de velocitat<a class="headerlink" href="#comparacio-de-velocitat" title="Link permanent a aquest títol">¶</a></h2>
+<p>Et proposo la següent comparació de velocitat que, si bé no està tenint en
+comptes molts factors (com ara optimitzacions o càrrega del sistema), sí
+ens ofereix una primera idea de proporcions:</p>
+<div class="highlight-java notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.util.List</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.ArrayList</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">java.util.LinkedList</span><span class="p">;</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ComparaAdd</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="kt">int</span> <span class="n">LONGITUD</span> <span class="o">=</span> <span class="mi">100000</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">long</span> <span class="nf">testAdd0</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">llista</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">long</span> <span class="n">tempsInicial</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">LONGITUD</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">llista</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">()</span> <span class="o">-</span> <span class="n">tempsInicial</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">long</span> <span class="nf">testAdd</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">llista</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">long</span> <span class="n">tempsInicial</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">LONGITUD</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">llista</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">()</span> <span class="o">-</span> <span class="n">tempsInicial</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">long</span> <span class="nf">testAddMig</span><span class="p">(</span><span class="n">List</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">llista</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">long</span> <span class="n">tempsInicial</span> <span class="o">=</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">();</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">LONGITUD</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">int</span> <span class="n">mig</span> <span class="o">=</span> <span class="n">llista</span><span class="p">.</span><span class="na">size</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span>
+            <span class="n">llista</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">mig</span><span class="p">,</span> <span class="n">i</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">System</span><span class="p">.</span><span class="na">nanoTime</span><span class="p">()</span> <span class="o">-</span> <span class="n">tempsInicial</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Comparant l&#39;eficiència de les llistes&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Comparació quan inserim sempre a l&#39;inici&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;test add(0, i) LinkedList:   %10d%n&quot;</span><span class="p">,</span> <span class="n">testAdd0</span><span class="p">(</span><span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">()));</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;test add(0, i) ArrayList:    %10d%n&quot;</span><span class="p">,</span> <span class="n">testAdd0</span><span class="p">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">()));</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Comparació quan inserim sempre al final&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;test add(i) LinkedList:      %10d%n&quot;</span><span class="p">,</span> <span class="n">testAdd</span><span class="p">(</span><span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">()));</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;test add(i) ArrayList:       %10d%n&quot;</span><span class="p">,</span> <span class="n">testAdd</span><span class="p">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">()));</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Comparació quan inserim sempre al mig&quot;</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;test add(mig, i) LinkedList: %10d%n&quot;</span><span class="p">,</span> <span class="n">testAddMig</span><span class="p">(</span><span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">()));</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">printf</span><span class="p">(</span><span class="s">&quot;test add(mig, i) ArrayList:  %10d%n&quot;</span><span class="p">,</span> <span class="n">testAddMig</span><span class="p">(</span><span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="p">()));</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</td></tr></table></div>
+<p>La seva execució a la màquina on estic redactant aquests continguts és:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java ComparaAdd
+<span class="hll"><span class="go">Comparant l&#39;eficiència de les llistes</span>
+</span><span class="hll">
+</span><span class="hll"><span class="go">Comparació quan inserim sempre a l&#39;inici</span>
+</span><span class="hll"><span class="go">test add(0, i) LinkedList:      9659321</span>
+</span><span class="hll"><span class="go">test add(0, i) ArrayList:    1113460283</span>
+</span><span class="hll">
+</span><span class="hll"><span class="go">Comparació quan inserim sempre al final</span>
+</span><span class="hll"><span class="go">test add(i) LinkedList:         6486274</span>
+</span><span class="hll"><span class="go">test add(i) ArrayList:       1100352378</span>
+</span><span class="hll">
+</span><span class="hll"><span class="go">Comparació quan inserim sempre al mig</span>
+</span><span class="hll"><span class="go">test add(mig, i) LinkedList: 6642878096</span>
+</span><span class="hll"><span class="go">test add(mig, i) ArrayList:   510959275</span>
+</span><span class="hll">
+</span><span class="gp">$</span> java ComparaAdd
+<span class="hll"><span class="go">Comparant l&#39;eficiència de les llistes</span>
+</span><span class="hll">
+</span><span class="hll"><span class="go">Comparació quan inserim sempre a l&#39;inici</span>
+</span><span class="hll"><span class="go">test add(0, i) LinkedList:     10845883</span>
+</span><span class="hll"><span class="go">test add(0, i) ArrayList:    1133710134</span>
+</span><span class="hll">
+</span><span class="hll"><span class="go">Comparació quan inserim sempre al final</span>
+</span><span class="hll"><span class="go">test add(i) LinkedList:         6366567</span>
+</span><span class="hll"><span class="go">test add(i) ArrayList:       1126549169</span>
+</span><span class="hll">
+</span><span class="hll"><span class="go">Comparació quan inserim sempre al mig</span>
+</span><span class="hll"><span class="go">test add(mig, i) LinkedList: 6412141972</span>
+</span><span class="hll"><span class="go">test add(mig, i) ArrayList:   518203184</span>
+</span><span class="hll">
+</span><span class="gp">$</span> java ComparaAdd
+<span class="hll"><span class="go">Comparant l&#39;eficiència de les llistes</span>
+</span><span class="hll">
+</span><span class="hll"><span class="go">Comparació quan inserim sempre a l&#39;inici</span>
+</span><span class="hll"><span class="go">test add(0, i) LinkedList:      7404651</span>
+</span><span class="hll"><span class="go">test add(0, i) ArrayList:    1108997309</span>
+</span><span class="hll">
+</span><span class="hll"><span class="go">Comparació quan inserim sempre al final</span>
+</span><span class="hll"><span class="go">test add(i) LinkedList:         6211758</span>
+</span><span class="hll"><span class="go">test add(i) ArrayList:       1066951055</span>
+</span><span class="hll">
+</span><span class="hll"><span class="go">Comparació quan inserim sempre al mig</span>
+</span><span class="hll"><span class="go">test add(mig, i) LinkedList: 6100036698</span>
+</span><span class="hll"><span class="go">test add(mig, i) ArrayList:   516655896</span>
+</span></pre></div>
+</div>
+<p>En les tres execucions que he realitzat, calculant valors mitjos en les
+tres execucions, trobem què:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 18%" />
+<col style="width: 18%" />
+<col style="width: 55%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>prova</strong></p></td>
+<td><p><strong>linkedList</strong></p></td>
+<td><p><strong>ArrayList</strong></p></td>
+<td><p><strong>resultat</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>inici</p></td>
+<td><p>9303285</p></td>
+<td><p>1118722575</p></td>
+<td><p>LinkedList resulta 120 vegades més ràpid que ArrayList</p></td>
+</tr>
+<tr class="row-odd"><td><p>final</p></td>
+<td><p>6354866</p></td>
+<td><p>1097950867</p></td>
+<td><p>LinkedList resulta 173 vegades més ràpid que ArrayList</p></td>
+</tr>
+<tr class="row-even"><td><p>mig</p></td>
+<td><p>6385018922</p></td>
+<td><p>515272785</p></td>
+<td><p>ArrayList resulta 12 vegades més ràpid que LinkedList</p></td>
+</tr>
+</tbody>
+</table>
+<p>En quant a insercions, tant a l’inici com al final, sembla que guanya sempre
+<code class="docutils literal notranslate"><span class="pre">LinkedList</span></code> amb molta comoditat. En canvi, per inserir al mig la cosa canvia
+i <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> resulta 12 vegades més ràpid.</p>
+<p><img alt="exerciseicon___" src="_images/exerciseicon___.png" /> <a class="reference internal" href="exercici_05_11_remove.html"><span class="doc"> Exercici 05_11. Comparació de remove()</span></a></p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="biblioteques_exercicis.html" class="btn btn-neutral float-right" title="Exercicis" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="excepcions.html" class="btn btn-neutral float-left" title="Excepcions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2021 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

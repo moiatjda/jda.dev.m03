@@ -1,0 +1,90 @@
+#######################################################
+|exerciseicon__T| Exercici 05_10. La classe ``UsaList``
+#######################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``05_10_list/``
+
+* Continguts relacionats: :doc:`llistes`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+En aquest exercici practicaràs l'ús d'una ``List``.
+
+Completa el següent ``main()`` de ``UsaList`` de manera que, en
+executar-ho, generi la sortida que apareix més avall.
+
+.. code-block:: java
+    :linenos:
+
+    import java.util.List;
+    import java.util.LinkedList;
+
+    public class UsaList {
+        public static void main(String[] args) {
+            List<String> llista;
+
+            // TODO: inicialitza la llista amb una instància de  ArrayList
+            //       un LinkedList. Com et vingui de gust
+
+
+            System.out.println("Obtenim les entrades");
+            System.out.println("====================");
+            String valor;
+
+            valor = Entrada.readLine();
+
+            // TODO: afegeix valor a la llista
+
+
+            valor = Entrada.readLine();
+
+            // TODO: afegeix el valor a l'inici de la llista
+
+
+            valor = Entrada.readLine();
+
+            // TODO: afegeix el valor al mig de la llista
+
+
+
+            System.out.println("Cerquem elements de la llista");
+            System.out.println("=============================");
+            String text = Entrada.readLine();
+
+            boolean esTroba;
+            // TODO: inicialitza esTroba a true si text està a la llista
+
+            System.out.printf("El text %s és troba a la llista: %s%n", text, esTroba);
+
+            int indexPrimerOcurrència;
+            // TODO: inicialitza indexPrimerOcurrència a l'índex on es troba text
+
+            System.out.printf("Posició de %s a la llista: %s%n", text, indexPrimerOcurrència);
+
+
+            System.out.println("Mostrem les entrades introduïdes");
+            System.out.println("================================");
+            boolean llistaBuida;
+            // TODO inicialitza llistaBuida de manera que valgui cert si
+            // la llista està buida.
+
+            while (! llistaBuida) {
+                String entrada;
+                // TODO: inicialitza entrada de manera que contingui el
+                // primer element de la llista
+
+                System.out.println(entrada);
+                // TODO: elimina el primer element de la llista
+
+                // TODO: actualitza el valor de llistaBuida
+
+            }
+        }
+    }
+
