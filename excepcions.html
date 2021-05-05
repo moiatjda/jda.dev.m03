@@ -274,7 +274,7 @@ construeixi o retorni <code class="docutils literal notranslate"><span class="pr
     <span class="p">}</span>
 
     <span class="kd">public</span> <span class="kd">static</span> <span class="n">Hora</span> <span class="nf">construeixHora</span><span class="p">(</span><span class="kt">int</span> <span class="n">hores</span><span class="p">,</span> <span class="kt">int</span> <span class="n">minuts</span><span class="p">,</span> <span class="kt">int</span> <span class="n">segons</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="n">sonValorsValidsPerHora</span><span class="p">(</span><span class="n">hotes</span><span class="p">,</span> <span class="n">minuts</span><span class="p">,</span> <span class="n">segons</span><span class="p">))</span> <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="n">sonValorsValidsPerHora</span><span class="p">(</span><span class="n">hores</span><span class="p">,</span> <span class="n">minuts</span><span class="p">,</span> <span class="n">segons</span><span class="p">))</span> <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
         <span class="k">return</span> <span class="k">new</span> <span class="n">Hora</span><span class="p">(</span><span class="n">hores</span><span class="p">,</span> <span class="n">minuts</span><span class="p">,</span> <span class="n">segons</span><span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
@@ -606,8 +606,8 @@ següent versió:</p>
 <p>Una execució incorrecta ens generaria un resultat conegut:</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$</span> java UsaHora
 <span class="hll"><span class="go">Valor a introduir?</span>
-</span><span class="hll"><span class="go">224</span>
-</span><span class="hll"><span class="go">S&#39;ha produït l&#39;excepció java.lang.Exception: Hora.setHores(224) valor fora de rang</span>
+</span><span class="go">224</span>
+<span class="hll"><span class="go">S&#39;ha produït l&#39;excepció java.lang.Exception: Hora.setHores(224) valor fora de rang</span>
 </span><span class="hll"><span class="go">Aquest codi es mostrarà passi el que passi</span>
 </span><span class="hll"><span class="go">Exception in thread &quot;main&quot; java.lang.Exception: Hora.setHores(224) valor fora de rang</span>
 </span><span class="hll"><span class="go">    at Hora.setHores(Hora.java:12)</span>

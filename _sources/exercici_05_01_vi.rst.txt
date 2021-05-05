@@ -79,14 +79,18 @@ Sra. Estrella una primera versió en funcionament.
 
   Es codifica amb un enter, de manera que 12,5€ es guardaran com ``1250``.  El preu mai no pot ser negatiu.
 
-  El valor inicial pot ser modificat amb el mètode ``setPreu()``.
+  El valor inicial pot ser modificat amb el mètode ``setPreu()``. En cas
+  que se li indiqui un valor negatiu, ``setPreu()`` mantindrà el preu
+  anterior.
 
   Tota instància de ``Vi`` ha de tenir un preu i, per tant, ha d'aparèixer
   especificat als constructor.
 
 * estoc: indica el nombre d'ampolles que es tenen d'aquest vi a la botiga.
+
   El nombre d'ampolles no pot ser mai negatiu. Si s'intenta afegir un
-  valor no vàlid, quedarà com a zero.
+  valor no vàlid, quedarà amb el valor anterior, o zero si no se n'havia
+  especificat mai cap.
 
   En crear-se un ``Vi``, l'estoc serà 0 a menys que s'especifiqui al
   constructor específic corresponent.

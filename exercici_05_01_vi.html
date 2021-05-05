@@ -219,13 +219,16 @@ especificat als constructor.</p>
 </li>
 <li><p>preu: l’import a la venda (en cèntims d’euro i sense iva)</p>
 <p>Es codifica amb un enter, de manera que 12,5€ es guardaran com <code class="docutils literal notranslate"><span class="pre">1250</span></code>.  El preu mai no pot ser negatiu.</p>
-<p>El valor inicial pot ser modificat amb el mètode <code class="docutils literal notranslate"><span class="pre">setPreu()</span></code>.</p>
+<p>El valor inicial pot ser modificat amb el mètode <code class="docutils literal notranslate"><span class="pre">setPreu()</span></code>. En cas
+que se li indiqui un valor negatiu, <code class="docutils literal notranslate"><span class="pre">setPreu()</span></code> mantindrà el preu
+anterior.</p>
 <p>Tota instància de <code class="docutils literal notranslate"><span class="pre">Vi</span></code> ha de tenir un preu i, per tant, ha d’aparèixer
 especificat als constructor.</p>
 </li>
-<li><p>estoc: indica el nombre d’ampolles que es tenen d’aquest vi a la botiga.
-El nombre d’ampolles no pot ser mai negatiu. Si s’intenta afegir un
-valor no vàlid, quedarà com a zero.</p>
+<li><p>estoc: indica el nombre d’ampolles que es tenen d’aquest vi a la botiga.</p>
+<p>El nombre d’ampolles no pot ser mai negatiu. Si s’intenta afegir un
+valor no vàlid, quedarà amb el valor anterior, o zero si no se n’havia
+especificat mai cap.</p>
 <p>En crear-se un <code class="docutils literal notranslate"><span class="pre">Vi</span></code>, l’estoc serà 0 a menys que s’especifiqui al
 constructor específic corresponent.</p>
 </li>

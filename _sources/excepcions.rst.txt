@@ -94,7 +94,7 @@ construeixi o retorni ``null`` si els valors no són vàlids.
         }
 
         public static Hora construeixHora(int hores, int minuts, int segons) {
-            if (! sonValorsValidsPerHora(hotes, minuts, segons)) return null;
+            if (! sonValorsValidsPerHora(hores, minuts, segons)) return null;
             return new Hora(hores, minuts, segons);
         }
     }
@@ -418,7 +418,7 @@ Ara el valor a assignar podria ser correcte o no.
 Una execució incorrecta ens generaria un resultat conegut:
 
 .. code-block:: console
-    :emphasize-lines: 2-
+    :emphasize-lines: 2, 4-
 
     $ java UsaHora 
     Valor a introduir?
