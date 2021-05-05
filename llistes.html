@@ -668,46 +668,46 @@ ens ofereix una primera idea de proporcions:</p>
 <span class="hll"><span class="go">Comparant l&#39;eficiència de les llistes</span>
 </span><span class="hll">
 </span><span class="hll"><span class="go">Comparació quan inserim sempre a l&#39;inici</span>
-</span><span class="hll"><span class="go">test add(0, i) LinkedList:      9659321</span>
-</span><span class="hll"><span class="go">test add(0, i) ArrayList:    1113460283</span>
+</span><span class="hll"><span class="go">test add(0, i) LinkedList:     13787730</span>
+</span><span class="hll"><span class="go">test add(0, i) ArrayList:     575171895</span>
 </span><span class="hll">
 </span><span class="hll"><span class="go">Comparació quan inserim sempre al final</span>
-</span><span class="hll"><span class="go">test add(i) LinkedList:         6486274</span>
-</span><span class="hll"><span class="go">test add(i) ArrayList:       1100352378</span>
+</span><span class="hll"><span class="go">test add(i) LinkedList:         6149262</span>
+</span><span class="hll"><span class="go">test add(i) ArrayList:         14374784</span>
 </span><span class="hll">
 </span><span class="hll"><span class="go">Comparació quan inserim sempre al mig</span>
-</span><span class="hll"><span class="go">test add(mig, i) LinkedList: 6642878096</span>
-</span><span class="hll"><span class="go">test add(mig, i) ArrayList:   510959275</span>
+</span><span class="hll"><span class="go">test add(mig, i) LinkedList: 10185226608</span>
+</span><span class="hll"><span class="go">test add(mig, i) ArrayList:   256946667</span>
 </span><span class="hll">
 </span><span class="gp">$</span> java ComparaAdd
 <span class="hll"><span class="go">Comparant l&#39;eficiència de les llistes</span>
 </span><span class="hll">
 </span><span class="hll"><span class="go">Comparació quan inserim sempre a l&#39;inici</span>
-</span><span class="hll"><span class="go">test add(0, i) LinkedList:     10845883</span>
-</span><span class="hll"><span class="go">test add(0, i) ArrayList:    1133710134</span>
+</span><span class="hll"><span class="go">test add(0, i) LinkedList:      9245855</span>
+</span><span class="hll"><span class="go">test add(0, i) ArrayList:     561496059</span>
 </span><span class="hll">
 </span><span class="hll"><span class="go">Comparació quan inserim sempre al final</span>
-</span><span class="hll"><span class="go">test add(i) LinkedList:         6366567</span>
-</span><span class="hll"><span class="go">test add(i) ArrayList:       1126549169</span>
+</span><span class="hll"><span class="go">test add(i) LinkedList:         5520538</span>
+</span><span class="hll"><span class="go">test add(i) ArrayList:         12146401</span>
 </span><span class="hll">
 </span><span class="hll"><span class="go">Comparació quan inserim sempre al mig</span>
-</span><span class="hll"><span class="go">test add(mig, i) LinkedList: 6412141972</span>
-</span><span class="hll"><span class="go">test add(mig, i) ArrayList:   518203184</span>
+</span><span class="hll"><span class="go">test add(mig, i) LinkedList: 10103318980</span>
+</span><span class="hll"><span class="go">test add(mig, i) ArrayList:   265456359</span>
 </span><span class="hll">
 </span><span class="gp">$</span> java ComparaAdd
 <span class="hll"><span class="go">Comparant l&#39;eficiència de les llistes</span>
 </span><span class="hll">
 </span><span class="hll"><span class="go">Comparació quan inserim sempre a l&#39;inici</span>
-</span><span class="hll"><span class="go">test add(0, i) LinkedList:      7404651</span>
-</span><span class="hll"><span class="go">test add(0, i) ArrayList:    1108997309</span>
+</span><span class="hll"><span class="go">test add(0, i) LinkedList:      9047567</span>
+</span><span class="hll"><span class="go">test add(0, i) ArrayList:     572422474</span>
 </span><span class="hll">
 </span><span class="hll"><span class="go">Comparació quan inserim sempre al final</span>
-</span><span class="hll"><span class="go">test add(i) LinkedList:         6211758</span>
-</span><span class="hll"><span class="go">test add(i) ArrayList:       1066951055</span>
+</span><span class="hll"><span class="go">test add(i) LinkedList:         8610114</span>
+</span><span class="hll"><span class="go">test add(i) ArrayList:         14369260</span>
 </span><span class="hll">
 </span><span class="hll"><span class="go">Comparació quan inserim sempre al mig</span>
-</span><span class="hll"><span class="go">test add(mig, i) LinkedList: 6100036698</span>
-</span><span class="hll"><span class="go">test add(mig, i) ArrayList:   516655896</span>
+</span><span class="hll"><span class="go">test add(mig, i) LinkedList: 10258402701</span>
+</span><span class="hll"><span class="go">test add(mig, i) ArrayList:   251853613</span>
 </span></pre></div>
 </div>
 <p>En les tres execucions que he realitzat, calculant valors mitjos en les
@@ -717,7 +717,7 @@ tres execucions, trobem què:</p>
 <col style="width: 10%" />
 <col style="width: 18%" />
 <col style="width: 18%" />
-<col style="width: 55%" />
+<col style="width: 54%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><strong>prova</strong></p></td>
@@ -726,19 +726,19 @@ tres execucions, trobem què:</p>
 <td><p><strong>resultat</strong></p></td>
 </tr>
 <tr class="row-even"><td><p>inici</p></td>
-<td><p>9303285</p></td>
-<td><p>1118722575</p></td>
-<td><p>LinkedList resulta 120 vegades més ràpid que ArrayList</p></td>
+<td><p>10693717</p></td>
+<td><p>569696809</p></td>
+<td><p>LinkedList resulta 53 vegades més ràpid que ArrayList</p></td>
 </tr>
 <tr class="row-odd"><td><p>final</p></td>
-<td><p>6354866</p></td>
-<td><p>1097950867</p></td>
-<td><p>LinkedList resulta 173 vegades més ràpid que ArrayList</p></td>
+<td><p>6759971</p></td>
+<td><p>13630148</p></td>
+<td><p>LinkedList resulta 2 vegades més ràpid que ArrayList</p></td>
 </tr>
 <tr class="row-even"><td><p>mig</p></td>
-<td><p>6385018922</p></td>
-<td><p>515272785</p></td>
-<td><p>ArrayList resulta 12 vegades més ràpid que LinkedList</p></td>
+<td><p>10182316096</p></td>
+<td><p>258085546</p></td>
+<td><p>ArrayList resulta 39 vegades més ràpid que LinkedList</p></td>
 </tr>
 </tbody>
 </table>

@@ -501,57 +501,58 @@ La seva execució a la màquina on estic redactant aquests continguts és:
     Comparant l'eficiència de les llistes
 
     Comparació quan inserim sempre a l'inici
-    test add(0, i) LinkedList:      9659321
-    test add(0, i) ArrayList:    1113460283
+    test add(0, i) LinkedList:     13787730
+    test add(0, i) ArrayList:     575171895
 
     Comparació quan inserim sempre al final
-    test add(i) LinkedList:         6486274
-    test add(i) ArrayList:       1100352378
+    test add(i) LinkedList:         6149262
+    test add(i) ArrayList:         14374784
 
     Comparació quan inserim sempre al mig
-    test add(mig, i) LinkedList: 6642878096
-    test add(mig, i) ArrayList:   510959275
+    test add(mig, i) LinkedList: 10185226608
+    test add(mig, i) ArrayList:   256946667
 
     $ java ComparaAdd 
     Comparant l'eficiència de les llistes
 
     Comparació quan inserim sempre a l'inici
-    test add(0, i) LinkedList:     10845883
-    test add(0, i) ArrayList:    1133710134
+    test add(0, i) LinkedList:      9245855
+    test add(0, i) ArrayList:     561496059
 
     Comparació quan inserim sempre al final
-    test add(i) LinkedList:         6366567
-    test add(i) ArrayList:       1126549169
+    test add(i) LinkedList:         5520538
+    test add(i) ArrayList:         12146401
 
     Comparació quan inserim sempre al mig
-    test add(mig, i) LinkedList: 6412141972
-    test add(mig, i) ArrayList:   518203184
+    test add(mig, i) LinkedList: 10103318980
+    test add(mig, i) ArrayList:   265456359
 
     $ java ComparaAdd 
     Comparant l'eficiència de les llistes
 
     Comparació quan inserim sempre a l'inici
-    test add(0, i) LinkedList:      7404651
-    test add(0, i) ArrayList:    1108997309
+    test add(0, i) LinkedList:      9047567
+    test add(0, i) ArrayList:     572422474
 
     Comparació quan inserim sempre al final
-    test add(i) LinkedList:         6211758
-    test add(i) ArrayList:       1066951055
+    test add(i) LinkedList:         8610114
+    test add(i) ArrayList:         14369260
 
     Comparació quan inserim sempre al mig
-    test add(mig, i) LinkedList: 6100036698
-    test add(mig, i) ArrayList:   516655896
+    test add(mig, i) LinkedList: 10258402701
+    test add(mig, i) ArrayList:   251853613
 
 En les tres execucions que he realitzat, calculant valors mitjos en les
 tres execucions, trobem què:
 
 ========== ================== ================== ======================================================
-**prova**  **linkedList**      **ArrayList**      **resultat**
+**prova**   **linkedList**      **ArrayList**      **resultat**
 ---------- ------------------ ------------------ ------------------------------------------------------
-inici          9303285          1118722575         LinkedList resulta 120 vegades més ràpid que ArrayList
-final          6354866          1097950867         LinkedList resulta 173 vegades més ràpid que ArrayList
-mig         6385018922           515272785         ArrayList resulta 12 vegades més ràpid que LinkedList
+inici       10693717           569696809          LinkedList resulta 53 vegades més ràpid que ArrayList
+final       6759971            13630148           LinkedList resulta 2 vegades més ràpid que ArrayList
+mig         10182316096        258085546          ArrayList resulta 39 vegades més ràpid que LinkedList
 ========== ================== ================== ======================================================
+
 
 En quant a insercions, tant a l'inici com al final, sembla que guanya sempre
 ``LinkedList`` amb molta comoditat. En canvi, per inserir al mig la cosa canvia
