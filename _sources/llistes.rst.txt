@@ -371,7 +371,9 @@ Gràficament ho podem veure com:
     :align: center
 
 Fixa't com el node amb el valor ``'a'`` té com a següent node el que conté
-``'i'`` però, donat que és el primer, el seu anterior és ``null``.  De manera molt similar, el darrer node que conté ``'u'`` té com a anterior ``'o'`` i com a següent ``null``.
+``'i'`` però, donat que és el primer, el seu anterior és ``null``.  De
+manera molt similar, el darrer node que conté ``'u'`` té com a anterior
+``'o'`` i com a següent ``null``.
 
 La classe ``LinkedList`` disposa també d'una referència al primer element
 i una altra al darrer, de manera que per recórrer tots els elements de la
@@ -413,8 +415,8 @@ hagués calgut inserir-lo en una altra posició, simplement hauríem de
 trobar la posició anterior, per exemple, recorrent des de l'inici, i fer
 el mateix que 
 
-``LinkedList`` ocupa més espai per cada element que `ArrayList``, doncs
-per cada element, a banda de la referència a l'eement li cal disposar de
+``LinkedList`` ocupa més espai per cada element que ``ArrayList``, doncs
+per cada element, a banda de la referència a l'element li cal disposar de
 dues referències a node pel node anterior i el node següent. A més, per
 accedir a un element concret, li caldrà recórrer la llista per cercar-lo.
 Per exemple, ``get(i)`` requereix recórrer els elements de la llista des
@@ -459,7 +461,7 @@ ens ofereix una primera idea de proporcions:
         private static long testAdd(List<Integer> llista) {
             long tempsInicial = System.nanoTime();
             for (int i=0; i < LONGITUD; i++) {
-                llista.add(0, i);
+                llista.add(i);
             }
             return System.nanoTime() - tempsInicial;
         }
@@ -554,10 +556,14 @@ mig         10182316096        258085546          ArrayList resulta 39 vegades m
 ========== ================== ================== ======================================================
 
 
-En quant a insercions, tant a l'inici com al final, sembla que guanya sempre
-``LinkedList`` amb molta comoditat. En canvi, per inserir al mig la cosa canvia
-i ``ArrayList`` resulta 12 vegades més ràpid.
+Molt probablement, si l'executes tu a la teva màquina, els
+resultats seran diferents doncs depenen del processador i la càrrega
+d'aquest, la quantitat de memòria que tinguis disponible, la versió
+concreta de java… En tot cas, molt probablement trobaràs que
+``LinkedList`` guanya tranquil·lament en insercions a l'inici, que amb les
+insercions al final la cosa està més disputada, i que ``ArrayList`` guanya
+en les insercions al mig. Tot plegat és coherent amb la idea que tenim de
+la implementació de cadascuna d'aquestes dues classes.
 
 |exerciseicon___| :doc:`exercici_05_11_remove`
 
-.. :doc:`exercici_05_12_botigalist``
