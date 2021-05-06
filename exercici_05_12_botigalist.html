@@ -209,13 +209,15 @@ resultats.</p>
 <img src="_images/plantuml-9a7c2be8c3696caf512d097f044f3a30431dc146.png" alt="Diagrama de l'aplicació"/>
 </p>
 </div>
-<p>Quan cerquem un vi a partir d’una plantilla, a partir d’ara <code class="docutils literal notranslate"><span class="pre">cerca()</span></code>
-ens <code class="docutils literal notranslate"><span class="pre">null</span></code> encara que no es trobi cap vi.  retornarà una <code class="docutils literal notranslate"><span class="pre">List&lt;Vi&gt;</span></code>
-amb zero o més vins. Ja no ens retornarà mai</p>
+<p>Quan cerquem un vi a partir d’una plantilla, a partir d’ara <code class="docutils literal notranslate"><span class="pre">cerca()</span></code> ja
+no ens tornarà mai <code class="docutils literal notranslate"><span class="pre">null</span></code> encara que no es trobi cap vi.  retornarà una
+<code class="docutils literal notranslate"><span class="pre">List&lt;Vi&gt;</span></code> amb zero o més vins.</p>
 <p>Tot i que podríem escollir <code class="docutils literal notranslate"><span class="pre">ArrayList</span></code> o <code class="docutils literal notranslate"><span class="pre">LinkedList</span></code>, tenint en
 comptes que <code class="docutils literal notranslate"><span class="pre">cerca()</span></code> haurà d’anar afegint vins al final de la llista i
 que aquesta serà usada per un recorregut seqüencial, potser la
 implementació més adequada seria amb <code class="docutils literal notranslate"><span class="pre">LinkedList</span></code>.</p>
+<p>L’entorn mostrarà tots els vins trobats, un seguit de l’altre, en l’ordre
+en que li ofereixi el mètode <code class="docutils literal notranslate"><span class="pre">cerca()</span></code>.</p>
 </div>
 
 
