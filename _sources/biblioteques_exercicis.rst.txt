@@ -18,3 +18,4 @@ Els exercicis de la secció :doc:`biblioteques` són:
     exercici_05_09_botiga_excepcional.rst
     exercici_05_10_list.rst
     exercici_05_11_remove.rst
+    exercici_05_12_botigalist.rst

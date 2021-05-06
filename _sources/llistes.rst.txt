@@ -567,3 +567,4 @@ la implementació de cadascuna d'aquestes dues classes.
 
 |exerciseicon___| :doc:`exercici_05_11_remove`
 
+|exerciseicon__T| :doc:`exercici_05_12_botigalist`

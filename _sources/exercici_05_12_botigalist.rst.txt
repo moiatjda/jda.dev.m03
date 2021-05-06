@@ -1,0 +1,62 @@
+#####################################################
+|exerciseicon__T| Exercici 05_12. Múltiples resultats
+#####################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``05_12_botigalist/``
+
+* Continguts relacionats: :doc:`llistes`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+A Ca l'Estrella els està anant molt bé la nostra aplicació, doncs ara s'ha
+reduït força el problema de trobar el vi. Com tot, però, sempre hi ha maneres
+de millorar-ho i, en aquest cas, la nostra aplicació presenta una limitació
+molt trista: només permet obtenir un vi per cada cerca, malgrat que, de vegades
+hi poden haver més d'un vi que compleixi els requeriments dels clients de la
+Sra. Estrella.
+
+Aquest serà el nostre nou objectiu: afegir cerques amb múltiples
+resultats.
+
+.. uml::
+    :align: center
+    :alt: Diagrama de l'aplicació
+
+    class Entorn
+    class Botiga {
+        + cerca(plantilla: Vi): List<Vi>
+    }
+    class Vi
+    class BotigaPlenaException
+    Botiga --> BotigaPlenaException
+    Entorn --> BotigaPlenaException
+
+    Botiga o-- Vi
+    Entorn *-- Botiga
+    Entorn --> Vi
+
+    hide class circle
+    skinparam classAttributeIconSize 0
+    skinparam class {
+        BackgroundColor White
+        BorderColor Black
+        ArrowColor Black
+    }
+
+.. -*  for vim highligting issues
+
+
+Quan cerquem un vi a partir d'una plantilla, a partir d'ara ``cerca()``
+ens ``null`` encara que no es trobi cap vi.  retornarà una ``List<Vi>``
+amb zero o més vins. Ja no ens retornarà mai
+
+Tot i que podríem escollir ``ArrayList`` o ``LinkedList``, tenint en
+comptes que ``cerca()`` haurà d'anar afegint vins al final de la llista i
+que aquesta serà usada per un recorregut seqüencial, potser la
+implementació més adequada seria amb ``LinkedList``.

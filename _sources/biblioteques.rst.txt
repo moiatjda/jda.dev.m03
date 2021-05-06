@@ -80,5 +80,4 @@ Trobaràs els continguts d'aquesta secció en els següents documents:
     botigavins_vi.rst
     excepcions.rst
     llistes.rst
-
     biblioteques_exercicis.rst
