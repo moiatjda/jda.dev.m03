@@ -22,6 +22,14 @@ fet el més genèric: ``Exception``!
 En aquest exercici faràs servir una excepció més concreta:
 ``IllegalArgumentException``.
 
+Els missatges seran els mateixos que els corresponents a l'exercici
+:doc:`anterior <exercici_05_07_hores_excepcionals>`:
+
+* "Hora(«hores», «minuts», «segons») fora de rang"
+* "Hora.setHores(«hores») fora de rang"
+* "Hora.setMinuts(«minuts») fora de rang"
+* "Hora.setSegons(«segons») fora de rang"
+
 El següent codi ha de poder funcionar:
 
 .. code-block:: java

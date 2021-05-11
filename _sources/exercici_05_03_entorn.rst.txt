@@ -156,7 +156,7 @@ El *prompt* serà ``botiga>`` i les comandes que acceptarà són:
   fer cap modificació.
 
 
-* ``"elimina:``: permet eliminar un vi de la botiga. Funciona molt similar
+* ``"elimina"``: permet eliminar un vi de la botiga. Funciona molt similar
   a ``"modifica"``. En aquest cas, però, mostrarà els atributs del vi a
   eliminar i demanarà confirmació:
 
