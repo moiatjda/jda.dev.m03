@@ -16,8 +16,8 @@
 
 En aquest exercici practicaràs l'ús d'una ``List``.
 
-Completa el següent ``main()`` de ``UsaList`` de manera que, en
-executar-ho, generi la sortida que apareix més avall.
+Completa el següent ``main()`` de ``UsaList`` seguint les instruccions
+dels comentaris.
 
 .. code-block:: java
     :linenos:
@@ -88,3 +88,26 @@ executar-ho, generi la sortida que apareix més avall.
         }
     }
 
+
+Una possible execució seria:
+
+.. code-block:: console
+    :emphasize-lines: 2,3, 7,8,10-
+
+    $ java UsaList 
+    Obtenim les entrades
+    ====================
+    primer
+    segon
+    tercer
+    Cerquem elements de la llista
+    =============================
+    segon
+    El text segon és troba a la llista: true
+    Posició de segon a la llista: 0
+    Mostrem les entrades introduïdes
+    ================================
+    segon
+    tercer
+    primer
+        
