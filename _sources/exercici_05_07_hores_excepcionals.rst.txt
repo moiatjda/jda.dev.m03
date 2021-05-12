@@ -91,13 +91,14 @@ El resultat d'executar el programa anterior serà:
     $ java UsaHora 
     Inicialment 0:00:00
     Si intentem assignar a hores un -1
-    java.lang.Exception: Hora.setHora(-1) valor fora de rang
+    java.lang.Exception: hores fora de rang: -1
     El valor resultant és 0:00:00
 
     Si intentem assignar a minuts un -1
-    java.lang.Exception: Hora.setMinuts(-1) valor fora de rang
+    java.lang.Exception: minuts fora de rang: -1
     El valor resultant és 0:00:00
 
     Si intentem assignar a segons un -1
-    java.lang.Exception: Hora.setSegons(-1) valor fora de rang
+    java.lang.Exception: segons fora de rang: -1
     El valor resultant és 0:00:00
+
