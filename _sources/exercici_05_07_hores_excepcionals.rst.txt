@@ -47,10 +47,9 @@ classe puguin passar-li valors no vàlids. Els *setters* retornaran ``void``.
 
 En cas d'error, els mètodes retornaran excepcions amb els missatges:
 
-* "Hora(«hores», «minuts», «segons») fora de rang"
-* "Hora.setHores(«hores») fora de rang"
-* "Hora.setMinuts(«minuts») fora de rang"
-* "Hora.setSegons(«segons») fora de rang"
+* ``"hores fora de rang: «hores»"``
+* ``"minuts fora de rang: «minuts»"``
+* ``"segons fora de rang: «segons»"``
 
 El següént programa haurà de funcionar. Et caldrà implementar el mètode
 ``canviaHora()`` que bàsicament intentarà assignar les hores, minuts i

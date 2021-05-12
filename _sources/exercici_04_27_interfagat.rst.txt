@@ -52,6 +52,7 @@ Considera aquesta nova jerarquia de classes:
      }
      class GatRenat {
         - posicio: String = "estirat"
+        + GatRenat()
         + GatRenat(posicio: String)
         + getPosicio()
      }
