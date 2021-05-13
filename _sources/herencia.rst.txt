@@ -399,7 +399,8 @@ classe ``Gat``.
 
 El Renat miola de manera diferent a un gat *general*. Per aquesta raó,
 ``GatRenat`` *torna a definir* el mètode ``miola()``. Aquesta redefinició
-es coneix també com *overriding*.
+es coneix també com *overriding* i es sol precedir de ``@Override`` per
+indicar-li-ho a Java.
 
 Si es realitza la crida al mètode ``miola()`` des d'una instància de
 ``GatRenat``, s'executarà el mètode d'aquesta classe i no de la seva
