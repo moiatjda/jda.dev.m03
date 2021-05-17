@@ -1,0 +1,355 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ca" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Exercici 06_10. La botiga de vins en base de dades &mdash; Introducció a la programació amb Java 2020-21 documentació</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/moistyle.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="author" title="Quant a aquests documents" href="about.html" />
+    <link rel="index" title="Índex" href="genindex.html" />
+    <link rel="search" title="Cerca" href="search.html" />
+    <link rel="next" title="Apèndix" href="apendix.html" />
+    <link rel="prev" title="Exercici 06_09. Eliminació de categories i animals" href="exercici_06_09_delete.html" />
+     
+    <script class="googleanalytics" src="_static/moiscripts.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> Introducció a la programació amb Java
+          
+
+          
+            
+            <img src="_static/logoprg.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2020-21
+              </div>
+            
+          
+
+          
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="primeres_passes.html">Primeres passes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="basics.html">Elements bàsics de la programació</a></li>
+<li class="toctree-l1"><a class="reference internal" href="moduls.html">Mòduls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fitxers.html">Fitxers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="poo.html">Programació Orientada a Objectes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="biblioteques.html">Biblioteques</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="bd.html">Persistència amb bases de dades</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="bd_modelrelacional_i_poo.html">POO i Model Relacional</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bd_sgbd.html">SGBD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bd_jdbc.html">JDBC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bd_consultes.html">El Zoo persistent</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="bd_exercicis.html">Exercicis de persistència</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="exercici_06_01_jdbc.html"> Exercici 06_01. A veure si ho he entès bé</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_06_02_drop.html"> Exercici 06_02. Elimina taula <em>CATEGORIES</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_06_03_select.html"> Exercici 06_03. Consulta de categories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_06_04_id.html"> Exercici 06_04. Recuperar l’identificador</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_06_05_animals.html"> Exercici 06_05. Creació i destrucció de la taula <em>ANIMALS</em></a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_06_06_insert.html"> Exercici 06_06. Inserció d’animals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_06_07_select.html"> Exercici 06_07. Recuperar animals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_06_08_update.html"> Exercici 06_08. Modificació d’animals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exercici_06_09_delete.html"> Exercici 06_09. Eliminació de categories i animals</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#"> Exercici 06_10. La botiga de vins en base de dades</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="apendix.html">Apèndix</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Introducció a la programació amb Java</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="bd.html">Persistència amb bases de dades</a> &raquo;</li>
+        
+          <li><a href="bd_exercicis.html">Exercicis de persistència</a> &raquo;</li>
+        
+      <li> Exercici 06_10. La botiga de vins en base de dades</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    
+           <div itemprop="articleBody">
+            
+  <div class="section" id="exerciseicon-s-exercici-06-10-la-botiga-de-vins-en-base-de-dades">
+<h1><img alt="exerciseicon_S_" src="_images/exerciseicon_S_.png" /> Exercici 06_10. La botiga de vins en base de dades<a class="headerlink" href="#exerciseicon-s-exercici-06-10-la-botiga-de-vins-en-base-de-dades" title="Link permanent a aquest títol">¶</a></h1>
+<p class="rubric">Context</p>
+<ul class="simple">
+<li><p>Carpeta de lliurament: <code class="docutils literal notranslate"><span class="pre">06_10_botigasgbd/</span></code></p></li>
+<li><p>Continguts relacionats: <a class="reference internal" href="bd_consultes.html"><span class="doc">El Zoo persistent</span></a></p></li>
+<li><p>Com lliurar-lo: <a class="reference internal" href="holagit.html#instruccions-git"><span class="std std-ref">instruccions</span></a></p></li>
+<li><p>[☆] Exercici amb <a class="reference internal" href="sobre_exercicis.html#descripcio-exercicis-dificils"><span class="std std-ref">dificultat addicional</span></a></p></li>
+</ul>
+<p class="rubric">Enunciat</p>
+<p>En aquest exercici desenvoluparàs una nova versió de la botiga de vins. En
+aquesta ocasió, en comptes de guardar les dades al fitxer <code class="docutils literal notranslate"><span class="pre">botiga.csv</span></code>
+ho faràs a la base de dades <code class="docutils literal notranslate"><span class="pre">botiga.bd</span></code>.</p>
+<p>Per simplicitat, et proposo que escullis la versió de l’aplicació que vas
+desenvolupar fins l’exercici en que <a class="reference internal" href="exercici_05_04_csv.html"><span class="doc">guardàvem les dades</span></a>. Això permetrà que puguem provar les operacions
+d’afegir, modificar i eliminar que van quedar abandonades en versions
+posteriors. Si vols, però, pots escollir qualsevol d’aquestes versions
+posteriors.</p>
+<p>El funcionament serà equivalent al que hem fet servir per la versió amb
+fitxers. És a dir, en arrencar l’aplicació carregarà tots els vins que
+trobi a la base de dades (si és que existeix i n’hi ha cap) i en sortir,
+els guardarà per què estiguin disponibles a la propera sessió.</p>
+<p>La classe <code class="docutils literal notranslate"><span class="pre">Vi</span></code> requerirà poder guardar l’identificador de la base de
+dades. Et proposo que facis servir un mecanisme similar al que hem vist
+per les classes de <code class="docutils literal notranslate"><span class="pre">Zoo</span></code> a exercicis anteriors.</p>
+<p>Et proposo els següents nivells per resoldre aquesta ampliació:</p>
+<div class="section" id="nivell-ineficient">
+<h2>Nivell ineficient<a class="headerlink" href="#nivell-ineficient" title="Link permanent a aquest títol">¶</a></h2>
+<p>La manera més senzilla de desenvolupar aquesta funcionalitat és, abans de
+guardar les dades dels vins, els eliminarem tots de la taula. Així només
+caldrà afegir els que contingui la botiga despreocupant-nos de qualsevol
+altra casuística i de temes d’eficiència.</p>
+</div>
+<div class="section" id="nivell-eficient">
+<h2>Nivell eficient<a class="headerlink" href="#nivell-eficient" title="Link permanent a aquest títol">¶</a></h2>
+<p>La versió ineficient obliga a eliminar tots els vins registrats abans
+d’incorporar els actuals a la base de dades. Això podria arribar a ser
+inacceptable en un context amb milers d’entrades en les que la majoria de
+les execucions no modifiquen cap o només uns mínims de vins.</p>
+<p>Aquesta versió més eficient, només guardarà els vins nous, modificarà les
+que han canviat i eliminant els que ja no hi són a la botiga.</p>
+<p>Potser la manera més fàcil de fer aquesta versió seria afegir unes
+llistes a <code class="docutils literal notranslate"><span class="pre">Entorn</span></code> que continguin referències als vins nous, eliminats i
+modificats. <code class="docutils literal notranslate"><span class="pre">Entorn</span></code> se n’encarregarà d’anar mantenint aquestes llistes
+i, en sortir, afegirà els nous, modificarà els canviats i eliminarà els…
+bé, ja m’entens.</p>
+<p>Una altra opció és afegir a <code class="docutils literal notranslate"><span class="pre">Vi</span></code> un camp que indiqui si és modificat o
+eliminat. Nou no caldrà doncs serà evident si el seu identificador és
+indefinit.</p>
+<p>Hi ha més maneres. Si se t’acut alguna altra, endavant! Potser voldràs
+comentar-la abans de començar.</p>
+</div>
+<div class="section" id="versio-full-db">
+<h2>Versió <em>full-db</em><a class="headerlink" href="#versio-full-db" title="Link permanent a aquest títol">¶</a></h2>
+<p>La versió <em>eficient</em> esta prou bé, però encara podem fer un pas més:
+convertir la <code class="docutils literal notranslate"><span class="pre">Botiga</span></code> en la classe que se n’encarrega de la
+persistència de manera que <code class="docutils literal notranslate"><span class="pre">Entorn</span></code> deixa de preocupar-se’n.</p>
+<p>La botiga deixarà de guardar els vins a un array i els mantindrà
+directament a la base de dades. Així, quan es cerqui un vi, farà la
+consulta a la bd. Quan s’afegeixi, modifiqui o elimini, també realitzarà
+l’operació sobre la base de dades.</p>
+<p>Això farà que <code class="docutils literal notranslate"><span class="pre">Entorn</span></code> es pugui despreocupar de carregar i descarregar
+els vins en iniciar/finalitzar.</p>
+</div>
+<div class="section" id="nivell-barat">
+<h2>Nivell <em>barat</em><a class="headerlink" href="#nivell-barat" title="Link permanent a aquest títol">¶</a></h2>
+<p>Aquest nivell està pensat per si no vas fer l’aplicació de la botiga de
+vins i no et vols posar a fer-la. Bàsicament et caldrà implementar la
+classe <code class="docutils literal notranslate"><span class="pre">Vi</span></code> segons les <a class="reference internal" href="exercici_05_01_vi.html"><span class="doc">especificacions de l’exercici</span></a>, afegir els camps necessaris per fer persistència
+(com hem fet amb els elements del Zoo), una classe <code class="docutils literal notranslate"><span class="pre">Botiga</span></code> que ofereixi
+operacions <em>CRUD</em> (afegir, consultar, modificar i eliminar) tal i com feia
+la classe <code class="docutils literal notranslate"><span class="pre">Zoo</span></code>, i afegir una classe <code class="docutils literal notranslate"><span class="pre">UsaBotiga</span></code> que demostri el
+funcionament de totes les operacions que ofereix <code class="docutils literal notranslate"><span class="pre">Botiga</span></code> de manera
+similar a com ho fèiem amb les diferents <code class="docutils literal notranslate"><span class="pre">UsaZoo</span></code>.</p>
+</div>
+<div class="section" id="un-requisit-addicional">
+<h2>Un requisit addicional<a class="headerlink" href="#un-requisit-addicional" title="Link permanent a aquest títol">¶</a></h2>
+<p>Donat que aquest exercici serà avaluat manualment, és important que
+declaris un fitxer de text pla anomenat <code class="docutils literal notranslate"><span class="pre">readme.rst</span></code>, <code class="docutils literal notranslate"><span class="pre">readme.txt</span></code>, o
+qualsevol altra extensió que evoqui un fitxer de text pla.</p>
+<p>Al <code class="docutils literal notranslate"><span class="pre">readme</span></code> inclouràs una descripció del desenvolupament que haurà de
+contenir com a mínim:</p>
+<ul>
+<li><p>versió base de l’aplicació de la botiga. si has seguit la recomanació
+serà la 05_04</p></li>
+<li><p>versió de la implementació de l’ampliació: <em>ineficient</em>, <em>eficient</em>,
+<em>full-db</em> o <em>barat</em>.</p>
+<p>En cas que hagis fet més d’una, caldria que les guardessis en
+subcarpetes separades i que indiquis on es troba cada versió.</p>
+</li>
+<li><p>qualsevol comentari addicional que hi vulguis afegir per aclarir alguna
+decisió presa o, simplement per presumir d’alguna part del codi que
+lliures.</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+    <div class="googleanalytics">
+    <div id="cookiesbox">
+        Aquest lloc web utilitza galetes (<i>cookies</i>) per a analitzar el seu ús
+        amb les eines que ofereix <a href="https://www.google.com/analytics">Google Analytics</a>.
+        En continuar navegant-hi, estàs acceptant-ho.
+        <br/>
+        <a class="btn btn-neutral" onclick="setUserAcceptsCookies();">
+            Tancar
+            <span class="fa fa-window-close"></span>
+        </a>
+    </div>
+    <script>setCookiesboxVisibility();</script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-41103782-2', 'auto');
+      ga('send', 'pageview');
+    </script>
+</div>
+
+
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="apendix.html" class="btn btn-neutral float-right" title="Apèndix" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="exercici_06_09_delete.html" class="btn btn-neutral float-left" title="Exercici 06_09. Eliminació de categories i animals" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2021 Moisès Gómez Girón
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+####################################################################
+|exerciseicon_S_| Exercici 06_10. La botiga de vins en base de dades
+####################################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``06_10_botigasgbd/``
+
+* Continguts relacionats: :doc:`bd_consultes`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [☆] Exercici amb :ref:`dificultat addicional<descripcio_exercicis_dificils>`
+
+.. rubric:: Enunciat
+
+En aquest exercici desenvoluparàs una nova versió de la botiga de vins. En
+aquesta ocasió, en comptes de guardar les dades al fitxer ``botiga.csv``
+ho faràs a la base de dades ``botiga.bd``.
+
+Per simplicitat, et proposo que escullis la versió de l'aplicació que vas
+desenvolupar fins l'exercici en que :doc:`guardàvem les dades
+<exercici_05_04_csv>`. Això permetrà que puguem provar les operacions
+d'afegir, modificar i eliminar que van quedar abandonades en versions
+posteriors. Si vols, però, pots escollir qualsevol d'aquestes versions
+posteriors.
+
+El funcionament serà equivalent al que hem fet servir per la versió amb
+fitxers. És a dir, en arrencar l'aplicació carregarà tots els vins que
+trobi a la base de dades (si és que existeix i n'hi ha cap) i en sortir,
+els guardarà per què estiguin disponibles a la propera sessió.
+
+La classe ``Vi`` requerirà poder guardar l'identificador de la base de
+dades. Et proposo que facis servir un mecanisme similar al que hem vist
+per les classes de ``Zoo`` a exercicis anteriors.
+
+Et proposo els següents nivells per resoldre aquesta ampliació:
+
+Nivell ineficient
+=================
+
+La manera més senzilla de desenvolupar aquesta funcionalitat és, abans de
+guardar les dades dels vins, els eliminarem tots de la taula. Així només
+caldrà afegir els que contingui la botiga despreocupant-nos de qualsevol
+altra casuística i de temes d'eficiència.
+
+Nivell eficient
+===============
+
+La versió ineficient obliga a eliminar tots els vins registrats abans
+d'incorporar els actuals a la base de dades. Això podria arribar a ser
+inacceptable en un context amb milers d'entrades en les que la majoria de
+les execucions no modifiquen cap o només uns mínims de vins.
+
+Aquesta versió més eficient, només guardarà els vins nous, modificarà les
+que han canviat i eliminant els que ja no hi són a la botiga.
+
+Potser la manera més fàcil de fer aquesta versió seria afegir unes 
+llistes a ``Entorn`` que continguin referències als vins nous, eliminats i 
+modificats. ``Entorn`` se n'encarregarà d'anar mantenint aquestes llistes
+i, en sortir, afegirà els nous, modificarà els canviats i eliminarà els…
+bé, ja m'entens.
+
+Una altra opció és afegir a ``Vi`` un camp que indiqui si és modificat o
+eliminat. Nou no caldrà doncs serà evident si el seu identificador és
+indefinit.
+
+Hi ha més maneres. Si se t'acut alguna altra, endavant! Potser voldràs
+comentar-la abans de començar.
+
+Versió *full-db*
+================
+
+La versió *eficient* esta prou bé, però encara podem fer un pas més:
+convertir la ``Botiga`` en la classe que se n'encarrega de la
+persistència de manera que ``Entorn`` deixa de preocupar-se'n.
+
+La botiga deixarà de guardar els vins a un array i els mantindrà
+directament a la base de dades. Així, quan es cerqui un vi, farà la
+consulta a la bd. Quan s'afegeixi, modifiqui o elimini, també realitzarà
+l'operació sobre la base de dades.
+
+Això farà que ``Entorn`` es pugui despreocupar de carregar i descarregar
+els vins en iniciar/finalitzar.
+
+Nivell *barat*
+==============
+
+Aquest nivell està pensat per si no vas fer l'aplicació de la botiga de
+vins i no et vols posar a fer-la. Bàsicament et caldrà implementar la
+classe ``Vi`` segons les :doc:`especificacions de l'exercici
+<exercici_05_01_vi>`, afegir els camps necessaris per fer persistència
+(com hem fet amb els elements del Zoo), una classe ``Botiga`` que ofereixi
+operacions *CRUD* (afegir, consultar, modificar i eliminar) tal i com feia
+la classe ``Zoo``, i afegir una classe ``UsaBotiga`` que demostri el
+funcionament de totes les operacions que ofereix ``Botiga`` de manera
+similar a com ho fèiem amb les diferents ``UsaZoo``.
+
+Un requisit addicional
+======================
+
+Donat que aquest exercici serà avaluat manualment, és important que
+declaris un fitxer de text pla anomenat ``readme.rst``, ``readme.txt``, o
+qualsevol altra extensió que evoqui un fitxer de text pla.
+
+Al ``readme`` inclouràs una descripció del desenvolupament que haurà de
+contenir com a mínim:
+
+* versió base de l'aplicació de la botiga. si has seguit la recomanació
+  serà la 05_04
+
+* versió de la implementació de l'ampliació: *ineficient*, *eficient*,
+  *full-db* o *barat*.
+
+  En cas que hagis fet més d'una, caldria que les guardessis en
+  subcarpetes separades i que indiquis on es troba cada versió.
+
+* qualsevol comentari addicional que hi vulguis afegir per aclarir alguna
+  decisió presa o, simplement per presumir d'alguna part del codi que
+  lliures.

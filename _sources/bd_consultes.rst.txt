@@ -733,6 +733,8 @@ caldria executar les següents sentències:
 
 |exerciseicon__T| :doc:`exercici_06_09_delete`
 
+|exerciseicon_S_| :doc:`exercici_06_10_botigasgbd`
+
 Conclusions
 ===========
 

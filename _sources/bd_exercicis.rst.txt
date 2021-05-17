@@ -17,3 +17,4 @@ són:
     exercici_06_07_select.rst
     exercici_06_08_update.rst
     exercici_06_09_delete.rst
+    exercici_06_10_botigasgbd.rst
