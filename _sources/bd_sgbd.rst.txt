@@ -1,0 +1,249 @@
+####
+SGBD
+####
+
+Per a poder guardar dades dels nostres programes a una base de dades ens
+cal un gestor de bases de dades.
+
+Java és un llenguatge tan popular que ens permet treballar amb els
+principals SGBDs disponibles.
+
+Per la seva simplicitat d'instal·lació, en aquest curs farem servir
+*SQLite*. No el coneixes? No pateixis doncs és difícil de trobar-ne un de
+més fàcil.
+
+
+Què és SQLite?
+==============
+
+Com indiquen a la seva `documentació oficial de sqlite
+<https://sqlite.org/index.html>`_ SQLite és una implementació d'un gestor
+de bases de dades SQL molt lleuger i complet.
+
+Tot i que no sempre serà l'elecció més adequada per totes les aplicacions,
+especialment si involucren gran quantitat de dades o/i accessos
+concurrents, per aplicacions menys exigents i, sobretot, per a aquesta
+introducció a la persistència amb bases de dades des de Java, en tindrem
+més que suficient amb SQLite.
+
+Instal·lació
+============
+
+La instal·lació no pot ser molt més fàcil si estàs treballant amb una
+versió actualitzada de Debian o similar.
+
+Comprova primer que no el tinguis ja instal·lat amb:
+
+.. code-block:: none
+
+    $ sqlite3 --version
+
+Si et respon amb que no reconeix la comanda, passa a la instal·lació.
+
+.. code-block:: none
+
+    $ sudo apt install sqlite3
+    $ sqlite3 --version
+    3.27.2 2019-02-25 16:06:06 bd49a827…
+
+
+El *CLI* de SQLite
+==================
+
+SQLite ens ofereix una còmoda interfície de línia de comandes (*command
+line interface* o *CLI*)
+
+Aquí em limitaré a donar-te algunes idees d'ús. Pots trobar una descripció
+detallada a la seva `documentació oficial <https://sqlite.org/cli.html>`_ 
+
+
+Entrar i sortir de la consola
+=============================
+
+Per començar una consola de SQLite sobre la base de dades ``test.bd``, i
+tot seguit sortir un altre cop al prompt del teu sistema,  pots fer:
+
+.. code-block:: console
+
+    $ sqlite3 test.bd
+    SQLite version 3.27.2 2019-02-25 16:06:06
+    Enter ".help" for usage hints.
+    sqlite> .quit
+    $
+
+Fixa't que la comanda per sortir és ``.quit``. Les comandes disponibles
+dins la consola comencen per punt, com per exemple ``.help``.
+
+També pots sortir amb la combinació ``ctrl-d``.
+
+Una mica de dades
+=================
+
+Fem alguna cosa:
+
+.. code-block:: sql
+    :emphasize-lines: 3, 5, 9-
+
+    sqlite> create table gats(nom varchar(10), vides int);
+    sqlite> .tables
+    gats
+    sqlite> .schema
+    CREATE TABLE gats(nom VARCHAR(10), vides INT);
+    sqlite> insert into gats values('Renat', 7);
+    sqlite> insert into gats values('Garfield', 9);
+    sqlite> select * from gats;
+    Renat|7
+    Garfield|9
+
+Fixa't com aconseguim veure les taules disponibles amb ``.tables`` i els
+seus esquemes amb ``.schema``
+
+Tot en un fitxer
+================
+
+Ara que ja tenim algunes dades, podem mirar on les guarda SQLite.
+
+Quan sortim a la *shell* del nostre sistema, trobem el següent:
+
+.. code-block:: console
+
+    $ ls
+    test.bd
+    $ du -b test.bd     # mostrar la mida en bytes del fitxer
+    8192	test.bd
+
+SQLite ha guardat, i guardarà, totes les dades de la base de dades
+``test.bd`` dins d'un fitxer!
+
+Super pràctic, no trobes?
+
+Formats de sortida
+==================
+
+Per comoditat, SQLite ens ofereix els resultats de les consultes en diferents formats. Per exemple
+
+.. code-block:: sql
+
+    sqlite> .mode csv
+    sqlite> select * from gats;
+    Renat,7
+    Garfield,9
+    sqlite> .mode html
+    sqlite> select * from gats;
+    <TR><TD>Renat</TD>
+    <TD>7</TD>
+    </TR>
+    <TR><TD>Garfield</TD>
+    <TD>9</TD>
+    </TR>
+
+És a dir, amb la comanda ``.mode`` podem indicar en quin format volem la
+sortida de les consultes. En tenim força per escollir
+
+.. code-block:: console
+
+    sqlite> .help mode
+    .mode MODE ?TABLE?       Set output mode
+       MODE is one of:
+         ascii    Columns/rows delimited by 0x1F and 0x1E
+         csv      Comma-separated values
+         column   Left-aligned columns.  (See .width)
+         html     HTML <table> code
+         insert   SQL insert statements for TABLE
+         line     One value per line
+         list     Values delimited by "|"
+         quote    Escape answers as for SQL
+         tabs     Tab-separated values
+         tcl      TCL list elements
+
+Exportant des de dins
+=====================
+
+Podem guardar els resultats d'una consulta a un fitxer, fent servir la
+comanda ``.output nomfitxer``.
+
+Un ús típic pot ser guardar el resultat de la consulta a un fitxer, per
+exemple en format csv:
+
+.. code-block:: sql
+
+    sqlite> .mode csv
+    sqlite> .output gats.csv
+    sqlite> select * from gats order by nom;
+    sqlite> .output
+        
+Aquesta seqüència indica a SQLite que la sortida de la consulta ha d'anar
+al fitxer ``gats.csv`` en format csv. Amb ``.output`` sense paràmetres
+indiquem que torni a redirigir l'entrada a la sortida estàndard.
+
+El resultat d'aquesta execució és, per descomptat:
+
+.. code-block:: console
+    :emphasize-lines: 2-
+
+    $ cat gats.csv
+    Garfield,9
+    Renat,7
+
+Vols veure aquestes dades al libreoffice o altre programa de fulls de càlcul? Escriu:
+
+.. code-block:: console
+
+    sqlite> .excel
+    sqlite> select * from gats;
+
+Si el teu sistema està ben configurat (segurament és així per defecte), en
+executar la segona comanda se t'obrirà el teu programa de fulls de càlcul
+amb les dades de la consulta.
+
+Important des de dins
+=====================
+
+També és possible que ens interessin importar les dades d'un fitxer a
+part, potser un csv, sobre una de les nostres taules.
+
+Suposem que tenim el següent fitxer:
+
+.. code-block:: console
+
+    $ cat mesgats.csv
+    Gargamel,7
+    Tom,7
+    Rip,0
+
+Per importar-ho des de la consola de SQLite farem:
+
+.. code-block:: console
+
+    sqlite> .mode csv
+    sqlite> .import mesgats.csv gats
+    sqlite> select * from gats;
+    Garfield,9
+    Renat,7
+    Gargamel,7
+    Tom,7
+    Rip,0
+        
+Sense entrar a la consola
+=========================
+
+Potser vols fer els teus guions? SQLite també t'ho posa fàcil per a
+accedir-hi des de la teva consola:
+
+.. code-block:: bash
+
+    $ sqlite3 -csv test.bd 'select * from gats;'
+    Garfield,9
+    Renat,7
+    Gargamel,7
+    Tom,7
+    Rip,0
+
+Conclusions
+===========
+
+No està malament per quelcom tan petit, oi?
+
+Doncs encara hi ha molt més! Si estàs començant a tenir idees per usar-lo als
+teus projectes, no oblidis fer-li una ullada a la `documentació
+<https://sqlite.org/cli.html>`_  

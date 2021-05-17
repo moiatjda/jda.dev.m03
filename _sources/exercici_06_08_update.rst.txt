@@ -1,0 +1,217 @@
+#######################################################
+|exerciseicon__T| Exercici 06_08. Modificació d'animals
+#######################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``06_08_update/``
+
+* Continguts relacionats: :doc:`bd_consultes`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Els animals a la vida real no solen canviar gaire de nom o de categoria,
+però les persones que introduïm les dades de vegades ens equivoquem.
+
+Per aquesta raó, la classe ``Zoo`` oferirà la possibilitat de canviar la
+categoria d'un animal amb el mètode ``canviaCategoria()``
+
+El mètode ``canviaCategoria()`` rep un animal i una categoria, i en
+finalitzar, a la base de dades hi ha un registre corresponent a aquest
+animal amb la nova categoria.
+
+El mètode pot generar ``SQLException``.
+
+Cal tenir present els següents casos:
+
+* cas l'animal no estigui a la base de dades
+
+  En aquest cas, ``canviaCategoria()`` funcionarà com ``afegeixAnimal()``
+  tot reemplaçant abans la categoria original de l'animal per la nova.
+
+* cas que l'animal estigui a la base de dades.
+
+  Si la nova categoria no es troba a la base de dades, caldrà afegir-la
+  primer com ja hem fet a ``afegeixAnimal()``.
+
+  Finalment, un cop tenim resolt el tema de la categoria, ja podem
+  executar la sentència *UPDATE* corresponent.
+
+El codi de prova a ``UsaZoo`` és:
+
+.. code-block:: java
+    :linenos:
+
+    import java.sql.SQLException;
+    import java.util.Arrays;
+    import java.util.List;
+    import java.util.LinkedList;
+    public class UsaZoo {
+        public static void main( String args[]) throws SQLException {
+            Zoo zoo = new Zoo();
+
+            System.out.print("Primer connectem amb la base de dades: ");
+            zoo.connecta();
+            System.out.println("connectat");
+
+            System.out.println();
+            System.out.println("Creem les taules");
+            zoo.creaTaulaAnimals();
+            System.out.println("Taules resultants: " + zoo.getNomTaules());
+
+            System.out.println();
+            System.out.println("Introduïm una categoria");
+            Categoria mamifer = new Categoria("mamífer");
+            zoo.afegeixCategoria(mamifer);
+            ZooUtils.mostraCategories(zoo.recuperaCategories());
+            //
+            // creem una llista d'animals amb algun malament classificat
+            Animal balena = new Animal("balena", new Categoria("peix"));
+            Animal tarantula = new Animal("taràntula", new Categoria("insecte"));
+            List<Animal> animals = Arrays.asList(
+                new Animal("pardal", new Categoria("ocell")),
+                new Animal("gat", mamifer),
+                new Animal("guppy", new Categoria("peix")),
+                balena,
+                tarantula
+                );
+
+            System.out.println();
+            System.out.println("Afegim uns quants animals");
+            for (Animal animal: animals) { 
+                zoo.afegeixAnimal(animal);
+            }
+            System.out.println("A la base de dades, els animals són:");
+            ZooUtils.mostraAnimals(zoo.recuperaAnimals());
+            System.out.println("A la base de dades, les categories són:");
+            ZooUtils.mostraCategories(zoo.recuperaCategories());
+
+            System.out.println();
+            System.out.println("Corregim la categoria de la balena a una ja existent");
+            zoo.canviaCategoria(balena, mamifer);
+            System.out.println("A la base de dades, els animals són:");
+            ZooUtils.mostraAnimals(zoo.recuperaAnimals());
+            System.out.println("A la base de dades, les categories són:");
+            ZooUtils.mostraCategories(zoo.recuperaCategories());
+
+            System.out.println();
+            System.out.println("Modifiquem la categoria de la taràntula a una que no existeix");
+            zoo.canviaCategoria(tarantula, new Categoria("aràcnid"));
+            System.out.println("A la base de dades, els animals són:");
+            ZooUtils.mostraAnimals(zoo.recuperaAnimals());
+            System.out.println("A la base de dades, les categories són:");
+            ZooUtils.mostraCategories(zoo.recuperaCategories());
+
+            System.out.println();
+            System.out.println("Intentem modificar la categoria d'un animal que no existeix");
+            zoo.canviaCategoria(new Animal("cavall de mar", mamifer), new Categoria("peix"));
+            System.out.println("A la base de dades, els animals són:");
+            ZooUtils.mostraAnimals(zoo.recuperaAnimals());
+            System.out.println("A la base de dades, les categories són:");
+            ZooUtils.mostraCategories(zoo.recuperaCategories());
+
+            System.out.println();
+            System.out.print("Finalment tanquem la connexió amb la base de dades: ");
+            zoo.desconnecta();
+            System.out.println("desconnectat");
+        }
+    }
+
+La sortida esperada és:
+
+.. code-block:: console
+    :emphasize-lines: 2-
+
+    Primer connectem amb la base de dades: connectat
+
+    Creem les taules
+    Taules resultants: ANIMALS, CATEGORIES
+
+    Introduïm una categoria
+    Nombre de categories: 1
+        Categoria(id:1, mamífer)
+
+    Afegim uns quants animals
+    A la base de dades, els animals són:
+    Nombre d'animals: 5
+        Animal(id:4, balena, Categoria(id:3, peix))
+        Animal(id:2, gat, Categoria(id:1, mamífer))
+        Animal(id:3, guppy, Categoria(id:3, peix))
+        Animal(id:1, pardal, Categoria(id:2, ocell))
+        Animal(id:5, taràntula, Categoria(id:4, insecte))
+    A la base de dades, les categories són:
+    Nombre de categories: 4
+        Categoria(id:4, insecte)
+        Categoria(id:1, mamífer)
+        Categoria(id:2, ocell)
+        Categoria(id:3, peix)
+
+    Corregim la categoria de la balena a una ja existent
+    A la base de dades, els animals són:
+    Nombre d'animals: 5
+        Animal(id:4, balena, Categoria(id:1, mamífer))
+        Animal(id:2, gat, Categoria(id:1, mamífer))
+        Animal(id:3, guppy, Categoria(id:3, peix))
+        Animal(id:1, pardal, Categoria(id:2, ocell))
+        Animal(id:5, taràntula, Categoria(id:4, insecte))
+    A la base de dades, les categories són:
+    Nombre de categories: 4
+        Categoria(id:4, insecte)
+        Categoria(id:1, mamífer)
+        Categoria(id:2, ocell)
+        Categoria(id:3, peix)
+
+    Modifiquem la categoria de la taràntula a una que no existeix
+    A la base de dades, els animals són:
+    Nombre d'animals: 5
+        Animal(id:4, balena, Categoria(id:1, mamífer))
+        Animal(id:2, gat, Categoria(id:1, mamífer))
+        Animal(id:3, guppy, Categoria(id:3, peix))
+        Animal(id:1, pardal, Categoria(id:2, ocell))
+        Animal(id:5, taràntula, Categoria(id:5, aràcnid))
+    A la base de dades, les categories són:
+    Nombre de categories: 5
+        Categoria(id:5, aràcnid)
+        Categoria(id:4, insecte)
+        Categoria(id:1, mamífer)
+        Categoria(id:2, ocell)
+        Categoria(id:3, peix)
+
+    Intentem modificar la categoria d'un animal que no existeix
+    A la base de dades, els animals són:
+    Nombre d'animals: 6
+        Animal(id:4, balena, Categoria(id:1, mamífer))
+        Animal(id:6, cavall de mar, Categoria(id:3, peix))
+        Animal(id:2, gat, Categoria(id:1, mamífer))
+        Animal(id:3, guppy, Categoria(id:3, peix))
+        Animal(id:1, pardal, Categoria(id:2, ocell))
+        Animal(id:5, taràntula, Categoria(id:5, aràcnid))
+    A la base de dades, les categories són:
+    Nombre de categories: 5
+        Categoria(id:5, aràcnid)
+        Categoria(id:4, insecte)
+        Categoria(id:1, mamífer)
+        Categoria(id:2, ocell)
+        Categoria(id:3, peix)
+
+    Finalment tanquem la connexió amb la base de dades: desconnectat
+
+Pista
+=====
+
+Tens problemes per a composar la sentència SQL?
+
+Aquí la tens:
+
+.. code-block:: java
+
+   String sql = String.format("UPDATE ANIMALS " +
+                              "SET categoria = %d " +
+                              "WHERE id = %d",
+                              idNovaCategoria,
+                              idAnimal
+                              );

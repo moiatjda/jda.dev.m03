@@ -1,0 +1,22 @@
+###############################
+Persistència amb bases de dades
+###############################
+
+En aquesta secció treballarem la manera de comunicar els nostres programes
+orientats a objectes amb una base de dades relacional.
+
+Havent vist ja com guardar i recuperar en fitxers els valors dels atributs
+d'un objecte, aquest tema ens suposarà només una evolució.
+
+Els continguts es distribueixen de la següent manera:
+
+.. toctree::
+    :titlesonly:
+    :maxdepth: 1
+
+    bd_modelrelacional_i_poo.rst
+    bd_sgbd.rst
+    bd_jdbc.rst
+    bd_consultes.rst
+    bd_exercicis.rst
+

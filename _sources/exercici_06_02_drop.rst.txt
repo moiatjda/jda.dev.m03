@@ -1,0 +1,70 @@
+############################################################
+|exerciseicon__T| Exercici 06_02. Elimina taula *CATEGORIES*
+############################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``06_02_drop/``
+
+* Continguts relacionats: :doc:`bd_consultes`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+Implementa el mètode ``Zoo.eliminaTaulaCategories()`` de manera que
+elimini la taula *CATEGORIES* si existeix, i no faci res en cas contrari.
+
+Modifica el mètode ``Zoo.creaTaulaCategories()`` de manera que abans de
+crear la taula, la elimini si ja existia.
+
+El resultat haurà de permetre que funcioni el següent codi:
+
+.. code-block:: java
+    :linenos:
+    
+    import java.sql.SQLException;
+    public class UsaZoo {
+        public static void main( String args[]) throws SQLException {
+            Zoo zoo = new Zoo();
+
+            System.out.print("Primer connectem amb la base de dades: ");
+            zoo.connecta();
+            System.out.println("connectat");
+
+            System.out.println("Eliminem la taula CATEGORIES per si existia");
+            zoo.eliminaTaulaCategories();
+
+            System.out.println("Creem la taula CATEGORIES (primer cop)");
+            zoo.creaTaulaCategories();
+
+            System.out.println("Eliminem la taula CATEGORIES");
+            zoo.eliminaTaulaCategories();
+
+            System.out.println("Creem la taula CATEGORIES (segon cop)");
+            zoo.creaTaulaCategories();
+
+            System.out.println("Creem la taula CATEGORIES (tercer cop)");
+            zoo.creaTaulaCategories();
+
+            System.out.print("Finalment tanquem la connexió amb la base de dades: ");
+            zoo.desconnecta();
+            System.out.println("desconnectat");
+        }
+    }
+
+Que haurà de generar la següent sortida:
+
+.. code-block:: console
+    :emphasize-lines: 2-
+
+    $ java UsaZoo
+    Primer connectem amb la base de dades: connectat
+    Eliminem la taula CATEGORIES per si existia
+    Creem la taula CATEGORIES (primer cop)
+    Eliminem la taula CATEGORIES
+    Creem la taula CATEGORIES (segon cop)
+    Creem la taula CATEGORIES (tercer cop)
+    Finalment tanquem la connexió amb la base de dades: desconnectat

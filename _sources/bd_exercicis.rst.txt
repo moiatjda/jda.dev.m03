@@ -1,0 +1,19 @@
+#########################
+Exercicis de persistència
+#########################
+
+Els exercicis de la secció de :doc:`persistència en bases de dades <bd>`
+són:
+
+.. toctree::
+    :titlesonly:
+
+    exercici_06_01_jdbc.rst
+    exercici_06_02_drop.rst
+    exercici_06_03_select.rst
+    exercici_06_04_id.rst
+    exercici_06_05_animals.rst
+    exercici_06_06_insert.rst
+    exercici_06_07_select.rst
+    exercici_06_08_update.rst
+    exercici_06_09_delete.rst

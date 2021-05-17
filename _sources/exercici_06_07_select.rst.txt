@@ -1,0 +1,212 @@
+###################################################
+|exerciseicon__T| Exercici 06_07. Recuperar animals
+###################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``06_07_select/``
+
+* Continguts relacionats: :doc:`bd_consultes`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+En aquest exercici recuperarem els animals guardats a la base de dades.
+
+La recuperació dels animals presenta una
+situació similar a l'operació d'afegir. Com sabem, la taula *ANIMALS*
+guarda la clau a la categoria mentre que la classe ``Animal`` ha de
+guardar la referència a una instància de ``Categoria``.
+
+Per fer-ho, tenim diferents opcions.  Potser la més senzilla és consultar
+tots els animals i, per cada registre, obtenir la categoria corresponent.
+
+Una altra opció, potser més eficient, seria incloure a la *query* la
+informació corresponent tant de l'animal com de la categoria associada.
+
+Si ens decantem per aquesta opció, podrem aconseguir les dades amb la
+següent *query*:
+
+.. code-block:: sql
+
+    SELECT ANIMALS.id id_animal,
+           ANIMALS.nom as nom_animal,
+           CATEGORIES.id as id_categoria,
+           CATEGORIES.nom as nom_categoria
+    FROM ANIMALS, CATEGORIES
+    WHERE ANIMALS.categoria = CATEGORIES.id
+    ORDER BY ANIMALS.nom
+
+Com pots veure, la consulta anterior ens retornarà registres amb les dades
+d'animals i les seves categories tot junt. Per facilitar la recuperació de
+les dades, defineix uns *alias* per cada camp de la selecció. Així ens
+serà molt fàcil obtenir des del ``ResultSet`` els valors corresponents tot
+distingint el nom de la categoria i de l'animal per àlies:
+
+.. code-block:: java
+    :linenos:
+
+    String nomAnimal = rs.getString("nom_animal");
+    String nomCategoria = rs.getString("nom_categoria");
+
+Un cop tenim totes les dades, simplement crearem una instància de
+``Categoria`` i tot seguit una de ``Animal``.
+
+Què haig de fer?
+================
+
+Desenvoluparem dos mètodes molt similars:
+
+* ``obteAnimalPerNom()``: donat un nom d'animal, retorna la instància
+  corresponent a l'animal demanat amb les dades que es trobin a la base de
+  dades. En cas de repetits, es quedarà amb el registre amb ``id`` més
+  baix.
+
+  Si no hi ha cap registre a *ANIMALS* amb el nom indicat, retornarà
+  ``null``
+
+
+* ``recuperaAnimals()``: retorna una ``List<Animal>`` amb tots els animals
+  que hagi trobat a la taula *ANIMALS*. En cas que no n'hi hagi cap,
+  tornarà la llista buida.
+
+Els dos mètodes poden generar ``SQLException``.
+
+A banda, caldrà afegir a ``ZooUtils`` un nou mètode anomenat
+``mostraAnimals()`` que farà el mateix que ``mostraCategories()`` però amb
+``Animal``. Trobaràs els detalls de la sortida esperada a la simulació al
+final d'aquest enunciat.
+
+Ah! Ara també caldrà fer que, un cop guardada a la base de dades, la
+instància de ``Animal`` vegi actualitzat el seu ``id``. Per això caldrà
+modificar ``afegeixAnimal()`` d'una manera molt similar a com tenim
+implementada ``afegeixCategoria()``.
+
+Tocaràs quatre mètodes en total, doncs.
+
+El codi de ``UsaZoo`` serà aquest cop:
+
+.. code-block:: java
+    :linenos:
+
+    import java.sql.SQLException;
+    import java.util.List;
+    import java.util.Arrays;
+    public class UsaZoo {
+        public static void main( String args[]) throws SQLException {
+            Zoo zoo = new Zoo();
+
+            System.out.print("Primer connectem amb la base de dades: ");
+            zoo.connecta();
+            System.out.println("connectat");
+
+            System.out.println();
+            System.out.println("Creem les taules");
+            zoo.creaTaulaAnimals();
+            System.out.println("Taules resultants: " + zoo.getNomTaules());
+
+            System.out.println();
+            System.out.println("Introduïm categories amb una de repetida");
+            Categoria peix = new Categoria("peix");
+            zoo.afegeixCategoria(new Categoria("ocell"));
+            zoo.afegeixCategoria(peix);
+            zoo.afegeixCategoria(new Categoria("ocell"));
+            ZooUtils.mostraCategories(zoo.recuperaCategories());
+
+            // creem una llista d'animals amb un de repetit
+            List<Animal> animals = Arrays.asList(
+                new Animal("pardal", new Categoria("ocell")),
+                new Animal("gat", new Categoria("mamífer")),
+                new Animal("guppy", new Categoria("peix")),
+                new Animal("gat", new Categoria("mamífer"))
+                );
+
+            System.out.println();
+            System.out.println("Considerem els següents animals");
+            ZooUtils.mostraAnimals(animals);
+
+            // Afegim els animals
+            for (Animal animal: animals) { 
+                zoo.afegeixAnimal(animal);
+            }
+
+            System.out.println();
+            System.out.println("Un cop afegits, els animals queden:");
+            ZooUtils.mostraAnimals(animals);
+
+            System.out.println();
+            System.out.println("A la base de dades, els animals són:");
+            ZooUtils.mostraAnimals(zoo.recuperaAnimals());
+
+            System.out.println();
+            System.out.println("A la base de dades, les categories són:");
+            ZooUtils.mostraCategories(zoo.recuperaCategories());
+
+            System.out.println();
+            System.out.println("Recuperem ara alguns animals per nom");
+            System.out.println("El guppy: " + zoo.obteAnimalPerNom("guppy"));
+            System.out.println("El gat: " + zoo.obteAnimalPerNom("gat"));
+            System.out.println("El gat Renat: " + zoo.obteAnimalPerNom("Renat"));
+
+            System.out.println();
+            System.out.print("Finalment tanquem la connexió amb la base de dades: ");
+            zoo.desconnecta();
+            System.out.println("desconnectat");
+        }
+    }
+
+La sortida esperada és:
+
+.. code-block:: console
+    :emphasize-lines: 2-
+
+    $ java UsaZoo
+
+    Primer connectem amb la base de dades: connectat
+
+    Creem les taules
+    Taules resultants: ANIMALS, CATEGORIES
+
+    Introduïm categories amb una de repetida
+    Nombre de categories: 3
+        Categoria(id:1, ocell)
+        Categoria(id:3, ocell)
+        Categoria(id:2, peix)
+
+    Considerem els següents animals
+    Nombre d'animals: 4
+        Animal(id:indefinit, pardal, Categoria(id:indefinit, ocell))
+        Animal(id:indefinit, gat, Categoria(id:indefinit, mamífer))
+        Animal(id:indefinit, guppy, Categoria(id:indefinit, peix))
+        Animal(id:indefinit, gat, Categoria(id:indefinit, mamífer))
+
+    Un cop afegits, els animals queden:
+    Nombre d'animals: 4
+        Animal(id:1, pardal, Categoria(id:1, ocell))
+        Animal(id:2, gat, Categoria(id:4, mamífer))
+        Animal(id:3, guppy, Categoria(id:2, peix))
+        Animal(id:4, gat, Categoria(id:4, mamífer))
+
+    A la base de dades, els animals són:
+    Nombre d'animals: 4
+        Animal(id:2, gat, Categoria(id:4, mamífer))
+        Animal(id:4, gat, Categoria(id:4, mamífer))
+        Animal(id:3, guppy, Categoria(id:2, peix))
+        Animal(id:1, pardal, Categoria(id:1, ocell))
+
+    A la base de dades, les categories són:
+    Nombre de categories: 4
+        Categoria(id:4, mamífer)
+        Categoria(id:1, ocell)
+        Categoria(id:3, ocell)
+        Categoria(id:2, peix)
+
+    Recuperem ara alguns animals per nom
+    El guppy: Animal(id:3, guppy, Categoria(id:2, peix))
+    El gat: Animal(id:2, gat, Categoria(id:4, mamífer))
+    El gat Renat: null
+
+    Finalment tanquem la connexió amb la base de dades: desconnectat

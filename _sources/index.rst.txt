@@ -24,8 +24,6 @@ Els continguts d'aquest curs estan organitzats en els següents temes:
     fitxers.rst
     poo.rst
     biblioteques.rst
+    bd.rst
     apendix.rst
-
-..  llibreries.rst
-..  bd.rst
 

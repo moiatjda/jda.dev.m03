@@ -1,0 +1,165 @@
+####################################################
+|exerciseicon__T| Exercici 06_06. Inserció d'animals
+####################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``06_06_insert/``
+
+* Continguts relacionats: :doc:`bd_consultes`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+En aquest exercici ampliarem el nostre ``Zoo`` amb la possibilitat
+d'afegir nous animals.
+
+Inserir un animal a la base de dades és una mica més laboriós que inserir
+una categoria. El problema és que per a poder inserir l'animal, ens caldrà
+disposar de l'identificador de la categoria i aquest només el tindrem si
+la categoria havia estat ja inserida. 
+
+Desenvoluparem el mètode ``afegeixAnimal()`` que rebrà una instància de
+``Animal`` i l'afegirà a la base de dades si encara no hi era.
+
+El mètode modificarà l'identificador de l'animal si finalment
+l'introdueix, i podrà generar l'excepció ``SQLException``.
+
+Considerarem que l'animal ja hi és a la base de dades si la instància
+disposa ja d'un ``id`` definit. Recorda el mètode ``idIndefinit()``. Així,
+si ``afegeixAnimal()`` rep un animal amb identificador definit, no farà
+res.
+
+Caldrà també que ``afegeixAnimal()`` consideri la categoria de l'animal a
+inserir.
+
+Si la categoria de l'animal té l'identificador indefinit, poden passar
+dues coses:
+
+* la categoria és nova
+
+  És el cas en que no es troba a *CATEGORIES* cap entrada amb el nom de la
+  categoria (recorda ``obteCategoriaPerNom()``)
+
+  En aquest cas caldrà primer inserir la nova categoria. A continuació
+  obtindrem el ``id`` que li ha assignat el SGBD a la categoria, i
+  finalment afegirem l'animal amb aquest ``id`` de categoria.
+
+* Cas categoria ja existent.
+
+  Si la base de dades ja conté una entrada amb la categoria de l'animal,
+  obtindrem el seu identificador.
+
+Un cop disposem de l'identificador de la categoria de l'animal, ja podem
+fer la inserció. Aquesta és molt similar a la que tenim a
+``afegeixCategoria()``
+
+En aquesta primera versió de ``afegeixAnimal()`` la instància de
+``Animal`` no veurà actualitzat el seu ``id``.
+
+El nou ``main()`` de ``UsaZoo`` per aquest exercici serà:
+
+.. code-block:: java
+    :linenos:
+
+    public static void main( String args[]) throws SQLException {
+        Zoo zoo = new Zoo();
+
+        System.out.println(zoo.connecta());
+        System.out.println(zoo.creaTaulaAnimals());
+
+        System.out.println();
+        System.out.println("Comprovació de obteCategoriaPerNom()");
+        System.out.println("====================================");
+        introdueixCategories(zoo, Arrays.asList("ocell", "peix", "ocell"));
+        mostraCategories(zoo);
+        System.out.println("La categoria peix és: " + zoo.obteCategoriaPerNom("peix"));
+        System.out.println("La categoria ocell és: " + zoo.obteCategoriaPerNom("ocell"));
+
+        System.out.println();
+        System.out.println("Afegim animal amb categoria existent");
+        System.out.println("====================================");
+        Categoria ocell = zoo.obteCategoriaPerNom("ocell");
+        Animal pardal = new Animal("pardal", ocell);
+        System.out.println("Afegint l'animal: " + pardal);
+        System.out.println(zoo.afegeixAnimal(pardal));
+        mostraCategories(zoo);
+
+        System.out.println();
+        System.out.println("Afegim animal amb categoria no existent");
+        System.out.println("=======================================");
+        Categoria mamifer = new Categoria("mamífer");
+        Animal gat = new Animal("gat", mamifer);
+        System.out.println("Afegint l'animal: " + gat);
+        System.out.println(zoo.afegeixAnimal(gat));
+        mostraCategories(zoo);
+
+        System.out.println();
+        System.out.println(zoo.desconnecta());
+    }
+
+La sortida esperada és:
+
+.. code-block:: console
+    :emphasize-lines: 2-
+
+    Primer connectem amb la base de dades: connectat
+
+    Creem les taules
+    Taules resultants: ANIMALS, CATEGORIES
+
+    Introduïm categories amb una de repetida
+    Nombre de categories: 3
+        Categoria(id:1, ocell)
+        Categoria(id:3, ocell)
+        Categoria(id:2, peix)
+
+    Afegim guppy amb Categoria(id:2, peix)
+    Nombre de categories: 3
+        Categoria(id:1, ocell)
+        Categoria(id:3, ocell)
+        Categoria(id:2, peix)
+
+    Afegim guppy dins d'una categoria coneguda
+    Nombre de categories: 3
+        Categoria(id:1, ocell)
+        Categoria(id:3, ocell)
+        Categoria(id:2, peix)
+
+    Afegim un animal d'una nova categoria
+    Nombre de categories: 4
+        Categoria(id:4, mamífer)
+        Categoria(id:1, ocell)
+        Categoria(id:3, ocell)
+        Categoria(id:2, peix)
+
+    Finalment tanquem la connexió amb la base de dades: desconnectat
+
+
+Pots comprovar que realment s'hagin afegit els animals que toquen fent:
+
+.. code-block:: console
+    :emphasize-lines: 2-
+
+    $ sqlite3 animals.bd 'select * from animals'
+    1|guppy|2
+    2|pardal|1
+    3|gat|4
+
+Pistes
+======
+
+El mètode ``afegeixAnimal()`` podria composar la sentència SQL de la
+següent manera:
+
+.. code-block:: java
+    :linenos:
+
+    String sql = String.format(
+            "INSERT INTO ANIMALS (nom, categoria) VALUES ('%s', '%d')",
+            animal.getNom(),
+            animal.getCategoria().getId());
+

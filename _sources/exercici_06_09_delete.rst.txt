@@ -1,0 +1,207 @@
+####################################################################
+|exerciseicon__T| Exercici 06_09. Eliminació de categories i animals
+####################################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``06_09_delete/``
+
+* Continguts relacionats: :doc:`bd_consultes`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+En aquest exercici implementarem els mètodes de ``Zoo``:
+
+* ``void eliminaAnimal(Animal animal)``
+
+* ``void eliminaCategoria(Categoria categoria)``
+
+``eliminaAnimal()`` eliminarà el registre corresponent d'animal només
+considerant l'identificador. Si l'animal té l'identificador indefinit, o
+bé no hi ha cap registre amb aquest ``id``,
+no farà res.
+
+``eliminaCategoria()`` realitzarà l'eliminació *en cascada* tot eliminant
+abans els animals que puguin tenir aquesta categoria assignada. Si no hi
+ha cap categoria amb l'identificador de la rebuda, o bé aquesta el té
+indefinit, no farà res.
+
+
+.. code-block:: java
+    :linenos:
+
+    import java.sql.SQLException;
+    import java.util.Arrays;
+    import java.util.List;
+    import java.util.LinkedList;
+    public class UsaZoo {
+        public static void main( String args[]) throws SQLException {
+            Zoo zoo = new Zoo();
+
+            System.out.print("Primer connectem amb la base de dades: ");
+            zoo.connecta();
+            System.out.println("connectat");
+
+            System.out.println();
+            System.out.println("Creem les taules");
+            zoo.creaTaulaAnimals();
+            System.out.println("Taules resultants: " + zoo.getNomTaules());
+
+            System.out.println("Intentem eliminar una categoria i un animal inexistents");
+            zoo.eliminaCategoria(new Categoria("mamífer"));
+            zoo.eliminaAnimal(new Animal("gat", new Categoria("mamífer")));
+            ZooUtils.mostraAnimals(zoo.recuperaAnimals());
+            ZooUtils.mostraCategories(zoo.recuperaCategories());
+
+            Animal pardal = new Animal("pardal", new Categoria("ocell"));
+            System.out.println();
+            System.out.println("Introduïm " + pardal);
+            zoo.afegeixAnimal(pardal);
+            ZooUtils.mostraAnimals(zoo.recuperaAnimals());
+            ZooUtils.mostraCategories(zoo.recuperaCategories());
+
+            System.out.println();
+            System.out.println("Eliminem l'animal");
+            zoo.eliminaAnimal(pardal);
+            ZooUtils.mostraAnimals(zoo.recuperaAnimals());
+            ZooUtils.mostraCategories(zoo.recuperaCategories());
+
+            // creem una llista d'animals
+            Categoria ocell = new Categoria("ocell");
+            Animal gat = new Animal("gat", new Categoria("mamífer"));
+            List<Animal> animals = Arrays.asList(
+                new Animal("pardal", ocell),
+                new Animal("àliga", ocell),
+                new Animal("gallina",  ocell),
+                gat,
+                new Animal("trencalós",  ocell)
+                );
+
+            System.out.println();
+            System.out.println("Afegim uns quants animals");
+            for (Animal animal: animals) { 
+                zoo.afegeixAnimal(animal);
+            }
+            ZooUtils.mostraAnimals(zoo.recuperaAnimals());
+            ZooUtils.mostraCategories(zoo.recuperaCategories());
+
+            ocell = zoo.obteCategoriaPerNom("ocell");
+            System.out.println();
+            System.out.println("Eliminem " + ocell);
+            zoo.eliminaCategoria(ocell);
+            ZooUtils.mostraAnimals(zoo.recuperaAnimals());
+            ZooUtils.mostraCategories(zoo.recuperaCategories());
+
+            System.out.println();
+            System.out.println("No deixem ni el gat!");
+            zoo.eliminaAnimal(gat);
+            ZooUtils.mostraAnimals(zoo.recuperaAnimals());
+            ZooUtils.mostraCategories(zoo.recuperaCategories());
+
+            Categoria mamifer = zoo.obteCategoriaPerNom("mamífer");
+            System.out.println();
+            System.out.println("Eliminem " + mamifer);
+            zoo.eliminaCategoria(mamifer);
+            ZooUtils.mostraAnimals(zoo.recuperaAnimals());
+            ZooUtils.mostraCategories(zoo.recuperaCategories());
+
+
+            System.out.println();
+            System.out.print("Finalment tanquem la connexió amb la base de dades: ");
+            zoo.desconnecta();
+            System.out.println("desconnectat");
+        }
+    }
+
+Amb la sortida esperada:
+
+.. code-block:: console
+    :emphasize-lines: 2-
+
+    $ java UsaZoo
+    Primer connectem amb la base de dades: connectat
+
+    Creem les taules
+    Taules resultants: ANIMALS, CATEGORIES
+    Intentem eliminar una categoria i un animal inexistents
+    Cap animal
+    Cap categoria
+
+    Introduïm Animal(id:indefinit, pardal, Categoria(id:indefinit, ocell))
+    Nombre d'animals: 1
+        Animal(id:1, pardal, Categoria(id:1, ocell))
+    Nombre de categories: 1
+        Categoria(id:1, ocell)
+
+    Eliminem l'animal
+    Cap animal
+    Nombre de categories: 1
+        Categoria(id:1, ocell)
+
+    Afegim uns quants animals
+    Nombre d'animals: 5
+        Animal(id:4, gallina, Categoria(id:1, ocell))
+        Animal(id:5, gat, Categoria(id:2, mamífer))
+        Animal(id:2, pardal, Categoria(id:1, ocell))
+        Animal(id:6, trencalós, Categoria(id:1, ocell))
+        Animal(id:3, àliga, Categoria(id:1, ocell))
+    Nombre de categories: 2
+        Categoria(id:2, mamífer)
+        Categoria(id:1, ocell)
+
+    Eliminem Categoria(id:1, ocell)
+    Nombre d'animals: 1
+        Animal(id:5, gat, Categoria(id:2, mamífer))
+    Nombre de categories: 1
+        Categoria(id:2, mamífer)
+
+    No deixem ni el gat!
+    Cap animal
+    Nombre de categories: 1
+        Categoria(id:2, mamífer)
+
+    Eliminem Categoria(id:2, mamífer)
+    Cap animal
+    Cap categoria
+
+    Finalment tanquem la connexió amb la base de dades: desconnectat
+
+☼ Ampliació
+===========
+
+Aquests nous mètodes descobreixen un error que tenim a altres mètodes (ex.
+``afegeixAnimal()`` que pressuposen que si la instància respon
+``false`` a la crida del mètode ``idIndefinit()`` llavors segur que està a
+la base de dades.
+
+Això ja veiem que no sempre serà cert. Sense anar més lluny, si eliminem
+un animal amb ``eliminaAnimal()``, la instància conserva el seu ``id``
+original.
+
+Podries pensar que és fàcil de resoldre fent que ``eliminaAnimal()`` 
+marqui la instància com a indefinida, per exemple afegint un nou mètode a
+``Animal`` (ex. ``unsetId()``) 
+
+Si bé podem solucionar una mica el problema, no el resolem de ple. Com ens
+ho fem per modificar totes les instàncies d'animal que pugui tenir el
+nostre programa si els seus registres són eliminats de la base de dades en
+eliminar la seva categoria?
+Encara més, el valor del ``id`` el podem assignar de manera arbitrària en
+crear l'animal doncs no comprova que aquest correspongui realment a una
+entrada de  *ANIMALS*.
+I no s'acaba aquí! Hi ha casos *patològics* com ara que un animal hagi
+estat guardat i després se li canviï la categoria per una que no estigui a
+la base de dades! Se t'acudeixen més vulnerabilitats?
+
+En resum, que ens tocarà afegir la comprovació a tots els mètodes
+implicats, de que l'identificador de cada entitat realment correspongui
+amb una entrada de la taula corresponent. Fes tots els que se t'acudeixin
+i et vinguin de gust.
+
+Aquesta és la proposta d'ampliació. Si vols fer-la, et proposo que
+afegeixis un ``UsaZooAmpliat`` per provar que funciona cada cas que hagis
+implementat. Demana ajut si et costa pensar en les proves.

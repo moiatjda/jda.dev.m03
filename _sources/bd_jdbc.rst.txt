@@ -1,0 +1,225 @@
+####
+JDBC
+####
+
+Ara que ja tenim el nostre SGBD, ens cal quelcom que faci de pont entre aquest
+i els nostres programes.
+
+Al codi que ens facilita la comunicació entre el nostre programa i altres
+elements externs, sigui una base de dades sigui un dispositiu físic, el
+solem conèixer com a *controlador* o *driver* .
+
+Cada dispositiu o component amb que vulguem interaccionar, haurà de
+disposar del seu propi controlador pel llenguatge de programació amb el
+que estiguem fent el nostre programa.
+
+Java ens ofereix un conjunt de classes per poder utilitzar aquests
+controladors d'una manera unificada. Aquestes classes les agrupa en un
+paquet anomenat *JDBC*.
+
+Què és JDBC
+===========
+
+Segons la definició que apareix a la documentació oficial de Java per
+`JDBC
+<https://docs.oracle.com/en/java/javase/11/docs/api/java.sql/java/sql/package-summary.html>`_,
+ens ofereix la API (Interfície de programació d'aplicacions o *Application
+Programming Interface*) per a accedir i processar dades emmagatzemades en
+una font de dades, normalment una base de dades relacional, fent servir el
+llenguatge de programació Java. La API inclou un entorn en el que es poden
+instal·lar dinàmicament diferents controladors per a accedir a les
+diferents fonts de dades.
+
+Malgrat JDBC està orientat principalment a passar comandes SQL a una base
+de dades, també ofereix mecanismes per llegir i escriure dades des de i
+cap a qualsevol font de dades en format tabular com ara fulls de càlcul o
+fitxers csv.
+
+Amb JDBC, per tant, disposem d'un conjunt d'*interfaces* i alguna classe
+completa que ens permetrà comunicar-nos amb el SGBD (entre altres fonts de
+dades)
+
+Per si sol, no podrem fer gaire cosa, fins que disposem d'una
+implementació concreta i adequada pel nostre SGBD. Aquesta implementació
+és el *controlador* o *driver*.
+
+Si el *driver* implementa correctament la
+interfície, el codi que desenvolupem fent-la servir, hauria de funcionar
+(sense comptar les sentències SQL) per altres fonts de dades que
+implementin el JDBC.
+
+|exerciseiconO__| :doc:`exercici_06_01_jdbc`
+
+
+Instal·lació del controlador
+============================
+
+Com que el nostre SGBD escollit és el SQLite, ens caldrà obtenir una còpia
+adequada d'aquest controlador.
+
+Al teu repositori hi trobaràs una utilitat d'instal·lació i configuració
+perquè no t'hagis de preocupar.
+
+Simplement executa:
+
+.. code-block:: console
+
+    $ bash $INTROPRGDIR/lib/install_sqlite_jdbc.sh
+
+Caldrà que et surtin tots els avisos indicant que ha estat correcte.
+Altrament parla amb mi.
+
+Si ho vols fer manualment, les passes són:
+
+1. Descarregat el controlador
+
+   Un dels llocs més segurs per descarregar-te el controlador és el
+   repositori de `Maven <https://mvnrepository.com/>`_. En concret, trobaràs
+   les diferents versions disponibles `aquí
+   <https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc>`_
+
+2. Configura la variable ``CLASSPATH`` perquè inclogui el camí al
+   controlador.
+
+3. Comprova que el controlador estigui disponible
+
+   Una manera és executar el següent codi que intenta trobar el
+   controlador. Si tot ha anat bé, finalitzarà sense generar cap error.
+
+   .. code-block:: java
+
+       public class TestSQLite {
+           public static void main(String[] args) throws java.sql.SQLException {
+               java.sql.DriverManager.getDriver("jdbc:sqlite:test.bd");
+           }
+       }
+
+4. Si no t'ha funcionat i no trobes manera de resoldre el problema, fes
+   servir el guió d'instal·lació.
+
+
+Connexió
+========
+
+Connectem-nos a una base de dades:
+
+.. code-block:: java
+    :linenos:
+
+    import java.sql.DriverManager;
+    import java.sql.Connection;
+    import java.sql.SQLException;
+    public class UsaSQLite {
+        public static void main(String[] args) throws SQLException {
+            Connection conn = DriverManager.getConnection("jdbc:sqlite:test.bd");
+            System.out.println("Connectat!");
+            conn.close();
+        }
+    }
+
+Si tot ha anat bé, ens sortirà el missatge de ``"Connectat!"`` i ens
+apareixerà un nou fitxer a la carpeta actual anomenat ``test.bd``.
+
+.. code-block:: console
+
+    $ java UsaSQLite
+    Connectat!
+    $ ls
+    UsaSQLite.class
+    UsaSQLite.java
+    test.bd
+
+El fitxer ``test.bd`` conté les dades del la base de dades a la que acabes
+d'intentar conectar-te. Bé, ara mateix no tindrà gaire dades doncs encara
+no li hem afegit res. De fet, si mires la seva mida és 0 bytes!
+
+La cadena de connexió
+=====================
+
+Tornem a observar el codi anterior:
+
+.. code-block:: java
+    :linenos:
+    :emphasize-lines: 6
+
+    import java.sql.DriverManager;
+    import java.sql.Connection;
+    import java.sql.SQLException;
+    public class UsaSQLite {
+        public static void main(String[] args) throws SQLException {
+            Connection conn = DriverManager.getConnection("jdbc:sqlite:test.bd");
+            System.out.println("Connectat!");
+            conn.close();
+        }
+    }
+
+Al String ``"jdbc:sqlite:test.bd"`` se'l coneix com a *cadena de
+connexió*. Ha de contenir la informació necessària per que es pugui
+identificar el controlador i la base de dades.
+
+Cada SGBD té els seus requeriments per especificar la cadena de connexió.
+En el cas de SQLite és especialment senzilla doncs no considera ni el
+*host* on es troba la base de dades, ni l'usuari/password per accedir-hi.
+
+Una cadena de connexió més completa, com per exemple per a PostgreSQL,
+podria ser:
+
+.. code-block:: java
+    :linenos:
+
+    String usuari   = "usuaribd";
+    String password = "passwordsupersecret";
+    String host     = "192.168.33.10";
+    String bd       = "testbd";         // el nom de la base de dades
+
+    String cadenaConnexio
+        = "jdbc:postgresql://" + host
+        + "/"                  + bd
+        + "?user="             + usuari
+        + "&password="         + password;
+
+Si tens un altre SGBD instal·lat a la teva màquina, potser et farà gràcia
+comprovar com funciona en amb ell el codi que desenvoluparàs en aquest
+tema.
+
+
+Excepcions
+==========
+
+Normalment, però, voldrem gestionar una mica les excepcions que es puguin
+produir. Una versió del codi força més sòlida seria:
+
+.. code-block:: java
+    :linenos:
+
+    import java.sql.DriverManager;
+    import java.sql.Connection;
+    import java.sql.SQLException;
+
+    public class UsaSQLite {
+        public static void main( String args[] ) {
+            final String nom_bd = "test.bd";  // nom de la base de dades a la que intentarem connectar
+            Connection conn = null;
+            try {
+                conn = DriverManager.getConnection("jdbc:sqlite:" + nom_bd);
+                System.out.println("Connectat amb la base de dades " + nom_bd);
+            } catch (SQLException e) {
+                System.out.println("No es pot connectar a la base de dades " + nom_bd);
+                System.err.println(e.getClass().getName() + ": " + e.getMessage());
+            } finally {
+                if (conn != null) {
+                    try {
+                        conn.close();
+                    } catch (SQLException e) {
+                        System.out.println("No es pot tancar la connexió amb la base de dades " + nom_bd);
+                        System.err.println(e.getClass().getName() + ": " + e.getMessage());
+                    }
+                }
+            }
+        }
+    }
+
+Com pots veure, el codi considera la possibilitat de que no sigui possible
+connectar-se a la base de dades i, fins i tot en el cas que hi hagi
+problemes, intentarà tancar la connexió en cas que aquesta estigui encara
+oberta.

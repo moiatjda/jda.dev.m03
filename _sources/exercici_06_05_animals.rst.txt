@@ -1,0 +1,211 @@
+############################################################################
+|exerciseicon__T| Exercici 06_05. Creació i destrucció de la taula *ANIMALS*
+############################################################################
+
+.. rubric:: Context
+
+* Carpeta de lliurament: ``06_05_animals/``
+
+* Continguts relacionats: :doc:`bd_consultes`
+
+* Com lliurar-lo: :ref:`instruccions <instruccions_git>`
+
+* [✓] Exercici amb :ref:`autoavaluació<descripcio_exercicis_autoavaluacio>`
+
+.. rubric:: Enunciat
+
+En aquest exercici afegirem la classe ``Animal`` i la taula *ANIMALS*.
+
+.. uml::
+    :align: center
+
+    @startuml
+        class Animal {
+            - id: int
+            - nom: String
+            - categoria: Categoria
+            + getId(): int
+            + getNom(): String
+            + getCategoria(): Categoria
+            + idIndefinit(): boolean
+        }
+
+        class Categoria {
+            - id: int
+            - nom: String
+        }
+
+        class Zoo {
+            creaTaulaAnimals()
+            eliminaTaulaAnimals()
+        }
+
+        Animal *- Categoria
+        Zoo --> Categoria
+        Zoo --> Animal
+
+        hide circle
+        hide empty members
+        skinparam classAttributeIconSize 0
+        skinparam class {
+            BackgroundColor White
+            BorderColor Black
+            ArrowColor Black
+        }
+    @enduml
+
+.. --* per renormalitzar highlighting a vim
+
+Per la classe probablement no tindràs gaire dificultat. Assegura't que,
+com a mínim ofereixes *getters* per totes les propietats d'un ``Animal``,
+és a dir ``id``, ``nom`` i ``categoria``. Per altra banda, caldrà que
+ofereixis dos constructors específics:
+
+* ``Animal(String nom, Categoria categoria)``
+
+* ``Animal(int id, String nom, Categoria categoria)``
+
+El funcionament dels dos serà molt similar al dels corresponents que tenim
+per ``Categoria``. A banda d'assegurar que no acceptem un ``id`` negatiu
+ni un nom ``null`` o buit, també haurem de comprovar que no ens passen una
+categoria nul·la. En cas que es detecti alguna d'aquestes situacions, els
+constructors llençaran una ``IllegalArgumentException`` amb el missatge
+``"El nom no pot ser null ni blanc"`` i ``"La categoria no pot ser
+null"``.
+
+A banda, com a ``Categoria``, el mètode ``getId()`` només estarà
+disponible quan l'identificador no sigui indefinit. Per poder-ho
+consultar, oferirem també ``idIndefinit()``.
+
+En el cas de la classe ``Zoo``, hi afegirem els següents mètodes:
+
+* ``creaTaulaAnimals()``
+
+* ``eliminaTaulaAnimals()``
+
+Aquests mètodes són molt semblants als corresponents de la taula
+*CATEGORIES*.
+
+Abans que comencis a fer *copy&paste*, deixa'm que t'avisi de quelcom que
+has de tenir present: per crear la taula *ANIMALS* cal que estigui creada
+abans la taula *CATEGORIES*. De la mateixa manera, per eliminar la taula
+*CATEGORIES* primer cal eliminar la taula *ANIMALS*.
+
+Malgrat ``sqlite`` no ens donarà suport per defecte a la integritat
+referencial, és important que aprenguem a fer-ho bé. Per aquesta raó, els
+tests d'aquest exercici intentaran no deixar-te passar solucions que no
+respectin la integritat referencial.
+
+Així, el mètode ``eliminaTaulaCategories()`` haurà d'eliminar primer la
+taula d'animals, i el mètode ``creaTaulaAnimals()`` haurà de crear primer
+la taula de categories.
+
+Per executar correctament el test d'aquest exercici, et caldrà afegir a
+``Zoo`` el següent mètode:
+
+.. code-block:: java
+    :linenos:
+
+    /* retorna el nom de les taules definides a la bd */
+    public String getNomTaules() throws SQLException {
+        String sql = "SELECT name FROM sqlite_schema " +
+                     "WHERE name NOT LIKE 'sqlite%' " +
+                     "ORDER BY name";
+        List<String> taules = new ArrayList<>();
+        try (Statement st = conn.createStatement()) {
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) { taules.add(rs.getString("name")); }
+            rs.close();
+        }
+        return taules.size() > 0 ? String.join(", ", taules) : "cap";
+    }
+
+El mètode ``getNomTaules()`` retorna un String amb el nom de les taules
+definides a la base de dades. No cal que entenguis com ho fa.  Si tens
+curiositat, revisa `aquesta documentació de sqlite
+<https://www.sqlite.org/schematab.html>`_ i la sentència
+`try-with-resources
+<https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html>`_.
+
+Un cop hagis incorporat el mètode ``Zoo.getNomTaules()``, caldrà que el
+següent codi funcioni:
+
+.. code-block:: java
+    :linenos:
+
+    import java.sql.SQLException;
+    public class UsaZoo {
+        public static void main( String args[]) throws SQLException {
+            Zoo zoo = new Zoo();
+
+            System.out.print("Primer connectem amb la base de dades: ");
+            zoo.connecta();
+            System.out.println("connectat");
+
+            System.out.println();
+            System.out.println("Creació en l'ordre correcte");
+            System.out.println("===========================");
+            System.out.println("L'ordre correcte és primer eliminar ANIMALS, després CATEGORIES, a continuació crear CATEGORIES i finalment ANIMALS");
+            zoo.eliminaTaulaAnimals();
+            zoo.eliminaTaulaCategories();
+            zoo.creaTaulaCategories();
+            zoo.creaTaulaAnimals();
+            System.out.println("Taules resultants: " + zoo.getNomTaules());
+
+            System.out.println();
+            System.out.println("Eliminació de ANIMALS");
+            System.out.println("=====================");
+            System.out.println("Eliminar la taula ANIMALS no ha d'afectar a CATEGORIES");
+            zoo.eliminaTaulaAnimals();
+            System.out.println("Taules resultants: " + zoo.getNomTaules());
+
+            System.out.println();
+            System.out.println("Creació de ANIMALS");
+            System.out.println("==================");
+            System.out.println("Quan no hi ha la taula CATEGORIES, es crearà per poder crear ANIMALS");
+            zoo.eliminaTaulaCategories();
+            zoo.creaTaulaAnimals();
+            System.out.println("Taules resultants: " + zoo.getNomTaules());
+
+            System.out.println();
+            System.out.println("Eliminació de CATEGORIES");
+            System.out.println("========================");
+            System.out.println("Quan hi són les taules CATEGORIES i ANIMALS, en eliminar CATEGORIES s'eliminarà ANIMALS");
+            zoo.eliminaTaulaCategories();
+            System.out.println("Taules resultants: " + zoo.getNomTaules());
+
+            System.out.println();
+            System.out.print("Finalment tanquem la connexió amb la base de dades: ");
+            zoo.desconnecta();
+            System.out.println("desconnectat");
+        }
+    }
+
+La sortida esperada és:
+
+.. code-block:: console
+    :emphasize-lines: 2-
+
+    Primer connectem amb la base de dades: connectat
+
+    Creació en l'ordre correcte
+    ===========================
+    L'ordre correcte és primer eliminar ANIMALS, després CATEGORIES, a continuació crear CATEGORIES i finalment ANIMALS
+    Taules resultants: ANIMALS, CATEGORIES
+
+    Eliminació de ANIMALS
+    =====================
+    Eliminar la taula ANIMALS no ha d'afectar a CATEGORIES
+    Taules resultants: CATEGORIES
+
+    Creació de ANIMALS
+    ==================
+    Quan no hi ha la taula CATEGORIES, es crearà per poder crear ANIMALS
+    Taules resultants: ANIMALS, CATEGORIES
+
+    Eliminació de CATEGORIES
+    ========================
+    Quan hi són les taules CATEGORIES i ANIMALS, en eliminar CATEGORIES s'eliminarà ANIMALS
+    Taules resultants: cap
+
+    Finalment tanquem la connexió amb la base de dades: desconnectat

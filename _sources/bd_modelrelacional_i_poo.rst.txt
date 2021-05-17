@@ -1,0 +1,116 @@
+######################
+POO i Model Relacional
+######################
+
+
+Ja hem vist que la programació orientada a objectes és el paradigma més
+*de moda* en programació. També sabem que el model relacional és el
+paradigma més sòlid que coneixem per estructurar les nostres dades en
+bases de dades.
+
+Sembla que tenim dues *estrelles* que han de treballar conjuntament. S'hi
+avindran bé?
+
+SGBD-*què?*
+===========
+
+Veiem algunes definicions com a recordatori:
+
+base de dades
+
+  és una col·lecció de dades organitzada d'una manera
+  coherent, per que pugui ser accedida per una aplicació.
+
+SGBD
+
+  un *sistema de gestió de bases de dades* (SGBD) és una aplicació que
+  permet l'administració de bases de dades, de l'organització de les
+  dades i de les dades pròpiament.
+
+Transacció
+
+  Una *transacció* és una operació unitària sobre una base de dades,
+  tractada d'una manera coherent, fiable i independent d'altres
+  transaccions. Tot i que pot consistir en diverses operacions
+  individuals, la transacció ha de ser realitzada completament o bé no
+  realitzada. És a dir, no pot ser executada parcialment.
+
+ACID
+
+  Acrònim anglès de les paraules *Atomicity*, *Consistency*,
+  *Isolation* i *Durability* implica un conjunt de propietats que ha
+  de complir un SGBD per garantir la fiabilitat de les transaccions.
+
+  - Atomicitat: assegura que una transacció és un *tot o res*. Una
+    transacció o bé finalitza correctament i confirma o bé no deixa
+    cap rastre de la seva execució.
+
+  - Consistència: garanteix que l'execució de qualsevol transacció
+    no violarà cap les regles definides a la base de dades.
+
+  - Aïllament (*Isolation*): el resultat d'executar transaccions de manera
+    concurrent ha de ser el mateix que si l'execució hagués estat
+    seqüencial.
+
+  - Durabilitat: un cop confirmada una transacció, aquesta propietat ens
+    assegura que el seu resultat es mantindrà fins i tot en el cas de
+    fallada del sistema.
+
+SGBDR
+
+  El *model relacional* és una manera d'estructurar la informació en bases
+  de dades basada en lògica de primer ordre, un sistema descriptiu formal.
+  L'estructura es basa en *tuples* (llistes ordenades d'elements o
+  *camps*) agrupades en relacions o *taules*.  Sovint ens referim a les
+  tuples com *registres*.
+
+  Direm SGBDR a un SGBD que gestiona bases de dades definides fent servir
+  el model relacional. De fet, en l'actualitat és tan comú que es respecti
+  aquest model, que quan llegim SGBD es sobreenten que és un SGBDR.
+
+Comparació dels dos models
+==========================
+
+El model de programació orientada a objectes i el model relacional
+presenten algunes similituds però també força diferències.
+
+Amb la següent taula et presento les equivalències aproximades entre els dos models:
+
++-----------------------------------------+--------------------------------------------------+
+| El model Orientat a Objectes            | El model relacional                              |
++=========================================+==================================================+
+| transitori (*transient*)                | persistent                                       |
++-----------------------------------------+--------------------------------------------------+
+| classes (inclou comportament)           | taules (només dades)                             |
++-----------------------------------------+--------------------------------------------------+
+| instància                               | tuples / files / registres                       |
++-----------------------------------------+--------------------------------------------------+
+| atribut d'instància                     | camp                                             |
++-----------------------------------------+--------------------------------------------------+
+| atribut de classe (``static``)          | !                                                |
++-----------------------------------------+--------------------------------------------------+
+| tipus de dades                          | tipus de dades fixos (o Objecte-Relacional)      |
++-----------------------------------------+--------------------------------------------------+
+| centrat en dades + comportament         | centrat en les dades                             |
++-----------------------------------------+--------------------------------------------------+
+| mètodes / missatges / interfície        | *stored procedures*                              |
++-----------------------------------------+--------------------------------------------------+
+| dades i comportament fortament acoblats | *triggers* i restriccions                        |
++-----------------------------------------+--------------------------------------------------+
+| identitat implícita (posició memòria)   | identitat explícita (clau primària)              |
++-----------------------------------------+--------------------------------------------------+
+| referències                             | claus foranes                                    |
++-----------------------------------------+--------------------------------------------------+
+| referències unidireccionals             | referències bidireccionals                       |
++-----------------------------------------+--------------------------------------------------+
+| navegació seguint referències           | operació en conjunt                              |
++-----------------------------------------+--------------------------------------------------+
+| relació ús entre classes                | claus foranes                                    |
++-----------------------------------------+--------------------------------------------------+
+| relació agregació/composició            | claus foranes                                    |
++-----------------------------------------+--------------------------------------------------+
+| relació herència                        | claus foranes (o Objecte-Relacional)             |
++-----------------------------------------+--------------------------------------------------+
+| ocultació de dades, encapsulació        | permisos?                                        |
++-----------------------------------------+--------------------------------------------------+
+
