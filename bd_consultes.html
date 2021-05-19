@@ -262,7 +262,8 @@ posteriorment.</p>
 16
 17
 18
-19</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.sql.DriverManager</span><span class="p">;</span>
+19
+20</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.sql.DriverManager</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">java.sql.Connection</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">java.sql.SQLException</span><span class="p">;</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">Zoo</span> <span class="p">{</span>
@@ -279,6 +280,7 @@ posteriorment.</p>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">desconnecta</span><span class="p">()</span> <span class="kd">throws</span> <span class="n">SQLException</span> <span class="p">{</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">conn</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span> <span class="c1">// ja desconnectat</span>
         <span class="n">conn</span><span class="p">.</span><span class="na">close</span><span class="p">();</span>
+        <span class="n">conn</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>

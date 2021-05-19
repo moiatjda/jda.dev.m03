@@ -205,7 +205,7 @@ tots els animals i, per cada registre, obtenir la categoria corresponent.</p>
 informació corresponent tant de l’animal com de la categoria associada.</p>
 <p>Si ens decantem per aquesta opció, podrem aconseguir les dades amb la
 següent <em>query</em>:</p>
-<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">ANIMALS</span><span class="p">.</span><span class="n">id</span> <span class="n">id_animal</span><span class="p">,</span>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span> <span class="n">ANIMALS</span><span class="p">.</span><span class="n">id</span> <span class="k">as</span> <span class="n">id_animal</span><span class="p">,</span>
        <span class="n">ANIMALS</span><span class="p">.</span><span class="n">nom</span> <span class="k">as</span> <span class="n">nom_animal</span><span class="p">,</span>
        <span class="n">CATEGORIES</span><span class="p">.</span><span class="n">id</span> <span class="k">as</span> <span class="n">id_categoria</span><span class="p">,</span>
        <span class="n">CATEGORIES</span><span class="p">.</span><span class="n">nom</span> <span class="k">as</span> <span class="n">nom_categoria</span>

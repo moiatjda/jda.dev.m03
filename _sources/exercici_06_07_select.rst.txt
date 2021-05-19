@@ -32,7 +32,7 @@ següent *query*:
 
 .. code-block:: sql
 
-    SELECT ANIMALS.id id_animal,
+    SELECT ANIMALS.id as id_animal,
            ANIMALS.nom as nom_animal,
            CATEGORIES.id as id_categoria,
            CATEGORIES.nom as nom_categoria

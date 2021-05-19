@@ -109,6 +109,7 @@ La classe ``Zoo``, en aquesta primera versió, tindria el següent aspecte:
         public void desconnecta() throws SQLException {
             if (conn == null) return; // ja desconnectat
             conn.close();
+            conn = null;
         }
     }
 
