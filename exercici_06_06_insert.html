@@ -265,40 +265,54 @@ fer la inserció. Aquesta és molt similar a la que tenim a
 32
 33
 34
-35</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span> <span class="n">String</span> <span class="n">args</span><span class="o">[]</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">SQLException</span> <span class="p">{</span>
-    <span class="n">Zoo</span> <span class="n">zoo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Zoo</span><span class="p">();</span>
+35
+36
+37
+38
+39
+40
+41
+42</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">UsaZoo</span> <span class="p">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="p">(</span> <span class="n">String</span> <span class="n">args</span><span class="o">[]</span><span class="p">)</span> <span class="kd">throws</span> <span class="n">SQLException</span> <span class="p">{</span>
+        <span class="n">Zoo</span> <span class="n">zoo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Zoo</span><span class="p">();</span>
 
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">zoo</span><span class="p">.</span><span class="na">connecta</span><span class="p">());</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">zoo</span><span class="p">.</span><span class="na">creaTaulaAnimals</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Primer connectem amb la base de dades: &quot;</span><span class="p">);</span>
+        <span class="n">zoo</span><span class="p">.</span><span class="na">connecta</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;connectat&quot;</span><span class="p">);</span>
 
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Comprovació de obteCategoriaPerNom()&quot;</span><span class="p">);</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;====================================&quot;</span><span class="p">);</span>
-    <span class="n">introdueixCategories</span><span class="p">(</span><span class="n">zoo</span><span class="p">,</span> <span class="n">Arrays</span><span class="p">.</span><span class="na">asList</span><span class="p">(</span><span class="s">&quot;ocell&quot;</span><span class="p">,</span> <span class="s">&quot;peix&quot;</span><span class="p">,</span> <span class="s">&quot;ocell&quot;</span><span class="p">));</span>
-    <span class="n">mostraCategories</span><span class="p">(</span><span class="n">zoo</span><span class="p">);</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;La categoria peix és: &quot;</span> <span class="o">+</span> <span class="n">zoo</span><span class="p">.</span><span class="na">obteCategoriaPerNom</span><span class="p">(</span><span class="s">&quot;peix&quot;</span><span class="p">));</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;La categoria ocell és: &quot;</span> <span class="o">+</span> <span class="n">zoo</span><span class="p">.</span><span class="na">obteCategoriaPerNom</span><span class="p">(</span><span class="s">&quot;ocell&quot;</span><span class="p">));</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Creem les taules&quot;</span><span class="p">);</span>
+        <span class="n">zoo</span><span class="p">.</span><span class="na">creaTaulaAnimals</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Taules resultants: &quot;</span> <span class="o">+</span> <span class="n">zoo</span><span class="p">.</span><span class="na">getNomTaules</span><span class="p">());</span>
 
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Afegim animal amb categoria existent&quot;</span><span class="p">);</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;====================================&quot;</span><span class="p">);</span>
-    <span class="n">Categoria</span> <span class="n">ocell</span> <span class="o">=</span> <span class="n">zoo</span><span class="p">.</span><span class="na">obteCategoriaPerNom</span><span class="p">(</span><span class="s">&quot;ocell&quot;</span><span class="p">);</span>
-    <span class="n">Animal</span> <span class="n">pardal</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Animal</span><span class="p">(</span><span class="s">&quot;pardal&quot;</span><span class="p">,</span> <span class="n">ocell</span><span class="p">);</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Afegint l&#39;animal: &quot;</span> <span class="o">+</span> <span class="n">pardal</span><span class="p">);</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">zoo</span><span class="p">.</span><span class="na">afegeixAnimal</span><span class="p">(</span><span class="n">pardal</span><span class="p">));</span>
-    <span class="n">mostraCategories</span><span class="p">(</span><span class="n">zoo</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Introduïm categories amb una de repetida&quot;</span><span class="p">);</span>
+        <span class="n">Categoria</span> <span class="n">peix</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Categoria</span><span class="p">(</span><span class="s">&quot;peix&quot;</span><span class="p">);</span>
+        <span class="n">zoo</span><span class="p">.</span><span class="na">afegeixCategoria</span><span class="p">(</span><span class="k">new</span> <span class="n">Categoria</span><span class="p">(</span><span class="s">&quot;ocell&quot;</span><span class="p">));</span>
+        <span class="n">zoo</span><span class="p">.</span><span class="na">afegeixCategoria</span><span class="p">(</span><span class="n">peix</span><span class="p">);</span>
+        <span class="n">zoo</span><span class="p">.</span><span class="na">afegeixCategoria</span><span class="p">(</span><span class="k">new</span> <span class="n">Categoria</span><span class="p">(</span><span class="s">&quot;ocell&quot;</span><span class="p">));</span>
+        <span class="n">ZooUtils</span><span class="p">.</span><span class="na">mostraCategories</span><span class="p">(</span><span class="n">zoo</span><span class="p">.</span><span class="na">recuperaCategories</span><span class="p">());</span>
 
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Afegim animal amb categoria no existent&quot;</span><span class="p">);</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;=======================================&quot;</span><span class="p">);</span>
-    <span class="n">Categoria</span> <span class="n">mamifer</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Categoria</span><span class="p">(</span><span class="s">&quot;mamífer&quot;</span><span class="p">);</span>
-    <span class="n">Animal</span> <span class="n">gat</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Animal</span><span class="p">(</span><span class="s">&quot;gat&quot;</span><span class="p">,</span> <span class="n">mamifer</span><span class="p">);</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Afegint l&#39;animal: &quot;</span> <span class="o">+</span> <span class="n">gat</span><span class="p">);</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">zoo</span><span class="p">.</span><span class="na">afegeixAnimal</span><span class="p">(</span><span class="n">gat</span><span class="p">));</span>
-    <span class="n">mostraCategories</span><span class="p">(</span><span class="n">zoo</span><span class="p">);</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Afegim guppy amb &quot;</span> <span class="o">+</span> <span class="n">peix</span><span class="p">);</span>
+        <span class="n">zoo</span><span class="p">.</span><span class="na">afegeixAnimal</span><span class="p">(</span><span class="k">new</span> <span class="n">Animal</span><span class="p">(</span><span class="s">&quot;guppy&quot;</span><span class="p">,</span> <span class="n">peix</span><span class="p">));</span>
+        <span class="n">ZooUtils</span><span class="p">.</span><span class="na">mostraCategories</span><span class="p">(</span><span class="n">zoo</span><span class="p">.</span><span class="na">recuperaCategories</span><span class="p">());</span>
 
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
-    <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">zoo</span><span class="p">.</span><span class="na">desconnecta</span><span class="p">());</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Afegim guppy dins d&#39;una categoria coneguda&quot;</span><span class="p">);</span>
+        <span class="n">zoo</span><span class="p">.</span><span class="na">afegeixAnimal</span><span class="p">(</span><span class="k">new</span> <span class="n">Animal</span><span class="p">(</span><span class="s">&quot;pardal&quot;</span><span class="p">,</span> <span class="k">new</span> <span class="n">Categoria</span><span class="p">(</span><span class="s">&quot;ocell&quot;</span><span class="p">)));</span>
+        <span class="n">ZooUtils</span><span class="p">.</span><span class="na">mostraCategories</span><span class="p">(</span><span class="n">zoo</span><span class="p">.</span><span class="na">recuperaCategories</span><span class="p">());</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;Afegim un animal d&#39;una nova categoria&quot;</span><span class="p">);</span>
+        <span class="n">zoo</span><span class="p">.</span><span class="na">afegeixAnimal</span><span class="p">(</span><span class="k">new</span> <span class="n">Animal</span><span class="p">(</span><span class="s">&quot;gat&quot;</span><span class="p">,</span> <span class="k">new</span> <span class="n">Categoria</span><span class="p">(</span><span class="s">&quot;mamífer&quot;</span><span class="p">)));</span>
+        <span class="n">ZooUtils</span><span class="p">.</span><span class="na">mostraCategories</span><span class="p">(</span><span class="n">zoo</span><span class="p">.</span><span class="na">recuperaCategories</span><span class="p">());</span>
+
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&quot;Finalment tanquem la connexió amb la base de dades: &quot;</span><span class="p">);</span>
+        <span class="n">zoo</span><span class="p">.</span><span class="na">desconnecta</span><span class="p">();</span>
+        <span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;desconnectat&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </td></tr></table></div>

@@ -65,40 +65,47 @@ El nou ``main()`` de ``UsaZoo`` per aquest exercici serà:
 .. code-block:: java
     :linenos:
 
-    public static void main( String args[]) throws SQLException {
-        Zoo zoo = new Zoo();
+    public class UsaZoo {
+        public static void main( String args[]) throws SQLException {
+            Zoo zoo = new Zoo();
 
-        System.out.println(zoo.connecta());
-        System.out.println(zoo.creaTaulaAnimals());
+            System.out.print("Primer connectem amb la base de dades: ");
+            zoo.connecta();
+            System.out.println("connectat");
 
-        System.out.println();
-        System.out.println("Comprovació de obteCategoriaPerNom()");
-        System.out.println("====================================");
-        introdueixCategories(zoo, Arrays.asList("ocell", "peix", "ocell"));
-        mostraCategories(zoo);
-        System.out.println("La categoria peix és: " + zoo.obteCategoriaPerNom("peix"));
-        System.out.println("La categoria ocell és: " + zoo.obteCategoriaPerNom("ocell"));
+            System.out.println();
+            System.out.println("Creem les taules");
+            zoo.creaTaulaAnimals();
+            System.out.println("Taules resultants: " + zoo.getNomTaules());
 
-        System.out.println();
-        System.out.println("Afegim animal amb categoria existent");
-        System.out.println("====================================");
-        Categoria ocell = zoo.obteCategoriaPerNom("ocell");
-        Animal pardal = new Animal("pardal", ocell);
-        System.out.println("Afegint l'animal: " + pardal);
-        System.out.println(zoo.afegeixAnimal(pardal));
-        mostraCategories(zoo);
+            System.out.println();
+            System.out.println("Introduïm categories amb una de repetida");
+            Categoria peix = new Categoria("peix");
+            zoo.afegeixCategoria(new Categoria("ocell"));
+            zoo.afegeixCategoria(peix);
+            zoo.afegeixCategoria(new Categoria("ocell"));
+            ZooUtils.mostraCategories(zoo.recuperaCategories());
 
-        System.out.println();
-        System.out.println("Afegim animal amb categoria no existent");
-        System.out.println("=======================================");
-        Categoria mamifer = new Categoria("mamífer");
-        Animal gat = new Animal("gat", mamifer);
-        System.out.println("Afegint l'animal: " + gat);
-        System.out.println(zoo.afegeixAnimal(gat));
-        mostraCategories(zoo);
+            System.out.println();
+            System.out.println("Afegim guppy amb " + peix);
+            zoo.afegeixAnimal(new Animal("guppy", peix));
+            ZooUtils.mostraCategories(zoo.recuperaCategories());
 
-        System.out.println();
-        System.out.println(zoo.desconnecta());
+            System.out.println();
+            System.out.println("Afegim guppy dins d'una categoria coneguda");
+            zoo.afegeixAnimal(new Animal("pardal", new Categoria("ocell")));
+            ZooUtils.mostraCategories(zoo.recuperaCategories());
+
+            System.out.println();
+            System.out.println("Afegim un animal d'una nova categoria");
+            zoo.afegeixAnimal(new Animal("gat", new Categoria("mamífer")));
+            ZooUtils.mostraCategories(zoo.recuperaCategories());
+
+            System.out.println();
+            System.out.print("Finalment tanquem la connexió amb la base de dades: ");
+            zoo.desconnecta();
+            System.out.println("desconnectat");
+        }
     }
 
 La sortida esperada és:
